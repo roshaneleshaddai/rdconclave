@@ -1,0 +1,12 @@
+/* Import the Google Font at the top */
+@import url('https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Dots:wght@400..700&family=SUSE:wght@100..800&display=swap');
+
+/* Tailwind base, components, and utilities */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Apply the font to the body globally */
+body {
+  font-family: "SUSE", sans-serif;
+}
