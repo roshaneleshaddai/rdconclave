@@ -10,6 +10,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <head>
+        <meta name="google-site-verification" content="mB51swaTi22UaoYugKDwEZYts__M_VnMWp9cuG0BrGo" />
+      </head>
       <body className="min-h-screen flex flex-col justify-between ">  
         <Header />
         <main className="" >{children}</main>
