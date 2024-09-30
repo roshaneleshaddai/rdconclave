@@ -31,7 +31,7 @@ const Meet = () => {
       <h2 className="text-4xl text-[#604CC3] font-semibold mb-4">Expected Industries</h2>
         <hr className="h-1 my-8 bg-[#604CC3] border-0 w-1/4" />
       <p className="text-xl mb-6">
-        We are expecting representatives from 10 leading industries to participate in the event.
+      The Industry-Academic Meet serves as a platform for professionals from various industries and academic institutions to come together and discuss the latest trends, challenges, and opportunities in their respective fields. This segment of the program aims to foster collaboration, spark new research ideas, and identify potential areas for partnerships. Industry representatives can share insights on real-world problems, while academics can present their research findings and discuss how they can be applied in practical settings. The meet will also include panel discussions, keynote speeches, and networking sessions to encourage open dialogue and idea exchange.
       </p>
       <div className="grid grid-cols-2 md:grid-cols-5 gap-4 border-2 border-[#213555] border-opacity-20 p-4">
         {logos.map((logo, index) => (
