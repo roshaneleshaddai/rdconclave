@@ -538,7 +538,7 @@ function HorizontalImageScroller({ images }) {
     const [isVisible, setIsVisible] = useState(false);
     const Patrons = [
       { name: 'Sri K.V Chowdary,IRS', imgSrc: 'https://www.vrsiddhartha.ac.in/wp-content/uploads/2019/09/Chancellor-K-V-Chowdary.jpg', position: 'Chancellor,SAHE' },
-      { name: 'Sri C.Nageswara Rao', imgSrc: 'https://www.vrsiddhartha.ac.in/wp-content/uploads/2019/09/Vice-Chancellor-PV-Rao.jpg', position: 'President,SAGTE' },
+      { name: 'Sri C.Nageswara Rao', imgSrc: 'https://www.vrsiddhartha.ac.in/wp-content/uploads/2020/12/nageswararao.png', position: 'President,SAGTE' },
       { name: 'Sri P.Lakshmana Rao', imgSrc: 'https://www.siddharthaacademy.ac.in/img/team/lakshmana%20rao.png', position: 'Secretary,SAGTE' },
       { name: 'Sri M. Rajaiah', imgSrc: 'https://www.siddharthaacademy.ac.in/img/team/rajaiah.png', position: 'Vice-President, SAGTE' },
       { name: 'Prof. P. Venkateswara Rao', imgSrc: 'https://www.vrsiddhartha.ac.in/wp-content/uploads/2019/09/Vice-Chancellor-PV-Rao.jpg', position: ' Vice Chancellor, SAHE' },
