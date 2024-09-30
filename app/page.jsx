@@ -1,6 +1,7 @@
 'use client';
 import Image from "next/image";
 import React, { useState, useEffect } from "react";
+import { motion } from 'framer-motion';
 import "./globals.css";
 
 export default function Home() {
@@ -127,7 +128,7 @@ function HorizontalImageScroller({ images }) {
         <div
           className="mt-1 bg-[#604CC3]/25 bg-opacity-20 p-8 rounded-lg mx-6 transition-opacity duration-1000 "
         >
-          <h1 className="text-5xl  font-bold text-center text-[#604CC3]">Research Conclave</h1>
+          <h1 className="md:text-5xl text-3xl font-bold text-center text-[#604CC3]">Research Conclave</h1>
           
         </div>
 
@@ -161,74 +162,71 @@ function HorizontalImageScroller({ images }) {
           Publications</center>
         </div>
       </div> */}
-
-<div className="flex flex-col md:flex-row justify-around min-h-full p-4 ">
+<div className="flex flex-col items-center lg:flex-row lg:justify-around min-h-full p-4">
   {/* Industry Academia Meet Block */}
   <div
-    onClick={() => handleRedirect("/meet")}
-    className="mt-5 bg-[#604CC3]/25 bg-opacity-20 p-6 rounded-lg mx-6 cursor-pointer hover:shadow-xl hover:bg-[#FEF9D9]/25 flex flex-col items-center justify-center min-h-[25rem] md:min-w-[22rem] max-w-[25rem]"
+    onClick={() => handleRedirect("/hackathon")}
+    className="mt-5 bg-[#604CC3]/25 bg-opacity-20 p-6 rounded-lg mx-6 cursor-pointer hover:shadow-xl hover:bg-[#FEF9D9]/25 flex flex-col items-center justify-center h-[24rem] w-[24rem]"
   >
     {/* Title Section */}
-    <div className="flex-1 flex items-center justify-center">
+    <div className="flex-0.5 flex items-center justify-center">
       <h1 className="text-3xl sm:text-4xl text-center font-bold text-[#604CC3]">
-        Industry<br/>Academia<br/>Meet
+        Industry<br></br>Academia<br></br>Meet
       </h1>
     </div>
     {/* Date, Time, and Button Section */}
     <div className="flex-1 flex flex-col items-center justify-center font-bold">
-      <p className="p-1/2 text-center">Date: 31-12-2024</p>
-      <p className="p-1/2 text-center">Time: 09:00 AM</p>
+    <p className="text-center">Date: November 2, 2024</p>
       <button className="p-2 m-2 bg-white text-lg border-2 border-[#4F709C]/50 hover:border-[#4F709C] rounded-full">
         Know more..
       </button>
-    </div>  
+    </div>
   </div>
 
   {/* Hackathon Block */}
   <div
     onClick={() => handleRedirect("/hackathon")}
-    className="mt-5 bg-[#604CC3]/25 bg-opacity-20 p-6 rounded-lg mx-6 cursor-pointer hover:shadow-xl hover:bg-[#FEF9D9]/25 flex flex-col items-center justify-center min-h-[25rem] md:min-w-[22rem] max-w-[25rem]"
+    className="mt-5 bg-[#604CC3]/25 bg-opacity-20 p-6 rounded-lg mx-6 cursor-pointer hover:shadow-xl hover:bg-[#FEF9D9]/25 flex flex-col items-center justify-center h-[24rem] w-[24rem]"
   >
     {/* Title Section */}
-    <div className="flex-1 flex items-center justify-center">
+    <div className="flex-0.5 flex items-center justify-center">
       <h1 className="text-3xl sm:text-4xl text-center font-bold text-[#604CC3]">
-        Student Hackathon
+        Student<br></br>Hackathon
       </h1>
     </div>
     {/* Date, Time, and Button Section */}
     <div className="flex-1 flex flex-col items-center justify-center font-bold">
-      <p className="p-1/2 text-center">Registration Deadline: November 2, 2024</p>
-      <p className="p-1/2 text-center">Final Round Notification: December 2, 2024</p>
-      <p className="p-1/2 text-center">Final Round: January 24, 2024, 12 PM - January 25, 2024, 12 PM</p>
+      <p className="text-center">Registration Deadline: November 2, 2024</p>
+      <p className="text-center">Final Round Notification: December 2, 2024</p>
+      <p className="text-center">Final Round: January 24, 2024, 12 PM - January 25, 2024, 12 PM</p>
       <button className="p-2 m-2 bg-white text-lg border-2 border-[#4F709C]/50 hover:border-[#4F709C] rounded-full">
         Know more..
       </button>
     </div>
   </div>
 
-  {/* journal Publications Block */}
+  {/* Journal Publications Block */}
   <div
     onClick={() => handleRedirect("/journalpublications")}
-    className="mt-5 bg-[#604CC3]/25 bg-opacity-100 p-6 rounded-lg mx-6 cursor-pointer hover:shadow-xl hover:bg-[#FEF9D9]/25 flex flex-col items-center justify-center min-h-[25rem]  md:min-w-[22rem] max-w-[25rem]"
+    className="mt-5 bg-[#604CC3]/25 bg-opacity-100 p-6 rounded-lg mx-6 cursor-pointer hover:shadow-xl hover:bg-[#FEF9D9]/25 flex flex-col items-center justify-center h-[24rem] w-[24rem]"
   >
     {/* Title Section */}
-    <div className="flex-1 flex items-center justify-center">
+    <div className="flex-0.5 flex items-center justify-center">
       <h1 className="text-3xl sm:text-4xl text-center font-bold text-[#604CC3]">
         Journal<br/>Publications
       </h1>
     </div>
     {/* Date, Time, and Button Section */}
-    <div className="flex-1 flex flex-col items-center justify-center font-bold ">
-      <p className="p-1/2 text-center">Submission Deadline: December 20, 2024</p>
-      <p className="p-1/2 text-center">Acceptance Notification: January 5, 2025</p>
-      <p className="p-1/2 text-center">Event Registration Deadline: October 10, 2025</p>
+    <div className="flex-1 flex flex-col items-center justify-center font-bold">
+      <p className="text-center">Submission Deadline: December 20, 2024</p>
+      <p className="text-center">Acceptance Notification: January 5, 2025</p>
+      <p className="text-center">Event Registration Deadline: October 10, 2025</p>
       <button className="p-2 m-2 bg-white text-lg border-2 border-[#4F709C]/50 hover:border-[#4F709C] rounded-full">
         Know more..
       </button>
     </div>
   </div>
 </div>
-
 
       </div>
     );
@@ -321,7 +319,6 @@ function HorizontalImageScroller({ images }) {
     };
 
     return (
-      <div className="">
       <div className=" w-full">
         <div
           className="relative w-full h-[620px]"  
@@ -358,7 +355,6 @@ function HorizontalImageScroller({ images }) {
           ))}
         </div>
       </div>
-      </div>
     );
   }
 
@@ -382,7 +378,7 @@ function HorizontalImageScroller({ images }) {
       if (!videoElement) return;
   
       const sectionPosition = videoElement.getBoundingClientRect().top;
-      const screenPosition = window.innerHeight / 1.5;
+      const screenPosition = window.innerHeight / 1;
   
       if (sectionPosition < screenPosition) {
         setVideoVisible(true);
@@ -407,7 +403,7 @@ function HorizontalImageScroller({ images }) {
     return (
       <section id="research" className="p-5 flex flex-col justify-center items-center md:mx-10">
         <div className="container flex flex-col md:flex-row-reverse items-center">
-          <div className="w-full md:basis-1/2  p-4">
+          <div className="w-full md:basis-2/3  p-4">
             <h2 className="text-3xl font-bold text-[#604CC3]">
               Research@VRSEC
               <hr className="h-1 my-8 bg-[#604CC3] border-0 w-1/2 " />
@@ -428,20 +424,25 @@ function HorizontalImageScroller({ images }) {
               ))}
             </ul>
           </div>
-          <div className="w-full md:basis-1/2 p-4">
-            <iframe
-              id="info-video"
-              width="100%" 
-              height="405" 
-              src="https://youtube.com/embed/-uFY1md-knE" 
-              title="YouTube video player"
-              frameBorder="0" 
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-              allowFullScreen
-              className={`transition-transform duration-1000 transform ${
-                videoVisible ? "translate-x-0 opacity-100" : "translate-x-full opacity-0"
-              }`}
-            ></iframe>
+          <div className="w-full md:basis-1/3 p-4">
+          <motion.div
+      initial={{ opacity: 0, translateY: 100 }} // Start fully transparent and below
+      animate={videoVisible ? { opacity: 1, translateY: 0 } : { opacity: 0, translateY: 100 }} // Fade in and move up
+      transition={{ duration: 1 }} // Adjust the duration for smoothness
+      className="relative"
+    >
+      <iframe
+        id="info-video"
+        width="100%"
+        height="405"
+        src="https://youtube.com/embed/-uFY1md-knE"
+        title="YouTube video player"
+        frameBorder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowFullScreen
+      ></iframe>
+    </motion.div>
+
           </div>
         </div>
       </section>
@@ -449,91 +450,223 @@ function HorizontalImageScroller({ images }) {
   };
   
   
+  // const ResearchNames = () => {
+  //   const [isVisible, setIsVisible] = useState(false);
+  
+  //   // Array of researchers' names and image paths
+  //   const researchers = [
+  //     { name: 'Bob', imgSrc: '/images/people1.jpeg',position: 'Phd' },
+  //     { name: 'David', imgSrc: '/images/people2.jpeg' ,position: 'Associate Professor' },
+  //     { name: 'Alice', imgSrc: '/images/people3.jpeg' ,position: 'Senior Professor'},
+  //     { name: 'John', imgSrc: '/images/people4.jpeg' ,position: 'Phd'},
+  //   ];
+  
+  //   useEffect(() => {
+  //     const handleScroll = () => {
+  //       // Get the element after the function starts
+  //       const section = document.getElementById('research-names');
+    
+  //       // If the section element does not exist, exit early
+  //       if (!section) return;
+    
+  //       // Calculate the section's position relative to the viewport
+  //       const sectionTop = section.getBoundingClientRect().top;
+  //       const windowHeight = window.innerHeight;
+    
+  //       // Check if the section is in the viewport
+  //       if (sectionTop < windowHeight - 100) {
+  //         setIsVisible(true); // Apply transformation when scrolled into view
+  //       } else {
+  //         setIsVisible(false); // Remove transformation when out of view
+  //       }
+  //     };
+    
+  //     // Add the scroll event listener
+  //     window.addEventListener('scroll', handleScroll);
+    
+  //     // Clean up the event listener on component unmount
+  //     return () => {
+  //       window.removeEventListener('scroll', handleScroll);
+  //     };
+  //   }, []);
+    
+  
+  //   return (
+  //     <section
+  //       id="research-names"
+  //       className={`flex flex-col justify-center items-center bg-[#604CC3] bg-opacity-50 p-6 md:p-10 shadow-lg 
+  //         transition-transform duration-700 ease-in-out m-10
+  //         ${isVisible ? 'transform scale-105 opacity-100' : 'transform scale-90 opacity-0'}
+  //         `}
+  //     >
+  //       <div className="container p-4 md:p-10 bg-white rounded-lg shadow-md transition-transform duration-500 ease-in-out">
+  //         {/* Introduction Text */}
+  //         <p className="mb-6 md:text-xl font-bold text-[#604CC3] text-center tracking-wide">
+  //           Welcome to our organization. Below is a list of key individuals involved in this initiative:
+  //         </p>
+  
+  //         {/* Bullet Points with Images and Names */}
+  //         <ul className="list-none flex flex-col md:flex-row justify-center items-centers  text-lg text-gray-800 ">
+  //           {researchers.map((researcher, index) => (
+  //             <li
+  //               key={index}
+  //               className="flex flex-col items-center   hover:text-blue-600 transition-colors duration-300 ease-in-out"
+  //             >
+                
+  //               <div className="flex flex-col items-center  hover:bg-[#FEF9D9] rounded-md p-2 ">
+  //               <Image
+  //                 src={researcher.imgSrc}
+  //                 alt={researcher.name}
+  //                 width={200}
+  //                 height={200}
+  //                 className="m-4 rounded-full"
+  //               />
+  //                 <p className="text-lg font-bold">{researcher.name}</p>
+  //                 <p className="text-sm text-gray-600">{researcher.position}</p>
+
+  //               </div>
+                
+  //             </li>
+  //           ))}
+  //         </ul>
+  //       </div>
+  //     </section>
+  //   );
+  // };
+
   const ResearchNames = () => {
     const [isVisible, setIsVisible] = useState(false);
-  
-    // Array of researchers' names and image paths
-    const researchers = [
-      { name: 'Bob', imgSrc: '/images/people1.jpeg',position: 'Phd' },
-      { name: 'David', imgSrc: '/images/people2.jpeg' ,position: 'Associate Professor' },
-      { name: 'Alice', imgSrc: '/images/people3.jpeg' ,position: 'Senior Professor'},
-      { name: 'John', imgSrc: '/images/people4.jpeg' ,position: 'Phd'},
+    const Patrons = [
+      { name: 'Sri K.V Chowdary,IRS', imgSrc: 'https://www.vrsiddhartha.ac.in/wp-content/uploads/2019/09/Chancellor-K-V-Chowdary.jpg', position: 'Chancellor,SAHE' },
+      { name: 'Sri C.Nageswara Rao', imgSrc: 'https://www.vrsiddhartha.ac.in/wp-content/uploads/2019/09/Vice-Chancellor-PV-Rao.jpg', position: 'President,SAGTE' },
+      { name: 'Sri P.Lakshmana Rao', imgSrc: 'https://www.siddharthaacademy.ac.in/img/team/lakshmana%20rao.png', position: 'Secretary,SAGTE' },
+      { name: 'Sri M. Rajaiah', imgSrc: 'https://www.siddharthaacademy.ac.in/img/team/rajaiah.png', position: 'Vice-President, SAGTE' },
+      { name: 'Prof. P. Venkateswara Rao', imgSrc: 'https://www.vrsiddhartha.ac.in/wp-content/uploads/2019/09/Vice-Chancellor-PV-Rao.jpg', position: ' Vice Chancellor, SAHE' },
+      { name: 'Prof. A. V. Ratna Prasad', imgSrc: 'https://www.vrsiddhartha.ac.in/wp-content/uploads/2024/09/principal_2024-1-275x300.jpg', position: 'Pro-Vice Chancellor, SAHE' },
     ];
-  
-    useEffect(() => {
-      const handleScroll = () => {
-        // Get the element after the function starts
-        const section = document.getElementById('research-names');
-    
-        // If the section element does not exist, exit early
-        if (!section) return;
-    
-        // Calculate the section's position relative to the viewport
-        const sectionTop = section.getBoundingClientRect().top;
-        const windowHeight = window.innerHeight;
-    
-        // Check if the section is in the viewport
-        if (sectionTop < windowHeight - 100) {
-          setIsVisible(true); // Apply transformation when scrolled into view
-        } else {
-          setIsVisible(false); // Remove transformation when out of view
-        }
-      };
-    
-      // Add the scroll event listener
-      window.addEventListener('scroll', handleScroll);
-    
-      // Clean up the event listener on component unmount
-      return () => {
-        window.removeEventListener('scroll', handleScroll);
-      };
-    }, []);
-    
-  
-    return (
-      <section
-        id="research-names"
-        className={`flex flex-col justify-center items-center bg-[#604CC3] bg-opacity-50 p-10 shadow-lg 
-          transition-transform duration-700 ease-in-out m-10
-          ${isVisible ? 'transform scale-105 opacity-100' : 'transform scale-90 opacity-0'}
-          `}
-      >
-        <div className="container p-10 bg-white rounded-lg shadow-md transition-transform duration-500 ease-in-out">
-          {/* Introduction Text */}
-          <p className="mb-6 text-xl font-bold text-[#604CC3] text-center tracking-wide">
-            Welcome to our organization. Below is a list of key individuals involved in this initiative:
-          </p>
-  
-          {/* Bullet Points with Images and Names */}
-          <ul className="list-none flex flex-col md:flex-row justify-center items-centers  text-lg text-gray-800 ">
-            {researchers.map((researcher, index) => (
-              <li
-                key={index}
-                className="flex flex-col items-center   hover:text-blue-600 transition-colors duration-300 ease-in-out"
-              >
-                
-                <div className="flex flex-col items-center  hover:bg-[#FEF9D9] rounded-md p-2 ">
-                <Image
-                  src={researcher.imgSrc}
-                  alt={researcher.name}
-                  width={200}
-                  height={200}
-                  className="m-4 rounded-full"
-                />
-                  <p className="text-lg font-bold">{researcher.name}</p>
-                  <p className="text-sm text-gray-600">{researcher.position}</p>
 
-                </div>
-                
-              </li>
-            ))}
-          </ul>
+  // Split the researchers array into top image and bottom images
+  const topResearcher = Patrons[0];
+  const bottomResearchers = Patrons.slice(1);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const section = document.getElementById('research-names');
+
+      if (!section) return;
+
+      const sectionTop = section.getBoundingClientRect().top;
+      const windowHeight = window.innerHeight;
+
+      if (sectionTop < windowHeight - 100) {
+        setIsVisible(true);
+      } else {
+        setIsVisible(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  return (
+    <section
+      id="research-names"
+      className={`flex flex-col justify-center items-center bg-[#604CC3] bg-opacity-50 p-6 shadow-lg
+        transition-transform duration-700 ease-in-out m-2
+        ${isVisible ? 'transform scale-105 opacity-100' : 'transform scale-90 opacity-0'}`}
+    >
+      <div className="container p-2 bg-white rounded-lg shadow-md transition-transform duration-500 ease-in-out">
+        {/* Introduction Text */}
+        <p className="mb-6 text-3xl font-bold text-[#604CC3] text-center tracking-wide">
+          Patrons
+        </p>
+
+        {/* Top Researcher */}
+        <div className="flex flex-col items-center  mb-10">
+          <Image
+            src={topResearcher.imgSrc}
+            alt={topResearcher.name}
+            width={200}
+            height={200}
+            className="m-4 w-[150px] h-[150px] object-cover"
+          />
+          <p className="text-lg font-bold">{topResearcher.name}</p>
+          <p className="text-sm text-gray-600">{topResearcher.position}</p>
         </div>
-      </section>
-    );
-  };
+
+        {/* Bottom Researchers */}
+        <ul className="list-none flex flex-col md:flex-row justify-center items-center text-lg text-gray-800">
+          {bottomResearchers.map((researcher, index) => (
+            <li
+              key={index}
+              className="flex flex-col items-center hover:text-blue-600 transition-colors duration-300 ease-in-out"
+            >
+             <div className="flex flex-col items-center hover:bg-[#FEF9D9] rounded-md p-2">
+  <Image
+    src={researcher.imgSrc}
+    alt={researcher.name}
+    width={150}
+    height={150}
+    className="m-4 w-[150px] h-[150px] object-cover "
+  />
+  <p className="text-lg font-bold">{researcher.name}</p>
+  <p className="text-sm text-gray-600">{researcher.position}</p>
+</div>
+
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+  );
+};
 
 
+const CoordinatorsSection = () => {
+  return (
+    <div className="flex flex-col justify-center mt-6 items-center p-6 border border-gray-300 rounded-lg shadow-md bg-[#] ">
+      <div className="flex flex-col md:flex-row justify-around  w-full ">
+        {/* Left section - Convenor */}
+        <div className="text-center  mb-4 md:mb-0">
+          <h2 className="text-red-600 font-bold text-lg">Convenor</h2>
+          <p className="text-blue-600 font-bold text-md">
+            Prof. Suneetha M,
+          </p>
+          <p className="text-black text-sm">
+            Dean-R&D, IQAC, HoD-IT
+          </p>
+        </div>
+
+        {/* Right section - Coordinators */}
+        <div className="text-center ">
+          <h2 className="text-red-600 font-bold text-lg">Coordinators</h2>
+          <p className="text-blue-600 font-bold text-md">
+            Dr. Lakshmi Lydia E, <span className="text-black">Professor</span>
+          </p>
+          <p className="text-blue-600 font-bold text-md">
+            Dr. Sandeep Y, <span className="text-black">Assistant Professor</span>
+          </p>
+        </div>
+      </div>
+
+      {/* Queries Section */}
+      <div className="w-full text-center border-t border-gray-300 pt-4">
+        <p className="text-red-600 font-bold text-md">
+          Any Queries (Registrations):
+        </p>
+        <p className="text-black font-bold text-md">
+          Dr. Jaya Prakash S - 9848143200, Dr. Gargi M - 8886599444
+        </p>
+      </div>
+    </div>
+  );
+};
+
+  
   
   return (
     <>
@@ -548,13 +681,14 @@ function HorizontalImageScroller({ images }) {
       </video>
       </div> */}
       
-      <div className="mt-52"></div>
+      <div className="mt-36 md:mt-52"></div>
       <ClickableCircles />
       {/* <ImageCarousel /> */}
       <HorizontalImageScroller images={researchimages}/>
       <About/>
       <InfoSection/>
-      <ResearchNames/>
+      <ResearchNames/> 
+      <CoordinatorsSection/>
       <div className="mt-20 bg-[#4F709C]/25 bg-opacity-20 p-4 rounded-lg mx-6 transition-opacity duration-1000 mb-4">
         <h1 className="text-4xl  font-bold text-center text-black">Placements</h1>
       <HorizontalImageScroller images={aluminiimages}/>
