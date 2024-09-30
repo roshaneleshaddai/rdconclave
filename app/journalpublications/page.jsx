@@ -48,30 +48,30 @@ export default function JournalPublications() {
     },
     {
       sNo: 2,
-      name: "Journal of Computational and Cognitive Engine",
+      name: "Journal of Computational and Cognitive Engineering",
       link: "https://ojs.bonviewpress.com/index.php/JCCE/index",
       quartile: "Q1",
       // apc: "700 USD"
     },
+    // {
+    //   sNo: 3,
+    //   name: "International Journal of Neutrosophic",
+    //   link: "https://www.americaspg.com/journals/show/21",
+    //   quartile: "Q1",
+    //   // apc: "500 USD"
+    // },
+    // {
+    //   sNo: 4,
+    //   name: "Fusion: Practice and Applications",
+    //   link: "https://www.americaspg.com/journals/show/3",
+    //   quartile: "Q2",
+    //   // apc: "300 USD"
+    // },
     {
       sNo: 3,
-      name: "International Journal of Neutrosophic",
-      link: "https://www.americaspg.com/journals/show/21",
-      quartile: "Q1",
-      // apc: "500 USD"
-    },
-    {
-      sNo: 4,
-      name: "Fusion: Practice and Applications",
-      link: "https://www.americaspg.com/journals/show/3",
-      quartile: "Q2",
-      // apc: "300 USD"
-    },
-    {
-      sNo: 5,
-      name: "Springer Lecture Series",
+      name: "Springer Lecture Notes on Networks & Systems (Indexing: SCOPUS, INSPEC, WTI Frankfurt eG, zbMATH, SCImago)",
       link: "https://www.springer.com/series/15179",
-      quartile: "N/A",
+      quartile: "",
       // apc: "12000 INR"
     }
   ];
@@ -195,7 +195,7 @@ export default function JournalPublications() {
 
         <div className="flex flex-col md:flex-row justify-around space-y-6 md:space-y-0 md:space-x-10 mt-6 items-center">
           {/* Expected Papers Section */}
-          <div className="px-6 ml-8 md:px-12 text-[#604CC3] py-4 flex justify-center">
+          {/* <div className="px-6 ml-8 md:px-12 text-[#604CC3] py-4 flex justify-center">
             <div
               ref={sectionRef}
               className="font-bold flex flex-col justify-center text-4xl bg-[#604CC3]/25 bg-opacity-20 w-40 h-40 text-center transition-all duration-500 p-6 rounded-lg"
@@ -203,7 +203,7 @@ export default function JournalPublications() {
               {countA}-{countB}
               <div className="text-lg ">Expected Papers</div>
             </div>
-          </div>
+          </div> */}
 
           {/* Journals Section with Swipe-In-Right Animation */}
           <div
