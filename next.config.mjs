@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     images: {
-      domains: ['www.vrsiddhartha.ac.in'],
+      domains: ['www.vrsiddhartha.ac.in','www.siddharthaacademy.ac.in'],
     },
   };
   
