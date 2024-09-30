@@ -130,7 +130,7 @@ export default function Hackathon() {
 
         <div className="flex flex-col md:flex-row justify-around min-h-full  md:p-5 md:px-60 space-y-4">
   <div
-    onClick={() => handleRedirect("/ideathon")}
+    // onClick={() => handleRedirect("/ideathon")}
     className="mt-5 bg-[#604CC3]/25 bg-opacity-20 p-6 rounded-lg mx-6 cursor-pointer  hover:shadow-xl hover:bg-[#604CC3]/50 flex flex-col items-center justify-center min-h-[15rem] min-w-[20rem]"
   >
     {/* Title Section */}
@@ -144,16 +144,16 @@ export default function Hackathon() {
       <p className="p-4">Date: 31-12-2024</p>
       <p className="p-4">Time: 09:00 AM</p>
       <button className="p-4 bg-white text-lg border-2 border-[#4F709C]/40 hover:border-[#604CC3]  rounded-full">
-        <Link href="https://www.google.com">
+      <Link href="https://forms.gle/mBcnvNzjyf5owmZB7">
         Register now
-        </Link>
+       </Link>
       </button>
     </div>  
   </div>
 
   {/* webathon Block */}
   <div
-    onClick={() => handleRedirect("/webathon")}
+    // onClick={() => handleRedirect("/webathon")}
     className="bg-[#604CC3]/25 bg-opacity-20 p-6 rounded-lg mx-6 cursor-pointer hover:shadow-xl hover:bg-[#604CC3]/50 flex flex-col items-center justify-center min-h-[15rem] min-w-[20rem]"
   >
     {/* Title Section */}
@@ -167,9 +167,9 @@ export default function Hackathon() {
       <p className="p-4">Date: 24-12-2024</p>
       <p className="p-4">Time: 09:00  AM</p>
       <button className="p-4 bg-white text-lg border-2 border-[#4F709C]/50 hover:border-[#4F709C] rounded-full">
-      <Link href="https://www.google.com">
+      <Link href="https://forms.gle/F1DerQFZjeDt3UuaA">
         Register now
-        </Link>
+     </Link>
       </button>
     </div>
   </div>
