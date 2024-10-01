@@ -162,11 +162,11 @@ function HorizontalImageScroller({ images }) {
           Publications</center>
         </div>
       </div> */}
-<div className="flex flex-col items-center lg:flex-row lg:justify-around min-h-full p-4">
+<div className="flex flex-col items-center lg:flex-row lg:justify-around min-h-full p-4 ">
   {/* Industry Academia Meet Block */}
   <div
     onClick={() => handleRedirect("/hackathon")}
-    className="mt-5 bg-[#604CC3]/25 bg-opacity-20 p-6 rounded-lg mx-6 cursor-pointer hover:shadow-xl hover:bg-[#FEF9D9]/25 flex flex-col items-center justify-center h-[24rem] w-[24rem]"
+    className="mt-5 bg-[#604CC3]/25 bg-opacity-20 p-6 rounded-lg mx-6 cursor-pointer hover:shadow-xl hover:bg-[#FEF9D9]/25 flex flex-col items-center justify-center h-[24rem] w-[23rem]"
   >
     {/* Title Section */}
     <div className="flex-0.5 flex items-center justify-center">
@@ -186,7 +186,7 @@ function HorizontalImageScroller({ images }) {
   {/* Hackathon Block */}
   <div
     onClick={() => handleRedirect("/hackathon")}
-    className="mt-5 bg-[#604CC3]/25 bg-opacity-20 p-6 rounded-lg mx-6 cursor-pointer hover:shadow-xl hover:bg-[#FEF9D9]/25 flex flex-col items-center justify-center h-[24rem] w-[24rem]"
+    className="mt-5 bg-[#604CC3]/25 bg-opacity-20 p-6 rounded-lg mx-6 cursor-pointer hover:shadow-xl hover:bg-[#FEF9D9]/25 flex flex-col items-center justify-center h-[24rem] w-[23rem]"
   >
     {/* Title Section */}
     <div className="flex-0.5 flex items-center justify-center">
@@ -208,7 +208,7 @@ function HorizontalImageScroller({ images }) {
   {/* Journal Publications Block */}
   <div
     onClick={() => handleRedirect("/journalpublications")}
-    className="mt-5 bg-[#604CC3]/25 bg-opacity-100 p-6 rounded-lg mx-6 cursor-pointer hover:shadow-xl hover:bg-[#FEF9D9]/25 flex flex-col items-center justify-center h-[24rem] w-[24rem]"
+    className="mt-5 bg-[#604CC3]/25 bg-opacity-100 p-6 rounded-lg mx-6 cursor-pointer hover:shadow-xl hover:bg-[#FEF9D9]/25 flex flex-col items-center justify-center h-[24rem] w-[23rem]"
   >
     {/* Title Section */}
     <div className="flex-0.5 flex items-center justify-center">
@@ -449,92 +449,8 @@ function HorizontalImageScroller({ images }) {
     );
   };
   
-  
-  // const ResearchNames = () => {
-  //   const [isVisible, setIsVisible] = useState(false);
-  
-  //   // Array of researchers' names and image paths
-  //   const researchers = [
-  //     { name: 'Bob', imgSrc: '/images/people1.jpeg',position: 'Phd' },
-  //     { name: 'David', imgSrc: '/images/people2.jpeg' ,position: 'Associate Professor' },
-  //     { name: 'Alice', imgSrc: '/images/people3.jpeg' ,position: 'Senior Professor'},
-  //     { name: 'John', imgSrc: '/images/people4.jpeg' ,position: 'Phd'},
-  //   ];
-  
-  //   useEffect(() => {
-  //     const handleScroll = () => {
-  //       // Get the element after the function starts
-  //       const section = document.getElementById('research-names');
-    
-  //       // If the section element does not exist, exit early
-  //       if (!section) return;
-    
-  //       // Calculate the section's position relative to the viewport
-  //       const sectionTop = section.getBoundingClientRect().top;
-  //       const windowHeight = window.innerHeight;
-    
-  //       // Check if the section is in the viewport
-  //       if (sectionTop < windowHeight - 100) {
-  //         setIsVisible(true); // Apply transformation when scrolled into view
-  //       } else {
-  //         setIsVisible(false); // Remove transformation when out of view
-  //       }
-  //     };
-    
-  //     // Add the scroll event listener
-  //     window.addEventListener('scroll', handleScroll);
-    
-  //     // Clean up the event listener on component unmount
-  //     return () => {
-  //       window.removeEventListener('scroll', handleScroll);
-  //     };
-  //   }, []);
-    
-  
-  //   return (
-  //     <section
-  //       id="research-names"
-  //       className={`flex flex-col justify-center items-center bg-[#604CC3] bg-opacity-50 p-6 md:p-10 shadow-lg 
-  //         transition-transform duration-700 ease-in-out m-10
-  //         ${isVisible ? 'transform scale-105 opacity-100' : 'transform scale-90 opacity-0'}
-  //         `}
-  //     >
-  //       <div className="container p-4 md:p-10 bg-white rounded-lg shadow-md transition-transform duration-500 ease-in-out">
-  //         {/* Introduction Text */}
-  //         <p className="mb-6 md:text-xl font-bold text-[#604CC3] text-center tracking-wide">
-  //           Welcome to our organization. Below is a list of key individuals involved in this initiative:
-  //         </p>
-  
-  //         {/* Bullet Points with Images and Names */}
-  //         <ul className="list-none flex flex-col md:flex-row justify-center items-centers  text-lg text-gray-800 ">
-  //           {researchers.map((researcher, index) => (
-  //             <li
-  //               key={index}
-  //               className="flex flex-col items-center   hover:text-blue-600 transition-colors duration-300 ease-in-out"
-  //             >
-                
-  //               <div className="flex flex-col items-center  hover:bg-[#FEF9D9] rounded-md p-2 ">
-  //               <Image
-  //                 src={researcher.imgSrc}
-  //                 alt={researcher.name}
-  //                 width={200}
-  //                 height={200}
-  //                 className="m-4 rounded-full"
-  //               />
-  //                 <p className="text-lg font-bold">{researcher.name}</p>
-  //                 <p className="text-sm text-gray-600">{researcher.position}</p>
-
-  //               </div>
-                
-  //             </li>
-  //           ))}
-  //         </ul>
-  //       </div>
-  //     </section>
-  //   );
-  // };
-
   const ResearchNames = () => {
+    // Array of researchers' names and image paths
     const [isVisible, setIsVisible] = useState(false);
     const Patrons = [
       { name: 'Sri K.V Chowdary,IRS', imgSrc: 'https://www.vrsiddhartha.ac.in/wp-content/uploads/2019/09/Chancellor-K-V-Chowdary.jpg', position: 'Chancellor,SAHE' },
@@ -545,48 +461,54 @@ function HorizontalImageScroller({ images }) {
       { name: 'Prof. A. V. Ratna Prasad', imgSrc: 'https://www.vrsiddhartha.ac.in/wp-content/uploads/2024/09/principal_2024-1-275x300.jpg', position: 'Pro-Vice Chancellor, SAHE' },
     ];
 
-  // Split the researchers array into top image and bottom images
   const topResearcher = Patrons[0];
   const bottomResearchers = Patrons.slice(1);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const section = document.getElementById('research-names');
-
-      if (!section) return;
-
-      const sectionTop = section.getBoundingClientRect().top;
-      const windowHeight = window.innerHeight;
-
-      if (sectionTop < windowHeight - 100) {
-        setIsVisible(true);
-      } else {
-        setIsVisible(false);
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
-
-  return (
-    <section
-      id="research-names"
-      className={`flex flex-col justify-center items-center bg-[#604CC3] bg-opacity-50 p-6 shadow-lg
-        transition-transform duration-700 ease-in-out m-2
-        ${isVisible ? 'transform scale-105 opacity-100' : 'transform scale-90 opacity-0'}`}
-    >
-      <div className="container p-2 bg-white rounded-lg shadow-md transition-transform duration-500 ease-in-out">
-        {/* Introduction Text */}
-        <p className="mb-6 text-3xl font-bold text-[#604CC3] text-center tracking-wide">
+  
+    useEffect(() => {
+      const handleScroll = () => {
+        // Get the element after the function starts
+        const section = document.getElementById('research-names');
+    
+        // If the section element does not exist, exit early
+        if (!section) return;
+    
+        // Calculate the section's position relative to the viewport
+        const sectionTop = section.getBoundingClientRect().top;
+        const windowHeight = window.innerHeight;
+    
+        // Check if the section is in the viewport
+        if (sectionTop < windowHeight - 100) {
+          setIsVisible(true); // Apply transformation when scrolled into view
+        } else {
+          setIsVisible(false); // Remove transformation when out of view
+        }
+      };
+    
+      // Add the scroll event listener
+      window.addEventListener('scroll', handleScroll);
+    
+      // Clean up the event listener on component unmount
+      return () => {
+        window.removeEventListener('scroll', handleScroll);
+      };
+    }, []);
+    
+  
+    return (
+      <section
+        id="research-names"
+        className={`flex flex-col justify-center items-center bg-[#604CC3] bg-opacity-50 p-6 md:p-10 shadow-lg 
+          transition-transform duration-700 ease-in-out m-10
+          ${isVisible ? 'transform scale-105 opacity-100' : 'transform scale-90 opacity-0'}
+          `}
+      >
+        <div className="container p-4 md:p-10 bg-white rounded-lg shadow-md transition-transform duration-500 ease-in-out">
+          {/* Introduction Text */}
+          <p className="text-3xl font-bold text-[#604CC3] text-center">
           Patrons
         </p>
 
-        {/* Top Researcher */}
-        <div className="flex flex-col items-center  mb-10">
+        <div className="flex flex-col items-center m-6">
           <Image
             src={topResearcher.imgSrc}
             alt={topResearcher.name}
@@ -598,32 +520,25 @@ function HorizontalImageScroller({ images }) {
           <p className="text-sm text-gray-600">{topResearcher.position}</p>
         </div>
 
-        {/* Bottom Researchers */}
         <ul className="list-none flex flex-col md:flex-row justify-center items-center text-lg text-gray-800">
           {bottomResearchers.map((researcher, index) => (
-            <li
-              key={index}
-              className="flex flex-col items-center hover:text-blue-600 transition-colors duration-300 ease-in-out"
-            >
-             <div className="flex flex-col items-center hover:bg-[#FEF9D9] rounded-md p-2">
-  <Image
-    src={researcher.imgSrc}
-    alt={researcher.name}
-    width={150}
-    height={150}
-    className="m-4 w-[150px] h-[150px] object-cover "
-  />
-  <p className="text-lg font-bold">{researcher.name}</p>
-  <p className="text-sm text-gray-600">{researcher.position}</p>
-</div>
-
+            <li key={index} className="flex flex-col items-center p-2 m-2 hover:bg-[#FEF9D9] rounded-md">
+              <Image
+                src={researcher.imgSrc}
+                alt={researcher.name}
+                width={150}
+                height={150}
+                className="w-[150px] h-[150px] object-cover"
+              />
+              <p className="text-lg font-bold">{researcher.name}</p>
+              <p className="text-sm text-gray-600">{researcher.position}</p>
             </li>
           ))}
         </ul>
-      </div>
-    </section>
-  );
-};
+        </div>
+      </section>
+    );
+  };
 
 
 const CoordinatorsSection = () => {
