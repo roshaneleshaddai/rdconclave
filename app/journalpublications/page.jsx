@@ -269,7 +269,7 @@ export default function JournalPublications() {
           objectFit="cover"
           className='border-4 border-black'
           />
-          <p className='text-center text-2xl p-2'>Springer Lecture Notes in Networks & Systems</p>
+          <p className='text-center text-2xl p-2'>Springer Series</p>
         </div>
         
         <div className='flex justify-center'>
