@@ -69,7 +69,21 @@ export default function JournalPublications() {
     // },
     {
       sNo: 3,
-      name: "Springer Lecture Notes on Networks & Systems (Indexing: SCOPUS, INSPEC, WTI Frankfurt eG, zbMATH, SCImago)",
+      name: "Journal of Infrastructure, Policy and Development",
+      link: "https://systems.enpress-publisher.com/index.php/jipd",
+      quartile: "",
+      // apc: "12000 INR"
+    },
+    {
+      sNo: 4,
+      name: "Proceedings on Engineering sciences",
+      link: "https://pesjournal.net/calls_for_special_issues.php",
+      quartile: "",
+      // apc: "300 USD"
+    },
+    {
+      sNo: 5,
+      name: "Springer Lecture Series",
       link: "https://www.springer.com/series/15179",
       quartile: "",
       // apc: "12000 INR"
