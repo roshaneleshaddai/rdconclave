@@ -28,9 +28,9 @@ const Meet = () => {
       viewport={{ once: true }}
       className="bg-white  bg-opacity-50 shadow-md rounded-lg p-6 mb-10"
     >
-      <h2 className="text-4xl text-[#604CC3] font-semibold mb-4">Expected Industries</h2>
+      <h2 className="lg:text-4xl text-2xl text-[#604CC3] font-semibold mb-4">Expected Industries</h2>
         <hr className="h-1 my-8 bg-[#604CC3] border-0 w-1/4" />
-      <p className="text-xl mb-6">
+      <p className="text-lg lg:text-xl mb-6">
       The Industry-Academic Meet serves as a platform for professionals from various industries and academic institutions to come together and discuss the latest trends, challenges, and opportunities in their respective fields. This segment of the program aims to foster collaboration, spark new research ideas, and identify potential areas for partnerships. Industry representatives can share insights on real-world problems, while academics can present their research findings and discuss how they can be applied in practical settings. The meet will also include panel discussions, keynote speeches, and networking sessions to encourage open dialogue and idea exchange.
       </p>
       <div className="grid grid-cols-2 md:grid-cols-5 gap-4 border-2 border-[#213555] border-opacity-20 p-4">
@@ -95,7 +95,7 @@ const Meet = () => {
         </div>
 
         {/* Industries Section */}
-        <div className='m-10'>
+        <div className='lg:m-10 m-5'>
           <IndustriesSection />
         </div>
 
@@ -122,8 +122,8 @@ const Meet = () => {
             }}
             className="list-disc list-inside  space-y-4 text-xl text-gray-700"
           >
-            <h2 className="text-4xl text-[#604CC3] font-semibold mb-4">Expected Outcomes</h2>
-            <hr className="h-1 my-8 bg-[#604CC3] border-0 w-1/4" />
+            <h2 className="lg:text-4xl text-2xl text-[#604CC3] font-semibold mb-4">Expected Outcomes</h2>
+            <hr className="h-1 my-8 bg-[#604CC3] border-0 w-1/4 text-lg md:text-xl" />
             {expectedOutcomes.map((outcome, index) => (
               <motion.li
                 key={index}
