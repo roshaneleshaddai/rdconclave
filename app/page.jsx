@@ -561,8 +561,8 @@ const CoordinatorsSection = () => {
                 src="https://www.vrsiddhartha.ac.in/it/wp-content/uploads/2019/09/ithod.jpg"
                 alt="Dr.suneetha.M"
                 width={150}
-                height={150}
-                className="w-[150px] h-[150px] object-cover"
+                height={160}
+                className="w-[150px] h-[160px] object-cover"
               />
           <p className="text-blue-600 font-bold text-md">
             Prof. Suneetha M,
@@ -583,8 +583,8 @@ const CoordinatorsSection = () => {
                 src={coordinator.imgSrc}
                 alt={coordinator.name}
                 width={150}
-                height={150}
-                className="w-[150px] h-[150px] object-cover"
+                height={160}
+                className="w-[150px] h-[160px] object-cover"
               />
               <p className="text-base text-center text-blue-600 font-bold">{coordinator.name}</p>
               <p className="text-sm text-center text-gray-600">{coordinator.position}</p>
