@@ -552,7 +552,7 @@ const CoordinatorsSection = () => {
   const bottomCoordinators=Coordinators.slice(0);
   return (
     <div className="flex flex-col justify-center mt-16 items-center p-6 border border-gray-300 rounded-lg shadow-md bg-[#] ">
-      <div className="flex flex-col lg:flex-row justify-around  w-full ">
+      <div className="flex flex-col md:flex-row justify-around  w-full ">
         {/* Left section - Convenor */}
         <div className="text-center  mb-4 md:mb-0">
           <h2 className="text-red-600 font-bold text-lg">Convenor</h2>
