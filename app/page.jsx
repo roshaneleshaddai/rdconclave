@@ -576,7 +576,7 @@ const CoordinatorsSection = () => {
         {/* Right section - Coordinators */}
         <div className="text-center ">
           <h2 className="text-red-600 font-bold text-lg">Coordinators</h2>
-          <ul className="list-none flex flex-col lg:flex-row justify-center items-center text-lg text-gray-800">
+          <ul className="list-none flex flex-col md:flex-row justify-center items-center text-lg text-gray-800">
           {bottomCoordinators.map((coordinator, index) => (
             <li key={index} className="flex flex-col items-center p-2 m-2 rounded-md">
               <Image
