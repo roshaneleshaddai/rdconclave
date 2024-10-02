@@ -6,10 +6,11 @@ import Link from 'next/link';
 
 
 export default function Hackathon() {
-  const [isInView, setIsInView] = useState(false);
+  const [isLeftInView, setIsLeftInView] = useState(false);
+  const [isRightInView, setIsRightInView] = useState(false);
   const [timeLeft, setTimeLeft] = useState({});
-  const [hasScrolled, setHasScrolled] = useState(false);
-  const sectionRef = useRef(null);
+  const sectionLeftRef = useRef(null);
+  const sectionRightRef = useRef(null);
 
   const handleRedirect = (url) => {
     window.location.href = url;
@@ -26,12 +27,8 @@ export default function Hackathon() {
 
       if (difference > 0) {
         const days = Math.floor(difference / (1000 * 60 * 60 * 24));
-        const hours = Math.floor(
-          (difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
-        );
-        const minutes = Math.floor(
-          (difference % (1000 * 60 * 60)) / (1000 * 60)
-        );
+        const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
         const seconds = Math.floor((difference % (1000 * 60)) / 1000);
 
         setTimeLeft({
@@ -54,31 +51,34 @@ export default function Hackathon() {
     // Start countdown on component mount
     const interval = setInterval(calculateTimeLeft, 1000);
 
-    // Intersection Observer
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const entry = entries[0];
-        if (entry.isIntersecting) {
-          setIsInView(true);
-          setHasScrolled(true);
-        } else if (hasScrolled && window.scrollY === 0) {
-          setIsInView(false);
-        }
-      },
-      { threshold: 0.3 }
-    );
+    // Intersection Observer for swipe animations
+    const observerOptions = {
+      threshold: 0.3, // Adjust based on when you want the animation to trigger
+    };
 
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
+    const leftObserver = new IntersectionObserver((entries) => {
+      const entry = entries[0];
+      if (entry.isIntersecting) {
+        setIsLeftInView(true);
+      }
+    }, observerOptions);
+
+    const rightObserver = new IntersectionObserver((entries) => {
+      const entry = entries[0];
+      if (entry.isIntersecting) {
+        setIsRightInView(true);
+      }
+    }, observerOptions);
+
+    if (sectionLeftRef.current) leftObserver.observe(sectionLeftRef.current);
+    if (sectionRightRef.current) rightObserver.observe(sectionRightRef.current);
 
     return () => {
       clearInterval(interval);
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
-      }
+      if (sectionLeftRef.current) leftObserver.unobserve(sectionLeftRef.current);
+      if (sectionRightRef.current) rightObserver.unobserve(sectionRightRef.current);
     };
-  }, [targetDate, hasScrolled]);
+  }, [targetDate]);
 
   const expectedOutcomes = [
     {
@@ -104,7 +104,7 @@ export default function Hackathon() {
   ];
 
   return (
-    <div className="relative min-h-screen w-screen overflow-hidden font-sans mt-10">
+    <div className="relative font-SUSE min-h-screen w-screen font-SUSE mt-52">
       {/* Background Video */}
       {/* <video
         autoPlay
@@ -116,175 +116,154 @@ export default function Hackathon() {
       </video> */}
 
       {/* Main Content */}
-      <div className="mt-44 pb-[80px]">
+      <div className="pb-20">
         
-        
-        {/* Hackathon Details */}
         <div
-          ref={sectionRef}
-          className="bg-[#604CC3]/25 top-0 p-10 rounded-lg m-10"
+          className="mt-1 bg-[#604CC3]/25 bg-opacity-20 p-8 rounded-lg mx-6 transition-opacity duration-1000 "
         >
-          <h1 className="text-4xl font-bold text-[#604CC3] text-center">Hackathon</h1>
+          <h1 className="text-4xl  font-bold text-center text-[#604CC3]">HackWeb Challenge</h1>
+          
         </div>
 
 
-        <div className="flex flex-col md:flex-row justify-around min-h-full  md:p-5 md:px-60 space-y-4">
+        <div className="flex flex-col items-center lg:flex-row lg:justify-around min-h-full p-4 justify-around">
   <div
-    // onClick={() => handleRedirect("/ideathon")}
-    className="mt-5 bg-[#604CC3]/25 bg-opacity-20 p-6 rounded-lg mx-6 cursor-pointer  hover:shadow-xl hover:bg-[#604CC3]/50 flex flex-col items-center justify-center min-h-[15rem] min-w-[20rem]"
+    onClick={() => handleRedirect("/ideathon")}
+    className="my-5 bg-[#604CC3]/25 bg-opacity-20 p-6 rounded-lg mx-8 cursor-pointer  hover:shadow-xl hover:bg-[#FEF9D9]/25 flex flex-col items-center justify-center h-[24rem] w-[23rem]"
   >
     {/* Title Section */}
-    <div className="flex-1 flex items-center justify-center">
+    <div className="flex-0.5 flex items-center justify-center ">
       <h1 className="text-3xl sm:text-4xl text-center font-bold text-[#604CC3] ">
         Ideathon
       </h1>
     </div>
     {/* Date, Time, and Button Section */}
     <div className="flex-1 flex flex-col items-center justify-center font-bold">
-      <p className="p-4">Date: 31-12-2024</p>
-      <p className="p-4">Time: 09:00 AM</p>
-      <button className="p-4 bg-white text-lg border-2 border-[#4F709C]/40 hover:border-[#604CC3]  rounded-full">
-      <Link href="https://forms.gle/mBcnvNzjyf5owmZB7">
+      <p className="text-center">Registration Deadline:<span className="text-red-500"> November 2, 2024</span></p>
+      <p className="text-center">Final Round Notification:<span className="text-red-500"> December 2, 2024</span></p>
+      <p className="text-center">Final Round:<span className="text-red-500"> January 24, 2024, 12 PM - January 25, 2024, 12 PM</span></p>
+      <button className="p-2 m-2 bg-white text-lg border-2 border-[#4F709C]/40 hover:border-[#604CC3]  rounded-full">
+        <Link href="https://forms.gle/mBcnvNzjyf5owmZB7">
         Register now
-       </Link>
+        </Link>
       </button>
     </div>  
   </div>
 
   {/* webathon Block */}
   <div
-    // onClick={() => handleRedirect("/webathon")}
-    className="bg-[#604CC3]/25 bg-opacity-20 p-6 rounded-lg mx-6 cursor-pointer hover:shadow-xl hover:bg-[#604CC3]/50 flex flex-col items-center justify-center min-h-[15rem] min-w-[20rem]"
+    onClick={() => handleRedirect("/webathon")}
+    className="my-5 bg-[#604CC3]/25 bg-opacity-20 p-6 rounded-lg mx-8 cursor-pointer  hover:shadow-xl hover:bg-[#FEF9D9]/25 flex flex-col items-center justify-center h-[24rem] w-[23rem]"
   >
     {/* Title Section */}
-    <div className="flex-1 flex items-center justify-center">
+    <div className="flex-0.5 flex items-center justify-center">
       <h1 className="text-3xl sm:text-4xl text-center font-bold text-[#604CC3]">
         Webathon
       </h1>
     </div>
     {/* Date, Time, and Button Section */}
     <div className="flex-1 flex flex-col items-center justify-center font-bold">
-      <p className="p-4">Date: 24-12-2024</p>
-      <p className="p-4">Time: 09:00  AM</p>
-      <button className="p-4 bg-white text-lg border-2 border-[#4F709C]/50 hover:border-[#4F709C] rounded-full">
+      <p className="text-center">Registration Deadline:<span className="text-red-500"> November 2, 2024</span></p>
+      <p className="text-center">Final Round Notification:<span className="text-red-500"> December 2, 2024</span></p>
+      <p className="text-center">Final Round:<span className="text-red-500"> January 24, 2024, 12 PM - January 25, 2024, 12 PM</span></p>
+      
+      <button className="p-2 m-2 bg-white text-lg border-2 border-[#4F709C]/50 hover:border-[#4F709C] rounded-full">
       <Link href="https://forms.gle/F1DerQFZjeDt3UuaA">
         Register now
-     </Link>
+        </Link>
       </button>
     </div>
   </div>
 
 </div>
 
-
         {/* Information Boxes and Countdown Timer */}
-        <div className="flex flex-col md:flex-row justify-around items-center space-y-10 md:space-y-0 mt-5">
+        <div className="flex flex-col lg:flex-row justify-around items-center space-y-10 md:space-y-0 mt-5">
           {/* Left Information Box */}
-          <div
-            className={`px-8 md:px-10 py-4 md:py-5 w-full md:w-1/2 bg-white flex justify-around items-center rounded-lg shadow-md transition-transform duration-700 ${
-              isInView ? 'animate-swipeInLeft' : '-translate-x-full'
+          <motion.div
+            ref={sectionLeftRef}
+            className={`px-8 md:px-10 py-2 md:py-5 w-full md:w-1/2 bg-white flex justify-center items-center rounded-lg shadow-md lg:h-[20rem] transition-transform duration-700 ${
+              isLeftInView ? 'animate-swipeInLeft' : 'opacity-0'
             }`}
           >
-            <p className="text-base md:text-lg justify-center font-normal text-black mt-2 min-h-[17rem]">
-            Dive into the Student Hackathon—where innovation meets action! Team
-            up with fellow students to tackle real-world problems and showcase
-            your ingenuity. This thrilling competition is your chance to shine,
-            get noticed by industry experts, and turn your ideas into impactful
-            solutions. Join us for an unforgettable experience and be a part of
-            the next big breakthrough!
-          </p>
-          
-          </div>
+            <p className="text-base md:text-lg justify-center font-normal text-black mt-2 ">
+              Dive into the Student Hackathon—where innovation meets action! Team up with fellow students to tackle real-world problems and showcase your ingenuity. This thrilling competition is your chance to shine, get noticed by industry experts, and turn your ideas into impactful solutions. Join us for an unforgettable experience and be a part of the next big breakthrough!
+            </p>
+          </motion.div>
 
           {/* Countdown Timer */}
-          <div className="w-full md:w-1/2 h-80 md:h-96 rounded-2xl flex flex-col gap-6 items-center justify-center bg-cover bg-center mx-5 md:mx-10 p-4">
-            <div className="text-2xl md:text-4xl font-bold text-[#604CC3]">
+          <div className="w-full lg:w-[40%] h-auto lg:h-96 rounded-2xl flex flex-col gap-4 items-center justify-center bg-cover bg-center mx-5 lg:mx-10 p-4">
+            <div className="text-xl lg:text-3xl font-bold text-[#604CC3] text-center">
               Let's go...
             </div>
-            <div className="flex items-start justify-center w-full gap-2 md:gap-4">
+            <div className="flex items-center justify-center w-full gap-2 lg:gap-3">
               {/* Days */}
               <div className="timer">
-                <div className="rounded-xl bg-[#604CC3]/25 backdrop-blur-sm py-3 min-w-20 md:min-w-24 flex items-center justify-center flex-col gap-1 px-3">
-                  <h3 className="font-semibold text-3xl md:text-4xl text-black text-center">
+                <div className="rounded-xl bg-[#604CC3]/25 backdrop-blur-sm py-2 px-2 min-w-[4.5rem] lg:min-w-[5.5rem] flex items-center justify-center flex-col">
+                  <h3 className="font-semibold text-2xl lg:text-3xl text-black text-center">
                     {timeLeft?.days || 0}
                   </h3>
-                  <p className="text-sm md:text-lg uppercase font-normal text-black mt-1 text-center">
-                    Days
-                  </p>
+                  <p className="text-xs lg:text-base uppercase font-normal text-black text-center">Days</p>
                 </div>
               </div>
-
               {/* Hours */}
               <div className="timer">
-                <div className="rounded-xl bg-[#604CC3]/25 backdrop-blur-sm py-3 min-w-20 md:min-w-24 flex items-center justify-center flex-col gap-1 px-3">
-                  <h3 className="font-semibold text-3xl md:text-4xl text-black text-center">
+                <div className="rounded-xl bg-[#604CC3]/25 backdrop-blur-sm py-2 px-2 min-w-[4.5rem] lg:min-w-[5.5rem] flex items-center justify-center flex-col">
+                  <h3 className="font-semibold text-2xl lg:text-3xl text-black text-center">
                     {timeLeft?.hours || 0}
                   </h3>
-                  <p className="text-sm md:text-lg uppercase font-normal text-black mt-1 text-center">
-                    Hours
-                  </p>
+                  <p className="text-xs lg:text-base uppercase font-normal text-black text-center">Hours</p>
                 </div>
               </div>
-
               {/* Minutes */}
               <div className="timer">
-                <div className="rounded-xl bg-[#604CC3]/25 backdrop-blur-sm py-3 min-w-20 md:min-w-24 flex items-center justify-center flex-col gap-1 px-3">
-                  <h3 className="font-semibold text-3xl md:text-4xl text-black text-center">
+                <div className="rounded-xl bg-[#604CC3]/25 backdrop-blur-sm py-2 px-2 min-w-[4.5rem] lg:min-w-[5.5rem] flex items-center justify-center flex-col">
+                  <h3 className="font-semibold text-2xl lg:text-3xl text-black text-center">
                     {timeLeft?.minutes || 0}
                   </h3>
-                  <p className="text-sm md:text-lg uppercase font-normal text-black mt-1 text-center">
-                    Minutes
-                  </p>
+                  <p className="text-xs lg:text-base uppercase font-normal text-black text-center">Minutes</p>
                 </div>
               </div>
-
               {/* Seconds */}
               <div className="timer">
-                <div className="rounded-xl bg-[#604CC3]/25 backdrop-blur-sm py-3 min-w-20 md:min-w-24 flex items-center justify-center flex-col gap-1 px-3">
-                  <h3 className="font-semibold text-3xl md:text-4xl text-black text-center">
+                <div className="rounded-xl bg-[#604CC3]/25 backdrop-blur-sm py-2 px-2 min-w-[4.5rem] lg:min-w-[5.5rem] flex items-center justify-center flex-col">
+                  <h3 className="font-semibold text-2xl lg:text-3xl text-black text-center">
                     {timeLeft?.seconds || 0}
                   </h3>
-                  <p className="text-sm md:text-lg uppercase font-normal text-black mt-1 text-center">
-                    Seconds
-                  </p>
+                  <p className="text-xs lg:text-base uppercase font-normal text-black text-center">Seconds</p>
                 </div>
               </div>
             </div>
           </div>
 
           {/* Right Information Box */}
-          <div
-            className={`px-8 md:px-10  w-full md:w-1/2 bg-white flex-co justify-around items-center rounded-lg shadow-md transition-transform duration-700 ${
-              isInView ? 'animate-swipeInRight' : 'translate-x-full'
+          <motion.div
+            ref={sectionRightRef}
+            className={`px-8 md:px-10 w-full md:w-1/2 bg-white flex-co justify-around items-center rounded-lg shadow-md lg:h-[20rem] transition-transform duration-700 ${
+              isRightInView ? 'animate-swipeInRight' : 'opacity-0'
             }`}
           >
-            
-            <div className='flex'>
-
-            <div className="flex flex-col items-center justify-center h-40">
-              <img src="/images/prize1.png" className="w-20 h-20" alt="Prize 1" />
-              <div className="w-40 text-center font-serif mt-2">₹25,000</div>
-            </div>
-            <div className="flex flex-col items-center justify-center">
-              <img src="/images/prize2.png" className="w-20 h-20" alt="Prize 2" />
-              <div className="w-40 text-center font-serif mt-2">₹20,000</div>
-            </div>
-            </div>
-            <div className='flex'>
-            <div className="flex flex-col items-center justify-center h-40">
-              <img src="/images/grpicon.png" className="w-20 h-20" alt="Group Icon" />
-              <div className="w-40 text-center font-serif mt-2">
-                Team of 4-5
+            <div className="flex justify-center items-center">
+              <div className="flex flex-col items-center justify-center h-40">
+                <img src="/images/prize1.png" className="w-20 h-20" alt="Prize 1" />
+                <div className="w-40 text-center mt-2">₹25,000</div>
+              </div>
+              <div className="flex flex-col items-center justify-center">
+                <img src="/images/prize2.png" className="w-20 h-20" alt="Prize 2" />
+                <div className="w-40 text-center mt-2">₹20,000</div>
               </div>
             </div>
-            <div className="flex flex-col items-center justify-center h-40">
-              <img src="/images/feeicon.png" className="w-20 h-20" alt="Fee Icon" />
-              <div className="w-40 text-center font-serif mt-2">
-                Registration fee: ₹200
+            <div className="flex justify-center items-center">
+              <div className="flex flex-col items-center justify-center h-40">
+                <img src="/images/grpicon.png" className="w-20 h-20" alt="Group Icon" />
+                <div className="w-40 text-center mt-2">Team of 4-5</div>
+              </div>
+              <div className="flex flex-col items-center justify-center">
+                <img src="/images/feeicon.png" className="w-20 h-20" alt="Fee Icon" />
+                <div className="w-40 text-center mt-2">Registration fee: ₹200</div>
               </div>
             </div>
-          </div>
-          </div>
+          </motion.div>
         </div>
 
         {/* Expected Outcomes Section */}
@@ -293,9 +272,9 @@ export default function Hackathon() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
           viewport={{ once: true }}
-          className="bg-[#604CC3]/25 shadow-md rounded-lg p-6 mt-10 mx-10"
+          className="bg-[#604CC3]/25 shadow-md rounded-lg p-6 mt-10 mx-5 md:mx-10"
         >
-          <h2 className="text-4xl text-[#604CC3] font-semibold mb-4">Expected Outcomes</h2>
+          <h2 className="text-2xl md:text-4xl text-[#604CC3] font-semibold mb-4">Expected Outcomes</h2>
           <hr className="h-1 my-4 bg-[#604CC3] border-0  w-1/4" />
           <motion.ul
             initial="hidden"
@@ -304,7 +283,7 @@ export default function Hackathon() {
               hidden: { opacity: 0 },
               visible: { opacity: 1, transition: { staggerChildren: 0.3 } },
             }}
-            className="list-disc list-inside space-y-4 text-xl text-gray-700"
+            className="list-disc list-inside space-y-4 text-lg text-gray-700"
           >
             {expectedOutcomes.map((outcome, index) => (
               <motion.li
