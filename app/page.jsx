@@ -166,7 +166,7 @@ function HorizontalImageScroller({ images }) {
   {/* Industry Academia Meet Block */}
   <div
     onClick={() => handleRedirect("/hackathon")}
-    className="mt-5 bg-[#604CC3]/25 bg-opacity-20 p-6 rounded-lg mx-6 cursor-pointer hover:shadow-xl hover:bg-[#FEF9D9]/25 flex flex-col items-center justify-center h-[24rem] w-[23rem]"
+    className="mt-5 bg-[#604CC3]/25 bg-opacity-20 p-6 rounded-lg mx-6 cursor-pointer hover:shadow-xl hover:bg-[#FEF9D9]/25 flex flex-col items-center justify-center h-[24rem] lg:w-[23rem] w-[22rem]"
   >
     {/* Title Section */}
     <div className="flex-0.5 flex items-center justify-center">
@@ -186,7 +186,7 @@ function HorizontalImageScroller({ images }) {
   {/* Hackathon Block */}
   <div
     onClick={() => handleRedirect("/hackathon")}
-    className="mt-5 bg-[#604CC3]/25 bg-opacity-20 p-6 rounded-lg mx-6 cursor-pointer hover:shadow-xl hover:bg-[#FEF9D9]/25 flex flex-col items-center justify-center h-[24rem] w-[23rem]"
+    className="mt-5 bg-[#604CC3]/25 bg-opacity-20 p-6 rounded-lg mx-6 cursor-pointer hover:shadow-xl hover:bg-[#FEF9D9]/25 flex flex-col items-center justify-center h-[24rem] lg:w-[23rem] w-[22rem]"
   >
     {/* Title Section */}
     <div className="flex-0.5 flex items-center justify-center">
@@ -208,7 +208,7 @@ function HorizontalImageScroller({ images }) {
   {/* Journal Publications Block */}
   <div
     onClick={() => handleRedirect("/journalpublications")}
-    className="mt-5 bg-[#604CC3]/25 bg-opacity-100 p-6 rounded-lg mx-6 cursor-pointer hover:shadow-xl hover:bg-[#FEF9D9]/25 flex flex-col items-center justify-center h-[24rem] w-[23rem]"
+    className="mt-5 bg-[#604CC3]/25 bg-opacity-100 p-6 rounded-lg mx-6 cursor-pointer hover:shadow-xl hover:bg-[#FEF9D9]/25 flex flex-col items-center justify-center h-[24rem] lg:w-[23rem] w-[22rem]"
   >
     {/* Title Section */}
     <div className="flex-0.5 flex items-center justify-center">
@@ -498,7 +498,7 @@ function HorizontalImageScroller({ images }) {
       <section
         id="research-names"
         className={`flex flex-col justify-center items-center bg-[#604CC3] bg-opacity-50 p-6 md:p-10 shadow-lg 
-          transition-transform duration-700 ease-in-out m-10
+          transition-transform duration-700 ease-in-out md:m-10 my-10
           ${isVisible ? 'transform scale-105 opacity-100' : 'transform scale-90 opacity-0'}
           `}
       >
@@ -520,7 +520,7 @@ function HorizontalImageScroller({ images }) {
           <p className="text-sm text-gray-600">{topResearcher.position}</p>
         </div>
 
-        <ul className="list-none flex flex-col md:flex-row justify-center items-center text-lg text-gray-800">
+        <ul className="list-none flex flex-col lg:flex-row justify-center items-center text-lg text-gray-800">
           {bottomResearchers.map((researcher, index) => (
             <li key={index} className="flex flex-col items-center p-2 m-2 rounded-md">
               <Image
@@ -530,8 +530,8 @@ function HorizontalImageScroller({ images }) {
                 height={150}
                 className="w-[150px] h-[150px] object-cover"
               />
-              <p className="text-lg font-bold">{researcher.name}</p>
-              <p className="text-sm text-gray-600">{researcher.position}</p>
+              <p className="text-lg text-center font-bold">{researcher.name}</p>
+              <p className="text-sm text-center text-gray-600">{researcher.position}</p>
             </li>
           ))}
         </ul>
@@ -551,8 +551,8 @@ const CoordinatorsSection = () => {
     
   const bottomCoordinators=Coordinators.slice(0);
   return (
-    <div className="flex flex-col justify-center mt-6 items-center p-6 border border-gray-300 rounded-lg shadow-md bg-[#] ">
-      <div className="flex flex-col md:flex-row justify-around  w-full ">
+    <div className="flex flex-col justify-center mt-16 items-center p-6 border border-gray-300 rounded-lg shadow-md bg-[#] ">
+      <div className="flex flex-col lg:flex-row justify-around  w-full ">
         {/* Left section - Convenor */}
         <div className="text-center  mb-4 md:mb-0">
           <h2 className="text-red-600 font-bold text-lg">Convenor</h2>
@@ -576,7 +576,7 @@ const CoordinatorsSection = () => {
         {/* Right section - Coordinators */}
         <div className="text-center ">
           <h2 className="text-red-600 font-bold text-lg">Coordinators</h2>
-          <ul className="list-none flex flex-col md:flex-row justify-center items-center text-lg text-gray-800">
+          <ul className="list-none flex flex-col lg:flex-row justify-center items-center text-lg text-gray-800">
           {bottomCoordinators.map((coordinator, index) => (
             <li key={index} className="flex flex-col items-center p-2 m-2 rounded-md">
               <Image
@@ -586,8 +586,8 @@ const CoordinatorsSection = () => {
                 height={150}
                 className="w-[150px] h-[150px] object-cover"
               />
-              <p className="text-base text-blue-600 font-bold">{coordinator.name}</p>
-              <p className="text-sm text-gray-600">{coordinator.position}</p>
+              <p className="text-base text-center text-blue-600 font-bold">{coordinator.name}</p>
+              <p className="text-sm text-center text-gray-600">{coordinator.position}</p>
             </li>
           ))}
         </ul>
