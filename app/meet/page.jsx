@@ -105,25 +105,19 @@ const Meet = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
           viewport={{ once: true }}
-          className="bg-[#604CC3]/25 shadow-md rounded-lg p-6 mb-10 mx-10"
+          className="bg-[#604CC3]/25 shadow-md rounded-lg p-6 mt-10 mx-5 md:mx-10"
         >
-
+          <h2 className="text-2xl md:text-4xl text-[#604CC3] font-semibold mb-4">Expected Outcomes</h2>
+          <hr className="h-1 my-4 bg-[#604CC3] border-0  w-1/4" />
           <motion.ul
             initial="hidden"
             whileInView="visible"
             variants={{
               hidden: { opacity: 0 },
-              visible: { 
-                opacity: 1, 
-                transition: { 
-                  staggerChildren: 0.3 
-                } 
-              },
+              visible: { opacity: 1, transition: { staggerChildren: 0.3 } },
             }}
-            className="list-disc list-inside  space-y-4 text-xl text-gray-700"
+            className="list-disc list-inside space-y-4 text-lg md:text-xl text-gray-700"
           >
-            <h2 className="lg:text-4xl text-2xl text-[#604CC3] font-semibold mb-4">Expected Outcomes</h2>
-            <hr className="h-1 my-8 bg-[#604CC3] border-0 w-1/4 text-lg md:text-xl" />
             {expectedOutcomes.map((outcome, index) => (
               <motion.li
                 key={index}
@@ -131,7 +125,7 @@ const Meet = () => {
                   hidden: { opacity: 0, y: 20 },
                   visible: { opacity: 1, y: 0 },
                 }}
-                className="transition-opacity  duration-500"
+                className="transition-opacity duration-500"
               >
                 <strong>{outcome.title}:</strong> {outcome.description}
               </motion.li>
