@@ -262,14 +262,14 @@ export default function JournalPublications() {
 
         <div className='flex flex-col items-center'>
           <Image
-          src="/images/splingerbook.png"
-          alt="splinger book"
+          src="/images/springer.png"
+          alt="springer"
           width={250} 
           height={250} 
           objectFit="cover"
           className='border-4 border-black'
           />
-          <p className='text-center text-2xl p-2'>Springer Lecture Notes in Networks & Systemss</p>
+          <p className='text-center text-2xl p-2'>Springer Lecture Notes in Networks & Systems</p>
         </div>
         
         <div className='flex justify-center'>
