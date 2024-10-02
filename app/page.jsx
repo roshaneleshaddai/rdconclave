@@ -176,7 +176,7 @@ function HorizontalImageScroller({ images }) {
     </div>
     {/* Date, Time, and Button Section */}
     <div className="flex-1 flex flex-col items-center justify-center font-bold">
-    <p className="text-center">Date: November 2, 2024</p>
+    <p className="text-center">Date:<span className="text-red-500"> November 2, 2024</span></p>
       <button className="p-2 m-2 bg-white text-lg border-2 border-[#4F709C]/50 hover:border-[#4F709C] rounded-full">
         Know more..
       </button>
@@ -196,9 +196,9 @@ function HorizontalImageScroller({ images }) {
     </div>
     {/* Date, Time, and Button Section */}
     <div className="flex-1 flex flex-col items-center justify-center font-bold">
-      <p className="text-center">Registration Deadline: November 2, 2024</p>
-      <p className="text-center">Final Round Notification: December 2, 2024</p>
-      <p className="text-center">Final Round: January 24, 2024, 12 PM - January 25, 2024, 12 PM</p>
+      <p className="text-center">Registration Deadline:<span className="text-red-500"> November 2, 2024</span></p>
+      <p className="text-center">Final Round Notification:<span className="text-red-500"> December 2, 2024</span></p>
+      <p className="text-center">Final Round:<span className="text-red-500"> January 24, 2024, 12 PM - January 25, 2024, 12 PM</span></p>
       <button className="p-2 m-2 bg-white text-lg border-2 border-[#4F709C]/50 hover:border-[#4F709C] rounded-full">
         Know more..
       </button>
@@ -218,9 +218,9 @@ function HorizontalImageScroller({ images }) {
     </div>
     {/* Date, Time, and Button Section */}
     <div className="flex-1 flex flex-col items-center justify-center font-bold">
-      <p className="text-center">Submission Deadline: December 20, 2024</p>
-      <p className="text-center">Acceptance Notification: January 5, 2025</p>
-      <p className="text-center">Event Registration Deadline: October 10, 2025</p>
+      <p className="text-center">Submission Deadline:<span className="text-red-500"> December 20, 2024</span></p>
+      <p className="text-center">Acceptance Notification:<span className="text-red-500"> January 5, 2025</span></p>
+      <p className="text-center">Event Registration Deadline:<span className="text-red-500"> October 10, 2025</span></p>
       <button className="p-2 m-2 bg-white text-lg border-2 border-[#4F709C]/50 hover:border-[#4F709C] rounded-full">
         Know more..
       </button>
@@ -522,7 +522,7 @@ function HorizontalImageScroller({ images }) {
 
         <ul className="list-none flex flex-col md:flex-row justify-center items-center text-lg text-gray-800">
           {bottomResearchers.map((researcher, index) => (
-            <li key={index} className="flex flex-col items-center p-2 m-2 hover:bg-[#FEF9D9] rounded-md">
+            <li key={index} className="flex flex-col items-center p-2 m-2 rounded-md">
               <Image
                 src={researcher.imgSrc}
                 alt={researcher.name}
@@ -542,29 +542,56 @@ function HorizontalImageScroller({ images }) {
 
 
 const CoordinatorsSection = () => {
+  
+  const Coordinators = [
+    { name: 'Dr. Lakshmi Lydia E', imgSrc: '/images/laxmimam.png', position: 'Professor' },
+    { name: 'Dr. Sandeep Y', imgSrc: '/images/sandeepsir.png', position: 'Assistant Professor' },
+    ];
+
+    
+  const bottomCoordinators=Coordinators.slice(0);
   return (
     <div className="flex flex-col justify-center mt-6 items-center p-6 border border-gray-300 rounded-lg shadow-md bg-[#] ">
       <div className="flex flex-col md:flex-row justify-around  w-full ">
         {/* Left section - Convenor */}
         <div className="text-center  mb-4 md:mb-0">
           <h2 className="text-red-600 font-bold text-lg">Convenor</h2>
+          <li className="flex flex-col items-center p-2 m-2 rounded-md">
+          <Image
+                src="https://www.vrsiddhartha.ac.in/it/wp-content/uploads/2019/09/ithod.jpg"
+                alt="Dr.suneetha.M"
+                width={150}
+                height={150}
+                className="w-[150px] h-[150px] object-cover"
+              />
           <p className="text-blue-600 font-bold text-md">
             Prof. Suneetha M,
           </p>
           <p className="text-black text-sm">
             Dean-R&D, IQAC, HoD-IT
           </p>
+          </li>
         </div>
 
         {/* Right section - Coordinators */}
         <div className="text-center ">
           <h2 className="text-red-600 font-bold text-lg">Coordinators</h2>
-          <p className="text-blue-600 font-bold text-md">
-            Dr. Lakshmi Lydia E, <span className="text-black">Professor</span>
-          </p>
-          <p className="text-blue-600 font-bold text-md">
-            Dr. Sandeep Y, <span className="text-black">Assistant Professor</span>
-          </p>
+          <ul className="list-none flex flex-col md:flex-row justify-center items-center text-lg text-gray-800">
+          {bottomCoordinators.map((coordinator, index) => (
+            <li key={index} className="flex flex-col items-center p-2 m-2 rounded-md">
+              <Image
+                src={coordinator.imgSrc}
+                alt={coordinator.name}
+                width={150}
+                height={150}
+                className="w-[150px] h-[150px] object-cover"
+              />
+              <p className="text-base text-blue-600 font-bold">{coordinator.name}</p>
+              <p className="text-sm text-gray-600">{coordinator.position}</p>
+            </li>
+          ))}
+        </ul>
+
         </div>
       </div>
 
