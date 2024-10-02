@@ -129,7 +129,7 @@ export default function Hackathon() {
         <div className="flex flex-col items-center lg:flex-row lg:justify-around min-h-full p-4 justify-around">
   <div
     onClick={() => handleRedirect("/ideathon")}
-    className="my-5 bg-[#604CC3]/25 bg-opacity-20 p-6 rounded-lg mx-8 cursor-pointer  hover:shadow-xl hover:bg-[#FEF9D9]/25 flex flex-col items-center justify-center h-[24rem] w-[23rem]"
+    className="my-5 bg-[#604CC3]/25 bg-opacity-20 p-6 rounded-lg mx-8 cursor-pointer  hover:shadow-xl hover:bg-[#FEF9D9]/25 flex flex-col items-center justify-center h-[24rem] lg:w-[23rem] w-[22rem]"
   >
     {/* Title Section */}
     <div className="flex-0.5 flex items-center justify-center ">
@@ -153,7 +153,7 @@ export default function Hackathon() {
   {/* webathon Block */}
   <div
     onClick={() => handleRedirect("/webathon")}
-    className="my-5 bg-[#604CC3]/25 bg-opacity-20 p-6 rounded-lg mx-8 cursor-pointer  hover:shadow-xl hover:bg-[#FEF9D9]/25 flex flex-col items-center justify-center h-[24rem] w-[23rem]"
+    className="my-5 bg-[#604CC3]/25 bg-opacity-20 p-6 rounded-lg mx-8 cursor-pointer  hover:shadow-xl hover:bg-[#FEF9D9]/25 flex flex-col items-center justify-center h-[24rem] lg:w-[23rem] w-[22rem]"
   >
     {/* Title Section */}
     <div className="flex-0.5 flex items-center justify-center">
