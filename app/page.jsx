@@ -520,7 +520,7 @@ function HorizontalImageScroller({ images }) {
           <p className="text-sm text-gray-600">{topResearcher.position}</p>
         </div>
 
-        <ul className="list-none flex flex-col lg:flex-row justify-center items-center text-lg text-gray-800">
+        <ul className="list-none flex flex-col md:flex-row justify-center items-center text-lg text-gray-800">
           {bottomResearchers.map((researcher, index) => (
             <li key={index} className="flex flex-col items-center p-2 m-2 rounded-md">
               <Image
