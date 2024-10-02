@@ -17,14 +17,14 @@ const Footer = () => {
           <div className="mb-6 md:mb-0">
             <h2 className="text-lg font-semibold mb-2">Contact Numbers</h2>
             <p><FaPhone className="inline mr-2" /> Dr. Jaya Prakash S - 9848143200, Dr. Gargi M - 8886599444</p>
-            <p><FaPhone className="inline mr-2" /> Eleshaddai Roshan - 9618227549 , Neeraja - 8341323299</p>
+            <p><FaPhone className="inline mr-2" /> Eleshaddai Roshan - 9618227549 , Neeraja Gurram - 8341323299</p>
           </div>
 
           {/* Social Media Links */}
           <div>
             <h2 className="text-lg font-semibold mb-2">Follow Us</h2>
             <div className="flex space-x-4">
-              <a href="https://www.instagram.com/explore/locations/923236832/velagapudi-ramakrishna-siddhartha-engineering-college/" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.instagram.com/research_conclave?igsh=djZhMmsydThidGZj" target="_blank" rel="noopener noreferrer">
                 <FaInstagram className="text-2xl hover:text-gray-400" />
               </a>
               <a href="https://linkedin.com/company/vrsec" target="_blank" rel="noopener noreferrer">
