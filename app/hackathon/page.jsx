@@ -126,7 +126,7 @@ export default function Hackathon() {
         </div>
 
 
-        <div className="flex flex-col items-center lg:flex-row lg:justify-around min-h-full p-4 justify-around">
+        <div className="flex flex-col items-center lg:flex-row lg:justify-center min-h-full p-4 justify-around">
   <div
     onClick={() => handleRedirect("/ideathon")}
     className="my-5 bg-[#604CC3]/25 bg-opacity-20 p-6 rounded-lg mx-8 cursor-pointer  hover:shadow-xl hover:bg-[#FEF9D9]/25 flex flex-col items-center justify-center h-[24rem] lg:w-[23rem] w-[22rem]"
@@ -139,9 +139,9 @@ export default function Hackathon() {
     </div>
     {/* Date, Time, and Button Section */}
     <div className="flex-1 flex flex-col items-center justify-center font-bold">
-      <p className="text-center">Registration Deadline:<span className="text-red-500"> November 2, 2024</span></p>
-      <p className="text-center">Final Round Notification:<span className="text-red-500"> December 2, 2024</span></p>
-      <p className="text-center">Final Round:<span className="text-red-500"> January 24, 2024, 12 PM - January 25, 2024, 12 PM</span></p>
+      <p className="text-center">Registration Deadline:<span className="text-blue-800"> November 2, 2024</span></p>
+      <p className="text-center">Final Round Notification:<span className="text-blue-800"> December 2, 2024</span></p>
+      <p className="text-center">Final Round:<span className="text-blue-800"> January 24, 2024, 12 PM - January 25, 2024, 12 PM</span></p>
       <button className="p-2 m-2 bg-white text-lg border-2 border-[#4F709C]/40 hover:border-[#604CC3]  rounded-full">
         <Link href="https://forms.gle/mBcnvNzjyf5owmZB7">
         Register now
@@ -163,9 +163,9 @@ export default function Hackathon() {
     </div>
     {/* Date, Time, and Button Section */}
     <div className="flex-1 flex flex-col items-center justify-center font-bold">
-      <p className="text-center">Registration Deadline:<span className="text-red-500"> November 2, 2024</span></p>
-      <p className="text-center">Final Round Notification:<span className="text-red-500"> December 2, 2024</span></p>
-      <p className="text-center">Final Round:<span className="text-red-500"> January 24, 2024, 12 PM - January 25, 2024, 12 PM</span></p>
+      <p className="text-center">Registration Deadline:<span className="text-blue-800"> November 2, 2024</span></p>
+      <p className="text-center">Final Round Notification:<span className="text-blue-800"> December 2, 2024</span></p>
+      <p className="text-center">Final Round:<span className="text-blue-800"> January 24, 2024, 12 PM - January 25, 2024, 12 PM</span></p>
       
       <button className="p-2 m-2 bg-white text-lg border-2 border-[#4F709C]/50 hover:border-[#4F709C] rounded-full">
       <Link href="https://forms.gle/F1DerQFZjeDt3UuaA">
