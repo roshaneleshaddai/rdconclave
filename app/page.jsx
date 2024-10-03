@@ -128,8 +128,8 @@ function HorizontalImageScroller({ images }) {
         <div
           className="mt-1 bg-[#604CC3]/25 bg-opacity-20 p-8 rounded-lg mx-6 transition-opacity duration-1000 "
         >
-          <h1 className="text-4xl font-bold text-center text-[#604CC3]">Research Conclave</h1>
-          
+          <h1 className="text-4xl font-extrabold text-center text-[#604CC3]">RESEARCH CONCLAVE </h1>
+          <h1 className="text-xl font-extrabold mt-2 text-center text-black">24,25 January - 2025 </h1>
         </div>
 
       
@@ -162,7 +162,7 @@ function HorizontalImageScroller({ images }) {
           Publications</center>
         </div>
       </div> */}
-<div className="flex flex-col items-center lg:flex-row lg:justify-around min-h-full p-4 ">
+<div className="flex flex-col items-center lg:flex-row lg:justify-center min-h-full p-4 ">
   {/* Industry Academia Meet Block */}
   <div
     onClick={() => handleRedirect("/hackathon")}
@@ -176,7 +176,7 @@ function HorizontalImageScroller({ images }) {
     </div>
     {/* Date, Time, and Button Section */}
     <div className="flex-1 flex flex-col items-center justify-center font-bold">
-    <p className="text-center">Date:<span className="text-red-500"> November 2, 2024</span></p>
+    <p className="text-center">Date:<span className="text-blue-800"> November 2, 2024</span></p>
       <button className="p-2 m-2 bg-white text-lg border-2 border-[#4F709C]/50 hover:border-[#4F709C] rounded-full">
         Know more..
       </button>
@@ -196,9 +196,9 @@ function HorizontalImageScroller({ images }) {
     </div>
     {/* Date, Time, and Button Section */}
     <div className="flex-1 flex flex-col items-center justify-center font-bold">
-      <p className="text-center">Registration Deadline:<span className="text-red-500"> November 2, 2024</span></p>
-      <p className="text-center">Final Round Notification:<span className="text-red-500"> December 2, 2024</span></p>
-      <p className="text-center">Final Round:<span className="text-red-500"> January 24, 2024, 12 PM - January 25, 2024, 12 PM</span></p>
+      <p className="text-center">Registration Deadline:<span className="text-blue-800"> November 2, 2024</span></p>
+      <p className="text-center">Final Round Notification:<span className="text-blue-800"> December 2, 2024</span></p>
+      <p className="text-center">Final Round:<span className="text-blue-800"> January 24, 2025, 12 PM - January 25, 2025, 12 PM</span></p>
       <button className="p-2 m-2 bg-white text-lg border-2 border-[#4F709C]/50 hover:border-[#4F709C] rounded-full">
         Know more..
       </button>
@@ -218,9 +218,9 @@ function HorizontalImageScroller({ images }) {
     </div>
     {/* Date, Time, and Button Section */}
     <div className="flex-1 flex flex-col items-center justify-center font-bold">
-      <p className="text-center">Submission Deadline:<span className="text-red-500"> December 20, 2024</span></p>
-      <p className="text-center">Acceptance Notification:<span className="text-red-500"> January 5, 2025</span></p>
-      <p className="text-center">Event Registration Deadline:<span className="text-red-500"> October 10, 2025</span></p>
+      <p className="text-center">Submission Deadline:<span className="text-blue-800"> December 20, 2024</span></p>
+      <p className="text-center">Acceptance Notification:<span className="text-blue-800"> January 5, 2025</span></p>
+      <p className="text-center">Event Registration Deadline:<span className="text-blue-800"> October 10, 2025</span></p>
       <button className="p-2 m-2 bg-white text-lg border-2 border-[#4F709C]/50 hover:border-[#4F709C] rounded-full">
         Know more..
       </button>
@@ -364,11 +364,12 @@ function HorizontalImageScroller({ images }) {
     const [visibleObjectives, setVisibleObjectives] = useState([]);
   
     const objectives = [
-      "To promote and accelerate quality research within the institute and in collaboration with industry, other institutes, and R&D organizations",
-      "To promote innovation and consultancy activities through development of Research Centers and Centers of Excellence",
-      "To integrate Teaching and Research",
-      "To ensure integrity, quality, and ethics in research",
-      "To promote generation of intellectual capital"
+      
+"Paper Publications in Journals",
+"Sponsored Projects Handled ",
+"Collaborative Projects Handled",
+"Patents",
+"R&D Consultancy"
     ];
   
     const handleScroll = () => {
@@ -409,7 +410,9 @@ function HorizontalImageScroller({ images }) {
               <hr className="h-1 my-8 bg-[#604CC3] border-0 w-1/2 " />
             </h2>
             <p className="mb-4 font-medium sm:text-xl text-lg">
-              The main objectives of the research policy are as follows:
+            The Wing will carry out R&D review of every department once or more in every semester and give guidelines for corrective action and improvement in R&D activities of departments. R&D activities are quantified and R&D index of the departments is computed and compared. Further, this is brought to the notice of all the HODs through ppt presentation. Also the report so generated is forwarded to the academy.
+            <br></br>The principle components of R&D for computation of R&D index are:
+
             </p>
             <ul className="list-disc list-inside space-y-4 text-lg">
               {objectives.map((objective, index) => (
@@ -453,12 +456,12 @@ function HorizontalImageScroller({ images }) {
     // Array of researchers' names and image paths
     const [isVisible, setIsVisible] = useState(false);
     const Patrons = [
-      { name: 'Sri K.V Chowdary,IRS', imgSrc: 'https://www.vrsiddhartha.ac.in/wp-content/uploads/2019/09/Chancellor-K-V-Chowdary.jpg', position: 'Chancellor,SAHE' },
+      { name: 'Sri K.V Chowdary,IRS', imgSrc: 'https://www.vrsiddhartha.ac.in/wp-content/uploads/2019/09/Chancellor-K-V-Chowdary.jpg', position: 'Chancellor,VRSEC' },
       { name: 'Sri C.Nageswara Rao', imgSrc: 'https://www.vrsiddhartha.ac.in/wp-content/uploads/2020/12/nageswararao.png', position: 'President,SAGTE' },
       { name: 'Sri P.Lakshmana Rao', imgSrc: 'https://www.siddharthaacademy.ac.in/img/team/lakshmana%20rao.png', position: 'Secretary,SAGTE' },
       { name: 'Sri M. Rajaiah', imgSrc: 'https://www.siddharthaacademy.ac.in/img/team/rajaiah.png', position: 'Vice-President, SAGTE' },
-      { name: 'Prof. P. Venkateswara Rao', imgSrc: 'https://www.vrsiddhartha.ac.in/wp-content/uploads/2019/09/Vice-Chancellor-PV-Rao.jpg', position: ' Vice Chancellor, SAHE' },
-      { name: 'Prof. A. V. Ratna Prasad', imgSrc: 'https://www.vrsiddhartha.ac.in/wp-content/uploads/2024/09/principal_2024-1-275x300.jpg', position: 'Pro-Vice Chancellor, SAHE' },
+      { name: 'Prof. P. Venkateswara Rao', imgSrc: 'https://www.vrsiddhartha.ac.in/wp-content/uploads/2019/09/Vice-Chancellor-PV-Rao.jpg', position: ' Vice Chancellor, VRSEC' },
+      { name: 'Prof. A. V. Ratna Prasad', imgSrc: 'https://www.vrsiddhartha.ac.in/wp-content/uploads/2024/09/principal_2024-1-275x300.jpg', position: 'Pro-Vice Chancellor, VRSEC' },
     ];
 
   const topResearcher = Patrons[0];
@@ -504,8 +507,8 @@ function HorizontalImageScroller({ images }) {
       >
         <div className="container p-4 md:p-10 bg-white rounded-lg shadow-md transition-transform duration-500 ease-in-out">
           {/* Introduction Text */}
-          <p className="text-3xl font-bold text-[#604CC3] text-center">
-          Patrons
+          <p className="text-3xl font-bold text-red-600 text-center">
+           Cheif Patron
         </p>
 
         <div className="flex flex-col items-center m-6">
@@ -516,10 +519,12 @@ function HorizontalImageScroller({ images }) {
             height={200}
             className="m-4 w-[150px] h-[150px] object-cover"
           />
-          <p className="text-lg font-bold">{topResearcher.name}</p>
+          <p className="text-lg text-blue-600 font-bold">{topResearcher.name}</p>
           <p className="text-sm text-gray-600">{topResearcher.position}</p>
         </div>
-
+        <p className="text-3xl font-bold text-red-600 text-center">
+           Patrons
+        </p>
         <ul className="list-none flex flex-col md:flex-row justify-center items-center text-lg text-gray-800">
           {bottomResearchers.map((researcher, index) => (
             <li key={index} className="flex flex-col items-center p-2 m-2 rounded-md">
@@ -530,7 +535,7 @@ function HorizontalImageScroller({ images }) {
                 height={150}
                 className="w-[150px] h-[150px] object-cover"
               />
-              <p className="text-lg text-center font-bold">{researcher.name}</p>
+              <p className="text-lg text-center text-blue-600 font-bold">{researcher.name}</p>
               <p className="text-sm text-center text-gray-600">{researcher.position}</p>
             </li>
           ))}
@@ -544,7 +549,7 @@ function HorizontalImageScroller({ images }) {
 const CoordinatorsSection = () => {
   
   const Coordinators = [
-    { name: 'Dr. Lakshmi Lydia E', imgSrc: '/images/laxmimam.png', position: 'Professor' },
+    { name: 'Dr. Lakshmi Lydia E', imgSrc: '/images/laximam.jpg', position: 'Professor' },
     { name: 'Dr. Sandeep Y', imgSrc: '/images/sandeepsir.png', position: 'Assistant Professor' },
     ];
 
@@ -558,7 +563,7 @@ const CoordinatorsSection = () => {
           <h2 className="text-red-600 font-bold text-lg">Convenor</h2>
           <li className="flex flex-col items-center p-2 m-2 rounded-md">
           <Image
-                src="https://www.vrsiddhartha.ac.in/it/wp-content/uploads/2019/09/ithod.jpg"
+                src="/images/HODIT.jpg"
                 alt="Dr.suneetha.M"
                 width={150}
                 height={160}
@@ -631,10 +636,10 @@ const CoordinatorsSection = () => {
       <InfoSection/>
       <ResearchNames/> 
       <CoordinatorsSection/>
-      <div className="mt-20 bg-[#4F709C]/25 bg-opacity-20 p-4 rounded-lg mx-6 transition-opacity duration-1000 mb-4">
+      {/* <div className="mt-20 bg-[#4F709C]/25 bg-opacity-20 p-4 rounded-lg mx-6 transition-opacity duration-1000 mb-4">
         <h1 className="text-4xl  font-bold text-center text-black">Placements</h1>
       <HorizontalImageScroller images={aluminiimages}/>
-      </div>
+      </div> */}
     </>
   );
 }
