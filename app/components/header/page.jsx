@@ -44,7 +44,16 @@ const Header = () => {
   }, []);
 
   return (
-    <header className={`fixed w-full top-0 z-50 h-30 transition-all duration-300 ease-in-out bg-[#F5F5F5] ${isScrolled ? ' py-0 md:py-2' : 'py-2 md:py-4'}`}>
+  <div className="relative w-full h-full">
+    <header className={`fixed w-full top-0 z-50 h-30 transition-all duration-300 ease-in-out  bg-[#F5F5F5] ${isScrolled ? 'py-0 md:py-2' : 'py-2 md:py-4'}`}>
+    {/* <video
+      
+      loop
+      muted
+      className="absolute inset-0 w-full h-full object-cover z-[-1]"
+    >
+      <source src="/images/bg.mp4" type="video/mp4" />
+    </video> */}
       <div className="flex items-center justify-between md:p-2 md:mx-auto max-w-7xl">
         {/* Logo Section */}
         <div className="flex items-center space-x-0 md:space-x-4">
@@ -57,10 +66,11 @@ const Header = () => {
               loading="lazy"
           />
           <div className={`md:block md:text-center transition-all duration-300 ease-in-out ${isScrolled ? 'text-xs md:text-2xl' : 'text-xl md:text-4xl'}`}>
-            <h2 className="font-bold text-Black">
-              Siddhartha Academy of Higher Education
+
+            <h2 className="font-bold text-black">
+              Velagapudi Ramakrishna Siddhartha Engineering College
             </h2>
-            <h2 className={`text-sm text-Black font-normal ${isScrolled ? 'text-xs md:text-base' : 'text-lg md:text-xl'}`}>
+            <h2 className={`text-sm text-black   font-normal ${isScrolled ? 'text-xs md:text-base' : 'text-lg md:text-xl'}`}>
               (Deemed to be University)<br></br>
               Kanuru, Vijayawada, Andhra Pradesh, 520007.
             </h2>
@@ -110,6 +120,7 @@ const Header = () => {
           )}
         </div>
       </div>
+      
 
       {/* Mobile Navigation Menu */}
       <nav
@@ -203,6 +214,7 @@ const Header = () => {
         </Link>
       </nav>
     </header>
+      </div>
   );
 };
 
