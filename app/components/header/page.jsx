@@ -85,6 +85,16 @@ const Header = () => {
               height={isScrolled ? 80 : 100}
               className="rounded-full"
             />
+    
+          </div>
+          <div className="hidden md:block">
+            <Image
+              src="/images/s.jpeg"
+              alt="springer"
+              width={isScrolled ? 80 : 100} 
+              height={isScrolled ? 80 : 100}
+              className="rounded-full"
+            />
           </div>
           <div className="hidden  md:block">
             <Image
