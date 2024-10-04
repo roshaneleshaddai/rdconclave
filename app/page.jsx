@@ -536,7 +536,7 @@ function HorizontalImageScroller({ images }) {
                 height={150}
                 className="w-[150px] h-[150px] object-cover"
               />
-              <p className="text-lg text-center text-blue-600 font-bold">{researcher.name}</p>
+              <p className="text-md text-center text-blue-600 font-bold">{researcher.name}</p>
               <p className="text-sm text-center text-gray-600">{researcher.position}</p>
             </li>
           ))}
