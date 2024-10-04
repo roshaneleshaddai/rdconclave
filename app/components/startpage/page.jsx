@@ -8,7 +8,7 @@ export default function StartPage({ onLaunch }) {
   useEffect(() => {
     // Initialize the typed effect
     const options = {
-      strings: ["Welcome to the website!", "Discover the new approach!", "A world of opportunities!"],
+      strings: ["Explore groundbreaking research and cutting-edge innovations.", "Discover the new approach!", "A world of opportunities!"],
       typeSpeed: 90,
       backSpeed: 50,
       loop: true,
