@@ -220,7 +220,7 @@ function HorizontalImageScroller({ images }) {
     <div className="flex-1 flex flex-col items-center justify-center font-bold">
       <p className="text-center">Submission Deadline:<span className="text-blue-800"> December 20, 2024</span></p>
       <p className="text-center">Acceptance Notification:<span className="text-blue-800"> January 5, 2025</span></p>
-      <p className="text-center">Event Registration Deadline:<span className="text-blue-800"> October 10, 2025</span></p>
+      <p className="text-center">Event Registration Deadline:<span className="text-blue-800"> January 10, 2025</span></p>
       <button className="p-2 m-2 bg-white text-lg border-2 border-[#4F709C]/50 hover:border-[#4F709C] rounded-full">
         Know more..
       </button>
