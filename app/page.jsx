@@ -165,7 +165,7 @@ function HorizontalImageScroller({ images }) {
 <div className="flex flex-col items-center lg:flex-row lg:justify-center min-h-full p-4 ">
   {/* Industry Academia Meet Block */}
   <div
-    onClick={() => handleRedirect("/hackathon")}
+    onClick={() => handleRedirect("/meet")}
     className="mt-5 bg-[#604CC3]/25 bg-opacity-20 p-6 rounded-lg mx-6 cursor-pointer hover:shadow-xl hover:bg-[#FEF9D9]/25 flex flex-col items-center justify-center h-[24rem] lg:w-[23rem] w-[22rem]"
   >
     {/* Title Section */}
