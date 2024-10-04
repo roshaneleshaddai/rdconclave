@@ -129,7 +129,7 @@ function HorizontalImageScroller({ images }) {
           className="mt-1 bg-[#604CC3]/25 bg-opacity-20 p-8 rounded-lg mx-6 transition-opacity duration-1000 "
         >
           <h1 className="text-4xl font-extrabold text-center text-[#604CC3]">RESEARCH CONCLAVE </h1>
-          <h1 className="text-xl font-extrabold mt-2 text-center text-black">24,25 January - 2025 </h1>
+          <h1 className="text-xl font-extrabold mt-2 text-center text-black">24 & 25 January - 2025 </h1>
         </div>
 
       
