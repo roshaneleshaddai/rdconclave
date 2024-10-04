@@ -462,6 +462,7 @@ function HorizontalImageScroller({ images }) {
       { name: 'Sri M. Rajaiah', imgSrc: 'https://www.siddharthaacademy.ac.in/img/team/rajaiah.png', position: 'Vice-President, SAGTE' },
       { name: 'Prof. P. Venkateswara Rao', imgSrc: 'https://www.vrsiddhartha.ac.in/wp-content/uploads/2019/09/Vice-Chancellor-PV-Rao.jpg', position: ' Vice Chancellor, VRSEC' },
       { name: 'Prof. A. V. Ratna Prasad', imgSrc: 'https://www.vrsiddhartha.ac.in/wp-content/uploads/2024/09/principal_2024-1-275x300.jpg', position: 'Pro-Vice Chancellor, VRSEC' },
+      { name: 'Dr. M . Ravichad', imgSrc: '/images/registrar.jpg', position: 'Registrar, VRSEC' },
     ];
 
   const topResearcher = Patrons[0];
