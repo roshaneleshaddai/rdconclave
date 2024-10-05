@@ -83,7 +83,7 @@ export default function JournalPublications() {
     },
     {
       sNo: 5,
-      name: "Springer Lecture Series",
+      name: "Springer Lecture Series(LNNS)",
       link: "https://www.springer.com/series/15179",
       quartile: "",
       // apc: "12000 INR"
@@ -236,7 +236,7 @@ export default function JournalPublications() {
           <th className="px-4 py-2 border bg-[#604CC3]/25 text-[#604CC3] text-bold text-xl border-[#4F709C]">S.No.</th>
           <th className="px-4 py-2 border bg-[#604CC3]/25 text-[#604CC3] text-bold text-xl border-[#4F709C]">Journal Name</th>
           <th className="px-4 py-2 border bg-[#604CC3]/25 text-[#604CC3] text-bold text-xl border-[#4F709C]">Journal Link</th>
-          <th className="px-4 py-2 border bg-[#604CC3]/25 text-[#604CC3] text-bold text-xl border-[#4F709C]">Quartile</th>
+{/*           <th className="px-4 py-2 border bg-[#604CC3]/25 text-[#604CC3] text-bold text-xl border-[#4F709C]">Quartile</th> */}
           {/* <th className="px-4 py-2 border border-[#4F709C]">APC</th> */}
         </tr>
       </thead>
@@ -250,7 +250,7 @@ export default function JournalPublications() {
                 {journal.link}
               </a>
             </td>
-            <td className="px-4 py-2 border border-[#4F709C]">{journal.quartile}</td>
+{/*             <td className="px-4 py-2 border border-[#4F709C]">{journal.quartile}</td> */}
             {/* <td className="px-4 py-2 border border-[#4F709C]">{journal.apc}</td> */}
           </tr>
         ))}
