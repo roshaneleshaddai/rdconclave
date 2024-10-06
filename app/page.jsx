@@ -3,6 +3,7 @@ import Image from "next/image";
 import React, { useState, useEffect } from "react";
 import { motion } from 'framer-motion';
 import "./globals.css";
+import { useRouter } from 'next/router';
 
 export default function Home() {
   const images = [
@@ -119,10 +120,10 @@ function HorizontalImageScroller({ images }) {
 
   const ClickableCircles = () => {
     // Function to handle redirects
-    const handleRedirect = (url) => {
-      window.location.href = url;
-    };
-  
+   const handleRedirect = (url) => {
+  const router = useRouter();
+  router.push(url);
+};
     return (
 <div className="" >
         <div
