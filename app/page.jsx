@@ -121,8 +121,7 @@ function HorizontalImageScroller({ images }) {
   const ClickableCircles = () => {
     // Function to handle redirects
    const handleRedirect = (url) => {
-  const router = useRouter();
-  router.push(url);
+  window.location.href=url;
 };
     return (
 <div className="" >
