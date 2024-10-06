@@ -1,6 +1,11 @@
 {
-  "/page": "app/page.js",
-  "/meet/page": "app/meet/page.js",
+  "/_not-found/page": "app/_not-found/page.js",
+  "/components/footer/page": "app/components/footer/page.js",
+  "/components/header/page": "app/components/header/page.js",
+  "/components/startpage/page": "app/components/startpage/page.js",
+  "/favicon.ico/route": "app/favicon.ico/route.js",
   "/hackathon/page": "app/hackathon/page.js",
-  "/journalpublications/page": "app/journalpublications/page.js"
+  "/journalpublications/page": "app/journalpublications/page.js",
+  "/meet/page": "app/meet/page.js",
+  "/page": "app/page.js"
 }
