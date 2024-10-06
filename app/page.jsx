@@ -126,7 +126,7 @@ function HorizontalImageScroller({ images }) {
     return (
 <div className="" >
         <div
-          className="mt-1 bg-[#604CC3]/25 bg-opacity-20 p-8 rounded-lg mx-6 transition-opacity duration-1000 "
+          className="bg-[#604CC3]/25 bg-opacity-20 p-8 rounded-lg mx-6 transition-opacity duration-1000 "
         >
           <h1 className="text-4xl font-extrabold text-center text-[#604CC3]">RESEARCH CONCLAVE </h1>
           <h1 className="text-xl font-extrabold mt-2 text-center text-black">24 & 25 January - 2025 </h1>
@@ -236,7 +236,7 @@ function HorizontalImageScroller({ images }) {
     const aboutText = [
       "The Research Conclave is a multidisciplinary event designed to bridge the gap between industry, academia, and students while promoting innovative research and collaboration.",
       "The program is structured to facilitate meaningful interactions and knowledge exchange among industry experts, academic professionals, and students.",
-      "The event comprises three key components: an Industry-Academic Meet, a Student Hackathon, and Faculty Publications."
+      "The event comprises three key components: an Industry-Academic Meet, HackWeb Challenge, and Journal Publications."
       ];
     
   
@@ -629,7 +629,7 @@ const CoordinatorsSection = () => {
       </video>
       </div> */}
       
-      <div className="mt-36 md:mt-52"></div>
+      <div className="mt-44 md:mt-56"></div>
       <ClickableCircles />
       {/* <ImageCarousel /> */}
       <HorizontalImageScroller images={researchimages}/>
@@ -637,6 +637,7 @@ const CoordinatorsSection = () => {
       <InfoSection/>
       <ResearchNames/> 
       <CoordinatorsSection/>
+      
       {/* <div className="mt-20 bg-[#4F709C]/25 bg-opacity-20 p-4 rounded-lg mx-6 transition-opacity duration-1000 mb-4">
         <h1 className="text-4xl  font-bold text-center text-black">Placements</h1>
       <HorizontalImageScroller images={aluminiimages}/>
