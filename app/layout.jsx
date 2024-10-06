@@ -5,6 +5,11 @@ import Footer from './components/footer/page';
 import Header from './components/header/page';
 import './globals.css';
 
+export const metadata = {
+  title: "Research Conclave@VRSEC",
+  description: "A new Millennium",
+};
+
 export default function RootLayout({ children }) {
   const [showStartPage, setShowStartPage] = useState(false);
 
