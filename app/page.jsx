@@ -165,7 +165,7 @@ function HorizontalImageScroller({ images }) {
 <div className="flex flex-col items-center lg:flex-row lg:justify-center min-h-full p-4 ">
   {/* Industry Academia Meet Block */}
   <div
-    
+    onClick={() => handleRedirect("/meet")}
     className="mt-5 bg-[#604CC3]/25 bg-opacity-20 p-6 rounded-lg mx-6 cursor-pointer hover:shadow-xl hover:bg-[#FEF9D9]/25 flex flex-col items-center justify-center h-[24rem] lg:w-[23rem] w-[22rem]"
   >
     {/* Title Section */}
@@ -185,7 +185,7 @@ function HorizontalImageScroller({ images }) {
 
   {/* Hackathon Block */}
   <div
-    
+    onClick={() => handleRedirect("/hackathon")}
     className="mt-5 bg-[#604CC3]/25 bg-opacity-20 p-6 rounded-lg mx-6 cursor-pointer hover:shadow-xl hover:bg-[#FEF9D9]/25 flex flex-col items-center justify-center h-[24rem] lg:w-[23rem] w-[22rem]"
   >
     {/* Title Section */}
@@ -207,7 +207,7 @@ function HorizontalImageScroller({ images }) {
 
   {/* Journal Publications Block */}
   <div
-    
+    onClick={() => handleRedirect("/journalpublications")}
     className="mt-5 bg-[#604CC3]/25 bg-opacity-100 p-6 rounded-lg mx-6 cursor-pointer hover:shadow-xl hover:bg-[#FEF9D9]/25 flex flex-col items-center justify-center h-[24rem] lg:w-[23rem] w-[22rem]"
   >
     {/* Title Section */}
@@ -509,7 +509,7 @@ function HorizontalImageScroller({ images }) {
         <div className="container p-4 md:p-10 bg-white rounded-lg shadow-md transition-transform duration-500 ease-in-out">
           {/* Introduction Text */}
           <p className="text-3xl font-bold text-red-600 text-center">
-           Cheif Patron
+           Chief Patron
         </p>
 
         <div className="flex flex-col items-center m-6">
