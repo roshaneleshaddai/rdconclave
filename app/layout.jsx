@@ -24,15 +24,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-        {showStartPage ? (
-          <StartPage onLaunch={handleLaunch} />
-        ) : (
-          <>
             <Header />
             <main>{children}</main>
             <Footer />
-          </>
-        )}
       </body>
     </html>
   );
