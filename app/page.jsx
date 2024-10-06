@@ -191,7 +191,7 @@ function HorizontalImageScroller({ images }) {
     {/* Title Section */}
     <div className="flex-0.5 flex items-center justify-center">
       <h1 className="text-3xl sm:text-4xl text-center font-bold text-[#604CC3]">
-        Student<br></br>Hackathon
+        HackWeb<br></br>Challenge
       </h1>
     </div>
     {/* Date, Time, and Button Section */}
