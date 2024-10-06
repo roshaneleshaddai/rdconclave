@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import StartPage from "./components/startpage/page";
 import Footer from './components/footer/page';
 import Header from './components/header/page';
+import './globals.css';
 
 export default function RootLayout({ children }) {
   const [showStartPage, setShowStartPage] = useState(false);
