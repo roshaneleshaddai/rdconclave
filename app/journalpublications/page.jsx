@@ -282,7 +282,9 @@ export default function JournalPublications() {
 
           <h1 className="text-2xl text-center font-bold text-black">Submission Link</h1>
           <button className="p-2 m-2 bg-white text-[#604CC3] text-lg border-2 border-[#4F709C]/50 hover:border-[#4F709C] rounded-full">
+            <a href="https://forms.gle/CxueSuEZC3ML3q3o8 ">
         Click here!
+             </a>
       </button>
         </motion.div>
         
