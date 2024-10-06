@@ -70,7 +70,7 @@ const Meet = () => {
   ];
 
   return (
-    <div className="relative font-SUSE min-h-screen w-screen  mt-52">
+    <div className="relative font-SUSE min-h-screen w-screen mt-44 md:mt-56">
       {/* Background Video */}
       {/* <video
         autoPlay
@@ -82,13 +82,13 @@ const Meet = () => {
         Your browser does not support the video tag.
       </video> */}
 
-      <div className="pb-20">
+      <div className="pb-5">
         {/* Publication Image Section without Fade-In Effect */}
        
 
         {/* Industry-Academic Meet Block with Fade-In Effect */}
         <div
-          className="mt-1 bg-[#604CC3]/25 bg-opacity-20 p-8 rounded-lg mx-6 transition-opacity duration-1000 "
+          className="bg-[#604CC3]/25 bg-opacity-20 p-8 mx-6 rounded-lg transition-opacity duration-1000 "
         >
           <h1 className="text-4xl  font-bold text-center text-[#604CC3]">Industry Academia Meet</h1>
           
