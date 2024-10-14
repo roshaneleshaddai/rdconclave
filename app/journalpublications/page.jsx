@@ -87,9 +87,18 @@ export default function JournalPublications() {
       link: "https://www.springer.com/series/15179",
       quartile: "",
       // apc: "12000 INR"
+    },
+    {
+      sNo:6,
+      name: "IEEE conference proceedings",
+      link: "",
     }
   ];
   
+  const emailAddress = "rdconclave25@vrsiddhartha.ac.in"; // Replace with the desired email address
+  const subject = "";
+  const body = ""; 
+
 
   useEffect(() => {
     const incrementA = () => {
@@ -286,6 +295,10 @@ export default function JournalPublications() {
         Click here!
              </a>
       </button>
+         <div className='items-center text-center'>
+          <h1>or</h1>
+          <Link href={`https://mail.google.com/mail/?view=cm&fs=1&to=${emailAddress}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`}> Email : <span className='text-blue-700'>rdconclave25@vrsiddhartha.ac.in</span> </Link>
+         </div>
         </motion.div>
         
 
