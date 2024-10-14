@@ -25,6 +25,32 @@ const Header = () => {
     }
   };
 
+
+  const files = [
+    "/Authors_ORCID_Information.doc",
+    "/PES_Copyright_Agreement_Form.doc",
+    "/PES_template.docx",
+  ];
+
+  const fileNames = [
+    "Authors ORCID Information.doc",
+    "PES Copyright Agreement Form.doc",
+    "PES TEmplate.docx"
+  ];
+
+  const downloadFiles = () => {
+    files.forEach((fileUrl, index) => {
+      const link = document.createElement('a');
+      link.href = fileUrl;
+      link.setAttribute('download', fileNames[index]); // Set the download attribute with the file name
+      document.body.appendChild(link);
+      link.click(); // Trigger the download
+      document.body.removeChild(link); // Clean up the DOM
+    });
+  };
+
+
+
   // Add event listener to detect scroll
   useEffect(() => {
     const handleScroll = () => {
@@ -169,11 +195,11 @@ const Header = () => {
           className="" onClick={toggleMenu}>
           Registration
         </Link></li>
-        <li><Link
-          href="/"
-          className="" onClick={toggleMenu}>
+        <li><a
+          onClick={()=>{toggleMenu();downloadFiles();}}
+          className="" >
           Download
-        </Link></li>
+        </a></li>
         </ul>
       </nav>
 
@@ -216,12 +242,12 @@ const Header = () => {
         >
           Registration
         </Link>
-        <Link
-          href="/"
+        <button
+          onClick={downloadFiles}
           className={`cursor-pointer m-0.5 bg-[#604CC3] text-white  border-[#1A1A1A] text-[#213555] font-semibold transition-all duration-300 ease-in-out ${isScrolled ? 'text-sm py-1 px-4' : 'text-base py-1 px-2'} hover:bg-[#FF6600]/10  hover:text-black hover:shadow-lg`}
         >
           Download
-        </Link>
+        </button>
       </nav>
     </header>
       </div>
