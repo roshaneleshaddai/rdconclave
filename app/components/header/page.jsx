@@ -39,13 +39,13 @@ const Header = () => {
   ];
 
   const downloadFile = (index) => {
-    if (index === '') return; // Skip if no file is selected
+    if (index === '') return; 
     const link = document.createElement('a');
     link.href = files[index];
-    link.setAttribute('download', fileNames[index]); // Set the download attribute
+    link.setAttribute('download', fileNames[index]); 
     document.body.appendChild(link);
-    link.click(); // Trigger the download
-    document.body.removeChild(link); // Clean up the DOM
+    link.click(); 
+    document.body.removeChild(link); 
   };
 
 
@@ -121,6 +121,15 @@ const Header = () => {
               className="rounded-full"
             />
           </div>
+          <div className="hidden md:block">
+            <Image
+              src="https://www.stthomaskannur.ac.in/stm2/img/static/ieee.png"
+              alt="ieee"
+              width={isScrolled ? 80 : 100} 
+              height={isScrolled ? 80 : 100}
+              className="rounded-full bg-white"
+            />
+          </div>
           <div className="hidden  md:block">
             <Image
               src="/images/rclogo.png"
@@ -137,7 +146,7 @@ const Header = () => {
           </div>
 
           {/* Full Logo for Desktop */}
-          <div className="hidden md:block">
+          {/* <div className="hidden md:block">
             <Image
               src="/images/vikshitbharat.png"
               alt="Azadi ka Amrit Mahostav"
@@ -145,7 +154,7 @@ const Header = () => {
               height={isScrolled ? 80 : 100}
               className="rounded-full"
             />
-          </div>
+          </div> */}
         </div>
           <div className="md:hidden">
           {isOpen ? (
