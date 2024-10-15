@@ -6,6 +6,7 @@ const nextConfig = {
       "www.siddharthaacademy.ac.in",
       "www.google.com",
       "videos.pexels.com",
+      "www.stthomaskannur.ac.in",
     ],
   },
 };
