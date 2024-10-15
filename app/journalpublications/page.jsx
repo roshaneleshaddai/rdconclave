@@ -91,7 +91,7 @@ export default function JournalPublications() {
     {
       sNo:6,
       name: "IEEE conference proceedings",
-      link: "",
+      link: "https://www.ieee.org/conferences/",
     }
   ];
   
