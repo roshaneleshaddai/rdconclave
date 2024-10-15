@@ -33,20 +33,19 @@ const Header = () => {
   ];
 
   const fileNames = [
-    "Authors ORCID Information.doc",
-    "PES Copyright Agreement Form.doc",
-    "PES TEmplate.docx"
+    "Authors ORCID Information",
+    "PES Copyright Agreement Form",
+    "PES TEmplate"
   ];
 
-  const downloadFiles = () => {
-    files.forEach((fileUrl, index) => {
-      const link = document.createElement('a');
-      link.href = fileUrl;
-      link.setAttribute('download', fileNames[index]); // Set the download attribute with the file name
-      document.body.appendChild(link);
-      link.click(); // Trigger the download
-      document.body.removeChild(link); // Clean up the DOM
-    });
+  const downloadFile = (index) => {
+    if (index === '') return; // Skip if no file is selected
+    const link = document.createElement('a');
+    link.href = files[index];
+    link.setAttribute('download', fileNames[index]); // Set the download attribute
+    document.body.appendChild(link);
+    link.click(); // Trigger the download
+    document.body.removeChild(link); // Clean up the DOM
   };
 
 
@@ -195,11 +194,17 @@ const Header = () => {
           className="" onClick={toggleMenu}>
           Registration
         </Link></li>
-        <li><a
-          onClick={()=>{toggleMenu();downloadFiles();}}
-          className="" >
-          Download
-        </a></li>
+        <li> <select
+                className="text-black rounded p-2 "
+                defaultValue=""
+                onChange={(e) => { toggleMenu(); downloadFile(e.target.value); }}
+              >
+                <option value="" disabled>Download</option>
+                {fileNames.map((fileName, index) => (
+                  <option key={index} value={index} className="text-sm">{fileName}</option>
+                ))}
+              </select>
+              </li>
         </ul>
       </nav>
 
@@ -242,12 +247,16 @@ const Header = () => {
         >
           Registration
         </Link>
-        <button
-          onClick={downloadFiles}
-          className={`cursor-pointer m-0.5 bg-[#604CC3] text-white  border-[#1A1A1A] text-[#213555] font-semibold transition-all duration-300 ease-in-out ${isScrolled ? 'text-sm py-1 px-4' : 'text-base py-1 px-2'} hover:bg-[#FF6600]/10  hover:text-black hover:shadow-lg`}
-        >
-          Download
-        </button>
+        <select
+            className={`cursor-pointer m-0.5 bg-[#604CC3] text-white  border-[#1A1A1A] text-[#213555] font-semibold transition-all duration-300 ease-in-out ${isScrolled ? 'text-sm py-1 px-4' : 'text-base py-1 px-2'}   hover:text-black hover:shadow-lg`}
+            defaultValue=""
+            onChange={(e) => downloadFile(e.target.value)}
+          >
+            <option value="" disabled>Download</option>
+            {fileNames.map((fileName, index) => (
+              <option key={index} value={index} className="text-white">{fileName}</option>
+            ))}
+          </select>
       </nav>
     </header>
       </div>
