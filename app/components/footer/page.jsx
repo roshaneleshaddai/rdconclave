@@ -1,5 +1,5 @@
 import React from "react";
-import { FaInstagram, FaLinkedin, FaFacebook, FaPhone, FaEnvelope } from "react-icons/fa";
+import { FaInstagram, FaLinkedin, FaFacebook, FaPhoneAlt, FaEnvelope } from "react-icons/fa";
 
 const Footer = () => {
   return (
@@ -16,8 +16,8 @@ const Footer = () => {
           {/* Phone Numbers */}
           <div className="mb-6 md:mb-0">
             <h2 className="text-lg font-semibold mb-2">Contact Numbers</h2>
-            <p><FaPhone className="inline mr-2" /> Dr. Jaya Prakash S - 9848143200, Dr. Gargi M - 8886599444</p>
-            <p><FaPhone className="inline mr-2" /> Eleshaddai Roshan - 9618227549 , Neeraja Gurram - 8341323299</p>
+            <p><FaPhoneAlt className="inline mr-2" /> Dr. Jaya Prakash S - 9848143200, Dr. Gargi M - 8886599444</p>
+            <p><FaPhoneAlt className="inline mr-2" /> Eleshaddai Roshan - 9618227549 , Neeraja Gurram - 8341323299</p>
           </div>
 
           {/* Social Media Links */}
@@ -34,7 +34,7 @@ const Footer = () => {
                 <FaEnvelope className="text-2xl hover:text-gray-400" />
               </a>
               <a href="tel:+91 866 2582672">
-                <FaPhone className="text-2xl hover:text-gray-400" />
+                <FaPhoneAlt className="text-2xl hover:text-gray-400" />
               </a>
               <a href="https://www.facebook.com/vrsec/" target="_blank" rel="noopener noreferrer">
                 <FaFacebook className="text-2xl hover:text-gray-400" />
