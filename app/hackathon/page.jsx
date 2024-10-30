@@ -143,7 +143,7 @@ export default function Hackathon() {
       <p className="text-center">Final Round Notification:<span className="text-blue-800"> December 2, 2024</span></p>
       <p className="text-center">Final Round:<span className="text-blue-800"> January 24, 2024, 12 PM - January 25, 2024, 12 PM</span></p>
       <button className="p-2 m-2 bg-white text-lg border-2 border-[#4F709C]/40 hover:border-[#604CC3]  rounded-full">
-        <Link href="https://forms.gle/mBcnvNzjyf5owmZB7">
+        <Link href="https://forms.gle/u7b8FL1UG8cA5Tu2A">
         Register now
         </Link>
       </button>
@@ -168,7 +168,7 @@ export default function Hackathon() {
       <p className="text-center">Final Round:<span className="text-blue-800"> January 24, 2024, 12 PM - January 25, 2024, 12 PM</span></p>
       
       <button className="p-2 m-2 bg-white text-lg border-2 border-[#4F709C]/50 hover:border-[#4F709C] rounded-full">
-      <Link href="https://forms.gle/F1DerQFZjeDt3UuaA">
+      <Link href="https://forms.gle/u7b8FL1UG8cA5Tu2A">
         Register now
         </Link>
       </button>
