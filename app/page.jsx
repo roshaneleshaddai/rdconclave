@@ -456,13 +456,13 @@ function HorizontalImageScroller({ images }) {
     // Array of researchers' names and image paths
     const [isVisible, setIsVisible] = useState(false);
     const Patrons = [
-      { name: 'Sri K.V Chowdary,IRS', imgSrc: 'https://www.vrsiddhartha.ac.in/wp-content/uploads/2019/09/Chancellor-K-V-Chowdary.jpg', position: 'Chancellor,VRSEC' },
-      { name: 'Sri C.Nageswara Rao', imgSrc: 'https://www.vrsiddhartha.ac.in/wp-content/uploads/2020/12/nageswararao.png', position: 'President,SAGTE' },
-      { name: 'Sri P.Lakshmana Rao', imgSrc: 'https://www.siddharthaacademy.ac.in/img/team/lakshmana%20rao.png', position: 'Secretary,SAGTE' },
+      { name: 'Sri K. V Chowdary, IRS', imgSrc: 'https://www.vrsiddhartha.ac.in/wp-content/uploads/2019/09/Chancellor-K-V-Chowdary.jpg', position: 'Chancellor, VRSEC' },
+      { name: 'Sri C. Nageswara Rao', imgSrc: 'https://www.vrsiddhartha.ac.in/wp-content/uploads/2020/12/nageswararao.png', position: 'President, SAGTE' },
+      { name: 'Sri P. Lakshmana Rao', imgSrc: 'https://www.siddharthaacademy.ac.in/img/team/lakshmana%20rao.png', position: 'Secretary, SAGTE' },
       { name: 'Sri M. Rajaiah', imgSrc: 'https://www.siddharthaacademy.ac.in/img/team/rajaiah.png', position: 'Vice-President, SAGTE' },
       { name: 'Prof. P. Venkateswara Rao', imgSrc: 'https://www.vrsiddhartha.ac.in/wp-content/uploads/2019/09/Vice-Chancellor-PV-Rao.jpg', position: ' Vice Chancellor, VRSEC' },
       { name: 'Prof. A. V. Ratna Prasad', imgSrc: 'https://www.vrsiddhartha.ac.in/wp-content/uploads/2024/09/principal_2024-1-275x300.jpg', position: 'Pro-Vice Chancellor, VRSEC' },
-      { name: 'Dr. M . Ravichad', imgSrc: '/images/registrar.jpg', position: 'Registrar, VRSEC' },
+      // { name: 'Dr. M . Ravichad', imgSrc: '/images/registrar.jpg', position: 'Registrar, VRSEC' },
     ];
 
   const topResearcher = Patrons[0];
@@ -550,7 +550,7 @@ function HorizontalImageScroller({ images }) {
 const CoordinatorsSection = () => {
   
   const Coordinators = [
-    { name: 'Dr. E .Laxmi Lydia', imgSrc: '/images/laximam.jpg', position: 'Professor' },
+    { name: 'Dr. E. Laxmi Lydia', imgSrc: '/images/laximam.jpg', position: 'Professor' },
     { name: 'Dr. Sandeep Y', imgSrc: '/images/sandeepsir.png', position: 'Assistant Professor' },
     ];
 
@@ -565,13 +565,13 @@ const CoordinatorsSection = () => {
           <li className="flex flex-col items-center p-2 m-2 rounded-md">
           <Image
                 src="/images/HODIT.jpg"
-                alt="Dr.suneetha.M"
+                alt="Dr. suneetha. M"
                 width={150}
                 height={160}
                 className="w-[150px] h-[160px] object-cover"
               />
           <p className="text-blue-600 font-bold text-md">
-            Prof. Suneetha M,
+            Prof. M Suneetha ,
           </p>
           <p className="text-black text-sm">
             Dean-R&D, IQAC, HoD-IT
