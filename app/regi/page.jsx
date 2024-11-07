@@ -2,7 +2,7 @@ import Image from "next/image";
 import React from 'react'
 const Regi = () => {
   return (
-    <div className="relative font-SUSE min-h-screen w-screen mt-44 md:mt-60 flex items-center justify-center ">
+    <div className="relative font-SUSE min-h-screen w-screen mt-44 md:mt-56 flex items-center justify-center ">
      
       <div>
         <p className="text-2xl font-bold p-4">For registration:</p>
