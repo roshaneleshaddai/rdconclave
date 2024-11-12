@@ -260,7 +260,7 @@ export default function Hackathon() {
               </div>
               <div className="flex flex-col items-center justify-center">
                 <img src="/images/feeicon.png" className="w-20 h-20" alt="Fee Icon" />
-                <div className="w-40 text-center mt-2">Registration fee: ₹200</div>
+                <div className="w-40 text-center mt-2">Registration fee: ₹500</div>
               </div>
             </div>
           </motion.div>
