@@ -17,7 +17,8 @@ export default function Hackathon() {
   };
 
   // Set the target date for the countdown
-  const targetDate = new Date('2024-12-31T23:59:59').getTime(); // Change this to the event date
+  const targetDate = new Date('2025-01-24T05:30:00Z').getTime();
+// Change this to the event date
 
   useEffect(() => {
     // Countdown function
