@@ -128,13 +128,13 @@ export default function Hackathon() {
 
         <div className="flex flex-col items-center lg:flex-row lg:justify-center min-h-full p-4 justify-around">
   <div
-    onClick={() => handleRedirect("/ideathon")}
+    onClick={() => handleRedirect("/#")}
     className="my-5 bg-[#604CC3]/25 bg-opacity-20 p-6 rounded-lg mx-8 cursor-pointer  hover:shadow-xl hover:bg-[#FEF9D9]/25 flex flex-col items-center justify-center h-[24rem] lg:w-[23rem] w-[22rem]"
   >
     {/* Title Section */}
     <div className="flex-0.5 flex items-center justify-center ">
       <h1 className="text-3xl sm:text-4xl text-center font-bold text-[#604CC3] ">
-        Ideathon
+        AI HACKATHON
       </h1>
     </div>
     {/* Date, Time, and Button Section */}
@@ -152,13 +152,13 @@ export default function Hackathon() {
 
   {/* webathon Block */}
   <div
-    onClick={() => handleRedirect("/webathon")}
+    onClick={() => handleRedirect("/#")}
     className="my-5 bg-[#604CC3]/25 bg-opacity-20 p-6 rounded-lg mx-8 cursor-pointer  hover:shadow-xl hover:bg-[#FEF9D9]/25 flex flex-col items-center justify-center h-[24rem] lg:w-[23rem] w-[22rem]"
   >
     {/* Title Section */}
     <div className="flex-0.5 flex items-center justify-center">
       <h1 className="text-3xl sm:text-4xl text-center font-bold text-[#604CC3]">
-        Webathon
+         WEBATHON
       </h1>
     </div>
     {/* Date, Time, and Button Section */}
