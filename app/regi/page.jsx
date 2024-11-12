@@ -21,7 +21,7 @@ const Regi = () => {
     <div className="relative font-SUSE min-h-screen w-screen mt-44 md:mt-56 flex items-center justify-center p-4">
       <div className="bg-white shadow-lg rounded-lg p-6 max-w-4xl w-full">
         <h2 className="text-2xl font-bold mb-4 text-center">For Payment :</h2>
-        <div className="flex flex-col items-center justify-center mb-6">
+        <div className="flex flex-col lg:flex-row space-even items-center justify-center mb-6">
           <Image
             src="/images/1.png"
             width={300}
