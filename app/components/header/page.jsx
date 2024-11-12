@@ -206,7 +206,7 @@ const Header = () => {
         <li> <select
                 className="text-black rounded p-2 "
                 defaultValue=""
-                onChange={(e) => { toggleMenu(); downloadFile(e.target.value); }}
+                onChange={(e) => { toggleMenu(); downloadFile(e.target.value);e.target.value = ""; }}
               >
                 <option value="" disabled>Download</option>
                 {fileNames.map((fileName, index) => (
@@ -257,15 +257,24 @@ const Header = () => {
           Registration
         </Link>
         <select
-            className={`cursor-pointer m-0.5 bg-[#604CC3] text-white  border-[#1A1A1A] text-[#213555] font-semibold transition-all duration-300 ease-in-out ${isScrolled ? 'text-sm py-1 px-4' : 'text-base py-1 px-2'}   hover:text-black hover:shadow-lg`}
-            defaultValue=""
-            onChange={(e) => downloadFile(e.target.value)}
+          className={`cursor-pointer m-0.5 bg-[#604CC3] text-white border-[#1A1A1A] text-[#213555] font-semibold transition-all duration-300 ease-in-out ${
+            isScrolled ? 'text-sm py-1 px-4' : 'text-base py-1 px-2'
+          } hover:bg-[#FF6600]/10 hover:text-black hover:shadow-lg`}
+          value=""
+          onChange={(e) => {
+            downloadFile(e.target.value);
+            e.target.value = ""; // Reset the select to "Download"
+          }}
           >
-            <option value="" disabled>Download</option>
-            {fileNames.map((fileName, index) => (
-              <option key={index} value={index} className="text-white">{fileName}</option>
-            ))}
-          </select>
+          <option value="" className="hover:bg-[#FF6600]/10 hover:text-black hover:shadow-lg" disabled>
+            Download
+          </option>
+          {fileNames.map((fileName, index) => (
+            <option key={index} value={index} className="hover:bg-[#FF6600]/10 hover:text-black hover:shadow-lg">
+              {fileName}
+            </option>
+          ))}
+        </select>
       </nav>
     </header>
       </div>
