@@ -256,7 +256,7 @@ export default function Hackathon() {
             <div className="flex justify-center items-center">
               <div className="flex flex-col items-center justify-center h-40">
                 <img src="/images/grpicon.png" className="w-20 h-20" alt="Group Icon" />
-                <div className="w-40 text-center mt-2">Team of 4-5</div>
+                <div className="w-40 text-center mt-2">Team of 2-4</div>
               </div>
               <div className="flex flex-col items-center justify-center">
                 <img src="/images/feeicon.png" className="w-20 h-20" alt="Fee Icon" />
