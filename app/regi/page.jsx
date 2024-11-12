@@ -18,19 +18,19 @@ const Regi = () => {
   ];
 
   return (
-    <div className="relative font-SUSE min-h-screen w-screen mt-44 md:mt-56 flex items-center justify-center p-4">
-      <div className="bg-white shadow-lg rounded-lg p-6 max-w-4xl w-full">
-        <h2 className="text-2xl font-bold mb-4 text-center">For Payment :</h2>
-        <div className="flex flex-col lg:flex-row space-even items-center justify-center mb-6">
-          <Image
+    <div className="relative font-SUSE min-h-screen w-screen mt-44 md:mt-56 flex-col items-center justify-center p-4">
+        <h2 className="text-2xl font-bold mb-4 text-center">For Payment</h2>
+      <div className="bg-white shadow-lg rounded-lg p-6 bg-gray w-full">
+        <div className="flex flex-col lg:flex-row items-center justify-evenly mb-6">
+          <div><Image
             src="/images/1.png"
             width={300}
             height={300}
             alt="registration QR code"
             className="mb-4 md:mb-0 md:mr-6"
-          />
+          /></div>
           <div className="overflow-x-auto">
-            <table className="min-w-full border-collapse">
+            <table className="min-w-full border-2 ">
               <thead>
                 <tr>
                   <th className="px-4 py-2 border-b-2 border-gray-300 text-left">Detail</th>
