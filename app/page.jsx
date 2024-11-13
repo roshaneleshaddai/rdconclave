@@ -551,7 +551,7 @@ const CoordinatorsSection = () => {
   
   const Coordinators = [
     { name: 'Dr. E. Laxmi Lydia', imgSrc: '/images/laximam.jpg', position: 'Professor' },
-    { name: 'Dr. Sandeep Y', imgSrc: '/images/sandeepsir.png', position: 'Assistant Professor' },
+    { name: 'Dr. Sandeep Y', imgSrc: '/images/sandeep.jpg', position: 'Assistant Professor' },
     ];
 
     
