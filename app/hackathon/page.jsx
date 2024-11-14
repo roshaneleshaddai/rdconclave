@@ -140,8 +140,9 @@ export default function Hackathon() {
     </div>
     {/* Date, Time, and Button Section */}
     <div className="flex-1 flex flex-col items-center justify-center font-bold">
-      <p className="text-center">Registration Deadline:<span className="text-blue-800"> November 2, 2024</span></p>
-      <p className="text-center">Final Round Notification:<span className="text-blue-800"> December 2, 2024</span></p>
+      <p className="text-center">Registration Deadline:<span className="text-blue-800"> November 31, 2024</span></p>
+      <p className="text-center">Preliminary Round :<span className="text-blue-800"> December 2, 2024</span></p>
+      <p className="text-center">Shortlisted Team Announcement :<span className="text-blue-800"> December 20, 2024</span></p>
       <p className="text-center">Final Round:<span className="text-blue-800"> January 24, 2024, 12 PM - January 25, 2024, 12 PM</span></p>
       <button className="p-2 m-2 bg-white text-lg border-2 border-[#4F709C]/40 hover:border-[#604CC3]  rounded-full">
         <Link href="https://forms.gle/u7b8FL1UG8cA5Tu2A">
@@ -164,10 +165,10 @@ export default function Hackathon() {
     </div>
     {/* Date, Time, and Button Section */}
     <div className="flex-1 flex flex-col items-center justify-center font-bold">
-      <p className="text-center">Registration Deadline:<span className="text-blue-800"> November 2, 2024</span></p>
-      <p className="text-center">Final Round Notification:<span className="text-blue-800"> December 2, 2024</span></p>
+     <p className="text-center">Registration Deadline:<span className="text-blue-800"> November 31, 2024</span></p>
+      <p className="text-center">Preliminary Round :<span className="text-blue-800"> December 3, 2024</span></p>
+      <p className="text-center">Shortlisted Team Announcement :<span className="text-blue-800"> December 20, 2024</span></p>
       <p className="text-center">Final Round:<span className="text-blue-800"> January 24, 2024, 12 PM - January 25, 2024, 12 PM</span></p>
-      
       <button className="p-2 m-2 bg-white text-lg border-2 border-[#4F709C]/50 hover:border-[#4F709C] rounded-full">
       <Link href="https://forms.gle/u7b8FL1UG8cA5Tu2A">
         Register now
