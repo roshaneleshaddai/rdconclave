@@ -196,7 +196,7 @@ function HorizontalImageScroller({ images }) {
     </div>
     {/* Date, Time, and Button Section */}
     <div className="flex-1 flex flex-col items-center justify-center font-bold">
-      <p className="text-center">Registration Deadline:<span className="text-blue-800"> November 31, 2024</span></p>
+      <p className="text-center">Registration Deadline:<span className="text-blue-800"> November 30, 2024</span></p>
       <p className="text-center">Preliminary Round :<span className="text-blue-800"> December 2 & 3 2024(7 PM)</span></p>
       <p className="text-center">Shortlisted teams Announcement :<span className="text-blue-800"> December 20 2024</span></p>
       <p className="text-center">Final Round:<span className="text-blue-800"> January 24, 2025, 12 PM - January 25, 2025, 12 PM</span></p>
