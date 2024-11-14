@@ -176,7 +176,7 @@ function HorizontalImageScroller({ images }) {
     </div>
     {/* Date, Time, and Button Section */}
     <div className="flex-1 flex flex-col items-center justify-center font-bold">
-    <p className="text-center">Date:<span className="text-blue-800"> November 31, 2024</span></p>
+    <p className="text-center">Date:<span className="text-blue-800"> November 30, 2024</span></p>
       <button className="p-2 m-2 bg-white text-lg border-2 border-[#4F709C]/50 hover:border-[#4F709C] rounded-full">
         Know more..
       </button>
