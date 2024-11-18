@@ -410,7 +410,7 @@ function HorizontalImageScroller({ images }) {
               Research@VRSEC
               <hr className="h-1 my-8 bg-[#604CC3] border-0 w-1/2 " />
             </h2>
-            <p className="mb-4 font-medium sm:text-xl text-lg">
+            <p className="mb-4 font-medium sm:text-xl text-lg text-justify">
             The Wing will carry out R&D review of every department once or more in every semester and give guidelines for corrective action and improvement in R&D activities of departments. R&D activities are quantified and R&D index of the departments is computed and compared. Further, this is brought to the notice of all the HODs through ppt presentation. Also the report so generated is forwarded to the academy.
             <br></br>The principle components of R&D for computation of R&D index are:
 
