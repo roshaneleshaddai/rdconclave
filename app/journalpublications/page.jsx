@@ -83,8 +83,8 @@ export default function JournalPublications() {
     },
     {
       sNo: 5,
-      name: "Springer Lecture Series(LNNS)",
-      link: "https://www.springer.com/series/15179",
+      name: "Lecture Notes in Electrical Engineering",
+      link: "https://www.springer.com/series/7818",
       quartile: "",
       // apc: "12000 INR"
     },
