@@ -42,9 +42,7 @@ const Footer = () => {
               <FaPhoneAlt className="inline mr-2" /> M .Eleshaddai Roshan - 9618227549<br/>
               <FaPhoneAlt className="inline mr-2" /> G .Neeraja - 8341323299
             </p>
-            <p>
-              <FaPhoneAlt className="inline mr-2" /> Student coordinators
-            </p>
+           
           </div>
           </div>
             {/* Social Media Links Section */}
