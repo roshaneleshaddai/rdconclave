@@ -46,13 +46,13 @@ export default function JournalPublications() {
       quartile: "Q4",
       // apc: "25000 INR"
     },
-    {
-      sNo: 2,
-      name: "Journal of Computational and Cognitive Engineering",
-      link: "https://ojs.bonviewpress.com/index.php/JCCE/index",
-      quartile: "Q1",
-      // apc: "700 USD"
-    },
+    // {
+    //   sNo: 2,
+    //   name: "Journal of Computational and Cognitive Engineering",
+    //   link: "https://ojs.bonviewpress.com/index.php/JCCE/index",
+    //   quartile: "Q1",
+    //   // apc: "700 USD"
+    // },
     // {
     //   sNo: 3,
     //   name: "International Journal of Neutrosophic",
@@ -68,28 +68,28 @@ export default function JournalPublications() {
     //   // apc: "300 USD"
     // },
     {
-      sNo: 3,
+      sNo: 2,
       name: "Journal of Infrastructure, Policy and Development",
       link: "https://systems.enpress-publisher.com/index.php/jipd",
       quartile: "",
       // apc: "12000 INR"
     },
     {
-      sNo: 4,
+      sNo: 3,
       name: "Proceedings on Engineering sciences",
       link: "https://pesjournal.net/calls_for_special_issues.php",
       quartile: "",
       // apc: "300 USD"
     },
     {
-      sNo: 5,
+      sNo: 4,
       name: "Lecture Notes in Electrical Engineering",
       link: "https://www.springer.com/series/7818",
       quartile: "",
       // apc: "12000 INR"
     },
     {
-      sNo:6,
+      sNo:5,
       name: "IEEE conference proceedings",
       link: "https://www.ieee.org/conferences/",
     }
