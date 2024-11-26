@@ -30,12 +30,20 @@ const Header = () => {
     "/Authors_ORCID_Information.doc",
     "/PES_Copyright_Agreement_Form.doc",
     "/PES_template.docx",
+    "IEEE conference-template-a4.docx",
+    "Springer-Template.doc",  
+    "Netherlands Press Template-Nanotechnology Perceptions.docx",
+    "Journal of Infrastructure, Policy and Development--JIPD-template.docx",
   ];
 
   const fileNames = [
     "Authors ORCID Information",
     "PES Copyright Agreement Form",
-    "PES TEmplate"
+    "PES TEmplate",
+    "IEEE conference-template",
+    "Springer-Template",  
+    "Netherlands Press Template-Nanotechnology Perceptions",
+    "Journal of Infrastructure, Policy and Development--JIPD-template",
   ];
 
   const downloadFile = (index) => {
