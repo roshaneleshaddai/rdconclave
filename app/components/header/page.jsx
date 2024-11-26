@@ -32,8 +32,10 @@ const Header = () => {
     "/PES_template.docx",
     "IEEE conference-template-a4.docx",
     "Springer-Template.doc",  
-    "Netherlands Press Template-Nanotechnology Perceptions.docx",
-    "Journal of Infrastructure, Policy and Development--JIPD-template.docx",
+    "Netherlands Press Template-
+Nanotechnology Perceptions.docx",
+    "Journal of Infrastructure, Policy 
+and Development--JIPD-template.docx",
   ];
 
   const fileNames = [
