@@ -32,10 +32,8 @@ const Header = () => {
     "/PES_template.docx",
     "IEEE conference-template-a4.docx",
     "Springer-Template.doc",  
-    "Netherlands Press Template-
-Nanotechnology Perceptions.docx",
-    "Journal of Infrastructure, Policy 
-and Development--JIPD-template.docx",
+    "Netherlands Press Template-Nanotechnology Perceptions.docx",
+    "Journal of Infrastructure, Policy and Development--JIPD-template.docx",
   ];
 
   const fileNames = [
@@ -280,7 +278,7 @@ and Development--JIPD-template.docx",
             Download
           </option>
           {fileNames.map((fileName, index) => (
-            <option key={index} value={index} className="hover:bg-[#FF6600]/10 hover:text-black hover:shadow-lg">
+            <option key={index} value={index} className="hover:bg-[#FF6600]/10 w-25 hover:text-black hover:shadow-lg">
               {fileName}
             </option>
           ))}
