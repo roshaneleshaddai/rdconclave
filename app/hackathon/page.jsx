@@ -122,7 +122,7 @@ export default function Hackathon() {
         <div
           className="bg-[#604CC3]/25 bg-opacity-20 p-8 rounded-lg mx-6 transition-opacity duration-1000 "
         >
-          <h1 className="text-4xl  font-bold text-center text-[#604CC3]">HackWeb Challenge</h1>
+          <h1 className="text-4xl  font-bold text-center text-[#604CC3]">TechTrek</h1>
           
         </div>
 
@@ -143,7 +143,7 @@ export default function Hackathon() {
       <p className="text-center">Registration Deadline:<span className="text-blue-800"> November 30, 2024</span></p>
       <p className="text-center">Preliminary Round :<span className="text-blue-800"> December 2, 2024(7 PM)</span></p>
       <p className="text-center">Shortlisted Team Announcement :<span className="text-blue-800"> December 20, 2024</span></p>
-      <p className="text-center">Final Round:<span className="text-blue-800"> January 24, 2024, 12 PM - January 25, 2024, 12 PM</span></p>
+      <p className="text-center">Final Round:<span className="text-blue-800"> January 24, 2025, 12 PM - January 25, 2025, 12 PM</span></p>
       <button className="p-2 m-2 bg-white text-lg border-2 border-[#4F709C]/40 hover:border-[#604CC3]  rounded-full">
         <Link href="https://forms.gle/u7b8FL1UG8cA5Tu2A">
         Register now
@@ -168,7 +168,7 @@ export default function Hackathon() {
      <p className="text-center">Registration Deadline:<span className="text-blue-800"> November 30, 2024</span></p>
       <p className="text-center">Preliminary Round :<span className="text-blue-800"> December 3, 2024(7 PM)</span></p>
       <p className="text-center">Shortlisted Team Announcement :<span className="text-blue-800"> December 20, 2024</span></p>
-      <p className="text-center">Final Round:<span className="text-blue-800"> January 24, 2024, 12 PM - January 25, 2024, 12 PM</span></p>
+      <p className="text-center">Final Round:<span className="text-blue-800"> January 24, 2025, 12 PM - January 25, 2025, 12 PM</span></p>
       <button className="p-2 m-2 bg-white text-lg border-2 border-[#4F709C]/50 hover:border-[#4F709C] rounded-full">
       <Link href="https://forms.gle/u7b8FL1UG8cA5Tu2A">
         Register now
