@@ -78,7 +78,7 @@ const Header = () => {
 
   return (
   <div className="relative w-full h-full">
-    <header className={`fixed w-full top-0 z-50 h-30 transition-all duration-300 ease-in-out  bg-[#F5F5F5] ${isScrolled ? 'py-0 md:py-1' : 'py-1 md:py-1'}`}>
+    <header className={`fixed w-full top-0 z-50 h-30 transition-all duration-300 ease-in-out  bg-[#F5F5F5] ${isScrolled ? 'py-1 md:py-1' : 'py-1 md:py-1'}`}>
     {/* <video
       
       loop
@@ -108,7 +108,7 @@ const Header = () => {
       className={`lg:hidden block rounded-full object-scale-down transition-all duration-300 w-24 h-32 `}
       loading="lazy"
     />
-          <div className={`md:block md:text-center transition-all duration-300 ease-in-out ${isScrolled ? 'text-xs md:text-2xl' : 'text-xl md:text-3xl'}`}>
+          <div className={`md:block md:text-center transition-all duration-300 ease-in-out ${isScrolled ? 'text-base md:text-2xl' : 'text-lg md:text-3xl'}`}>
 
             <h2 className="font-bold text-black">
               VELAGAPUDI RAMAKRISHNA<br></br>SIDDHARTHA ENGINEERING COLLEGE
@@ -122,7 +122,7 @@ const Header = () => {
                 <br />
                 <span className="text-black lg:text-sm text-xs">(Under section 3 UGC Act, 1956)</span>
                 <br/>
-                <span className="text-sm lg:text-base"><span className="text-black">(Sponsored by <span className="font-semibold">Siddhartha Academy of General & Technical Education</span>), Vijayawada, A.P, India.</span></span>
+                <span className="lg:text-base text-xs"><span className="text-black">(Sponsored by <span className="font-semibold">Siddhartha Academy of General & Technical Education</span>), Vijayawada, A.P, India.</span></span>
                 {/* <span className={`${isScrolled ? 'text-xs lg:text-sm' : 'hidden'}`}> */}
                   {/* <span className="text-black text-sm lg:text-base">
                   (Sponsored by <span className="font-semibold">Siddhartha Academy of General & Technical Education</span>)
