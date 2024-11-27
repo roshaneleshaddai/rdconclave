@@ -191,7 +191,7 @@ function HorizontalImageScroller({ images }) {
     {/* Title Section */}
     <div className="flex-0.5 flex items-center justify-center">
       <h1 className="text-3xl sm:text-4xl text-center font-bold text-[#604CC3]">
-        HackWeb<br></br>Challenge
+        TechTrek
       </h1>
     </div>
     {/* Date, Time, and Button Section */}
@@ -237,7 +237,7 @@ function HorizontalImageScroller({ images }) {
     const aboutText = [
       "The Research Conclave is a multidisciplinary event designed to bridge the gap between industry, academia, and students while promoting innovative research and collaboration.",
       "The program is structured to facilitate meaningful interactions and knowledge exchange among industry experts, academic professionals, and students.",
-      "The event comprises three key components: an Industry-Academic Meet, HackWeb Challenge, and Journal Publications."
+      "The event comprises three key components: an Industry-Academic Meet, TechTrek, and Journal Publications."
       ];
     
   
