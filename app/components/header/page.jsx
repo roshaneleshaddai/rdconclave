@@ -78,7 +78,7 @@ const Header = () => {
 
   return (
   <div className="relative w-full h-full">
-    <header className={`fixed w-full top-0 z-50 h-30 transition-all duration-300 ease-in-out  bg-[#F5F5F5] ${isScrolled ? 'py-0 md:py-2' : 'py-2 md:py-4'}`}>
+    <header className={`fixed w-full top-0 z-50 h-30 transition-all duration-300 ease-in-out  bg-[#F5F5F5] ${isScrolled ? 'py-0 md:py-1' : 'py-1 md:py-1'}`}>
     {/* <video
       
       loop
@@ -90,23 +90,49 @@ const Header = () => {
       <div className="flex items-center justify-between md:p-2 md:mx-auto max-w-7xl">
         {/* Logo Section */}
         <div className="flex items-center space-x-0 md:space-x-4">
-          <Image
-              src="/images/vrseclogo.png"
-              alt="VRSEC Logo"
-              width={isScrolled ? 100 : 120}
-              height={isScrolled ? 100 : 120}
-              className="rounded-full object-contain transition-all duration-300"
-              loading="lazy"
-          />
-          <div className={`md:block md:text-center transition-all duration-300 ease-in-out ${isScrolled ? 'text-xs md:text-2xl' : 'text-xl md:text-4xl'}`}>
+        <Image
+      // src="/images/vrseclogo.png"
+      src="/images/vr_logo.png"
+      alt="VRSEC Logo"
+      width={isScrolled ? 120 : 140}
+      height={isScrolled ? 120 : 140}
+      className={`lg:block hidden rounded-full object-scale-down transition-all duration-300 lg:w-120 lg:h-140`}
+      loading="lazy"
+    />
+    <Image
+      // src="/images/vrseclogo.png"
+      src="/images/vr_logo.png"
+      alt="VRSEC Logo"
+      width={isScrolled ? 120 : 140}
+      height={isScrolled ? 120 : 140}
+      className={`lg:hidden block rounded-full object-scale-down transition-all duration-300 w-24 h-32 `}
+      loading="lazy"
+    />
+          <div className={`md:block md:text-center transition-all duration-300 ease-in-out ${isScrolled ? 'text-xs md:text-2xl' : 'text-xl md:text-3xl'}`}>
 
             <h2 className="font-bold text-black">
-              Velagapudi Ramakrishna Siddhartha Engineering College
+              VELAGAPUDI RAMAKRISHNA<br></br>SIDDHARTHA ENGINEERING COLLEGE
             </h2>
-            <h2 className={`text-sm text-black   font-normal ${isScrolled ? 'text-xs md:text-base' : 'text-lg md:text-xl'}`}>
-              (Deemed to be University)<br></br>
-              Kanuru, Vijayawada, Andhra Pradesh, 520007.
-            </h2>
+            <h2
+                className={`font-normal text-black ${
+                  isScrolled ? 'lg:text-lg text-sm' : 'lg:text-xl text-base'
+                }`}
+              >
+                DEEMED TO BE <span className="font-semibold">UNIVERSITY</span>
+                <br />
+                <span className="text-black lg:text-sm text-xs">(Under section 3 UGC Act, 1956)</span>
+                <br/>
+                <span className="text-sm lg:text-base"><span className="text-black">(Sponsored by <span className="font-semibold">Siddhartha Academy of General & Technical Education</span>), Vijayawada, A.P, India.</span></span>
+                {/* <span className={`${isScrolled ? 'text-xs lg:text-sm' : 'hidden'}`}> */}
+                  {/* <span className="text-black text-sm lg:text-base">
+                  (Sponsored by <span className="font-semibold">Siddhartha Academy of General & Technical Education</span>)
+                  <span className="hidden lg:inline"><br /></span>
+                  Vijayawada, A.P, India.
+                </span> */}
+        {/* </span> */}
+
+              </h2>
+
           </div>
         </div>
         <div className={`hidden md:flex items-center transition-all duration-300 ${isScrolled ? 'space-x-2' : 'space-x-4'}`}>
@@ -114,8 +140,8 @@ const Header = () => {
             <Image
               src="/images/ITlogo.jpeg"
               alt="Information Technology"
-              width={isScrolled ? 80 : 100} 
-              height={isScrolled ? 80 : 100}
+              width={isScrolled ? 90 : 100} 
+              height={isScrolled ? 90 : 100}
               className="rounded-full"
             />
     
@@ -124,8 +150,8 @@ const Header = () => {
             <Image
               src="/images/s.jpeg"
               alt="springer"
-              width={isScrolled ? 80 : 100} 
-              height={isScrolled ? 80 : 100}
+              width={isScrolled ? 90 : 100} 
+              height={isScrolled ? 90 : 100}
               className="rounded-full"
             />
           </div>
@@ -133,8 +159,8 @@ const Header = () => {
             <Image
               src="https://www.stthomaskannur.ac.in/stm2/img/static/ieee.png"
               alt="ieee"
-              width={isScrolled ? 80 : 100} 
-              height={isScrolled ? 80 : 100}
+              width={isScrolled ? 90 : 100} 
+              height={isScrolled ? 90 : 100}
               className="rounded-full bg-white"
             />
           </div>
@@ -142,8 +168,8 @@ const Header = () => {
             <Image
               src="/images/rclogo.png"
               alt="Research conclave"
-              width={isScrolled ? 80 : 100} 
-              height={isScrolled ? 80 : 100}
+              width={isScrolled ? 90 : 100} 
+              height={isScrolled ? 90 : 100}
               className="rounded-full border-2 border-yellow-300"
               objectFit="contain"
             />
@@ -158,8 +184,8 @@ const Header = () => {
             <Image
               src="/images/vikshitbharat.png"
               alt="Azadi ka Amrit Mahostav"
-              width={isScrolled ? 80 : 100} 
-              height={isScrolled ? 80 : 100}
+              width={isScrolled ? 90 : 100} 
+              height={isScrolled ? 90 : 100}
               className="rounded-full"
             />
           </div> */}
@@ -199,7 +225,7 @@ const Header = () => {
         <li><Link
           href="/hackathon"
           className="" onClick={toggleMenu}>
-          HackWeb Challenge
+          TechTrek
         </Link></li>
         <li><Link
           href="/journalpublications"
@@ -211,17 +237,32 @@ const Header = () => {
           className="" onClick={toggleMenu}>
           Registration
         </Link></li>
-        <li> <select
-                className="text-black rounded p-2 "
-                defaultValue=""
-                onChange={(e) => { toggleMenu(); downloadFile(e.target.value);e.target.value = ""; }}
-              >
-                <option value="" disabled>Download</option>
-                {fileNames.map((fileName, index) => (
-                  <option key={index} value={index} className="text-sm">{fileName}</option>
-                ))}
-              </select>
-              </li>
+        <li>
+          <select
+            className="text-black w-3/4 rounded p-2 bg-white shadow-md focus:ring-2 focus:ring-blue-500 text-lg"
+            defaultValue=""
+            onChange={(e) => {
+              toggleMenu();
+              downloadFile(e.target.value);
+              e.target.value = "";
+            }}
+          >
+            <option value="" disabled>
+              Download
+            </option>
+            {fileNames.map((fileName, index) => (
+              <option key={index} value={index} className="text-sm">
+                {fileName}
+              </option>
+            ))}
+          </select>
+        </li>
+
+              <li><Link
+          href="/contact_us"
+          className="" onClick={toggleMenu}>
+          Contact Us
+        </Link></li>
         </ul>
       </nav>
 
@@ -250,7 +291,7 @@ const Header = () => {
           href="/hackathon"
           className={`cursor-pointer m-0.5 bg-[#604CC3] text-white border-[#1A1A1A] text-[#213555] font-semibold transition-all duration-300 ease-in-out ${isScrolled ? 'text-sm py-1 px-4' : 'text-base py-1 px-2'} hover:bg-[#FF6600]/10  hover:text-black hover:shadow-lg`}
         >
-          HackWeb Challenge
+          TechTrek
         </Link>
         <Link
           href="/journalpublications"
@@ -265,28 +306,34 @@ const Header = () => {
           Registration
         </Link>
         <select
-  className={`cursor-pointer m-0.5 bg-[#604CC3] text-white border-[#1A1A1A] text-[#213555] font-semibold transition-all duration-300 ease-in-out ${
-    isScrolled ? 'text-sm py-1 px-4 w-40' : 'text-base py-1 px-2 w-40'
-  } hover:bg-[#FF6600]/10 hover:text-black hover:shadow-lg truncate`}
-  value=""
-  onChange={(e) => {
-    downloadFile(e.target.value);
-    e.target.value = ""; // Reset the select to "Download"
-  }}
->
-  <option value="" disabled>
-    Download
-  </option>
-  {fileNames.map((fileName, index) => (
-    <option
-      key={index}
-      value={index}
-      className="hover:bg-[#FF6600]/10 w-40 text-ellipsis overflow-hidden whitespace-nowrap"
-    >
-      {fileName}
-    </option>
-  ))}
-</select>
+        className={`cursor-pointer m-0.5 bg-[#604CC3] text-white border-[#1A1A1A] text-[#213555] font-semibold transition-all duration-300 ease-in-out ${
+          isScrolled ? 'text-sm py-1 px-4 w-40' : 'text-base py-1 px-2 w-40'
+        } hover:bg-[#FF6600]/10 hover:text-black hover:shadow-lg truncate`}
+        value=""
+        onChange={(e) => {
+          downloadFile(e.target.value);
+          e.target.value = ""; // Reset the select to "Download"
+        }}
+      >
+        <option value="" disabled>
+          Download
+        </option>
+        {fileNames.map((fileName, index) => (
+          <option
+            key={index}
+            value={index}
+            className="hover:bg-[#FF6600]/10 w-40 text-ellipsis overflow-hidden whitespace-nowrap"
+          >
+            {fileName}
+          </option>
+        ))}
+      </select>
+      <Link
+          href="/contact_us"
+          className={`cursor-pointer m-0.5 bg-[#604CC3] text-white  border-[#1A1A1A] text-[#213555] font-semibold transition-all duration-300 ease-in-out ${isScrolled ? 'text-sm py-1 px-4' : 'text-base py-1 px-2'} hover:bg-[#FF6600]/10  hover:text-black hover:shadow-lg`}
+        >
+         Contact Us
+        </Link>
 
       </nav>
     </header>
