@@ -35,10 +35,12 @@ const Footer = () => {
 
           {/* Phone Numbers Section */}
           <div className="mb-6 md:mb-0 flex-col">
-            <h2 className="text-lg font-semibold mb-2">Contact Numbers</h2>
+            <h2 className="text-lg font-semibold mb-2">Contact Us</h2>
             <p>
+              Faculty Coordinators<br></br>
               <FaPhoneAlt className="inline mr-2" /> Dr. Jaya Prakash S - 9848143200 <br />
               <FaPhoneAlt className="inline mr-2" /> Dr. Gargi M - 8886599444<br/>
+              Student Coordinators<br></br>
               <FaPhoneAlt className="inline mr-2" /> M .Eleshaddai Roshan - 9618227549<br/>
               <FaPhoneAlt className="inline mr-2" /> G .Neeraja - 8341323299
             </p>
