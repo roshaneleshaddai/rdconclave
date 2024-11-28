@@ -87,27 +87,39 @@ const Header = () => {
     >
       <source src="/images/bg.mp4" type="video/mp4" />
     </video> */}
-      <div className="flex items-center justify-between md:p-2 md:mx-auto max-w-7xl">
+      <div className="flex items-center justify-evenly md:p-2 md:mx-auto max-w-7xl">
         {/* Logo Section */}
-        <div className="flex items-center space-x-0 md:space-x-4">
-        <Image
-      // src="/images/vrseclogo.png"
-      src="/images/vr_logo.png"
-      alt="VRSEC Logo"
-      width={isScrolled ? 120 : 140}
-      height={isScrolled ? 120 : 140}
-      className={`lg:block hidden rounded-full object-scale-down transition-all duration-300 lg:w-120 lg:h-140`}
-      loading="lazy"
-    />
-    <Image
-      // src="/images/vrseclogo.png"
-      src="/images/vr_logo.png"
-      alt="VRSEC Logo"
-      width={isScrolled ? 120 : 140}
-      height={isScrolled ? 120 : 140}
-      className={`lg:hidden block rounded-full object-scale-down transition-all duration-300 w-24 h-32 `}
-      loading="lazy"
-    />
+        <div className="flex items-center justify-evenly space-x-0 md:space-x-4">
+              <Image
+            // src="/images/vrseclogo.png"
+            src="/images/vr_logo.png"
+            alt="VRSEC Logo"
+            width={isScrolled ? 120 : 140}
+            height={isScrolled ? 120 : 140}
+            className={`lg:block hidden rounded-full object-scale-down transition-all duration-300 lg:w-120 lg:h-140`}
+            loading="lazy"
+          />
+          <Image
+            // src="/images/vrseclogo.png"
+            src="/images/vr_logo.png"
+            alt="VRSEC Logo"
+            width={isScrolled ? 120 : 140}
+            height={isScrolled ? 120 : 140}
+            className={`lg:hidden block rounded-full object-scale-down transition-all duration-300 w-24 h-32 `}
+            loading="lazy"
+          />
+          <Image
+              // src="/images/ITlogo.jpeg"
+              src="https://scontent.fvga12-1.fna.fbcdn.net/v/t39.30808-6/294846232_451990066937026_443618469937196822_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=AVgdWNLestAQ7kNvgFe16GE&_nc_zt=23&_nc_ht=scontent.fvga12-1.fna&_nc_gid=AZiMld-DHkrpCu4mHzfecCn&oh=00_AYBZMIXz3r2v73Kp-1QIsJCuC5-N7w77xzLoZy5tor-Hdg&oe=674E4C8F"
+              // src="/images/it_logo.jfif"
+              alt="Information Technology"
+              width={isScrolled ? 140 : 160}
+              height={isScrolled ? 140 : 160}
+              className={`rounded-full object-scale-down transition-all duration-300 w-24 h-32 `}
+            loading="lazy"
+            />
+        </div>
+        <div>
           <div className={`md:block md:text-center transition-all duration-300 ease-in-out ${isScrolled ? 'text-base md:text-2xl' : 'text-lg md:text-3xl'}`}>
 
             <h2 className="font-bold text-black">
@@ -118,7 +130,7 @@ const Header = () => {
                   isScrolled ? 'lg:text-lg text-sm' : 'lg:text-xl text-base'
                 }`}
               >
-                DEEMED TO BE <span className="font-semibold">UNIVERSITY</span>
+                (Deemed to be <span className="font-semibold">University</span>)
                 <br />
                 <span className="text-black lg:text-sm text-xs">(Under section 3 UGC Act, 1956)</span>
                 <br/>
@@ -132,28 +144,19 @@ const Header = () => {
         {/* </span> */}
 
               </h2>
-
+            </div>
           </div>
-        </div>
+          <div>
         <div className={`hidden md:flex items-center transition-all duration-300 ${isScrolled ? 'space-x-2' : 'space-x-4'}`}>
         <div className="hidden md:block">
-            <Image
+            {/* <Image
               src="/images/ITlogo.jpeg"
               alt="Information Technology"
               width={isScrolled ? 90 : 100} 
               height={isScrolled ? 90 : 100}
               className="rounded-full"
-            />
+            /> */}
     
-          </div>
-          <div className="hidden md:block">
-            <Image
-              src="/images/s.jpeg"
-              alt="springer"
-              width={isScrolled ? 90 : 100} 
-              height={isScrolled ? 90 : 100}
-              className="rounded-full"
-            />
           </div>
           <div className="hidden md:block">
             <Image
@@ -162,6 +165,15 @@ const Header = () => {
               width={isScrolled ? 90 : 100} 
               height={isScrolled ? 90 : 100}
               className="rounded-full bg-white"
+            />
+          </div>
+          <div className="hidden md:block">
+            <Image
+              src="/images/s.jpeg"
+              alt="springer"
+              width={isScrolled ? 90 : 100} 
+              height={isScrolled ? 90 : 100}
+              className="rounded-full"
             />
           </div>
           <div className="hidden  md:block">
@@ -189,6 +201,7 @@ const Header = () => {
               className="rounded-full"
             />
           </div> */}
+        </div>
         </div>
           <div className="md:hidden">
           {isOpen ? (
