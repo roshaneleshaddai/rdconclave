@@ -110,7 +110,7 @@ const Header = () => {
           />
           <Image
               // src="/images/ITlogo.jpeg"
-              src="https://scontent.fvga12-1.fna.fbcdn.net/v/t39.30808-6/294846232_451990066937026_443618469937196822_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=AVgdWNLestAQ7kNvgFe16GE&_nc_zt=23&_nc_ht=scontent.fvga12-1.fna&_nc_gid=AZiMld-DHkrpCu4mHzfecCn&oh=00_AYBZMIXz3r2v73Kp-1QIsJCuC5-N7w77xzLoZy5tor-Hdg&oe=674E4C8F"
+              src="/images/it_logoo.jpg"
               // src="/images/it_logo.jfif"
               alt="Information Technology"
               width={isScrolled ? 140 : 160}
