@@ -17,6 +17,7 @@ const Meet = () => {
     '/images/industry8.jpeg',
     '/images/industry9.jpeg',
     '/images/industry10.png',
+    'https://i.pinimg.com/564x/34/a2/b1/34a2b1d02fd71b5a742eb5e34301f70f.jpg'
   ];
 
   // Industries Section Component with Fade-In Effect
@@ -28,7 +29,7 @@ const Meet = () => {
       viewport={{ once: true }}
       className="bg-white  bg-opacity-50 shadow-md rounded-lg p-6 mb-10"
     >
-      <h2 className="lg:text-4xl text-2xl text-[#604CC3] font-semibold mb-4">Expected Industries</h2>
+      <h2 className="lg:text-4xl text-2xl text-[#604CC3] font-semibold mb-4">Featured Industries</h2>
         <hr className="h-1 my-8 bg-[#604CC3] border-0 w-1/4" />
       <p className="text-lg lg:text-xl mb-6 text-justify">
       The Industry-Academic Meet serves as a platform for professionals from various industries and academic institutions to come together and discuss the latest trends, challenges, and opportunities in their respective fields. This segment of the program aims to foster collaboration, spark new research ideas, and identify potential areas for partnerships. Industry representatives can share insights on real-world problems, while academics can present their research findings and discuss how they can be applied in practical settings. The meet will also include panel discussions, keynote speeches, and networking sessions to encourage open dialogue and idea exchange.
