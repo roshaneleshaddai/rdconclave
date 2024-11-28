@@ -7,6 +7,8 @@ const nextConfig = {
       "www.google.com",
       "videos.pexels.com",
       "www.stthomaskannur.ac.in",
+      "i.pinimg.com",
+      "scontent.fvga12-1.fna.fbcdn.net",
     ],
   },
 };
