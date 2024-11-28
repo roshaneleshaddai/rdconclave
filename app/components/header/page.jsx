@@ -116,7 +116,6 @@ const Header = () => {
               width={isScrolled ? 140 : 160}
               height={isScrolled ? 140 : 160}
               className={`rounded-full object-scale-down transition-all duration-300 w-24 h-32 `}
-            loading="lazy"
             />
         </div>
         <div>
