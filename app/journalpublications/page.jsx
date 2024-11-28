@@ -76,7 +76,7 @@ export default function JournalPublications() {
     },
     {
       sNo: 3,
-      name: "Proceedings on Engineering sciences",
+      name: "Proceedings on Engineering Sciences",
       link: "https://pesjournal.net/calls_for_special_issues.php",
       quartile: "",
       // apc: "300 USD"
@@ -90,7 +90,7 @@ export default function JournalPublications() {
     },
     {
       sNo:5,
-      name: "IEEE conference proceedings",
+      name: "IEEE Conference Proceedings",
       link: "https://www.ieee.org/conferences/",
     }
   ];
@@ -269,8 +269,20 @@ export default function JournalPublications() {
 </div>
         </div>
 
-        <div className='flex flex-col items-center'>
+        <div className='flex lg:flex-row flex-col justify-evenly items-center'>
+        <div className='flex flex-col'>
           <Image
+          src="https://www.stthomaskannur.ac.in/stm2/img/static/ieee.png"
+          alt="ieee"
+          width={160} 
+          height={160} 
+          objectFit="cover"
+          className='border-4 border-black'
+          />
+          <p className='text-center text-2xl p-2'>IEEE</p>
+          </div>
+          <div className='flex flex-col'>
+            <Image
           src="/images/springer.png"
           alt="springer"
           width={250} 
@@ -279,6 +291,8 @@ export default function JournalPublications() {
           className='border-4 border-black'
           />
           <p className='text-center text-2xl p-2'>Springer Lecture Series</p>
+          </div>
+          
         </div>
         
         <div className='flex justify-center'>
