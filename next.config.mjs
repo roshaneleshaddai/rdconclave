@@ -9,6 +9,7 @@ const nextConfig = {
       "www.stthomaskannur.ac.in",
       "i.pinimg.com",
       "scontent.fvga12-1.fna.fbcdn.net",
+      "encrypted-tbn0.gstatic.com",
     ],
   },
 };
