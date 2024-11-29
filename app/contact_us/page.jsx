@@ -51,7 +51,7 @@ const contact2 =[
           Vijayawada, Andhra Pradesh 520007.</p>
       </div>
       <div>
-      <h1 className='text-2xl lg:text-3xl font-bold pb-5 '>Drop us a Line</h1>
+      
          <p className='text-lg font-bold'>Faculty Coordinators:</p>
          <div className='text-base lg:text-xl '>
           {contact1.map((c1)=>{
