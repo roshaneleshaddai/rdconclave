@@ -272,10 +272,10 @@ export default function JournalPublications() {
         <div className='flex lg:flex-row flex-col justify-evenly items-center'>
         <div className='flex flex-col'>
           <Image
-          src="https://www.stthomaskannur.ac.in/stm2/img/static/ieee.png"
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQxT9G3gSxNZESl4NJH1NzcPq0kBF1XNyHcA&s"
           alt="ieee"
-          width={160} 
-          height={160} 
+          width={250} 
+          height={250} 
           objectFit="cover"
           className='border-4 border-black'
           />
