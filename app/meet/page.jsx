@@ -7,17 +7,18 @@ import Image from 'next/image';
 const Meet = () => {
   // Array of expected outcomes
   const logos = [
+    '/images/industry4.png',
+     '/images/industry3.jpeg',
+     '/images/industry7.png',
+    'https://i.pinimg.com/564x/34/a2/b1/34a2b1d02fd71b5a742eb5e34301f70f.jpg'
     '/images/industry1.png',
     '/images/industry2.jpeg',
-    '/images/industry3.jpeg',
-    '/images/industry4.png',
     '/images/industry5.png',
     '/images/industry6.png',
-    '/images/industry7.png',
     '/images/industry8.jpeg',
     '/images/industry9.jpeg',
     '/images/industry10.png',
-    'https://i.pinimg.com/564x/34/a2/b1/34a2b1d02fd71b5a742eb5e34301f70f.jpg'
+    
   ];
 
   // Industries Section Component with Fade-In Effect
@@ -40,8 +41,8 @@ const Meet = () => {
             <Image 
               src={logo} 
               alt={`Industry logo ${index + 1}`} 
-              width={100} 
-              height={100} 
+              width={120} 
+              height={120} 
               className="object-contain"
             />
           </div>
