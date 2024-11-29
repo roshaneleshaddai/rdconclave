@@ -285,7 +285,7 @@ function HorizontalImageScroller({ images }) {
           {aboutText.map((line, index) => (
             <p
               key={index}
-              className={`text-lg text-justify p-2 transition-opacity duration-300 ${
+              className={`text-lg text-justify px-2 transition-opacity duration-300 ${
                 visibleLines.includes(index) ? 'opacity-100' : 'opacity-0'
               }`}
             >
@@ -572,7 +572,7 @@ const CoordinatorsSection = () => {
                 className="w-[150px] h-[160px] object-cover"
               />
           <p className="text-blue-600 font-bold text-md">
-            Prof. M Suneetha ,
+            Prof. M Suneetha 
           </p>
           <p className="text-black text-sm">
             Dean-R&D, IQAC, HoD-IT
