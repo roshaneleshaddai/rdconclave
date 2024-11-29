@@ -45,7 +45,7 @@ const contact2 =[
       <div>
          <h1 className='text-2xl lg:text-3xl font-bold pb-5 text-center flex items-center justify-center'>
             <IoLocationOutline className="mr-3" />Our Location</h1>
-         <p className='text-lg lg:text-xl text-center'>Velagapudi Ramakrishna Siddhartha Engineering College,<br />
+         <p className='text-lg lg:text-xl text-center'>Velagapudi Ramakrishna<br/> Siddhartha Engineering College,<br />
           Chalasani Nagar,
           Kanuru,<br />
           Vijayawada, Andhra Pradesh 520007.</p>
