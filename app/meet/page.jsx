@@ -10,7 +10,7 @@ const Meet = () => {
     '/images/industry4.png',
      '/images/industry3.jpeg',
      '/images/industry7.png',
-    'https://i.pinimg.com/564x/34/a2/b1/34a2b1d02fd71b5a742eb5e34301f70f.jpg'
+    'https://i.pinimg.com/564x/34/a2/b1/34a2b1d02fd71b5a742eb5e34301f70f.jpg',
     '/images/industry1.png',
     '/images/industry2.jpeg',
     '/images/industry5.png',
