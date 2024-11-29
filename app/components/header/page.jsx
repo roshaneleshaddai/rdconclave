@@ -319,7 +319,7 @@ const Header = () => {
         </Link>
         <select
         className={`cursor-pointer m-0.5 bg-[#604CC3] text-white border-[#1A1A1A] text-[#213555] font-semibold transition-all duration-300 ease-in-out ${
-          isScrolled ? 'text-sm py-1 px-4 w-32' : 'text-base py-1 px-2 w-32'
+          isScrolled ? 'text-sm py-1 px-4 w-28' : 'text-base py-1 px-2 w-28'
         } hover:bg-[#FF6600]/10 hover:text-black hover:shadow-lg truncate`}
         value=""
         onChange={(e) => {
