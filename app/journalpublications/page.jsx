@@ -39,20 +39,20 @@ export default function JournalPublications() {
   // ];
 
   const journals = [
+    // {
+    //   sNo: 1,
+    //   name: "Nanotechnology Perceptions",
+    //   link: "http://nano-ntp.com",
+    //   quartile: "Q4",
+    //   // apc: "25000 INR"
+    // },
     {
       sNo: 1,
-      name: "Nanotechnology Perceptions",
-      link: "http://nano-ntp.com",
-      quartile: "Q4",
-      // apc: "25000 INR"
+      name: "Journal of Computational and Cognitive Engineering",
+      link: "https://ojs.bonviewpress.com/index.php/JCCE/index",
+      quartile: "Q1",
+      // apc: "700 USD"
     },
-    // {
-    //   sNo: 2,
-    //   name: "Journal of Computational and Cognitive Engineering",
-    //   link: "https://ojs.bonviewpress.com/index.php/JCCE/index",
-    //   quartile: "Q1",
-    //   // apc: "700 USD"
-    // },
     // {
     //   sNo: 3,
     //   name: "International Journal of Neutrosophic",
