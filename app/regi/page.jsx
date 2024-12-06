@@ -30,7 +30,7 @@ const Regi = () => {
       {/* Note Section */}
       <div className=" border-l-4 border-yellow-500 text-yellow-700 p-4 mb-6" role="alert">
        
-        <h2 className="lg:text-3xl text-2xl font-bold mb-4 text-center">Publication Details</h2>
+        <h2 className="lg:text-3xl text-2xl font-bold mb-4 text-center">Fee Details</h2>
         <div className="overflow-x-auto">
           <table className="min-w-full border-2">
             <thead>
