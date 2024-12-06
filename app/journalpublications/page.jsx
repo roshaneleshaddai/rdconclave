@@ -57,16 +57,7 @@ export default function JournalPublications() {
 
   return (
     <div className="relative font-SUSE min-h-screen w-screen mt-44 md:mt-56">
-     
-
-      {/* Existing content */}
-      <div className="pb-5">
-        <div
-          className="bg-[#604CC3]/25 bg-opacity-20 p-8 rounded-lg mx-6 transition-opacity duration-1000"
-        >
-          <h1 className="text-4xl font-bold text-center text-[#604CC3]">Journal Publications</h1>
-        </div>
- {/* Submission Deadlines Section */}
+     {/* Submission Deadlines Section */}
       <div className="bg-[#f9f9f9] p-6 rounded-lg shadow-md mx-6 mb-8">
         <h2 className="text-3xl font-bold text-center text-[#604CC3] mb-4">Important Dates</h2>
         <ul className="text-lg text-center text-gray-700 space-y-2">
@@ -75,6 +66,15 @@ export default function JournalPublications() {
           <li><strong>Event Registration Deadline:</strong> January 10, 2025</li>
         </ul>
       </div>
+
+      {/* Existing content */}
+      <div className="pb-5">
+        <div
+          className="bg-[#604CC3]/25 bg-opacity-20 p-8 rounded-lg mx-6 transition-opacity duration-1000"
+        >
+          <h1 className="text-4xl font-bold text-center text-[#604CC3]">Journal Publications</h1>
+        </div>
+ 
         <div className="flex flex-col md:flex-row justify-around space-y-6 md:space-y-0 md:space-x-10 mt-6 items-center">
           {/* Journals Section */}
           <div
