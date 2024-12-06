@@ -29,10 +29,7 @@ const Regi = () => {
     <div className="relative font-SUSE min-h-screen w-screen mt-44 md:mt-56 flex-col items-center justify-center p-4">
       {/* Note Section */}
       <div className=" border-l-4 border-yellow-500 text-yellow-700 p-4 mb-6" role="alert">
-        <p className="font-bold">Important Note</p>
-        <p>
-          Journals (marked with <span className="font-bold">*</span>) include an additional registration fee of 2000 INR.
-        </p>
+       
         <h2 className="lg:text-3xl text-2xl font-bold mb-4 text-center">Publication Details</h2>
         <div className="overflow-x-auto">
           <table className="min-w-full border-2">
@@ -54,6 +51,10 @@ const Regi = () => {
             </tbody>
           </table>
         </div>
+         <p className="font-bold">Important Note</p>
+        <p>
+          Journals (marked with <span className="font-bold">*</span>) include an additional registration fee of 2000 INR.
+        </p>
       </div>
 
       {/* Payment Section */}
