@@ -231,9 +231,9 @@ export default function JournalPublications() {
           {/* Journals Section with Swipe-In-Right Animation */}
           <div
         ref={publicationsRef}
-        className={mt-1 w-full bg-white bg-opacity-50 p-8 rounded-lg transition-opacity duration-1000 ${
+        className={`mt-1 w-full bg-white bg-opacity-50 p-8 rounded-lg transition-opacity duration-1000 ${
         publicationsInView ? 'animate-swipeInRight opacity-100' : 'opacity-0'
-        }}
+        }`}
         >
         <h1 className="text-4xl font-bold pb-4 text-[#604CC3]">Journals</h1>
   
@@ -268,6 +268,12 @@ export default function JournalPublications() {
   </div>
 </div>
         </div>
+
+      <div className="lg:text-xl text-lg flex-1 flex flex-col items-center justify-center font-bold lg:mx-5 m-2 lg:mt-10 lg:mb-20 mb-10">
+        <p className="text-center">Submission Deadline:<span className="text-red-500 lg:text-2xl text-xl"> December 20, 2024</span></p>
+        <p className="text-center">Acceptance Notification:<span className="text-red-500 lg:text-2xl text-xl"> January 5, 2025</span></p>
+        <p className="text-center">Event Registration Deadline:<span className="text-red-500 lg:text-2xl text-xl"> January 10, 2025</span></p>
+      </div>
 
         <div className='flex lg:flex-row flex-col justify-evenly items-center'>
         <div className='flex flex-col'>
