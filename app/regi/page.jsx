@@ -20,7 +20,7 @@ const Regi = () => {
   const publications = [
     { name: "IEEE Conference Proceedings (IEEE)", cost: "12000 INR", isJournal: false },
     { name: "Lecture Notes in Electrical Engineering (LNEE)", cost: "9000 INR", isJournal: false },
-    { name: "Proceedings on Engineering Sciences (PES)", cost: "175 EUR", isJournal: false },
+    { name: "Proceedings on Engineering Sciences (PES)", cost: "175 EUR", isJournal: true },
     { name: "Journal of Computational and Cognitive Engineering (JCC)", cost: "800 USD", isJournal: true },
     { name: "Journal of Infrastructure, Policy and Development (JIPD)", cost: "1800 USD", isJournal: true },
   ];
@@ -28,7 +28,7 @@ const Regi = () => {
   return (
     <div className="relative font-SUSE min-h-screen w-screen mt-44 md:mt-56 flex-col items-center justify-center p-4">
       {/* Note Section */}
-      <div className="bg-yellow-100 border-l-4 border-yellow-500 text-yellow-700 p-4 mb-6" role="alert">
+      <div className=" border-l-4 border-yellow-500 text-yellow-700 p-4 mb-6" role="alert">
         <p className="font-bold">Important Note</p>
         <p>
           Journals (marked with <span className="font-bold">*</span>) include an additional registration fee of 2000 INR.
