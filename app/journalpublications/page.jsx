@@ -309,10 +309,10 @@ export default function JournalPublications() {
         Click here!
              </a>
       </button>
-         <div className='items-center text-center'>
+{/*          <div className='items-center text-center'>
           <h1>or</h1>
           <Link href={`https://mail.google.com/mail/?view=cm&fs=1&to=${emailAddress}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`}> Email : <span className='text-blue-700'>rdconclave25@vrsiddhartha.ac.in</span> </Link>
-         </div>
+         </div> */}
         </motion.div>
         
 
