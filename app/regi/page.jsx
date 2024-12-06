@@ -53,7 +53,7 @@ const Regi = () => {
         </div>
          <p className="font-bold">Important Note</p>
         <p>
-          Journals (marked with <span className="font-bold">*</span>) include an additional registration fee of 2000 INR.
+          Journals (marked with <span className="font-bold text-red-500">*</span>) include an additional registration fee of 2000 INR.
         </p>
       </div>
 
