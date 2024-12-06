@@ -215,6 +215,16 @@ export default function JournalPublications() {
             journal Publications at our college highlights the research contributions of our esteemed academic staff, showcasing their latest papers, publications, and projects. This platform fosters collaboration with peers, industry professionals, and other institutions. Through engaging poster sessions, oral presentations, and panel discussions, our journal present their groundbreaking work, encouraging rich discussions and constructive feedback. This initiative reflects our commitment to academic excellence and paves the way for future collaborative research endeavors.
           </p> */}
         </div>
+            
+          <div className='flex flex-col items-center justify-center'>  
+            <h1 className='text-3xl text-center font-bold px-5 pt-5'>Important dates</h1>
+            <hr className="h-1 my-2 bg-[#604CC3] w-1/4" />
+            <div className="lg:text-xl text-lg flex-1 flex flex-col items-center justify-center font-bold lg:mx-5 m-2">
+            <p className="text-center">Submission Deadline:<span className="text-red-500"> December 20, 2024</span></p>
+            <p className="text-center">Acceptance Notification:<span className="text-red-500 "> January 5, 2025</span></p>
+            <p className="text-center">Event Registration Deadline:<span className="text-red-500 "> January 10, 2025</span></p>
+          </div>
+        </div>
 
         <div className="flex flex-col md:flex-row justify-around space-y-6 md:space-y-0 md:space-x-10 mt-6 items-center">
           {/* Expected Papers Section */}
@@ -229,6 +239,7 @@ export default function JournalPublications() {
           </div> */}
 
           {/* Journals Section with Swipe-In-Right Animation */}
+          
           <div
         ref={publicationsRef}
         className={`mt-1 w-full bg-white bg-opacity-50 p-8 rounded-lg transition-opacity duration-1000 ${
@@ -236,7 +247,7 @@ export default function JournalPublications() {
         }`}
         >
         <h1 className="text-4xl font-bold pb-4 text-[#604CC3]">Journals</h1>
-  
+        
       {/* table of journals */}
   <div className="overflow-x-auto">
     <table className="min-w-full text-left table-auto border-collapse border-2 border-[#4F709C]">
@@ -269,11 +280,6 @@ export default function JournalPublications() {
 </div>
         </div>
 
-      <div className="lg:text-xl text-lg flex-1 flex flex-col items-center justify-center font-bold lg:mx-5 m-2 lg:mt-10 lg:mb-20 mb-10">
-        <p className="text-center">Submission Deadline:<span className="text-red-500 lg:text-2xl text-xl"> December 20, 2024</span></p>
-        <p className="text-center">Acceptance Notification:<span className="text-red-500 lg:text-2xl text-xl"> January 5, 2025</span></p>
-        <p className="text-center">Event Registration Deadline:<span className="text-red-500 lg:text-2xl text-xl"> January 10, 2025</span></p>
-      </div>
 
         <div className='flex lg:flex-row flex-col justify-evenly items-center'>
         <div className='flex flex-col'>
