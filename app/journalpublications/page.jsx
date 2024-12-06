@@ -218,15 +218,15 @@ export default function JournalPublications() {
             
           <div className='flex flex-col items-center justify-center'>  
             <h1 className='text-3xl text-center font-bold px-5 pt-5'>Important dates</h1>
-            <hr className="h-1 my-2 bg-[#604CC3] w-1/4" />
-            <div className="lg:text-xl text-lg flex-1 flex flex-col items-center justify-center font-bold lg:mx-5 m-2">
+            <hr className="h-1 my-2 bg-[#604CC3] lg:w-1/4 w-1/2" />
+            <div className="lg:text-xl text-base flex-1 flex flex-col items-center justify-center font-bold lg:mx-5 m-2">
             <p className="text-center">Submission Deadline:<span className="text-red-500"> December 20, 2024</span></p>
             <p className="text-center">Acceptance Notification:<span className="text-red-500 "> January 5, 2025</span></p>
             <p className="text-center">Event Registration Deadline:<span className="text-red-500 "> January 10, 2025</span></p>
           </div>
         </div>
 
-        <div className="flex flex-col md:flex-row justify-around space-y-6 md:space-y-0 md:space-x-10 mt-6 items-center">
+        <div className="flex flex-col md:flex-row justify-around space-y-6 md:space-y-0 md:space-x-10 items-center">
           {/* Expected Papers Section */}
           {/* <div className="px-6 ml-8 md:px-12 text-[#604CC3] py-4 flex justify-center">
             <div
