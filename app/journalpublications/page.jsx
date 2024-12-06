@@ -215,15 +215,7 @@ export default function JournalPublications() {
             journal Publications at our college highlights the research contributions of our esteemed academic staff, showcasing their latest papers, publications, and projects. This platform fosters collaboration with peers, industry professionals, and other institutions. Through engaging poster sessions, oral presentations, and panel discussions, our journal present their groundbreaking work, encouraging rich discussions and constructive feedback. This initiative reflects our commitment to academic excellence and paves the way for future collaborative research endeavors.
           </p> */}
         </div>
-        {/* Submission Deadlines Section */}
-      <div className="bg-[#f9f9f9] p-6 rounded-lg shadow-md mx-6 mb-8">
-        <h2 className="text-3xl font-bold text-center text-[#604CC3] mb-4">Important Dates</h2>
-        <ul className="text-lg text-center text-gray-700 space-y-2">
-          <li><strong>Submission Deadline:</strong> December 20, 2024</li>
-          <li><strong>Acceptance Notification:</strong> January 5, 2025</li>
-          <li><strong>Event Registration Deadline:</strong> January 10, 2025</li>
-        </ul>
-      </div>
+       
         <div className="flex flex-col md:flex-row justify-around space-y-6 md:space-y-0 md:space-x-10 mt-6 items-center">
           {/* Expected Papers Section */}
           {/* <div className="px-6 ml-8 md:px-12 text-[#604CC3] py-4 flex justify-center">
@@ -237,6 +229,15 @@ export default function JournalPublications() {
           </div> */}
 
           {/* Journals Section with Swipe-In-Right Animation */}
+           {/* Submission Deadlines Section */}
+      <div className="bg-[#f9f9f9] p-6 rounded-lg shadow-md mx-6 mb-8">
+        <h2 className="text-3xl font-bold text-center text-[#604CC3] mb-4">Important Dates</h2>
+        <ul className="text-lg text-center text-gray-700 space-y-2">
+          <li><strong>Submission Deadline:</strong> December 20, 2024</li>
+          <li><strong>Acceptance Notification:</strong> January 5, 2025</li>
+          <li><strong>Event Registration Deadline:</strong> January 10, 2025</li>
+        </ul>
+      </div>
           <div
         ref={publicationsRef}
         className={mt-1 w-full bg-white bg-opacity-50 p-8 rounded-lg transition-opacity duration-1000 ${
