@@ -47,7 +47,8 @@ const Footer = () => {
                   <span className="font-bold">Faculty Coordinators:</span>
                   <br />
                   <FaPhoneAlt className="inline mr-2" /> Dr. Jaya Prakash S - 9848143200 <br />
-                  <FaPhoneAlt className="inline mr-2" /> Dr. Gargi M - 8886599444
+                  <FaPhoneAlt className="inline mr-2" /> Dr. Gargi M - 8886599444 <br/>
+                  <FaPhoneAlt className="inline mr-2" /> Dr.V Satya Sahithi - 9666890927 <br/>
                   <br />
                   <span className="font-bold">Student Coordinators:</span>
                   <br />
