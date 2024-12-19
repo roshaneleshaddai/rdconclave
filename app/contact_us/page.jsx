@@ -25,7 +25,7 @@ const contact = () => {
     {
       "id":3,
       "name":"Dr.V Satya Sahithi",
-      "ph":96668 90927,
+      "ph":9666890927,
     }
 ]
 const contact2 =[
