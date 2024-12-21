@@ -56,7 +56,7 @@ const Regi = () => {
           Journals (marked with <span className="font-bold text-red-500">*</span>) include an additional registration fee of 2000 INR.
         </p>
         <p>
-          All the above will also include <span className="font-bold text-lg text-red-500"><strong>18% GST</strong></span> .
+        All the above publications will also include an additional <span className='font-bold text-lg text-red-500'>18% GST</span>.
         </p>
       </div>
 
