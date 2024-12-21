@@ -51,13 +51,15 @@ const Regi = () => {
             </tbody>
           </table>
         </div>
-         <p className="font-bold">Important Note</p>
-        <p>
-          Journals (marked with <span className="font-bold text-red-500">*</span>) include an additional registration fee of 2000 INR.
-        </p>
-        <p>
+        <ul className="list-disc pl-6">
+        <li className="font-bold">Important Note</li>
+      <li>
+       Journals (marked with <span className="font-bold text-red-500">*</span>) include an additional registration fee of 2000 INR.
+     </li>
+     <li>
         All the above publications will also include an additional <span className='font-bold text-lg text-red-500'>18% GST</span>.
-        </p>
+     </li>
+    </ul>
       </div>
 
       {/* Payment Section */}
