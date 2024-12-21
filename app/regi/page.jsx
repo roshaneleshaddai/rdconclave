@@ -18,7 +18,7 @@ const Regi = () => {
   ];
 
   const publications = [
-    { name: "IEEE Conference Proceedings (IEEE)", cost: "14160 INR(including GST)", isJournal: false },
+    { name: "IEEE Conference Proceedings (IEEE)", cost: "14160 INR (including GST)", isJournal: false },
     { name: "Lecture Notes in Electrical Engineering (LNEE)", cost: "9000 INR", isJournal: false },
     { name: "Proceedings on Engineering Sciences (PES)", cost: "175 EUR", isJournal: true },
     { name: "Journal of Computational and Cognitive Engineering (JCC)", cost: "800 USD", isJournal: true },
