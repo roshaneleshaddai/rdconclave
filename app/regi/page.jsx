@@ -18,7 +18,7 @@ const Regi = () => {
   ];
 
   const publications = [
-    { name: "IEEE Conference Proceedings (IEEE)", cost: "14160 INR (including GST)", isJournal: false },
+    { name: "IEEE Conference Proceedings (IEEE)", cost: "12000 INR", isJournal: false },
     { name: "Lecture Notes in Electrical Engineering (LNEE)", cost: "9000 INR", isJournal: false },
     { name: "Proceedings on Engineering Sciences (PES)", cost: "175 EUR", isJournal: true },
     { name: "Journal of Computational and Cognitive Engineering (JCC)", cost: "800 USD", isJournal: true },
@@ -56,9 +56,9 @@ const Regi = () => {
       <li>
        Journals (marked with <span className="font-bold text-red-500">*</span>) include an additional registration fee of 2000 INR.
      </li>
-     <li>
+{/*      <li>
         All the above publications will also include an additional <span className='font-bold text-lg text-red-500'>18% GST</span>.
-     </li>
+     </li> */}
     </ul>
       </div>
 
