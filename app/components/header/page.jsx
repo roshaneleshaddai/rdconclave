@@ -177,7 +177,7 @@ const Header = () => {
           </div>
           <div className="hidden  md:block">
             <Image
-              src="/images/rclogo.png"
+              src="/images/rclogo1.png"
               alt="Research conclave"
               width={isScrolled ? 90 : 100} 
               height={isScrolled ? 90 : 100}
