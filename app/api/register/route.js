@@ -15,17 +15,17 @@ export async function POST(req) {
   }
 
   try {
-    const { name, email, phone, college } = await req.json();
+    const { name, email, phone, college ,event} = await req.json();
 
     // Basic validation
-    if (!name || !email || !phone || !college) {
+    if (!name || !email || !phone || !college || !event) {
       return NextResponse.json({ message: 'All fields are required' }, { status: 400 });
     }
 
     const database = await connectToDatabase();
     const collection = database.collection('registrations');
 
-    const formData = { name, email, phone, college, createdAt: new Date() };
+    const formData = { name, email, phone, college,event, createdAt: new Date() };
     const result = await collection.insertOne(formData);
 
     if (result.acknowledged) {
