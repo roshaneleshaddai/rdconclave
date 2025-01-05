@@ -3,6 +3,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
+import { toast, ToastContainer } from 'react-toastify';
 
 
 export default function Hackathon() {
@@ -11,6 +12,11 @@ export default function Hackathon() {
   const [timeLeft, setTimeLeft] = useState({});
   const sectionLeftRef = useRef(null);
   const sectionRightRef = useRef(null);
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [phone, setPhone] = useState('');
+  const [college, setCollege] = useState('');
+
 
   const handleRedirect = (url) => {
     window.location.href = url;
@@ -104,6 +110,32 @@ export default function Hackathon() {
     },
   ];
 
+  const handleSubmit = async (e) => {
+    e.preventDefault(); 
+  
+    const formData = { name, email, phone, college };
+    console.log(formData);
+  
+    try {
+      const response = await fetch('/api/register', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+  
+      const result = await response.json();
+  
+      if (response.ok) {
+        toast.success(result.message);
+      } else {
+        toast.error(result.message);
+      }
+    } catch (error) {
+      console.error('Error during submission:', error);
+      toast.error('An unexpected error occurred. Please try again.');
+    }
+  };
+  
   return (
     <div className="relative font-SUSE min-h-screen w-screen mt-44 md:mt-56">
       {/* Background Video */}
@@ -129,7 +161,7 @@ export default function Hackathon() {
 
         <div className="flex flex-col items-center lg:flex-row lg:justify-center min-h-full p-4 justify-around">
   <div
-    onClick={() => handleRedirect("https://forms.gle/u7b8FL1UG8cA5Tu2A")}
+    
     className="my-5 bg-[#604CC3]/25 bg-opacity-20 p-6 rounded-lg mx-8 cursor-pointer  hover:shadow-xl hover:bg-[#FEF9D9]/25 flex flex-col items-center justify-center h-[24rem] lg:w-[23rem] w-[22rem]"
   >
     {/* Title Section */}
@@ -139,22 +171,28 @@ export default function Hackathon() {
       </h1>
     </div>
     {/* Date, Time, and Button Section */}
-    <div className="flex-1 flex flex-col items-center justify-center font-bold">
-      <p className="text-center">Registration Deadline:<span className="text-blue-800"> January 8, 2025</span></p>
-{/*       <p className="text-center">Preliminary Round:<span className="text-blue-800"> December 2, 2024(7PM)</span></p> */}
-      <p className="text-center">Shortlisted Team Announcement:<span className="text-blue-800"> January 10, 2025</span></p>
-      <p className="text-center">Final Round:<span className="text-blue-800"> January 24, 2025, 11 AM - January 25, 2025, 11 AM</span></p>
-      <button className="p-2 m-2 bg-white text-lg border-2 border-[#4F709C]/40 hover:border-[#604CC3]  rounded-full">
-        <Link href="https://forms.gle/u7b8FL1UG8cA5Tu2A">
-        Register now
-        </Link>
-      </button>
-    </div>  
-  </div>
+      <div className="flex-1 flex flex-col items-center justify-center font-bold">
+        <p className="text-center">Registration Deadline:<span className="text-blue-800"> January 8, 2025</span></p>
+    <p className="text-center">Preliminary Round:<span className="text-blue-800"> December 2, 2024(7PM)</span></p>
+    <p className="text-center">Shortlisted Team Announcement:<span className="text-blue-800"> January 10, 2025</span></p>
+    <p className="text-center">Final Round:<span className="text-blue-800"> January 24, 2025, 11 AM - January 25, 2025, 11 AM</span></p>
+    <button
+      className="p-2 m-2 bg-white text-lg border-2 border-[#4F709C]/40 hover:border-[#604CC3] rounded-full"
+      onClick={() => {
+      window.scrollTo({
+        top: document.getElementById('registration-section').offsetTop - 40,
+        behavior: 'smooth'
+      });
+      }}
+    >
+      Register now
+    </button>
+      </div>  
+      </div>
 
-  {/* webathon Block */}
+      {/* webathon Block */}
   <div
-    onClick={() => handleRedirect("https://forms.gle/u7b8FL1UG8cA5Tu2A")}
+    
     className="my-5 bg-[#604CC3]/25 bg-opacity-20 p-6 rounded-lg mx-8 cursor-pointer  hover:shadow-xl hover:bg-[#FEF9D9]/25 flex flex-col items-center justify-center h-[24rem] lg:w-[23rem] w-[22rem]"
   >
     {/* Title Section */}
@@ -169,11 +207,15 @@ export default function Hackathon() {
 {/*       <p className="text-center">Preliminary Round:<span className="text-blue-800"> December 3, 2024(7PM)</span></p> */}
       <p className="text-center">Shortlisted Team Announcement:<span className="text-blue-800"> January 10, 2025</span></p>
       <p className="text-center">Final Round:<span className="text-blue-800"> January 24, 2025, 11 AM - January 25, 2025, 11 AM</span></p>
-      <button className="p-2 m-2 bg-white text-lg border-2 border-[#4F709C]/50 hover:border-[#4F709C] rounded-full">
-      <Link href="https://forms.gle/u7b8FL1UG8cA5Tu2A">
-        Register now
-        </Link>
-      </button>
+      <button
+      className="p-2 m-2 bg-white text-lg border-2 border-[#4F709C]/40 hover:border-[#604CC3] rounded-full"
+      onClick={() => {
+      window.scrollTo({
+        top: document.getElementById('registration-section').offsetTop - 40,
+        behavior: 'smooth'
+      });
+      }}
+    >Registor Now</button>
     </div>
   </div>
 
@@ -237,7 +279,7 @@ export default function Hackathon() {
               </div>
             </div>
           </div>
-
+          <ToastContainer />
           {/* Right Information Box */}
           <motion.div
             ref={sectionRightRef}
@@ -267,6 +309,68 @@ export default function Hackathon() {
             </div>
           </motion.div>
         </div>
+       
+        {/* Handle Form Submission */}
+        <section id="registration-section" className="flex flex-col items-center">
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+          viewport={{ once: true }}
+          className="bg-[#604CC3]/25 shadow-md rounded-lg p-6 mt-10 w-1/2"
+        >
+          <h2 className="text-2xl md:text-4xl text-[#604CC3] font-semibold mb-4">Registration</h2>
+          <hr className="h-1 my-4 bg-[#604CC3] border-0 w-1/4" />
+          <form className="space-y-4" onSubmit={handleSubmit}>
+            <div>
+              <label className="block text-lg font-medium text-gray-700">Name</label>
+              <input
+          type="text"
+          className="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-[#604CC3] focus:border-[#604CC3]"
+          required
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+              />
+            </div>
+            <div>
+              <label className="block text-lg font-medium text-gray-700">Email</label>
+              <input
+          type="email"
+          className="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-[#604CC3] focus:border-[#604CC3]"
+          required
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+              />
+            </div>
+            <div>
+              <label className="block text-lg font-medium text-gray-700">Phone Number</label>
+              <input
+          type="tel"
+          className="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-[#604CC3] focus:border-[#604CC3]"
+          required
+          value={phone}
+          onChange={(e) => setPhone(e.target.value)}
+              />
+            </div>
+            <div>
+              <label className="block text-lg font-medium text-gray-700">College Name</label>
+              <input
+          type="text"
+          className="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-[#604CC3] focus:border-[#604CC3]"
+          required
+          value={college}
+          onChange={(e) => setCollege(e.target.value)}
+              />
+            </div>
+            <button
+              type="submit"
+              className="w-full py-2 px-4 bg-[#604CC3] text-white font-semibold rounded-md shadow-md hover:bg-[#4F709C] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#604CC3]"
+            >
+              Register
+            </button>
+          </form>
+        </motion.div>
+        </section>
 
         {/* Expected Outcomes Section */}
         <motion.div
