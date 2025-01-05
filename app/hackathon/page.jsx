@@ -127,6 +127,10 @@ export default function Hackathon() {
   
       if (response.ok) {
         toast.success(result.message);
+        setName('');
+        setEmail('');
+        setPhone('');
+        setCollege('');
       } else {
         toast.error(result.message);
       }
