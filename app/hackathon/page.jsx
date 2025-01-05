@@ -16,6 +16,7 @@ export default function Hackathon() {
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
   const [college, setCollege] = useState('');
+  const [event, setEvent] = useState('');
 
 
   const handleRedirect = (url) => {
@@ -113,7 +114,7 @@ export default function Hackathon() {
   const handleSubmit = async (e) => {
     e.preventDefault(); 
   
-    const formData = { name, email, phone, college };
+    const formData = { name, email, phone, college, event };
     console.log(formData);
   
     try {
@@ -131,6 +132,7 @@ export default function Hackathon() {
         setEmail('');
         setPhone('');
         setCollege('');
+        setEvent('');
       } else {
         toast.error(result.message);
       }
@@ -314,66 +316,99 @@ export default function Hackathon() {
           </motion.div>
         </div>
        
-        {/* Handle Form Submission */}
+       { /* Handle Form Submission */}
         <section id="registration-section" className="flex flex-col items-center">
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
-          viewport={{ once: true }}
-          className="bg-[#604CC3]/25 shadow-md rounded-lg p-6 mt-10 w-1/2"
-        >
-          <h2 className="text-2xl md:text-4xl text-[#604CC3] font-semibold mb-4">Registration</h2>
-          <hr className="h-1 my-4 bg-[#604CC3] border-0 w-1/4" />
-          <form className="space-y-4" onSubmit={handleSubmit}>
-            <div>
-              <label className="block text-lg font-medium text-gray-700">Name</label>
-              <input
-          type="text"
-          className="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-[#604CC3] focus:border-[#604CC3]"
-          required
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-              />
-            </div>
-            <div>
-              <label className="block text-lg font-medium text-gray-700">Email</label>
-              <input
-          type="email"
-          className="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-[#604CC3] focus:border-[#604CC3]"
-          required
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-              />
-            </div>
-            <div>
-              <label className="block text-lg font-medium text-gray-700">Phone Number</label>
-              <input
-          type="tel"
-          className="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-[#604CC3] focus:border-[#604CC3]"
-          required
-          value={phone}
-          onChange={(e) => setPhone(e.target.value)}
-              />
-            </div>
-            <div>
-              <label className="block text-lg font-medium text-gray-700">College Name</label>
-              <input
-          type="text"
-          className="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-[#604CC3] focus:border-[#604CC3]"
-          required
-          value={college}
-          onChange={(e) => setCollege(e.target.value)}
-              />
-            </div>
-            <button
-              type="submit"
-              className="w-full py-2 px-4 bg-[#604CC3] text-white font-semibold rounded-md shadow-md hover:bg-[#4F709C] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#604CC3]"
-            >
-              Register
-            </button>
-          </form>
-        </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1 }}
+            viewport={{ once: true }}
+            className="bg-[#604CC3]/25 shadow-md rounded-lg p-6 mt-10 w-1/2"
+          >
+            <h2 className="text-2xl md:text-4xl text-[#604CC3] font-semibold mb-4">Registration</h2>
+            <hr className="h-1 my-4 bg-[#604CC3] border-0 w-1/4" />
+            <form className="space-y-4" onSubmit={handleSubmit}>
+              <div>
+                <label className="block text-lg font-medium text-gray-700">Name</label>
+                <input
+                  type="text"
+                  className="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-[#604CC3] focus:border-[#604CC3]"
+                  required
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                />
+              </div>
+              <div>
+                <label className="block text-lg font-medium text-gray-700">Email</label>
+                <input
+                  type="email"
+                  className="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-[#604CC3] focus:border-[#604CC3]"
+                  required
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                />
+              </div>
+              <div>
+                <label className="block text-lg font-medium text-gray-700">Phone Number</label>
+                <input
+                  type="tel"
+                  className="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-[#604CC3] focus:border-[#604CC3]"
+                  required
+                  value={phone}
+                  onChange={(e) => setPhone(e.target.value)}
+                />
+              </div>
+              <div>
+                <label className="block text-lg font-medium text-gray-700">College Name</label>
+                <input
+                  type="text"
+                  className="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-[#604CC3] focus:border-[#604CC3]"
+                  required
+                  value={college}
+                  onChange={(e) => setCollege(e.target.value)}
+                />
+              </div>
+              <div>
+                <label className="block text-lg font-medium text-gray-700">Select Event</label>
+                <div className="mt-2 space-y-2">
+                  <div className="flex items-center">
+                    <input
+                      type="radio"
+                      id="ai-hackathon"
+                      name="event"
+                      value="AI Hackathon"
+                      className="h-4 w-4 text-[#604CC3] focus:ring-[#604CC3] border-gray-300"
+                      required
+                      onChange={(e) => setEvent(e.target.value)}
+                    />
+                    <label htmlFor="ai-hackathon" className="ml-3 block text-lg font-medium text-gray-700">
+                      AI Hackathon
+                    </label>
+                  </div>
+                  <div className="flex items-center">
+                    <input
+                      type="radio"
+                      id="webathon"
+                      name="event"
+                      value="Webathon"
+                      className="h-4 w-4 text-[#604CC3] focus:ring-[#604CC3] border-gray-300"
+                      required
+                      onChange={(e) => setEvent(e.target.value)}
+                    />
+                    <label htmlFor="webathon" className="ml-3 block text-lg font-medium text-gray-700">
+                      Webathon
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <button
+                type="submit"
+                className="w-full py-2 px-4 bg-[#604CC3] text-white font-semibold rounded-md shadow-md hover:bg-[#4F709C] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#604CC3]"
+              >
+                Register
+              </button>
+            </form>
+          </motion.div>
         </section>
 
         {/* Expected Outcomes Section */}
