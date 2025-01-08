@@ -316,7 +316,7 @@ export default function Hackathon() {
           </motion.div>
         </div>
        
-       { /* Handle Form Submission */}
+{/*        { /* Handle Form Submission */}
         <section id="registration-section" className="flex flex-col items-center">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -410,7 +410,10 @@ export default function Hackathon() {
             </form>
           </motion.div>
         </section>
-
+ */}
+        <section  id="registration-section">
+          <div className='text-bold text-5xl text-red p-20'>Registrations Closed !!!</div>
+        </section>
         {/* Expected Outcomes Section */}
         <motion.div
           initial={{ opacity: 0, y: 50 }}
