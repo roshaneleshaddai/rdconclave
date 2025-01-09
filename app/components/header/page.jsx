@@ -89,23 +89,23 @@ const Header = () => {
     </video> */}
       <div className="flex items-center justify-evenly md:p-2 md:mx-auto max-w-7xl">
         {/* Logo Section */}
-        <div className="flex items-center justify-evenly space-x-0 md:space-x-4">
+        <div className="flex items-center justify-evenly space-x-0 md:space-x-4 mx-2">
               <Image
             // src="/images/vrseclogo.png"
-            src="/images/vr_logo.png"
+            src="/images/sahelogo.png"
             alt="VRSEC Logo"
-            width={isScrolled ? 120 : 140}
-            height={isScrolled ? 120 : 140}
-            className={`lg:block hidden rounded-full object-scale-down transition-all duration-300 lg:w-120 lg:h-140`}
+            width={isScrolled ? 110 : 120}
+            height={isScrolled ? 110 : 120}
+            className={`lg:block hidden object-scale-down transition-all duration-300 lg:w-120 lg:h-140`}
             loading="lazy"
           />
           <Image
             // src="/images/vrseclogo.png"
-            src="/images/vr_logo.png"
+            src="/images/sahelogo.png"
             alt="VRSEC Logo"
-            width={isScrolled ? 120 : 140}
-            height={isScrolled ? 120 : 140}
-            className={`lg:hidden block rounded-full object-scale-down transition-all duration-300 w-24 h-32 `}
+            width={isScrolled ? 110 : 120}
+            height={isScrolled ? 110 : 120}
+            className={`lg:hidden block object-scale-down transition-all duration-300 w-24 h-32 `}
             loading="lazy"
           />
           <Image
@@ -118,11 +118,12 @@ const Header = () => {
               className={`hidden lg:block  object-scale-down transition-all duration-300 w-24 h-32 `}
             />
         </div>
+
         <div>
           <div className={`md:block md:text-center transition-all duration-300 ease-in-out ${isScrolled ? 'text-base md:text-2xl' : 'text-lg md:text-3xl'}`}>
 
             <h2 className="font-bold text-black">
-              VELAGAPUDI RAMAKRISHNA<br></br>SIDDHARTHA ENGINEERING COLLEGE
+            SIDDHARTHA ACADEMY OF HIGHER EDUCATION
             </h2>
             <h2
                 className={`font-normal text-black ${
@@ -132,6 +133,8 @@ const Header = () => {
                 (Deemed to be <span className="font-semibold">University</span>)
                 <br />
                 <span className="text-black lg:text-sm text-xs">(Under section 3 UGC Act, 1956)</span>
+                <br/>
+                <span className="font-bold text-black">V R SIDDHARTHA SCHOOL OF ENGINEERING</span>
                 <br/>
                 <span className="lg:text-base text-xs"><span className="text-black">(Sponsored by <span className="font-semibold">Siddhartha Academy of General & Technical Education</span>), Vijayawada, A.P, India.</span></span>
                 {/* <span className={`${isScrolled ? 'text-xs lg:text-sm' : 'hidden'}`}> */}
