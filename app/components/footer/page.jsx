@@ -25,12 +25,12 @@ const Footer = () => {
 
           {/* Address Section */}
           <div className="flex-col justify-around p-2 md:p-20">
-            <div className="md:flex gap-10">
+            <div className="md:flex gap-20">
               <div className="mb-6 md:mb-0">
                 <h2 className="text-lg font-semibold mb-2  flex items-center justify-start">
               <FaMapMarkerAlt className="mr-2" />College Address</h2>
                 <p>
-                  Velagapudi Ramakrishna Siddhartha Engineering College,
+                  V R Siddhartha School of Engineering,
                   <br />
                   Chalasani Nagar,
                   <br />
@@ -60,7 +60,7 @@ const Footer = () => {
             </div>
 
             {/* Social Media Links Section */}
-            <div className="text-center">
+            <div className="text-center mt-5">
               <h2 className="text-lg font-semibold mb-2">Follow Us</h2>
               <div className="flex justify-center space-x-4">
                 <a
