@@ -423,7 +423,7 @@ export default function Hackathon() {
           className="bg-[#604CC3]/25 shadow-md rounded-lg p-6 mt-10 mx-5 md:mx-10"
         >
           <h2 className="text-2xl md:text-4xl text-[#604CC3] font-semibold mb-4">Expected Outcomes</h2>
-          <hr className="h-1 my-4 bg-[#604CC3] border-0  w-1/4" />
+          <hr className="h-1 my-4 bg-[#604CC3] border-0  lg:w-1/4 w-1/2" />
           <motion.ul
             initial="hidden"
             whileInView="visible"
