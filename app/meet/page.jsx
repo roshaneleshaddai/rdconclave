@@ -31,7 +31,7 @@ const Meet = () => {
       className="bg-white  bg-opacity-50 shadow-md rounded-lg p-6 mb-10"
     >
       <h2 className="lg:text-4xl text-2xl text-[#604CC3] font-semibold mb-4">Featured Industries</h2>
-        <hr className="h-1 my-8 bg-[#604CC3] border-0 w-1/4" />
+        <hr className="h-1 my-8 bg-[#604CC3] border-0 lg:w-1/4 w-1/2" />
       <p className="text-lg lg:text-xl mb-6 text-justify">
       The Industry-Academic Meet serves as a platform for professionals from various industries and academic institutions to come together and discuss the latest trends, challenges, and opportunities in their respective fields. This segment of the program aims to foster collaboration, spark new research ideas, and identify potential areas for partnerships. Industry representatives can share insights on real-world problems, while academics can present their research findings and discuss how they can be applied in practical settings. The meet will also include panel discussions, keynote speeches, and networking sessions to encourage open dialogue and idea exchange.
       </p>
@@ -90,7 +90,7 @@ const Meet = () => {
 
         {/* Industry-Academic Meet Block with Fade-In Effect */}
         <div
-          className="bg-[#604CC3]/25 bg-opacity-20 p-8 mx-6 rounded-lg transition-opacity duration-1000 "
+          className="bg-[#604CC3]/25 bg-opacity-20 p-8 lg:mt-0 mt-52 rounded-lg mx-6 transition-opacity duration-1000 "
         >
           <h1 className="text-4xl  font-bold text-center text-[#604CC3]">Industry Academia Meet</h1>
           
@@ -110,7 +110,7 @@ const Meet = () => {
           className="bg-[#604CC3]/25 shadow-md rounded-lg p-6 mt-10 mx-5 md:mx-10"
         >
           <h2 className="text-2xl md:text-4xl text-[#604CC3] font-semibold mb-4">Expected Outcomes</h2>
-          <hr className="h-1 my-4 bg-[#604CC3] border-0  w-1/4" />
+          <hr className="h-1 my-4 bg-[#604CC3] border-0  lg:w-1/4 w-1/2" />
           <motion.ul
             initial="hidden"
             whileInView="visible"
