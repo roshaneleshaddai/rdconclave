@@ -6,7 +6,7 @@ import Header from './components/header/page';
 import './globals.css';
 
 export const metadata = {
-  title: "Research Conclave@VRSEC",
+  title: "Research Conclave@SAHE",
   description: "A new Millennium",
 };
 
