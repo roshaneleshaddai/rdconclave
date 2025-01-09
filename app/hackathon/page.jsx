@@ -326,7 +326,7 @@ export default function Hackathon() {
             className="bg-[#604CC3]/25 shadow-md rounded-lg p-6 mt-10 w-1/2"
           >
             <h2 className="text-2xl md:text-4xl text-[#604CC3] font-semibold mb-4">Registration</h2>
-            <hr className="h-1 my-4 bg-[#604CC3] border-0 w-1/4" />
+            <hr className="h-1 my-4 bg-[#604CC3] border-0 lg:w-1/4 w-1/2" />
             <form className="space-y-4" onSubmit={handleSubmit}>
               <div>
                 <label className="block text-lg font-medium text-gray-700">Name</label>
@@ -412,7 +412,7 @@ export default function Hackathon() {
         </section>
  */}
         <section  id="registration-section">
-          <div className='text-bold lg:text-5xl text-3xl text-red-500 text-center border-2 border-b m-32  p-20'>Registrations Closed !!!</div>
+          <div className='text-bold lg:text-5xl text-3xl text-red-500 text-center border-2 border-b py-10'>Registrations Closed !!!</div>
         </section>
         {/* Expected Outcomes Section */}
         <motion.div
