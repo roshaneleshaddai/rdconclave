@@ -98,8 +98,7 @@ const Footer = () => {
         {/* Footer Bottom Text */}
         <div className="mt-6 border-t border-gray-600 pt-2">
           <p className="text-center">
-            © {new Date().getFullYear()} Velagapudi Ramakrishna Siddhartha
-            Engineering College. All rights reserved.
+            © {new Date().getFullYear()} V R Siddhartha School of Engineering. All rights reserved.
           </p>
         </div>
       </div>
