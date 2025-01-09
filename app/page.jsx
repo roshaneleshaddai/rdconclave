@@ -126,7 +126,7 @@ function HorizontalImageScroller({ images }) {
     return (
 <div className="" >
         <div
-          className="bg-[#604CC3]/25 bg-opacity-20 p-8 rounded-lg mx-6 transition-opacity duration-1000 "
+          className="bg-[#604CC3]/25 bg-opacity-20 p-8 lg:mt-0 mt-52 rounded-lg mx-6 transition-opacity duration-1000"
         >
           <h1 className="text-4xl font-extrabold text-center text-[#604CC3]">RESEARCH CONCLAVE </h1>
           <h1 className="text-xl font-extrabold mt-2 text-center text-black">24th & 25th January - 2025 </h1>
@@ -407,7 +407,7 @@ function HorizontalImageScroller({ images }) {
         <div className="container flex flex-col md:flex-row-reverse items-center">
           <div className="w-full md:basis-2/3  p-4">
             <h2 className="text-3xl font-bold text-[#604CC3]">
-              Research@VRSEC
+              Research@SAHE
               <hr className="h-1 my-8 bg-[#604CC3] border-0 w-1/2 " />
             </h2>
             <p className="mb-4 font-medium sm:text-xl text-lg text-justify">
@@ -457,12 +457,12 @@ function HorizontalImageScroller({ images }) {
     // Array of researchers' names and image paths
     const [isVisible, setIsVisible] = useState(false);
     const Patrons = [
-      { name: 'Sri K. V Chowdary, IRS', imgSrc: 'https://www.vrsiddhartha.ac.in/wp-content/uploads/2019/09/Chancellor-K-V-Chowdary.jpg', position: 'Chancellor, VRSEC' },
-      { name: 'Sri C. Nageswara Rao', imgSrc: 'https://www.vrsiddhartha.ac.in/wp-content/uploads/2020/12/nageswararao.png', position: 'President, SAGTE' },
+      { name: 'Sri K. V Chowdary, IRS', imgSrc: 'https://www.vrsiddhartha.ac.in/wp-content/uploads/2019/09/Chancellor-K-V-Chowdary.jpg', position: 'Chancellor, SAHE' },
+      { name: 'Sri M. Rajaiah', imgSrc: 'https://www.siddharthaacademy.ac.in/img/team/rajaiah.png', position: 'President, SAGTE' },
+      // { name: 'Sri C. Nageswara Rao', imgSrc: 'https://www.vrsiddhartha.ac.in/wp-content/uploads/2020/12/nageswararao.png', position: 'President, SAGTE' },
       { name: 'Sri P. Lakshmana Rao', imgSrc: 'https://www.siddharthaacademy.ac.in/img/team/lakshmana%20rao.png', position: 'Secretary, SAGTE' },
-      { name: 'Sri M. Rajaiah', imgSrc: 'https://www.siddharthaacademy.ac.in/img/team/rajaiah.png', position: 'Vice-President, SAGTE' },
-      { name: 'Prof. P. Venkateswara Rao', imgSrc: 'https://www.vrsiddhartha.ac.in/wp-content/uploads/2019/09/Vice-Chancellor-PV-Rao.jpg', position: ' Vice Chancellor, VRSEC' },
-      { name: 'Prof. A. V. Ratna Prasad', imgSrc: 'https://www.vrsiddhartha.ac.in/wp-content/uploads/2024/09/principal_2024-1-275x300.jpg', position: 'Pro-Vice Chancellor, VRSEC' },
+      { name: 'Prof. P. Venkateswara Rao', imgSrc: 'https://www.vrsiddhartha.ac.in/wp-content/uploads/2019/09/Vice-Chancellor-PV-Rao.jpg', position: ' Vice Chancellor, SAHE' },
+      { name: 'Prof. A. V. Ratna Prasad', imgSrc: 'https://www.vrsiddhartha.ac.in/wp-content/uploads/2024/09/principal_2024-1-275x300.jpg', position: 'Pro-Vice Chancellor, SAHE' },
       // { name: 'Dr. M . Ravichad', imgSrc: '/images/registrar.jpg', position: 'Registrar, VRSEC' },
     ];
 
@@ -639,7 +639,7 @@ const CoordinatorsSection = () => {
       <ResearchNames/> 
       <CoordinatorsSection/>
       
-      {/* <div className="mt-20 bg-[#4F709C]/25 bg-opacity-20 p-4 rounded-lg mx-6 transition-opacity duration-1000 mb-4">
+      {/* <div className="mt-20 bg-[#4F709C]/25 bg-opacity-20 p-4 lg:mt-0 mt-52 rounded-lg mx-6 transition-opacity duration-1000 mb-4">
         <h1 className="text-4xl  font-bold text-center text-black">Placements</h1>
       <HorizontalImageScroller images={aluminiimages}/>
       </div> */}
