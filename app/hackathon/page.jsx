@@ -158,7 +158,7 @@ export default function Hackathon() {
       <div className="pb-5">
         
         <div
-          className="bg-[#604CC3]/25 bg-opacity-20 p-8 rounded-lg mx-6 transition-opacity duration-1000 "
+          className="bg-[#604CC3]/25 bg-opacity-20 p-8 lg:mt-0 mt-52 rounded-lg mx-6 transition-opacity duration-1000 "
         >
           <h1 className="text-4xl  font-bold text-center text-[#604CC3]">TechTrek</h1>
           
@@ -412,7 +412,7 @@ export default function Hackathon() {
         </section>
  */}
         <section  id="registration-section">
-          <div className='text-bold text-5xl text-red-500 text-center border-2 border-b m-32  p-20'>Registrations Closed !!!</div>
+          <div className='text-bold lg:text-5xl text-3xl text-red-500 text-center border-2 border-b m-32  p-20'>Registrations Closed !!!</div>
         </section>
         {/* Expected Outcomes Section */}
         <motion.div
