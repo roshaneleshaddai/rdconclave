@@ -208,7 +208,7 @@ export default function JournalPublications() {
 
         {/* journal Publications Section with Fade-In Animation */}
         <div
-          className="bg-[#604CC3]/25 bg-opacity-20 p-8 rounded-lg mx-6 transition-opacity duration-1000 "
+          className="bg-[#604CC3]/25 bg-opacity-20 p-8 lg:mt-0 mt-52 rounded-lg mx-6 transition-opacity duration-1000 "
         >
           <h1 className="text-4xl  font-bold text-center text-[#604CC3]">Journal Publications</h1>
           {/* <p className="text-lg text-black p-2">
