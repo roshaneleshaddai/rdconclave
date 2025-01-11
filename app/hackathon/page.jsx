@@ -17,7 +17,7 @@ export default function Hackathon() {
   const [phone, setPhone] = useState('');
   const [college, setCollege] = useState('');
   const [event, setEvent] = useState('');
-
+  const [file,setFile]=useState(null);
 
   const handleRedirect = (url) => {
     window.location.href = url;
@@ -111,35 +111,56 @@ export default function Hackathon() {
     },
   ];
 
+  
   const handleSubmit = async (e) => {
-    e.preventDefault(); 
+    e.preventDefault();
   
-    const formData = { name, email, phone, college, event };
-    console.log(formData);
-  
-    try {
-      const response = await fetch('/api/register', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
-      });
-  
-      const result = await response.json();
-  
-      if (response.ok) {
-        toast.success(result.message);
-        setName('');
-        setEmail('');
-        setPhone('');
-        setCollege('');
-        setEvent('');
-      } else {
-        toast.error(result.message);
-      }
-    } catch (error) {
-      console.error('Error during submission:', error);
-      toast.error('An unexpected error occurred. Please try again.');
+    if (!file) {
+      toast.error('Please upload a file before submitting.');
+      return;
     }
+  
+    const reader = new FileReader();
+  
+    reader.onload = async () => {
+      const base64File = reader.result.split(",")[1]; 
+  
+      try {
+        const response = await fetch('/api/register', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            name,
+            email,
+            phone,
+            college,
+            event,
+            file: base64File, 
+          }),
+        });
+        if (response.ok) {
+          const result = await response.json();
+          toast.success(result.message);
+          // Reset form fields
+          setName('');
+          setEmail('');
+          setPhone('');
+          setCollege('');
+          setEvent('');
+          setFile(null);
+        } else {
+          const errorData = await response.json();
+          toast.error(errorData.message || 'An error occurred while submitting the form.');
+        }
+      } catch (error) {
+        console.error('Error during submission:', error);
+        toast.error('An unexpected error occurred. Please try again.');
+      }
+    };
+  
+    reader.readAsDataURL(file);
   };
   
   return (
@@ -158,7 +179,7 @@ export default function Hackathon() {
       <div className="pb-5">
         
         <div
-          className="bg-[#604CC3]/25 bg-opacity-20 p-8 lg:mt-0 mt-52 rounded-lg mx-6 transition-opacity duration-1000 "
+          className="bg-[#604CC3]/25 bg-opacity-20 p-8 rounded-lg mx-6 transition-opacity duration-1000 "
         >
           <h1 className="text-4xl  font-bold text-center text-[#604CC3]">TechTrek</h1>
           
@@ -316,7 +337,7 @@ export default function Hackathon() {
           </motion.div>
         </div>
        
-{/*        
+    
         <section id="registration-section" className="flex flex-col items-center">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -326,7 +347,7 @@ export default function Hackathon() {
             className="bg-[#604CC3]/25 shadow-md rounded-lg p-6 mt-10 w-1/2"
           >
             <h2 className="text-2xl md:text-4xl text-[#604CC3] font-semibold mb-4">Registration</h2>
-            <hr className="h-1 my-4 bg-[#604CC3] border-0 lg:w-1/4 w-1/2" />
+            <hr className="h-1 my-4 bg-[#604CC3] border-0 w-1/4" />
             <form className="space-y-4" onSubmit={handleSubmit}>
               <div>
                 <label className="block text-lg font-medium text-gray-700">Name</label>
@@ -401,6 +422,15 @@ export default function Hackathon() {
                   </div>
                 </div>
               </div>
+              <div>
+                <label className="block text-lg font-medium text-gray-700">Payment Reciept:</label>
+                <input
+                  type="file"
+                  accept="image/*"
+                  className="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-[#604CC3] focus:border-[#604CC3]"
+                  onChange={(e) => setFile(e.target.files[0])}
+                />
+              </div>
               <button
                 type="submit"
                 className="w-full py-2 px-4 bg-[#604CC3] text-white font-semibold rounded-md shadow-md hover:bg-[#4F709C] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#604CC3]"
@@ -410,10 +440,9 @@ export default function Hackathon() {
             </form>
           </motion.div>
         </section>
- */}
-        <section  id="registration-section">
-          <div className='text-bold lg:text-5xl text-3xl text-red-500 text-center border-2 border-b py-10'>Registrations Closed !!!</div>
-        </section>
+        {/* <section  id="registration-section">
+          <div className='text-bold text-5xl text-red-500 text-center border-2 border-b m-32  p-20'>Registrations Closed !!!</div>
+        </section> */}
         {/* Expected Outcomes Section */}
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -423,7 +452,7 @@ export default function Hackathon() {
           className="bg-[#604CC3]/25 shadow-md rounded-lg p-6 mt-10 mx-5 md:mx-10"
         >
           <h2 className="text-2xl md:text-4xl text-[#604CC3] font-semibold mb-4">Expected Outcomes</h2>
-          <hr className="h-1 my-4 bg-[#604CC3] border-0  lg:w-1/4 w-1/2" />
+          <hr className="h-1 my-4 bg-[#604CC3] border-0  w-1/4" />
           <motion.ul
             initial="hidden"
             whileInView="visible"
