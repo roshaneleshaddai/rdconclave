@@ -346,7 +346,7 @@ export default function Hackathon() {
             viewport={{ once: true }}
             className="bg-[#604CC3]/25 shadow-md rounded-lg p-6 mt-10 w-1/2"
           >
-            <h2 className="text-2xl md:text-4xl text-[#604CC3] font-semibold mb-4">Registration</h2>
+            <h2 className="text-2xl md:text-4xl text-[#604CC3] font-bold mb-4">Round 2 Registration</h2>
             <hr className="h-1 my-4 bg-[#604CC3] border-0 w-1/4" />
             <form className="space-y-4" onSubmit={handleSubmit}>
               <div>
