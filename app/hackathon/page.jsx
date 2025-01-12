@@ -194,7 +194,7 @@ export default function Hackathon() {
       <div className="pb-5">
         
         <div
-          className="bg-[#604CC3]/25 bg-opacity-20 p-8 rounded-lg mx-6 transition-opacity duration-1000 "
+          className="bg-[#604CC3]/25 bg-opacity-20 p-8 lg:mt-0 mt-52 rounded-lg mx-6 transition-opacity duration-1000 "
         >
           <h1 className="text-4xl  font-bold text-center text-[#604CC3]">TechTrek</h1>
           
@@ -362,7 +362,7 @@ export default function Hackathon() {
             className="bg-[#604CC3]/25 shadow-md rounded-lg p-6 mt-10 lg:w-1/2"
           >
             <h2 className="text-2xl md:text-4xl text-[#604CC3] font-bold mb-4">Round 2 Registration</h2>
-            <hr className="h-1 my-4 bg-[#604CC3] border-0 w-1/4" />
+            <hr className="h-1 my-2 bg-[#604CC3] lg:w-1/4 w-1/2" />
             <form className="space-y-4" onSubmit={handleSubmit}>
               <div>
                 <label className="block text-lg font-medium text-gray-700">Name</label>
