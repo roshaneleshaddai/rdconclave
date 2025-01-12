@@ -353,6 +353,49 @@ export default function Hackathon() {
         </div>
        
     
+        
+          <div className='pt-10'>
+          <h2 className="lg:text-3xl text-2xl font-bold mb-4 text-center">For Payment</h2>
+          <div className='flex flex-col lg:flex-row items-center justify-evenly lg:space-x-2 space-y-4'>
+          <div className="bg-[#604CC3]/30 p-2 lg:w-1/3 lg:rounded-full rounded-lg">
+            <h2 className="lg:text-4xl text-3xl font-semibold text-center">AI Hackathon - <span>500/-</span></h2>
+          </div>
+          <div className="bg-[#604CC3]/30 p-2 lg:w-1/3 lg:rounded-full rounded-lg">
+          <h2 className="lg:text-4xl text-3xl font-semibold text-center">Webathon - <span>500/-</span></h2>
+          </div>
+          </div>
+              <div className="bg-white shadow-lg rounded-lg p-6 bg-gray w-full">
+                  <div className="flex flex-col lg:flex-row items-center justify-evenly mb-6">
+                    <div>
+                      <Image
+                        src="/images/1.png"
+                        width={300}
+                        height={300}
+                        alt="registration QR code"
+                        className="mb-4 md:mb-0 md:mr-6"
+                      />
+                    </div>
+                    <div className="overflow-x-auto">
+                      <table className="min-w-full border-2 mb-6">
+                        <thead>
+                          <tr>
+                            <th className="px-4 py-2 border-b-2 border-gray-300 text-left">Detail</th>
+                            <th className="px-4 py-2 border-b-2 border-gray-300 text-left">Information</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {bankDetails.map((item, index) => (
+                            <tr key={index} className={index % 2 === 0 ? "bg-gray-100" : "bg-white"}>
+                              <td className="px-4 py-2 border-b border-gray-200 font-semibold">{item.label}</td>
+                              <td className="px-4 py-2 border-b border-gray-200">{item.value}</td>
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+        </div>
         <section id="registration-section" className="flex flex-col items-center">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -456,48 +499,6 @@ export default function Hackathon() {
           </motion.div>
         </section>
         
-          <div className='pt-10'>
-          <h2 className="lg:text-3xl text-2xl font-bold mb-4 text-center">For Payment</h2>
-          <div className='flex flex-col lg:flex-row items-center justify-evenly lg:space-x-2 space-y-4'>
-          <div className="bg-[#604CC3]/30 p-2 lg:w-1/3 lg:rounded-full rounded-lg">
-            <h2 className="lg:text-4xl text-3xl font-semibold text-center">AI Hackathon - <span>500/-</span></h2>
-          </div>
-          <div className="bg-[#604CC3]/30 p-2 lg:w-1/3 lg:rounded-full rounded-lg">
-          <h2 className="lg:text-4xl text-3xl font-semibold text-center">Webathon - <span>500/-</span></h2>
-          </div>
-          </div>
-              <div className="bg-white shadow-lg rounded-lg p-6 bg-gray w-full">
-                  <div className="flex flex-col lg:flex-row items-center justify-evenly mb-6">
-                    <div>
-                      <Image
-                        src="/images/1.png"
-                        width={300}
-                        height={300}
-                        alt="registration QR code"
-                        className="mb-4 md:mb-0 md:mr-6"
-                      />
-                    </div>
-                    <div className="overflow-x-auto">
-                      <table className="min-w-full border-2 mb-6">
-                        <thead>
-                          <tr>
-                            <th className="px-4 py-2 border-b-2 border-gray-300 text-left">Detail</th>
-                            <th className="px-4 py-2 border-b-2 border-gray-300 text-left">Information</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          {bankDetails.map((item, index) => (
-                            <tr key={index} className={index % 2 === 0 ? "bg-gray-100" : "bg-white"}>
-                              <td className="px-4 py-2 border-b border-gray-200 font-semibold">{item.label}</td>
-                              <td className="px-4 py-2 border-b border-gray-200">{item.value}</td>
-                            </tr>
-                          ))}
-                        </tbody>
-                      </table>
-                    </div>
-                  </div>
-                </div>
-        </div>
         {/* <section  id="registration-section">
           <div className='text-bold text-5xl text-red-500 text-center border-2 border-b m-32  p-20'>Registrations Closed !!!</div>
         </section> */}
