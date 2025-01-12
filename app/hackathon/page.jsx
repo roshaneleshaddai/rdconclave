@@ -359,7 +359,7 @@ export default function Hackathon() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }}
             viewport={{ once: true }}
-            className="bg-[#604CC3]/25 shadow-md rounded-lg p-6 mt-10 w-1/2"
+            className="bg-[#604CC3]/25 shadow-md rounded-lg p-6 mt-10 lg:w-1/2"
           >
             <h2 className="text-2xl md:text-4xl text-[#604CC3] font-bold mb-4">Round 2 Registration</h2>
             <hr className="h-1 my-4 bg-[#604CC3] border-0 w-1/4" />
