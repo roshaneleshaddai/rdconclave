@@ -481,7 +481,7 @@ export default function Hackathon() {
                 </div>
               </div>
               <div>
-                <label className="block text-lg font-medium text-gray-700">Payment Reciept:(Scroll down to know Payment details)</label>
+                <label className="block text-lg font-medium text-gray-700">Payment Reciept:</label>
                 <input
                   type="file"
                   accept="image/*"
