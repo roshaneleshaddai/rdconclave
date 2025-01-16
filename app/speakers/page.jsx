@@ -100,7 +100,7 @@ import React, { useState, useEffect } from "react";
           </ul>
 
           {/* Display remaining cards on scroll */}
-          <ul className="list-none flex flex-wrap justify-center items-center gap-4">
+          <ul className="mt-4 list-none flex flex-wrap justify-center items-center gap-4">
             {bottomResearchers.slice(4).map((researcher, index) => (
               <motion.li
                 key={`rest-${index}`}
