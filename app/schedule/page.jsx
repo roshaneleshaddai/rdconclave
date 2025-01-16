@@ -390,7 +390,7 @@ const Schedule = () => {
               isExpanded(index)
                 ? "max-h-screen opacity-100"
                 : "max-h-0 opacity-0"
-            } overflow-hidden transition-all duration-500 ease-in-out`}
+            } transition-all duration-500 ease-in-out`}
           >
             {isExpanded(index) && session.description && (
               <div className="mt-2 bg-gray-100 p-4 rounded-md">
