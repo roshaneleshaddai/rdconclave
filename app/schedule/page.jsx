@@ -365,10 +365,10 @@ const Schedule = () => {
     const renderSchedule = (dayData) => {
       return dayData.map((session, index) => (
         <div key={index} className="border-b border-gray-300 py-4 flex lg:flex-row flex-col items-start">
-          <div className="lg:w-1/5 w-full text-sm lg:text-lg text-[#604CC3]/95 font-semibold">
+          <div className="md:w-1/5 w-full text-sm lg:text-lg text-[#604CC3]/95 font-semibold">
             {session.time}
           </div>
-          <div className="lg:w-4/5 w-full">
+          <div className="md:w-4/5 w-full">
             <div className="flex items-center justify-between">
               <div
                 className="lg:text-lg text-base font-semibold text-gray-800 cursor-pointer"
