@@ -63,7 +63,7 @@ import React, { useState, useEffect } from "react";
 
         <div className="px-10">
           {/* Display initial cards */}
-          <ul className="list-none flex flex-wrap justify-center items-center gap-2 max-w-full overflow-hidden">
+          <ul className="list-none flex flex-wrap justify-center items-center gap-4 max-w-full overflow-hidden">
             {bottomResearchers.slice(0, 4).map((researcher, index) => (
               <motion.li
                 key={`initial-${index}`}
