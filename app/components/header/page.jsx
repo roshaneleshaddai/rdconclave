@@ -122,7 +122,10 @@ const Header = () => {
         <div>
           <div className={`md:block md:text-center transition-all duration-300 ease-in-out ${isScrolled ? 'text-base md:text-2xl' : 'text-lg md:text-3xl'}`}>
 
-            <h2 className="font-bold text-black">
+            <h2 className={`font-bold text-black ${isScrolled ? 'hidden' : ''}`}>
+            SIDDHARTHA<br></br>ACADEMY OF HIGHER EDUCATION
+            </h2>
+            <h2 className={`font-bold text-black ${isScrolled ? '' : 'hidden'}`}>
             SIDDHARTHA ACADEMY OF HIGHER EDUCATION
             </h2>
             <h2
@@ -252,6 +255,16 @@ const Header = () => {
           className="" onClick={toggleMenu}>
           Registration
         </Link></li>
+        <li><Link
+          href="/speakers"
+          className="" onClick={toggleMenu}>
+          Speakers
+        </Link></li>
+        <li><Link
+          href="/schedule"
+          className="" onClick={toggleMenu}>
+          Schedule
+        </Link></li>
         <li>
           <select
             className="text-black w-3/4 rounded p-2 bg-white shadow-md focus:ring-2 focus:ring-blue-500 text-lg"
@@ -319,6 +332,18 @@ const Header = () => {
           className={`cursor-pointer m-0.5 bg-[#604CC3] text-white  border-[#1A1A1A] text-[#213555] font-semibold transition-all duration-300 ease-in-out ${isScrolled ? 'text-sm py-1 px-4' : 'text-base py-1 px-2'} hover:bg-[#FF6600]/10  hover:text-black hover:shadow-lg`}
         >
           Registration
+        </Link>
+        <Link
+          href="/speakers"
+          className={`cursor-pointer m-0.5 bg-[#604CC3] text-white border-[#1A1A1A] text-[#213555] font-semibold transition-all duration-300 ease-in-out ${isScrolled ? 'text-sm py-1 px-4' : 'text-base py-1 px-2'} hover:bg-[#FF6600]/10  hover:text-black hover:shadow-lg`}
+        >
+          Speakers
+        </Link>
+        <Link
+          href="/schedule"
+          className={`cursor-pointer m-0.5 bg-[#604CC3] text-white border-[#1A1A1A] text-[#213555] font-semibold transition-all duration-300 ease-in-out ${isScrolled ? 'text-sm py-1 px-4' : 'text-base py-1 px-2'} hover:bg-[#FF6600]/10  hover:text-black hover:shadow-lg`}
+        >
+          Schedule
         </Link>
         <select
         className={`cursor-pointer m-0.5 bg-[#604CC3] text-white border-[#1A1A1A] text-[#213555] font-semibold transition-all duration-300 ease-in-out ${
