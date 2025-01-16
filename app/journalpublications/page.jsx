@@ -190,7 +190,7 @@ export default function JournalPublications() {
   }, []);
 
   return (
-    <div className="relative font-SUSE min-h-screen w-screen mt-44 md:mt-56">
+    <div className="relative font-SUSE min-h-screen w-screen mt-44 md:mt-60">
       {/* Background Video */}
       
         
