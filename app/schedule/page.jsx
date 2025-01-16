@@ -37,7 +37,7 @@ const scheduleData = {
     {
         time: "11:00 AM – 12:00 PM",
         title: "Panel 1 Discussion – Auditorium",
-        description: ["Understanding Emerging Technologies in 2025"],
+        description: ["Panel discussion title and details"],
         panelMembers: {
           moderators: [
             {
@@ -84,7 +84,7 @@ const scheduleData = {
         time: "12:00 PM – 01:00 PM",
         title: "Panel 2 Discussion – Auditorium",
         description: [
-            "panel discussion title and details",
+            "Panel discussion title and details",
             
         ],
         panelMembers: {
@@ -133,7 +133,7 @@ const scheduleData = {
         time: "02:30 PM – 03:30 PM",
         title: "Panel 3 Discussion – Auditorium",
         description: [
-            "panel discussion title and details",
+            "Panel discussion title and details",
             
         ],
         panelMembers: {
@@ -182,7 +182,7 @@ const scheduleData = {
         time: "03:30 PM – 04:30 PM",
         title: "Panel 4 Discussion – Auditorium",
         description: [
-            "panel discussion title and details",
+            "Panel discussion title and details",
             
         ],
         panelMembers: {
@@ -231,7 +231,7 @@ const scheduleData = {
         time: "04:30 PM – 05:30 PM",
         title: "Panel 5 Discussion – Auditorium",
         description: [
-            "panel discussion title and details",
+            "Panel discussion title and details",
             
         ],
         panelMembers: {
