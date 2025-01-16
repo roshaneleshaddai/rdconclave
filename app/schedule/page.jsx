@@ -365,10 +365,10 @@ const Schedule = () => {
     const renderSchedule = (dayData) => {
       return dayData.map((session, index) => (
         <div key={index} className="border-b border-gray-300 py-4 flex items-start">
-          <div className="w-1/5 text-sm lg:text-lg text-[#604CC3]/95 font-semibold mx-2">
+          <div className="lg:w-1/5 w-1/4 text-sm lg:text-lg text-[#604CC3]/95 font-semibold">
             {session.time}
           </div>
-          <div className="w-4/5">
+          <div className="lg:w-4/5 w-3/4">
             <div className="flex items-center justify-between">
               <div
                 className="lg:text-lg text-base font-semibold text-gray-800 cursor-pointer"
@@ -418,7 +418,7 @@ const Schedule = () => {
                               className="w-20 h-20 rounded-full mr-4"
                             />
                             <div className="flex flex-col">
-                              <div className="text-lg font-medium">
+                              <div className="lg:text-lg text-md font-medium">
                                 {moderator.name}
                               </div>
                               <div className="text-sm text-gray-600">
@@ -442,7 +442,7 @@ const Schedule = () => {
                               className="w-16 h-16 rounded-full mr-4"
                             />
                             <div className="flex flex-col">
-                              <div className="text-lg font-medium">
+                              <div className="lg:text-lg text-md font-medium">
                                 {member.name}
                               </div>
                               <div className="text-sm text-gray-600">
@@ -506,25 +506,3 @@ const Schedule = () => {
   
   export default Schedule;
   
-// 'use client';
-// import React, { useState } from "react";
-  
-// const Schedule = () => {
- 
-//     return (
-//       <div className="relative font-SUSE min-h-screen max-w-screen mt-44 md:mt-60">
-//         <div className="pb-5">
-//           <div
-//             className="bg-[#604CC3]/25 bg-opacity-20 p-8 lg:mt-0 mt-52 rounded-lg mx-6 transition-opacity duration-1000 "
-//           >
-//             <h1 className="text-4xl  font-bold text-center text-[#604CC3]">
-//               Schedule
-//             </h1>
-//           </div>
-//           <p className="text-xl text-center m-10 font-semibold">Will be updated soon!</p>
-//         </div>
-//       </div>
-//     );
-//   };
-  
-//   export default Schedule;
