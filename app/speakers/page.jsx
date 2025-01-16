@@ -59,7 +59,7 @@ import React, { useState, useEffect } from "react";
       <section 
         id="research-names"
         className="flex flex-col justify-center items-center bg-opacity-50 md:px-10 md:py-1 my-10 overflow-hidden"
-      >
+        >
 
         <div className="px-10">
           {/* Display initial cards */}
@@ -70,12 +70,12 @@ import React, { useState, useEffect } from "react";
                 initial={{ opacity: 0, y: 50 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{
-                  duration: 0.2,
-                  delay: index * 0.2,
+                  duration: 0.1,
+                  delay: index * 0.15,
                   type: 'spring',
                   stiffness: 80,
-                  scale: { duration: 0.2 }, // Short hover duration
-                  boxShadow: { duration: 0.2 }, // Matches hover speed for boxShadow
+                  scale: { duration: 0.1 }, // Short hover duration
+                  boxShadow: { duration: 0.1 }, // Matches hover speed for boxShadow
                 }}
                 whileHover={{
                   scale: 1.05,
@@ -107,12 +107,12 @@ import React, { useState, useEffect } from "react";
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{
-                  duration: 0.2,
-                  delay: index * 0.2,
+                  duration: 0.1,
+                  delay: index * 0.15,
                   type: 'spring',
                   stiffness: 80,
-                  scale: { duration: 0.2 }, // Short hover duration
-                  boxShadow: { duration: 0.2 }, // Matches hover speed for boxShadow
+                  scale: { duration: 0.1 }, // Short hover duration
+                  boxShadow: { duration: 0.1 }, // Matches hover speed for boxShadow
                 }}
                 viewport={{ once: true }}
                 whileHover={{
