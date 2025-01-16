@@ -123,7 +123,7 @@ const Header = () => {
           <div className={`md:block md:text-center transition-all duration-300 ease-in-out ${isScrolled ? 'text-base md:text-2xl' : 'text-lg md:text-3xl'}`}>
 
             <h2 className={`font-bold text-black ${isScrolled ? 'hidden' : ''}`}>
-            SIDDHARTHA<br></br>ACADEMY OF HIGHER EDUCATION
+            SIDDHARTHA <br className="lg:block hidden"></br>ACADEMY OF HIGHER EDUCATION
             </h2>
             <h2 className={`font-bold text-black ${isScrolled ? '' : 'hidden'}`}>
             SIDDHARTHA ACADEMY OF HIGHER EDUCATION
