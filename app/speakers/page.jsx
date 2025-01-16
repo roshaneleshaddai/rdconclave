@@ -71,7 +71,7 @@ import React, { useState, useEffect } from "react";
                 animate={{ opacity: 1, y: 0 }}
                 transition={{
                   duration: 0.1,
-                  delay: index * 0.15,
+                  delay: index * 0.2,
                   type: 'spring',
                   stiffness: 80,
                   scale: { duration: 0.1 }, // Short hover duration
@@ -108,7 +108,7 @@ import React, { useState, useEffect } from "react";
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{
                   duration: 0.1,
-                  delay: index * 0.15,
+                  delay: index * 0.2,
                   type: 'spring',
                   stiffness: 80,
                   scale: { duration: 0.1 }, // Short hover duration
