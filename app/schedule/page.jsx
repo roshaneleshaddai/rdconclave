@@ -408,7 +408,7 @@ const Schedule = () => {
                     <h3 className="text-md font-semibold text-gray-800 mb-2">
                       Moderators:
                     </h3>
-                    <div className="grid lg:grid-cols-2 grid-cols-1 gap-4">
+                    <div className="grid md:grid-cols-2 grid-cols-1 gap-4">
                       {session.panelMembers.moderators.map((moderator, i) => (
                         <div key={i} className="">
                           <div className="flex items-center mb-4">
@@ -432,7 +432,7 @@ const Schedule = () => {
                     <h3 className="text-md font-semibold text-gray-800 mb-2">
                       Panel Members:
                     </h3>
-                    <div className="grid lg:grid-cols-2 grid-cols-1 gap-4">
+                    <div className="grid md:grid-cols-2 grid-cols-1 gap-4">
                       {session.panelMembers.members.map((member, i) => (
                         <div key={i} className="">
                           <div className="flex items-center mb-4">
