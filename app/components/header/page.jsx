@@ -87,7 +87,7 @@ const Header = () => {
     >
       <source src="/images/bg.mp4" type="video/mp4" />
     </video> */}
-      <div className="flex items-center justify-evenly md:p-2 md:mx-auto max-w-7xl">
+      <div className="flex items-center justify-evenly md:p-2 md:mx-10 max-w-8xl">
         {/* Logo Section */}
         <div className="flex items-center justify-evenly space-x-0 md:space-x-4 mx-2">
               <Image
@@ -117,9 +117,18 @@ const Header = () => {
               height={isScrolled ? 140 : 160}
               className={`hidden lg:block  object-scale-down transition-all duration-300 w-24 h-32 `}
             />
+            <Image
+              src="/images/rclogo1.png"
+              alt="Research conclave"
+              width={isScrolled ? 90 : 100} 
+              height={isScrolled ? 90 : 100}
+              className={`hidden lg:block  object-scale-down transition-all duration-300 rounded-full border-2 border-yellow-300 w-24 h-24`}
+              objectFit="contain"
+            />
+
         </div>
 
-        <div>
+        <div className="">
           <div className={`md:block md:text-center transition-all duration-300 ease-in-out ${isScrolled ? 'text-base md:text-2xl' : 'text-lg md:text-3xl'}`}>
 
             <h2 className={`font-bold text-black ${isScrolled ? 'hidden' : ''}`}>
@@ -128,6 +137,7 @@ const Header = () => {
             <h2 className={`font-bold text-black ${isScrolled ? '' : 'hidden'}`}>
             SIDDHARTHA ACADEMY OF HIGHER EDUCATION
             </h2>
+
             <h2
                 className={`font-normal text-black ${
                   isScrolled ? 'lg:text-lg text-sm' : 'lg:text-xl text-base'
@@ -140,18 +150,10 @@ const Header = () => {
                 <span className="font-bold text-black">V R SIDDHARTHA SCHOOL OF ENGINEERING</span>
                 <br/>
                 <span className="lg:text-base text-xs"><span className="text-black">(Sponsored by <span className="font-semibold">Siddhartha Academy of General & Technical Education</span>), Vijayawada, A.P, India.</span></span>
-                {/* <span className={`${isScrolled ? 'text-xs lg:text-sm' : 'hidden'}`}> */}
-                  {/* <span className="text-black text-sm lg:text-base">
-                  (Sponsored by <span className="font-semibold">Siddhartha Academy of General & Technical Education</span>)
-                  <span className="hidden lg:inline"><br /></span>
-                  Vijayawada, A.P, India.
-                </span> */}
-        {/* </span> */}
-
               </h2>
             </div>
           </div>
-          <div>
+        <div>
         <div className={`hidden md:flex items-center transition-all duration-300 ${isScrolled ? 'space-x-2' : 'space-x-4'}`}>
         <div className="hidden md:block">
             {/* <Image
@@ -183,12 +185,11 @@ const Header = () => {
           </div>
           <div className="hidden  md:block">
             <Image
-              src="/images/rclogo1.png"
-              alt="Research conclave"
+              src="/images/efftronicslogo.webp"
+              alt="efftronics"
               width={isScrolled ? 90 : 100} 
               height={isScrolled ? 90 : 100}
-              className="rounded-full border-2 border-yellow-300"
-              objectFit="contain"
+              className="rounded-full"
             />
           </div>
           {/* Hamburger Menu Icon */}
