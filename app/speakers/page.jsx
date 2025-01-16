@@ -89,7 +89,7 @@ import React, { useState, useEffect } from "react";
                     alt={researcher.name}
                     width={150}
                     height={150}
-                    className="object-cover object-center mb-4 rounded-lg"
+                    className="object-cover object-center mb-4 rounded-lg w-40 h-40"
                   />
                   <p className="text-md text-center text-[#604CC3] font-bold">{researcher.name}</p>
                   <p className="text-sm text-center text-black">{researcher.position}</p>
@@ -127,7 +127,7 @@ import React, { useState, useEffect } from "react";
                     alt={researcher.name}
                     width={150}
                     height={150}
-                    className="object-cover object-center mb-4 rounded-lg"
+                    className="object-cover object-center mb-4 rounded-lg w-40 h-40"
                   />
                   <p className="text-md text-center text-[#604CC3] font-bold">{researcher.name}</p>
                   <p className="text-sm text-center text-black">{researcher.position}</p>
