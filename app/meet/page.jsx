@@ -8,17 +8,21 @@ const Meet = () => {
   // Array of expected outcomes
   const logos = [
     '/images/industry4.png',
-     '/images/industry3.jpeg',
-     '/images/industry7.png',
+     'https://upload.wikimedia.org/wikipedia/commons/6/64/TCS_logo-black.png',
+     'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS83mygX-6NG7lLPr0N-fzQq4VLzh52wN15yg&s',
     'https://i.pinimg.com/564x/34/a2/b1/34a2b1d02fd71b5a742eb5e34301f70f.jpg',
-    '/images/industry1.png',
-    '/images/industry2.jpeg',
-    '/images/industry5.png',
+    'https://media.licdn.com/dms/image/v2/D560BAQH6NnQXsFufHA/company-logo_200_200/company-logo_200_200/0/1665503554245/ctscorporation_logo?e=2147483647&v=beta&t=fAuC1tCHFMqg7l7ahBTPlds9esj_il1mJyRueOVZR64',
+    'https://assets.channelinsider.com/uploads/2022/04/CI.TechMahindra.Profile-1024x1024.png',
+    'https://mma.prnewswire.com/media/1022385/Persistent_Systems_Logo.jpg?p=facebook',
     '/images/industry6.png',
-    '/images/industry8.jpeg',
+    'https://media.licdn.com/dms/image/v2/D560BAQE3oCRjD0FdGg/company-logo_200_200/company-logo_200_200/0/1689239185676?e=2147483647&v=beta&t=o8Ai2uvG6V3Fe-vsirXqxgBMUmsE-XdZGB1-3dlaHUo',
     '/images/industry9.jpeg',
     '/images/industry10.png',
-    
+    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSiv_cTlgi7PfmQQzhwSbBbQ-CxV9zGncmreQ&s',
+    'https://www.powerlabinstruments.com/myweb/uploads/2024/05/logo-new.png',
+    'https://static.brandfinance.com/wp-content/uploads/2016/01/HCL-Logo.png',
+    'https://media.licdn.com/dms/image/v2/C4D0BAQGYXH79jG8PKA/company-logo_200_200/company-logo_200_200/0/1630550419008/ams_osram_logo?e=1745452800&v=beta&t=mOjEdTUTN_3mTBVc1-N-sfZcDImqYds9taLDDmOtgys',
+    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSf8xGevRk2pKZTsFC-VXEJUamM3TrhC9sryg&s',
   ];
 
   // Industries Section Component with Fade-In Effect
