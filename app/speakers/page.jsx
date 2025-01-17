@@ -144,7 +144,7 @@ import React, { useState, useEffect } from "react";
 const Speakers = () => {
   
   return (
-    <div className="relative font-SUSE min-h-screen max-w-screen mt-44 md:mt-60">
+    <div className="relative font-SUSE min-h-screen max-w-screen mt-48 md:mt-64">
 
       <div className="pb-5">
         
