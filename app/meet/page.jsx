@@ -23,6 +23,7 @@ const Meet = () => {
     'https://static.brandfinance.com/wp-content/uploads/2016/01/HCL-Logo.png',
     'https://media.licdn.com/dms/image/v2/C4D0BAQGYXH79jG8PKA/company-logo_200_200/company-logo_200_200/0/1630550419008/ams_osram_logo?e=1745452800&v=beta&t=mOjEdTUTN_3mTBVc1-N-sfZcDImqYds9taLDDmOtgys',
     'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSf8xGevRk2pKZTsFC-VXEJUamM3TrhC9sryg&s',
+    '/images/efftronicslogo.webp',
   ];
 
   // Industries Section Component with Fade-In Effect
