@@ -630,7 +630,7 @@ const CoordinatorsSection = () => {
       </video>
       </div> */}
       
-      <div className="mt-44 md:mt-56"></div>
+      <div className="mt-48 md:mt-60"></div>
       <ClickableCircles />
       {/* <ImageCarousel /> */}
       <HorizontalImageScroller images={researchimages}/>
