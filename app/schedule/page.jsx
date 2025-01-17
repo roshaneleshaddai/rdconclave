@@ -465,7 +465,7 @@ const Schedule = () => {
                         <li key={i}>
                           {parts.length >= 2 ? (
                             <>
-                              <span className="font-semibold">{parts[0]}:</span> {parts[1]}
+                              <span className="font-semibold">{parts[0]}:</span><span className="text-justify"> {parts[1]}</span>
                             </>
                           ) : (
                             point
