@@ -541,7 +541,7 @@ const Schedule = () => {
     };
   
     return (
-      <div className="relative font-SUSE min-h-screen max-w-screen mt-44 md:mt-60">
+      <div className="relative font-SUSE min-h-screen max-w-screen mt-48 md:mt-64">
         <div className="pb-5">
           <div
             className="bg-[#604CC3]/25 bg-opacity-20 p-8 lg:mt-0 mt-52 rounded-lg mx-6 transition-opacity duration-1000 "
