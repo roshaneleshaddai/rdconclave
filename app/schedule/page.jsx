@@ -11,14 +11,17 @@ const scheduleData = {
     {
       time: "09:30 AM - 10:30 AM",
       title: "Inauguration – Auditorium",
-      description: [
-        "(Chief Guest)",
-        "Mrs. Padmaja Sriram, AT&T (Guest of Honor)",
-        "Mr. Sarada Prasanna Satapathy, PEGA (Guest of Honor)",
-        "Dr. M Suneetha, Dean - Research, Technology & Development and IQAC, Professor & HoD-IT",
-        "Dr. A. V. Ratna Prasad, Pro Vice Chancellor",
-        "Dr. P. Venkateswara Rao, Vice Chancellor",
-      ],
+      description: {
+        mainContent: "Panel discussion title and details with an overview of the topic and speakers.",
+        keyPoints: [
+            "(Chief Guest)",
+            "Mrs. Padmaja Sriram, AT&T (Guest of Honor)",
+            "Mr. Sarada Prasanna Satapathy, PEGA (Guest of Honor)",
+            "Dr. M Suneetha, Dean - Research, Technology & Development and IQAC, Professor & HoD-IT",
+            "Dr. A. V. Ratna Prasad, Pro Vice Chancellor",
+            "Dr. P. Venkateswara Rao, Vice Chancellor",
+        ],
+      },
     },
     {
       time: "10:30 AM - 11:00 AM",
@@ -27,18 +30,28 @@ const scheduleData = {
     {
       time: "11:00 AM onwards",
       title: "TECHTREK",
-      description: [
-        "24 Hour Webathon",
-        "24 Hour AI Hackathon",
-        
-      ],
+      description: {
+        keyPoints: [
+            "24 Hour Webathon : IT Seminar Hall (Room No: 224) ",
+            "24 Hour AI Hackathon : IT Lab 4 (Room No: 231)",
+        ],
+      },
     },
     
     {
         time: "11:00 AM – 12:00 PM",
-        title: "Panel 1 Discussion – Auditorium",
-        description: ["Panel discussion title and details"],
-        panelMembers: {
+        title: "Panel 1 Discussion – The Role of Generative AI in Redefining Creativity and Automation @Auditorium",
+        description: {
+          mainContent: "Exploring how generative AI is transforming industries like content creation, design, and automation, and its ethical and societal impacts.",
+          keyPoints: [
+              "Redefining Creativity with Generative AI : How AI tools are transforming industries like content creation, design, and media.",
+              "Automation and Efficiency Gains : The role of AI in automating creative and repetitive tasks, enhancing productivity.",
+              "Ethical and Intellectual Property Challenges : Addressing ownership, bias, and misinformation in AI-generated content.",
+              "Human-AI Collaboration : Balancing machine-generated content with human creativity for innovative outcomes.",
+              "Future Trends and Workforce Implications : Preparing for the evolving impact of AI on jobs and skill develoent.",
+          ],
+        },
+      panelMembers: {
           moderators: [
             {
                 name: "Smt. Padmaja Sriram",
@@ -82,11 +95,17 @@ const scheduleData = {
       },
       {
         time: "12:00 PM – 01:00 PM",
-        title: "Panel 2 Discussion – Auditorium",
-        description: [
-            "Panel discussion title and details",
-            
-        ],
+        title: "Panel 2 Discussion – The Future of Sustainable Tech: IoT and AI for Green Innovation @Auditorium",
+        description: {
+          mainContent: "Discussing how IoT and AI technologies are driving sustainable solutions in energy management, agriculture, and smart cities.",
+          keyPoints: [
+              "AI and IoT in Energy Efficiency : How AI-powered IoT solutions optimize energy consumption and reduce carbon footprints in industries and buildings.",
+              "Smart Agriculture for Sustainability : The role of IoT and AI in precision farming, water management, and reducing waste.",
+              "Smart Cities and Sustainable Infrastructure : Using AI and IoT to create resource-efficient, eco-friendly urban environments.",
+              "AI for Circular Economy : Leveraging AI to improve recycling, waste management, and product lifecycle in sustainable tech.",
+              "Challenges and Future Trends : Addressing scalability, regulatory hurdles, and the potential impact of emerging technologies on green innovation.",
+          ],
+      },
         panelMembers: {
             moderators: [
               {
@@ -131,11 +150,17 @@ const scheduleData = {
       },
       {
         time: "02:30 PM – 03:30 PM",
-        title: "Panel 3 Discussion – Auditorium",
-        description: [
-            "Panel discussion title and details",
-            
+        title: "Panel 3 Discussion – Building the Workforce of Tomorrow: Bridging the Skills Gap in AI, Data Science, and IoT @Auditorium",
+        description: {
+          mainContent: "Addressing how industry and academia can collaborate to design future-ready curricula and training programs for in-demand tech skills.",
+          keyPoints: [
+            "Industry-Academia Collaboration : How partnerships between academia and industry can shape curricula aligned with real-world needs.",
+            "Practical, Hands-On Training : Emphasizing the importance of practical experience in AI, data science, and IoT through internships, labs, and projects.",
+            "Upgrading Existing Programs : Revamping academic programs to include emerging technologies and interdisciplinary learning.",
+            "Reskilling the Current Workforce : Addressing the need for continuous learning and reskilling initiatives for professionals already in the field.",
+            "Policy Support and Government Initiatives : Discussing the role of policies and funding to support skill development in high-demand tech areas.",
         ],
+        },
         panelMembers: {
             moderators: [
               {
@@ -180,11 +205,17 @@ const scheduleData = {
       },
       {
         time: "03:30 PM – 04:30 PM",
-        title: "Panel 4 Discussion – Auditorium",
-        description: [
-            "Panel discussion title and details",
-            
+        title: "Panel 4 Discussion – Data Privacy and Ethical AI: Navigating Regulation and Responsibility @Auditorium",
+        description: {
+          mainContent: "Exploring the balance between innovation and regulation in AI, privacy laws, and responsible data usage.",
+          keyPoints: [
+            "Balancing Innovation and Privacy : How to foster AI innovation while ensuring data privacy and protection.",
+            "Ethical AI Development : Establishing guidelines for creating AI systems that are fair, transparent, and accountable.",
+            "Regulation and Compliance : Navigating the evolving landscape of global privacy laws (e.g., GDPR) and their impact on AI applications.",
+            "Responsible Data Usage : Ensuring AI systems use data ethically and avoid discrimination or bias.",
+            "Public Trust and Accountability : Building public confidence in AI technologies through transparency, governance, and oversight.",
         ],
+        },
         panelMembers: {
             moderators: [
               {
@@ -229,11 +260,17 @@ const scheduleData = {
       },
       {
         time: "04:30 PM – 05:30 PM",
-        title: "Panel 5 Discussion – Auditorium",
-        description: [
-            "Panel discussion title and details",
-            
+        title: "Panel 5 Discussion – Digital Twins and the Metaverse: Opportunities for Industry and Research @Auditorium",
+        description: {
+          mainContent: "A deep dive into how digital twins and the metaverse are shaping virtual environments and real-time monitoring in industries like healthcare, construction, and logistics.",
+          keyPoints: [
+            "Digital Twins in Industry : How digital twins are revolutionizing real-time monitoring and predictive analytics in sectors like healthcare, construction, and logistics.",
+            "The Role of the Metaverse : Exploring the metaverse's potential to create immersive virtual environments for training, collaboration, and product design.",
+            "Integration of IoT and AI : Leveraging IoT sensors and AI to enhance the functionality and accuracy of digital twins and metaverse applications.",
+            "Impact on Operations and Efficiency : How these technologies optimize operations, reduce costs, and improve decision-making in various industries.",
+            "Research and Development Challenges : Discussing the technical, ethical, and regulatory challenges of implementing digital twins and the metaverse in real-world scenarios.",
         ],
+        },
         panelMembers: {
             moderators: [
               {
@@ -280,45 +317,57 @@ const scheduleData = {
       {
         time: "11:00 AM - 1:00 PM",
         title: "Paper Presentations",
-        description: [
-          "Parallel Session I",
-           "Parallel Session II",
-            "Parallel Session III",
-           "Parallel Session IV",
-        ],
+        description: {
+          keyPoints: [
+              "Parallel Session I @Room No-228",
+            "Parallel Session II @Room No-246",
+             "Parallel Session III @Room No-250",
+            ,
+          ],
+        },
+        
       },
       {
         time: "1:00 PM - 02:30 PM",
         title: "Connections and Conversations: Lunch",
-        description: [
-          "Venue: Impact Center, 4th floor, VL Dutt Block",
-        ],
+        description: {
+          mainContent: "Venue: Impact Center, 4th floor, VL Dutt Block",
+          
+        },
       },
       {
         time: "02:30 PM - 05:00 PM",
         title: "Paper Presentations",
-        description: [
-          "Parallel Session I",
-           "Parallel Session II",
-            "Parallel Session III",
-           "Parallel Session IV",
-        ],
+        description: {
+          keyPoints: [
+               "Parallel Session I @Room No-228",
+            "Parallel Session II @Room No-246",
+             "Parallel Session III @Room No-250",
+            ,
+          ],
+        },
       },
       {
         time: "05:00 PM - 07:00 PM",
         title: "Cultural Programs",
+      },
+      {
+        time: "07:00 PM onwards",
+        title: "Dinner @Auditorium",
       },
   ],
   day2: [
     {
       time: "09:30 AM - 11:00 AM",
       title: "Paper Presentations",
-      description: [
-        "Parallel Session I",
-        "Parallel Session II",
-        "Parallel Session III",
-        "Parallel Session IV",
-      ],
+      description: {
+        keyPoints: [
+             "Parallel Session I @Room No-228",
+          "Parallel Session II @Room No-246",
+           "Parallel Session III @Room No-250",
+          ,
+        ],
+      },
     },
     {
       time: "11:00 AM - 11:30 AM",
@@ -327,12 +376,14 @@ const scheduleData = {
     {
       time: "11:30 AM – 01:30 PM",
       title: "Paper Presentations",
-      description: [
-        "Parallel Session I",
-        "Parallel Session II",
-        "Parallel Session III",
-        "Parallel Session IV",
-      ],
+      description: {
+        keyPoints: [
+             "Parallel Session I @Room No-228",
+          "Parallel Session II @Room No-246",
+           "Parallel Session III @Room No-250",
+          ,
+        ],
+      },
     },
     {
         time: "01:30 PM - 02:30 PM",
@@ -387,21 +438,41 @@ const Schedule = () => {
             </div>
             <div
             className={`${
-              isExpanded(index)
-                ? "max-h-full opacity-100"
-                : "max-h-0 opacity-0"
+              isExpanded(index) ? "max-h-full opacity-100" : "max-h-0 opacity-0"
             } transition-all duration-500 ease-in-out`}
           >
             {isExpanded(index) && session.description && (
               <div className="mt-2 bg-gray-100 p-4 rounded-md">
-                {session.description.length > 1 ? (
-                  <ul className="list-disc list-inside text-gray-700">
-                    {session.description.map((desc, i) => (
-                      <li key={i}>{desc}</li>
-                    ))}
+                {/* Check and display main content if exists */}
+                {session.description.mainContent && (
+                  <p className="text-gray-700 text-justify px-2">{session.description.mainContent}</p>
+                )}
+                {/* Check and display key points if exists */}
+                {session.description.keyPoints && session.description.keyPoints.length > 0 && (
+                  <>
+                  {session.title.includes("Panel") && (
+                    <h3 className="text-md font-semibold text-gray-800 mt-4 mb-2">
+                      KEY DISCUSSION POINTS FOR THE PANEL:
+                    </h3>
+                  )}
+                    <ul className="pl-4 pr-2 list-disc list-outside text-gray-700 text-justify">
+                    {session.description.keyPoints.map((point, i) => {
+                      const parts = point.split(/:(.+)/); // Splits into [beforeColon, afterColon]
+                      console.log(parts)
+                      return (
+                        <li key={i}>
+                          {parts.length >= 2 ? (
+                            <>
+                              <span className="font-semibold">{parts[0]}:</span> {parts[1]}
+                            </>
+                          ) : (
+                            point
+                          )}
+                        </li>
+                      );
+                    })}
                   </ul>
-                ) : (
-                  <p className="text-gray-700">{session.description[0]}</p>
+                  </>
                 )}
                 {session.panelMembers && (
                   <div className="mt-4">
