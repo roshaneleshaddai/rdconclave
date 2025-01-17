@@ -444,7 +444,7 @@ const Schedule = () => {
             } transition-all duration-500 ease-in-out`}
           >
             {isExpanded(index) && session.description && (
-              <div className="mt-2 bg-gray-100 p-4 rounded-md">
+              <div className="mt-2 bg-gray-100 p-4 rounded-md lg:text-lg text-base ">
                 {/* Check and display main content if exists */}
                 {session.description.mainContent && (
                   <p className="text-gray-700 text-justify px-2">{session.description.mainContent}</p>
@@ -453,11 +453,11 @@ const Schedule = () => {
                 {session.description.keyPoints && session.description.keyPoints.length > 0 && (
                   <>
                   {session.title.includes("Panel") && (
-                    <h3 className="text-md font-semibold text-gray-800 mt-4 mb-2">
+                    <h3 className="font-semibold text-gray-800 mt-4 mb-2">
                       KEY DISCUSSION POINTS FOR THE PANEL:
                     </h3>
                   )}
-                    <ul className="pl-4 pr-2 list-disc list-outside text-gray-700 md:text-justify">
+                    <ul className="pl-4 pr-2 list-disc list-outside text-gray-700">
                     {session.description.keyPoints.map((point, i) => {
                       const parts = point.split(/:(.+)/); // Splits into [beforeColon, afterColon]
                       console.log(parts)
@@ -496,7 +496,7 @@ const Schedule = () => {
                               <div className="lg:text-lg text-md font-medium">
                                 {moderator.name}
                               </div>
-                              <div className="text-sm text-gray-600">
+                              <div className="lg:text-base text-sm text-gray-600">
                                 {moderator.position}
                               </div>
                             </div>
@@ -522,7 +522,7 @@ const Schedule = () => {
                               <div className="lg:text-lg text-md font-medium">
                                 {member.name}
                               </div>
-                              <div className="text-sm text-gray-600">
+                              <div className="lg:text-base text-sm text-gray-600">
                                 {member.position}
                               </div>
                             </div>
