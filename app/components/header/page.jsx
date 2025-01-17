@@ -182,8 +182,8 @@ const Header = () => {
               alt="Research conclave"
               width={isScrolled ? 90 : 100} 
               height={isScrolled ? 90 : 100}
-              className={`hidden lg:block  object-scale-down transition-all duration-300 rounded-full border-2 border-yellow-300 w-24 h-24`}
-              objectFit="contain"
+              className="rounded-full"
+              
             />
           </div>
           {/* Hamburger Menu Icon */}
