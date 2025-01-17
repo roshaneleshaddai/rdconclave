@@ -48,7 +48,7 @@ const scheduleData = {
             {
                 name: "Dr P Venkateswara Rao",
                 position: "VC",
-                image: "https://www.vrsiddhartha.ac.in/wp-content/uploads/2019/09/Chancellor-K-V-Chowdary.jpg",
+                image: "https://www.vrsiddhartha.ac.in/wp-content/uploads/2019/09/Vice-Chancellor-PV-Rao.jpg",
             },
         ],
           members: [
@@ -146,7 +146,7 @@ const scheduleData = {
               {
                   name: "Dr P Venkateswara Rao",
                   position: "VC",
-                  image: "https://www.vrsiddhartha.ac.in/wp-content/uploads/2019/09/Chancellor-K-V-Chowdary.jpg",
+                  image: "https://www.vrsiddhartha.ac.in/wp-content/uploads/2019/09/Vice-Chancellor-PV-Rao.jpg",
               },
           ],
             members: [
@@ -244,7 +244,7 @@ const scheduleData = {
               {
                   name: "Dr P Venkateswara Rao",
                   position: "VC",
-                  image: "https://www.vrsiddhartha.ac.in/wp-content/uploads/2019/09/Chancellor-K-V-Chowdary.jpg",
+                  image: "https://www.vrsiddhartha.ac.in/wp-content/uploads/2019/09/Vice-Chancellor-PV-Rao.jpg",
               },
           ],
             members: [
