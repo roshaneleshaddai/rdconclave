@@ -12,11 +12,13 @@ const scheduleData = {
       time: "09:30 AM - 10:30 AM",
       title: "Inauguration – Auditorium",
       description: {
-        mainContent: "Panel discussion title and details with an overview of the topic and speakers.",
+        // mainContent: "Panel discussion title and details with an overview of the topic and speakers.",
         keyPoints: [
             "(Chief Guest)",
             "Mrs. Padmaja Sriram, AT&T (Guest of Honor)",
             "Mr. Sarada Prasanna Satapathy, PEGA (Guest of Honor)",
+            "Sri M Rajaiah (President),SAGTE",
+            "Sri P. Lakshmana Rao(Secretary), SAGTE",
             "Dr. M Suneetha, Dean - Research, Technology & Development and IQAC, Professor & HoD-IT",
             "Dr. A. V. Ratna Prasad, Pro Vice Chancellor",
             "Dr. P. Venkateswara Rao, Vice Chancellor",
@@ -53,11 +55,11 @@ const scheduleData = {
         },
       panelMembers: {
           moderators: [
-            {
-                name: "Smt. Padmaja Sriram",
-                position: "AT&T",
-                image: "/images/attr1.jpg",
-            },
+            // {
+            //     name: "Smt. Padmaja Sriram",
+            //     position: "AT&T",
+            //     image: "/images/attr1.jpg",
+            // },
             {
                 name: "Dr P Venkateswara Rao",
                 position: "VC",
@@ -108,11 +110,11 @@ const scheduleData = {
       },
         panelMembers: {
             moderators: [
-              {
-                  name: "Smt. Padmaja Sriram",
-                  position: "AT&T",
-                  image: "/images/attr1.jpg",
-              },
+              // {
+              //     name: "Smt. Padmaja Sriram",
+              //     position: "AT&T",
+              //     image: "/images/attr1.jpg",
+              // },
               {
                   name: "Dr A V Ratna Prasad",
                   position: "Pro VC",
@@ -149,7 +151,7 @@ const scheduleData = {
           },
       },
       {
-        time: "02:30 PM – 03:30 PM",
+        time: "02:00 PM – 03:00 PM",
         title: "Panel 3 Discussion – Building the Workforce of Tomorrow: Bridging the Skills Gap in AI, Data Science, and IoT @Auditorium",
         description: {
           mainContent: "Addressing how industry and academia can collaborate to design future-ready curricula and training programs for in-demand tech skills.",
@@ -168,11 +170,11 @@ const scheduleData = {
                   position: "AT&T",
                   image: "/images/attr1.jpg",
               },
-              {
-                  name: "Dr P Venkateswara Rao",
-                  position: "VC",
-                  image: "https://www.vrsiddhartha.ac.in/wp-content/uploads/2019/09/Vice-Chancellor-PV-Rao.jpg",
-              },
+              // {
+              //     name: "Dr P Venkateswara Rao",
+              //     position: "VC",
+              //     image: "https://www.vrsiddhartha.ac.in/wp-content/uploads/2019/09/Vice-Chancellor-PV-Rao.jpg",
+              // },
           ],
             members: [
               {
@@ -186,7 +188,7 @@ const scheduleData = {
                 image: "/images/techmr1.jpg",
               },
               {
-                name: "Dr Krishna Kanth g Avuluir",
+                name: "Dr Krishna Kanth G Avuluir",
                 position: "AMS",
                 image: "/images/amsr1.jpg",
               },
@@ -204,7 +206,7 @@ const scheduleData = {
           },
       },
       {
-        time: "03:30 PM – 04:30 PM",
+        time: "03:00 PM – 04:00 PM",
         title: "Panel 4 Discussion – Data Privacy and Ethical AI: Navigating Regulation and Responsibility @Auditorium",
         description: {
           mainContent: "Exploring the balance between innovation and regulation in AI, privacy laws, and responsible data usage.",
@@ -217,18 +219,18 @@ const scheduleData = {
         ],
         },
         panelMembers: {
-            moderators: [
-              {
-                  name: "Smt. Padmaja Sriram",
-                  position: "AT&T",
-                  image: "/images/attr1.jpg",
-              },
-              {
-                  name: "Dr A V Ratna Prasad",
-                  position: "Pro VC",
-                  image: "https://www.vrsiddhartha.ac.in/wp-content/uploads/2024/09/principal_2024-1-275x300.jpg",
-              },
-          ],
+          //   moderators: [
+          //     {
+          //         name: "Smt. Padmaja Sriram",
+          //         position: "AT&T",
+          //         image: "/images/attr1.jpg",
+          //     },
+          //     {
+          //         name: "Dr A V Ratna Prasad",
+          //         position: "Pro VC",
+          //         image: "https://www.vrsiddhartha.ac.in/wp-content/uploads/2024/09/principal_2024-1-275x300.jpg",
+          //     },
+          // ],
             members: [
               {
                 name: "S. Suresh Babu",
@@ -236,9 +238,9 @@ const scheduleData = {
                 image: "/images/rapsr1.jpg",
               },
               {
-                name: "Mr Raghavendra Kulkarni",
+                name: "Srinivas KVNDS",
                 position: "CTS",
-                image: "/images/ctsr2.jpg",
+                image: "/images/r2.jpg",
               },
               {
                 name: "Mr.M. Veeran",
@@ -259,7 +261,7 @@ const scheduleData = {
           },
       },
       {
-        time: "04:30 PM – 05:30 PM",
+        time: "04:00 PM – 05:00 PM",
         title: "Panel 5 Discussion – Digital Twins and the Metaverse: Opportunities for Industry and Research @Auditorium",
         description: {
           mainContent: "A deep dive into how digital twins and the metaverse are shaping virtual environments and real-time monitoring in industries like healthcare, construction, and logistics.",
@@ -272,18 +274,18 @@ const scheduleData = {
         ],
         },
         panelMembers: {
-            moderators: [
-              {
-                  name: "Smt. Padmaja Sriram",
-                  position: "AT&T",
-                  image: "/images/attr1.jpg",
-              },
-              {
-                  name: "Dr P Venkateswara Rao",
-                  position: "VC",
-                  image: "https://www.vrsiddhartha.ac.in/wp-content/uploads/2019/09/Vice-Chancellor-PV-Rao.jpg",
-              },
-          ],
+          //   moderators: [
+          //     {
+          //         name: "Smt. Padmaja Sriram",
+          //         position: "AT&T",
+          //         image: "/images/attr1.jpg",
+          //     },
+          //     {
+          //         name: "Dr P Venkateswara Rao",
+          //         position: "VC",
+          //         image: "https://www.vrsiddhartha.ac.in/wp-content/uploads/2019/09/Vice-Chancellor-PV-Rao.jpg",
+          //     },
+          // ],
             members: [
                 
               {
@@ -319,7 +321,7 @@ const scheduleData = {
         title: "Paper Presentations",
         description: {
           keyPoints: [
-              "Parallel Session I @Room No-228",
+              "Parallel Session I @Room No-232",
             "Parallel Session II @Room No-246",
              "Parallel Session III @Room No-250",
             ,
@@ -340,7 +342,7 @@ const scheduleData = {
         title: "Paper Presentations",
         description: {
           keyPoints: [
-               "Parallel Session I @Room No-228",
+               "Parallel Session I @Room No-232",
             "Parallel Session II @Room No-246",
              "Parallel Session III @Room No-250",
             ,
@@ -362,7 +364,7 @@ const scheduleData = {
       title: "Paper Presentations",
       description: {
         keyPoints: [
-             "Parallel Session I @Room No-228",
+             "Parallel Session I @Room No-232",
           "Parallel Session II @Room No-246",
            "Parallel Session III @Room No-250",
           ,
@@ -378,7 +380,7 @@ const scheduleData = {
       title: "Paper Presentations",
       description: {
         keyPoints: [
-             "Parallel Session I @Room No-228",
+             "Parallel Session I @Room No-232",
           "Parallel Session II @Room No-246",
            "Parallel Session III @Room No-250",
           ,
@@ -416,7 +418,7 @@ const Schedule = () => {
     const renderSchedule = (dayData) => {
       return dayData.map((session, index) => (
         <div key={index} className="border-b border-gray-300 py-4 flex md:flex-row flex-col items-start">
-          <div className="md:w-1/5 w-full text-sm lg:text-lg text-[#604CC3]/95 font-semibold">
+          <div className="md:w-1/5 w-full text-md lg:text-lg text-[#604CC3]/95 font-semibold">
             {session.time}
           </div>
           <div className="md:w-4/5 w-full">
@@ -445,7 +447,7 @@ const Schedule = () => {
               <div className="mt-2 bg-gray-100 p-4 rounded-md">
                 {/* Check and display main content if exists */}
                 {session.description.mainContent && (
-                  <p className="text-gray-700 text-justify px-2">{session.description.mainContent}</p>
+                  <p className="text-gray-700 md:text-justify px-2">{session.description.mainContent}</p>
                 )}
                 {/* Check and display key points if exists */}
                 {session.description.keyPoints && session.description.keyPoints.length > 0 && (
@@ -455,7 +457,7 @@ const Schedule = () => {
                       KEY DISCUSSION POINTS FOR THE PANEL:
                     </h3>
                   )}
-                    <ul className="pl-4 pr-2 list-disc list-outside text-gray-700 text-justify">
+                    <ul className="pl-4 pr-2 list-disc list-outside text-gray-700 md:text-justify">
                     {session.description.keyPoints.map((point, i) => {
                       const parts = point.split(/:(.+)/); // Splits into [beforeColon, afterColon]
                       console.log(parts)
@@ -476,6 +478,8 @@ const Schedule = () => {
                 )}
                 {session.panelMembers && (
                   <div className="mt-4">
+                    {session.panelMembers.moderators && (
+                      <div>
                     <h3 className="text-md font-semibold text-gray-800 mb-2">
                       Moderators:
                     </h3>
@@ -499,7 +503,9 @@ const Schedule = () => {
                           </div>
                         </div>
                       ))}
+                      </div>
                     </div>
+                    )}
                     <h3 className="text-md font-semibold text-gray-800 mb-2">
                       Panel Members:
                     </h3>
