@@ -10,6 +10,14 @@ const nextConfig = {
       "i.pinimg.com",
       "scontent.fvga12-1.fna.fbcdn.net",
       "encrypted-tbn0.gstatic.com",
+      'upload.wikimedia.org',
+      'media.licdn.com',
+      'assets.channelinsider.com',
+      'mma.prnewswire.com',
+      'www.powerlabinstruments.com',
+      'static.brandfinance.com',
+      'media.licdn.com',
+      
     ],
   },
 };
