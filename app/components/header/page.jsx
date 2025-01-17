@@ -117,14 +117,7 @@ const Header = () => {
               height={isScrolled ? 140 : 160}
               className={`hidden lg:block  object-scale-down transition-all duration-300 w-24 h-32 `}
             />
-            <Image
-              src="/images/rclogo1.png"
-              alt="Research conclave"
-              width={isScrolled ? 90 : 100} 
-              height={isScrolled ? 90 : 100}
-              className={`hidden lg:block  object-scale-down transition-all duration-300 rounded-full border-2 border-yellow-300 w-24 h-24`}
-              objectFit="contain"
-            />
+            
 
         </div>
 
@@ -184,12 +177,13 @@ const Header = () => {
             />
           </div>
           <div className="hidden  md:block">
-            <Image
-              src="/images/efftronicslogo.webp"
-              alt="efftronics"
+          <Image
+              src="/images/rclogo1.png"
+              alt="Research conclave"
               width={isScrolled ? 90 : 100} 
               height={isScrolled ? 90 : 100}
-              className="rounded-full"
+              className={`hidden lg:block  object-scale-down transition-all duration-300 rounded-full border-2 border-yellow-300 w-24 h-24`}
+              objectFit="contain"
             />
           </div>
           {/* Hamburger Menu Icon */}
