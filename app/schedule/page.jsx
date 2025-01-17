@@ -447,7 +447,7 @@ const Schedule = () => {
               <div className="mt-2 bg-gray-100 p-4 rounded-md">
                 {/* Check and display main content if exists */}
                 {session.description.mainContent && (
-                  <p className="text-gray-700 md:text-justify px-2">{session.description.mainContent}</p>
+                  <p className="text-gray-700 text-justify px-2">{session.description.mainContent}</p>
                 )}
                 {/* Check and display key points if exists */}
                 {session.description.keyPoints && session.description.keyPoints.length > 0 && (
