@@ -4,36 +4,175 @@ import React, { useState } from "react";
 // Data structure for schedule details
 const scheduleData = {
   day1: [
-    {
-      time: "08:30 AM",
-      title: "Registration – Admin Block",
-    },
-    {
-      time: "09:30 AM - 11:00 AM",
-      title: "Inauguration – Auditorium",
-      description: {
-        // mainContent: "Panel discussion title and details with an overview of the topic and speakers.",
-        keyPoints: [
+    // {
+    //   time: "08:30 AM",
+    //   title: "Registration – Admin Block",
+    // },
+    // {
+    //   time: "09:30 AM - 11:00 AM",
+    //   title: "Inauguration – Auditorium",
+    //   description: {
+    //     // mainContent: "Panel discussion title and details with an overview of the topic and speakers.",
+    //     keyPoints: [
           
-          "Dr. M. Suneetha, Dean - Research, Technology & Development and IQAC, Professor & HoD-IT",
-          "Dr. A. V. Ratna Prasad, Pro Vice Chancellor",
-          "Dr. P. Venkateswara Rao, Vice Chancellor",
-          "Sri M Rajaiah (President),SAGTE",
-          "Sri P. Lakshmana Rao(Secretary), SAGTE",
-          "Mrs. Padmaja Sriram, AT&T (Guest of Honor)",
-          "Mr. Sarada Prasanna Satapathy, PEGA (Guest of Honor)",
-          "Mr. M S R Murthy, TCS (Guest of Honor)",
-          "Mr.Suresh Babu B, HCL Technologies (Guest of Honor)",
-          "Mr. M. Srinivas Reddy, TechMahindra(Guest of Honor)",
-          "Mr. Jitender Singh, Cognizant Technology Solutions (Guest of Honor)",
-          "Sri. Anagani Satya Prasad, Minister for Revenue, Registration and Stamps of Andhra Pradesh (Chief Guest)",
-          "Sri. Gottipati Ravi Kumar, Minister of Energy of Andhra Pradesh (Chief Guest)",
-          "Sri. Nadendla Manohar, Minister of Civil Supplies, Food & Consumer Affairs of Andhra Pradesh (Chief Guest)",
-          "Sri. Yalamanchili Satyanarayana Chowdary, MLA West, AP (Chief Guest)	Ms. Ameena ",
+    //       "Dr. M. Suneetha, Dean - Research, Technology & Development and IQAC, Professor & HoD-IT",
+    //       "Dr. A. V. Ratna Prasad, Pro Vice Chancellor",
+    //       "Dr. P. Venkateswara Rao, Vice Chancellor",
+    //       "Sri M Rajaiah (President),SAGTE",
+    //       "Sri P. Lakshmana Rao(Secretary), SAGTE",
+    //       "Mrs. Padmaja Sriram, AT&T (Guest of Honor)",
+    //       "Mr. Sarada Prasanna Satapathy, PEGA (Guest of Honor)",
+    //       "Mr. M S R Murthy, TCS (Guest of Honor)",
+    //       "Mr.Suresh Babu B, HCL Technologies (Guest of Honor)",
+    //       "Mr. M. Srinivas Reddy, TechMahindra(Guest of Honor)",
+    //       "Mr. Jitender Singh, Cognizant Technology Solutions (Guest of Honor)",
+    //       "Sri. Anagani Satya Prasad, Minister for Revenue, Registration and Stamps of Andhra Pradesh (Chief Guest)",
+    //       "Sri. Gottipati Ravi Kumar, Minister of Energy of Andhra Pradesh (Chief Guest)",
+    //       "Sri. Nadendla Manohar, Minister of Civil Supplies, Food & Consumer Affairs of Andhra Pradesh (Chief Guest)",
+    //       "Sri. Yalamanchili Satyanarayana Chowdary, MLA West, AP (Chief Guest)	Ms. Ameena ",
               
-        ],
+    //     ],
+    //   },
+    // },
+    {
+        time: "08:30 AM",
+        title: "Registration – Admin Block",
       },
-    },
+      {
+        "time": "09:30 AM – 09:35 AM",
+        "title": "Inauguration: Welcome",
+        "description": {
+          "mainContent": "Welcome by Ms Ameena to start the event.",
+          
+        }
+      },
+      {
+        "time": "09:35 AM – 09:40 AM",
+        "title": "Invocation Dance",
+        "description": {
+          "mainContent": "Dance performance by R Sidvila Bhargavi.",
+          
+        }
+      },
+      {
+        "time": "09:40 AM – 09:45 AM",
+        "title": "Inviting Dignitaries onto the Dias",
+        "description": {
+          "mainContent": "Ms Ameena invites dignitaries onto the dais.",
+          "keyPoints": [
+            "Dr. M. Suneetha, Dean - Research, Technology & Development and IQAC, Professor & HoD-IT",
+            "Dr. A. V. Ratna Prasad, Pro Vice Chancellor",
+            "Dr. P. Venkateswara Rao, Vice Chancellor",
+            "Sri M. Rajaiah, President, SAGTE",
+            "Sri P. Lakshmana Rao, Secretary, SAGTE",
+            "Mrs. Padmaja Sriram, AT&T (Guest of Honor)",
+            "Mr. Sarada Prasanna Satapathy, PEGA (Guest of Honor)",
+            "Mr. M S R Murthy, TCS (Guest of Honor)",
+            "Mr. Suresh Babu B, HCL Technologies (Guest of Honor)",
+            "Mr. M. Srinivas Reddy, Tech Mahindra (Guest of Honor)",
+            "Mr. Jitender Singh, Cognizant Technology Solutions (Guest of Honor)",
+            "Sri Anagani Satya Prasad, Minister for Revenue, Registration and Stamps of Andhra Pradesh (Chief Guest)",
+            "Sri. Gottipati Ravi Kumar, Minister of Energy of Andhra Pradesh (Chief Guest)",
+            "Sri. Nadendla Manohar, Minister of Civil Supplies, Food & Consumer Affairs of Andhra Pradesh (Chief Guest)",
+            "Sri. Yalamanchili Satyanarayana Chowdary, MLA West, AP (Chief Guest)",
+            "Sri. Bode Prasad, MLA, Penamaluru"
+          ]
+        }
+      },
+      {
+        "time": "09:45 AM – 09:50 AM",
+        "title": "Lighting the Lamp",
+        "description": {
+          "mainContent": "Traditional lighting of the lamp ceremony.",
+          
+        }
+      },
+      {
+        "time": "09:50 AM – 09:55 AM",
+        "title": "Prayer Song",
+        "description": {
+          "mainContent": "Prayer song by G. Srivatsala Gayathri and P Renuka.",
+          
+        }
+      },
+      {
+        "time": "09:55 AM – 10:00 AM",
+        "title": "Opening Remarks by Convenor",
+        "description": {
+          "mainContent": "Dr. M. Suneetha, Dean - Research, Technology & Development and IQAC, Professor and HoD-IT, delivers the opening remarks.",
+          
+        }
+      },
+      {
+        "time": "10:00 AM – 10:05 AM",
+        "title": "Address by Pro Vice Chancellor",
+        "description": {
+          "mainContent": "Speech by Dr. A. V. Ratna Prasad, Pro Vice Chancellor.",
+          
+        }
+      },
+      {
+        "time": "10:05 AM – 10:10 AM",
+        "title": "Address by Vice Chancellor",
+        "description": {
+          "mainContent": "Speech by Dr. P. Venkateswara Rao, Vice Chancellor.",
+          
+        }
+      },
+      {
+        "time": "10:10 AM – 10:15 AM",
+        "title": "Guest of Honor Address: AT&T",
+        "description": {
+          "mainContent": "Speech by Mrs. Padmaja Sriram, AT&T.",
+          
+        }
+      },
+      {
+        "time": "10:15 AM – 10:20 AM",
+        "title": "Guest of Honor Address: PEGA",
+        "description": {
+          "mainContent": "Speech by Mr. Sarada Prasanna Satapathy, PEGA.",
+          
+        }
+      },
+      {
+        "time": "10:20 AM – 10:25 AM",
+        "title": "Guest of Honor Address: TCS",
+        "description": {
+          "mainContent": "Speech by Mr. M S R Murthy, TCS.",
+          
+        }
+      },
+      {
+        "time": "10:25 AM – 10:30 AM",
+        "title": "Guest of Honor Address: HCL Technologies",
+        "description": {
+          "mainContent": "Speech by Mr. Suresh Babu B, HCL Technologies.",
+          
+        }
+      },
+      {
+        "time": "10:30 AM – 10:35 AM",
+        "title": "Guest of Honor Address: Tech Mahindra",
+        "description": {
+          "mainContent": "Speech by Mr. M. Srinivas Reddy, Tech Mahindra.",
+          
+        }
+      },
+      {
+        "time": "10:35 AM – 10:40 AM",
+        "title": "Guest of Honor Address: Cognizant Technology Solutions",
+        "description": {
+          "mainContent": "Speech by Mr. Jitender Singh, Cognizant Technology Solutions.",
+          "keyPoints": [
+            "Sri Anagani Satya Prasad, Minister for Revenue, Registration and Stamps of Andhra Pradesh",
+            "Sri Gottipati Ravi Kumar, Minister of Energy of Andhra Pradesh",
+            "Sri Nadendla Manohar, Minister of Civil Supplies, Food & Consumer Affairs of Andhra Pradesh",
+            "Sri Yalamanchili Satyanarayana Chowdary, MLA West, AP"
+          ]
+        }
+      },
+    
     {
       time: "11:00 AM - 11:15 AM",
       title: "High Tea",
