@@ -55,32 +55,34 @@ const scheduleData = {
         },
       panelMembers: {
           moderators: [
-            // {
-            //     name: "Smt. Padmaja Sriram",
-            //     position: "AT&T",
-            //     image: "/images/attr1.jpg",
-            // },
             {
-                name: "Dr P Venkateswara Rao",
-                position: "VC",
-                image: "https://www.vrsiddhartha.ac.in/wp-content/uploads/2019/09/Vice-Chancellor-PV-Rao.jpg",
+                name: "Smt. Padmaja Sriram",
+                position: "AT&T",
+                image: "/images/attr1.jpg",
             },
+            
+            
+            // {
+            //     name: "Dr P Venkateswara Rao",
+            //     position: "VC",
+            //     image: "https://www.vrsiddhartha.ac.in/wp-content/uploads/2019/09/Vice-Chancellor-PV-Rao.jpg",
+            // },
         ],
           members: [
             {
-              name: "Mr. MSR Murthy",
-              position: "TCS",
-              image: "/images/tcsr1.jpg",
-            },
-            {
-              name: "Mr. Jitender Singh",
+              name: "Mr Raghavendra Kulkarni",
               position: "CTS",
-              image: "/images/ctsr1.jpg",
+              image: "/images/ctsr2.jpg",
             },
             {
-              name: "Mr. A. Satyanarayana",
-              position: "Avantel",
-              image: "/images/r1.jpg",
+              name: "Mr.M. Veeran",
+              position: "Power Labs",
+              image: "/images/powerlabr1.jpg",
+            },
+            {
+              name: "Mr.M. Srinivas Reddy",
+              position: "Tech Mahindra",
+              image: "/images/techmr1.jpg",
             },
             {
               name: "T.Kamal Kumar",
@@ -88,10 +90,34 @@ const scheduleData = {
               image: "/images/bhelr1.jpg",
             },
             {
-              name: "Smt. V. Prathyusha",
-              position: "Transdence",
-              image: "/images/transdencer1.jpg",
+              name: "D.Anvesh",
+              position: "Effotronics",
+              image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSll-TKqI55i7SHUuUH0xabUol3dB_a7Z9c7w&s",
             },
+            {
+              name: "Mr Raghavendra Kulkarni",
+              position: "CTS",
+              image: "/images/ctsr2.jpg",
+            },
+            
+          ],
+          Academicians:[
+            {
+              name:"EEE",
+              position:"",
+              image:"",
+            },
+            {
+              name:"ME",
+              position:"",
+              image:"",
+            },
+            {
+              name:"CSE/IT",
+              position:"",
+              image:"",
+            }
+          
           ],
         },
       },
@@ -110,43 +136,88 @@ const scheduleData = {
       },
         panelMembers: {
             moderators: [
-              // {
-              //     name: "Smt. Padmaja Sriram",
-              //     position: "AT&T",
-              //     image: "/images/attr1.jpg",
-              // },
               {
-                  name: "Dr A V Ratna Prasad",
-                  position: "Pro VC",
-                  image: "https://www.vrsiddhartha.ac.in/wp-content/uploads/2024/09/principal_2024-1-275x300.jpg",
+                  name: "Smt. Padmaja Sriram",
+                  position: "AT&T",
+                  image: "/images/attr1.jpg",
               },
+             
+              // {
+              //     name: "Dr A V Ratna Prasad",
+              //     position: "Pro VC",
+              //     image: "https://www.vrsiddhartha.ac.in/wp-content/uploads/2024/09/principal_2024-1-275x300.jpg",
+              // },
           ],
             members: [
               {
-                name: "Mr. Sarada Prasanna Satapathy ",
-                position: "PEGA",
-                image: "/images/pegar1.jpg",
+                name: "Mr. MSR Murthy",
+                position: "TCS",
+                image: "/images/tcsr1.jpg",
               },
               {
-                name: "Mr. Chaitanya Vetcham",
-                position: "Verizon",
-                image: "/images/verizonr1.jpg",
-              },
-              {
-                name: "Mr.K. Abhinav",
-                position: "Pi Data Center",
-                image: "/images/pidatacr1.jpg",
-              },
-              {
-                name: "Mr.M. Veeran",
-                position: "Power Labs",
-                image: "/images/powerlabr1.jpg",
-              },
-              {
-                name: "Mr Raghavendra Kulkarni",
+                name: "Mr. Jitender Singh",
                 position: "CTS",
-                image: "/images/ctsr2.jpg",
+                image: "/images/ctsr1.jpg",
               },
+              {
+                name: "Mr. A. Siddharth",
+                position: "Avantel",
+                image: "https://media.licdn.com/dms/image/v2/C5603AQGRNthkb1Rv3A/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1565795305597?e=2147483647&v=beta&t=J8Zi9Pc8VYuWL-4Bn4QIlaqEbJyzYNTJ3OlibtA_-uM",
+              },
+              {
+                name: "Smt. V. Prathyusha",
+                position: "Transdence",
+                image: "/images/transdencer1.jpg",
+              },
+              {
+                name: "S. Suresh Babu",
+                position: "RAPS",
+                image: "/images/rapsr1.jpg",
+              },
+              
+              // {
+              //   name: "Mr. Sarada Prasanna Satapathy ",
+              //   position: "PEGA",
+              //   image: "/images/pegar1.jpg",
+              // },
+              // {
+              //   name: "Mr. Chaitanya Vetcham",
+              //   position: "Verizon",
+              //   image: "/images/verizonr1.jpg",
+              // },
+              // {
+              //   name: "Mr.K. Abhinav",
+              //   position: "Pi Data Center",
+              //   image: "/images/pidatacr1.jpg",
+              // },
+              // {
+              //   name: "Mr.M. Veeran",
+              //   position: "Power Labs",
+              //   image: "/images/powerlabr1.jpg",
+              // },
+              // {
+              //   name: "Mr Raghavendra Kulkarni",
+              //   position: "CTS",
+              //   image: "/images/ctsr2.jpg",
+              // },
+            ],
+            Academicians:[
+              {
+                name:"CSE/IT",
+                position:"",
+                image:"",
+              },
+              {
+                name:"EEE/ECE",
+                position:"",
+                image:"",
+              },
+              {
+                name:"CIVIL",
+                position:"",
+                image:"",
+              },
+            
             ],
           },
       },
@@ -170,6 +241,7 @@ const scheduleData = {
                   position: "AT&T",
                   image: "/images/attr1.jpg",
               },
+             
               // {
               //     name: "Dr P Venkateswara Rao",
               //     position: "VC",
@@ -178,30 +250,74 @@ const scheduleData = {
           ],
             members: [
               {
-                name: "Mr. MSR Murthy",
-                position: "TCS",
-                image: "/images/tcsr1.jpg",
+                name: "Srinivas KVNDS",
+                position: "CTS",
+                image: "/images/r2.jpg",
               },
               {
-                name: "Mr.M. Srinivas Reddy",
-                position: "Tech Mahindra",
-                image: "/images/techmr1.jpg",
+                name:"Rajesh",
+                position:"HCL",
+                image: "https://media.licdn.com/dms/image/v2/C4E03AQHfAUYDFePjMQ/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1598515829195?e=2147483647&v=beta&t=vZWFACgYTekTSC6gktvjaHnnYFX_x60cCwYMA5le21I",
               },
               {
-                name: "Dr Krishna Kanth G Avuluir",
-                position: "AMS",
-                image: "/images/amsr1.jpg",
+                name: "Mr. Chaitanya Vetcham",
+                position: "Verizon",
+                image: "/images/verizonr1.jpg",
               },
               {
-                name: "Smt. V. Prathyusha",
-                position: "Transdence",
-                image: "/images/transdencer1.jpg",
+                name: "Mr.K. Abhinav",
+                position: "Pi Data Center",
+                image: "/images/pidatacr1.jpg",
               },
               {
-                name: "D. Harsha Vardhin",
-                position: "Jesvid Cryo Technologies Private Limited",
-                image: "/images/jesvidr1.jpg",
+                name:"Rajesh",
+                position:"HCL",
+                image: "https://media.licdn.com/dms/image/v2/C4E03AQHfAUYDFePjMQ/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1598515829195?e=2147483647&v=beta&t=vZWFACgYTekTSC6gktvjaHnnYFX_x60cCwYMA5le21I",
               },
+             
+              // {
+              //   name: "Mr. MSR Murthy",
+              //   position: "TCS",
+              //   image: "/images/tcsr1.jpg",
+              // },
+              // {
+              //   name: "Mr.M. Srinivas Reddy",
+              //   position: "Tech Mahindra",
+              //   image: "/images/techmr1.jpg",
+              // },
+              // {
+              //   name: "Dr Krishna Kanth G Avuluir",
+              //   position: "AMS",
+              //   image: "/images/amsr1.jpg",
+              // },
+              // {
+              //   name: "Smt. V. Prathyusha",
+              //   position: "Transdence",
+              //   image: "/images/transdencer1.jpg",
+              // },
+              // {
+              //   name: "D. Harsha Vardhin",
+              //   position: "Jesvid Cryo Technologies Private Limited",
+              //   image: "/images/jesvidr1.jpg",
+              // },
+            ],
+            Academicians:[
+              {
+                name:"CSE/IT",
+                position:"",
+                image:"",
+              },
+              {
+                name:"CSE/IT",
+                position:"",
+                image:"",
+              },
+              {
+                name:"CSE/IT",
+                position:"",
+                image:"",
+              },
+            
             ],
           },
       },
@@ -219,44 +335,89 @@ const scheduleData = {
         ],
         },
         panelMembers: {
-          //   moderators: [
-          //     {
-          //         name: "Smt. Padmaja Sriram",
-          //         position: "AT&T",
-          //         image: "/images/attr1.jpg",
-          //     },
-          //     {
-          //         name: "Dr A V Ratna Prasad",
-          //         position: "Pro VC",
-          //         image: "https://www.vrsiddhartha.ac.in/wp-content/uploads/2024/09/principal_2024-1-275x300.jpg",
-          //     },
-          // ],
+            moderators: [
+              {
+                  name: "Smt. Padmaja Sriram",
+                  position: "AT&T",
+                  image: "/images/attr1.jpg",
+              },
+              
+              // {
+              //     name: "Dr A V Ratna Prasad",
+              //     position: "Pro VC",
+              //     image: "https://www.vrsiddhartha.ac.in/wp-content/uploads/2024/09/principal_2024-1-275x300.jpg",
+              // },
+          ],
             members: [
               {
-                name: "S. Suresh Babu",
-                position: "RAPS",
-                image: "/images/rapsr1.jpg",
+                name: "Mr. Sarada Prasanna Satapathy ",
+                position: "PEGA",
+                image: "/images/pegar1.jpg",
               },
               {
-                name: "Srinivas KVNDS",
+                  name: "Dr Krishna Kanth G Avuluir",
+                  position: "AMS",
+                  image: "/images/amsr1.jpg",
+                },
+              {
+                name: "Mr. MSR Murthy",
+                position: "TCS",
+                image: "/images/tcsr1.jpg",
+              },
+              {
+                name: "Mr Raghavendra Kulkarni",
                 position: "CTS",
-                image: "/images/r2.jpg",
+                image: "/images/ctsr2.jpg",
+              },
+               {
+                name: "D. Harsha Vardhin",
+                position: "Jesvid Cryo Technologies Private Limited",
+                image: "/images/jesvidr1.jpg",
+              },
+              
+              // {
+              //   name: "S. Suresh Babu",
+              //   position: "RAPS",
+              //   image: "/images/rapsr1.jpg",
+              // },
+              // {
+              //   name: "Srinivas KVNDS",
+              //   position: "CTS",
+              //   image: "/images/r2.jpg",
+              // },
+              // {
+              //   name: "Mr.M. Veeran",
+              //   position: "Power Labs",
+              //   image: "/images/powerlabr1.jpg",
+              // },
+              // {
+              //   name: "Mr. Chaitanya Vetcham",
+              //   position: "Verizon",
+              //   image: "/images/verizonr1.jpg",
+              // },
+              // {
+              //   name: "Mr.K. Abhinav",
+              //   position: "Pi Data Center",
+              //   image: "/images/pidatacr1.jpg",
+              // },
+            ],
+            Academicians:[
+              {
+                name: "Dr A V Ratna Prasad",
+                position: "Pro VC",
+                image: "https://www.vrsiddhartha.ac.in/wp-content/uploads/2024/09/principal_2024-1-275x300.jpg",
+            },
+              {
+                name:"Dr.K.Rajeswara Rao",
+                position:"Prof & Head, CSE",
+                image:"",
               },
               {
-                name: "Mr.M. Veeran",
-                position: "Power Labs",
-                image: "/images/powerlabr1.jpg",
+                name:"Dr.M.Suneetha",
+                position:"Prof & Head, IT Dept, Dean R & D, SAHE",
+                image:"/images/HODIT.jpg",
               },
-              {
-                name: "Mr. Chaitanya Vetcham",
-                position: "Verizon",
-                image: "/images/verizonr1.jpg",
-              },
-              {
-                name: "Mr.K. Abhinav",
-                position: "Pi Data Center",
-                image: "/images/pidatacr1.jpg",
-              },
+            
             ],
           },
       },
@@ -478,6 +639,7 @@ const Schedule = () => {
                 )}
                 {session.panelMembers && (
                   <div className="mt-4">
+                    <div className="py-2"><strong>Briefing by </strong> Dr.M.Suneetha, Prof & Head, IT Dept, Dean R & D, SAHE</div>
                     {session.panelMembers.moderators && (
                       <div>
                     <h3 className="text-md font-semibold text-gray-800 mb-2">
@@ -511,6 +673,30 @@ const Schedule = () => {
                     </h3>
                     <div className="grid md:grid-cols-2 grid-cols-1 gap-4">
                       {session.panelMembers.members.map((member, i) => (
+                        <div key={i} className="">
+                          <div className="flex items-center mb-4">
+                            <img
+                              src={member.image}
+                              alt={member.name}
+                              className="w-16 h-16 rounded-full mr-4"
+                            />
+                            <div className="flex flex-col">
+                              <div className="lg:text-lg text-md font-medium">
+                                {member.name}
+                              </div>
+                              <div className="lg:text-base text-sm text-gray-600">
+                                {member.position}
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                    <h3 className="text-md font-semibold text-gray-800 mb-2">
+                      Academicians:
+                    </h3>
+                    <div className="grid md:grid-cols-2 grid-cols-1 gap-4">
+                      {session.panelMembers.Academicians.map((member, i) => (
                         <div key={i} className="">
                           <div className="flex items-center mb-4">
                             <img
