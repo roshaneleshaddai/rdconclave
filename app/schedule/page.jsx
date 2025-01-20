@@ -9,24 +9,33 @@ const scheduleData = {
       title: "Registration – Admin Block",
     },
     {
-      time: "09:30 AM - 10:30 AM",
+      time: "09:30 AM - 11:00 AM",
       title: "Inauguration – Auditorium",
       description: {
         // mainContent: "Panel discussion title and details with an overview of the topic and speakers.",
         keyPoints: [
-            "(Chief Guest)",
-            "Mrs. Padmaja Sriram, AT&T (Guest of Honor)",
-            "Mr. Sarada Prasanna Satapathy, PEGA (Guest of Honor)",
-            "Sri M Rajaiah (President),SAGTE",
-            "Sri P. Lakshmana Rao(Secretary), SAGTE",
-            "Dr. M Suneetha, Dean - Research, Technology & Development and IQAC, Professor & HoD-IT",
-            "Dr. A. V. Ratna Prasad, Pro Vice Chancellor",
-            "Dr. P. Venkateswara Rao, Vice Chancellor",
+          
+          "Dr. M. Suneetha, Dean - Research, Technology & Development and IQAC, Professor & HoD-IT",
+          "Dr. A. V. Ratna Prasad, Pro Vice Chancellor",
+          "Dr. P. Venkateswara Rao, Vice Chancellor",
+          "Sri M Rajaiah (President),SAGTE",
+          "Sri P. Lakshmana Rao(Secretary), SAGTE",
+          "Mrs. Padmaja Sriram, AT&T (Guest of Honor)",
+          "Mr. Sarada Prasanna Satapathy, PEGA (Guest of Honor)",
+          "Mr. M S R Murthy, TCS (Guest of Honor)",
+          "Mr.Suresh Babu B, HCL Technologies (Guest of Honor)",
+          "Mr. M. Srinivas Reddy, TechMahindra(Guest of Honor)",
+          "Mr. Jitender Singh, Cognizant Technology Solutions (Guest of Honor)",
+          "Sri. Anagani Satya Prasad, Minister for Revenue, Registration and Stamps of Andhra Pradesh (Chief Guest)",
+          "Sri. Gottipati Ravi Kumar, Minister of Energy of Andhra Pradesh (Chief Guest)",
+          "Sri. Nadendla Manohar, Minister of Civil Supplies, Food & Consumer Affairs of Andhra Pradesh (Chief Guest)",
+          "Sri. Yalamanchili Satyanarayana Chowdary, MLA West, AP (Chief Guest)	Ms. Ameena ",
+              
         ],
       },
     },
     {
-      time: "10:30 AM - 11:00 AM",
+      time: "11:00 AM - 11:15 AM",
       title: "High Tea",
     },
     {
@@ -41,7 +50,7 @@ const scheduleData = {
     },
     
     {
-        time: "11:00 AM – 12:00 PM",
+        time: "11:15 AM – 12:15 PM",
         title: "Panel 1 Discussion – The Role of Generative AI in Redefining Creativity and Automation @Auditorium",
         description: {
           mainContent: "Exploring how generative AI is transforming industries like content creation, design, and automation, and its ethical and societal impacts.",
@@ -56,7 +65,7 @@ const scheduleData = {
       panelMembers: {
           moderators: [
             {
-                name: "Smt. Padmaja Sriram",
+                name: "Mrs. Padmaja Sriram",
                 position: "AT&T",
                 image: "/images/attr1.jpg",
             },
@@ -70,35 +79,35 @@ const scheduleData = {
         ],
           members: [
             {
-              name: "Mr Raghavendra Kulkarni",
+              name: "Mr. Raghavendra Kulkarni",
               position: "CTS",
               image: "/images/ctsr2.jpg",
             },
             {
-              name: "Mr.M. Veeran",
+              name: "Mr. M. Veeran",
               position: "Power Labs",
               image: "/images/powerlabr1.jpg",
             },
             {
-              name: "Mr.M. Srinivas Reddy",
+              name: "Mr. M. Srinivas Reddy",
               position: "Tech Mahindra",
               image: "/images/techmr1.jpg",
             },
             {
-              name: "T.Kamal Kumar",
+              name: "Mr. T.Kamal Kumar",
               position: "BHEL",
               image: "/images/bhelr1.jpg",
             },
             {
-              name: "D.Anvesh",
-              position: "Effotronics",
+              name: "Mr. D.Anvesh",
+              position: "Efftronics",
               image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSll-TKqI55i7SHUuUH0xabUol3dB_a7Z9c7w&s",
             },
-            {
-              name: "Mr Raghavendra Kulkarni",
-              position: "CTS",
-              image: "/images/ctsr2.jpg",
-            },
+            // {
+            //   name: "Mr. Raghavendra Kulkarni",
+            //   position: "CTS",
+            //   image: "/images/ctsr2.jpg",
+            // },
             
           ],
           Academicians:[
@@ -121,109 +130,109 @@ const scheduleData = {
           ],
         },
       },
-      {
-        time: "12:00 PM – 01:00 PM",
-        title: "Panel 2 Discussion – The Future of Sustainable Tech: IoT and AI for Green Innovation @Auditorium",
-        description: {
-          mainContent: "Discussing how IoT and AI technologies are driving sustainable solutions in energy management, agriculture, and smart cities.",
-          keyPoints: [
-              "AI and IoT in Energy Efficiency : How AI-powered IoT solutions optimize energy consumption and reduce carbon footprints in industries and buildings.",
-              "Smart Agriculture for Sustainability : The role of IoT and AI in precision farming, water management, and reducing waste.",
-              "Smart Cities and Sustainable Infrastructure : Using AI and IoT to create resource-efficient, eco-friendly urban environments.",
-              "AI for Circular Economy : Leveraging AI to improve recycling, waste management, and product lifecycle in sustainable tech.",
-              "Challenges and Future Trends : Addressing scalability, regulatory hurdles, and the potential impact of emerging technologies on green innovation.",
-          ],
-      },
-        panelMembers: {
-            moderators: [
-              {
-                  name: "Smt. Padmaja Sriram",
-                  position: "AT&T",
-                  image: "/images/attr1.jpg",
-              },
+      // {
+      //   time: "12:15 PM – 01:15 PM",
+      //   title: "Panel 2 Discussion – The Future of Sustainable Tech: IoT and AI for Green Innovation @Auditorium",
+      //   description: {
+      //     mainContent: "Discussing how IoT and AI technologies are driving sustainable solutions in energy management, agriculture, and smart cities.",
+      //     keyPoints: [
+      //         "AI and IoT in Energy Efficiency : How AI-powered IoT solutions optimize energy consumption and reduce carbon footprints in industries and buildings.",
+      //         "Smart Agriculture for Sustainability : The role of IoT and AI in precision farming, water management, and reducing waste.",
+      //         "Smart Cities and Sustainable Infrastructure : Using AI and IoT to create resource-efficient, eco-friendly urban environments.",
+      //         "AI for Circular Economy : Leveraging AI to improve recycling, waste management, and product lifecycle in sustainable tech.",
+      //         "Challenges and Future Trends : Addressing scalability, regulatory hurdles, and the potential impact of emerging technologies on green innovation.",
+      //     ],
+      // },
+      //   panelMembers: {
+      //       moderators: [
+      //         {
+      //             name: "Smt. Padmaja Sriram",
+      //             position: "AT&T",
+      //             image: "/images/attr1.jpg",
+      //         },
              
-              // {
-              //     name: "Dr A V Ratna Prasad",
-              //     position: "Pro VC",
-              //     image: "https://www.vrsiddhartha.ac.in/wp-content/uploads/2024/09/principal_2024-1-275x300.jpg",
-              // },
-          ],
-            members: [
-              {
-                name: "Mr. MSR Murthy",
-                position: "TCS",
-                image: "/images/tcsr1.jpg",
-              },
-              {
-                name: "Mr. Jitender Singh",
-                position: "CTS",
-                image: "/images/ctsr1.jpg",
-              },
-              {
-                name: "Mr. A. Siddharth",
-                position: "Avantel",
-                image: "https://media.licdn.com/dms/image/v2/C5603AQGRNthkb1Rv3A/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1565795305597?e=2147483647&v=beta&t=J8Zi9Pc8VYuWL-4Bn4QIlaqEbJyzYNTJ3OlibtA_-uM",
-              },
-              {
-                name: "Smt. V. Prathyusha",
-                position: "Transdence",
-                image: "/images/transdencer1.jpg",
-              },
-              {
-                name: "S. Suresh Babu",
-                position: "RAPS",
-                image: "/images/rapsr1.jpg",
-              },
+      //         // {
+      //         //     name: "Dr A V Ratna Prasad",
+      //         //     position: "Pro VC",
+      //         //     image: "https://www.vrsiddhartha.ac.in/wp-content/uploads/2024/09/principal_2024-1-275x300.jpg",
+      //         // },
+      //     ],
+      //       members: [
+      //         {
+      //           name: "Mr. MSR Murthy",
+      //           position: "TCS",
+      //           image: "/images/tcsr1.jpg",
+      //         },
+      //         {
+      //           name: "Mr. Jitender Singh",
+      //           position: "CTS",
+      //           image: "/images/ctsr1.jpg",
+      //         },
+      //         {
+      //           name: "Mr. A. Siddharth",
+      //           position: "Avantel",
+      //           image: "https://media.licdn.com/dms/image/v2/C5603AQGRNthkb1Rv3A/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1565795305597?e=2147483647&v=beta&t=J8Zi9Pc8VYuWL-4Bn4QIlaqEbJyzYNTJ3OlibtA_-uM",
+      //         },
+      //         {
+      //           name: "Smt. V. Prathyusha",
+      //           position: "Transdence",
+      //           image: "/images/transdencer1.jpg",
+      //         },
+      //         {
+      //           name: "S. Suresh Babu",
+      //           position: "RAPS",
+      //           image: "/images/rapsr1.jpg",
+      //         },
               
-              // {
-              //   name: "Mr. Sarada Prasanna Satapathy ",
-              //   position: "PEGA",
-              //   image: "/images/pegar1.jpg",
-              // },
-              // {
-              //   name: "Mr. Chaitanya Vetcham",
-              //   position: "Verizon",
-              //   image: "/images/verizonr1.jpg",
-              // },
-              // {
-              //   name: "Mr.K. Abhinav",
-              //   position: "Pi Data Center",
-              //   image: "/images/pidatacr1.jpg",
-              // },
-              // {
-              //   name: "Mr.M. Veeran",
-              //   position: "Power Labs",
-              //   image: "/images/powerlabr1.jpg",
-              // },
-              // {
-              //   name: "Mr Raghavendra Kulkarni",
-              //   position: "CTS",
-              //   image: "/images/ctsr2.jpg",
-              // },
-            ],
-            Academicians:[
-              {
-                name:"CSE/IT",
-                position:"",
-                image:"",
-              },
-              {
-                name:"EEE/ECE",
-                position:"",
-                image:"",
-              },
-              {
-                name:"CIVIL",
-                position:"",
-                image:"",
-              },
+      //         // {
+      //         //   name: "Mr. Sarada Prasanna Satapathy ",
+      //         //   position: "PEGA",
+      //         //   image: "/images/pegar1.jpg",
+      //         // },
+      //         // {
+      //         //   name: "Mr. Chaitanya Vetcham",
+      //         //   position: "Verizon",
+      //         //   image: "/images/verizonr1.jpg",
+      //         // },
+      //         // {
+      //         //   name: "Mr.K. Abhinav",
+      //         //   position: "Pi Data Center",
+      //         //   image: "/images/pidatacr1.jpg",
+      //         // },
+      //         // {
+      //         //   name: "Mr.M. Veeran",
+      //         //   position: "Power Labs",
+      //         //   image: "/images/powerlabr1.jpg",
+      //         // },
+      //         // {
+      //         //   name: "Mr Raghavendra Kulkarni",
+      //         //   position: "CTS",
+      //         //   image: "/images/ctsr2.jpg",
+      //         // },
+      //       ],
+      //       Academicians:[
+      //         {
+      //           name:"CSE/IT",
+      //           position:"",
+      //           image:"",
+      //         },
+      //         {
+      //           name:"EEE/ECE",
+      //           position:"",
+      //           image:"",
+      //         },
+      //         {
+      //           name:"CIVIL",
+      //           position:"",
+      //           image:"",
+      //         },
             
-            ],
-          },
-      },
+      //       ],
+      //     },
+      // },
       {
-        time: "02:00 PM – 03:00 PM",
-        title: "Panel 3 Discussion – Building the Workforce of Tomorrow: Bridging the Skills Gap in AI, Data Science, and IoT @Auditorium",
+        time: "12:15 PM – 01:15 PM",
+        title: "Panel 2 Discussion – Building the Workforce of Tomorrow: Bridging the Skills Gap in AI, Data Science, and IoT @Auditorium",
         description: {
           mainContent: "Addressing how industry and academia can collaborate to design future-ready curricula and training programs for in-demand tech skills.",
           keyPoints: [
@@ -237,7 +246,7 @@ const scheduleData = {
         panelMembers: {
             moderators: [
               {
-                  name: "Smt. Padmaja Sriram",
+                  name: "Mrs. Padmaja Sriram",
                   position: "AT&T",
                   image: "/images/attr1.jpg",
               },
@@ -250,29 +259,29 @@ const scheduleData = {
           ],
             members: [
               {
-                name: "Srinivas KVNDS",
-                position: "CTS",
-                image: "/images/r2.jpg",
+                name: "Mr. M S R Murthy",
+                position: "TCS",
+                image: "/images/tcsr1.jpg",
               },
               {
-                name:"Rajesh",
-                position:"HCL",
-                image: "https://media.licdn.com/dms/image/v2/C4E03AQHfAUYDFePjMQ/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1598515829195?e=2147483647&v=beta&t=vZWFACgYTekTSC6gktvjaHnnYFX_x60cCwYMA5le21I",
+                name:"Mr. Jitender Singh",
+                position:"CTS",
+                image: "/images/ctsr1.jpg",
               },
               {
-                name: "Mr. Chaitanya Vetcham",
-                position: "Verizon",
-                image: "/images/verizonr1.jpg",
+                name: "Mr. A. Siddharth",
+                position: "Avantel",
+                image: "https://media.licdn.com/dms/image/v2/C5603AQGRNthkb1Rv3A/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1565795305597?e=2147483647&v=beta&t=J8Zi9Pc8VYuWL-4Bn4QIlaqEbJyzYNTJ3OlibtA_-uM",
               },
               {
-                name: "Mr.K. Abhinav",
-                position: "Pi Data Center",
-                image: "/images/pidatacr1.jpg",
+                name: "Smt. V. Prathyusha",
+                position: "Transdence",
+                image: "/images/transdencer1.jpg",
               },
               {
-                name:"Rajesh",
-                position:"HCL",
-                image: "https://media.licdn.com/dms/image/v2/C4E03AQHfAUYDFePjMQ/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1598515829195?e=2147483647&v=beta&t=vZWFACgYTekTSC6gktvjaHnnYFX_x60cCwYMA5le21I",
+                name:"Mr. S. Suresh Babu",
+                position:"RAPS Pvt. Ltd.",
+                image: "/images/rapsr1.jpg",
               },
              
               // {
@@ -308,6 +317,80 @@ const scheduleData = {
                 image:"",
               },
               {
+                name:"ECE/EIE",
+                position:"",
+                image:"",
+              },
+              {
+                name:"CIVIL",
+                position:"",
+                image:"",
+              },
+            
+            ],
+          },
+      },
+      {
+        time: "02:30 PM – 03:30 PM",
+        title: "Panel 3 Discussion – Digital Twins and the Metaverse: Opportunities for Industry and Research @Auditorium",
+        description: {
+          mainContent: "A deep dive into how digital twins and the metaverse are shaping virtual environments and real-time monitoring in industries like healthcare, construction, and logistics.",
+          keyPoints: [
+            "Digital Twins in Industry : How digital twins are revolutionizing real-time monitoring and predictive analytics in sectors like healthcare, construction, and logistics.",
+            "The Role of the Metaverse : Exploring the metaverse's potential to create immersive virtual environments for training, collaboration, and product design.",
+            "Integration of IoT and AI : Leveraging IoT sensors and AI to enhance the functionality and accuracy of digital twins and metaverse applications.",
+            "Impact on Operations and Efficiency : How these technologies optimize operations, reduce costs, and improve decision-making in various industries.",
+            "Research and Development Challenges : Discussing the technical, ethical, and regulatory challenges of implementing digital twins and the metaverse in real-world scenarios.",
+        ],
+        },
+        panelMembers: {
+            moderators: [
+              {
+                  name: "Mrs. Padmaja Sriram",
+                  position: "AT&T",
+                  image: "/images/attr1.jpg",
+              },
+          //     {
+          //         name: "Dr P Venkateswara Rao",
+          //         position: "VC",
+          //         image: "https://www.vrsiddhartha.ac.in/wp-content/uploads/2019/09/Vice-Chancellor-PV-Rao.jpg",
+          //     },
+          ],
+            members: [
+                
+              {
+                name: "Srinivas KVNDS",
+                position: "Persistent Systems",
+                image: "/images/persisr1.jfif",
+              },
+              {
+                name: "Mr. Rajesh Damerla",
+                position: "HCL",
+                image: "https://media.licdn.com/dms/image/v2/C4E03AQHfAUYDFePjMQ/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1598515829195?e=2147483647&v=beta&t=vZWFACgYTekTSC6gktvjaHnnYFX_x60cCwYMA5le21I",
+              },
+              {
+                name: "Mr. Chaitanya Vetcham",
+                position: "Verizon",
+                image: "/images/verizonr1.jpg",
+              },
+              {
+                name: "Mr. K. Abhinav",
+                position: "Pi Data Center",
+                image: "/images/pidatacr1.jpg",
+              },
+              {
+                name: "Mr. Sarada Prasanna Satapathy ",
+                position: "PEGA",
+                image: "/images/pegar1.jpg",
+              },
+            ],
+            Academicians:[
+              {
+                name:"CSE/IT",
+                position:"",
+                image:"",
+              },
+              {
                 name:"CSE/IT",
                 position:"",
                 image:"",
@@ -322,7 +405,7 @@ const scheduleData = {
           },
       },
       {
-        time: "03:00 PM – 04:00 PM",
+        time: "03:30 PM – 04:30 PM",
         title: "Panel 4 Discussion – Data Privacy and Ethical AI: Navigating Regulation and Responsibility @Auditorium",
         description: {
           mainContent: "Exploring the balance between innovation and regulation in AI, privacy laws, and responsible data usage.",
@@ -410,7 +493,7 @@ const scheduleData = {
               {
                 name:"Dr.K.Rajeswara Rao",
                 position:"Prof & Head, CSE",
-                image:"",
+                image:"/images/csehod.jpg",
               },
               {
                 name:"Dr.M.Suneetha",
@@ -422,67 +505,11 @@ const scheduleData = {
           },
       },
       {
-        time: "04:00 PM – 05:00 PM",
-        title: "Panel 5 Discussion – Digital Twins and the Metaverse: Opportunities for Industry and Research @Auditorium",
-        description: {
-          mainContent: "A deep dive into how digital twins and the metaverse are shaping virtual environments and real-time monitoring in industries like healthcare, construction, and logistics.",
-          keyPoints: [
-            "Digital Twins in Industry : How digital twins are revolutionizing real-time monitoring and predictive analytics in sectors like healthcare, construction, and logistics.",
-            "The Role of the Metaverse : Exploring the metaverse's potential to create immersive virtual environments for training, collaboration, and product design.",
-            "Integration of IoT and AI : Leveraging IoT sensors and AI to enhance the functionality and accuracy of digital twins and metaverse applications.",
-            "Impact on Operations and Efficiency : How these technologies optimize operations, reduce costs, and improve decision-making in various industries.",
-            "Research and Development Challenges : Discussing the technical, ethical, and regulatory challenges of implementing digital twins and the metaverse in real-world scenarios.",
-        ],
-        },
-        panelMembers: {
-          //   moderators: [
-          //     {
-          //         name: "Smt. Padmaja Sriram",
-          //         position: "AT&T",
-          //         image: "/images/attr1.jpg",
-          //     },
-          //     {
-          //         name: "Dr P Venkateswara Rao",
-          //         position: "VC",
-          //         image: "https://www.vrsiddhartha.ac.in/wp-content/uploads/2019/09/Vice-Chancellor-PV-Rao.jpg",
-          //     },
-          // ],
-            members: [
-                
-              {
-                name: "T.Kamal Kumar",
-                position: "BHEL",
-                image: "/images/bhelr1.jpg",
-              },
-              {
-                name: "Mr. A. Satyanarayana",
-                position: "Avantel",
-                image: "/images/r1.jpg",
-              },
-              {
-                name: "Mr.",
-                position: "HCL",
-                image: "/images/hclr1.jpg",
-              },
-              {
-                name: "Mr. Jitender Singh",
-                position: "CTS",
-                image: "/images/ctsr1.jpg",
-              },
-              {
-                name: "Mr. Sarada Prasanna Satapathy ",
-                position: "PEGA",
-                image: "/images/pegar1.jpg",
-              },
-            ],
-          },
-      },
-      {
-        time: "11:00 AM - 1:00 PM",
+        time: "11:00 AM - 01:15 PM",
         title: "Paper Presentations",
         description: {
           keyPoints: [
-              "Parallel Session I @Room No-232",
+              "Parallel Session I @Room No-228",
             "Parallel Session II @Room No-246",
              "Parallel Session III @Room No-250",
             ,
@@ -491,7 +518,7 @@ const scheduleData = {
         
       },
       {
-        time: "1:00 PM - 02:30 PM",
+        time: "01:15 PM - 02:30 PM",
         title: "Connections and Conversations: Lunch",
         description: {
           mainContent: "Venue: Impact Center, 4th floor, VL Dutt Block",
@@ -499,11 +526,11 @@ const scheduleData = {
         },
       },
       {
-        time: "02:30 PM - 05:00 PM",
+        time: "02:30 PM - 04:30 PM",
         title: "Paper Presentations",
         description: {
           keyPoints: [
-               "Parallel Session I @Room No-232",
+               "Parallel Session I @Room No-228",
             "Parallel Session II @Room No-246",
              "Parallel Session III @Room No-250",
             ,
@@ -511,7 +538,11 @@ const scheduleData = {
         },
       },
       {
-        time: "05:00 PM - 07:00 PM",
+        time: "04:30 PM - 05:00 PM",
+        title: "High Tea",
+      },
+      {
+        time: "05:00 PM - 06:30 PM",
         title: "Cultural Programs",
       },
       {
@@ -525,7 +556,7 @@ const scheduleData = {
       title: "Paper Presentations",
       description: {
         keyPoints: [
-             "Parallel Session I @Room No-232",
+             "Parallel Session I @Room No-228",
           "Parallel Session II @Room No-246",
            "Parallel Session III @Room No-250",
           ,
@@ -541,7 +572,7 @@ const scheduleData = {
       title: "Paper Presentations",
       description: {
         keyPoints: [
-             "Parallel Session I @Room No-232",
+             "Parallel Session I @Room No-228",
           "Parallel Session II @Room No-246",
            "Parallel Session III @Room No-250",
           ,
