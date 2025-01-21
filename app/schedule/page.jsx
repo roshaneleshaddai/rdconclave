@@ -205,46 +205,54 @@ const scheduleData = {
           moderators: [
             {
                 name: "Mrs. Padmaja Sriram",
-                position: "AT&T",
+                position: "",
+              company: "AT&T",
                 image: "/images/attr1.jpg",
             },
             
             
             // {
             //     name: "Dr P Venkateswara Rao",
-            //     position: "VC",
+            //     position: "",
+              // company: "VC",
             //     image: "https://www.vrsiddhartha.ac.in/wp-content/uploads/2019/09/Vice-Chancellor-PV-Rao.jpg",
             // },
         ],
           members: [
             {
               name: "Mr. Raghavendra Kulkarni",
-              position: "CTS",
+              position: "",
+              company: "CTS",
               image: "/images/ctsr2.jpg",
             },
             {
               name: "Mr. M. Veeran",
-              position: "Power Labs",
+              position: "",
+              company: "Power Labs",
               image: "/images/powerlabr1.jpg",
             },
             {
               name: "Mr. M. Srinivas Reddy",
-              position: "Tech Mahindra",
+              position: "",
+              company: "Tech Mahindra",
               image: "/images/techmr1.jpg",
             },
             {
               name: "Mr. T.Kamal Kumar",
-              position: "BHEL",
+              position: "",
+              company: "BHEL",
               image: "/images/bhelr1.jpg",
             },
             {
               name: "Mr. D.Anvesh",
-              position: "Efftronics",
+              position: "",
+              company: "Efftronics",
               image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSll-TKqI55i7SHUuUH0xabUol3dB_a7Z9c7w&s",
             },
             // {
             //   name: "Mr. Raghavendra Kulkarni",
-            //   position: "CTS",
+            //   position: "",
+              // company: "CTS",
             //   image: "/images/ctsr2.jpg",
             // },
             
@@ -252,17 +260,20 @@ const scheduleData = {
           Academicians:[
             {
               name:"EEE",
-              position:"",
+              position: "",
+              company:"",
               image:"",
             },
             {
               name:"ME",
-              position:"",
+              position: "",
+              company:"",
               image:"",
             },
             {
               name:"CSE/IT",
-              position:"",
+              position: "",
+              company:"",
               image:"",
             }
           
@@ -286,83 +297,98 @@ const scheduleData = {
       //       moderators: [
       //         {
       //             name: "Smt. Padmaja Sriram",
-      //             position: "AT&T",
+      //             position: "",
+              // company: "AT&T",
       //             image: "/images/attr1.jpg",
       //         },
              
       //         // {
       //         //     name: "Dr A V Ratna Prasad",
-      //         //     position: "Pro VC",
+      //         //     position: "",
+              // company: "Pro VC",
       //         //     image: "https://www.vrsiddhartha.ac.in/wp-content/uploads/2024/09/principal_2024-1-275x300.jpg",
       //         // },
       //     ],
       //       members: [
       //         {
       //           name: "Mr. MSR Murthy",
-      //           position: "TCS",
+      //           position: "",
+              // company: "TCS",
       //           image: "/images/tcsr1.jpg",
       //         },
       //         {
       //           name: "Mr. Jitender Singh",
-      //           position: "CTS",
+      //           position: "",
+              // company: "CTS",
       //           image: "/images/ctsr1.jpg",
       //         },
       //         {
       //           name: "Mr. A. Siddharth",
-      //           position: "Avantel",
+      //           position: "",
+              // company: "Avantel",
       //           image: "https://media.licdn.com/dms/image/v2/C5603AQGRNthkb1Rv3A/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1565795305597?e=2147483647&v=beta&t=J8Zi9Pc8VYuWL-4Bn4QIlaqEbJyzYNTJ3OlibtA_-uM",
       //         },
       //         {
       //           name: "Smt. V. Prathyusha",
-      //           position: "Transdence",
+      //           position: "",
+              // company: "Transdence",
       //           image: "/images/transdencer1.jpg",
       //         },
       //         {
       //           name: "S. Suresh Babu",
-      //           position: "RAPS",
+      //           position: "",
+              // company: "RAPS",
       //           image: "/images/rapsr1.jpg",
       //         },
               
       //         // {
       //         //   name: "Mr. Sarada Prasanna Satapathy ",
-      //         //   position: "PEGA",
+      //         //   position: "",
+              // company: "PEGA",
       //         //   image: "/images/pegar1.jpg",
       //         // },
       //         // {
       //         //   name: "Mr. Chaitanya Vetcham",
-      //         //   position: "Verizon",
+      //         //   position: "",
+              // company: "Verizon",
       //         //   image: "/images/verizonr1.jpg",
       //         // },
       //         // {
       //         //   name: "Mr.K. Abhinav",
-      //         //   position: "Pi Data Center",
+      //         //   position: "",
+              // company: "Pi Data Center",
       //         //   image: "/images/pidatacr1.jpg",
       //         // },
       //         // {
       //         //   name: "Mr.M. Veeran",
-      //         //   position: "Power Labs",
+      //         //   position: "",
+              // company: "Power Labs",
       //         //   image: "/images/powerlabr1.jpg",
       //         // },
       //         // {
       //         //   name: "Mr Raghavendra Kulkarni",
-      //         //   position: "CTS",
+      //         //   position: "",
+              // company: "CTS",
       //         //   image: "/images/ctsr2.jpg",
       //         // },
       //       ],
       //       Academicians:[
       //         {
       //           name:"CSE/IT",
-      //           position:"",
+      //           position: "",
+              // company:"",
       //           image:"",
       //         },
       //         {
       //           name:"EEE/ECE",
-      //           position:"",
+      //           position: "",
+              // company:"",
       //           image:"",
       //         },
       //         {
       //           name:"CIVIL",
-      //           position:"",
+      //           position: "",
+              // company:"",
       //           image:"",
       //         },
             
@@ -386,88 +412,111 @@ const scheduleData = {
             moderators: [
               {
                   name: "Mrs. Padmaja Sriram",
-                  position: "AT&T",
+                  position: "",
+              company: "AT&T",
                   image: "/images/attr1.jpg",
               },
              
               // {
               //     name: "Dr P Venkateswara Rao",
-              //     position: "VC",
+              //     position: "",
+              // company: "VC",
               //     image: "https://www.vrsiddhartha.ac.in/wp-content/uploads/2019/09/Vice-Chancellor-PV-Rao.jpg",
               // },
           ],
             members: [
               {
                 name: "Mr. M S R Murthy",
-                position: "TCS",
+                position: "",
+              company: "TCS",
                 image: "/images/tcsr1.jpg",
               },
               {
                 name:"Mr. Jitender Singh",
-                position:"CTS",
+                position: "",
+              company:"CTS",
                 image: "/images/ctsr1.jpg",
               },
               {
                 name: "Mr. A. Siddharth",
-                position: "Avantel",
+                position: "",
+              company: "Avantel",
                 image: "https://media.licdn.com/dms/image/v2/C5603AQGRNthkb1Rv3A/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1565795305597?e=2147483647&v=beta&t=J8Zi9Pc8VYuWL-4Bn4QIlaqEbJyzYNTJ3OlibtA_-uM",
               },
               {
                 name: "Smt. V. Prathyusha",
-                position: "Transdence",
+                position: "",
+              company: "Transdence",
                 image: "/images/transdencer1.jpg",
               },
               {
                 name:"Mr. S. Suresh Babu",
-                position:"RAPS Pvt. Ltd.",
+                position: "",
+              company:"RAPS Pvt. Ltd.",
                 image: "/images/rapsr1.jpg",
               },
              
               // {
               //   name: "Mr. MSR Murthy",
-              //   position: "TCS",
+              //   position: "",
+              // company: "TCS",
               //   image: "/images/tcsr1.jpg",
               // },
               // {
               //   name: "Mr.M. Srinivas Reddy",
-              //   position: "Tech Mahindra",
+              //   position: "",
+              // company: "Tech Mahindra",
               //   image: "/images/techmr1.jpg",
               // },
               // {
               //   name: "Dr Krishna Kanth G Avuluir",
-              //   position: "AMS",
+              //   position: "",
+              // company: "AMS",
               //   image: "/images/amsr1.jpg",
               // },
               // {
               //   name: "Smt. V. Prathyusha",
-              //   position: "Transdence",
+              //   position: "",
+              // company: "Transdence",
               //   image: "/images/transdencer1.jpg",
               // },
               // {
               //   name: "D. Harsha Vardhin",
-              //   position: "Jesvid Cryo Technologies Private Limited",
+              //   position: "",
+              // company: "Jesvid Cryo Technologies Private Limited",
               //   image: "/images/jesvidr1.jpg",
               // },
             ],
             Academicians:[
               {
                 name:"CSE/IT",
-                position:"",
+                position: "",
+              company:"",
                 image:"",
               },
               {
                 name:"ECE/EIE",
-                position:"",
+                position: "",
+              company:"",
                 image:"",
               },
               {
                 name:"CIVIL",
-                position:"",
+                position: "",
+              company:"",
                 image:"",
               },
             
             ],
           },
+      },
+      {
+        time: "01:15 PM - 02:30 PM",
+        title: "Connections and Conversations: Lunch",
+        description: {
+          mainContent: "Venue: Impact Center, 4th floor, VL Dutt Block",
+          
+        },
       },
       {
         time: "02:30 PM – 03:30 PM",
@@ -486,12 +535,14 @@ const scheduleData = {
             moderators: [
               {
                   name: "Mrs. Padmaja Sriram",
-                  position: "AT&T",
+                  position: "",
+              company: "AT&T",
                   image: "/images/attr1.jpg",
               },
           //     {
           //         name: "Dr P Venkateswara Rao",
-          //         position: "VC",
+          //         position: "",
+              // company: "VC",
           //         image: "https://www.vrsiddhartha.ac.in/wp-content/uploads/2019/09/Vice-Chancellor-PV-Rao.jpg",
           //     },
           ],
@@ -499,44 +550,52 @@ const scheduleData = {
                 
               {
                 name: "Srinivas KVNDS",
-                position: "Persistent Systems",
+                position: "",
+              company: "Persistent Systems",
                 image: "/images/persisr1.jfif",
               },
               {
-                name: "Mr. Rajesh Damerla",
-                position: "HCL",
-                image: "https://media.licdn.com/dms/image/v2/C4E03AQHfAUYDFePjMQ/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1598515829195?e=2147483647&v=beta&t=vZWFACgYTekTSC6gktvjaHnnYFX_x60cCwYMA5le21I",
+                name: "Mr. Rajesh",
+                position: "",
+              company: "HCL",
+                image: "",
               },
               {
                 name: "Mr. Chaitanya Vetcham",
-                position: "Verizon",
+                position: "",
+              company: "Verizon",
                 image: "/images/verizonr1.jpg",
               },
               {
                 name: "Mr. K. Abhinav",
-                position: "Pi Data Center",
+                position: "",
+              company: "Pi Data Center",
                 image: "/images/pidatacr1.jpg",
               },
               {
-                name: "Mr. Sarada Prasanna Satapathy ",
-                position: "PEGA",
-                image: "/images/pegar1.jpg",
+                name: "Mr. Rajesh Damerla",
+                position: "",
+              company: "CEO of DLK MegaMart Pvt Ltd & Avinya Spark International Pvt Ltd.",
+                image: "https://media.licdn.com/dms/image/v2/C4E03AQHfAUYDFePjMQ/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1598515829195?e=2147483647&v=beta&t=vZWFACgYTekTSC6gktvjaHnnYFX_x60cCwYMA5le21I",
               },
             ],
             Academicians:[
               {
                 name:"CSE/IT",
-                position:"",
+                position: "",
+              company:"",
                 image:"",
               },
               {
                 name:"CSE/IT",
-                position:"",
+                position: "",
+              company:"",
                 image:"",
               },
               {
                 name:"CSE/IT",
-                position:"",
+                position: "",
+              company:"",
                 image:"",
               },
             
@@ -559,84 +618,100 @@ const scheduleData = {
         panelMembers: {
             moderators: [
               {
-                  name: "Smt. Padmaja Sriram",
-                  position: "AT&T",
+                  name: "Mrs. Padmaja Sriram",
+                  position: "",
+              company: "AT&T",
                   image: "/images/attr1.jpg",
               },
               
               // {
               //     name: "Dr A V Ratna Prasad",
-              //     position: "Pro VC",
+              //     position: "",
+              // company: "Pro VC",
               //     image: "https://www.vrsiddhartha.ac.in/wp-content/uploads/2024/09/principal_2024-1-275x300.jpg",
               // },
           ],
             members: [
               {
                 name: "Mr. Sarada Prasanna Satapathy ",
-                position: "PEGA",
+                position: "",
+              company: "PEGA",
                 image: "/images/pegar1.jpg",
               },
               {
                   name: "Dr Krishna Kanth G Avuluir",
-                  position: "AMS",
+                  position: "",
+              company: "AMS",
                   image: "/images/amsr1.jpg",
                 },
               {
-                name: "Mr. MSR Murthy",
-                position: "TCS",
+                name: "Mr. M S R Murthy",
+                position: "",
+                company: "TCS",
                 image: "/images/tcsr1.jpg",
               },
               {
                 name: "Mr Raghavendra Kulkarni",
-                position: "CTS",
+                position: "",
+              company: "CTS",
                 image: "/images/ctsr2.jpg",
               },
+              
                {
-                name: "D. Harsha Vardhin",
-                position: "Jesvid Cryo Technologies Private Limited",
+                name: "Mr. D. Harsha Vardhin",
+                position: "",
+              company: "Jesvid Cryo Technologies Private Limited",
                 image: "/images/jesvidr1.jpg",
               },
               
               // {
               //   name: "S. Suresh Babu",
-              //   position: "RAPS",
+              //   position: "",
+              // company: "RAPS",
               //   image: "/images/rapsr1.jpg",
               // },
               // {
               //   name: "Srinivas KVNDS",
-              //   position: "CTS",
+              //   position: "",
+              // company: "CTS",
               //   image: "/images/r2.jpg",
               // },
               // {
               //   name: "Mr.M. Veeran",
-              //   position: "Power Labs",
+              //   position: "",
+              // company: "Power Labs",
               //   image: "/images/powerlabr1.jpg",
               // },
               // {
               //   name: "Mr. Chaitanya Vetcham",
-              //   position: "Verizon",
+              //   position: "",
+              // company: "Verizon",
               //   image: "/images/verizonr1.jpg",
               // },
               // {
               //   name: "Mr.K. Abhinav",
-              //   position: "Pi Data Center",
+              //   position: "",
+              // company: "Pi Data Center",
               //   image: "/images/pidatacr1.jpg",
               // },
             ],
             Academicians:[
               {
                 name: "Dr A V Ratna Prasad",
-                position: "Pro VC",
+                position: "",
+              company: "Pro VC",
                 image: "https://www.vrsiddhartha.ac.in/wp-content/uploads/2024/09/principal_2024-1-275x300.jpg",
             },
               {
-                name:"Dr.K.Rajeswara Rao",
-                position:"Prof & Head, CSE",
+                name:"Dr.D.Rajeswara Rao",
+                position: "",
+              company:"Prof & Head, CSE",
                 image:"/images/csehod.jpg",
               },
               {
                 name:"Dr.M.Suneetha",
-                position:"Prof & Head, IT Dept, Dean R & D, SAHE",
+                position: "",
+              company:"Prof & Head, IT Dept, Dean R & D, SAHE",
                 image:"/images/HODIT.jpg",
               },
             
@@ -656,14 +731,7 @@ const scheduleData = {
         },
         
       },
-      {
-        time: "01:15 PM - 02:30 PM",
-        title: "Connections and Conversations: Lunch",
-        description: {
-          mainContent: "Venue: Impact Center, 4th floor, VL Dutt Block",
-          
-        },
-      },
+      
       {
         time: "02:30 PM - 04:30 PM",
         title: "Paper Presentations",
@@ -831,6 +899,9 @@ const Schedule = () => {
                               <div className="lg:text-base text-sm text-gray-600">
                                 {moderator.position}
                               </div>
+                              <div className="lg:text-base text-sm text-gray-600">
+                                {moderator.company}
+                              </div>
                             </div>
                           </div>
                         </div>
@@ -857,6 +928,9 @@ const Schedule = () => {
                               <div className="lg:text-base text-sm text-gray-600">
                                 {member.position}
                               </div>
+                              <div className="lg:text-base text-sm text-gray-600">
+                                {member.company}
+                              </div>
                             </div>
                           </div>
                         </div>
@@ -880,6 +954,9 @@ const Schedule = () => {
                               </div>
                               <div className="lg:text-base text-sm text-gray-600">
                                 {member.position}
+                              </div>
+                              <div className="lg:text-base text-sm text-gray-600">
+                                {member.company}
                               </div>
                             </div>
                           </div>
