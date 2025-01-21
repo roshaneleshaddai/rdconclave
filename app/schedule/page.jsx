@@ -206,7 +206,7 @@ const scheduleData = {
             {
                 name: "Mrs. Padmaja Sriram",
                 position: "Regional Leader Talent Acquisition - APAC",
-              company: "AT&T",
+              company: "AT&T, Hyderabad",
                 image: "/images/attr1.jpg",
             },
             
@@ -221,26 +221,26 @@ const scheduleData = {
           members: [
             {
               name: "Mr. Raghavendra Kulkarni",
-              position: "Global Engagement Delivery",
-              company: "Cognizant Technology Solutions",
+              position: "Project Manager",
+              company: "Cognizant Technology Solutions, Bengaluru",
               image: "/images/ctsr2.jpg",
             },
             {
               name: "Mr. M. Veeran",
               position: "Head Sales & Marketing",
-              company: "Power Labs-Chennai",
+              company: "Power Lab Instruments Chennai",
               image: "/images/powerlabr1.jpg",
             },
             {
               name: "Mr. M. Srinivas Reddy",
-              position: "IT Delivery Manager",
+              position: "Central Sourcing & Recruitment Manager",
               company: "Tech Mahindra",
               image: "/images/techmr1.jpg",
             },
             {
               name: "Mr. T.Kamal Kumar",
-              position: "DGM",
-              company: "BHEL",
+              position: "General Manager ",
+              company: "Bharat Heavy Electricals Limited",
               image: "/images/bhelr1.jpg",
             },
             {
@@ -259,23 +259,23 @@ const scheduleData = {
           ],
           Academicians:[
             {
-              name:"EEE",
-              position: "",
+              name:"Dr.P.V.R.L.Narasimham",
+              position: "Prof & Head, EEE Department, Dean- Examinination & Evaluation",
               company:"",
               image:"",
             },
             {
-              name:"ME",
-              position: "",
+              name:"Dr.B.Raghava Rao",
+              position: "Professor, Dean Academics ",
               company:"",
               image:"",
             },
-            {
-              name:"CSE/IT",
-              position: "",
-              company:"",
-              image:"",
-            }
+            // {
+            //   name:"CSE/IT",
+            //   position: "",
+            //   company:"",
+            //   image:"",
+            // }
           
           ],
         },
@@ -305,7 +305,7 @@ const scheduleData = {
       //         // {
       //         //     name: "Dr A V Ratna Prasad",
       //         //     position: "",
-              // company: "Pro Vice Chancellor",
+              // company: "Pro VC",
       //         //     image: "https://www.vrsiddhartha.ac.in/wp-content/uploads/2024/09/principal_2024-1-275x300.jpg",
       //         // },
       //     ],
@@ -413,7 +413,7 @@ const scheduleData = {
               {
                   name: "Mrs. Padmaja Sriram",
                   position: "Regional Leader Talent Acquisition - APAC",
-              company: "AT&T",
+              company: "AT&T, Hyderabad",
                   image: "/images/attr1.jpg",
               },
              
@@ -428,7 +428,7 @@ const scheduleData = {
               {
                 name: "Mr. M S R Murthy",
                 position: "Senior Consultant",
-              company: "Tata Consultancy Services",
+                company: "Tata Consultancy Services, Hyderabad",
                 image: "/images/tcsr1.jpg",
               },
               {
@@ -438,21 +438,21 @@ const scheduleData = {
                 image: "/images/ctsr1.jpg",
               },
               {
-                name: "Mr. Abburi Siddhartha",
-                position: "Director",
-              company: "Avantel",
+                name: "Mr. A. Siddharth",
+                position: "Director at Avantel Limited & imeds Private Limited & Co-Founder of Simply Science",
+              company: "Avantel, Vijayawada",
                 image: "https://media.licdn.com/dms/image/v2/C5603AQGRNthkb1Rv3A/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1565795305597?e=2147483647&v=beta&t=J8Zi9Pc8VYuWL-4Bn4QIlaqEbJyzYNTJ3OlibtA_-uM",
               },
               {
                 name: "Smt. V. Prathyusha",
                 position: "Lead Consultant",
-              company: "Transdence",
+              company: "Transdence, Vijayawada",
                 image: "/images/transdencer1.jpg",
               },
               {
-                name:"Mr. Surapaneni Suresh Babu",
-                position: "Group Head, Composites",
-              company:"Ramesh's Aerospace Products & Services Private Limited Pvt. Ltd.",
+                name:"Mr. S. Suresh Babu",
+                position: "Senior General Manager Finance ",
+              company:"Ramesh's Aerospace Products & Services Private Limited Pvt. Ltd. Coimbatore, Tamilnadu",
                 image: "/images/rapsr1.jpg",
               },
              
@@ -489,23 +489,23 @@ const scheduleData = {
             ],
             Academicians:[
               {
-                name:"CSE/IT",
-                position: "",
+                name:"Dr.A.V.Ratna Prasad",
+                position: "Pro-Vice Chancellor, SAHE, Deemed to be University",
               company:"",
-                image:"",
+                image:"https://www.vrsiddhartha.ac.in/wp-content/uploads/2024/09/principal_2024-1-275x300.jpg",
               },
               {
-                name:"ECE/EIE",
-                position: "",
+                name:"Dr.Mallikarjuna Rao",
+                position: "Professor, CIVIL Department",
               company:"",
                 image:"",
               },
-              {
-                name:"CIVIL",
-                position: "",
-              company:"",
-                image:"",
-              },
+              // {
+              //   name:"CIVIL",
+              //   position: "",
+              // company:"",
+              //   image:"",
+              // },
             
             ],
           },
@@ -536,7 +536,7 @@ const scheduleData = {
               {
                   name: "Mrs. Padmaja Sriram",
                   position: "Regional Leader Talent Acquisition - APAC",
-              company: "AT&T",
+              company: "AT&T, Hyderabad",
                   image: "/images/attr1.jpg",
               },
           //     {
@@ -551,25 +551,25 @@ const scheduleData = {
               {
                 name: "Srinivas KVNDS",
                 position: "Vice President & Delivery Head for Healthcare practice",
-              company: "Persistent Systems",
+              company: "Persistent Systems, Chennai",
                 image: "/images/persisr1.jpg",
               },
               {
-                name: "Mr. Rajesh",
-                position: "",
-              company: "HCL",
+                name: "Mr.Suresh Babu B",
+                position: "Deputy General Manager",
+              company: "HCL Technologies, Vijayawada",
                 image: "",
               },
               {
                 name: "Mr. Chaitanya Vetcham",
-                position: "HR Professional, Campus Recruitment",
-              company: "Verizon",
+                position: "HR Professional, HR Generalist, Campus Relations Onboarding Speclist",
+              company: "Verizon, Hyderabad",
                 image: "/images/verizonr1.jpg",
               },
               {
                 name: "Mr. K. Abhinav",
-                position: "Delivery Officer",
-              company: "Pi Data Center",
+                position: "Director & Chief Data Center Delivery Officer",
+              company: "Pi DataCenters, Vijayawada",
                 image: "/images/pidatacr1.jpg",
               },
               {
@@ -581,23 +581,23 @@ const scheduleData = {
             ],
             Academicians:[
               {
-                name:"CSE/IT",
-                position: "",
+                name:"Dr.D.Rajeswara Rao",
+                position: "Prof & Head, CSE Department, Dean- Industry Relations, Training & Placements",
               company:"",
-                image:"",
+                image:"/images/csehod.jpg",
               },
               {
-                name:"CSE/IT",
-                position: "",
+                name:"Dr.G.Narasimha.Swamy",
+                position: "Prof & Head, EIE Department, Dean- Student Affairs & Admissions",
               company:"",
                 image:"",
               },
-              {
-                name:"CSE/IT",
-                position: "",
-              company:"",
-                image:"",
-              },
+              // {
+              //   name:"CSE/IT",
+              //   position: "",
+              // company:"",
+              //   image:"",
+              // },
             
             ],
           },
@@ -620,47 +620,47 @@ const scheduleData = {
               {
                   name: "Mrs. Padmaja Sriram",
                   position: "Regional Leader Talent Acquisition - APAC",
-              company: "AT&T",
+              company: "AT&T, Hyderabad",
                   image: "/images/attr1.jpg",
               },
               
               // {
               //     name: "Dr A V Ratna Prasad",
               //     position: "",
-              // company: "Pro Vice Chancellor",
+              // company: "Pro VC",
               //     image: "https://www.vrsiddhartha.ac.in/wp-content/uploads/2024/09/principal_2024-1-275x300.jpg",
               // },
           ],
             members: [
               {
                 name: "Mr. Sarada Prasanna Satapathy ",
-                position: "Director",
-              company: "Pegasystems",
+                position: "Director Global University Academic Programs ",
+              company: "Pegasystems, Hyderabad",
                 image: "/images/pegar1.jpg",
               },
               {
                   name: "Dr Krishna Kanth G Avalur",
                   position: "Sr. Manager",
-              company: "AMS SemiConductors India Pvt Ltd",
+              company: "Director R&D @ams OSRAM & Founder @ MOSart Labs",
                   image: "/images/amsr1.jpg",
                 },
               {
                 name: "Mr. M S R Murthy",
                 position: "Senior Consultant",
-                company: "Tata Consultancy Services",
+                company: "Tata Consultancy Services, Hyderabad",
                 image: "/images/tcsr1.jpg",
               },
               {
                 name: "Mr Raghavendra Kulkarni",
-                position: "Global Engagement Delivery",
-              company: "Cognizant Technology Solutions",
+                position: "Project Manager ",
+              company: "Cognizant Technology Solutions, Hyderabad",
                 image: "/images/ctsr2.jpg",
               },
               
                {
                 name: "Mr. D. Harsha Vardhin",
                 position: "Project Engineer Mechanical",
-              company: "Jesvid Cryo Technologies Private Limited",
+              company: "Jesvid Cryo Technologies Private Limited, Vijayawada",
                 image: "/images/jesvidr1.jpg",
               },
               
@@ -696,24 +696,25 @@ const scheduleData = {
               // },
             ],
             Academicians:[
-              {
-                name: "Dr A V Ratna Prasad",
-                position: "",
-              company: "Pro Vice Chancellor",
-                image: "https://www.vrsiddhartha.ac.in/wp-content/uploads/2024/09/principal_2024-1-275x300.jpg",
+            //   {
+            //     name: "Dr A V Ratna Prasad",
+            //     position: "",
+            //   company: "Pro VC",
+            //     image: "https://www.vrsiddhartha.ac.in/wp-content/uploads/2024/09/principal_2024-1-275x300.jpg",
+            // },
+            {
+              name:"Dr.M.Suneetha",
+              position: "Prof & Head, IT Dept, Dean Research, Technology Development & IQAC",
+            company:"",
+              image:"/images/HODIT.jpg",
             },
               {
-                name:"Dr.D.Rajeswara Rao",
-                position: "",
-              company:"Professor & Head, CSE",
-                image:"/images/csehod.jpg",
+                name:"Dr.D.Venkata Rao",
+                position: "Prof & Head, ECE Dept, Dean- Velagapudi Ramakrishna Siddhartha School of Engineering",
+              company:"",
+                image:"",
               },
-              {
-                name:"Dr.M.Suneetha",
-                position: "",
-              company:"Professor & Head, IT Dept, Dean R & D, SAHE",
-                image:"/images/HODIT.jpg",
-              },
+             
             
             ],
           },
@@ -877,7 +878,7 @@ const Schedule = () => {
                 )}
                 {session.panelMembers && (
                   <div className="mt-4">
-                    <div className="py-2"><strong>Briefing by </strong> Dr.M.Suneetha, Professor & Head, IT Dept, Dean R & D, SAHE</div>
+                    <div className="py-2"><strong>Briefing by </strong> Dr.M.Suneetha, Prof & Head, IT Dept, Dean R & D, SAHE</div>
                     {session.panelMembers.moderators && (
                       <div>
                     <h3 className="text-md font-semibold text-gray-800 mb-2">
