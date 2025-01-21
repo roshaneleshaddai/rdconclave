@@ -91,7 +91,7 @@ const scheduleData = {
         "time": "09:50 AM – 09:55 AM",
         "title": "Prayer Song",
         "description": {
-          "mainContent": "Prayer song by G. Srivatsala Gayathri and P Renuka.",
+          "mainContent": "Prayer song by G. Gayatri Srivatsala and P Renuka.",
           
         }
       },
