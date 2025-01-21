@@ -14,7 +14,7 @@ import React, { useState, useEffect } from "react";
       { ind:4, name: 'Raghavendra Kulkarni', src: '/images/ctsr2.jpg', position: 'Global Engagement Delivery' , company:'CTS'},
       { ind:5, name: 'Chaitanya Vetcham', src: '/images/verizonr1.jpg', position: 'HR Professional, Campus Relations', company:'Verizon' },
       { ind:6, name: 'M. Srinivas Reddy', src: '/images/techmr1.jpg', position: 'IT Delivery Manager' , company:'Tech Mahindra'},
-      { ind:8, name: '', src: '/images/r1.jpg', position: '', company:'HCL' },
+      { ind:8, name: 'Rajesh', src: '/images/r1.jpg', position: '', company:'HCL' },
       { ind:11, name: 'Mr.K. Abhinav ', src: '/images/pidatacr1.jpg', position: 'Director & Chief Data Center Delivery Officer', company:'Pi DATACENTERS' },
       { ind:12, name: 'Mr. A. Satyanarayana', src: '/images/r1.jpg', position: 'Manager', company:'Avantel' },
       { ind:13, name: 'Mr M Veeran', src: '/images/powerlabr1.jpg', position: 'Head Sales & Marketing', company:'Power Labs- Chennai' },
@@ -23,6 +23,21 @@ import React, { useState, useEffect } from "react";
       { ind:16, name: 'S. Suresh Babu', src: '/images/rapsr1.jpg', position: 'Group head, Composites', company:"Ramesh's Aerospace Products & Services (RAPS) Pvt. Ltd" },
       { ind:17, name: 'D. Harsha Vardhin', src: '/images/jesvidr1.jpg', position: 'Project Engineer Mechanical', company:'Jesvid Cryo Technologies Private Limited' },
       { ind:18, name: 'T.Kamal Kumar', src: '/images/bhelr1.jpg', position: 'DGM', company:'BHEL' },
+      {ind:19, name: "Mr. D.Anvesh",src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSll-TKqI55i7SHUuUH0xabUol3dB_a7Z9c7w&s",position: "",company: "Efftronics"},
+      {ind:20, name: "Mr. A. Siddharth",position: "CEO",company: "Avantel",src: "https://media.licdn.com/dms/image/v2/C5603AQGRNthkb1Rv3A/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1565795305597?e=2147483647&v=beta&t=J8Zi9Pc8VYuWL-4Bn4QIlaqEbJyzYNTJ3OlibtA_-uM",},
+      {
+        ind:21,
+        name: "Srinivas KVNDS",
+        position: "",
+      company: "Persistent Systems",
+        src: "/images/persisr1.jfif",
+      },
+      {
+        name: "Mr. Rajesh Damerla",
+        position: "CEO",
+      company: "DLK MegaMart Pvt Ltd & Avinya Spark International Pvt Ltd.",
+        src: "https://media.licdn.com/dms/image/v2/C4E03AQHfAUYDFePjMQ/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1598515829195?e=2147483647&v=beta&t=vZWFACgYTekTSC6gktvjaHnnYFX_x60cCwYMA5le21I",
+      },
     ];
 
   const bottomResearchers = Patrons.slice(0);
@@ -63,7 +78,7 @@ import React, { useState, useEffect } from "react";
 
         <div className="px-10">
           {/* Display initial cards */}
-          <ul className="list-none flex flex-wrap justify-center items-center gap-4 max-w-full overflow-hidden">
+          <ul className="list-none flex flex-wrap max-w-6xl justify-center items-center gap-4 max-w-full overflow-hidden">
             {bottomResearchers.slice(0, 4).map((researcher, index) => (
               <motion.li
                 key={`initial-${index}`}
@@ -100,7 +115,7 @@ import React, { useState, useEffect } from "react";
           </ul>
 
           {/* Display remaining cards on scroll */}
-          <ul className="mt-4 list-none flex flex-wrap justify-center items-center gap-4">
+          <ul className="mt-4 list-none flex max-w-6xl flex-wrap justify-center items-center gap-4">
             {bottomResearchers.slice(4).map((researcher, index) => (
               <motion.li
                 key={`rest-${index}`}
