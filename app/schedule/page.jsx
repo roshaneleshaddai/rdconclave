@@ -552,7 +552,7 @@ const scheduleData = {
                 name: "Srinivas KVNDS",
                 position: "",
               company: "Persistent Systems",
-                image: "/images/persisr1.jfif",
+                image: "/images/persisr1.jpg",
               },
               {
                 name: "Mr. Rajesh",
