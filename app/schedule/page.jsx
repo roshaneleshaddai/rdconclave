@@ -438,7 +438,7 @@ const scheduleData = {
                 image: "/images/ctsr1.jpg",
               },
               {
-                name: "Mr. A. Siddharth",
+                name: "Mr. Abburi Siddhartha",
                 position: "Director",
               company: "Avantel",
                 image: "https://media.licdn.com/dms/image/v2/C5603AQGRNthkb1Rv3A/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1565795305597?e=2147483647&v=beta&t=J8Zi9Pc8VYuWL-4Bn4QIlaqEbJyzYNTJ3OlibtA_-uM",
