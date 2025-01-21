@@ -798,6 +798,7 @@ const scheduleData = {
   ],
 };
 
+
 const Schedule = () => {
     const [activeTab, setActiveTab] = useState("day1");
     const [expandedSessions, setExpandedSessions] = useState({});
@@ -974,6 +975,39 @@ const Schedule = () => {
       ));
     };
   
+    const DownloadSchedules = () => {
+      return (
+        <div className="p-8 text-center border-b border-2 m-2">
+          <h1 className="text-2xl font-bold mb-6">Download Presentation Schedules</h1>
+    
+          <div className="mb-8 p-4 border border-gray-300 rounded-lg">
+            <h2 className="text-lg font-semibold mb-4">Online Presentations Schedule on 24th & 25th January 2025</h2>
+            <a
+              href="/online schedule[1].pdf"
+              download="Online_Presentation_Schedule_24th-25th_Jan_2025.pdf"
+              className="text-blue-500 hover:underline"
+            >
+              <button className="px-6 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">
+                Download Online Schedule
+              </button>
+            </a>
+          </div>
+    
+          <div className="mb-8 p-4 border border-gray-300 rounded-lg">
+            <h2 className="text-lg font-semibold mb-4">Offline Presentations Schedule on 24th & 25th January 2025</h2>
+            <a
+              href="/OFFLINE SCHEDULE[1].pdf"
+              download="Offline_Presentation_Schedule_24th-25th_Jan_2025.pdf"
+              className="text-blue-500 hover:underline"
+            >
+              <button className="px-6 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">
+                Download Offline Schedule
+              </button>
+            </a>
+          </div>
+        </div>
+      );
+    };
     return (
       <div className="relative font-SUSE min-h-screen max-w-screen mt-48 md:mt-64">
         <div className="pb-5">
@@ -1010,6 +1044,9 @@ const Schedule = () => {
             {activeTab === "day1" && renderSchedule(scheduleData.day1)}
             {activeTab === "day2" && renderSchedule(scheduleData.day2)}
           </div>
+        </div>
+        <div>
+          <DownloadSchedules/>
         </div>
       </div>
     );
