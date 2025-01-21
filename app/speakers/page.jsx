@@ -30,7 +30,7 @@ import React, { useState, useEffect } from "react";
         name: "Srinivas KVNDS",
         position: "",
       company: "Persistent Systems",
-        src: "/images/persisr1.jfif",
+        src: "/images/persisr1.jpg",
       },
       {
         name: "Mr. Rajesh Damerla",
