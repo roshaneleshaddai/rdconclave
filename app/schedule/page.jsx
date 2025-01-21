@@ -221,7 +221,7 @@ const scheduleData = {
           members: [
             {
               name: "Mr. Raghavendra Kulkarni",
-              position: "",
+              position: "Global Engagement Delivery",
               company: "Cognizant Technology Solutions",
               image: "/images/ctsr2.jpg",
             },
@@ -305,7 +305,7 @@ const scheduleData = {
       //         // {
       //         //     name: "Dr A V Ratna Prasad",
       //         //     position: "",
-              // company: "Pro VC",
+              // company: "Pro Vice Chancellor",
       //         //     image: "https://www.vrsiddhartha.ac.in/wp-content/uploads/2024/09/principal_2024-1-275x300.jpg",
       //         // },
       //     ],
@@ -450,7 +450,7 @@ const scheduleData = {
                 image: "/images/transdencer1.jpg",
               },
               {
-                name:"Mr. S. Suresh Babu",
+                name:"Mr. Surapaneni Suresh Babu",
                 position: "Group Head, Composites",
               company:"Ramesh's Aerospace Products & Services Private Limited Pvt. Ltd.",
                 image: "/images/rapsr1.jpg",
@@ -550,7 +550,7 @@ const scheduleData = {
                 
               {
                 name: "Srinivas KVNDS",
-                position: "",
+                position: "Vice President & Delivery Head for Healthcare practice",
               company: "Persistent Systems",
                 image: "/images/persisr1.jpg",
               },
@@ -627,7 +627,7 @@ const scheduleData = {
               // {
               //     name: "Dr A V Ratna Prasad",
               //     position: "",
-              // company: "Pro VC",
+              // company: "Pro Vice Chancellor",
               //     image: "https://www.vrsiddhartha.ac.in/wp-content/uploads/2024/09/principal_2024-1-275x300.jpg",
               // },
           ],
@@ -699,19 +699,19 @@ const scheduleData = {
               {
                 name: "Dr A V Ratna Prasad",
                 position: "",
-              company: "Pro VC",
+              company: "Pro Vice Chancellor",
                 image: "https://www.vrsiddhartha.ac.in/wp-content/uploads/2024/09/principal_2024-1-275x300.jpg",
             },
               {
                 name:"Dr.D.Rajeswara Rao",
                 position: "",
-              company:"Prof & Head, CSE",
+              company:"Professor & Head, CSE",
                 image:"/images/csehod.jpg",
               },
               {
                 name:"Dr.M.Suneetha",
                 position: "",
-              company:"Prof & Head, IT Dept, Dean R & D, SAHE",
+              company:"Professor & Head, IT Dept, Dean R & D, SAHE",
                 image:"/images/HODIT.jpg",
               },
             
@@ -877,7 +877,7 @@ const Schedule = () => {
                 )}
                 {session.panelMembers && (
                   <div className="mt-4">
-                    <div className="py-2"><strong>Briefing by </strong> Dr.M.Suneetha, Prof & Head, IT Dept, Dean R & D, SAHE</div>
+                    <div className="py-2"><strong>Briefing by </strong> Dr.M.Suneetha, Professor & Head, IT Dept, Dean R & D, SAHE</div>
                     {session.panelMembers.moderators && (
                       <div>
                     <h3 className="text-md font-semibold text-gray-800 mb-2">
