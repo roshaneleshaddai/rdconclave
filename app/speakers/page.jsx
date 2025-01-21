@@ -24,7 +24,7 @@ import React, { useState, useEffect } from "react";
       { ind:17, name: 'Mr. D. Harsha Vardhin', src: '/images/jesvidr1.jpg', position: 'Project Engineer Mechanical', company:'Jesvid Cryo Technologies Private Limited' },
       { ind:18, name: 'Mr. T.Kamal Kumar', src: '/images/bhelr1.jpg', position: 'DGM', company:'BHEL' },
       {ind:19, name: "Mr. Dasari Anvesh",src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSll-TKqI55i7SHUuUH0xabUol3dB_a7Z9c7w&s",position: "Vice President",company: "Efftronics"},
-      {ind:20, name: "Mr. A. Siddharth",position: "Director",company: "Avantel",src: "https://media.licdn.com/dms/image/v2/C5603AQGRNthkb1Rv3A/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1565795305597?e=2147483647&v=beta&t=J8Zi9Pc8VYuWL-4Bn4QIlaqEbJyzYNTJ3OlibtA_-uM",},
+      {ind:20, name: "Mr. Abburi Siddhartha",position: "Director",company: "Avantel",src: "https://media.licdn.com/dms/image/v2/C5603AQGRNthkb1Rv3A/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1565795305597?e=2147483647&v=beta&t=J8Zi9Pc8VYuWL-4Bn4QIlaqEbJyzYNTJ3OlibtA_-uM",},
       {
         ind:21,
         name: "Srinivas KVNDS",
