@@ -21,8 +21,8 @@ const scheduleData = {
     //       "Sri M Rajaiah (President),SAGTE",
     //       "Sri P. Lakshmana Rao(Secretary), SAGTE",
     //       "Mrs. Padmaja Sriram, AT&T (Guest of Honor)",
-    //       "Mr. Sarada Prasanna Satapathy, PEGA (Guest of Honor)",
-    //       "Mr. M S R Murthy, TCS (Guest of Honor)",
+    //       "Mr. Sarada Prasanna Satapathy, Pegasystems (Guest of Honor)",
+    //       "Mr. M S R Murthy, Tata Consultancy Services (Guest of Honor)",
     //       "Mr.Suresh Babu B, HCL Technologies (Guest of Honor)",
     //       "Mr. M. Srinivas Reddy, TechMahindra(Guest of Honor)",
     //       "Mr. Jitender Singh, Cognizant Technology Solutions (Guest of Honor)",
@@ -66,8 +66,8 @@ const scheduleData = {
             "Sri M. Rajaiah, President, SAGTE",
             "Sri P. Lakshmana Rao, Secretary, SAGTE",
             "Mrs. Padmaja Sriram, AT&T (Guest of Honor)",
-            "Mr. Sarada Prasanna Satapathy, PEGA (Guest of Honor)",
-            "Mr. M S R Murthy, TCS (Guest of Honor)",
+            "Mr. Sarada Prasanna Satapathy, Pegasystems (Guest of Honor)",
+            "Mr. M S R Murthy, Tata Consultancy Services (Guest of Honor)",
             "Mr. Suresh Babu B, HCL Technologies (Guest of Honor)",
             "Mr. M. Srinivas Reddy, Tech Mahindra (Guest of Honor)",
             "Mr. Jitender Singh, Cognizant Technology Solutions (Guest of Honor)",
@@ -129,17 +129,17 @@ const scheduleData = {
       },
       {
         "time": "10:15 AM – 10:20 AM",
-        "title": "Guest of Honor Address: PEGA",
+        "title": "Guest of Honor Address: Pegasystems",
         "description": {
-          "mainContent": "Speech by Mr. Sarada Prasanna Satapathy, PEGA.",
+          "mainContent": "Speech by Mr. Sarada Prasanna Satapathy, Pegasystems.",
           
         }
       },
       {
         "time": "10:20 AM – 10:25 AM",
-        "title": "Guest of Honor Address: TCS",
+        "title": "Guest of Honor Address: Tata Consultancy Services",
         "description": {
-          "mainContent": "Speech by Mr. M S R Murthy, TCS.",
+          "mainContent": "Speech by Mr. M S R Murthy, Tata Consultancy Services.",
           
         }
       },
@@ -205,7 +205,7 @@ const scheduleData = {
           moderators: [
             {
                 name: "Mrs. Padmaja Sriram",
-                position: "",
+                position: "Regional Leader Talent Acquisition - APAC",
               company: "AT&T",
                 image: "/images/attr1.jpg",
             },
@@ -222,37 +222,37 @@ const scheduleData = {
             {
               name: "Mr. Raghavendra Kulkarni",
               position: "",
-              company: "CTS",
+              company: "Cognizant Technology Solutions",
               image: "/images/ctsr2.jpg",
             },
             {
               name: "Mr. M. Veeran",
-              position: "",
-              company: "Power Labs",
+              position: "Head Sales & Marketing",
+              company: "Power Labs-Chennai",
               image: "/images/powerlabr1.jpg",
             },
             {
               name: "Mr. M. Srinivas Reddy",
-              position: "",
+              position: "IT Delivery Manager",
               company: "Tech Mahindra",
               image: "/images/techmr1.jpg",
             },
             {
               name: "Mr. T.Kamal Kumar",
-              position: "",
+              position: "DGM",
               company: "BHEL",
               image: "/images/bhelr1.jpg",
             },
             {
-              name: "Mr. D.Anvesh",
-              position: "",
+              name: "Mr. Dasari Anvesh",
+              position: "Vice President",
               company: "Efftronics",
               image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSll-TKqI55i7SHUuUH0xabUol3dB_a7Z9c7w&s",
             },
             // {
             //   name: "Mr. Raghavendra Kulkarni",
             //   position: "",
-              // company: "CTS",
+              // company: "Cognizant Technology Solutions",
             //   image: "/images/ctsr2.jpg",
             // },
             
@@ -313,18 +313,18 @@ const scheduleData = {
       //         {
       //           name: "Mr. MSR Murthy",
       //           position: "",
-              // company: "TCS",
+              // company: "Tata Consultancy Services",
       //           image: "/images/tcsr1.jpg",
       //         },
       //         {
       //           name: "Mr. Jitender Singh",
       //           position: "",
-              // company: "CTS",
+              // company: "Cognizant Technology Solutions",
       //           image: "/images/ctsr1.jpg",
       //         },
       //         {
       //           name: "Mr. A. Siddharth",
-      //           position: "",
+      //           position: "Director",
               // company: "Avantel",
       //           image: "https://media.licdn.com/dms/image/v2/C5603AQGRNthkb1Rv3A/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1565795305597?e=2147483647&v=beta&t=J8Zi9Pc8VYuWL-4Bn4QIlaqEbJyzYNTJ3OlibtA_-uM",
       //         },
@@ -337,14 +337,14 @@ const scheduleData = {
       //         {
       //           name: "S. Suresh Babu",
       //           position: "",
-              // company: "RAPS",
+              // company: "Ramesh's Aerospace Products & Services Private Limited",
       //           image: "/images/rapsr1.jpg",
       //         },
               
       //         // {
       //         //   name: "Mr. Sarada Prasanna Satapathy ",
       //         //   position: "",
-              // company: "PEGA",
+              // company: "Pegasystems",
       //         //   image: "/images/pegar1.jpg",
       //         // },
       //         // {
@@ -362,13 +362,13 @@ const scheduleData = {
       //         // {
       //         //   name: "Mr.M. Veeran",
       //         //   position: "",
-              // company: "Power Labs",
+              // company: "Power Labs-Chennai",
       //         //   image: "/images/powerlabr1.jpg",
       //         // },
       //         // {
       //         //   name: "Mr Raghavendra Kulkarni",
       //         //   position: "",
-              // company: "CTS",
+              // company: "Cognizant Technology Solutions",
       //         //   image: "/images/ctsr2.jpg",
       //         // },
       //       ],
@@ -412,7 +412,7 @@ const scheduleData = {
             moderators: [
               {
                   name: "Mrs. Padmaja Sriram",
-                  position: "",
+                  position: "Regional Leader Talent Acquisition - APAC",
               company: "AT&T",
                   image: "/images/attr1.jpg",
               },
@@ -427,39 +427,39 @@ const scheduleData = {
             members: [
               {
                 name: "Mr. M S R Murthy",
-                position: "",
-              company: "TCS",
+                position: "Senior Consultant",
+              company: "Tata Consultancy Services",
                 image: "/images/tcsr1.jpg",
               },
               {
                 name:"Mr. Jitender Singh",
-                position: "",
-              company:"CTS",
+                position: "HR Management Campus Recuritment",
+              company:"Cognizant Technology Solutions",
                 image: "/images/ctsr1.jpg",
               },
               {
                 name: "Mr. A. Siddharth",
-                position: "",
+                position: "Director",
               company: "Avantel",
                 image: "https://media.licdn.com/dms/image/v2/C5603AQGRNthkb1Rv3A/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1565795305597?e=2147483647&v=beta&t=J8Zi9Pc8VYuWL-4Bn4QIlaqEbJyzYNTJ3OlibtA_-uM",
               },
               {
                 name: "Smt. V. Prathyusha",
-                position: "",
+                position: "Lead Consultant",
               company: "Transdence",
                 image: "/images/transdencer1.jpg",
               },
               {
                 name:"Mr. S. Suresh Babu",
-                position: "",
-              company:"RAPS Pvt. Ltd.",
+                position: "Group Head, Composites",
+              company:"Ramesh's Aerospace Products & Services Private Limited Pvt. Ltd.",
                 image: "/images/rapsr1.jpg",
               },
              
               // {
               //   name: "Mr. MSR Murthy",
               //   position: "",
-              // company: "TCS",
+              // company: "Tata Consultancy Services",
               //   image: "/images/tcsr1.jpg",
               // },
               // {
@@ -469,9 +469,9 @@ const scheduleData = {
               //   image: "/images/techmr1.jpg",
               // },
               // {
-              //   name: "Dr Krishna Kanth G Avuluir",
-              //   position: "",
-              // company: "AMS",
+              //   name: "Dr Krishna Kanth G Avalur",
+              //   position: "Sr. Manager",
+              // company: "AMS SemiConductors India Pvt Ltd",
               //   image: "/images/amsr1.jpg",
               // },
               // {
@@ -535,7 +535,7 @@ const scheduleData = {
             moderators: [
               {
                   name: "Mrs. Padmaja Sriram",
-                  position: "",
+                  position: "Regional Leader Talent Acquisition - APAC",
               company: "AT&T",
                   image: "/images/attr1.jpg",
               },
@@ -562,20 +562,20 @@ const scheduleData = {
               },
               {
                 name: "Mr. Chaitanya Vetcham",
-                position: "",
+                position: "HR Professional, Campus Recruitment",
               company: "Verizon",
                 image: "/images/verizonr1.jpg",
               },
               {
                 name: "Mr. K. Abhinav",
-                position: "",
+                position: "Delivery Officer",
               company: "Pi Data Center",
                 image: "/images/pidatacr1.jpg",
               },
               {
                 name: "Mr. Rajesh Damerla",
-                position: "",
-              company: "CEO of DLK MegaMart Pvt Ltd & Avinya Spark International Pvt Ltd.",
+                position: "CEO",
+              company: "DLK MegaMart Pvt Ltd & Avinya Spark International Pvt Ltd.",
                 image: "https://media.licdn.com/dms/image/v2/C4E03AQHfAUYDFePjMQ/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1598515829195?e=2147483647&v=beta&t=vZWFACgYTekTSC6gktvjaHnnYFX_x60cCwYMA5le21I",
               },
             ],
@@ -619,7 +619,7 @@ const scheduleData = {
             moderators: [
               {
                   name: "Mrs. Padmaja Sriram",
-                  position: "",
+                  position: "Regional Leader Talent Acquisition - APAC",
               company: "AT&T",
                   image: "/images/attr1.jpg",
               },
@@ -634,32 +634,32 @@ const scheduleData = {
             members: [
               {
                 name: "Mr. Sarada Prasanna Satapathy ",
-                position: "",
-              company: "PEGA",
+                position: "Director",
+              company: "Pegasystems",
                 image: "/images/pegar1.jpg",
               },
               {
-                  name: "Dr Krishna Kanth G Avuluir",
-                  position: "",
-              company: "AMS",
+                  name: "Dr Krishna Kanth G Avalur",
+                  position: "Sr. Manager",
+              company: "AMS SemiConductors India Pvt Ltd",
                   image: "/images/amsr1.jpg",
                 },
               {
                 name: "Mr. M S R Murthy",
-                position: "",
-                company: "TCS",
+                position: "Senior Consultant",
+                company: "Tata Consultancy Services",
                 image: "/images/tcsr1.jpg",
               },
               {
                 name: "Mr Raghavendra Kulkarni",
-                position: "",
-              company: "CTS",
+                position: "Global Engagement Delivery",
+              company: "Cognizant Technology Solutions",
                 image: "/images/ctsr2.jpg",
               },
               
                {
                 name: "Mr. D. Harsha Vardhin",
-                position: "",
+                position: "Project Engineer Mechanical",
               company: "Jesvid Cryo Technologies Private Limited",
                 image: "/images/jesvidr1.jpg",
               },
@@ -667,19 +667,19 @@ const scheduleData = {
               // {
               //   name: "S. Suresh Babu",
               //   position: "",
-              // company: "RAPS",
+              // company: "Ramesh's Aerospace Products & Services Private Limited",
               //   image: "/images/rapsr1.jpg",
               // },
               // {
               //   name: "Srinivas KVNDS",
               //   position: "",
-              // company: "CTS",
+              // company: "Cognizant Technology Solutions",
               //   image: "/images/r2.jpg",
               // },
               // {
               //   name: "Mr.M. Veeran",
               //   position: "",
-              // company: "Power Labs",
+              // company: "Power Labs-Chennai",
               //   image: "/images/powerlabr1.jpg",
               // },
               // {
