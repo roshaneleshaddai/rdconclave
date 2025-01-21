@@ -262,13 +262,13 @@ const scheduleData = {
               name:"Dr.P.V.R.L.Narasimham",
               position: "Prof & Head, EEE Department, Dean- Examinination & Evaluation",
               company:"",
-              image:"",
+              image:"https://www.vrsiddhartha.ac.in/wp-content/uploads/2024/10/Dean-Examinination-Evaluation.jpg",
             },
             {
               name:"Dr.B.Raghava Rao",
               position: "Professor, Dean Academics ",
               company:"",
-              image:"",
+              image:"https://www.vrsiddhartha.ac.in/wp-content/uploads/2024/10/Dean-Academics.jpg",
             },
             // {
             //   name:"CSE/IT",
@@ -552,13 +552,13 @@ const scheduleData = {
                 name: "Srinivas KVNDS",
                 position: "Vice President & Delivery Head for Healthcare practice",
               company: "Persistent Systems, Chennai",
-                image: "/images/persisr1.jpg",
+                image: "https://media.licdn.com/dms/image/v2/C5103AQFWY6CyX1u-eA/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1579412585714?e=1743033600&v=beta&t=kEEVymxyTAT-zcZE4c_fN75DzdguwA7Ps3TjaLYTPBw",
               },
               {
                 name: "Mr.Suresh Babu B",
                 position: "Deputy General Manager",
               company: "HCL Technologies, Vijayawada",
-                image: "",
+                image: "https://media.licdn.com/dms/image/v2/C4D03AQG5RNA9gS4D7Q/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1640257477049?e=1743033600&v=beta&t=lhDcXwxqHd7jfjU6g226g0F-v194CbHRjVfBrGGxsdk",
               },
               {
                 name: "Mr. Chaitanya Vetcham",
@@ -584,13 +584,13 @@ const scheduleData = {
                 name:"Dr.D.Rajeswara Rao",
                 position: "Prof & Head, CSE Department, Dean- Industry Relations, Training & Placements",
               company:"",
-                image:"/images/csehod.jpg",
+                image:"https://www.vrsiddhartha.ac.in/wp-content/uploads/2024/10/Dean-Industry-Relations-Training-Placements.jpg",
               },
               {
                 name:"Dr.G.Narasimha.Swamy",
                 position: "Prof & Head, EIE Department, Dean- Student Affairs & Admissions",
               company:"",
-                image:"",
+                image:"https://www.vrsiddhartha.ac.in/wp-content/uploads/2024/10/Dean-Student-Affairs-Admissions.jpg",
               },
               // {
               //   name:"CSE/IT",
@@ -712,7 +712,7 @@ const scheduleData = {
                 name:"Dr.D.Venkata Rao",
                 position: "Prof & Head, ECE Dept, Dean- Velagapudi Ramakrishna Siddhartha School of Engineering",
               company:"",
-                image:"",
+                image:"https://www.vrsiddhartha.ac.in/wp-content/uploads/2024/10/dean-school.jpg",
               },
              
             
