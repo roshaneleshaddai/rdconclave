@@ -63,19 +63,24 @@ const scheduleData = {
             "Dr. M. Suneetha, Dean - Research, Technology & Development and IQAC, Professor & HoD-IT",
             "Dr. A. V. Ratna Prasad, Pro Vice Chancellor",
             "Dr. P. Venkateswara Rao, Vice Chancellor",
-            "Sri M. Rajaiah, President, SAGTE",
+            "Dr. k. V. Chowdary, Chancellor",
             "Sri P. Lakshmana Rao, Secretary, SAGTE",
-            "Mrs. Padmaja Sriram, AT&T (Guest of Honor)",
-            "Mr. Sarada Prasanna Satapathy, Pegasystems (Guest of Honor)",
-            "Mr. M S R Murthy, Tata Consultancy Services (Guest of Honor)",
-            "Mr. Suresh Babu B, HCL Technologies (Guest of Honor)",
-            "Mr. M. Srinivas Reddy, Tech Mahindra (Guest of Honor)",
-            "Mr. Jitender Singh, Cognizant Technology Solutions (Guest of Honor)",
-            "Sri Anagani Satya Prasad, Minister for Revenue, Registration and Stamps of Andhra Pradesh (Chief Guest)",
-            "Sri. Gottipati Ravi Kumar, Minister of Energy of Andhra Pradesh (Chief Guest)",
-            "Sri. Nadendla Manohar, Minister of Civil Supplies, Food & Consumer Affairs of Andhra Pradesh (Chief Guest)",
-            "Sri. Yalamanchili Satyanarayana Chowdary, MLA West, AP (Chief Guest)",
-            "Sri. Bode Prasad, MLA, Penamaluru"
+            "Sri M. Rajaiah, President, SAGTE",
+            "Guest of Honor : ",
+            // "Mrs. Padmaja Sriram, AT&T",
+            "Sri Shariff Mohammed Ahmed, Former Adviser (Minority Affairs), Government of Andhra Pradesh Legislative Council",
+            "Mr. Sarada Prasanna Satapathy, Pegasystems",
+            "Mr. M S R Murthy, Tata Consultancy Services",
+            "Mr. Suresh Babu B, HCL Technologies",
+            "Mr. M. Srinivas Reddy, Tech Mahindra",
+            "Mr. Jitender Singh, Cognizant Technology Solutions",
+            "Mr. A. Siddharth, Director at Avantel Limited & imeds Private Limited & Co-Founder of Simply Science",
+            "Chief Guest : ",
+            // "Sri Anagani Satya Prasad, Minister for Revenue, Registration and Stamps of Andhra Pradesh (Chief Guest)",
+            "Sri. Gottipati Ravi Kumar, Minister of Energy of Andhra Pradesh",
+            // "Sri. Nadendla Manohar, Minister of Civil Supplies, Food & Consumer Affairs of Andhra Pradesh (Chief Guest)",
+            // "Sri. Yalamanchili Satyanarayana Chowdary, MLA West, AP (Chief Guest)",
+            // "Sri. Bode Prasad, MLA, Penamaluru"
           ]
         }
       },
@@ -96,7 +101,7 @@ const scheduleData = {
         }
       },
       {
-        "time": "09:55 AM – 10:00 AM",
+        "time": "09:55 AM – 10:05 AM",
         "title": "Opening Remarks by Convenor",
         "description": {
           "mainContent": "Dr. M. Suneetha, Dean - Research, Technology & Development and IQAC, Professor and HoD-IT, delivers the opening remarks.",
@@ -104,7 +109,7 @@ const scheduleData = {
         }
       },
       {
-        "time": "10:00 AM – 10:05 AM",
+        "time": "10:05 AM – 10:10 AM",
         "title": "Address by Pro Vice Chancellor",
         "description": {
           "mainContent": "Speech by Dr. A. V. Ratna Prasad, Pro Vice Chancellor.",
@@ -112,7 +117,7 @@ const scheduleData = {
         }
       },
       {
-        "time": "10:05 AM – 10:10 AM",
+        "time": "10:10 AM – 10:15 AM",
         "title": "Address by Vice Chancellor",
         "description": {
           "mainContent": "Speech by Dr. P. Venkateswara Rao, Vice Chancellor.",
@@ -120,15 +125,15 @@ const scheduleData = {
         }
       },
       {
-        "time": "10:10 AM – 10:15 AM",
+        "time": "10:15 AM – 10:20 AM",
         "title": "Guest of Honor Address: AT&T",
         "description": {
-          "mainContent": "Speech by Mrs. Padmaja Sriram, AT&T.",
+          "mainContent": "Sri Shariff Mohammed Ahmed, Former Adviser (Minority Affairs), Government of Andhra Pradesh Legislative Council.",
           
         }
       },
       {
-        "time": "10:15 AM – 10:20 AM",
+        "time": "10:20 AM – 10:25 AM",
         "title": "Guest of Honor Address: Pegasystems",
         "description": {
           "mainContent": "Speech by Mr. Sarada Prasanna Satapathy, Pegasystems.",
@@ -136,7 +141,7 @@ const scheduleData = {
         }
       },
       {
-        "time": "10:20 AM – 10:25 AM",
+        "time": "10:25 AM – 10:30 AM",
         "title": "Guest of Honor Address: Tata Consultancy Services",
         "description": {
           "mainContent": "Speech by Mr. M S R Murthy, Tata Consultancy Services.",
@@ -144,7 +149,7 @@ const scheduleData = {
         }
       },
       {
-        "time": "10:25 AM – 10:30 AM",
+        "time": "10:30 AM – 10:35 AM",
         "title": "Guest of Honor Address: HCL Technologies",
         "description": {
           "mainContent": "Speech by Mr. Suresh Babu B, HCL Technologies.",
@@ -152,7 +157,7 @@ const scheduleData = {
         }
       },
       {
-        "time": "10:30 AM – 10:35 AM",
+        "time": "10:35 AM – 10:40 AM",
         "title": "Guest of Honor Address: Tech Mahindra",
         "description": {
           "mainContent": "Speech by Mr. M. Srinivas Reddy, Tech Mahindra.",
@@ -160,16 +165,42 @@ const scheduleData = {
         }
       },
       {
-        "time": "10:35 AM – 10:40 AM",
+        "time": "10:40 AM – 10:45 AM",
         "title": "Guest of Honor Address: Cognizant Technology Solutions",
         "description": {
           "mainContent": "Speech by Mr. Jitender Singh, Cognizant Technology Solutions.",
-          "keyPoints": [
-            "Sri Anagani Satya Prasad, Minister for Revenue, Registration and Stamps of Andhra Pradesh",
-            "Sri Gottipati Ravi Kumar, Minister of Energy of Andhra Pradesh",
-            "Sri Nadendla Manohar, Minister of Civil Supplies, Food & Consumer Affairs of Andhra Pradesh",
-            "Sri Yalamanchili Satyanarayana Chowdary, MLA West, AP"
-          ]
+          // "keyPoints": [
+          //   "Sri Anagani Satya Prasad, Minister for Revenue, Registration and Stamps of Andhra Pradesh",
+          //   "Sri Gottipati Ravi Kumar, Minister of Energy of Andhra Pradesh",
+          //   "Sri Nadendla Manohar, Minister of Civil Supplies, Food & Consumer Affairs of Andhra Pradesh",
+          //   "Sri Yalamanchili Satyanarayana Chowdary, MLA West, AP"
+          // ]
+        }
+      },
+      {
+        "time": "10:45 AM – 10:50 AM",
+        "title": "Guest of Honor Address: Avantel",
+        "description": {
+          "mainContent": "Speech by Mr. Sidhharth Abburi.",
+          // "keyPoints": [
+          //   "Sri Anagani Satya Prasad, Minister for Revenue, Registration and Stamps of Andhra Pradesh",
+          //   "Sri Gottipati Ravi Kumar, Minister of Energy of Andhra Pradesh",
+          //   "Sri Nadendla Manohar, Minister of Civil Supplies, Food & Consumer Affairs of Andhra Pradesh",
+          //   "Sri Yalamanchili Satyanarayana Chowdary, MLA West, AP"
+          // ]
+        }
+      },
+      {
+        "time": "10:50 AM – 11:00 AM",
+        "title": "Guest of Honor Address: Minister of Energy of Andhra Pradesh",
+        "description": {
+          "mainContent": "Speech by Sri. Gottipati Ravi Kumar",
+          // "keyPoints": [
+          //   "Sri Anagani Satya Prasad, Minister for Revenue, Registration and Stamps of Andhra Pradesh",
+          //   "Sri Gottipati Ravi Kumar, Minister of Energy of Andhra Pradesh",
+          //   "Sri Nadendla Manohar, Minister of Civil Supplies, Food & Consumer Affairs of Andhra Pradesh",
+          //   "Sri Yalamanchili Satyanarayana Chowdary, MLA West, AP"
+          // ]
         }
       },
     
@@ -244,11 +275,17 @@ const scheduleData = {
               image: "/images/bhelr1.jpg",
             },
             {
-              name: "Mr. D. Anvesh",
-              position: "Executive Manager ",
-              company: "Efftronics Systems Private Limited, Vijayawada",
-              image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSll-TKqI55i7SHUuUH0xabUol3dB_a7Z9c7w&s",
+              name: "Smt. V. Prathyusha",
+              position: "Lead Consultant",
+            company: "Transdence, Vijayawada",
+              image: "/images/transdencer1.jpg",
             },
+            // {
+            //   name: "Mr. D. Anvesh",
+            //   position: "Executive Manager ",
+            //   company: "Efftronics Systems Private Limited, Vijayawada",
+            //   image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSll-TKqI55i7SHUuUH0xabUol3dB_a7Z9c7w&s",
+            // },
             // {
             //   name: "Mr. Raghavendra Kulkarni",
             //   position: "",
@@ -259,23 +296,30 @@ const scheduleData = {
           ],
           Academicians:[
             {
-              name:"Dr. A. Sreeram",
-              position: "Professor & Head, Department of Business Management",
-              company:"",
-              image:"",
-            },
-            {
               name:"Dr. P. V. R. L. Narasimham",
               position: "Professor & Head, EEE Department, Dean- Examinination & Evaluation",
               company:"",
               image:"https://www.vrsiddhartha.ac.in/wp-content/uploads/2024/10/Dean-Examinination-Evaluation.jpg",
             },
             {
-              name:"Dr. B. Raghava Rao",
-              position: "Professor, Dean Academics ",
-              company:"",
-              image:"https://www.vrsiddhartha.ac.in/wp-content/uploads/2024/10/Dean-Academics.jpg",
+              name:"Dr. N. Vijaya Sai",
+              position: "Professor & Head",
+            company:"ME Department",
+              image:"/images/r.jpg",
             },
+            {
+              name:"Dr. A. Sreeram",
+              position: "Professor & Head, Department of Business Management",
+              company:"",
+              image:"",
+            },
+            
+            // {
+            //   name:"Dr. B. Raghava Rao",
+            //   position: "Professor, Dean Academics ",
+            //   company:"",
+            //   image:"https://www.vrsiddhartha.ac.in/wp-content/uploads/2024/10/Dean-Academics.jpg",
+            // },
             // {
             //   name:"CSE/IT",
             //   position: "",
@@ -463,9 +507,9 @@ const scheduleData = {
                 image: "/images/transdencer1.jpg",
               },
               {
-                name:"Mr. S. Suresh Babu",
+                name:"Mr. S. Suresh Babu(RAPS) Pvt.Ltd.",
                 position: "Senior General Manager Finance",
-              company:"Ramesh's Aerospace Products & Services Private Limited Pvt. Ltd. Coimbatore, Tamilnadu",
+              company:"Roots Group of companies, Coimbatore, Tamilnadu",
                 image: "/images/rapsr1.jpg",
               },
              
@@ -501,12 +545,12 @@ const scheduleData = {
               // },
             ],
             Academicians:[
-              {
-                name:"Dr. M. Suneetha",
-                position: "Professor & Head, IT Dept, Dean Research, Technology Development & IQAC",
-              company:"",
-                image:"/images/HODIT.jpg",
-              },
+              // {
+              //   name:"Dr. M. Suneetha",
+              //   position: "Professor & Head, IT Dept, Dean Research, Technology Development & IQAC",
+              // company:"",
+              //   image:"/images/HODIT.jpg",
+              // },
               // {
               //   name:"Dr. A. V. Ratna Prasad",
               //   position: "Pro-Vice Chancellor",
@@ -514,17 +558,23 @@ const scheduleData = {
               //   image:"https://www.vrsiddhartha.ac.in/wp-content/uploads/2024/09/principal_2024-1-275x300.jpg",
               // },
               {
-                name:"Dr. Mallikarjuna Rao",
-                position: "Professor",
-              company:"CE Department",
-                image:"/images/ceprof.jpg",
-              },
-              {
-                name:"Dr. N. Vijaya Sai",
-                position: "Professor & Head",
-              company:"ME Department",
+                name:"Dr. M. V. S. Raju",
+                position: "Professor, CE Department, Former Dean R & D, IQAC Coordinator",
+              company:"",
                 image:"/images/r.jpg",
               },
+              {
+              name:"Dr. B. Raghava Rao",
+              position: "Professor, Dean Academics ",
+              company:"",
+              image:"https://www.vrsiddhartha.ac.in/wp-content/uploads/2024/10/Dean-Academics.jpg",
+            },
+            {
+              name:"Dr. Mallikarjuna Rao",
+              position: "Professor",
+            company:"CE Department",
+              image:"/images/ceprof.jpg",
+            },
               // {
               //   name:"CE",
               //   position: "",
@@ -559,11 +609,12 @@ const scheduleData = {
         panelMembers: {
             moderators: [
               {
-                name: "Mr. Sarada Prasanna Satapathy ",
-                position: "Director Global University Academic Programs ",
-              company: "Pegasystems, Hyderabad",
-                image: "/images/pegar1.jpg",
+                name: "Mr.Suresh Babu B",
+                position: "Deputy General Manager",
+              company: "HCL Technologies, Vijayawada",
+                image: "https://media.licdn.com/dms/image/v2/C4D03AQG5RNA9gS4D7Q/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1640257477049?e=1743033600&v=beta&t=lhDcXwxqHd7jfjU6g226g0F-v194CbHRjVfBrGGxsdk",
               },
+              
               // {
               //     name: "Mrs. Padmaja Sriram",
               //     position: "Regional Leader Talent Acquisition - APAC",
@@ -585,11 +636,17 @@ const scheduleData = {
               company: "Persistent Systems, Chennai",
                 image: "https://media.licdn.com/dms/image/v2/C5103AQFWY6CyX1u-eA/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1579412585714?e=1743033600&v=beta&t=kEEVymxyTAT-zcZE4c_fN75DzdguwA7Ps3TjaLYTPBw",
               },
+              // {
+              //   name: "Mr.Suresh Babu B",
+              //   position: "Deputy General Manager",
+              // company: "HCL Technologies, Vijayawada",
+              //   image: "https://media.licdn.com/dms/image/v2/C4D03AQG5RNA9gS4D7Q/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1640257477049?e=1743033600&v=beta&t=lhDcXwxqHd7jfjU6g226g0F-v194CbHRjVfBrGGxsdk",
+              // },
               {
-                name: "Mr.Suresh Babu B",
-                position: "Deputy General Manager",
-              company: "HCL Technologies, Vijayawada",
-                image: "https://media.licdn.com/dms/image/v2/C4D03AQG5RNA9gS4D7Q/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1640257477049?e=1743033600&v=beta&t=lhDcXwxqHd7jfjU6g226g0F-v194CbHRjVfBrGGxsdk",
+                name: "Mr. Sarada Prasanna Satapathy ",
+                position: "Director Global University Academic Programs ",
+              company: "Pegasystems, Hyderabad",
+                image: "/images/pegar1.jpg",
               },
               {
                 name: "Mr. Chaitanya Vetcham",
@@ -1032,7 +1089,7 @@ const Schedule = () => {
           <div className="mb-8 p-4 border border-gray-300 rounded-lg">
             <h2 className="text-lg font-semibold mb-4">Online Presentations Schedule on 24th & 25th January 2025</h2>
             <a
-              href="/online schedule.pdf"
+              href="/online schedule[1].pdf"
               download="Online_Presentation_Schedule_24th-25th_Jan_2025.pdf"
               className="text-blue-500 hover:underline"
             >
@@ -1045,7 +1102,7 @@ const Schedule = () => {
           <div className="mb-8 p-4 border border-gray-300 rounded-lg">
             <h2 className="text-lg font-semibold mb-4">Offline Presentations Schedule on 24th & 25th January 2025</h2>
             <a
-              href="/OFFLINE SCHEDULE.pdf"
+              href="/OFFLINE SCHEDULE[1].pdf"
               download="Offline_Presentation_Schedule_24th-25th_Jan_2025.pdf"
               className="text-blue-500 hover:underline"
             >
