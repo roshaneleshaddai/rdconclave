@@ -7,29 +7,29 @@ import React, { useState, useEffect } from "react";
   const SpeakersNames = () => {
     const [isVisible, setIsVisible] = useState(false);
     const Patrons = [
-      { ind:7, name: 'Mrs. Padmaja Sriram', src: '/images/attr1.jpg', position: 'Regional Leader Talent Acquisition - APAC', company:'AT&T' },
-      { ind:3, name: 'Mr. Sarada Prasanna Satapathy', src: '/images/pegar1.jpg', position: 'Director, Technical Enablement & Global University Program', company:'Pega' },
-      { ind:1, name: 'Mr. MSR Murthy', src: '/images/tcsr1.jpg', position: 'Senior Consultant', company:'TCS' },
-      { ind:4, name: 'Mr. Jitender Singh', src: '/images/ctsr1.jpg', position: 'HR Manager-Campus Recruitment', company:'CTS' },
-      { ind:4, name: 'Mr. Raghavendra Kulkarni', src: '/images/ctsr2.jpg', position: 'Global Engagement Delivery' , company:'CTS'},
-      { ind:5, name: 'Mr. Chaitanya Vetcham', src: '/images/verizonr1.jpg', position: 'HR Professional, Campus Relations', company:'Verizon' },
-      { ind:6, name: 'Mr. M. Srinivas Reddy', src: '/images/techmr1.jpg', position: 'IT Delivery Manager' , company:'Tech Mahindra'},
-      { ind:8, name: 'Mr. Rajesh', src: '/images/r1.jpg', position: '', company:'HCL' },
-      { ind:11, name: 'Mr.K. Abhinav ', src: '/images/pidatacr1.jpg', position: 'Director & Chief Data Center Delivery Officer', company:'Pi DATACENTERS' },
-      { ind:12, name: 'Mr. A. Satyanarayana', src: '/images/r1.jpg', position: 'Manager', company:'Avantel' },
-      { ind:13, name: 'Mr M Veeran', src: '/images/powerlabr1.jpg', position: 'Head Sales & Marketing', company:'Power Labs- Chennai' },
+      { ind:7, name: 'Mrs. Padmaja Sriram', src: '/images/attr1.jpg', position: 'Regional Leader Talent Acquisition - APAC', company:'AT&T, Hyderabad' },
+      { ind:3, name: 'Mr. Sarada Prasanna Satapathy', src: '/images/pegar1.jpg', position: 'Director Global University Academic Programs', company:'Pegasystems' },
+      { ind:1, name: 'Mr. M S R Murthy', src: '/images/tcsr1.jpg', position: 'Senior Consultant', company:'Tata Consultancy Services, Hyderabad' },
+      { ind:4, name: 'Mr. Jitender Singh', src: '/images/ctsr1.jpg', position: 'HR Manager Campus Recruitment', company:'Cognizant Technology Solutions' },
+      { ind:4, name: 'Mr. Raghavendra Kulkarni', src: '/images/ctsr2.jpg', position: 'Project Manager' , company:'Cognizant Technology Solutions'},
+      { ind:5, name: 'Mr. Chaitanya Vetcham', src: '/images/verizonr1.jpg', position: 'HR Professional, HR Generalist, Campus Relations Onboarding Speclist', company:'Verizon' },
+      { ind:6, name: 'Mr. M. Srinivas Reddy', src: '/images/techmr1.jpg', position: 'Central Sourcing & Recruitment Manager' , company:'Tech Mahindra'},
+      { ind:8, name: 'Mr. Suresh Babu B', src: 'https://media.licdn.com/dms/image/v2/C4D03AQG5RNA9gS4D7Q/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1640257477049?e=1743033600&v=beta&t=lhDcXwxqHd7jfjU6g226g0F-v194CbHRjVfBrGGxsdk', position: 'Deputy General Manager', company:'HCL Technologies, Vijayawada' },
+      { ind:11, name: 'Mr. K. Abhinav ', src: '/images/pidatacr1.jpg', position: 'Director & Chief Data Center Delivery Officer', company:'Pi DataCenters, Vijayawada' },
+      // { ind:12, name: 'Mr. A. Satyanarayana', src: '/images/r1.jpg', position: 'Manager', company:'Avantel' },
+      { ind:13, name: 'Mr. M. Veeran', src: '/images/powerlabr1.jpg', position: 'Head Sales & Marketing', company:'Power Lab Instruments Chennai' },
       { ind:14, name: 'Smt. V. Prathyusha', src: '/images/transdencer1.jpg', position: 'Lead Consultant', company:'Transdence' },
-      { ind:15, name: 'Dr Krishna Kanth G Avulur', src: '/images/amsr1.jpg', position: 'Sr Manager', company:'AMS Semi-Conductors India Pvt Ltd' },
-      { ind:16, name: 'Mr. Surapaneni Suresh Babu', src: '/images/rapsr1.jpg', position: 'Group head, Composites', company:"Ramesh's Aerospace Products & Services (RAPS) Pvt. Ltd" },
-      { ind:17, name: 'Mr. D. Harsha Vardhin', src: '/images/jesvidr1.jpg', position: 'Project Engineer Mechanical', company:'Jesvid Cryo Technologies Private Limited' },
-      { ind:18, name: 'Mr. T.Kamal Kumar', src: '/images/bhelr1.jpg', position: 'DGM', company:'BHEL' },
+      { ind:15, name: 'Dr Krishna Kanth G Avulur', src: '/images/amsr1.jpg', position: '', company:'Director R&D @ams OSRAM & Founder @ MOSart Labs' },
+      { ind:16, name: 'Mr. Surapaneni Suresh Babu', src: '/images/rapsr1.jpg', position: 'Senior General Manager Finance', company:"Ramesh's Aerospace Products & Services (RAPS) Pvt. Ltd" },
+      { ind:17, name: 'Mr. D. Harsha Vardhin', src: '/images/jesvidr1.jpg', position: 'Project Engineer Mechanical', company:'Jesvid Cryo Technologies Private Limited, Vijayawada' },
+      { ind:18, name: 'Mr. T.Kamal Kumar', src: '/images/bhelr1.jpg', position: 'General Manager', company:'Bharat Heavy Electricals Limited' },
       {ind:19, name: "Mr. Dasari Anvesh",src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSll-TKqI55i7SHUuUH0xabUol3dB_a7Z9c7w&s",position: "Vice President",company: "Efftronics"},
-      {ind:20, name: "Mr. Abburi Siddhartha",position: "Director",company: "Avantel",src: "https://media.licdn.com/dms/image/v2/C5603AQGRNthkb1Rv3A/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1565795305597?e=2147483647&v=beta&t=J8Zi9Pc8VYuWL-4Bn4QIlaqEbJyzYNTJ3OlibtA_-uM",},
+      {ind:20, name: "Mr. Abburi Siddharth",position: "Director at Avantel Limited & imeds Private Limited & Co-Founder of Simply Science",company: "Avantel",src: "https://media.licdn.com/dms/image/v2/C5603AQGRNthkb1Rv3A/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1565795305597?e=2147483647&v=beta&t=J8Zi9Pc8VYuWL-4Bn4QIlaqEbJyzYNTJ3OlibtA_-uM",},
       {
         ind:21,
         name: "Srinivas KVNDS",
         position: "Vice President & Delivery Head for Healthcare practice",
-      company: "Persistent Systems",
+      company: "Persistent Systems, Chennai",
         src: "/images/persisr1.jpg",
       },
       {
@@ -96,7 +96,7 @@ import React, { useState, useEffect } from "react";
                   scale: 1.05,
                   boxShadow: "0px 10px 15px rgba(0, 0, 0, 0.2)",
                 }}
-                className="flex flex-col justify-center items-center p-4 m-2 border-2 border-[#213555] border-opacity-20 rounded-lg shadow-md w-[250px] h-[300px] bg-white"
+                className="flex flex-col justify-center items-center p-4 m-2 mb-4 border-2 border-[#213555] border-opacity-20 rounded-lg shadow-md w-[300px] h-[350px] bg-white"
               >
                 <div className="flex flex-col justify-center items-center h-full">
                   <Image
@@ -115,7 +115,7 @@ import React, { useState, useEffect } from "react";
           </ul>
 
           {/* Display remaining cards on scroll */}
-          <ul className="mt-4 list-none flex max-w-6xl flex-wrap justify-center items-center gap-4">
+          <ul className="mt-4 list-none flex max-w-8xl flex-wrap justify-center items-center gap-4">
             {bottomResearchers.slice(4).map((researcher, index) => (
               <motion.li
                 key={`rest-${index}`}
@@ -134,7 +134,7 @@ import React, { useState, useEffect } from "react";
                   scale: 1.05,
                   boxShadow: "0px 10px 15px rgba(0, 0, 0, 0.2)",
                 }}
-                className="flex flex-col justify-center items-center p-4 m-2 border-2 border-[#213555] border-opacity-20 rounded-lg shadow-md w-[250px] h-[300px] bg-white"
+                className="flex flex-col justify-center items-center p-4 m-2 border-2 border-[#213555] border-opacity-20 rounded-lg shadow-md w-[300px] h-[350px] bg-white"
               >
                 <div className="flex flex-col justify-center items-center h-full">
                   <Image
