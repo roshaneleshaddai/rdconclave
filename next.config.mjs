@@ -17,7 +17,10 @@ const nextConfig = {
       'www.powerlabinstruments.com',
       'static.brandfinance.com',
       'media.licdn.com',
-      
+      'www.geospatialworld.net',
+      'logosandtypes.com',
+      'iittnif.com',
+      'media.licdn.com',
     ],
   },
 };
