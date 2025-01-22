@@ -1036,7 +1036,7 @@ const Schedule = () => {
               download="Online_Presentation_Schedule_24th-25th_Jan_2025.pdf"
               className="text-blue-500 hover:underline"
             >
-              <button className="px-6 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">
+              <button className="px-6 py-2 bg-[#604CC3] text-white rounded hover:bg-[#604CC3]/90">
                 Download Online Schedule
               </button>
             </a>
@@ -1049,7 +1049,7 @@ const Schedule = () => {
               download="Offline_Presentation_Schedule_24th-25th_Jan_2025.pdf"
               className="text-blue-500 hover:underline"
             >
-              <button className="px-6 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">
+              <button className="px-6 py-2 bg-[#604CC3] text-white rounded hover:bg-[#604CC3]/90">
                 Download Offline Schedule
               </button>
             </a>
