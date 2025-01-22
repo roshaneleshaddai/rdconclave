@@ -984,7 +984,7 @@ const Schedule = () => {
           <div className="mb-8 p-4 border border-gray-300 rounded-lg">
             <h2 className="text-lg font-semibold mb-4">Online Presentations Schedule on 24th & 25th January 2025</h2>
             <a
-              href="/online schedule[1].pdf"
+              href="/online schedule.pdf"
               download="Online_Presentation_Schedule_24th-25th_Jan_2025.pdf"
               className="text-blue-500 hover:underline"
             >
@@ -997,7 +997,7 @@ const Schedule = () => {
           <div className="mb-8 p-4 border border-gray-300 rounded-lg">
             <h2 className="text-lg font-semibold mb-4">Offline Presentations Schedule on 24th & 25th January 2025</h2>
             <a
-              href="/OFFLINE SCHEDULE[1].pdf"
+              href="/OFFLINE SCHEDULE.pdf"
               download="Offline_Presentation_Schedule_24th-25th_Jan_2025.pdf"
               className="text-blue-500 hover:underline"
             >
