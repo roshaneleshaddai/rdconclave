@@ -102,106 +102,106 @@ const scheduleData = {
       },
       {
         "time": "09:55 AM – 10:05 AM",
-        "title": "Opening Remarks by Convenor",
-        "description": {
-          "mainContent": "Dr. M. Suneetha, Dean - Research, Technology & Development and IQAC, Professor and HoD-IT, delivers the opening remarks.",
+        "title": "Opening Remarks by Convenor : Dr. M. Suneetha, Dean - Research, Technology & Development and IQAC, Professor and HoD-IT, delivers the opening remarks.",
+        // "description": {
+        //   "mainContent": "Dr. M. Suneetha, Dean - Research, Technology & Development and IQAC, Professor and HoD-IT, delivers the opening remarks.",
           
-        }
+        // }
       },
       {
         "time": "10:05 AM – 10:10 AM",
-        "title": "Address by Pro Vice Chancellor",
-        "description": {
-          "mainContent": "Speech by Dr. A. V. Ratna Prasad, Pro Vice Chancellor.",
+        "title": "Speech by Dr. A. V. Ratna Prasad, Pro Vice Chancellor.",
+        // "description": {
+        //   "mainContent": "Speech by Dr. A. V. Ratna Prasad, Pro Vice Chancellor.",
           
-        }
+        // }
       },
       {
         "time": "10:10 AM – 10:15 AM",
-        "title": "Address by Vice Chancellor",
-        "description": {
-          "mainContent": "Speech by Dr. P. Venkateswara Rao, Vice Chancellor.",
+        "title": "Speech by Dr. P. Venkateswara Rao, Vice Chancellor.",
+        // "description": {
+        //   "mainContent": "Speech by Dr. P. Venkateswara Rao, Vice Chancellor.",
           
-        }
+        // }
       },
       {
         "time": "10:15 AM – 10:20 AM",
-        "title": "Guest of Honor Address: AT&T",
-        "description": {
-          "mainContent": "Sri Shariff Mohammed Ahmed, Former Adviser (Minority Affairs), Government of Andhra Pradesh Legislative Council.",
+        "title": "Speech by Sri Shariff Mohammed Ahmed, Former Adviser (Minority Affairs), Government of Andhra Pradesh Legislative Council.",
+        // "description": {
+          // "mainContent": "Sri Shariff Mohammed Ahmed, Former Adviser (Minority Affairs), Government of Andhra Pradesh Legislative Council.",
           
-        }
+        // }
       },
       {
         "time": "10:20 AM – 10:25 AM",
-        "title": "Guest of Honor Address: Pegasystems",
-        "description": {
-          "mainContent": "Speech by Mr. Sarada Prasanna Satapathy, Pegasystems.",
+        "title": "Speech by Mr. Sarada Prasanna Satapathy, Director Global University Academic Programs, PEGA, Hyderabad",
+        // "description": {
+          // "mainContent": "Speech by Mr. Sarada Prasanna Satapathy, Pegasystems.",
           
-        }
+        // }
       },
       {
         "time": "10:25 AM – 10:30 AM",
-        "title": "Guest of Honor Address: Tata Consultancy Services",
-        "description": {
-          "mainContent": "Speech by Mr. M S R Murthy, Tata Consultancy Services.",
+        "title": "Speech by Mr. M S R Murthy, Tata Consultancy Services, Hyderabad",
+        // "description": {
+          // "mainContent": "Speech by Mr. M S R Murthy, Tata Consultancy Services.",
           
-        }
+        // }
       },
       {
         "time": "10:30 AM – 10:35 AM",
-        "title": "Guest of Honor Address: HCL Technologies",
-        "description": {
-          "mainContent": "Speech by Mr. Suresh Babu B, HCL Technologies.",
+        "title": "Speech by Mr. Suresh Babu B, Deputy General Manager, AP, HCL Technologies.",
+        // "description": {
+          // "mainContent": "Speech by Mr. Suresh Babu B, HCL Technologies.",
           
-        }
+        // }
       },
       {
         "time": "10:35 AM – 10:40 AM",
-        "title": "Guest of Honor Address: Tech Mahindra",
-        "description": {
-          "mainContent": "Speech by Mr. M. Srinivas Reddy, Tech Mahindra.",
+        "title": "Speech by Mr. V. Srinivas Reddy, Central Sourcing & Recruitment Manager, TechMahindra, Vijayawada",
+        // "description": {
+          // "mainContent": "Speech by Mr. M. Srinivas Reddy, Tech Mahindra.",
           
-        }
+        // }
       },
       {
         "time": "10:40 AM – 10:45 AM",
-        "title": "Guest of Honor Address: Cognizant Technology Solutions",
-        "description": {
-          "mainContent": "Speech by Mr. Jitender Singh, Cognizant Technology Solutions.",
+        "title": "Speech by Mr. Jitender Singh, HR Manager-Campus Recruitment, Cognizant Technology Solutions",
+        // "description": {
+          // "mainContent": "Speech by Mr. Jitender Singh, Cognizant Technology Solutions.",
           // "keyPoints": [
           //   "Sri Anagani Satya Prasad, Minister for Revenue, Registration and Stamps of Andhra Pradesh",
           //   "Sri Gottipati Ravi Kumar, Minister of Energy of Andhra Pradesh",
           //   "Sri Nadendla Manohar, Minister of Civil Supplies, Food & Consumer Affairs of Andhra Pradesh",
           //   "Sri Yalamanchili Satyanarayana Chowdary, MLA West, AP"
           // ]
-        }
+        // }
       },
       {
         "time": "10:45 AM – 10:50 AM",
-        "title": "Guest of Honor Address: Avantel",
-        "description": {
-          "mainContent": "Speech by Mr. Sidhharth Abburi.",
+        "title": "Speech by Mr. Siddharth Abburi, Director, Avantel & IMEDS Private Limited, Vijayawada",
+        // "description": {
+          // "mainContent": "Speech by Mr. Sidhharth Abburi.",
           // "keyPoints": [
           //   "Sri Anagani Satya Prasad, Minister for Revenue, Registration and Stamps of Andhra Pradesh",
           //   "Sri Gottipati Ravi Kumar, Minister of Energy of Andhra Pradesh",
           //   "Sri Nadendla Manohar, Minister of Civil Supplies, Food & Consumer Affairs of Andhra Pradesh",
           //   "Sri Yalamanchili Satyanarayana Chowdary, MLA West, AP"
           // ]
-        }
+        // }
       },
       {
         "time": "10:50 AM – 11:00 AM",
-        "title": "Guest of Honor Address: Minister of Energy of Andhra Pradesh",
-        "description": {
-          "mainContent": "Speech by Sri. Gottipati Ravi Kumar",
+        "title": "Speech by Sri. Gottipati Ravi Kumar, Minister of Energy of Andhra Pradesh",
+        // "description": {
+          // "mainContent": "Speech by Sri. Gottipati Ravi Kumar",
           // "keyPoints": [
           //   "Sri Anagani Satya Prasad, Minister for Revenue, Registration and Stamps of Andhra Pradesh",
           //   "Sri Gottipati Ravi Kumar, Minister of Energy of Andhra Pradesh",
           //   "Sri Nadendla Manohar, Minister of Civil Supplies, Food & Consumer Affairs of Andhra Pradesh",
           //   "Sri Yalamanchili Satyanarayana Chowdary, MLA West, AP"
           // ]
-        }
+        // }
       },
     
     {
@@ -231,6 +231,7 @@ const scheduleData = {
               "Human-AI Collaboration : Balancing machine-generated content with human creativity for innovative outcomes.",
               "Future Trends and Workforce Implications : Preparing for the evolving impact of AI on jobs and skill develoent.",
           ],
+          brief:"Dr.M.Suneetha, Professor & Head, IT Dept, Dean R & D, SAHE",
         },
       panelMembers: {
           moderators: [
@@ -457,6 +458,7 @@ const scheduleData = {
             "Reskilling the Current Workforce : Addressing the need for continuous learning and reskilling initiatives for professionals already in the field.",
             "Policy Support and Government Initiatives : Discussing the role of policies and funding to support skill development in high-demand tech areas.",
         ],
+        brief:"Dr.M.Suneetha, Professor & Head, IT Dept, Dean R & D, SAHE",
         },
         panelMembers: {
             moderators: [
@@ -605,6 +607,7 @@ const scheduleData = {
             "Impact on Operations and Efficiency : How these technologies optimize operations, reduce costs, and improve decision-making in various industries.",
             "Research and Development Challenges : Discussing the technical, ethical, and regulatory challenges of implementing digital twins and the metaverse in real-world scenarios.",
         ],
+        brief:"E.Laxmi Lydia, Professor, IT Department",
         },
         panelMembers: {
             moderators: [
@@ -708,6 +711,7 @@ const scheduleData = {
             "Responsible Data Usage : Ensuring AI systems use data ethically and avoid discrimination or bias.",
             "Public Trust and Accountability : Building public confidence in AI technologies through transparency, governance, and oversight.",
         ],
+        brief:"E.Laxmi Lydia, Professor, IT Department",
         },
         panelMembers: {
             moderators: [
@@ -944,6 +948,7 @@ const Schedule = () => {
                 </button>
               )}
             </div>
+            
             <div
             className={`${
               isExpanded(index) ? "max-h-full opacity-100" : "max-h-0 opacity-0"
@@ -984,7 +989,7 @@ const Schedule = () => {
                 )}
                 {session.panelMembers && (
                   <div className="mt-4">
-                    <div className="py-2"><strong>Briefing by </strong> Dr.M.Suneetha, Professor & Head, IT Dept, Dean R & D, SAHE</div>
+                    <div className="py-2"><strong>Briefing by </strong> {session.description.brief}</div>
                     {session.panelMembers.moderators && (
                       <div>
                     <h3 className="text-md font-semibold text-gray-800 mb-2">
