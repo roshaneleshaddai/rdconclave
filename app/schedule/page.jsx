@@ -306,7 +306,7 @@ const scheduleData = {
               name:"Dr. N. Vijaya Sai",
               position: "Professor & Head",
             company:"ME Department",
-              image:"/images/r.jpg",
+              image:"/images/mehod.png",
             },
             {
               name:"Dr. A. Sreeram",
@@ -563,7 +563,7 @@ const scheduleData = {
                 name:"Dr. M. V. S. Raju",
                 position: "Professor, CE Department, Former Dean R & D, IQAC Coordinator",
               company:"",
-                image:"/images/r.jpg",
+                image:"https://media.licdn.com/dms/image/v2/D5603AQF040ocMVpJpg/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1666001632558?e=2147483647&v=beta&t=WTVtYaXxlLQXsiO1jrF2vGbHEc3ExE_8q-pSMQ5okjQ",
               },
               {
               name:"Dr. B. Raghava Rao",
@@ -687,7 +687,7 @@ const scheduleData = {
                 name:"Dr. A. Vittaleswar",
                 position: "Professor, Dean of Schools of Management, Law, Sciences, Arts, and Commerce (MLSAC)",
               company:"",
-                image:"",
+                image:"https://media.licdn.com/dms/image/v2/D5603AQHSAzpf5VnN1g/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1722163183553?e=1743033600&v=beta&t=VgTNrmbYVge55wJ8PEx6Rk2OtBXVII412iD1M2lYr_c",
               },
               // {
               //   name:"CSE/IT",
