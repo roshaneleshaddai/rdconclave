@@ -278,7 +278,7 @@ const scheduleData = {
             {
               name: "Smt. V. Prathyusha",
               position: "Lead Consultant",
-            company: "Transdence, Vijayawada",
+            company: "Transcendence, Vijayawada",
               image: "/images/transdencer1.jpg",
             },
             // {
@@ -505,7 +505,7 @@ const scheduleData = {
               {
                 name: "Smt. V. Prathyusha",
                 position: "Lead Consultant",
-              company: "Transdence, Vijayawada",
+              company: "Transcendence, Vijayawada",
                 image: "/images/transdencer1.jpg",
               },
               {
