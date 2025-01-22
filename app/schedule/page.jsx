@@ -259,13 +259,13 @@ const scheduleData = {
           ],
           Academicians:[
             {
-              name:"Dr.P.V.R.L.Narasimham",
-              position: "Prof & Head, EEE Department, Dean- Examinination & Evaluation",
+              name:"Dr. P. V. R. L. Narasimham",
+              position: "Professor & Head, EEE Department, Dean- Examinination & Evaluation",
               company:"",
               image:"https://www.vrsiddhartha.ac.in/wp-content/uploads/2024/10/Dean-Examinination-Evaluation.jpg",
             },
             {
-              name:"Dr.B.Raghava Rao",
+              name:"Dr. B. Raghava Rao",
               position: "Professor, Dean Academics ",
               company:"",
               image:"https://www.vrsiddhartha.ac.in/wp-content/uploads/2024/10/Dean-Academics.jpg",
@@ -386,7 +386,7 @@ const scheduleData = {
       //           image:"",
       //         },
       //         {
-      //           name:"CIVIL",
+      //           name:"CE",
       //           position: "",
               // company:"",
       //           image:"",
@@ -489,19 +489,19 @@ const scheduleData = {
             ],
             Academicians:[
               {
-                name:"Dr.A.V.Ratna Prasad",
-                position: "Pro-Vice Chancellor, SAHE, Deemed to be University",
-              company:"",
+                name:"Dr. A. V. Ratna Prasad",
+                position: "Pro-Vice Chancellor",
+              company:" SAHE, Deemed to be University",
                 image:"https://www.vrsiddhartha.ac.in/wp-content/uploads/2024/09/principal_2024-1-275x300.jpg",
               },
               {
-                name:"Dr.Mallikarjuna Rao",
-                position: "Professor, CIVIL Department",
-              company:"",
-                image:"",
+                name:"Dr. Mallikarjuna Rao",
+                position: "Professor",
+              company:"CE Department",
+                image:"/images/ceprof.jpg",
               },
               // {
-              //   name:"CIVIL",
+              //   name:"CE",
               //   position: "",
               // company:"",
               //   image:"",
@@ -581,14 +581,14 @@ const scheduleData = {
             ],
             Academicians:[
               {
-                name:"Dr.D.Rajeswara Rao",
-                position: "Prof & Head, CSE Department, Dean- Industry Relations, Training & Placements",
+                name:"Dr. D. Rajeswara Rao",
+                position: "Professor & Head, CSE Department, Dean- Industry Relations, Training & Placements",
               company:"",
                 image:"https://www.vrsiddhartha.ac.in/wp-content/uploads/2024/10/Dean-Industry-Relations-Training-Placements.jpg",
               },
               {
-                name:"Dr.G.Narasimha.Swamy",
-                position: "Prof & Head, EIE Department, Dean- Student Affairs & Admissions",
+                name:"Dr. G. Narasimha Swamy",
+                position: "Professor & Head, EIE Department, Dean- Student Affairs & Admissions",
               company:"",
                 image:"https://www.vrsiddhartha.ac.in/wp-content/uploads/2024/10/Dean-Student-Affairs-Admissions.jpg",
               },
@@ -640,7 +640,7 @@ const scheduleData = {
               },
               {
                   name: "Dr Krishna Kanth G Avalur",
-                  position: "Sr. Manager",
+                  position: "",
               company: "Director R&D @ams OSRAM & Founder @ MOSart Labs",
                   image: "/images/amsr1.jpg",
                 },
@@ -703,14 +703,14 @@ const scheduleData = {
             //     image: "https://www.vrsiddhartha.ac.in/wp-content/uploads/2024/09/principal_2024-1-275x300.jpg",
             // },
             {
-              name:"Dr.M.Suneetha",
-              position: "Prof & Head, IT Dept, Dean Research, Technology Development & IQAC",
+              name:"Dr. M. Suneetha",
+              position: "Professor & Head, IT Dept, Dean Research, Technology Development & IQAC",
             company:"",
               image:"/images/HODIT.jpg",
             },
               {
-                name:"Dr.D.Venkata Rao",
-                position: "Prof & Head, ECE Dept, Dean- Velagapudi Ramakrishna Siddhartha School of Engineering",
+                name:"Dr. D. Venkata Rao",
+                position: "Professor & Head, ECE Dept, Dean- Velagapudi Ramakrishna Siddhartha School of Engineering",
               company:"",
                 image:"https://www.vrsiddhartha.ac.in/wp-content/uploads/2024/10/dean-school.jpg",
               },
@@ -724,9 +724,9 @@ const scheduleData = {
         title: "Paper Presentations",
         description: {
           keyPoints: [
-              "Parallel Session I @Room No-228",
-            "Parallel Session II @Room No-246",
-             "Parallel Session III @Room No-250",
+              "Parallel Session I",
+            "Parallel Session II",
+             "Parallel Session III",
             ,
           ],
         },
@@ -738,9 +738,9 @@ const scheduleData = {
         title: "Paper Presentations",
         description: {
           keyPoints: [
-               "Parallel Session I @Room No-228",
-            "Parallel Session II @Room No-246",
-             "Parallel Session III @Room No-250",
+               "Parallel Session I",
+            "Parallel Session II",
+             "Parallel Session III",
             ,
           ],
         },
@@ -764,9 +764,9 @@ const scheduleData = {
       title: "Paper Presentations",
       description: {
         keyPoints: [
-             "Parallel Session I @Room No-228",
-          "Parallel Session II @Room No-246",
-           "Parallel Session III @Room No-250",
+             "Parallel Session I",
+          "Parallel Session II",
+           "Parallel Session III",
           ,
         ],
       },
@@ -780,9 +780,9 @@ const scheduleData = {
       title: "Paper Presentations",
       description: {
         keyPoints: [
-             "Parallel Session I @Room No-228",
-          "Parallel Session II @Room No-246",
-           "Parallel Session III @Room No-250",
+             "Parallel Session I",
+          "Parallel Session II",
+           "Parallel Session III",
           ,
         ],
       },
@@ -879,7 +879,7 @@ const Schedule = () => {
                 )}
                 {session.panelMembers && (
                   <div className="mt-4">
-                    <div className="py-2"><strong>Briefing by </strong> Dr.M.Suneetha, Prof & Head, IT Dept, Dean R & D, SAHE</div>
+                    <div className="py-2"><strong>Briefing by </strong> Dr.M.Suneetha, Professor & Head, IT Dept, Dean R & D, SAHE</div>
                     {session.panelMembers.moderators && (
                       <div>
                     <h3 className="text-md font-semibold text-gray-800 mb-2">
@@ -977,7 +977,8 @@ const Schedule = () => {
   
     const DownloadSchedules = () => {
       return (
-        <div className="p-8 text-center border-b border-2 m-2">
+        <div className="flex flex-col items-center">
+        <div className="p-8 text-center lg:w-3/4 border-b border-2 m-2">
           <h1 className="text-2xl font-bold mb-6">Download Presentation Schedules</h1>
     
           <div className="mb-8 p-4 border border-gray-300 rounded-lg">
@@ -1005,6 +1006,7 @@ const Schedule = () => {
               </button>
             </a>
           </div>
+        </div>
         </div>
       );
     };
