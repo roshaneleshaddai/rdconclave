@@ -203,20 +203,20 @@ const scheduleData = {
         },
       panelMembers: {
           moderators: [
-            {
-                name: "Mrs. Padmaja Sriram",
-                position: "Regional Leader Talent Acquisition - APAC",
-              company: "AT&T, Hyderabad",
-                image: "/images/attr1.jpg",
-            },
-            
-            
             // {
-            //     name: "Dr P Venkateswara Rao",
-            //     position: "",
-              // company: "VC",
-            //     image: "https://www.vrsiddhartha.ac.in/wp-content/uploads/2019/09/Vice-Chancellor-PV-Rao.jpg",
+            //     name: "Mrs. Padmaja Sriram",
+            //     position: "Regional Leader Talent Acquisition - APAC",
+            //   company: "AT&T, Hyderabad",
+            //     image: "/images/attr1.jpg",
             // },
+            
+            
+            {
+                  name: "Professor P Venkateswara Rao",
+                  position: "Vice Chancellor",
+              company: "SAHE",
+                  image: "https://www.vrsiddhartha.ac.in/wp-content/uploads/2019/09/Vice-Chancellor-PV-Rao.jpg",
+              },
         ],
           members: [
             {
@@ -232,21 +232,21 @@ const scheduleData = {
               image: "/images/powerlabr1.jpg",
             },
             {
-              name: "Mr. M. Srinivas Reddy",
+              name: "Mr. V. Srinivas Reddy",
               position: "Central Sourcing & Recruitment Manager",
               company: "Tech Mahindra",
               image: "/images/techmr1.jpg",
             },
             {
-              name: "Mr. T.Kamal Kumar",
+              name: "Mr. T. Kamal Kumar",
               position: "General Manager ",
               company: "Bharat Heavy Electricals Limited",
               image: "/images/bhelr1.jpg",
             },
             {
-              name: "Mr. Dasari Anvesh",
-              position: "Vice President",
-              company: "Efftronics",
+              name: "Mr. D. Anvesh",
+              position: "Executive Manager ",
+              company: "Efftronics Systems Private Limited, Vijayawada",
               image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSll-TKqI55i7SHUuUH0xabUol3dB_a7Z9c7w&s",
             },
             // {
@@ -258,6 +258,12 @@ const scheduleData = {
             
           ],
           Academicians:[
+            {
+              name:"Dr. A. Sreeram",
+              position: "Professor & Head, Department of Business Management",
+              company:"",
+              image:"",
+            },
             {
               name:"Dr. P. V. R. L. Narasimham",
               position: "Professor & Head, EEE Department, Dean- Examinination & Evaluation",
@@ -411,11 +417,18 @@ const scheduleData = {
         panelMembers: {
             moderators: [
               {
-                  name: "Mrs. Padmaja Sriram",
-                  position: "Regional Leader Talent Acquisition - APAC",
-              company: "AT&T, Hyderabad",
-                  image: "/images/attr1.jpg",
+                name:"Dr. A. V. Ratna Prasad",
+                position: "Pro-Vice Chancellor",
+              company:" SAHE, Deemed to be University",
+                image:"https://www.vrsiddhartha.ac.in/wp-content/uploads/2024/09/principal_2024-1-275x300.jpg",
               },
+
+              // {
+              //     name: "Mrs. Padmaja Sriram",
+              //     position: "Regional Leader Talent Acquisition - APAC",
+              // company: "AT&T, Hyderabad",
+              //     image: "/images/attr1.jpg",
+              // },
              
               // {
               //     name: "Dr P Venkateswara Rao",
@@ -440,7 +453,7 @@ const scheduleData = {
               {
                 name: "Mr. A. Siddharth",
                 position: "Director at Avantel Limited & imeds Private Limited & Co-Founder of Simply Science",
-              company: "Avantel, Vijayawada",
+              company: "Vijayawada",
                 image: "https://media.licdn.com/dms/image/v2/C5603AQGRNthkb1Rv3A/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1565795305597?e=2147483647&v=beta&t=J8Zi9Pc8VYuWL-4Bn4QIlaqEbJyzYNTJ3OlibtA_-uM",
               },
               {
@@ -451,7 +464,7 @@ const scheduleData = {
               },
               {
                 name:"Mr. S. Suresh Babu",
-                position: "Senior General Manager Finance ",
+                position: "Senior General Manager Finance",
               company:"Ramesh's Aerospace Products & Services Private Limited Pvt. Ltd. Coimbatore, Tamilnadu",
                 image: "/images/rapsr1.jpg",
               },
@@ -489,16 +502,28 @@ const scheduleData = {
             ],
             Academicians:[
               {
-                name:"Dr. A. V. Ratna Prasad",
-                position: "Pro-Vice Chancellor",
-              company:" SAHE, Deemed to be University",
-                image:"https://www.vrsiddhartha.ac.in/wp-content/uploads/2024/09/principal_2024-1-275x300.jpg",
+                name:"Dr. M. Suneetha",
+                position: "Professor & Head, IT Dept, Dean Research, Technology Development & IQAC",
+              company:"",
+                image:"/images/HODIT.jpg",
               },
+              // {
+              //   name:"Dr. A. V. Ratna Prasad",
+              //   position: "Pro-Vice Chancellor",
+              // company:" SAHE, Deemed to be University",
+              //   image:"https://www.vrsiddhartha.ac.in/wp-content/uploads/2024/09/principal_2024-1-275x300.jpg",
+              // },
               {
                 name:"Dr. Mallikarjuna Rao",
                 position: "Professor",
               company:"CE Department",
                 image:"/images/ceprof.jpg",
+              },
+              {
+                name:"Dr. N. Vijaya Sai",
+                position: "Professor & Head",
+              company:"ME Department",
+                image:"/images/r.jpg",
               },
               // {
               //   name:"CE",
@@ -534,11 +559,17 @@ const scheduleData = {
         panelMembers: {
             moderators: [
               {
-                  name: "Mrs. Padmaja Sriram",
-                  position: "Regional Leader Talent Acquisition - APAC",
-              company: "AT&T, Hyderabad",
-                  image: "/images/attr1.jpg",
+                name: "Mr. Sarada Prasanna Satapathy ",
+                position: "Director Global University Academic Programs ",
+              company: "Pegasystems, Hyderabad",
+                image: "/images/pegar1.jpg",
               },
+              // {
+              //     name: "Mrs. Padmaja Sriram",
+              //     position: "Regional Leader Talent Acquisition - APAC",
+              // company: "AT&T, Hyderabad",
+              //     image: "/images/attr1.jpg",
+              // },
           //     {
           //         name: "Dr P Venkateswara Rao",
           //         position: "",
@@ -575,7 +606,7 @@ const scheduleData = {
               {
                 name: "Mr. Rajesh Damerla",
                 position: "CEO",
-              company: "DLK MegaMart Pvt Ltd & Avinya Spark International Pvt Ltd.",
+              company: "DLK Megamart Pvt Ltd, Bengaluru, Karnataka.",
                 image: "https://media.licdn.com/dms/image/v2/C4E03AQHfAUYDFePjMQ/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1598515829195?e=2147483647&v=beta&t=vZWFACgYTekTSC6gktvjaHnnYFX_x60cCwYMA5le21I",
               },
             ],
@@ -591,6 +622,12 @@ const scheduleData = {
                 position: "Professor & Head, EIE Department, Dean- Student Affairs & Admissions",
               company:"",
                 image:"https://www.vrsiddhartha.ac.in/wp-content/uploads/2024/10/Dean-Student-Affairs-Admissions.jpg",
+              },
+              {
+                name:"Dr. A. Vittaleswar",
+                position: "Professor, Dean of Schools of Management, Law, Sciences, Arts, and Commerce (MLSAC)",
+              company:"",
+                image:"",
               },
               // {
               //   name:"CSE/IT",
@@ -618,11 +655,17 @@ const scheduleData = {
         panelMembers: {
             moderators: [
               {
-                  name: "Mrs. Padmaja Sriram",
-                  position: "Regional Leader Talent Acquisition - APAC",
-              company: "AT&T, Hyderabad",
-                  image: "/images/attr1.jpg",
+                name: "Mr. M S R Murthy",
+                position: "Senior Consultant",
+                company: "Tata Consultancy Services, Hyderabad",
+                image: "/images/tcsr1.jpg",
               },
+              // {
+              //     name: "Mrs. Padmaja Sriram",
+              //     position: "Regional Leader Talent Acquisition - APAC",
+              // company: "AT&T, Hyderabad",
+              //     image: "/images/attr1.jpg",
+              // },
               
               // {
               //     name: "Dr A V Ratna Prasad",
@@ -641,19 +684,19 @@ const scheduleData = {
               {
                   name: "Dr Krishna Kanth G Avalur",
                   position: "",
-              company: "Director R&D @ams OSRAM & Founder @ MOSart Labs",
+              company: "Director R&D @ams OSRAM & Founder @ MOSart Labs, Hyderabad",
                   image: "/images/amsr1.jpg",
                 },
-              {
-                name: "Mr. M S R Murthy",
-                position: "Senior Consultant",
-                company: "Tata Consultancy Services, Hyderabad",
-                image: "/images/tcsr1.jpg",
-              },
+              // {
+              //   name: "Mr. M S R Murthy",
+              //   position: "Senior Consultant",
+              //   company: "Tata Consultancy Services, Hyderabad",
+              //   image: "/images/tcsr1.jpg",
+              // },
               {
                 name: "Mr Raghavendra Kulkarni",
                 position: "Project Manager ",
-              company: "Cognizant Technology Solutions, Hyderabad",
+              company: "Cognizant Technology Solutions, Benguluru",
                 image: "/images/ctsr2.jpg",
               },
               
@@ -714,7 +757,12 @@ const scheduleData = {
               company:"",
                 image:"https://www.vrsiddhartha.ac.in/wp-content/uploads/2024/10/dean-school.jpg",
               },
-             
+              {
+                name:"Dr. K. Purna Chandra Rao",
+                position: "Professor & Head, Department of Computer Applications",
+              company:"",
+                image:"",
+              },
             
             ],
           },
@@ -984,7 +1032,7 @@ const Schedule = () => {
           <div className="mb-8 p-4 border border-gray-300 rounded-lg">
             <h2 className="text-lg font-semibold mb-4">Online Presentations Schedule on 24th & 25th January 2025</h2>
             <a
-              href="/online schedule.pdf"
+              href="/online schedule[1].pdf"
               download="Online_Presentation_Schedule_24th-25th_Jan_2025.pdf"
               className="text-blue-500 hover:underline"
             >
@@ -997,7 +1045,7 @@ const Schedule = () => {
           <div className="mb-8 p-4 border border-gray-300 rounded-lg">
             <h2 className="text-lg font-semibold mb-4">Offline Presentations Schedule on 24th & 25th January 2025</h2>
             <a
-              href="/OFFLINE SCHEDULE.pdf"
+              href="/OFFLINE SCHEDULE[1].pdf"
               download="Offline_Presentation_Schedule_24th-25th_Jan_2025.pdf"
               className="text-blue-500 hover:underline"
             >
