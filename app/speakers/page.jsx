@@ -18,7 +18,7 @@ import React, { useState, useEffect } from "react";
       { ind:11, name: 'Mr. K. Abhinav ', src: '/images/pidatacr1.jpg', position: 'Director & Chief Data Center Delivery Officer', company:'Pi DataCenters, Vijayawada' },
       // { ind:12, name: 'Mr. A. Satyanarayana', src: '/images/r1.jpg', position: 'Manager', company:'Avantel' },
       { ind:13, name: 'Mr. M. Veeran', src: '/images/powerlabr1.jpg', position: 'Head Sales & Marketing', company:'Power Lab Instruments Chennai' },
-      { ind:14, name: 'Smt. V. Prathyusha', src: '/images/transdencer1.jpg', position: 'Lead Consultant', company:'Transdence' },
+      { ind:14, name: 'Smt. V. Prathyusha', src: '/images/transdencer1.jpg', position: 'Lead Consultant', company:'Transcendence' },
       { ind:15, name: 'Dr Krishna Kanth G Avulur', src: '/images/amsr1.jpg', position: '', company:'Director R&D @ams OSRAM & Founder @ MOSart Labs' },
       { ind:16, name: 'Mr. Surapaneni Suresh Babu', src: '/images/rapsr1.jpg', position: 'Senior General Manager Finance', company:"Ramesh's Aerospace Products & Services (RAPS) Pvt. Ltd" },
       { ind:17, name: 'Mr. D. Harsha Vardhin', src: '/images/jesvidr1.jpg', position: 'Project Engineer Mechanical', company:'Jesvid Cryo Technologies Private Limited, Vijayawada' },
