@@ -24,6 +24,12 @@ const Meet = () => {
     'https://media.licdn.com/dms/image/v2/C4D0BAQGYXH79jG8PKA/company-logo_200_200/company-logo_200_200/0/1630550419008/ams_osram_logo?e=1745452800&v=beta&t=mOjEdTUTN_3mTBVc1-N-sfZcDImqYds9taLDDmOtgys',
     'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSf8xGevRk2pKZTsFC-VXEJUamM3TrhC9sryg&s',
     '/images/efftronicslogo.webp',
+    'https://www.geospatialworld.net/wp-content/uploads/2019/09/nrsc.jpg',
+    '/images/sparklogo.png',
+    'https://logosandtypes.com/wp-content/uploads/2022/03/Cognizant.png',
+    'https://iittnif.com/images/logos/IITT_InIf_svg2-01.png',
+    'https://media.licdn.com/dms/image/v2/C510BAQGV0O35YJWcTg/company-logo_200_200/company-logo_200_200/0/1631324752733?e=1745452800&v=beta&t=fcLPin37c8wDEecS6uclQqVAG-6CMj3T-1w8Q-siog4',
+    'https://logosandtypes.com/wp-content/uploads/2024/07/Verizon.png',
   ];
 
   // Industries Section Component with Fade-In Effect
@@ -77,7 +83,7 @@ const Meet = () => {
   ];
 
   return (
-    <div className="relative font-SUSE min-h-screen w-screen mt-48 md:mt-64">
+    <div className="relative font-SUSE min-h-screen max-w-screen mt-48 md:mt-64">
       {/* Background Video */}
       {/* <video
         autoPlay
