@@ -847,7 +847,7 @@ const scheduleData = {
                 name:"Dr. K. Purna Chandra Rao",
                 position: "Professor & Head, Department of Computer Applications",
               company:"",
-                image:"mcahod.jpg",
+                image:"/images/mcahod.jpg",
               },
             
             ],
