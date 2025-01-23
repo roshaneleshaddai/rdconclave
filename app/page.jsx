@@ -237,7 +237,7 @@ function HorizontalImageScroller({ images }) {
     const aboutText = [
       "The Research Conclave is a multidisciplinary event designed to bridge the gap between industry, academia, and students while promoting innovative research and collaboration.",
       "The program is structured to facilitate meaningful interactions and knowledge exchange among industry experts, academic professionals, and students.",
-      "The event comprises three key components: an Industry-Academic Meet, TechTrek, and Journal Publications."
+      "The event comprises three key components: an Industry-Academia Meet, TechTrek, and Journal Publications."
       ];
     
   
