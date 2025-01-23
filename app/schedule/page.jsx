@@ -1053,7 +1053,7 @@ const Schedule = () => {
                     </div>
                     )}
                     <h3 className="text-md font-semibold text-gray-800 mb-2">
-                      Industrialists:
+                      Industry Experts:
                     </h3>
                     <div className="grid md:grid-cols-2 grid-cols-1 gap-4">
                       {session.panelMembers.members.map((member, i) => (
