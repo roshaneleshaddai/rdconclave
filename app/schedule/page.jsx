@@ -522,6 +522,12 @@ const scheduleData = {
                 image: "/images/ctsr1.jpg",
               },
               {
+                name: "Mr. Sarada Prasanna Satapathy ",
+                position: "Director Global University Academic Programs ",
+              company: "Pegasystems, Hyderabad",
+                image: "/images/pegar1.jpg",
+              },
+              {
                 name: "Mr. A. Siddharth",
                 position: "Director at Avantel Limited & imeds Private Limited & Co-Founder of Simply Science",
               company: "Vijayawada",
@@ -838,7 +844,7 @@ const scheduleData = {
                 image:"https://www.vrsiddhartha.ac.in/wp-content/uploads/2024/10/dean-school.jpg",
               },
               {
-                name:"Dr.T.Anuradha",
+                name:"Dr. T. Anuradha",
                 position: "Professor -IT,  Controller of Examinations, SAHE",
               company:"",
                 image:"https://www.vrsiddhartha.ac.in/wp-content/uploads/2019/09/anurahda-copy-300x300.jpg",
