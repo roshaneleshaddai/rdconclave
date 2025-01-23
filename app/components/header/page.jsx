@@ -233,7 +233,7 @@ const Header = () => {
         <li><Link
           href="/meet"
           className="" onClick={toggleMenu}>
-          Industry-Academic Meet
+          Industry-Academia Meet
         </Link></li>
         <li><Link
           href="/hackathon"
@@ -308,7 +308,7 @@ const Header = () => {
           href="/meet"
           className={`cursor-pointer m-0.5 bg-[#604CC3] text-white border-[#1A1A1A] text-[#213555] font-semibold transition-all duration-300 ease-in-out ${isScrolled ? 'text-sm py-1 px-4' : 'text-base py-1 px-2'} hover:bg-[#FF6600]/10  hover:text-black hover:shadow-lg`}
         >
-          Industry-Academic Meet
+          Industry-Academia Meet
         </Link>
         <Link
           href="/hackathon"
