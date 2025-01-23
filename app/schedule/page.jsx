@@ -101,15 +101,15 @@ const scheduleData = {
         }
       },
       {
-        "time": "09:55 AM – 10:05 AM",
-        "title": "Opening Remarks by Convenor : Dr. M. Suneetha, Dean - Research, Technology & Development and IQAC, Professor and HoD-IT, delivers the opening remarks.",
+        "time": "09:55 AM – 10:00 AM",
+        "title": "Opening Remarks by Convenor : Dr. M. Suneetha, Dean - Research, Technology & Development and IQAC, Professor and HoD-IT",
         // "description": {
         //   "mainContent": "Dr. M. Suneetha, Dean - Research, Technology & Development and IQAC, Professor and HoD-IT, delivers the opening remarks.",
           
         // }
       },
       {
-        "time": "10:05 AM – 10:10 AM",
+        "time": "10:00 AM – 10:05 AM",
         "title": "Speech by Dr. A. V. Ratna Prasad, Pro Vice Chancellor.",
         // "description": {
         //   "mainContent": "Speech by Dr. A. V. Ratna Prasad, Pro Vice Chancellor.",
@@ -117,7 +117,7 @@ const scheduleData = {
         // }
       },
       {
-        "time": "10:10 AM – 10:15 AM",
+        "time": "10:05 AM – 10:10 AM",
         "title": "Speech by Dr. P. Venkateswara Rao, Vice Chancellor.",
         // "description": {
         //   "mainContent": "Speech by Dr. P. Venkateswara Rao, Vice Chancellor.",
@@ -125,7 +125,7 @@ const scheduleData = {
         // }
       },
       {
-        "time": "10:15 AM – 10:20 AM",
+        "time": "10:10 AM – 10:15 AM",
         "title": "Speech by Sri Shariff Mohammed Ahmed, Former Adviser (Minority Affairs), Government of Andhra Pradesh Legislative Council.",
         // "description": {
           // "mainContent": "Sri Shariff Mohammed Ahmed, Former Adviser (Minority Affairs), Government of Andhra Pradesh Legislative Council.",
@@ -133,7 +133,7 @@ const scheduleData = {
         // }
       },
       {
-        "time": "10:20 AM – 10:25 AM",
+        "time": "10:15 AM – 10:20 AM",
         "title": "Speech by Mr. Sarada Prasanna Satapathy, Director Global University Academic Programs, PEGA, Hyderabad",
         // "description": {
           // "mainContent": "Speech by Mr. Sarada Prasanna Satapathy, Pegasystems.",
@@ -141,7 +141,7 @@ const scheduleData = {
         // }
       },
       {
-        "time": "10:25 AM – 10:30 AM",
+        "time": "10:20 AM – 10:25 AM",
         "title": "Speech by Mr. M S R Murthy, Tata Consultancy Services, Hyderabad",
         // "description": {
           // "mainContent": "Speech by Mr. M S R Murthy, Tata Consultancy Services.",
@@ -149,7 +149,7 @@ const scheduleData = {
         // }
       },
       {
-        "time": "10:30 AM – 10:35 AM",
+        "time": "10:25 AM – 10:30 AM",
         "title": "Speech by Mr. Suresh Babu B, Deputy General Manager, AP, HCL Technologies.",
         // "description": {
           // "mainContent": "Speech by Mr. Suresh Babu B, HCL Technologies.",
@@ -157,7 +157,7 @@ const scheduleData = {
         // }
       },
       {
-        "time": "10:35 AM – 10:40 AM",
+        "time": "10:30 AM – 10:35 AM",
         "title": "Speech by Mr. V. Srinivas Reddy, Central Sourcing & Recruitment Manager, TechMahindra, Vijayawada",
         // "description": {
           // "mainContent": "Speech by Mr. M. Srinivas Reddy, Tech Mahindra.",
@@ -165,7 +165,7 @@ const scheduleData = {
         // }
       },
       {
-        "time": "10:40 AM – 10:45 AM",
+        "time": "10:35 AM – 10:40 AM",
         "title": "Speech by Mr. Jitender Singh, HR Manager-Campus Recruitment, Cognizant Technology Solutions",
         // "description": {
           // "mainContent": "Speech by Mr. Jitender Singh, Cognizant Technology Solutions.",
@@ -178,7 +178,7 @@ const scheduleData = {
         // }
       },
       {
-        "time": "10:45 AM – 10:50 AM",
+        "time": "10:40 AM – 10:45 AM",
         "title": "Speech by Mr. Siddharth Abburi, Director, Avantel & IMEDS Private Limited, Vijayawada",
         // "description": {
           // "mainContent": "Speech by Mr. Sidhharth Abburi.",
@@ -191,7 +191,7 @@ const scheduleData = {
         // }
       },
       {
-        "time": "10:50 AM – 11:00 AM",
+        "time": "10:45 AM – 10:50 AM",
         "title": "Speech by Sri. Gottipati Ravi Kumar, Minister of Energy of Andhra Pradesh",
         // "description": {
           // "mainContent": "Speech by Sri. Gottipati Ravi Kumar",
@@ -203,7 +203,32 @@ const scheduleData = {
           // ]
         // }
       },
-    
+      {
+        "time": "10:50 AM – 10:55 AM",
+        "title": "Felicitation of Chief Guest",
+        // "description": {
+          // "mainContent": "Speech by Sri. Gottipati Ravi Kumar",
+          // "keyPoints": [
+          //   "Sri Anagani Satya Prasad, Minister for Revenue, Registration and Stamps of Andhra Pradesh",
+          //   "Sri Gottipati Ravi Kumar, Minister of Energy of Andhra Pradesh",
+          //   "Sri Nadendla Manohar, Minister of Civil Supplies, Food & Consumer Affairs of Andhra Pradesh",
+          //   "Sri Yalamanchili Satyanarayana Chowdary, MLA West, AP"
+          // ]
+        // }
+      },
+      {
+        "time": "10:55 AM – 11:00 AM",
+        "title": "Vote of Thanks (by Dr.T.Anuradha, Controller of Examination, Professor,Dept of IT), National Anthem(Janaganamana)",
+        // "description": {
+          // "mainContent": "Speech by Sri. Gottipati Ravi Kumar",
+          // "keyPoints": [
+          //   "Sri Anagani Satya Prasad, Minister for Revenue, Registration and Stamps of Andhra Pradesh",
+          //   "Sri Gottipati Ravi Kumar, Minister of Energy of Andhra Pradesh",
+          //   "Sri Nadendla Manohar, Minister of Civil Supplies, Food & Consumer Affairs of Andhra Pradesh",
+          //   "Sri Yalamanchili Satyanarayana Chowdary, MLA West, AP"
+          // ]
+        // }
+      },
     {
       time: "11:00 AM - 11:15 AM",
       title: "High Tea",
@@ -547,12 +572,12 @@ const scheduleData = {
               // },
             ],
             Academicians:[
-              // {
-              //   name:"Dr. M. Suneetha",
-              //   position: "Professor & Head, IT Dept, Dean Research, Technology Development & IQAC",
-              // company:"",
-              //   image:"/images/HODIT.jpg",
-              // },
+              {
+                name:"Dr. M. Suneetha",
+                position: "Professor & Head, IT Dept, Dean Research, Technology Development & IQAC",
+              company:"",
+                image:"/images/HODIT.jpg",
+              },
               // {
               //   name:"Dr. A. V. Ratna Prasad",
               //   position: "Pro-Vice Chancellor",
@@ -571,12 +596,12 @@ const scheduleData = {
               company:"",
               image:"https://www.vrsiddhartha.ac.in/wp-content/uploads/2024/10/Dean-Academics.jpg",
             },
-            {
-              name:"Dr. Mallikarjuna Rao",
-              position: "Professor",
-            company:"CE Department",
-              image:"/images/ceprof.jpg",
-            },
+            // {
+            //   name:"Dr. Mallikarjuna Rao",
+            //   position: "Professor",
+            // company:"CE Department",
+            //   image:"/images/ceprof.jpg",
+            // },
               // {
               //   name:"CE",
               //   position: "",
@@ -806,12 +831,6 @@ const scheduleData = {
             //   company: "Pro VC",
             //     image: "https://www.vrsiddhartha.ac.in/wp-content/uploads/2024/09/principal_2024-1-275x300.jpg",
             // },
-            {
-              name:"Dr. M. Suneetha",
-              position: "Professor & Head, IT Dept, Dean Research, Technology Development & IQAC",
-            company:"",
-              image:"/images/HODIT.jpg",
-            },
               {
                 name:"Dr. D. Venkata Rao",
                 position: "Professor & Head, ECE Dept, Dean- Velagapudi Ramakrishna Siddhartha School of Engineering",
@@ -819,10 +838,16 @@ const scheduleData = {
                 image:"https://www.vrsiddhartha.ac.in/wp-content/uploads/2024/10/dean-school.jpg",
               },
               {
+                name:"Dr.T.Anuradha",
+                position: "Professor -IT,  Controller of Examinations, SAHE",
+              company:"",
+                image:"/images/HODIT.jpg",
+              },
+              {
                 name:"Dr. K. Purna Chandra Rao",
                 position: "Professor & Head, Department of Computer Applications",
               company:"",
-                image:"",
+                image:"mcahod.jpg",
               },
             
             ],
