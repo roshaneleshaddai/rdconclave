@@ -189,6 +189,78 @@ export default function JournalPublications() {
     };
   }, []);
 
+  
+const DownloadSchedule = () => {
+  return (
+    <div className="flex flex-col items-center">
+      <div className="p-8 text-center lg:w-3/4 border-b border-2 m-2">
+        <h1 className="text-2xl font-bold mb-6">Presentation Schedules</h1>
+
+        {/* Online Presentation Schedule */}
+        <div className="mb-8 p-4 border border-gray-300 rounded-lg">
+          <h2 className="text-lg font-semibold mb-4">
+            Online Presentations Schedule on 24th & 25th January 2025
+          </h2>
+          <iframe
+            src="/online schedule.pdf"
+            className="w-full h-96 border"
+            title="Online Presentation Schedule"
+                     type="application/pdf"
+          ></iframe>
+        </div>
+
+        {/* Offline Presentation Schedule */}
+        <div className="mb-8 p-4 border border-gray-300 rounded-lg">
+          <h2 className="text-lg font-semibold mb-4">
+            Offline Presentations Schedule on 24th & 25th January 2025
+          </h2>
+          <iframe
+            src="/OFFLINE SCHEDULE.pdf"
+            className="w-full h-96 border"
+            title="Offline Presentation Schedule"
+             type="application/pdf"
+          ></iframe>
+        </div>
+      </div>
+    </div>
+  );
+};
+    const DownloadSchedules = () => {
+      return (
+        <div className="flex flex-col items-center">
+        <div className="p-8 text-center lg:w-3/4 border-b border-2 m-2">
+          <h1 className="text-2xl font-bold mb-6">Download Presentation Schedules</h1>
+    
+          <div className="mb-8 p-4 border border-gray-300 rounded-lg">
+            <h2 className="text-lg font-semibold mb-4">Online Presentations Schedule on 24th & 25th January 2025</h2>
+            <a
+              href="/online schedule.pdf"
+              download="Online_Presentation_Schedule_24th-25th_Jan_2025.pdf"
+              className="text-blue-500 hover:underline"
+            >
+              <button className="px-6 py-2 bg-[#604CC3] text-white rounded hover:bg-[#604CC3]/90">
+                Download Online Schedule
+              </button>
+            </a>
+          </div>
+    
+          <div className="mb-8 p-4 border border-gray-300 rounded-lg">
+            <h2 className="text-lg font-semibold mb-4">Offline Presentations Schedule on 24th & 25th January 2025</h2>
+            <a
+              href="/OFFLINE SCHEDULE.pdf"
+              download="Offline_Presentation_Schedule_24th-25th_Jan_2025.pdf"
+              className="text-blue-500 hover:underline"
+            >
+              <button className="px-6 py-2 bg-[#604CC3] text-white rounded hover:bg-[#604CC3]/90">
+                Download Offline Schedule
+              </button>
+            </a>
+          </div>
+        </div>
+        </div>
+      );
+    };
+
   return (
     <div className="relative font-SUSE min-h-screen w-screen mt-48 md:mt-64">
       {/* Background Video */}
@@ -327,7 +399,7 @@ export default function JournalPublications() {
          </div> */}
         </motion.div>
         
-
+        
 
         {/* Expected Outcomes Section */}
         {/* <div className="bg-[#4F709C]/25 shadow-md rounded-lg p-8 mt-10 mx-6">
@@ -354,6 +426,7 @@ export default function JournalPublications() {
         
       
       </div>
+      <DownloadSchedule/>
       </div>
     </div>
   );
