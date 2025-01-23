@@ -1101,6 +1101,7 @@ const DownloadSchedule = () => {
             src="/online schedule.pdf"
             className="w-full h-96 border"
             title="Online Presentation Schedule"
+                     type="application/pdf"
           ></iframe>
         </div>
 
@@ -1113,6 +1114,7 @@ const DownloadSchedule = () => {
             src="/OFFLINE SCHEDULE.pdf"
             className="w-full h-96 border"
             title="Offline Presentation Schedule"
+             type="application/pdf"
           ></iframe>
         </div>
       </div>
