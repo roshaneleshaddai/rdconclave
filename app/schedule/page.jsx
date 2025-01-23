@@ -537,7 +537,7 @@ const scheduleData = {
                 name:"Mr. S. Suresh Babu(RAPS) Pvt.Ltd.",
                 position: "Senior General Manager Finance",
               company:"Roots Group of companies, Coimbatore, Tamilnadu",
-                image: "/images/rapsr1.jpg",
+                image: "https://media.licdn.com/dms/image/v2/D5603AQEAwDIP8sEbJA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1695015686962?e=1743033600&v=beta&t=OStz4q4hGm2cenN1zJB4r0MDI8UlPuLtX8m3pzIbmP0",
               },
              
               // {
