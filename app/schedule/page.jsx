@@ -885,8 +885,16 @@ const scheduleData = {
           ],
         },
       },
+     {
+        time: "04:30 PM - 04:40 PM",
+        title: "Felicitation of Panel members",
+      },
+    {
+        time: "04:40 PM - 04:45 PM",
+        title: "Vote of thanks",
+      },
       {
-        time: "04:30 PM - 05:00 PM",
+        time: "04:45 PM - 05:00 PM",
         title: "High Tea",
       },
       {
@@ -916,7 +924,7 @@ const scheduleData = {
       title: "High Tea",
     },
     {
-      time: "11:30 AM – 01:30 PM",
+      time: "11:30 AM – 01:00 PM",
       title: "Paper Presentations",
       description: {
         keyPoints: [
@@ -928,12 +936,16 @@ const scheduleData = {
       },
     },
     {
-        time: "01:30 PM - 02:30 PM",
-        title: "Lunch Venue: Impact Center, 4th floor, VL Dutt Block",
+        time: "01:00 PM - 02:00 PM",
+        title: "Lunch",
       },
     {
+      time: "02:15 PM - 03:00 PM",
+      title: "Exhibition of ISRO Projects @ 246, V L Dutt Block",
+    },
+    {
       time: "03:00 PM - 04:00 PM",
-      title: "Prize Distribution followed by Valedictory",
+      title: "Valedictory",
     },
   ],
 };
