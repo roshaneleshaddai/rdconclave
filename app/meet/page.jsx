@@ -30,6 +30,7 @@ const Meet = () => {
     'https://iittnif.com/images/logos/IITT_InIf_svg2-01.png',
     'https://media.licdn.com/dms/image/v2/C510BAQGV0O35YJWcTg/company-logo_200_200/company-logo_200_200/0/1631324752733?e=1745452800&v=beta&t=fcLPin37c8wDEecS6uclQqVAG-6CMj3T-1w8Q-siog4',
     'https://logosandtypes.com/wp-content/uploads/2024/07/Verizon.png',
+    'https://media.licdn.com/dms/image/v2/C560BAQH8ScPl3YUWkg/company-logo_200_200/company-logo_200_200/0/1630660575582/roots_multiclean_ltd_logo?e=1745452800&v=beta&t=tZyAXq9LNG9rRom054nZccVRADKpDjIEIrtW2K_p7FQ',
   ];
 
   // Industries Section Component with Fade-In Effect
