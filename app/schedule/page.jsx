@@ -68,7 +68,7 @@ const scheduleData = {
             "Sri M. Rajaiah, President, SAGTE",
             "Guest of Honor : ",
             // "Mrs. Padmaja Sriram, AT&T",
-            "Sri Shariff Mohammed Ahmed, Former Adviser (Minority Affairs), Government of Andhra Pradesh Legislative Council",
+            "Sri Shariff Mohammed Ahmed, Adviser (Minority Affairs), Government of Andhra Pradesh, Former Chairperson of Andhra Pradesh Legislative Council",
             "Mr. Sarada Prasanna Satapathy, Pegasystems",
             "Mr. M S R Murthy, Tata Consultancy Services",
             "Mr. Suresh Babu B, HCL Technologies",
@@ -126,7 +126,7 @@ const scheduleData = {
       },
       {
         "time": "10:10 AM – 10:15 AM",
-        "title": "Speech by Sri Shariff Mohammed Ahmed, Former Adviser (Minority Affairs), Government of Andhra Pradesh Legislative Council.",
+        "title": "Speech by Sri Shariff Mohammed Ahmed, Adviser (Minority Affairs), Government of Andhra Pradesh, Former Chairperson of Andhra Pradesh Legislative Council.",
         // "description": {
           // "mainContent": "Sri Shariff Mohammed Ahmed, Former Adviser (Minority Affairs), Government of Andhra Pradesh Legislative Council.",
           
@@ -337,7 +337,7 @@ const scheduleData = {
               name:"Dr. A. Sreeram",
               position: "Professor & Head, Department of Business Management",
               company:"",
-              image:"",
+              image:"/images/bmhod.jpg",
             },
             
             // {
@@ -841,7 +841,7 @@ const scheduleData = {
                 name:"Dr.T.Anuradha",
                 position: "Professor -IT,  Controller of Examinations, SAHE",
               company:"",
-                image:"/images/HODIT.jpg",
+                image:"https://www.vrsiddhartha.ac.in/wp-content/uploads/2019/09/anurahda-copy-300x300.jpg",
               },
               {
                 name:"Dr. K. Purna Chandra Rao",
