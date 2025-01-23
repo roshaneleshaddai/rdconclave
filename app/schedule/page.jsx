@@ -1195,7 +1195,7 @@ const DownloadSchedule = () => {
         </div>
         <div>
           <DownloadSchedule/>
-          <DownloadSchedules/>
+
         </div>
       </div>
     );
