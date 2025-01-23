@@ -20,9 +20,9 @@ import React, { useState, useEffect } from "react";
       { ind:13, name: 'Mr. M. Veeran', src: '/images/powerlabr1.jpg', position: 'Head Sales & Marketing', company:'Power Lab Instruments Chennai' },
       { ind:14, name: 'Smt. V. Prathyusha', src: '/images/transdencer1.jpg', position: 'Lead Consultant', company:'Transcendence' },
       { ind:15, name: 'Dr Krishna Kanth G Avulur', src: '/images/amsr1.jpg', position: '', company:'Director R&D @ams OSRAM & Founder @ MOSart Labs' },
-      { ind:16, name: 'Mr. S. Suresh Babu', src: 'https://media.licdn.com/dms/image/v2/D5603AQEAwDIP8sEbJA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1695015686962?e=1743033600&v=beta&t=OStz4q4hGm2cenN1zJB4r0MDI8UlPuLtX8m3pzIbmP0', position: 'Senior General Manager Finance', company:"Ramesh's Aerospace Products & Services (RAPS) Pvt. Ltd" },
+      // { ind:16, name: 'Mr. S. Suresh Babu', src: 'https://media.licdn.com/dms/image/v2/D5603AQEAwDIP8sEbJA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1695015686962?e=1743033600&v=beta&t=OStz4q4hGm2cenN1zJB4r0MDI8UlPuLtX8m3pzIbmP0', position: 'Senior General Manager Finance', company:"Ramesh's Aerospace Products & Services (RAPS) Pvt. Ltd" },
       { ind:17, name: 'Mr. D. Harsha Vardhin', src: '/images/jesvidr1.jpg', position: 'Project Engineer Mechanical', company:'Jesvid Cryo Technologies Private Limited, Vijayawada' },
-      { ind:18, name: 'Mr. T.Kamal Kumar', src: '/images/bhelr1.jpg', position: 'General Manager', company:'Bharat Heavy Electricals Limited' },
+      { ind:18, name: 'Mr. T.Kamal Kumar', src: '/images/bhelr1.jpg', position: 'Deputy General Manager', company:'Bharat Heavy Electricals Limited' },
       // {ind:19, name: "Mr. Dasari Anvesh",src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSll-TKqI55i7SHUuUH0xabUol3dB_a7Z9c7w&s",position: "Vice President",company: "Efftronics"},
       {ind:20, name: "Mr. Abburi Siddharth",position: "Director at Avantel Limited & imeds Private Limited & Co-Founder of Simply Science",company: "Avantel",src: "https://media.licdn.com/dms/image/v2/C5603AQGRNthkb1Rv3A/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1565795305597?e=2147483647&v=beta&t=J8Zi9Pc8VYuWL-4Bn4QIlaqEbJyzYNTJ3OlibtA_-uM",},
       {
