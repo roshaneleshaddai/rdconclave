@@ -1,6 +1,3 @@
 {
-  "/contact_us/page": "app/contact_us/page.js",
-  "/page": "app/page.js",
-  "/hackathon/page": "app/hackathon/page.js",
-  "/journalpublications/page": "app/journalpublications/page.js"
+  "/page": "app/page.js"
 }
