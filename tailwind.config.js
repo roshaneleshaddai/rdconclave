@@ -33,8 +33,17 @@ module.exports = {
         'mountain': "url('/images/mountain.png')",
       },
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        // semantic colors used across the site
+        background: "var(--bg)",
+        surface: "var(--surface)",
+        foreground: "var(--text)",
+        primary: {
+          DEFAULT: '#002147', // Royal Blue
+          light: '#133A5A',
+        },
+        accent: {
+          gold: '#FFD700', // Gold
+        },
       },
       fontFamily: {
         sans: ["ui-sans-serif", "system-ui", "sans-serif"], // Customize the "sans" font family

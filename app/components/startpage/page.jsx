@@ -8,7 +8,7 @@ export default function StartPage({ onLaunch }) {
   useEffect(() => {
     // Initialize the typed effect
     const options = {
-      strings: ["Explore groundbreaking research and cutting-edge innovations.", "Discover the new approach!", "A world of opportunities!"],
+      strings: ["Celebrating 50 Years of Excellence!", "Research Conclave 2026", "Innovate, Integrate, Inspire!"],
       typeSpeed: 90,
       backSpeed: 50,
       loop: true,
@@ -86,7 +86,7 @@ export default function StartPage({ onLaunch }) {
         }
 
         .launch-btn:hover {
-          background-color: rgb(191, 64, 191);
+          background-color: #002147;
           color:white;
           font-weight:bold;
         }

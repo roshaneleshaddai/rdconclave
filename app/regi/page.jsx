@@ -28,15 +28,15 @@ const Regi = () => {
   return (
     <div className="relative font-SUSE min-h-screen w-screen mt-44 md:mt-60 flex-col items-center justify-center p-4">
       {/* Note Section */}
-      <div className=" border-l-4 border-yellow-500  p-4 mb-6" role="alert">
+      <div className=" border-l-4 border-[#FFD700]  p-4 mb-6" role="alert">
        
         <h2 className="lg:text-3xl text-2xl font-bold mb-4 text-center">Fee Details</h2>
         <div className="overflow-x-auto">
           <table className="min-w-full border-2">
             <thead>
               <tr>
-                <th className="px-4 py-2 border-b-2 border-gray-300 text-left">Publication</th>
-                <th className="px-4 py-2 border-b-2 border-gray-300 text-left">Cost</th>
+                <th className="px-4 py-2 border-b-2 border-gray-300 bg-[#002147]/10 text-left">Publication</th>
+                <th className="px-4 py-2 border-b-2 border-gray-300 bg-[#002147]/10 text-left">Cost</th>
               </tr>
             </thead>
             <tbody>
@@ -79,8 +79,8 @@ const Regi = () => {
             <table className="min-w-full border-2 mb-6">
               <thead>
                 <tr>
-                  <th className="px-4 py-2 border-b-2 border-gray-300 text-left">Detail</th>
-                  <th className="px-4 py-2 border-b-2 border-gray-300 text-left">Information</th>
+                  <th className="px-4 py-2 border-b-2 border-gray-300 bg-[#002147]/10 text-left">Detail</th>
+                  <th className="px-4 py-2 border-b-2 border-gray-300 bg-[#002147]/10 text-left">Information</th>
                 </tr>
               </thead>
               <tbody>

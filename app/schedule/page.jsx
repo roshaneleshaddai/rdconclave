@@ -166,11 +166,11 @@ const scheduleData = {
     },
     {
       time: "11:00 AM onwards",
-      title: "TECHTREK",
+      title: "inSAHEthon",
       description: {
         keyPoints: [
-            "24 Hour Webathon : IT Seminar Hall (Room No: 224) ",
-            "24 Hour AI Hackathon : IT Lab 4 (Room No: 231)",
+            "CodeFusion : IT Seminar Hall (Room No: 224) ",
+            "TechEmbed : IT Lab 4 (Room No: 231)",
         ],
       },
     },
@@ -615,7 +615,7 @@ const Schedule = () => {
     const renderSchedule = (dayData) => {
       return dayData.map((session, index) => (
         <div key={index} className="border-b border-gray-300 py-4 flex md:flex-row flex-col items-start">
-          <div className="md:w-1/5 w-full text-md lg:text-lg text-[#604CC3]/95 font-semibold">
+          <div className="md:w-1/5 w-full text-md lg:text-lg text-[#002147]/95 font-semibold">
             {session.time}
           </div>
           <div className="md:w-4/5 w-full">
@@ -821,7 +821,7 @@ const DownloadSchedule = () => {
               download="Online_Presentation_Schedule_24th-25th_Jan_2025.pdf"
               className="text-blue-500 hover:underline"
             >
-              <button className="px-6 py-2 bg-[#604CC3] text-white rounded hover:bg-[#604CC3]/90">
+              <button className="px-6 py-2 bg-[#002147] text-white rounded hover:bg-[#002147]/90">
                 Download Online Schedule
               </button>
             </a>
@@ -834,7 +834,7 @@ const DownloadSchedule = () => {
               download="Offline_Presentation_Schedule_24th-25th_Jan_2025.pdf"
               className="text-blue-500 hover:underline"
             >
-              <button className="px-6 py-2 bg-[#604CC3] text-white rounded hover:bg-[#604CC3]/90">
+              <button className="px-6 py-2 bg-[#002147] text-white rounded hover:bg-[#002147]/90">
                 Download Offline Schedule
               </button>
             </a>
@@ -847,9 +847,9 @@ const DownloadSchedule = () => {
       <div className="relative font-SUSE min-h-screen max-w-screen mt-48 md:mt-64">
         <div className="pb-5">
           <div
-            className="bg-[#604CC3]/25 bg-opacity-20 p-8 lg:mt-0 mt-52 rounded-lg mx-6 transition-opacity duration-1000 "
+            className="bg-[#002147]/10 bg-opacity-20 p-8 lg:mt-0 mt-52 rounded-lg mx-6 transition-opacity duration-1000 "
           >
-            <h1 className="text-4xl  font-bold text-center text-[#604CC3]">
+            <h1 className="text-4xl  font-bold text-center text-[#002147]">
               Schedule
             </h1>
           </div>
@@ -858,7 +858,7 @@ const DownloadSchedule = () => {
               <button
                 className={`px-4 py-2 font-medium text-gray-800 ${
                   activeTab === "day1"
-                    ? "text-lg font-semibold border-b-4 border-[#604CC3]"
+                    ? "text-lg font-semibold border-b-4 border-[#002147]"
                     : ""
                 }`}
                 onClick={() => setActiveTab("day1")}
@@ -868,7 +868,7 @@ const DownloadSchedule = () => {
               <button
                 className={`px-4 py-2 font-medium text-gray-800 ${
                   activeTab === "day2"
-                    ? "text-lg font-semibold border-b-4 border-[#604CC3]"
+                    ? "text-lg font-semibold border-b-4 border-[#002147]"
                     : ""
                 }`}
                 onClick={() => setActiveTab("day2")}

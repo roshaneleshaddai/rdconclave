@@ -95,7 +95,7 @@ export default function JournalPublications() {
     }
   ];
   
-  const emailAddress = "rdconclave25@vrsiddhartha.ac.in"; // Replace with the desired email address
+  const emailAddress = "rdconclave26@vrsiddhartha.ac.in"; // Replace with the desired email address
   const subject = "";
   const body = ""; 
 
@@ -238,7 +238,7 @@ const DownloadSchedule = () => {
               download="Online_Presentation_Schedule_24th-25th_Jan_2025.pdf"
               className="text-blue-500 hover:underline"
             >
-              <button className="px-6 py-2 bg-[#604CC3] text-white rounded hover:bg-[#604CC3]/90">
+              <button className="px-6 py-2 bg-[#002147] text-white rounded hover:bg-[#002147]/90">
                 Download Online Schedule
               </button>
             </a>
@@ -251,7 +251,7 @@ const DownloadSchedule = () => {
               download="Offline_Presentation_Schedule_24th-25th_Jan_2025.pdf"
               className="text-blue-500 hover:underline"
             >
-              <button className="px-6 py-2 bg-[#604CC3] text-white rounded hover:bg-[#604CC3]/90">
+              <button className="px-6 py-2 bg-[#002147] text-white rounded hover:bg-[#002147]/90">
                 Download Offline Schedule
               </button>
             </a>
@@ -280,9 +280,9 @@ const DownloadSchedule = () => {
 
         {/* journal Publications Section with Fade-In Animation */}
         <div
-          className="bg-[#604CC3]/25 bg-opacity-20 p-8 lg:mt-0 mt-52 rounded-lg mx-6 transition-opacity duration-1000 "
+          className="bg-[#002147]/10 bg-opacity-20 p-8 lg:mt-0 mt-52 rounded-lg mx-6 transition-opacity duration-1000 "
         >
-          <h1 className="text-4xl  font-bold text-center text-[#604CC3]">Journal Publications</h1>
+          <h1 className="text-4xl  font-bold text-center text-[#002147]">Journal Publications</h1>
           {/* <p className="text-lg text-black p-2">
             journal Publications at our college highlights the research contributions of our esteemed academic staff, showcasing their latest papers, publications, and projects. This platform fosters collaboration with peers, industry professionals, and other institutions. Through engaging poster sessions, oral presentations, and panel discussions, our journal present their groundbreaking work, encouraging rich discussions and constructive feedback. This initiative reflects our commitment to academic excellence and paves the way for future collaborative research endeavors.
           </p> */}
@@ -290,20 +290,20 @@ const DownloadSchedule = () => {
             
           <div className='flex flex-col items-center justify-center'>  
             <h1 className='text-3xl text-center font-bold px-5 pt-5'>Important dates</h1>
-            <hr className="h-1 my-2 bg-[#604CC3] lg:w-1/4 w-1/2" />
+            <hr className="h-1 my-2 bg-[#002147] lg:w-1/4 w-1/2" />
             <div className="lg:text-xl text-base flex-1 flex flex-col items-center justify-center font-bold lg:mx-5 m-2">
-            <p className="text-center">Submission Deadline:<span className="text-red-500"> December 20, 2024</span></p>
-            <p className="text-center">Acceptance Notification:<span className="text-red-500 "> January 5, 2025</span></p>
-            <p className="text-center">Event Registration Deadline:<span className="text-red-500 "> January 10, 2025</span></p>
+            <p className="text-center">Submission Deadline:<span className="text-red-500"> December 20th, 2025</span></p>
+            <p className="text-center">Acceptance Notification:<span className="text-red-500 "> January 5th, 2026</span></p>
+            <p className="text-center">Event Registration Deadline:<span className="text-red-500 "> January 10th, 2026</span></p>
           </div>
         </div>
 
         <div className="flex flex-col md:flex-row justify-around space-y-6 md:space-y-0 md:space-x-10 items-center">
           {/* Expected Papers Section */}
-          {/* <div className="px-6 ml-8 md:px-12 text-[#604CC3] py-4 flex justify-center">
+          {/* <div className="px-6 ml-8 md:px-12 text-[#002147] py-4 flex justify-center">
             <div
               ref={sectionRef}
-              className="font-bold flex flex-col justify-center text-4xl bg-[#604CC3]/25 bg-opacity-20 w-40 h-40 text-center transition-all duration-500 p-6 rounded-lg"
+              className="font-bold flex flex-col justify-center text-4xl bg-[#002147]/10 bg-opacity-20 w-40 h-40 text-center transition-all duration-500 p-6 rounded-lg"
             >
               {countA}-{countB}
               <div className="text-lg ">Expected Papers</div>
@@ -318,26 +318,26 @@ const DownloadSchedule = () => {
         publicationsInView ? 'animate-swipeInRight opacity-100' : 'opacity-0'
         }`}
         >
-        <h1 className="text-4xl font-bold pb-4 text-[#604CC3]">Journals</h1>
+        <h1 className="text-4xl font-bold pb-4 text-[#002147]">Journals</h1>
         
       {/* table of journals */}
   <div className="overflow-x-auto">
-    <table className="min-w-full text-left table-auto border-collapse border-2 border-[#4F709C]">
+    <table className="min-w-full text-left table-auto border-collapse border-2 border-[#002147]">
       <thead>
         <tr>
-          <th className="px-4 py-2 border bg-[#604CC3]/25 text-[#604CC3] text-bold text-xl border-[#4F709C]">S.No.</th>
-          <th className="px-4 py-2 border bg-[#604CC3]/25 text-[#604CC3] text-bold text-xl border-[#4F709C]">Journal Name</th>
-          <th className="px-4 py-2 border bg-[#604CC3]/25 text-[#604CC3] text-bold text-xl border-[#4F709C]">Journal Link</th>
-{/*           <th className="px-4 py-2 border bg-[#604CC3]/25 text-[#604CC3] text-bold text-xl border-[#4F709C]">Quartile</th> */}
+          <th className="px-4 py-2 border bg-[#002147]/10 text-[#002147] text-bold text-xl border-[#002147]">S.No.</th>
+          <th className="px-4 py-2 border bg-[#002147]/10 text-[#002147] text-bold text-xl border-[#002147]">Journal Name</th>
+          <th className="px-4 py-2 border bg-[#002147]/10 text-[#002147] text-bold text-xl border-[#002147]">Journal Link</th>
+{/*           <th className="px-4 py-2 border bg-[#002147]/10 text-[#002147] text-bold text-xl border-[#002147]">Quartile</th> */}
           {/* <th className="px-4 py-2 border border-[#4F709C]">APC</th> */}
         </tr>
       </thead>
       <tbody>
         {journals.map((journal) => (
           <tr key={journal.sNo}>
-            <td className="px-4 py-2 border text-md  border-[#4F709C]">{journal.sNo}</td>
-            <td className="px-4 py-2 border text-md  border-[#4F709C]">{journal.name}</td>
-            <td className="px-4 py-2 border text-md  border-[#4F709C]">
+            <td className="px-4 py-2 border text-md  border-[#002147]">{journal.sNo}</td>
+            <td className="px-4 py-2 border text-md  border-[#002147]">{journal.name}</td>
+            <td className="px-4 py-2 border text-md  border-[#002147]">
               <a href={journal.link} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
                 {journal.link}
               </a>
@@ -385,10 +385,10 @@ const DownloadSchedule = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
           viewport={{ once: true }}
-          className="bg-[#604CC3]/25 bg-opacity-20 px-20 py-10 rounded-lg  flex flex-col items-center m-10 ">
+          className="bg-[#002147]/10 bg-opacity-20 px-20 py-10 rounded-lg  flex flex-col items-center m-10 ">
 
           <h1 className="text-2xl text-center font-bold text-black">Submission Link</h1>
-          <button className="p-2 m-2 bg-white text-[#604CC3] text-lg border-2 border-[#4F709C]/50 hover:border-[#4F709C] rounded-full">
+          <button className="p-2 m-2 bg-white text-[#002147] text-lg border-2 border-[#002147]/50 hover:border-[#002147] rounded-full">
             <a href="https://forms.gle/CxueSuEZC3ML3q3o8 ">
         Click here!
              </a>

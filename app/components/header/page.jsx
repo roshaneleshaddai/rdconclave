@@ -79,6 +79,9 @@ const Header = () => {
   return (
   <div className="relative w-full h-full">
     <header className={`fixed w-full top-0 z-50 h-30 transition-all duration-300 ease-in-out  bg-[#F5F5F5] ${isScrolled ? 'py-1 md:py-1' : 'py-1 md:py-1'}`}>
+      <div className="w-full bg-[#002147] text-[#FFD700] text-center py-1 font-bold text-sm md:text-base">
+        Golden Jubilee Year of Siddhartha Academy of General & Technical Education, Vijayawada
+      </div>
     {/* <video
       
       loop
@@ -108,7 +111,7 @@ const Header = () => {
             className={`lg:hidden block object-scale-down transition-all duration-300 w-24 h-32 `}
             loading="lazy"
           />
-          <Image
+          {/* <Image
               // src="/images/ITlogo.jpeg"
               src="/images/it_logoo.jpg"
               // src="/images/it_logo.jfif"
@@ -116,13 +119,13 @@ const Header = () => {
               width={isScrolled ? 140 : 160}
               height={isScrolled ? 140 : 160}
               className={`hidden lg:block  object-scale-down transition-all duration-300 w-24 h-32 `}
-            />
+            /> */}
             
 
         </div>
 
         <div className="">
-          <div className={`md:block md:text-center transition-all duration-300 ease-in-out ${isScrolled ? 'text-base md:text-2xl' : 'text-lg md:text-3xl'}`}>
+          <div className={`md:block md:text-center transition-all duration-300 ease-in-out ${isScrolled ? 'text-base md:text-xl' : 'text-lg md:text-2xl'}`}>
 
             <h2 className={`font-bold text-black ${isScrolled ? 'hidden' : ''}`}>
             SIDDHARTHA <br className="lg:block hidden"></br>ACADEMY OF HIGHER EDUCATION
@@ -215,7 +218,7 @@ const Header = () => {
 
       {/* Mobile Navigation Menu */}
       <nav
-        className={`fixed left-0 top-0 w-full h-full bg-[#604CC3] text-white text-xl flex flex-col justify-center items-center transition-transform duration-300 ${isOpen ? 'translate-x-0' : '-translate-x-full'}`}
+        className={`fixed left-0 top-0 w-full h-full bg-[#002147] text-white text-xl flex flex-col justify-center items-center transition-transform duration-300 ${isOpen ? 'translate-x-0' : '-translate-x-full'}`}
       >
         <ul className="space-y-6 text-center ">
         <li><Link
@@ -238,7 +241,7 @@ const Header = () => {
         <li><Link
           href="/hackathon"
           className="" onClick={toggleMenu}>
-          TechTrek
+          inSAHEthon
         </Link></li>
         <li><Link
           href="/journalpublications"
@@ -293,57 +296,57 @@ const Header = () => {
       <nav className="hidden md:flex items-center justify-center ">
       <Link
         href="/#home"
-        className={`cursor-pointer m-0.5 bg-[#604CC3]  border-[#1A1A1A] text-white font-semibold transition-all duration-300 ease-in-out ${isScrolled ? 'text-sm py-1 px-4' : 'text-base py-1 px-2'} hover:bg-[#FF6600]/10  hover:text-black hover:shadow-lg`}
+        className={`cursor-pointer m-0.5 bg-[#002147]  border-[#1A1A1A] text-white font-semibold transition-all duration-300 ease-in-out ${isScrolled ? 'text-sm py-1 px-4' : 'text-base py-1 px-2'} hover:bg-[#FFD700]/20  hover:text-black hover:shadow-lg`}
         >
       Home
       </Link>
       <Link
       href="/#about"
-      className={`cursor-pointer m-0.5 bg-[#604CC3]  border-[#1A1A1A] text-white font-semibold transition-all duration-300 ease-in-out ${isScrolled ? 'text-sm py-1 px-4' : 'text-base py-1 px-2'} hover:bg-[#FF6600]/10  hover:text-black hover:shadow-lg`}
+      className={`cursor-pointer m-0.5 bg-[#002147]  border-[#1A1A1A] text-white font-semibold transition-all duration-300 ease-in-out ${isScrolled ? 'text-sm py-1 px-4' : 'text-base py-1 px-2'} hover:bg-[#FFD700]/20  hover:text-black hover:shadow-lg`}
         >
         About
         </Link>
 
         <Link
           href="/meet"
-          className={`cursor-pointer m-0.5 bg-[#604CC3] text-white border-[#1A1A1A] text-[#213555] font-semibold transition-all duration-300 ease-in-out ${isScrolled ? 'text-sm py-1 px-4' : 'text-base py-1 px-2'} hover:bg-[#FF6600]/10  hover:text-black hover:shadow-lg`}
+          className={`cursor-pointer m-0.5 bg-[#002147] text-white border-[#1A1A1A] text-[#213555] font-semibold transition-all duration-300 ease-in-out ${isScrolled ? 'text-sm py-1 px-4' : 'text-base py-1 px-2'} hover:bg-[#FFD700]/20  hover:text-black hover:shadow-lg`}
         >
           Industry-Academia Meet
         </Link>
         <Link
           href="/hackathon"
-          className={`cursor-pointer m-0.5 bg-[#604CC3] text-white border-[#1A1A1A] text-[#213555] font-semibold transition-all duration-300 ease-in-out ${isScrolled ? 'text-sm py-1 px-4' : 'text-base py-1 px-2'} hover:bg-[#FF6600]/10  hover:text-black hover:shadow-lg`}
+          className={`cursor-pointer m-0.5 bg-[#002147] text-white border-[#1A1A1A] text-[#213555] font-semibold transition-all duration-300 ease-in-out ${isScrolled ? 'text-sm py-1 px-4' : 'text-base py-1 px-2'} hover:bg-[#FFD700]/20  hover:text-black hover:shadow-lg`}
         >
-          TechTrek
+          inSAHEthon
         </Link>
         <Link
           href="/journalpublications"
-          className={`cursor-pointer m-0.5 bg-[#604CC3] text-white  border-[#1A1A1A] text-[#213555] font-semibold transition-all duration-300 ease-in-out ${isScrolled ? 'text-sm py-1 px-4' : 'text-base py-1 px-2'} hover:bg-[#FF6600]/10  hover:text-black hover:shadow-lg`}
+          className={`cursor-pointer m-0.5 bg-[#002147] text-white  border-[#1A1A1A] text-[#213555] font-semibold transition-all duration-300 ease-in-out ${isScrolled ? 'text-sm py-1 px-4' : 'text-base py-1 px-2'} hover:bg-[#FFD700]/20  hover:text-black hover:shadow-lg`}
         >
           Journal Publications
         </Link>
         <Link
           href="/regi"
-          className={`cursor-pointer m-0.5 bg-[#604CC3] text-white  border-[#1A1A1A] text-[#213555] font-semibold transition-all duration-300 ease-in-out ${isScrolled ? 'text-sm py-1 px-4' : 'text-base py-1 px-2'} hover:bg-[#FF6600]/10  hover:text-black hover:shadow-lg`}
+          className={`cursor-pointer m-0.5 bg-[#002147] text-white  border-[#1A1A1A] text-[#213555] font-semibold transition-all duration-300 ease-in-out ${isScrolled ? 'text-sm py-1 px-4' : 'text-base py-1 px-2'} hover:bg-[#FFD700]/20  hover:text-black hover:shadow-lg`}
         >
           Registration
         </Link>
         <Link
           href="/speakers"
-          className={`cursor-pointer m-0.5 bg-[#604CC3] text-white border-[#1A1A1A] text-[#213555] font-semibold transition-all duration-300 ease-in-out ${isScrolled ? 'text-sm py-1 px-4' : 'text-base py-1 px-2'} hover:bg-[#FF6600]/10  hover:text-black hover:shadow-lg`}
+          className={`cursor-pointer m-0.5 bg-[#002147] text-white border-[#1A1A1A] text-[#213555] font-semibold transition-all duration-300 ease-in-out ${isScrolled ? 'text-sm py-1 px-4' : 'text-base py-1 px-2'} hover:bg-[#FFD700]/20  hover:text-black hover:shadow-lg`}
         >
           Speakers
         </Link>
         <Link
           href="/schedule"
-          className={`cursor-pointer m-0.5 bg-[#604CC3] text-white border-[#1A1A1A] text-[#213555] font-semibold transition-all duration-300 ease-in-out ${isScrolled ? 'text-sm py-1 px-4' : 'text-base py-1 px-2'} hover:bg-[#FF6600]/10  hover:text-black hover:shadow-lg`}
+          className={`cursor-pointer m-0.5 bg-[#002147] text-white border-[#1A1A1A] text-[#213555] font-semibold transition-all duration-300 ease-in-out ${isScrolled ? 'text-sm py-1 px-4' : 'text-base py-1 px-2'} hover:bg-[#FFD700]/20  hover:text-black hover:shadow-lg`}
         >
           Schedule
         </Link>
         <select
-        className={`cursor-pointer m-0.5 bg-[#604CC3] text-white border-[#1A1A1A] text-[#213555] font-semibold transition-all duration-300 ease-in-out ${
+        className={`cursor-pointer m-0.5 bg-[#002147] text-white border-[#1A1A1A] text-[#213555] font-semibold transition-all duration-300 ease-in-out ${
           isScrolled ? 'text-sm py-1 px-4 w-28' : 'text-base py-1 px-2 w-28'
-        } hover:bg-[#FF6600]/10 hover:text-black hover:shadow-lg truncate`}
+        } hover:bg-[#FFD700]/20 hover:text-black hover:shadow-lg truncate`}
         value=""
         onChange={(e) => {
           downloadFile(e.target.value);
@@ -357,7 +360,7 @@ const Header = () => {
           <option
             key={index}
             value={index}
-            className="hover:bg-[#FF6600]/10 w-36 text-ellipsis overflow-hidden whitespace-nowrap"
+            className="hover:bg-[#FFD700]/20 w-36 text-ellipsis overflow-hidden whitespace-nowrap"
           >
             {fileName}
           </option>
@@ -365,7 +368,7 @@ const Header = () => {
       </select>
       <Link
           href="/contact_us"
-          className={`cursor-pointer m-0.5 bg-[#604CC3] text-white  border-[#1A1A1A] text-[#213555] font-semibold transition-all duration-300 ease-in-out ${isScrolled ? 'text-sm py-1 px-4' : 'text-base py-1 px-2'} hover:bg-[#FF6600]/10  hover:text-black hover:shadow-lg`}
+          className={`cursor-pointer m-0.5 bg-[#002147] text-white  border-[#1A1A1A] text-[#213555] font-semibold transition-all duration-300 ease-in-out ${isScrolled ? 'text-sm py-1 px-4' : 'text-base py-1 px-2'} hover:bg-[#FFD700]/20  hover:text-black hover:shadow-lg`}
         >
          Contact us
         </Link>

@@ -1,4 +1,4 @@
-// File: D:\New folder\rdconclave\app\components\footer\page.jsx
+// File: /workspaces/rdconclave/app/components/footer/page.jsx
 import * as entry from '../../../../../app/components/footer/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

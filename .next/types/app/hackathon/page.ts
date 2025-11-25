@@ -1,4 +1,4 @@
-// File: D:\New folder\rdconclave\app\hackathon\page.jsx
+// File: /workspaces/rdconclave/app/hackathon/page.jsx
 import * as entry from '../../../../app/hackathon/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

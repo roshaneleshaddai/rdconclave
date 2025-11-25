@@ -10,3 +10,28 @@
 body {
   font-family: "SUSE", sans-serif;
 }
+
+:root {
+  /* Professional palette: Royal Blue primary, soft surface, and Gold accent */
+  --bg: #F0F4F8; /* Light Blue-Grey */
+  --surface: #FFFFFF; /* card surfaces */
+  --text: #002147; /* Royal Blue text */
+  --primary: #002147; /* Royal Blue */
+  --primary-strong: #00152e;
+  --accent-gold: #FFD700;
+  --muted: #6B7280; /* gray-500 */
+}
+
+html, body, #__next {
+  background-color: var(--bg);
+  color: var(--text);
+  height: 100%;
+}
+
+/* Helpful utility classes used in JSX where inline hexs were previously used */
+.brand-bg { background-color: var(--primary); }
+.brand-text { color: var(--primary); }
+.brand-strong { color: var(--primary-strong); }
+.accent-gold { color: var(--accent-gold); }
+.card-surface { background-color: var(--surface); }
+

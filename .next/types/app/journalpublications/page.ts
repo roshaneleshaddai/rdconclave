@@ -1,4 +1,4 @@
-// File: D:\New folder\rdconclave\app\journalpublications\page.jsx
+// File: /workspaces/rdconclave/app/journalpublications/page.jsx
 import * as entry from '../../../../app/journalpublications/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

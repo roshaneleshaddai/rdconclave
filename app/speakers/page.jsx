@@ -96,7 +96,7 @@ import React, { useState, useEffect } from "react";
                   scale: 1.05,
                   boxShadow: "0px 10px 15px rgba(0, 0, 0, 0.2)",
                 }}
-                className="flex flex-col justify-center items-center p-4 m-2 mb-4 border-2 border-[#213555] border-opacity-20 rounded-lg shadow-md w-[300px] h-[350px] bg-white"
+                className="flex flex-col justify-center items-center p-4 m-2 mb-4 border-2 border-[#002147] border-opacity-20 rounded-lg shadow-md w-[300px] h-[350px] bg-white"
               >
                 <div className="flex flex-col justify-center items-center h-full">
                   <Image
@@ -106,7 +106,7 @@ import React, { useState, useEffect } from "react";
                     height={150}
                     className="object-cover object-center mb-4 rounded-lg w-40 h-40"
                   />
-                  <p className="text-md text-center text-[#604CC3] font-bold">{researcher.name}</p>
+                  <p className="text-md text-center text-[#002147] font-bold">{researcher.name}</p>
                   <p className="text-sm text-center text-black">{researcher.position}</p>
                   <p className="text-sm text-center text-black">{researcher.company}</p>
                 </div>
@@ -134,7 +134,7 @@ import React, { useState, useEffect } from "react";
                   scale: 1.05,
                   boxShadow: "0px 10px 15px rgba(0, 0, 0, 0.2)",
                 }}
-                className="flex flex-col justify-center items-center p-4 m-2 border-2 border-[#213555] border-opacity-20 rounded-lg shadow-md w-[300px] h-[350px] bg-white"
+                className="flex flex-col justify-center items-center p-4 m-2 border-2 border-[#002147] border-opacity-20 rounded-lg shadow-md w-[300px] h-[350px] bg-white"
               >
                 <div className="flex flex-col justify-center items-center h-full">
                   <Image
@@ -144,7 +144,7 @@ import React, { useState, useEffect } from "react";
                     height={150}
                     className="object-cover object-center mb-4 rounded-lg w-40 h-40"
                   />
-                  <p className="text-md text-center text-[#604CC3] font-bold">{researcher.name}</p>
+                  <p className="text-md text-center text-[#002147] font-bold">{researcher.name}</p>
                   <p className="text-sm text-center text-black">{researcher.position}</p>
                   <p className="text-sm text-center text-black">{researcher.company}</p>
                 </div>
@@ -164,9 +164,9 @@ const Speakers = () => {
       <div className="pb-5">
         
       <div
-          className="bg-[#604CC3]/25 bg-opacity-20 p-8 lg:mt-0 mt-52 rounded-lg mx-6 transition-opacity duration-1000 "
+          className="bg-[#002147]/10 bg-opacity-20 p-8 lg:mt-0 mt-52 rounded-lg mx-6 transition-opacity duration-1000 "
         >
-          <h1 className="text-4xl  font-bold text-center text-[#604CC3]">Speakers</h1>
+          <h1 className="text-4xl  font-bold text-center text-[#002147]">Speakers</h1>
           
         </div>
 

@@ -126,103 +126,81 @@ function HorizontalImageScroller({ images }) {
     return (
 <div className="" >
         <div
-          className="bg-[#604CC3]/25 bg-opacity-20 p-8 lg:mt-0 mt-52 rounded-lg mx-6 transition-opacity duration-1000"
+          className="bg-[#002147]/10 p-8 lg:mt-0 mt-52 rounded-lg mx-6 transition-opacity duration-1000 text-center"
         >
-          <h1 className="text-4xl font-extrabold text-center text-[#604CC3]">RESEARCH CONCLAVE </h1>
-          <h1 className="text-xl font-extrabold mt-2 text-center text-black">24th & 25th January - 2025 </h1>
+          <h1 className="text-4xl font-extrabold text-[#002147]">R&D CELL</h1>
+          <h2 className="text-2xl font-bold mt-2 text-[#002147]">Organized by Research & Development Cell</h2>
+          <h3 className="text-xl font-semibold mt-1 text-[#002147]">Departments of CSE, ECE, IT & MBA Research Conclave</h3>
+          <h1 className="text-3xl font-extrabold mt-4 text-[#D4AF37]">January 23rd - 24th, 2026</h1>
+          <h2 className="text-2xl font-bold mt-2 text-[#D4AF37]">1 Lakh worth Cash Prizes</h2>
+          <p className="text-lg font-bold mt-2 text-black">(OFFLINE) Registrations Open</p>
+          <p className="text-lg font-semibold mt-1 text-black">Venue: V. R. Siddhartha School of Engineering</p>
+          <p className="text-md mt-1 text-gray-700">Accommodation, Food and Schwags</p>
         </div>
 
-      
-      {/* <div className="flex  justify-center items-center space-x-8 w-full h-[200px]">
-      
-       
-        <div
-          onClick={() => handleRedirect("/meet")}
-          className="w-40 h-40 bg-[#436FA6] rounded-full flex items-center justify-center text-border-2 text-white border-[#213555] border-2 text-xl font-bold cursor-pointer hover:bg-red-400 transition duration-300 ease-in-out"
-        >
-          <center>
-          Industry<br></br>
-          Academia<br></br>
-          Meet</center>
-        </div>
-  
-        <div
-          onClick={() => handleRedirect("/hackathon")}
-          className="w-40 h-40 bg-[#5D88BB] rounded-full flex items-center justify-center text-white border-[#213555] border-2 text-xl font-bold cursor-pointer hover:bg-emerald-500 transition duration-300 ease-in-out"
-        >
-          Hackathon
-        </div>
-  
-        <div
-          onClick={() => handleRedirect("/journalpublications")}
-          className="w-40 h-40 bg-[#436FA6] rounded-full flex items-center justify-center text-white border-[#213555] border-2 text-xl font-bold cursor-pointer hover:bg-blue-700 transition duration-300 ease-in-out"
-        >
-          <center>
-          journal<br></br>
-          Publications</center>
-        </div>
-      </div> */}
 <div className="flex flex-col items-center lg:flex-row lg:justify-center min-h-full p-4 ">
-  {/* Industry Academia Meet Block */}
+  {/* Track 1: Industry-Academic Visit */}
   <div
     onClick={() => handleRedirect("/meet")}
-    className="mt-5 bg-[#604CC3]/25 bg-opacity-20 p-6 rounded-lg mx-6 cursor-pointer hover:shadow-xl hover:bg-[#FEF9D9]/25 flex flex-col items-center justify-center h-[24rem] lg:w-[23rem] w-[22rem]"
+    className="mt-5 bg-[#002147]/5 p-6 rounded-lg mx-6 cursor-pointer hover:shadow-xl hover:bg-[#FFD700]/10 flex flex-col items-center justify-center h-[32rem] lg:w-[23rem] w-[22rem] border-t-4 border-[#002147]"
   >
-    {/* Title Section */}
     <div className="flex-0.5 flex items-center justify-center">
-      <h1 className="text-3xl sm:text-4xl text-center font-bold text-[#604CC3]">
-        Industry<br></br>Academia<br></br>Meet
+      <h1 className="text-2xl sm:text-3xl text-center font-bold text-[#002147]">
+        Track 1:<br/>Industry-Academic Visit
       </h1>
     </div>
-    {/* Date, Time, and Button Section */}
-    <div className="flex-1 flex flex-col items-center justify-center font-bold">
-    <p className="text-center">Date:<span className="text-blue-800"> January 24, 2025</span></p>
-      <button className="p-2 m-2 bg-white text-lg border-2 border-[#4F709C]/50 hover:border-[#4F709C] rounded-full">
+    <div className="flex-1 flex flex-col items-center justify-center font-bold mt-4 space-y-2">
+       <div className="flex flex-wrap justify-center gap-2 text-center">
+          <p className="text-sm text-gray-600">AT&T, TCS, POWERLAB, AMUN, Tech Mahindra, OSRAM, RODIS, HCL, PEGA, Persistent, Avantel, SPARK</p>
+       </div>
+      <button className="p-2 m-2 bg-[#002147] text-white text-lg rounded-full hover:bg-[#003366]">
         Know more..
       </button>
     </div>
   </div>
 
-  {/* Hackathon Block */}
+  {/* Track 2, 3: inSAHEthon */}
   <div
     onClick={() => handleRedirect("/hackathon")}
-    className="mt-5 bg-[#604CC3]/25 bg-opacity-20 p-6 rounded-lg mx-6 cursor-pointer hover:shadow-xl hover:bg-[#FEF9D9]/25 flex flex-col items-center justify-center h-[24rem] lg:w-[23rem] w-[22rem]"
+    className="mt-5 bg-[#002147]/5 p-6 rounded-lg mx-6 cursor-pointer hover:shadow-xl hover:bg-[#FFD700]/10 flex flex-col items-center justify-center h-[32rem] lg:w-[23rem] w-[22rem] border-t-4 border-[#002147]"
   >
-    {/* Title Section */}
-    <div className="flex-0.5 flex items-center justify-center">
-      <h1 className="text-3xl sm:text-4xl text-center font-bold text-[#604CC3]">
-        TechTrek
+    <div className="flex-0.5 flex flex-col items-center justify-center">
+      <h1 className="text-2xl sm:text-3xl text-center font-bold text-[#002147]">
+        Track 2, 3:<br/>inSAHEthon
       </h1>
+      <p className="text-center text-sm font-semibold text-gray-600">(CodeFusion, TechEmbed)</p>
     </div>
-    {/* Date, Time, and Button Section */}
-    <div className="flex-1 flex flex-col items-center justify-center font-bold">
-      <p className="text-center">Registration Deadline:<span className="text-blue-800"> January 08, 2025</span></p>
-{/*       <p className="text-center">Preliminary Round:<span className="text-blue-800"> December 2 2025</span></p> */}
-      <p className="text-center">Shortlisted teams Announcement:<span className="text-blue-800"> January 10 2025</span></p>
-      <p className="text-center">Final Round:<span className="text-blue-800"> January 24, 2025, 11 AM - January 25, 2025, 11 AM</span></p>
-      <button className="p-2 m-2 bg-white text-lg border-2 border-[#4F709C]/50 hover:border-[#4F709C] rounded-full">
+    <div className="flex-1 flex flex-col items-center justify-center font-bold text-sm mt-2">
+      <p className="text-center">Registration Deadline:<br/><span className="text-[#002147] text-base">5th January 2026</span></p>
+      <p className="text-center mt-2">Final Round Notification:<br/><span className="text-[#002147] text-base">8th January 2026</span></p>
+      <p className="text-center mt-2">Final Round:<br/><span className="text-[#002147] text-base">Jan 23rd - 24th, 2026</span></p>
+      <div className="flex gap-4 mt-2 text-[#D4AF37] text-xl font-extrabold">
+        <span>₹25,000</span>
+        <span>₹15,000</span>
+        <span>₹10,000</span>
+      </div>
+      <button className="p-2 m-2 bg-[#002147] text-white text-lg rounded-full hover:bg-[#003366]">
         Know more..
       </button>
     </div>
   </div>
 
-  {/* Journal Publications Block */}
+  {/* Track 4: Scopus Publications */}
   <div
     onClick={() => handleRedirect("/journalpublications")}
-    className="mt-5 bg-[#604CC3]/25 bg-opacity-100 p-6 rounded-lg mx-6 cursor-pointer hover:shadow-xl hover:bg-[#FEF9D9]/25 flex flex-col items-center justify-center h-[24rem] lg:w-[23rem] w-[22rem]"
+    className="mt-5 bg-[#002147]/5 p-6 rounded-lg mx-6 cursor-pointer hover:shadow-xl hover:bg-[#FFD700]/10 flex flex-col items-center justify-center h-[32rem] lg:w-[23rem] w-[22rem] border-t-4 border-[#002147]"
   >
-    {/* Title Section */}
     <div className="flex-0.5 flex items-center justify-center">
-      <h1 className="text-3xl sm:text-4xl text-center font-bold text-[#604CC3]">
-        Journal<br/>Publications
+      <h1 className="text-2xl sm:text-3xl text-center font-bold text-[#002147]">
+        Track 4:<br/>Scopus Publications
       </h1>
     </div>
-    {/* Date, Time, and Button Section */}
-    <div className="flex-1 flex flex-col items-center justify-center font-bold">
-      <p className="text-center">Submission Deadline:<span className="text-blue-800"> December 20, 2024</span></p>
-      <p className="text-center">Acceptance Notification:<span className="text-blue-800"> January 5, 2025</span></p>
-      <p className="text-center">Event Registration Deadline:<span className="text-blue-800"> January 10, 2025</span></p>
-      <button className="p-2 m-2 bg-white text-lg border-2 border-[#4F709C]/50 hover:border-[#4F709C] rounded-full">
+    <div className="flex-1 flex flex-col items-center justify-center font-bold text-sm mt-2">
+      <p className="text-center">Submission Deadline:<br/><span className="text-[#002147] text-base">December 20th, 2025</span></p>
+      <p className="text-center mt-2">Acceptance Notification:<br/><span className="text-[#002147] text-base">January 5th, 2026</span></p>
+      <p className="text-center mt-2">Registration Deadline:<br/><span className="text-[#002147] text-base">January 10th, 2026</span></p>
+      <p className="text-center mt-2 text-gray-500">Springer</p>
+      <button className="p-2 m-2 bg-[#002147] text-white text-lg rounded-full hover:bg-[#003366]">
         Know more..
       </button>
     </div>
@@ -237,7 +215,7 @@ function HorizontalImageScroller({ images }) {
     const aboutText = [
       "The Research Conclave is a multidisciplinary event designed to bridge the gap between industry, academia, and students while promoting innovative research and collaboration.",
       "The program is structured to facilitate meaningful interactions and knowledge exchange among industry experts, academic professionals, and students.",
-      "The event comprises three key components: an Industry-Academia Meet, TechTrek, and Journal Publications."
+      "The event comprises three key components: an Industry-Academia Meet, inSAHEthon, and Journal Publications."
       ];
     
   
@@ -273,12 +251,12 @@ function HorizontalImageScroller({ images }) {
     }, []);
   
     return (
-      <section id="about" className="p-10 flex  justify-center items-center bg-[#604CC3]/25 bg-opacity-50 mt-5">
+      <section id="about" className="p-10 flex  justify-center items-center bg-[#002147]/10 bg-opacity-50 mt-5">
         
         <div className="md:px-12">
-        <div className="text-3xl font-bold text-[#604CC3] underline-offset-8">
+        <div className="text-3xl font-bold text-[#002147] underline-offset-8">
           About Research Conclave
-          <hr className="h-1 my-4 bg-[#604CC3] border-0  w-1/3" />
+          <hr className="h-1 my-4 bg-[#002147] border-0  w-1/3" />
 
         </div>
         <div className=" font-medium sm:text-xl">
@@ -406,9 +384,9 @@ function HorizontalImageScroller({ images }) {
       <section id="research" className="p-5 flex flex-col justify-center items-center md:mx-10">
         <div className="container flex flex-col md:flex-row-reverse items-center">
           <div className="w-full md:basis-2/3  p-4">
-            <h2 className="text-3xl font-bold text-[#604CC3]">
+            <h2 className="text-3xl font-bold text-[#002147]">
               Research@SAHE
-              <hr className="h-1 my-8 bg-[#604CC3] border-0 w-1/2 " />
+              <hr className="h-1 my-8 bg-[#002147] border-0 w-1/2 " />
             </h2>
             <p className="mb-4 font-medium sm:text-xl text-lg text-justify">
             The Wing will carry out R&D review of every department once or more in every semester and give guidelines for corrective action and improvement in R&D activities of departments. R&D activities are quantified and R&D index of the departments is computed and compared. Further, this is brought to the notice of all the HODs through ppt presentation. Also the report so generated is forwarded to the academy.
@@ -457,13 +435,11 @@ function HorizontalImageScroller({ images }) {
     // Array of researchers' names and image paths
     const [isVisible, setIsVisible] = useState(false);
     const Patrons = [
-      { name: 'Sri K. V Chowdary, IRS', imgSrc: 'https://www.vrsiddhartha.ac.in/wp-content/uploads/2019/09/Chancellor-K-V-Chowdary.jpg', position: 'Chancellor, SAHE' },
+      { name: 'Sri K.V Chowdary, IRS', imgSrc: 'https://www.vrsiddhartha.ac.in/wp-content/uploads/2019/09/Chancellor-K-V-Chowdary.jpg', position: 'Chancellor' },
       { name: 'Sri M. Rajaiah', imgSrc: 'https://www.siddharthaacademy.ac.in/img/team/rajaiah.png', position: 'President, SAGTE' },
-      // { name: 'Sri C. Nageswara Rao', imgSrc: 'https://www.vrsiddhartha.ac.in/wp-content/uploads/2020/12/nageswararao.png', position: 'President, SAGTE' },
       { name: 'Sri P. Lakshmana Rao', imgSrc: 'https://www.siddharthaacademy.ac.in/img/team/lakshmana%20rao.png', position: 'Secretary, SAGTE' },
-      { name: 'Prof. P. Venkateswara Rao', imgSrc: 'https://www.vrsiddhartha.ac.in/wp-content/uploads/2019/09/Vice-Chancellor-PV-Rao.jpg', position: ' Vice Chancellor, SAHE' },
-      { name: 'Prof. A. V. Ratna Prasad', imgSrc: 'https://www.vrsiddhartha.ac.in/wp-content/uploads/2024/09/principal_2024-1-275x300.jpg', position: 'Pro-Vice Chancellor, SAHE' },
-      // { name: 'Dr. M . Ravichad', imgSrc: '/images/registrar.jpg', position: 'Registrar, VRSEC' },
+      { name: 'Prof. P. Venkateswara Rao', imgSrc: 'https://www.vrsiddhartha.ac.in/wp-content/uploads/2019/09/Vice-Chancellor-PV-Rao.jpg', position: 'Vice Chancellor' },
+      { name: 'Prof. A. V. Ratna Prasad', imgSrc: 'https://www.vrsiddhartha.ac.in/wp-content/uploads/2024/09/principal_2024-1-275x300.jpg', position: 'Pro-Vice Chancellor' },
     ];
 
   const topResearcher = Patrons[0];
@@ -502,14 +478,14 @@ function HorizontalImageScroller({ images }) {
     return (
       <section
         id="research-names"
-        className={`flex flex-col justify-center items-center bg-[#604CC3] bg-opacity-50 p-6 md:p-10 shadow-lg 
+        className={`flex flex-col justify-center items-center bg-[#002147] bg-opacity-50 p-6 md:p-10 shadow-lg 
           transition-transform duration-700 ease-in-out md:m-10 my-10
           ${isVisible ? 'transform scale-105 opacity-100' : 'transform scale-90 opacity-0'}
           `}
       >
         <div className="container p-4 md:p-10 bg-white rounded-lg shadow-md transition-transform duration-500 ease-in-out">
           {/* Introduction Text */}
-          <p className="text-3xl font-bold text-red-600 text-center">
+          <p className="text-3xl font-bold text-[#002147] text-center">
            Chief Patron
         </p>
 
@@ -521,10 +497,10 @@ function HorizontalImageScroller({ images }) {
             height={200}
             className="m-4 w-[150px] h-[150px] object-cover"
           />
-          <p className="text-lg text-blue-600 font-bold">{topResearcher.name}</p>
+          <p className="text-lg text-[#002147] font-bold">{topResearcher.name}</p>
           <p className="text-sm text-gray-600">{topResearcher.position}</p>
         </div>
-        <p className="text-3xl font-bold text-red-600 text-center">
+        <p className="text-3xl font-bold text-[#002147] text-center">
            Patrons
         </p>
         <ul className="list-none flex flex-col md:flex-row justify-center items-center text-lg text-gray-800">
@@ -537,7 +513,7 @@ function HorizontalImageScroller({ images }) {
                 height={150}
                 className="w-[150px] h-[150px] object-cover"
               />
-              <p className="text-md text-center text-blue-600 font-bold">{researcher.name}</p>
+              <p className="text-md text-center text-[#002147] font-bold">{researcher.name}</p>
               <p className="text-sm text-center text-gray-600">{researcher.position}</p>
             </li>
           ))}
@@ -551,49 +527,47 @@ function HorizontalImageScroller({ images }) {
 const CoordinatorsSection = () => {
   
   const Coordinators = [
-    { name: 'Dr. E. Laxmi Lydia', imgSrc: '/images/laximam.jpg', position: 'Professor' },
-    { name: 'Dr. Sandeep Y', imgSrc: '/images/sandeep.jpg', position: 'Assistant Professor' },
+    { name: 'Dr. G. Surya Narayana', position: 'Associate Professor (ECE)' },
+    { name: 'Dr. K. Raghuveer', position: 'Associate Professor (MBA)' },
+    { name: 'Dr. V. Radhesyam', position: 'Associate Professor (IT)' },
+    { name: 'Dr. Ashutosh Satapathy', position: 'Asst. Professor (Selection Grade) (CSE)' },
     ];
 
     
   const bottomCoordinators=Coordinators.slice(0);
   return (
-    <div className="flex flex-col justify-center mt-16 items-center p-6 border border-gray-300 rounded-lg shadow-md bg-[#] ">
+    <div className="flex flex-col justify-center mt-16 items-center p-6 border border-gray-300 rounded-lg shadow-md bg-white ">
       <div className="flex flex-col md:flex-row justify-around  w-full ">
         {/* Left section - Convenor */}
         <div className="text-center  mb-4 md:mb-0">
-          <h2 className="text-red-600 font-bold text-lg">Convenor</h2>
+          <h2 className="text-[#002147] font-bold text-lg">Convenor</h2>
           <li className="flex flex-col items-center p-2 m-2 rounded-md">
           <Image
                 src="/images/HODIT.jpg"
-                alt="Dr. suneetha. M"
+                alt="Prof. Suneetha M"
                 width={150}
                 height={160}
                 className="w-[150px] h-[160px] object-cover"
               />
-          <p className="text-blue-600 font-bold text-md">
-            Prof. M Suneetha 
+          <p className="text-[#002147] font-bold text-md">
+            Prof. Suneetha M
           </p>
           <p className="text-black text-sm">
-            Dean-R&D, IQAC, HoD-IT
+            Dean-R&D, HOD-IT
           </p>
           </li>
         </div>
 
         {/* Right section - Coordinators */}
         <div className="text-center ">
-          <h2 className="text-red-600 font-bold text-lg">Coordinators</h2>
-          <ul className="list-none flex flex-col md:flex-row justify-center items-center text-lg text-gray-800">
+          <h2 className="text-[#002147] font-bold text-lg">Coordinators</h2>
+          <ul className="list-none flex flex-col md:flex-row justify-center items-center text-lg text-gray-800 flex-wrap">
           {bottomCoordinators.map((coordinator, index) => (
             <li key={index} className="flex flex-col items-center p-2 m-2 rounded-md">
-              <Image
-                src={coordinator.imgSrc}
-                alt={coordinator.name}
-                width={150}
-                height={160}
-                className="w-[150px] h-[160px] object-cover"
-              />
-              <p className="text-base text-center text-blue-600 font-bold">{coordinator.name}</p>
+               <div className="w-[150px] h-[160px] bg-gray-100 flex items-center justify-center text-4xl font-bold text-[#002147] mb-2 rounded shadow-inner">
+                  {coordinator.name.split(' ').pop().charAt(0)}
+               </div>
+              <p className="text-base text-center text-[#002147] font-bold">{coordinator.name}</p>
               <p className="text-sm text-center text-gray-600">{coordinator.position}</p>
             </li>
           ))}
@@ -604,11 +578,11 @@ const CoordinatorsSection = () => {
 
       {/* Queries Section */}
       <div className="w-full text-center border-t border-gray-300 pt-4">
-        <p className="text-red-600 font-bold text-md">
+        <p className="text-[#002147] font-bold text-md">
           Any Queries (Registrations):
         </p>
         <p className="text-black font-bold text-md">
-          Dr. Jaya Prakash S - 9848143200, Dr. Gargi M - 8886599444
+          Dr. C. Subba Reddy (IT) - 9985082007, Dr. M. Vani Pujitha (CSE) - 8074809058
         </p>
       </div>
     </div>

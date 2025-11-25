@@ -2,46 +2,18 @@ import React from 'react'
 import { IoCallOutline, IoLocationOutline } from "react-icons/io5";
 const contact = () => {
   const contact1 =[
-    // {
-    //   "id": 1,
-    //   "name":"Dr .G .Kalyani",
-    //   "ph": 8465930550,
-    // },
-    //  {
-    //   "id": 2,
-    //   "name":"Dr .Y .Sandeep",
-    //   "ph": 9491757787,
-    // },
     {
       "id": 1,
-      "name":"Dr. Jaya Prakash S",
-      "ph": 9848143200,
+      "name":"Dr. C. Subba Reddy",
+      "ph": 9985082007,
     },
     {
       "id": 2,
-      "name":"Dr. Gargi M",
-      "ph":8886599444,
-    },
-    
-    {
-      "id":3,
-      "name":"Dr.V Satya Sahithi",
-      "ph":9666890927,
+      "name":"Dr. M. Vani Pujitha",
+      "ph": 8074809058,
     }
 ]
-const contact2 =[
-    {
-        "id":1,
-        "name":"M .Eleshaddai Roshan",
-        "ph":9618227549,
-    },
-    {
-        "id":2,
-        "name":" G. Neeraja",
-        "ph":8341323299,
-    }
-    
-  ]
+const contact2 =[]
   return (
     <>
     <div className="mt-44 lg:mt-92 text-justify"></div>
@@ -65,13 +37,13 @@ const contact2 =[
          ) })}
         
          </div>
-         <p className='text-lg pt-2 font-bold'>Student Coordinators:</p>
+         {/* <p className='text-lg pt-2 font-bold'>Student Coordinators:</p>
          <div className='text-base lg:text-xl '>
           {contact2.map((c1)=>{
            return( <li key={c1.id} className="flex items-center"><IoCallOutline className='mr-3' />{c1.name} - {c1.ph}</li>
          ) })}
         
-         </div>
+         </div> */}
       </div>
     </div>
     </>

@@ -46,15 +46,12 @@ const Footer = () => {
                 <p>
                   <span className="font-bold">Faculty Coordinators:</span>
                   <br />
-                  <FaPhoneAlt className="inline mr-2" /> Dr. Jaya Prakash S - 9848143200 <br />
-                  <FaPhoneAlt className="inline mr-2" /> Dr. Gargi M - 8886599444 <br/>
-                  <FaPhoneAlt className="inline mr-2" /> Dr.V Satya Sahithi - 9666890927 <br/>
+                  <FaPhoneAlt className="inline mr-2" /> Dr. C. Subba Reddy (IT) - 9985082007 <br />
+                  <FaPhoneAlt className="inline mr-2" /> Dr. M. Vani Pujitha (CSE) - 8074809058 <br/>
                   <br />
-                  <span className="font-bold">Student Coordinators:</span>
+                  <span className="font-bold">Email:</span> rdconclave26@vrsiddhartha.ac.in
                   <br />
-                  <FaPhoneAlt className="inline mr-2" /> M. Eleshaddai Roshan - 9618227549
-                  <br />
-                  <FaPhoneAlt className="inline mr-2" /> G. Neeraja - 8341323299
+                  <span className="font-bold">Website:</span> www.rdconclave26.org
                 </p>
               </div>
             </div>
@@ -68,27 +65,27 @@ const Footer = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <FaInstagram className="text-2xl hover:text-gray-400" />
+                  <FaInstagram className="text-2xl hover:text-[#002147]" />
                 </a>
                 <a
                   href="https://linkedin.com/company/vrsec"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <FaLinkedin className="text-2xl hover:text-gray-400" />
+                  <FaLinkedin className="text-2xl hover:text-[#002147]" />
                 </a>
                 <a href="https://mail.google.com/mail/?view=cm&fs=1&to=principal@vrsiddhartha.ac.in&bcc=principal@vrsiddhartha.ac.in">
-                  <FaEnvelope className="text-2xl hover:text-gray-400" />
+                  <FaEnvelope className="text-2xl hover:text-[#002147]" />
                 </a>
                 <a href="tel:+91 866 2582672">
-                  <FaPhoneAlt className="text-2xl hover:text-gray-400" />
+                  <FaPhoneAlt className="text-2xl hover:text-[#002147]" />
                 </a>
                 <a
                   href="https://www.facebook.com/vrsec/"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <FaFacebook className="text-2xl hover:text-gray-400" />
+                  <FaFacebook className="text-2xl hover:text-[#002147]" />
                 </a>
               </div>
             </div>
