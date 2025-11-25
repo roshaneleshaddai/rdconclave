@@ -80,13 +80,14 @@ function HorizontalImageScroller({ images }) {
           >
             {images.map((image, index) => (
               <div key={index} className="min-w-full flex justify-center items-center">
+                 <div style={{ position: 'relative', width: '850px', height: '250px' }}>
                 <Image
                   src={image.src}
                   alt={image.alt}
-                  width={850} // You can adjust this as needed
-                  height={250} // Set a fixed height to maintain aspect ratio
-                  objectFit="cover" // Ensures the image covers the entire area
+                  fill
+                  style={{ objectFit: "cover" }} // Ensures the image covers the entire area
                 />
+                </div>
               </div>
             ))}
           </div>

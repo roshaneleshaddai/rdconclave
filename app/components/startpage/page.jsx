@@ -24,10 +24,10 @@ export default function StartPage({ onLaunch }) {
   }, []);
 
   return (
-    <div className="fullscreen-container">
+    <div className="fullscreen-container bg-black">
       {/* Background video */}
       <video className="background-video" autoPlay muted loop playsInline>
-        <source src="/videos/background.mp4" type="video/mp4" />
+                <source src="/videos/background.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
 
