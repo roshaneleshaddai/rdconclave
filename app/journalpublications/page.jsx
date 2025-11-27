@@ -300,8 +300,8 @@ const DownloadSchedule = () => {
 
       
 
-        <div className='flex lg:flex-row flex-col justify-evenly items-center'>
-        {/* <div className='flex flex-col'>
+        {/* <div className='flex lg:flex-row flex-col justify-evenly items-center'>
+         <div className='flex flex-col'>
           <Image
           src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQxT9G3gSxNZESl4NJH1NzcPq0kBF1XNyHcA&s"
           alt="ieee"
@@ -311,7 +311,7 @@ const DownloadSchedule = () => {
           className='border-4 border-black'
           />
           <p className='text-center text-2xl p-2'>IEEE</p>
-          </div> */}
+          </div> 
           <div className='flex flex-col'>
             <Image
           src="/images/springer.png"
@@ -324,7 +324,7 @@ const DownloadSchedule = () => {
           <p className='text-center text-2xl p-2'>Springer Lecture Series</p>
           </div>
           
-        </div>
+        </div> */}
         
         <div className='flex justify-center'>
         <motion.div
