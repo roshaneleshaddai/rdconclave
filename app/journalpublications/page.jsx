@@ -321,15 +321,15 @@ const DownloadSchedule = () => {
         <h1 className="text-4xl font-bold pb-4 text-[#002147]">Journals</h1>
         
       {/* table of journals */}
-  <div className="overflow-x-auto">
+  {/* <div className="overflow-x-auto">
     <table className="min-w-full text-left table-auto border-collapse border-2 border-[#002147]">
       <thead>
         <tr>
           <th className="px-4 py-2 border bg-[#002147]/10 text-[#002147] text-bold text-xl border-[#002147]">S.No.</th>
           <th className="px-4 py-2 border bg-[#002147]/10 text-[#002147] text-bold text-xl border-[#002147]">Journal Name</th>
           <th className="px-4 py-2 border bg-[#002147]/10 text-[#002147] text-bold text-xl border-[#002147]">Journal Link</th>
-{/*           <th className="px-4 py-2 border bg-[#002147]/10 text-[#002147] text-bold text-xl border-[#002147]">Quartile</th> */}
-          {/* <th className="px-4 py-2 border border-[#4F709C]">APC</th> */}
+          <th className="px-4 py-2 border bg-[#002147]/10 text-[#002147] text-bold text-xl border-[#002147]">Quartile</th> 
+           <th className="px-4 py-2 border border-[#4F709C]">APC</th> 
         </tr>
       </thead>
       <tbody>
@@ -342,13 +342,13 @@ const DownloadSchedule = () => {
                 {journal.link}
               </a>
             </td>
-{/*             <td className="px-4 py-2 border border-[#4F709C]">{journal.quartile}</td> */}
-            {/* <td className="px-4 py-2 border border-[#4F709C]">{journal.apc}</td> */}
+            <td className="px-4 py-2 border border-[#4F709C]">{journal.quartile}</td> 
+             <td className="px-4 py-2 border border-[#4F709C]">{journal.apc}</td> 
           </tr>
         ))}
       </tbody>
     </table>
-  </div>
+  </div> */}
 </div>
         </div>
 
