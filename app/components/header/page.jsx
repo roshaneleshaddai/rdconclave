@@ -161,7 +161,7 @@ const Header = () => {
             /> */}
     
           </div>
-          <div className="hidden md:block">
+          {/* <div className="hidden md:block">
             <Image
               src="https://www.stthomaskannur.ac.in/stm2/img/static/ieee.png"
               alt="ieee"
@@ -169,7 +169,7 @@ const Header = () => {
               height={isScrolled ? 90 : 100}
               className="rounded-full bg-white"
             />
-          </div>
+          </div> */}
           <div className="hidden md:block">
             <Image
               src="/images/s.jpeg"
