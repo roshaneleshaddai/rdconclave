@@ -845,7 +845,7 @@ const DownloadSchedule = () => {
     };
     return (
       <div className="relative font-SUSE min-h-screen max-w-screen mt-48 md:mt-64">
-        <div className="pb-5">
+        {/* <div className="pb-5">
           <div
             className="bg-[#002147]/10 bg-opacity-20 p-8 lg:mt-0 mt-52 rounded-lg mx-6 transition-opacity duration-1000 "
           >
@@ -883,7 +883,8 @@ const DownloadSchedule = () => {
         <div>
           <DownloadSchedule/>
 
-        </div>
+        </div> */}
+        Schedule will be given Soon!
       </div>
     );
   };
