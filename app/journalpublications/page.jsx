@@ -298,60 +298,7 @@ const DownloadSchedule = () => {
           </div>
         </div>
 
-        <div className="flex flex-col md:flex-row justify-around space-y-6 md:space-y-0 md:space-x-10 items-center">
-          {/* Expected Papers Section */}
-          {/* <div className="px-6 ml-8 md:px-12 text-[#002147] py-4 flex justify-center">
-            <div
-              ref={sectionRef}
-              className="font-bold flex flex-col justify-center text-4xl bg-[#002147]/10 bg-opacity-20 w-40 h-40 text-center transition-all duration-500 p-6 rounded-lg"
-            >
-              {countA}-{countB}
-              <div className="text-lg ">Expected Papers</div>
-            </div>
-          </div> */}
-
-          {/* Journals Section with Swipe-In-Right Animation */}
-          
-          <div
-        ref={publicationsRef}
-        className={`mt-1 w-full bg-white bg-opacity-50 p-8 rounded-lg transition-opacity duration-1000 ${
-        publicationsInView ? 'animate-swipeInRight opacity-100' : 'opacity-0'
-        }`}
-        >
-        <h1 className="text-4xl font-bold pb-4 text-[#002147]">Journals</h1>
-        
-      {/* table of journals */}
-  {/* <div className="overflow-x-auto">
-    <table className="min-w-full text-left table-auto border-collapse border-2 border-[#002147]">
-      <thead>
-        <tr>
-          <th className="px-4 py-2 border bg-[#002147]/10 text-[#002147] text-bold text-xl border-[#002147]">S.No.</th>
-          <th className="px-4 py-2 border bg-[#002147]/10 text-[#002147] text-bold text-xl border-[#002147]">Journal Name</th>
-          <th className="px-4 py-2 border bg-[#002147]/10 text-[#002147] text-bold text-xl border-[#002147]">Journal Link</th>
-          <th className="px-4 py-2 border bg-[#002147]/10 text-[#002147] text-bold text-xl border-[#002147]">Quartile</th> 
-           <th className="px-4 py-2 border border-[#4F709C]">APC</th> 
-        </tr>
-      </thead>
-      <tbody>
-        {journals.map((journal) => (
-          <tr key={journal.sNo}>
-            <td className="px-4 py-2 border text-md  border-[#002147]">{journal.sNo}</td>
-            <td className="px-4 py-2 border text-md  border-[#002147]">{journal.name}</td>
-            <td className="px-4 py-2 border text-md  border-[#002147]">
-              <a href={journal.link} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
-                {journal.link}
-              </a>
-            </td>
-            <td className="px-4 py-2 border border-[#4F709C]">{journal.quartile}</td> 
-             <td className="px-4 py-2 border border-[#4F709C]">{journal.apc}</td> 
-          </tr>
-        ))}
-      </tbody>
-    </table>
-  </div> */}
-</div>
-        </div>
-
+      
 
         <div className='flex lg:flex-row flex-col justify-evenly items-center'>
         <div className='flex flex-col'>
@@ -387,12 +334,13 @@ const DownloadSchedule = () => {
           viewport={{ once: true }}
           className="bg-[#002147]/10 bg-opacity-20 px-20 py-10 rounded-lg  flex flex-col items-center m-10 ">
 
-          <h1 className="text-2xl text-center font-bold text-black">Submission Link</h1>
-          <button className="p-2 m-2 bg-white text-[#002147] text-lg border-2 border-[#002147]/50 hover:border-[#002147] rounded-full">
+          <h1 className="text-2xl text-center font-bold text-black">Submission Link will be available Soon!</h1>
+          {/* <button className="p-2 m-2 bg-white text-[#002147] text-lg border-2 border-[#002147]/50 hover:border-[#002147] rounded-full">
             <a href="https://forms.gle/CxueSuEZC3ML3q3o8 ">
         Click here!
              </a>
-      </button>
+      </button> */}
+            
 {/*          <div className='items-center text-center'>
           <h1>or</h1>
           <Link href={https://mail.google.com/mail/?view=cm&fs=1&to=${emailAddress}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}}> Email : <span className='text-blue-700'>rdconclave25@vrsiddhartha.ac.in</span> </Link>
