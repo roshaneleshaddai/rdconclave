@@ -97,8 +97,8 @@ const Header = () => {
             // src="/images/vrseclogo.png"
             src="/images/sahelogo.png"
             alt="VRSEC Logo"
-            width={isScrolled ? 90 : 120}
-            height={isScrolled ? 90 : 120}
+            width={isScrolled ? 70 : 90}
+            height={isScrolled ? 70 : 90}
             className={`lg:block hidden object-scale-down transition-all duration-300 lg:w-120 lg:h-90`}
             loading="lazy"
           />
