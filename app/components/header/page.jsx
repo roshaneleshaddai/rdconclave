@@ -97,9 +97,9 @@ const Header = () => {
             // src="/images/vrseclogo.png"
             src="/images/sahelogo.png"
             alt="VRSEC Logo"
-            width={isScrolled ? 110 : 120}
-            height={isScrolled ? 110 : 120}
-            className={`lg:block hidden object-scale-down transition-all duration-300 lg:w-120 lg:h-140`}
+            width={isScrolled ? 90 : 120}
+            height={isScrolled ? 90 : 120}
+            className={`lg:block hidden object-scale-down transition-all duration-300 lg:w-120 lg:h-90`}
             loading="lazy"
           />
           <Image
@@ -125,27 +125,30 @@ const Header = () => {
         </div>
 
         <div className="">
-          <div className={`md:block md:text-center transition-all duration-300 ease-in-out ${isScrolled ? 'text-base md:text-xl' : 'text-lg md:text-2xl'}`}>
+          <div className={`md:block md:text-center transition-all duration-300 ease-in-out ${isScrolled ? 'text-base md:text-lg' : 'text-lg md:text-xl'}`}>
+
+            <h2 className={`font-bold text-black text-5xl ${isScrolled ? 'hidden' : ''}`}>
+            SIDDHARTHA
+            </h2>
+            <div className={`border-b-2 border-[#002147] mx-auto ${isScrolled ? 'hidden' : ''}`} style={{width: '100%'}}></div>
 
             <h2 className={`font-bold text-black ${isScrolled ? 'hidden' : ''}`}>
-            SIDDHARTHA <br className="lg:block hidden"></br>ACADEMY OF HIGHER EDUCATION
+            ACADEMY OF HIGHER EDUCATION
             </h2>
-            <h2 className={`font-bold text-black ${isScrolled ? '' : 'hidden'}`}>
+            <h2 className={`font-bold text-black  ${isScrolled ? '' : 'hidden'}`}>
             SIDDHARTHA ACADEMY OF HIGHER EDUCATION
             </h2>
 
             <h2
                 className={`font-normal text-black ${
-                  isScrolled ? 'lg:text-lg text-sm' : 'lg:text-xl text-base'
+                  isScrolled ? 'lg:text-sm text-xs' : 'lg:text-xs text-base'
                 }`}
               >
-                (Deemed to be <span className="font-semibold">University</span>)
+                An Institution Deemed to be <span className="font-semibold">University</span>
                 <br />
-                <span className="text-black lg:text-sm text-xs">(Under section 3 UGC Act, 1956)</span>
+                <span className="text-black lg:text-xs text-xs">(Under Section 3 of UGC Act, 1956)</span>
                 <br/>
-                <span className="font-bold text-black">V R SIDDHARTHA SCHOOL OF ENGINEERING</span>
-                <br/>
-                <span className="lg:text-base text-xs"><span className="text-black">(Sponsored by <span className="font-semibold">Siddhartha Academy of General & Technical Education</span>), Vijayawada, A.P, India.</span></span>
+                <span className="lg:text-xs text-xs"><span className="text-black">Kanuru, Vijayawada - 520 007, AP. www.vrsiddhartha.ac.in</span></span>
               </h2>
             </div>
           </div>
@@ -249,11 +252,6 @@ const Header = () => {
           Journal Publications
         </Link></li>
         <li><Link
-          href="/regi"
-          className="" onClick={toggleMenu}>
-          Registration
-        </Link></li>
-        <li><Link
           href="/speakers"
           className="" onClick={toggleMenu}>
           Speakers
@@ -325,12 +323,7 @@ const Header = () => {
         >
           Journal Publications
         </Link>
-        <Link
-          href="/regi"
-          className={`cursor-pointer m-0.5 bg-[#002147] text-white  border-[#1A1A1A] text-[#213555] font-semibold transition-all duration-300 ease-in-out ${isScrolled ? 'text-sm py-1 px-4' : 'text-base py-1 px-2'} hover:bg-[#FFD700]/20  hover:text-black hover:shadow-lg`}
-        >
-          Registration
-        </Link>
+       
         <Link
           href="/speakers"
           className={`cursor-pointer m-0.5 bg-[#002147] text-white border-[#1A1A1A] text-[#213555] font-semibold transition-all duration-300 ease-in-out ${isScrolled ? 'text-sm py-1 px-4' : 'text-base py-1 px-2'} hover:bg-[#FFD700]/20  hover:text-black hover:shadow-lg`}

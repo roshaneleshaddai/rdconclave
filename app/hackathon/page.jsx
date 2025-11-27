@@ -399,7 +399,7 @@ export default function Hackathon() {
                   </div>
                 </div>
         </div>
-        <section id="registration-section" className="flex flex-col items-center">
+        {/* <section id="registration-section" className="flex flex-col items-center">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -500,7 +500,7 @@ export default function Hackathon() {
               </button>
             </form>
           </motion.div>
-        </section>
+        </section> */}
         
         {/* <section  id="registration-section">
           <div className='text-bold text-5xl text-red-500 text-center border-2 border-b m-32  p-20'>Registrations Closed !!!</div>

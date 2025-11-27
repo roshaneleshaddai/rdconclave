@@ -850,10 +850,10 @@ const DownloadSchedule = () => {
             className="bg-[#002147]/10 bg-opacity-20 p-8 lg:mt-0 mt-52 rounded-lg mx-6 transition-opacity duration-1000 "
           >
             <h1 className="text-4xl  font-bold text-center text-[#002147]">
-              Schedule
+              Schedule will be updated soon !!!
             </h1>
           </div>
-          <div className="lg:max-w-7xl max-w-screen mx-auto p-6">
+          {/* <div className="lg:max-w-7xl max-w-screen mx-auto p-6">
             <div className="flex space-x-4 border-b border-gray-300 mb-4">
               <button
                 className={`px-4 py-2 font-medium text-gray-800 ${
@@ -880,8 +880,8 @@ const DownloadSchedule = () => {
             {activeTab === "day2" && renderSchedule(scheduleData.day2)}
           </div>
         </div>
-        <div>
-          <DownloadSchedule/>
+        <div> */}
+          {/* <DownloadSchedule/> */}
 
         </div>
       </div>
