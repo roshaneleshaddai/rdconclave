@@ -132,8 +132,8 @@ function HorizontalImageScroller({ images }) {
           <h1 className="text-4xl font-extrabold text-[#002147]">Research Conclave 2026</h1>
           <h2 className="text-2xl font-bold mt-2 text-[#002147]">Organized by Research & Development Cell</h2>
           <h3 className="text-xl font-semibold mt-1 text-[#002147]">Departments of CSE, ECE, IT & MBA</h3>
-          <h1 className="text-3xl font-extrabold mt-4 text-[#FFD700]">January 23rd - 24th, 2026</h1>
-          <h2 className="text-2xl font-bold mt-2 text-[#FFD700]">1 Lakh worth Cash Prizes</h2>
+          <h1 className="text-3xl font-extrabold mt-4 text-[#FFFFCC]">January 23rd - 24th, 2026</h1>
+          <h2 className="text-2xl font-bold mt-2 text-[#FFFFCC]">1 Lakh worth Cash Prizes</h2>
           <p className="text-lg font-bold mt-2 text-black">(OFFLINE) Registrations Open</p>
           <p className="text-lg font-semibold mt-1 text-black">Venue: V. R. Siddhartha School of Engineering</p>
           <p className="text-md mt-1 text-gray-700">Accommodation, Food and Schwags</p>
@@ -175,7 +175,7 @@ function HorizontalImageScroller({ images }) {
       <p className="text-center">Registration Deadline:<br/><span className="text-[#002147] text-base">5th January 2026</span></p>
       <p className="text-center mt-2">Final Round Notification:<br/><span className="text-[#002147] text-base">8th January 2026</span></p>
       <p className="text-center mt-2">Final Round:<br/><span className="text-[#002147] text-base">Jan 23rd - 24th, 2026</span></p>
-      <div className="flex gap-4 mt-2 text-[#FFD700] text-xl font-extrabold">
+      <div className="flex gap-4 mt-2 text-[#FFFFCC] text-xl font-extrabold">
         <span>₹25,000</span>
         <span>₹15,000</span>
         <span>₹10,000</span>
