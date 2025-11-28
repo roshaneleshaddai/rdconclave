@@ -147,7 +147,7 @@ function HorizontalImageScroller({ images }) {
   >
     <div className="flex-0.5 flex items-center justify-center">
       <h1 className="text-2xl sm:text-3xl text-center font-bold text-[#002147]">
-        Track 1:<br/>Industry-Academic Visit
+        Track 1:<br/>Industry-Academic Meet
       </h1>
     </div>
     <div className="flex-1 flex flex-col items-center justify-center font-bold mt-4 space-y-2">
