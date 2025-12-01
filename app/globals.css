@@ -28,6 +28,12 @@ html, body, #__next {
   height: 100%;
 }
 
+/* Remove default margin and prevent horizontal scroll bleed */
+html, body {
+  margin: 0;
+  overflow-x: hidden;
+}
+
 /* Helpful utility classes used in JSX where inline hexs were previously used */
 .brand-bg { background-color: var(--primary); }
 .brand-text { color: var(--primary); }
