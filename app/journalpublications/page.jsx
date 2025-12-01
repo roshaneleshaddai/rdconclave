@@ -262,7 +262,7 @@ const DownloadSchedule = () => {
     };
 
   return (
-    <div className="relative font-SUSE min-h-screen w-screen mt-48 md:mt-64">
+    <div className="relative font-SUSE min-h-screen w-full mt-48 md:mt-64">
       {/* Background Video */}
       
         
@@ -278,11 +278,11 @@ const DownloadSchedule = () => {
           />
         </div> */}
 
-        {/* journal Publications Section with Fade-In Animation */}
+        {/* journal Publication Section with Fade-In Animation */}
         <div
           className="bg-[#002147]/10 bg-opacity-20 p-8 lg:mt-0 mt-52 rounded-lg mx-6 transition-opacity duration-1000 "
         >
-          <h1 className="text-4xl  font-bold text-center text-[#002147]">Journal Publications</h1>
+          <h1 className="text-4xl  font-bold text-center text-[#002147]">Journal Publication</h1>
           {/* <p className="text-lg text-black p-2">
             journal Publications at our college highlights the research contributions of our esteemed academic staff, showcasing their latest papers, publications, and projects. This platform fosters collaboration with peers, industry professionals, and other institutions. Through engaging poster sessions, oral presentations, and panel discussions, our journal present their groundbreaking work, encouraging rich discussions and constructive feedback. This initiative reflects our commitment to academic excellence and paves the way for future collaborative research endeavors.
           </p> */}
@@ -375,6 +375,127 @@ const DownloadSchedule = () => {
       
       </div>
       {/* <DownloadSchedule/> */}
+      {/* Themes Table */}
+      <div className="mx-6 mb-12 bg-white shadow-md rounded-lg p-6">
+        <h2 className="text-3xl font-bold text-center text-[#002147] mb-4">Conference Themes</h2>
+        <p className="text-center text-sm text-gray-600 mb-6">Submissions are invited under (but not limited to) the following themes.</p>
+        <div className="overflow-x-auto">
+          <table className="min-w-full border border-gray-300 text-sm md:text-base">
+            <thead className="bg-[#002147] text-white">
+              <tr>
+                <th className="px-4 py-3 text-left w-1/3">Theme</th>
+                <th className="px-4 py-3 text-left">Topics</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr className="odd:bg-gray-50 even:bg-white align-top">
+                <td className="px-4 py-3 font-semibold">Intelligent Computing and Emerging Technologies</td>
+                <td className="px-4 py-3 space-y-1">
+                  <ul className="list-disc list-inside space-y-1">
+                    <li>AI, ML, and Deep Learning</li>
+                    <li>Neural, Fuzzy, and Cognitive Computing</li>
+                    <li>Evolutionary and Swarm Optimization</li>
+                    <li>Hybrid Intelligent Systems</li>
+                    <li>Cloud, Edge, and Fog Computing</li>
+                    <li>Cybersecurity and Blockchain</li>
+                    <li>5G/6G and Future Networks</li>
+                    <li>Wide-Area Monitoring and Control</li>
+                    <li>Quantum Computing and Post-CMOS Devices</li>
+                    <li>Brain–Computer Interfaces</li>
+                    <li>AR/VR and Human Augmentation</li>
+                  </ul>
+                </td>
+              </tr>
+              <tr className="odd:bg-gray-50 even:bg-white align-top">
+                <td className="px-4 py-3 font-semibold">Robotics, Automation, and Industry 5.0</td>
+                <td className="px-4 py-3">
+                  <ul className="list-disc list-inside space-y-1">
+                    <li>Smart and Digital Manufacturing</li>
+                    <li>Additive and Hybrid Manufacturing</li>
+                    <li>Robotics, Mechatronics, and Tribology</li>
+                    <li>CFD and Thermal Analysis</li>
+                    <li>Combustion, Engines, and Emission Control</li>
+                    <li>Precision and Sustainable Manufacturing</li>
+                    <li>Resilient and Human-Centric Manufacturing</li>
+                  </ul>
+                </td>
+              </tr>
+              <tr className="odd:bg-gray-50 even:bg-white align-top">
+                <td className="px-4 py-3 font-semibold">Biomedical Engineering and Healthcare Technologies</td>
+                <td className="px-4 py-3">
+                  <ul className="list-disc list-inside space-y-1">
+                    <li>Biomedical Signal and Image Processing</li>
+                    <li>Smart Healthcare Sensors and Wearables</li>
+                    <li>Medical Robotics and Automation</li>
+                    <li>Virtual and Remote Instrumentation</li>
+                    <li>Biomedical Devices and Biosensors</li>
+                  </ul>
+                </td>
+              </tr>
+              <tr className="odd:bg-gray-50 even:bg-white align-top">
+                <td className="px-4 py-3 font-semibold">Sustainable Civil Engineering and Infrastructure</td>
+                <td className="px-4 py-3">
+                  <ul className="list-disc list-inside space-y-1">
+                    <li>Green Materials and Sustainable Construction</li>
+                    <li>Smart Mobility and Transport Systems</li>
+                    <li>Eco-Friendly Infrastructure Design</li>
+                    <li>Waste Management and Circular Economy</li>
+                    <li>Remote Sensing and GIS Technologies</li>
+                    <li>Resilient and Cost-Effective Infrastructure</li>
+                    <li>Advanced Construction Composites</li>
+                  </ul>
+                </td>
+              </tr>
+              <tr className="odd:bg-gray-50 even:bg-white align-top">
+                <td className="px-4 py-3 font-semibold">Advanced Electronics and Communication Systems</td>
+                <td className="px-4 py-3">
+                  <ul className="list-disc list-inside space-y-1">
+                    <li>Embedded and Cyber-Physical Systems</li>
+                    <li>Optical, Wireless, and Satellite Communication</li>
+                    <li>Signal, Image, and Multimedia Processing</li>
+                    <li>VLSI Design and Nanoelectronics</li>
+                    <li>Network Protocols and IoT Connectivity</li>
+                    <li>Intelligent Sensors and Instrumentation</li>
+                  </ul>
+                </td>
+              </tr>
+              <tr className="odd:bg-gray-50 even:bg-white align-top">
+                <td className="px-4 py-3 font-semibold">Smart Energy and Sustainable Power Systems</td>
+                <td className="px-4 py-3">
+                  <ul className="list-disc list-inside space-y-1">
+                    <li>Smart Grid and Microgrid Systems</li>
+                    <li>Renewable Energy and Power Converters</li>
+                    <li>Electric Vehicles and Charging Systems</li>
+                    <li>Demand-Side Energy Management</li>
+                    <li>Sustainable Energy for Smart Cities</li>
+                  </ul>
+                </td>
+              </tr>
+              <tr className="odd:bg-gray-50 even:bg-white align-top">
+                <td className="px-4 py-3 font-semibold">Physical Sciences and Computational Modelling</td>
+                <td className="px-4 py-3">
+                  <ul className="list-disc list-inside space-y-1">
+                    <li>Material Synthesis and Characterization</li>
+                    <li>Probability and Numerical Methods</li>
+                    <li>Computational Physics and Chemistry</li>
+                    <li>Mathematical Modelling and Optimization</li>
+                  </ul>
+                </td>
+              </tr>
+              <tr className="odd:bg-gray-50 even:bg-white align-top">
+                <td className="px-4 py-3 font-semibold">Humanities, Innovation, and Entrepreneurship</td>
+                <td className="px-4 py-3">
+                  <ul className="list-disc list-inside space-y-1">
+                    <li>Innovative Business Models</li>
+                    <li>Economics and Strategic Management</li>
+                    <li>Literature, Linguistics, and Human Values</li>
+                  </ul>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
       </div>
     </div>
   );
