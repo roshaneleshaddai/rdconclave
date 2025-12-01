@@ -147,7 +147,7 @@ function HorizontalImageScroller({ images }) {
   >
     <div className="flex-0.5 flex items-center justify-center">
       <h1 className="text-2xl sm:text-3xl text-center font-bold text-[#002147]">
-        Track 1:<br/>Industry-Academic Meet
+        Track 1:<br/>Industry-Academic Visit
       </h1>
     </div>
     <div className="flex-1 flex flex-col items-center justify-center font-bold mt-4 space-y-2">
@@ -216,39 +216,14 @@ function HorizontalImageScroller({ images }) {
     const aboutText = [
       "The Research Conclave is a multidisciplinary event designed to bridge the gap between industry, academia, and students while promoting innovative research and collaboration.",
       "The program is structured to facilitate meaningful interactions and knowledge exchange among industry experts, academic professionals, and students.",
-      "The event comprises three key components: an Industry-Academia Meet, inSAHEthon, and Journal Publications."
+      "The event comprises three key components: an Industry-Academia Meet, inSAHEthon, and Journal Publication."
       ];
-    
-  
     const [visibleLines, setVisibleLines] = useState([]);
-  
-    const handleScroll = () => {
-      const aboutSection = document.getElementById('about');
-      
-      if (!aboutSection) {
-        return; // Exit the function if the element doesn't exist
-      }
-    
-  const headerHeight = document.querySelector('header').offsetHeight; // Adjust the selector as needed
-  const sectionPosition = aboutSection.getBoundingClientRect().top;
-  const screenPosition = window.innerHeight;
 
-  // Check if section is below the header in the viewport
-  if (sectionPosition < screenPosition - headerHeight) {
-    // Reveal lines one by one
-    aboutText.forEach((_, index) => {
-      setTimeout(() => {
-        setVisibleLines((prevLines) => [...new Set([...prevLines, index])]);
-      }, index * 300); // Delay of 300ms for each line
-    });
-  }
-};
-    
+    // Immediately reveal content to avoid blank section
     useEffect(() => {
-      window.addEventListener('scroll', handleScroll);
-      return () => {
-        window.removeEventListener('scroll', handleScroll);
-      };
+      const all = aboutText.map((_, i) => i);
+      setVisibleLines(all);
     }, []);
   
     return (
@@ -340,7 +315,7 @@ function HorizontalImageScroller({ images }) {
 
 
   const InfoSection = () => {
-    const [videoVisible, setVideoVisible] = useState(false);
+    const [videoVisible, setVideoVisible] = useState(true);
     const [visibleObjectives, setVisibleObjectives] = useState([]);
   
     const objectives = [
@@ -352,33 +327,15 @@ function HorizontalImageScroller({ images }) {
 "R&D Consultancy"
     ];
   
-    const handleScroll = () => {
-      const videoElement = document.getElementById("info-video");
-  
-      // Ensure the element exists before accessing its properties
-      if (!videoElement) return;
-  
-      const sectionPosition = videoElement.getBoundingClientRect().top;
-      const screenPosition = window.innerHeight / 1;
-  
-      if (sectionPosition < screenPosition) {
-        setVideoVisible(true);
-  
-        objectives.forEach((_, index) => {
-          setTimeout(() => {
-            setVisibleObjectives((prevObjectives) => [
-              ...new Set([...prevObjectives, index]),
-            ]);
-          }, index * 300);
-        });
-      }
-    };
-  
     useEffect(() => {
-      window.addEventListener("scroll", handleScroll);
-      return () => {
-        window.removeEventListener("scroll", handleScroll);
-      };
+      // Immediately mark video/objectives as visible to avoid blank content
+      objectives.forEach((_, index) => {
+        setTimeout(() => {
+          setVisibleObjectives((prevObjectives) => [
+            ...new Set([...prevObjectives, index]),
+          ]);
+        }, index * 300);
+      });
     }, []);
   
     return (
@@ -433,7 +390,7 @@ function HorizontalImageScroller({ images }) {
   
   const ResearchNames = () => {
     // Array of researchers' names and image paths
-    const [isVisible, setIsVisible] = useState(false);
+    const [isVisible, setIsVisible] = useState(true);
     const Patrons = [
       { name: 'Sri K.V Chowdary, IRS', imgSrc: 'https://www.vrsiddhartha.ac.in/wp-content/uploads/2019/09/Chancellor-K-V-Chowdary.jpg', position: 'Chancellor' },
       { name: 'Sri M. Rajaiah', imgSrc: 'https://www.siddharthaacademy.ac.in/img/team/rajaiah.png', position: 'President, SAGTE' },
@@ -446,32 +403,8 @@ function HorizontalImageScroller({ images }) {
   const bottomResearchers = Patrons.slice(1);
   
     useEffect(() => {
-      const handleScroll = () => {
-        // Get the element after the function starts
-        const section = document.getElementById('research-names');
-    
-        // If the section element does not exist, exit early
-        if (!section) return;
-    
-        // Calculate the section's position relative to the viewport
-        const sectionTop = section.getBoundingClientRect().top;
-        const windowHeight = window.innerHeight;
-    
-        // Check if the section is in the viewport
-        if (sectionTop < windowHeight - 100) {
-          setIsVisible(true); // Apply transformation when scrolled into view
-        } else {
-          setIsVisible(false); // Remove transformation when out of view
-        }
-      };
-    
-      // Add the scroll event listener
-      window.addEventListener('scroll', handleScroll);
-    
-      // Clean up the event listener on component unmount
-      return () => {
-        window.removeEventListener('scroll', handleScroll);
-      };
+      // Ensure section is visible on initial render
+      setIsVisible(true);
     }, []);
     
   
