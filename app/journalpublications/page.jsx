@@ -288,17 +288,7 @@ const DownloadSchedule = () => {
           </p> */}
         </div>
             
-          <div className='flex flex-col items-center justify-center'>  
-            <h1 className='text-3xl text-center font-bold px-5 pt-5'>Important dates</h1>
-            <hr className="h-1 my-2 bg-[#002147] lg:w-1/4 w-1/2" />
-            <div className="lg:text-xl text-base flex-1 flex flex-col items-center justify-center font-bold lg:mx-5 m-2">
-            <p className="text-center">Submission Deadline:<span className="text-red-500"> December 20th, 2025</span></p>
-            <p className="text-center">Acceptance Notification:<span className="text-red-500 "> January 5th, 2026</span></p>
-            <p className="text-center">Event Registration Deadline:<span className="text-red-500 "> January 10th, 2026</span></p>
-          </div>
-        </div>
-
-      
+          {/* Important dates moved below themes */}
 
         {/* <div className='flex lg:flex-row flex-col justify-evenly items-center'>
          <div className='flex flex-col'>
@@ -326,6 +316,129 @@ const DownloadSchedule = () => {
           
         </div> */}
         
+        {/* Themes Table moved above Important Dates */}
+        <div className="mx-6 mb-8 bg-white shadow-md rounded-lg p-6">
+          <h2 className="text-3xl font-bold text-left text-[#002147] mb-2 border-l-4 border-[#002147] pl-3">Conference Themes</h2>
+          <p className="text-left text-sm text-gray-600 mb-4">Submissions are invited under (but not limited to) the following themes.</p>
+          <div className="overflow-x-auto">
+            <table className="min-w-full border border-gray-300 text-sm md:text-base">
+              <thead className="bg-[#002147] text-white">
+                <tr>
+                  <th className="px-4 py-3 text-left w-1/3">Theme</th>
+                  <th className="px-4 py-3 text-left">Topics</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="odd:bg-gray-50 even:bg-white align-top">
+                  <td className="px-4 py-3 font-semibold">Intelligent Computing and Emerging Technologies</td>
+                  <td className="px-4 py-3 space-y-1">
+                    <ul className="list-disc list-inside space-y-1">
+                      <li>AI, ML, and Deep Learning</li>
+                      <li>Neural, Fuzzy, and Cognitive Computing</li>
+                      <li>Evolutionary and Swarm Optimization</li>
+                      <li>Hybrid Intelligent Systems</li>
+                      <li>Cloud, Edge, and Fog Computing</li>
+                      <li>Cybersecurity and Blockchain</li>
+                      <li>5G/6G and Future Networks</li>
+                      <li>Wide-Area Monitoring and Control</li>
+                      <li>Quantum Computing and Post-CMOS Devices</li>
+                      <li>Brain–Computer Interfaces</li>
+                      <li>AR/VR and Human Augmentation</li>
+                    </ul>
+                  </td>
+                </tr>
+                <tr className="odd:bg-gray-50 even:bg-white align-top">
+                  <td className="px-4 py-3 font-semibold">Robotics, Automation, and Industry 5.0</td>
+                  <td className="px-4 py-3">
+                    <ul className="list-disc list-inside space-y-1">
+                      <li>Smart and Digital Manufacturing</li>
+                      <li>Additive and Hybrid Manufacturing</li>
+                      <li>Robotics, Mechatronics, and Tribology</li>
+                      <li>CFD and Thermal Analysis</li>
+                      <li>Combustion, Engines, and Emission Control</li>
+                      <li>Precision and Sustainable Manufacturing</li>
+                      <li>Resilient and Human-Centric Manufacturing</li>
+                    </ul>
+                  </td>
+                </tr>
+                <tr className="odd:bg-gray-50 even:bg-white align-top">
+                  <td className="px-4 py-3 font-semibold">Biomedical Engineering and Healthcare Technologies</td>
+                  <td className="px-4 py-3">
+                    <ul className="list-disc list-inside space-y-1">
+                      <li>Biomedical Signal and Image Processing</li>
+                      <li>Smart Healthcare Sensors and Wearables</li>
+                      <li>Medical Robotics and Automation</li>
+                      <li>Virtual and Remote Instrumentation</li>
+                      <li>Biomedical Devices and Biosensors</li>
+                    </ul>
+                  </td>
+                </tr>
+                <tr className="odd:bg-gray-50 even:bg-white align-top">
+                  <td className="px-4 py-3 font-semibold">Sustainable Civil Engineering and Infrastructure</td>
+                  <td className="px-4 py-3">
+                    <ul className="list-disc list-inside space-y-1">
+                      <li>Green Materials and Sustainable Construction</li>
+                      <li>Smart Mobility and Transport Systems</li>
+                      <li>Eco-Friendly Infrastructure Design</li>
+                      <li>Waste Management and Circular Economy</li>
+                      <li>Remote Sensing and GIS Technologies</li>
+                      <li>Resilient and Cost-Effective Infrastructure</li>
+                      <li>Advanced Construction Composites</li>
+                    </ul>
+                  </td>
+                </tr>
+                <tr className="odd:bg-gray-50 even:bg-white align-top">
+                  <td className="px-4 py-3 font-semibold">Advanced Electronics and Communication Systems</td>
+                  <td className="px-4 py-3">
+                    <ul className="list-disc list-inside space-y-1">
+                      <li>Embedded and Cyber-Physical Systems</li>
+                      <li>Optical, Wireless, and Satellite Communication</li>
+                      <li>Signal, Image, and Multimedia Processing</li>
+                      <li>VLSI Design and Nanoelectronics</li>
+                      <li>Network Protocols and IoT Connectivity</li>
+                      <li>Intelligent Sensors and Instrumentation</li>
+                    </ul>
+                  </td>
+                </tr>
+                <tr className="odd:bg-gray-50 even:bg-white align-top">
+                  <td className="px-4 py-3 font-semibold">Smart Energy and Sustainable Power Systems</td>
+                  <td className="px-4 py-3">
+                    <ul className="list-disc list-inside space-y-1">
+                      <li>Smart Grid and Microgrid Systems</li>
+                      <li>Renewable Energy and Power Converters</li>
+                      <li>Electric Vehicles and Charging Systems</li>
+                      <li>Demand-Side Energy Management</li>
+                      <li>Sustainable Energy for Smart Cities</li>
+                    </ul>
+                  </td>
+                </tr>
+                <tr className="odd:bg-gray-50 even:bg-white align-top">
+                  <td className="px-4 py-3 font-semibold">Physical Sciences and Computational Modelling</td>
+                  <td className="px-4 py-3">
+                    <ul className="list-disc list-inside space-y-1">
+                      <li>Material Synthesis and Characterization</li>
+                      <li>Probability and Numerical Methods</li>
+                      <li>Computational Physics and Chemistry</li>
+                      <li>Mathematical Modelling and Optimization</li>
+                    </ul>
+                  </td>
+                </tr>
+                <tr className="odd:bg-gray-50 even:bg-white align-top">
+                  <td className="px-4 py-3 font-semibold">Humanities, Innovation, and Entrepreneurship</td>
+                  <td className="px-4 py-3">
+                    <ul className="list-disc list-inside space-y-1">
+                      <li>Innovative Business Models</li>
+                      <li>Economics and Strategic Management</li>
+                      <li>Literature, Linguistics, and Human Values</li>
+                    </ul>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        {/* Important Dates */}
         <div className='flex justify-center'>
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -333,6 +446,13 @@ const DownloadSchedule = () => {
           transition={{ duration: 1 }}
           viewport={{ once: true }}
           className="bg-[#002147]/10 bg-opacity-20 px-20 py-10 rounded-lg  flex flex-col items-center m-10 ">
+          <h1 className='text-3xl text-center font-bold px-5'>Important dates</h1>
+          <hr className="h-1 my-2 bg-[#002147] lg:w-1/4 w-1/2" />
+          <div className="lg:text-xl text-base flex-1 flex flex-col items-center justify-center font-bold lg:mx-5 m-2">
+            <p className="text-center">Submission Deadline:<span className="text-red-500"> December 20th, 2025</span></p>
+            <p className="text-center">Acceptance Notification:<span className="text-red-500 "> January 5th, 2026</span></p>
+            <p className="text-center">Event Registration Deadline:<span className="text-red-500 "> January 10th, 2026</span></p>
+          </div>
 
           <h1 className="text-2xl text-center font-bold text-black">Submission Link will be available Soon!</h1>
           {/* <button className="p-2 m-2 bg-white text-[#002147] text-lg border-2 border-[#002147]/50 hover:border-[#002147] rounded-full">
@@ -375,127 +495,6 @@ const DownloadSchedule = () => {
       
       </div>
       {/* <DownloadSchedule/> */}
-      {/* Themes Table */}
-      <div className="mx-6 mb-12 bg-white shadow-md rounded-lg p-6">
-        <h2 className="text-3xl font-bold text-center text-[#002147] mb-4">Conference Themes</h2>
-        <p className="text-center text-sm text-gray-600 mb-6">Submissions are invited under (but not limited to) the following themes.</p>
-        <div className="overflow-x-auto">
-          <table className="min-w-full border border-gray-300 text-sm md:text-base">
-            <thead className="bg-[#002147] text-white">
-              <tr>
-                <th className="px-4 py-3 text-left w-1/3">Theme</th>
-                <th className="px-4 py-3 text-left">Topics</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr className="odd:bg-gray-50 even:bg-white align-top">
-                <td className="px-4 py-3 font-semibold">Intelligent Computing and Emerging Technologies</td>
-                <td className="px-4 py-3 space-y-1">
-                  <ul className="list-disc list-inside space-y-1">
-                    <li>AI, ML, and Deep Learning</li>
-                    <li>Neural, Fuzzy, and Cognitive Computing</li>
-                    <li>Evolutionary and Swarm Optimization</li>
-                    <li>Hybrid Intelligent Systems</li>
-                    <li>Cloud, Edge, and Fog Computing</li>
-                    <li>Cybersecurity and Blockchain</li>
-                    <li>5G/6G and Future Networks</li>
-                    <li>Wide-Area Monitoring and Control</li>
-                    <li>Quantum Computing and Post-CMOS Devices</li>
-                    <li>Brain–Computer Interfaces</li>
-                    <li>AR/VR and Human Augmentation</li>
-                  </ul>
-                </td>
-              </tr>
-              <tr className="odd:bg-gray-50 even:bg-white align-top">
-                <td className="px-4 py-3 font-semibold">Robotics, Automation, and Industry 5.0</td>
-                <td className="px-4 py-3">
-                  <ul className="list-disc list-inside space-y-1">
-                    <li>Smart and Digital Manufacturing</li>
-                    <li>Additive and Hybrid Manufacturing</li>
-                    <li>Robotics, Mechatronics, and Tribology</li>
-                    <li>CFD and Thermal Analysis</li>
-                    <li>Combustion, Engines, and Emission Control</li>
-                    <li>Precision and Sustainable Manufacturing</li>
-                    <li>Resilient and Human-Centric Manufacturing</li>
-                  </ul>
-                </td>
-              </tr>
-              <tr className="odd:bg-gray-50 even:bg-white align-top">
-                <td className="px-4 py-3 font-semibold">Biomedical Engineering and Healthcare Technologies</td>
-                <td className="px-4 py-3">
-                  <ul className="list-disc list-inside space-y-1">
-                    <li>Biomedical Signal and Image Processing</li>
-                    <li>Smart Healthcare Sensors and Wearables</li>
-                    <li>Medical Robotics and Automation</li>
-                    <li>Virtual and Remote Instrumentation</li>
-                    <li>Biomedical Devices and Biosensors</li>
-                  </ul>
-                </td>
-              </tr>
-              <tr className="odd:bg-gray-50 even:bg-white align-top">
-                <td className="px-4 py-3 font-semibold">Sustainable Civil Engineering and Infrastructure</td>
-                <td className="px-4 py-3">
-                  <ul className="list-disc list-inside space-y-1">
-                    <li>Green Materials and Sustainable Construction</li>
-                    <li>Smart Mobility and Transport Systems</li>
-                    <li>Eco-Friendly Infrastructure Design</li>
-                    <li>Waste Management and Circular Economy</li>
-                    <li>Remote Sensing and GIS Technologies</li>
-                    <li>Resilient and Cost-Effective Infrastructure</li>
-                    <li>Advanced Construction Composites</li>
-                  </ul>
-                </td>
-              </tr>
-              <tr className="odd:bg-gray-50 even:bg-white align-top">
-                <td className="px-4 py-3 font-semibold">Advanced Electronics and Communication Systems</td>
-                <td className="px-4 py-3">
-                  <ul className="list-disc list-inside space-y-1">
-                    <li>Embedded and Cyber-Physical Systems</li>
-                    <li>Optical, Wireless, and Satellite Communication</li>
-                    <li>Signal, Image, and Multimedia Processing</li>
-                    <li>VLSI Design and Nanoelectronics</li>
-                    <li>Network Protocols and IoT Connectivity</li>
-                    <li>Intelligent Sensors and Instrumentation</li>
-                  </ul>
-                </td>
-              </tr>
-              <tr className="odd:bg-gray-50 even:bg-white align-top">
-                <td className="px-4 py-3 font-semibold">Smart Energy and Sustainable Power Systems</td>
-                <td className="px-4 py-3">
-                  <ul className="list-disc list-inside space-y-1">
-                    <li>Smart Grid and Microgrid Systems</li>
-                    <li>Renewable Energy and Power Converters</li>
-                    <li>Electric Vehicles and Charging Systems</li>
-                    <li>Demand-Side Energy Management</li>
-                    <li>Sustainable Energy for Smart Cities</li>
-                  </ul>
-                </td>
-              </tr>
-              <tr className="odd:bg-gray-50 even:bg-white align-top">
-                <td className="px-4 py-3 font-semibold">Physical Sciences and Computational Modelling</td>
-                <td className="px-4 py-3">
-                  <ul className="list-disc list-inside space-y-1">
-                    <li>Material Synthesis and Characterization</li>
-                    <li>Probability and Numerical Methods</li>
-                    <li>Computational Physics and Chemistry</li>
-                    <li>Mathematical Modelling and Optimization</li>
-                  </ul>
-                </td>
-              </tr>
-              <tr className="odd:bg-gray-50 even:bg-white align-top">
-                <td className="px-4 py-3 font-semibold">Humanities, Innovation, and Entrepreneurship</td>
-                <td className="px-4 py-3">
-                  <ul className="list-disc list-inside space-y-1">
-                    <li>Innovative Business Models</li>
-                    <li>Economics and Strategic Management</li>
-                    <li>Literature, Linguistics, and Human Values</li>
-                  </ul>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
       </div>
     </div>
   );
