@@ -200,6 +200,7 @@ function HorizontalImageScroller({ images }) {
       <p className="text-center">Submission Deadline:<br/><span className="text-[#002147] text-base">December 20th, 2025</span></p>
       <p className="text-center mt-2">Acceptance Notification:<br/><span className="text-[#002147] text-base">January 5th, 2026</span></p>
       <p className="text-center mt-2">Registration Deadline:<br/><span className="text-[#002147] text-base">January 10th, 2026</span></p>
+      <p className="text-center mt-2">Registration Fee:<br/><span className="text-[#002147] text-base">₹12,000</span></p>
       <p className="text-center mt-2 text-gray-500">Springer</p>
       <button className="p-2 m-2 bg-[#002147] text-white text-lg rounded-full hover:bg-[#003366]">
         Know more..
