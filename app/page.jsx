@@ -140,14 +140,14 @@ function HorizontalImageScroller({ images }) {
         </div>
 
 <div className="flex flex-col items-center lg:flex-row lg:justify-center min-h-full p-4 ">
-  {/* Track 1: Industry-Academic Visit */}
+  {/* Track 1: Industry-Academic Meet */}
   <div
     onClick={() => handleRedirect("/meet")}
     className="mt-5 bg-[#002147]/5 p-6 rounded-lg mx-6 cursor-pointer hover:shadow-xl hover:bg-[#FFD700]/10 flex flex-col items-center justify-center h-[32rem] lg:w-[23rem] w-[22rem] border-t-4 border-[#002147]"
   >
     <div className="flex-0.5 flex items-center justify-center">
       <h1 className="text-2xl sm:text-3xl text-center font-bold text-[#002147]">
-        Track 1:<br/>Industry-Academic Visit
+        Track 1:<br/>Industry-Academic Meet
       </h1>
     </div>
     <div className="flex-1 flex flex-col items-center justify-center font-bold mt-4 space-y-2">
