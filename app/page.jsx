@@ -175,7 +175,7 @@ function HorizontalImageScroller({ images }) {
       <p className="text-center">Registration Deadline:<br/><span className="text-[#002147] text-base">5th January 2026</span></p>
       <p className="text-center mt-2">Final Round Notification:<br/><span className="text-[#002147] text-base">8th January 2026</span></p>
       <p className="text-center mt-2">Final Round:<br/><span className="text-[#002147] text-base">Jan 23rd - 24th, 2026</span></p>
-      <div className="flex gap-4 mt-2 text-[#FFFFCC] text-xl font-extrabold">
+      <div className="flex gap-4 mt-2 text-[#00D700] text-xl font-extrabold drop-shadow-[0_0_10px_white]">
         <span>₹25,000</span>
         <span>₹15,000</span>
         <span>₹10,000</span>
