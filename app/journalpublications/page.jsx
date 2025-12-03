@@ -454,7 +454,16 @@ const DownloadSchedule = () => {
             <p className="text-center">Event Registration Deadline:<span className="text-red-500 "> January 10th, 2026</span></p>
           </div>
 
-          <h1 className="text-2xl text-center font-bold text-black">Submission Link will be available Soon!</h1>
+          <a
+            href="https://forms.gle/bDtPQKLap9DksAvt9"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block"
+          >
+            <button className="px-6 py-3 mt-4 bg-[#002147] text-white font-semibold rounded-lg shadow hover:bg-[#002147]/90 focus:outline-none focus:ring-2 focus:ring-[#002147] focus:ring-offset-2">
+              Submit Here
+            </button>
+          </a>
           {/* <button className="p-2 m-2 bg-white text-[#002147] text-lg border-2 border-[#002147]/50 hover:border-[#002147] rounded-full">
             <a href="https://forms.gle/CxueSuEZC3ML3q3o8 ">
         Click here!
