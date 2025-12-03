@@ -95,7 +95,7 @@ export default function JournalPublications() {
     }
   ];
   
-  const emailAddress = "rdconclave26@vrsiddhartha.ac.in"; // Replace with the desired email address
+  const emailAddress = "research.conclave@siddhartha.edu.in"; // Updated global contact email
   const subject = "";
   const body = ""; 
 
@@ -463,7 +463,7 @@ const DownloadSchedule = () => {
             
 {/*          <div className='items-center text-center'>
           <h1>or</h1>
-          <Link href={https://mail.google.com/mail/?view=cm&fs=1&to=${emailAddress}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}}> Email : <span className='text-blue-700'>rdconclave25@vrsiddhartha.ac.in</span> </Link>
+          <Link href={https://mail.google.com/mail/?view=cm&fs=1&to=${emailAddress}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}}> Email : <span className='text-blue-700'>research.conclave@siddhartha.edu.in</span> </Link>
          </div> */}
         </motion.div>
         
