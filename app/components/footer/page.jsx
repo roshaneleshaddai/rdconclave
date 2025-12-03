@@ -49,7 +49,7 @@ const Footer = () => {
                   <FaPhoneAlt className="inline mr-2" /> Dr. C. Subba Reddy (IT) - 9985082007 <br />
                   <FaPhoneAlt className="inline mr-2" /> Dr. M. Vani Pujitha (CSE) - 8074809058 <br/>
                   <br />
-                  <span className="font-bold">Email:</span> rdconclave26@vrsiddhartha.ac.in
+                  <span className="font-bold">Email:</span> research.conclave@siddhartha.edu.in
                   <br />
                   <span className="font-bold">Website:</span> www.rdconclave26.org
                 </p>
@@ -74,7 +74,7 @@ const Footer = () => {
                 >
                   <FaLinkedin className="text-2xl hover:text-[#002147]" />
                 </a>
-                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=principal@vrsiddhartha.ac.in&bcc=principal@vrsiddhartha.ac.in">
+                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=research.conclave@siddhartha.edu.in">
                   <FaEnvelope className="text-2xl hover:text-[#002147]" />
                 </a>
                 <a href="tel:+91 866 2582672">
