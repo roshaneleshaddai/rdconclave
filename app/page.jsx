@@ -459,7 +459,34 @@ function HorizontalImageScroller({ images }) {
 
 
 const CoordinatorsSection = () => {
-  
+  // Convenors data and rendering
+  const Convenors = [
+    {
+      name: 'Dr. D. Venkata Rao',
+      title: 'Dean, Velagapudi Ramakrishna Siddhartha School of Engineering,\nSchool of Management, School of LAW, School of Sciences,\nSchool of Arts & Commerce',
+      role: 'Professor & Head, ECE',
+      imgSrc: '',
+    },
+    {
+      name: 'Dr. D. Rajeswara Rao',
+      title: 'Dean, Industry Relations, Training & Placements',
+      role: 'Professor & Head, CSE',
+      imgSrc: '',
+    },
+    {
+      name: 'Dr. M. Suneetha',
+      title: 'Dean, Research & Technology Development',
+      role: 'Professor & Head, IT',
+      imgSrc: '/images/HODIT.jpg',
+    },
+    {
+      name: 'Dr. A. Sree Ram',
+      title: '',
+      role: 'Professor & Head, MBA',
+      imgSrc: '',
+    },
+  ];
+
   const Coordinators = [
     { name: 'Dr. G. Surya Narayana', position: 'Associate Professor (ECE)' },
     { name: 'Dr. K. Raghuveer', position: 'Associate Professor (MBA)' },
@@ -468,56 +495,60 @@ const CoordinatorsSection = () => {
     ];
 
     
-  const bottomCoordinators=Coordinators.slice(0);
+  const bottomCoordinators = Coordinators.slice(0);
   return (
     <div className="flex flex-col justify-center mt-16 items-center p-6 border border-gray-300 rounded-lg shadow-md bg-white ">
-      <div className="flex flex-col md:flex-row justify-around  w-full ">
-        {/* Left section - Convenor */}
-        <div className="text-center  mb-4 md:mb-0">
-          <h2 className="text-[#002147] font-bold text-lg">Convenor</h2>
-          <li className="flex flex-col items-center p-2 m-2 rounded-md">
-          <Image
-                src="/images/HODIT.jpg"
-                alt="Prof. Suneetha M"
-                width={150}
-                height={160}
-                className="w-[150px] h-[160px] object-cover"
-              />
-          <p className="text-[#002147] font-bold text-md">
-            Prof. Suneetha M
-          </p>
-          <p className="text-black text-sm">
-            Dean-R&D, HOD-IT
-          </p>
-          </li>
-        </div>
+      {/* Convenors Section */}
+      <div className="w-full mb-6">
+        <h2 className="text-[#002147] font-bold text-xl text-center mb-4">Convenors</h2>
+        <ul className="list-none flex flex-col md:flex-row justify-center items-start text-lg text-gray-800 flex-wrap gap-6">
+          {Convenors.map((conv, idx) => (
+            <li key={idx} className="flex flex-col items-center p-3 rounded-md w-52 min-h-[300px]">
+              {conv.imgSrc ? (
+                <Image
+                  src={conv.imgSrc}
+                  alt={conv.name}
+                  width={150}
+                  height={160}
+                  className="w-[150px] h-[160px] object-cover rounded mb-2"
+                />
+              ) : (
+                <div className="w-[150px] h-[160px] bg-gray-100 flex items-center justify-center text-4xl font-bold text-[#002147] mb-2 rounded shadow-inner">
+                  {conv.name.split(' ').pop().charAt(0)}
+                </div>
+              )}
+              <p className="text-base text-center text-[#002147] font-bold leading-tight">{conv.name}</p>
+              {conv.title && (
+                <p className="text-sm text-center text-gray-700 whitespace-pre-line leading-snug">
+                  {conv.title}
+                </p>
+              )}
+              <p className="text-sm text-center text-gray-600 leading-snug">{conv.role}</p>
+            </li>
+          ))}
+        </ul>
+      </div>
 
-        {/* Right section - Coordinators */}
-        <div className="text-center ">
-          <h2 className="text-[#002147] font-bold text-lg">Coordinators</h2>
-          <ul className="list-none flex flex-col md:flex-row justify-center items-center text-lg text-gray-800 flex-wrap">
+      {/* Coordinators Section moved below Convenors */}
+      <div className="w-full">
+        <h2 className="text-[#002147] font-bold text-lg text-center">Coordinators</h2>
+        <ul className="list-none flex flex-col md:flex-row justify-center items-center text-lg text-gray-800 flex-wrap mt-2">
           {bottomCoordinators.map((coordinator, index) => (
             <li key={index} className="flex flex-col items-center p-2 m-2 rounded-md">
-               <div className="w-[150px] h-[160px] bg-gray-100 flex items-center justify-center text-4xl font-bold text-[#002147] mb-2 rounded shadow-inner">
-                  {coordinator.name.split(' ').pop().charAt(0)}
-               </div>
+              <div className="w-[150px] h-[160px] bg-gray-100 flex items-center justify-center text-4xl font-bold text-[#002147] mb-2 rounded shadow-inner">
+                {coordinator.name.split(' ').pop().charAt(0)}
+              </div>
               <p className="text-base text-center text-[#002147] font-bold">{coordinator.name}</p>
               <p className="text-sm text-center text-gray-600">{coordinator.position}</p>
             </li>
           ))}
         </ul>
-
-        </div>
       </div>
 
       {/* Queries Section */}
-      <div className="w-full text-center border-t border-gray-300 pt-4">
-        <p className="text-[#002147] font-bold text-md">
-          Any Queries (Registrations):
-        </p>
-        <p className="text-black font-bold text-md">
-          Dr. C. Subba Reddy (IT) - 9985082007, Dr. M. Vani Pujitha (CSE) - 8074809058
-        </p>
+      <div className="w-full text-center border-t border-gray-300 pt-4 mt-4">
+        <p className="text-[#002147] font-bold text-md">Any Queries (Registrations):</p>
+        <p className="text-black font-bold text-md">Dr. C. Subba Reddy (IT) - 9985082007, Dr. M. Vani Pujitha (CSE) - 8074809058</p>
       </div>
     </div>
   );
