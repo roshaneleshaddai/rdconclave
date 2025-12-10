@@ -465,13 +465,13 @@ const CoordinatorsSection = () => {
       name: 'Dr. D. Venkata Rao',
       title: 'Dean, Velagapudi Ramakrishna Siddhartha School of Engineering,\nSchool of Management, School of LAW, School of Sciences,\nSchool of Arts & Commerce',
       role: 'Professor & Head, ECE',
-      imgSrc: '',
+      imgSrc: '/images/venkata-rao.jpg',
     },
     {
       name: 'Dr. D. Rajeswara Rao',
       title: 'Dean, Industry Relations, Training & Placements',
       role: 'Professor & Head, CSE',
-      imgSrc: '',
+      imgSrc: '/images/rajeswara-rao.jpg',
     },
     {
       name: 'Dr. M. Suneetha',
