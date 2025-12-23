@@ -179,7 +179,7 @@ export default function Hackathon() {
   };
   
   return (
-    <div className="relative font-SUSE min-h-screen w-screen mt-44 md:mt-64">
+    <div className="relative font-SUSE min-h-screen w-full mt-44 md:mt-64">
       {/* Background Video */}
       {/* <video
         autoPlay
@@ -256,7 +256,7 @@ export default function Hackathon() {
         behavior: 'smooth'
       });
       }}
-    >Registor Now</button>
+    >Register Now</button>
     </div>
   </div>
 
