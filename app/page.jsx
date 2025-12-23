@@ -132,11 +132,13 @@ function HorizontalImageScroller({ images }) {
           <h1 className="text-4xl font-extrabold text-[#002147]">Research Conclave 2026</h1>
           <h2 className="text-2xl font-bold mt-2 text-[#002147]">Organized by Research & Development Cell</h2>
           <h3 className="text-xl font-semibold mt-1 text-[#002147]">Departments of CSE, ECE, IT & MBA</h3>
+          <h3 className="text-xl font-semibold mt-1 text-[#002147]">VR SIDDHARTHA SCHOOL OF ENGINEERING</h3>
           <h1 className="text-3xl font-extrabold mt-4 text-[#00D700] drop-shadow-[0_0_10px_white]">January 23rd - 24th, 2026</h1>
           <h2 className="text-2xl font-bold mt-2 text-[#00D700] drop-shadow-[0_0_10px_white]">1 Lakh worth Cash Prizes</h2>
-          <p className="text-lg font-bold mt-2 text-black">(OFFLINE) Registrations Open</p>
+          <p className="text-md mt-1 text-gray-700">Accommodation, Food and Swags</p>
+          <p className="text-lg font-bold mt-2 text-black">Registrations Open</p>
+          <p className="text-md font-semibold mt-1 text-black">Mode: Offline (In-Person Only)</p>
           <p className="text-lg font-semibold mt-1 text-black">Venue: V. R. Siddhartha School of Engineering</p>
-          <p className="text-md mt-1 text-gray-700">Accommodation, Food and Schwags</p>
         </div>
 
 <div className="flex flex-col items-center lg:flex-row lg:justify-center min-h-full p-4 ">
@@ -348,7 +350,7 @@ function HorizontalImageScroller({ images }) {
               <hr className="h-1 my-8 bg-[#002147] border-0 w-1/2 " />
             </h2>
             <p className="mb-4 font-medium sm:text-xl text-lg text-justify">
-            The Wing will carry out R&D review of every department once or more in every semester and give guidelines for corrective action and improvement in R&D activities of departments. R&D activities are quantified and R&D index of the departments is computed and compared. Further, this is brought to the notice of all the HODs through ppt presentation. Also the report so generated is forwarded to the academy.
+            The wing will carry out R&D review of every department once or more in every semester and give guidelines for corrective action and improvement in R&D activities of departments. R&D activities are quantified and R&D index of the departments is computed and compared. Further, this is brought to the notice of all the HODs through ppt presentation. Also the report so generated is forwarded to the academy.
             <br></br>The principle components of R&D for computation of R&D index are:
 
             </p>
@@ -393,11 +395,11 @@ function HorizontalImageScroller({ images }) {
     // Array of researchers' names and image paths
     const [isVisible, setIsVisible] = useState(true);
     const Patrons = [
-      { name: 'Sri K.V Chowdary, IRS', imgSrc: 'https://www.vrsiddhartha.ac.in/wp-content/uploads/2019/09/Chancellor-K-V-Chowdary.jpg', position: 'Chancellor' },
+      { name: 'Sri K.V Chowdary, IRS', imgSrc: 'https://www.vrsiddhartha.ac.in/wp-content/uploads/2019/09/Chancellor-K-V-Chowdary.jpg', position: 'Chancellor, SAHE' },
       { name: 'Sri M. Rajaiah', imgSrc: 'https://www.siddharthaacademy.ac.in/img/team/rajaiah.png', position: 'President, SAGTE' },
       { name: 'Sri P. Lakshmana Rao', imgSrc: 'https://www.siddharthaacademy.ac.in/img/team/lakshmana%20rao.png', position: 'Secretary, SAGTE' },
-      { name: 'Prof. P. Venkateswara Rao', imgSrc: 'https://www.vrsiddhartha.ac.in/wp-content/uploads/2019/09/Vice-Chancellor-PV-Rao.jpg', position: 'Vice Chancellor' },
-      { name: 'Prof. A. V. Ratna Prasad', imgSrc: 'https://www.vrsiddhartha.ac.in/wp-content/uploads/2024/09/principal_2024-1-275x300.jpg', position: 'Pro-Vice Chancellor' },
+      { name: 'Prof. P. Venkateswara Rao', imgSrc: 'https://www.vrsiddhartha.ac.in/wp-content/uploads/2019/09/Vice-Chancellor-PV-Rao.jpg', position: 'Vice Chancellor, SAHE' },
+      { name: 'Prof. A. V. Ratna Prasad', imgSrc: 'https://www.vrsiddhartha.ac.in/wp-content/uploads/2024/09/principal_2024-1-275x300.jpg', position: 'Pro-Vice Chancellor, SAHE' },
     ];
 
   const topResearcher = Patrons[0];
@@ -572,6 +574,9 @@ const CoordinatorsSection = () => {
       <div className="mt-48 md:mt-64 w-screen"></div>
       <ClickableCircles />
       {/* <ImageCarousel /> */}
+      <div className="w-full text-center mt-8">
+        <h2 className="text-3xl font-bold text-[#002147]">Glimpses of innovation</h2>
+      </div>
       <HorizontalImageScroller images={researchimages}/>
       <About/>
       <InfoSection/>
