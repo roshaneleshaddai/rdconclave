@@ -15,12 +15,17 @@ const CodeFusionHero = () => {
     let animationId;
     const dpr = window.devicePixelRatio || 1;
     const particles = [];
-    const COUNT = 60;
+    let COUNT = 60;
 
     const resize = () => {
       canvas.width = window.innerWidth * dpr;
       canvas.height = window.innerHeight * dpr;
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      
+      // Adjust particle count based on screen size
+      if (window.innerWidth < 640) COUNT = 30;
+      else if (window.innerWidth < 1024) COUNT = 45;
+      else COUNT = 60;
     };
 
     class Particle {
@@ -73,7 +78,7 @@ const CodeFusionHero = () => {
   const title = "CODEFUSION";
 
   return (
-    <section className="relative w-full h-[70vh] bg-white overflow-hidden flex flex-col items-center justify-center font-serif" style={{ marginTop: '180px' }}>
+    <section className="relative w-full min-h-[100vh] sm:min-h-[80vh] md:h-[70vh] bg-white overflow-hidden flex flex-col items-center justify-center font-serif px-4 sm:px-6 md:px-8 py-12 sm:py-16 md:py-0">
 
       {/* BACKGROUND PARTICLES */}
       <canvas
@@ -82,7 +87,7 @@ const CodeFusionHero = () => {
       />
 
       {/* TITLE */}
-      <h1 className="relative z-10 flex dark-blue-title text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-black leading-none">
+      <h1 className="relative z-10 flex flex-wrap justify-center dark-blue-title text-4xl xs:text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-black leading-none text-center">
         {title.split("").map((char, i) => (
           <span
             key={i}
@@ -96,7 +101,7 @@ const CodeFusionHero = () => {
 
       {/* DATE */}
       <p
-        className="relative z-20 mt-20 text-base md:text-lg tracking-[0.25em] text-[#0c4a6e] animate-fade-in-long"
+        className="relative z-20 mt-8 sm:mt-12 md:mt-20 text-xs sm:text-sm md:text-base lg:text-lg tracking-[0.15em] sm:tracking-[0.25em] text-[#0c4a6e] animate-fade-in-long text-center"
         style={{ animationDelay: "2s" }}
       >
         JANUARY&nbsp;23–24,&nbsp;2026
@@ -104,25 +109,23 @@ const CodeFusionHero = () => {
 
       {/* DIVIDER */}
       <div
-        className="relative z-20 w-48 h-[2px] bg-[#0ea5e9] mt-10 opacity-60"
+        className="relative z-20 w-32 sm:w-40 md:w-48 h-[2px] bg-[#0ea5e9] mt-6 sm:mt-8 md:mt-10 opacity-60"
         style={{ animationDelay: "2.4s" }}
       />
 
       {/* ORGANISER INFO */}
       <div
-        className="relative z-20 mt-[1cm] flex flex-col items-center text-[#475569] animate-org-wrapper"
+        className="relative z-20 mt-8 sm:mt-10 md:mt-12 flex flex-col items-center text-[#475569] animate-org-wrapper px-4"
         style={{ fontFamily: "Times New Roman, serif" }}
       >
         <p
-          className="text-sm md:text-base tracking-[0.18em] animate-org-line-1"
-          style={{ marginBottom: "0.5cm" }}
+          className="text-xs sm:text-sm md:text-base tracking-[0.12em] sm:tracking-[0.18em] animate-org-line-1 text-center mb-3 sm:mb-4 md:mb-5"
         >
           ORGANISED BY RESEARCH &amp; DEVELOPMENT CELL
         </p>
 
         <p
-          className="text-sm md:text-base tracking-[0.18em] animate-org-line-2"
-          style={{ marginBottom: "0.5cm" }}
+          className="text-xs sm:text-sm md:text-base tracking-[0.12em] sm:tracking-[0.18em] animate-org-line-2 text-center"
         >
           DEPARTMENTS OF IT &amp; CSE
         </p>
@@ -165,7 +168,7 @@ const CodeFusionHero = () => {
         .blue-letter {
           position: relative;
           display: inline-block;
-          margin: 0 0.045em;
+          margin: 0 0.02em;
           opacity: 0;
           transform: translateY(48px) rotateX(-85deg);
           filter: blur(8px);
@@ -183,7 +186,21 @@ const CodeFusionHero = () => {
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
 
-          text-shadow: 0 8px 16px rgba(12, 74, 110, 0.18);
+          text-shadow: 0 4px 8px rgba(12, 74, 110, 0.18);
+        }
+
+        @media (min-width: 640px) {
+          .blue-letter {
+            margin: 0 0.035em;
+            text-shadow: 0 6px 12px rgba(12, 74, 110, 0.18);
+          }
+        }
+
+        @media (min-width: 1024px) {
+          .blue-letter {
+            margin: 0 0.045em;
+            text-shadow: 0 8px 16px rgba(12, 74, 110, 0.18);
+          }
         }
 
         @keyframes heavyRise {
@@ -220,6 +237,13 @@ const CodeFusionHero = () => {
         @keyframes slowReveal {
           to {
             opacity: 0.75;
+          }
+        }
+
+        /* Extra small devices */
+        @media (max-width: 374px) {
+          .blue-letter {
+            transform: translateY(32px) rotateX(-85deg);
           }
         }
       `}</style>
