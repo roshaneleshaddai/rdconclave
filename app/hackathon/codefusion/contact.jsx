@@ -5,21 +5,6 @@ import Pandu from './pandu.jpg';
 import Manoj from './manoj.jpg';
 
 const AcademicContactWithCoordinators = () => {
-  const facultyCoordinators = [
-    {
-      name: "Radheshyam",
-      role: "Faculty Coordinator",
-      phone: "9876543210",
-      email: "radheshyam@university.edu"
-    },
-    {
-      name: "Ch. Subba Reddy",
-      role: "Faculty Coordinator",
-      phone: "9876543211",
-      email: "subba@university.edu"
-    }
-  ];
-
   const studentCoordinators = [
     {
       name: "Manoj",
@@ -180,13 +165,13 @@ const AcademicContactWithCoordinators = () => {
                       <div className="flex-1 min-w-0">
                         <h3 className="text-sm font-bold text-[#002147] mb-1" style={{ fontFamily: 'SUSE, sans-serif' }}>Instagram</h3>
                         <a
-                          href="https://www.instagram.com/omnitrix_2025"
+                          href="https://www.instagram.com/rdconclave_2026"
                           target="_blank"
                           rel="noopener noreferrer"
                           className="text-sm md:text-base text-[#6B7280] hover:text-[#002147] transition-colors"
                           style={{ fontFamily: 'SUSE, sans-serif' }}
                         >
-                          @omnitrix_2025
+                          @rdconclave_2026
                         </a>
                       </div>
                     </div>
@@ -195,22 +180,8 @@ const AcademicContactWithCoordinators = () => {
               </div>
             </div>
 
-            {/* RIGHT COLUMN: Faculty & Student Coordinators */}
-            <div className="lg:col-span-7 animate-fade-in animate-delay-100 space-y-8">
-              {/* Faculty Coordinators */}
-              <div>
-                <h3 className="text-xl md:text-2xl font-bold text-[#002147] mb-5 text-center" style={{ fontFamily: 'SUSE, sans-serif' }}>
-                  Faculty Coordinators
-                </h3>
-                
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 justify-items-center">
-                  {facultyCoordinators.map((person, index) => (
-                    <PersonCard key={index} person={person} />
-                  ))}
-                </div>
-              </div>
-
-              {/* Student Coordinators */}
+            {/* RIGHT COLUMN: Student Coordinators */}
+            <div className="lg:col-span-7 animate-fade-in animate-delay-100">
               <div>
                 <h3 className="text-xl md:text-2xl font-bold text-[#002147] mb-5 text-center" style={{ fontFamily: 'SUSE, sans-serif' }}>
                   Student Coordinators
