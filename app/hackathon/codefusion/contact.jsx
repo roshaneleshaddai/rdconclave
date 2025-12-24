@@ -1,5 +1,8 @@
 'use client';
 import { Mail } from 'lucide-react';
+import Sahith from './sahith.jpg';
+import Pandu from './pandu.jpg';
+import Manoj from './manoj.jpg';
 
 const AcademicContactWithCoordinators = () => {
   const facultyCoordinators = [
@@ -22,28 +25,39 @@ const AcademicContactWithCoordinators = () => {
       name: "Manoj",
       role: "Student Coordinator",
       phone: "9876543212",
-      email: "manoj@university.edu"
+      email: "manoj@university.edu",
+      image: Manoj
     },
     {
       name: "Pandu",
       role: "Student Coordinator",
       phone: "9876543213",
-      email: "pandu@university.edu"
+      email: "pandu@university.edu",
+      image: Pandu
     },
     {
       name: "Sahith",
       role: "Student Coordinator",
       phone: "9876543214",
-      email: "sahith@university.edu"
+      email: "sahith@university.edu",
+      image: Sahith
     }
   ];
 
   const PersonCard = ({ person }) => (
     <div className="flex flex-col items-center text-center space-y-3 animate-fade-in">
       <div className="w-24 h-24 rounded-full bg-[rgba(0,33,71,0.1)] border-2 border-[rgba(0,33,71,0.3)] flex items-center justify-center overflow-hidden shadow-lg shadow-[rgba(0,33,71,0.1)] hover:border-[rgba(0,33,71,0.6)] hover:shadow-[rgba(0,33,71,0.3)] transition-all duration-300">
-        <div className="text-[#002147] text-3xl font-bold" style={{ fontFamily: 'SUSE, sans-serif' }}>
-          {person.name.charAt(0)}
-        </div>
+        {person.image ? (
+          <img 
+            src={person.image.src} 
+            alt={person.name}
+            className="w-full h-full object-cover"
+          />
+        ) : (
+          <div className="text-[#002147] text-3xl font-bold" style={{ fontFamily: 'SUSE, sans-serif' }}>
+            {person.name.charAt(0)}
+          </div>
+        )}
       </div>
       <div>
         <h3 className="text-[#002147] font-semibold text-sm" style={{ fontFamily: 'SUSE, sans-serif' }}>{person.name}</h3>
