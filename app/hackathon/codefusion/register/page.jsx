@@ -1,11 +1,189 @@
 'use client';
 import { useState, useEffect } from 'react';
-import { ArrowLeft, Users, GraduationCap, Send, CheckCircle, AlertCircle } from 'lucide-react';
+import { ArrowLeft, Users, GraduationCap, Send, CheckCircle, AlertCircle, X } from 'lucide-react';
+
+// Coin Flip Loading Component
+const CoinFlip = () => {
+  // Import images - adjust the path based on your folder structure
+  const rdLogo = './rdlogo.webp';
+  const goldenLogo = './golden.png';
+
+  return (
+    <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50">
+      <div className="bg-white rounded-2xl p-8 shadow-2xl flex flex-col items-center">
+        <div style={{ perspective: '1200px', width: '150px', height: '150px' }}>
+          <div className="coin">
+            <div className="coin-face front">
+              <img 
+                src={rdLogo} 
+                alt="RD Logo" 
+                className="w-full h-full object-cover rounded-full"
+              />
+            </div>
+            <div className="coin-face back">
+              <img 
+                src={goldenLogo} 
+                alt="Golden Logo" 
+                className="w-full h-full object-cover rounded-full"
+              />
+            </div>
+          </div>
+        </div>
+        <p className="mt-6 text-lg font-semibold text-[#002147]">Submitting Registration...</p>
+      </div>
+      <style jsx>{`
+        .coin {
+          width: 100%;
+          height: 100%;
+          position: relative;
+          transform-style: preserve-3d;
+          animation: spinY 1.2s linear infinite;
+        }
+
+        @keyframes spinY {
+          0% {
+            transform: rotateY(0deg);
+          }
+          100% {
+            transform: rotateY(360deg);
+          }
+        }
+
+        .coin-face {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          backface-visibility: hidden;
+          border-radius: 50%;
+          overflow: hidden;
+          box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .back {
+          transform: rotateY(180deg);
+        }
+      `}</style>
+    </div>
+  );
+};
+
+// Success Modal Component
+const SuccessModal = ({ registrationId, onClose }) => {
+  return (
+    <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 p-4">
+      <div className="bg-white rounded-2xl shadow-2xl max-w-md w-full animate-scaleIn">
+        <div className="p-8 text-center">
+          <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+            <CheckCircle size={48} className="text-green-500" />
+          </div>
+          
+          <h2 className="text-3xl font-bold text-[#002147] mb-3">
+            Registration Successful!
+          </h2>
+          
+          <div className="bg-green-50 border-2 border-green-500 rounded-xl p-4 mb-4">
+            <p className="text-sm text-green-700 mb-2 font-semibold">Your Registration ID:</p>
+            <p className="text-4xl font-bold text-green-600 tracking-wider">
+              {registrationId}
+            </p>
+          </div>
+          
+          <p className="text-gray-600 mb-6">
+            Your team has been successfully registered for CodeFusion 2025. 
+            Please save your registration ID for future reference.
+          </p>
+          
+          <p className="text-sm text-gray-500 mb-6">
+            A confirmation email has been sent to your registered email address with all the details.
+          </p>
+          
+          <button
+            onClick={onClose}
+            className="w-full px-8 py-4 text-lg font-bold text-white bg-gradient-to-r from-[#7c3aed] to-[#6b21a8] rounded-xl shadow-lg transition-all hover:from-[#6b21a8] hover:to-[#5b21b6] hover:scale-105 hover:shadow-xl"
+          >
+            Close
+          </button>
+        </div>
+      </div>
+      <style jsx>{`
+        @keyframes scaleIn {
+          from {
+            opacity: 0;
+            transform: scale(0.9);
+          }
+          to {
+            opacity: 1;
+            transform: scale(1);
+          }
+        }
+        .animate-scaleIn {
+          animation: scaleIn 0.3s ease-out;
+        }
+      `}</style>
+    </div>
+  );
+};
+
+// Error Modal Component
+const ErrorModal = ({ message, onClose }) => {
+  return (
+    <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 p-4">
+      <div className="bg-white rounded-2xl shadow-2xl max-w-md w-full animate-scaleIn">
+        <div className="p-8 text-center">
+          <div className="w-20 h-20 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+            <AlertCircle size={48} className="text-red-500" />
+          </div>
+          
+          <h2 className="text-3xl font-bold text-[#002147] mb-3">
+            Registration Failed
+          </h2>
+          
+          <div className="bg-red-50 border-2 border-red-500 rounded-xl p-4 mb-6">
+            <p className="text-red-700">
+              {message}
+            </p>
+          </div>
+          
+          <p className="text-gray-600 mb-6">
+            Please check your information and try again. If the problem persists, contact support.
+          </p>
+          
+          <button
+            onClick={onClose}
+            className="w-full px-8 py-4 text-lg font-bold text-white bg-gradient-to-r from-red-500 to-red-600 rounded-xl shadow-lg transition-all hover:from-red-600 hover:to-red-700 hover:scale-105 hover:shadow-xl"
+          >
+            Try Again
+          </button>
+        </div>
+      </div>
+      <style jsx>{`
+        @keyframes scaleIn {
+          from {
+            opacity: 0;
+            transform: scale(0.9);
+          }
+          to {
+            opacity: 1;
+            transform: scale(1);
+          }
+        }
+        .animate-scaleIn {
+          animation: scaleIn 0.3s ease-out;
+        }
+      `}</style>
+    </div>
+  );
+};
 
 const RegistrationForm = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [registrationId, setRegistrationId] = useState('');
   const [isMobile, setIsMobile] = useState(false);
   const [errors, setErrors] = useState({});
+  const [apiError, setApiError] = useState('');
+  const [showSuccessModal, setShowSuccessModal] = useState(false);
+  const [showErrorModal, setShowErrorModal] = useState(false);
   const [formData, setFormData] = useState({
     teamName: '',
     teamSize: '3',
@@ -27,7 +205,6 @@ const RegistrationForm = () => {
     member4Phone: ''
   });
 
-  // Handle responsive layout
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth < 768);
@@ -41,12 +218,10 @@ const RegistrationForm = () => {
   const validateForm = () => {
     const newErrors = {};
 
-    // Team Details Validation
     if (!formData.teamName.trim()) newErrors.teamName = 'Team name is required';
     if (!formData.teamSize) newErrors.teamSize = 'Team size is required';
     if (!formData.problemStatement) newErrors.problemStatement = 'Problem statement is required';
 
-    // Leader Details Validation
     if (!formData.leaderName.trim()) newErrors.leaderName = 'Leader name is required';
     if (!formData.leaderEmail.trim()) {
       newErrors.leaderEmail = 'Leader email is required';
@@ -58,7 +233,6 @@ const RegistrationForm = () => {
     if (!formData.leaderDepartment.trim()) newErrors.leaderDepartment = 'Department is required';
     if (!formData.leaderYear) newErrors.leaderYear = 'Year of study is required';
 
-    // Member 2 Validation (Always Required)
     if (!formData.member2Name.trim()) newErrors.member2Name = 'Member 2 name is required';
     if (!formData.member2Email.trim()) {
       newErrors.member2Email = 'Member 2 email is required';
@@ -67,7 +241,6 @@ const RegistrationForm = () => {
     }
     if (!formData.member2Phone.trim()) newErrors.member2Phone = 'Member 2 phone is required';
 
-    // Member 3 Validation (Always Required)
     if (!formData.member3Name.trim()) newErrors.member3Name = 'Member 3 name is required';
     if (!formData.member3Email.trim()) {
       newErrors.member3Email = 'Member 3 email is required';
@@ -76,7 +249,6 @@ const RegistrationForm = () => {
     }
     if (!formData.member3Phone.trim()) newErrors.member3Phone = 'Member 3 phone is required';
 
-    // Member 4 Validation (Only if team size is 4)
     if (formData.teamSize === '4') {
       if (!formData.member4Name.trim()) newErrors.member4Name = 'Member 4 name is required';
       if (!formData.member4Email.trim()) {
@@ -97,7 +269,6 @@ const RegistrationForm = () => {
       ...prev,
       [name]: value
     }));
-    // Clear error for this field when user starts typing
     if (errors[name]) {
       setErrors(prev => ({
         ...prev,
@@ -106,37 +277,112 @@ const RegistrationForm = () => {
     }
   };
 
-  const handleSubmit = () => {
-    if (validateForm()) {
-      console.log('Form submitted:', formData);
-      setIsSubmitted(true);
-      
-      setTimeout(() => {
-        setIsSubmitted(false);
-        setFormData({
-          teamName: '',
-          teamSize: '3',
-          problemStatement: '',
-          leaderName: '',
-          leaderEmail: '',
-          leaderPhone: '',
-          leaderCollege: '',
-          leaderDepartment: '',
-          leaderYear: '',
-          member2Name: '',
-          member2Email: '',
-          member2Phone: '',
-          member3Name: '',
-          member3Email: '',
-          member3Phone: '',
-          member4Name: '',
-          member4Email: '',
-          member4Phone: ''
-        });
-        setErrors({});
-      }, 3000);
-    } else {
+  const resetForm = () => {
+    setFormData({
+      teamName: '',
+      teamSize: '3',
+      problemStatement: '',
+      leaderName: '',
+      leaderEmail: '',
+      leaderPhone: '',
+      leaderCollege: '',
+      leaderDepartment: '',
+      leaderYear: '',
+      member2Name: '',
+      member2Email: '',
+      member2Phone: '',
+      member3Name: '',
+      member3Email: '',
+      member3Phone: '',
+      member4Name: '',
+      member4Email: '',
+      member4Phone: ''
+    });
+    setErrors({});
+  };
+
+  const handleSuccessClose = () => {
+    setShowSuccessModal(false);
+    setRegistrationId('');
+    resetForm();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const handleErrorClose = () => {
+    setShowErrorModal(false);
+    setApiError('');
+  };
+
+  const handleSubmit = async () => {
+    if (!validateForm()) {
       console.log('Form has errors');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      return;
+    }
+
+    setIsLoading(true);
+    setApiError('');
+
+    try {
+      const members = [
+        {
+          name: formData.member2Name,
+          email: formData.member2Email,
+          phone: formData.member2Phone
+        },
+        {
+          name: formData.member3Name,
+          email: formData.member3Email,
+          phone: formData.member3Phone
+        }
+      ];
+
+      if (formData.teamSize === '4') {
+        members.push({
+          name: formData.member4Name,
+          email: formData.member4Email,
+          phone: formData.member4Phone
+        });
+      }
+
+      const payload = {
+        teamName: formData.teamName,
+        teamSize: parseInt(formData.teamSize),
+        problemStatement: formData.problemStatement,
+        leader: {
+          name: formData.leaderName,
+          email: formData.leaderEmail,
+          phone: formData.leaderPhone,
+          college: formData.leaderCollege,
+          department: formData.leaderDepartment,
+          year: parseInt(formData.leaderYear)
+        },
+        members: members
+      };
+
+      const response = await fetch('https://rd-backend-m7gd.onrender.com/api/teams/register', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(payload)
+      });
+
+      const data = await response.json();
+
+      if (response.ok && data.success) {
+        setRegistrationId(data.registrationId);
+        setShowSuccessModal(true);
+      } else {
+        setApiError(data.message || 'Registration failed. Please try again.');
+        setShowErrorModal(true);
+      }
+    } catch (error) {
+      console.error('Registration error:', error);
+      setApiError('Network error. Please check your connection and try again.');
+      setShowErrorModal(true);
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -148,7 +394,10 @@ const RegistrationForm = () => {
 
   return (
     <div className="min-h-screen bg-white px-4 pt-40 md:pt-56 pb-12 font-[SUSE,sans-serif]">
-      {/* Header with Back Button */}
+      {isLoading && <CoinFlip />}
+      {showSuccessModal && <SuccessModal registrationId={registrationId} onClose={handleSuccessClose} />}
+      {showErrorModal && <ErrorModal message={apiError} onClose={handleErrorClose} />}
+      
       <div className="max-w-4xl mx-auto mb-8">
         <button
           onClick={handleBackClick}
@@ -169,23 +418,7 @@ const RegistrationForm = () => {
         </div>
       </div>
 
-      {/* Success Message */}
-      {isSubmitted && (
-        <div className="max-w-4xl mx-auto mb-8 bg-green-50 border-2 border-green-500 rounded-xl p-6 flex items-center gap-4 animate-fadeIn">
-          <CheckCircle size={32} className="text-green-500 flex-shrink-0" />
-          <div>
-            <h3 className="text-xl font-bold text-green-800 mb-1">
-              Registration Successful!
-            </h3>
-            <p className="text-green-700">
-              Your team has been registered. Check your email for confirmation details.
-            </p>
-          </div>
-        </div>
-      )}
-
-      {/* Error Summary */}
-      {Object.keys(errors).length > 0 && !isSubmitted && (
+      {Object.keys(errors).length > 0 && (
         <div className="max-w-4xl mx-auto mb-8 bg-red-50 border-2 border-red-500 rounded-xl p-6 flex items-start gap-4 animate-fadeIn">
           <AlertCircle size={32} className="text-red-500 flex-shrink-0 mt-1" />
           <div>
@@ -199,11 +432,9 @@ const RegistrationForm = () => {
         </div>
       )}
 
-      {/* Registration Form */}
       <div className="max-w-4xl mx-auto">
         <div className="bg-white border-2 border-[#002147]/10 rounded-2xl shadow-lg p-8 md:p-12">
           
-          {/* Team Details Section */}
           <div className="mb-10">
             <div className="flex items-center gap-3 mb-6">
               <div className="w-10 h-10 rounded-full bg-[#002147] flex items-center justify-center">
@@ -281,7 +512,6 @@ const RegistrationForm = () => {
             </div>
           </div>
 
-          {/* Team Leader Section */}
           <div className="mb-10">
             <div className="flex items-center gap-3 mb-6">
               <div className="w-10 h-10 rounded-full bg-[#002147] flex items-center justify-center">
@@ -345,7 +575,6 @@ const RegistrationForm = () => {
             </div>
           </div>
 
-          {/* Team Members Section */}
           <div className="mb-10">
             <div className="flex items-center gap-3 mb-6">
               <div className="w-10 h-10 rounded-full bg-[#002147] flex items-center justify-center">
@@ -386,11 +615,11 @@ const RegistrationForm = () => {
             )}
           </div>
 
-          {/* Submit Button */}
           <div className="flex justify-center">
             <button
               onClick={handleSubmit}
-              className="px-12 py-4 text-lg font-bold text-white bg-gradient-to-r from-[#7c3aed] to-[#6b21a8] rounded-xl shadow-lg flex items-center gap-3 transition-all hover:from-[#6b21a8] hover:to-[#5b21b6] hover:scale-105 hover:shadow-xl"
+              disabled={isLoading}
+              className="px-12 py-4 text-lg font-bold text-white bg-gradient-to-r from-[#7c3aed] to-[#6b21a8] rounded-xl shadow-lg flex items-center gap-3 transition-all hover:from-[#6b21a8] hover:to-[#5b21b6] hover:scale-105 hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
             >
               <span>Submit Registration</span>
               <Send size={20} />
