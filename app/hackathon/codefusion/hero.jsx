@@ -78,7 +78,7 @@ const CodeFusionHero = () => {
   const title = "CODEFUSION";
 
   return (
-    <section className="relative w-full min-h-[100vh] sm:min-h-[80vh] md:h-[70vh] bg-white overflow-hidden flex flex-col items-center justify-center font-serif px-4 sm:px-6 md:px-8 py-12 sm:py-16 md:py-0">
+    <section className="relative w-full min-h-[85vh] sm:min-h-[75vh] md:h-[70vh] bg-white overflow-hidden flex flex-col items-center justify-center font-serif px-4 sm:px-6 md:px-8 py-8 sm:py-12 md:py-0">
 
       {/* BACKGROUND PARTICLES */}
       <canvas
@@ -101,7 +101,7 @@ const CodeFusionHero = () => {
 
       {/* DATE */}
       <p
-        className="relative z-20 mt-8 sm:mt-12 md:mt-20 text-xs sm:text-sm md:text-base lg:text-lg tracking-[0.15em] sm:tracking-[0.25em] text-[#0c4a6e] animate-fade-in-long text-center"
+        className="relative z-20 mt-6 sm:mt-10 md:mt-20 text-xs sm:text-sm md:text-base lg:text-lg tracking-[0.15em] sm:tracking-[0.25em] text-[#0c4a6e] animate-fade-in-long text-center"
         style={{ animationDelay: "2s" }}
       >
         JANUARY&nbsp;23–24,&nbsp;2026
@@ -109,17 +109,17 @@ const CodeFusionHero = () => {
 
       {/* DIVIDER */}
       <div
-        className="relative z-20 w-32 sm:w-40 md:w-48 h-[2px] bg-[#0ea5e9] mt-6 sm:mt-8 md:mt-10 opacity-60"
+        className="relative z-20 w-32 sm:w-40 md:w-48 h-[2px] bg-[#0ea5e9] mt-4 sm:mt-6 md:mt-10 opacity-60"
         style={{ animationDelay: "2.4s" }}
       />
 
       {/* ORGANISER INFO */}
       <div
-        className="relative z-20 mt-8 sm:mt-10 md:mt-12 flex flex-col items-center text-[#475569] animate-org-wrapper px-4"
+        className="relative z-20 mt-6 sm:mt-8 md:mt-12 flex flex-col items-center text-[#475569] animate-org-wrapper px-4"
         style={{ fontFamily: "Times New Roman, serif" }}
       >
         <p
-          className="text-xs sm:text-sm md:text-base tracking-[0.12em] sm:tracking-[0.18em] animate-org-line-1 text-center mb-3 sm:mb-4 md:mb-5"
+          className="text-xs sm:text-sm md:text-base tracking-[0.12em] sm:tracking-[0.18em] animate-org-line-1 text-center mb-2 sm:mb-3 md:mb-5"
         >
           ORGANISED BY RESEARCH &amp; DEVELOPMENT CELL
         </p>
