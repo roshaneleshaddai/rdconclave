@@ -1965,9 +1965,8 @@ html, body {
     font-size: 2.25rem;
     line-height: 2.5rem;
   }
-  .md\:text-8xl{
-    font-size: 6rem;
-    line-height: 1;
+  .md\:text-\[7rem\]{
+    font-size: 7rem;
   }
   .md\:text-base{
     font-size: 1rem;
@@ -1980,9 +1979,6 @@ html, body {
   .md\:text-xl{
     font-size: 1.25rem;
     line-height: 1.75rem;
-  }
-  .md\:text-\[7rem\]{
-    font-size: 7rem;
   }
 }
 @media (min-width: 1024px){
@@ -2087,15 +2083,14 @@ html, body {
     font-size: 2.25rem;
     line-height: 2.5rem;
   }
-  .lg\:text-9xl{
-    font-size: 8rem;
-    line-height: 1;
-  }
   .lg\:text-\[18px\]{
     font-size: 18px;
   }
   .lg\:text-\[42px\]{
     font-size: 42px;
+  }
+  .lg\:text-\[8rem\]{
+    font-size: 8rem;
   }
   .lg\:text-base{
     font-size: 1rem;
@@ -2113,14 +2108,8 @@ html, body {
     font-size: 0.75rem;
     line-height: 1rem;
   }
-  .lg\:text-\[8rem\]{
-    font-size: 8rem;
-  }
 }
 @media (min-width: 1280px){
-  .xl\:text-\[10rem\]{
-    font-size: 10rem;
-  }
   .xl\:text-\[9rem\]{
     font-size: 9rem;
   }

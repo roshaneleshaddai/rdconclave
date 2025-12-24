@@ -85,7 +85,8 @@ const HackathonTimeline = () => {
             width: '100%',
             height: '2px',
             background: 'rgba(0, 33, 71, 0.1)',
-            transform: 'translateY(-50%)'
+            transform: 'translateY(-50%)',
+            zIndex: 1
           }}>
             <div style={{
               height: '100%',
@@ -99,7 +100,10 @@ const HackathonTimeline = () => {
             justifyContent: 'space-between',
             alignItems: 'center',
             position: 'relative',
-            minHeight: '450px'
+            minHeight: '600px',
+            paddingTop: '200px',
+            paddingBottom: '200px',
+            gap: '20px'
           }}>
             {TimelineData.map((item, index) => {
               const isTop = index % 2 === 0;
@@ -112,26 +116,32 @@ const HackathonTimeline = () => {
                   display: 'flex',
                   flexDirection: 'column',
                   alignItems: 'center',
-                  flex: 1
+                  flex: 1,
+                  minHeight: '300px'
                 }}>
                   {/* Central Node with Date */}
                   <div style={{
-                    width: '64px',
-                    height: '64px',
+                    width: '80px',
+                    height: '80px',
                     borderRadius: '50%',
-                    border: '2px solid #002147',
+                    border: '3px solid #002147',
                     background: '#ffffff',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
                     color: '#002147',
                     fontWeight: 'bold',
-                    fontSize: '10px',
-                    boxShadow: '0 1px 2px rgba(0, 33, 71, 0.05)',
+                    fontSize: '11px',
+                    boxShadow: '0 2px 8px rgba(0, 33, 71, 0.1)',
                     zIndex: 30,
                     whiteSpace: 'nowrap',
                     padding: '0 8px',
-                    fontFamily: 'SUSE, sans-serif'
+                    fontFamily: 'SUSE, sans-serif',
+                    textAlign: 'center',
+                    position: 'absolute',
+                    top: '50%',
+                    left: '50%',
+                    transform: 'translate(-50%, -50%)'
                   }}>
                     {item.date}
                   </div>
@@ -142,22 +152,22 @@ const HackathonTimeline = () => {
                     onMouseLeave={() => setHoveredIndex(null)}
                     style={{
                       position: 'absolute',
-                      width: '192px',
-                      padding: '16px',
+                      width: '220px',
+                      padding: '24px',
                       background: isHovered ? '#002147' : '#ffffff',
-                      border: '1.5px solid #002147',
-                      borderRadius: '8px',
-                      boxShadow: '0 1px 2px rgba(0, 33, 71, 0.05)',
-                      top: isTop ? '-140px' : 'auto',
-                      bottom: isTop ? 'auto' : '-140px',
+                      border: '2px solid #002147',
+                      borderRadius: '12px',
+                      boxShadow: isHovered ? '0 4px 16px rgba(0, 33, 71, 0.2)' : '0 2px 8px rgba(0, 33, 71, 0.08)',
+                      top: isTop ? '-64px' : 'auto',
+                      bottom: isTop ? 'auto' : '-64px',
                       animation: `${isTop ? 'fadeInDown' : 'fadeInUp'} 0.5s ease-out forwards`,
                       animationDelay: `${0.1 * index}s`,
                       opacity: 0,
                       transition: 'all 0.3s ease-in-out',
                       transform: isHovered 
-                        ? `translateY(${isTop ? -5 : 5}px) scale(1.02)` 
-                        : 'translateY(0) scale(1)',
-                      zIndex: isHovered ? 50 : 1,
+                        ? `scale(1.05)` 
+                        : 'scale(1)',
+                      zIndex: isHovered ? 50 : 20,
                       cursor: 'pointer'
                     }}
                   >
@@ -168,27 +178,27 @@ const HackathonTimeline = () => {
                       transform: 'translateX(-50%)',
                       width: 0,
                       height: 0,
-                      borderLeft: '8px solid transparent',
-                      borderRight: '8px solid transparent',
+                      borderLeft: '10px solid transparent',
+                      borderRight: '10px solid transparent',
                       ...(isTop ? {
-                        borderTop: `8px solid ${isHovered ? '#002147' : '#002147'}`,
-                        bottom: '-8px'
+                        borderTop: `10px solid ${isHovered ? '#002147' : '#002147'}`,
+                        bottom: '-10px'
                       } : {
-                        borderBottom: `8px solid ${isHovered ? '#002147' : '#002147'}`,
-                        top: '-8px'
+                        borderBottom: `10px solid ${isHovered ? '#002147' : '#002147'}`,
+                        top: '-10px'
                       })
                     }} />
 
                     <div style={{
                       display: 'flex',
                       alignItems: 'center',
-                      gap: '8px',
-                      marginBottom: '8px',
-                      borderBottom: `1px solid ${isHovered ? '#ffffff' : 'rgba(0, 33, 71, 0.1)'}`,
-                      paddingBottom: '8px'
+                      gap: '10px',
+                      marginBottom: '10px',
+                      borderBottom: `1.5px solid ${isHovered ? '#ffffff' : 'rgba(0, 33, 71, 0.15)'}`,
+                      paddingBottom: '10px'
                     }}>
                       <Icon 
-                        size={18} 
+                        size={20} 
                         style={{ 
                           color: isHovered ? '#ffffff' : '#002147', 
                           flexShrink: 0 
@@ -198,7 +208,7 @@ const HackathonTimeline = () => {
                       <h3 style={{
                         color: isHovered ? '#ffffff' : '#002147',
                         fontWeight: '700',
-                        fontSize: '14px',
+                        fontSize: '15px',
                         textTransform: 'uppercase',
                         lineHeight: '1.2',
                         fontFamily: 'SUSE, sans-serif'
@@ -209,7 +219,7 @@ const HackathonTimeline = () => {
                     <p style={{
                       color: isHovered ? '#ffffff' : '#6B7280',
                       fontSize: '14px',
-                      lineHeight: '1.4',
+                      lineHeight: '1.5',
                       fontFamily: 'SUSE, sans-serif'
                     }}>
                       {item.desc}
@@ -226,34 +236,35 @@ const HackathonTimeline = () => {
           display: isDesktop ? 'none' : 'flex',
           flexDirection: 'column',
           gap: '32px',
-          position: 'relative'
+          position: 'relative',
+          paddingLeft: '40px'
         }}>
           {/* Vertical Line */}
           <div style={{
             position: 'absolute',
-            left: '24px',
+            left: '19px',
             top: 0,
             height: '100%',
             width: '2px',
-            background: 'rgba(0, 33, 71, 0.2)'
+            background: 'rgba(0, 33, 71, 0.2)',
+            zIndex: 0
           }} />
 
           {TimelineData.map((item, index) => {
             const Icon = item.icon;
             return (
               <div key={item.date + index} style={{
-                position: 'relative',
-                paddingLeft: '64px'
+                position: 'relative'
               }}>
                 {/* Date Node */}
                 <div style={{
                   position: 'absolute',
-                  left: 0,
-                  top: '8px',
-                  width: '48px',
-                  height: '48px',
+                  left: '-60px',
+                  top: '0px',
+                  width: '56px',
+                  height: '56px',
                   borderRadius: '50%',
-                  border: '2px solid #002147',
+                  border: '3px solid #002147',
                   background: '#ffffff',
                   zIndex: 10,
                   display: 'flex',
@@ -261,43 +272,45 @@ const HackathonTimeline = () => {
                   justifyContent: 'center',
                   color: '#002147',
                   fontWeight: '700',
-                  fontSize: '9px',
+                  fontSize: '10px',
                   whiteSpace: 'nowrap',
                   padding: '0 4px',
-                  fontFamily: 'SUSE, sans-serif'
+                  fontFamily: 'SUSE, sans-serif',
+                  textAlign: 'center',
+                  boxShadow: '0 2px 8px rgba(0, 33, 71, 0.1)'
                 }}>
                   {item.date}
                 </div>
                 {/* Content Box */}
                 <div style={{
                   background: '#ffffff',
-                  border: '1px solid rgba(0, 33, 71, 0.1)',
+                  border: '2px solid rgba(0, 33, 71, 0.15)',
                   padding: '20px',
                   borderRadius: '12px',
-                  boxShadow: '0 1px 2px rgba(0, 33, 71, 0.05)',
+                  boxShadow: '0 2px 8px rgba(0, 33, 71, 0.08)',
                   transition: 'all 0.3s'
                 }}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.borderColor = '#002147';
-                  e.currentTarget.style.boxShadow = '0 4px 12px rgba(0, 33, 71, 0.12)';
+                  e.currentTarget.style.boxShadow = '0 4px 16px rgba(0, 33, 71, 0.15)';
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.borderColor = 'rgba(0, 33, 71, 0.1)';
-                  e.currentTarget.style.boxShadow = '0 1px 2px rgba(0, 33, 71, 0.05)';
+                  e.currentTarget.style.borderColor = 'rgba(0, 33, 71, 0.15)';
+                  e.currentTarget.style.boxShadow = '0 2px 8px rgba(0, 33, 71, 0.08)';
                 }}>
                   <div style={{
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'flex-end',
-                    marginBottom: '8px'
+                    marginBottom: '10px'
                   }}>
-                    <Icon size={18} style={{ color: '#002147' }} strokeWidth={1.5} />
+                    <Icon size={20} style={{ color: '#002147' }} strokeWidth={2} />
                   </div>
                   <h3 style={{
                     color: '#002147',
                     fontWeight: '700',
-                    fontSize: '18px',
-                    marginBottom: '4px',
+                    fontSize: '16px',
+                    marginBottom: '8px',
                     fontFamily: 'SUSE, sans-serif'
                   }}>
                     {item.title}

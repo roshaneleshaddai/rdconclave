@@ -1,48 +1,34 @@
 'use client';
 import { Mail } from 'lucide-react';
-import Sahith from './sahith.jpg';
-import Pandu from './pandu.jpg';
-import Manoj from './manoj.jpg';
 
 const AcademicContactWithCoordinators = () => {
   const studentCoordinators = [
     {
       name: "Manoj",
       role: "Student Coordinator",
-      phone: "9876543212",
-      email: "manoj@university.edu",
-      image: Manoj
+      phone: "6281466686",
+      email: "manoj@university.edu"
     },
     {
       name: "Pandu",
       role: "Student Coordinator",
-      phone: "9876543213",
-      email: "pandu@university.edu",
-      image: Pandu
+      phone: "9618223350",
+      email: "pandu@university.edu"
     },
     {
       name: "Sahith",
       role: "Student Coordinator",
-      phone: "9876543214",
-      email: "sahith@university.edu",
-      image: Sahith
+      phone: "8341999296",
+      email: "sahith@university.edu"
     }
   ];
 
   const PersonCard = ({ person }) => (
     <div className="flex flex-col items-center text-center space-y-3 animate-fade-in">
       <div className="w-24 h-24 rounded-full bg-[rgba(0,33,71,0.1)] border-2 border-[rgba(0,33,71,0.3)] flex items-center justify-center overflow-hidden shadow-lg shadow-[rgba(0,33,71,0.1)] hover:border-[rgba(0,33,71,0.6)] hover:shadow-[rgba(0,33,71,0.3)] transition-all duration-300">
-        {person.image ? (
-          <img 
-            src={person.image.src} 
-            alt={person.name}
-            className="w-full h-full object-cover"
-          />
-        ) : (
-          <div className="text-[#002147] text-3xl font-bold" style={{ fontFamily: 'SUSE, sans-serif' }}>
-            {person.name.charAt(0)}
-          </div>
-        )}
+        <svg className="w-12 h-12 text-[#002147]" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+        </svg>
       </div>
       <div>
         <h3 className="text-[#002147] font-semibold text-sm" style={{ fontFamily: 'SUSE, sans-serif' }}>{person.name}</h3>
