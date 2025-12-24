@@ -288,7 +288,7 @@ const EventRegistration = () => {
           <InfoCard 
             icon={IndianRupee}
             title="Registration Fee"
-            description="₹500 per Team"
+            description="₹300 per Person"
           />
           <InfoCard 
             icon={Coffee}
