@@ -78,7 +78,12 @@ const CodeFusionHero = () => {
   const title = "CODEFUSION";
 
   return (
-    <section className="relative w-full min-h-screen bg-white overflow-hidden flex flex-col items-center justify-center font-serif px-4 sm:px-6 md:px-8 py-6 sm:py-8 md:py-0">
+    <section className="relative w-full bg-white overflow-hidden flex flex-col items-center justify-center font-serif px-4 sm:px-6 md:px-8" 
+      style={{
+        minHeight: 'auto',
+        paddingTop: 'clamp(2rem, 7cm, 7cm)',
+        paddingBottom: 'clamp(2rem, 5vw, 4rem)'
+      }}>
 
       {/* BACKGROUND PARTICLES */}
       <canvas
@@ -86,49 +91,54 @@ const CodeFusionHero = () => {
         className="absolute inset-0 z-0 pointer-events-none opacity-40"
       />
 
-      {/* TITLE */}
-      <h1 className="relative z-10 flex flex-wrap justify-center dark-blue-title text-5xl xs:text-6xl sm:text-7xl md:text-8xl lg:text-9xl xl:text-[10rem] font-black leading-none text-center mb-1">
-        {title.split("").map((char, i) => (
-          <span
-            key={i}
-            className="blue-letter"
-            style={{ animationDelay: `${i * 0.14}s` }}
+      {/* Content Wrapper */}
+      <div className="relative z-10 w-full flex flex-col items-center">
+        {/* TITLE */}
+        <h1 className="flex flex-wrap justify-center dark-blue-title text-5xl xs:text-6xl sm:text-7xl md:text-[7rem] lg:text-[8rem] xl:text-[9rem] font-black leading-none text-center" 
+          style={{ marginBottom: 'clamp(0.5rem, 2vw, 1rem)' }}>
+          {title.split("").map((char, i) => (
+            <span
+              key={i}
+              className="blue-letter"
+              style={{ animationDelay: `${i * 0.14}s` }}
+            >
+              {char}
+            </span>
+          ))}
+        </h1>
+
+        {/* DATE */}
+        <p
+          className="mt-4 sm:mt-6 md:mt-8 text-sm sm:text-base md:text-lg lg:text-xl tracking-[0.15em] sm:tracking-[0.25em] text-[#0c4a6e] animate-fade-in-long text-center font-medium"
+          style={{ animationDelay: "2s", marginBottom: 'clamp(0.75rem, 1.5vw, 1.25rem)' }}
+        >
+          JANUARY&nbsp;23–24,&nbsp;2026
+        </p>
+
+        {/* DIVIDER */}
+        <div
+          className="w-36 sm:w-44 md:w-52 h-[2px] bg-[#0ea5e9] opacity-60"
+          style={{ animationDelay: "2.4s", marginBottom: 'clamp(1.25rem, 2.5vw, 2.5rem)' }}
+        />
+
+        {/* ORGANISER INFO */}
+        <div
+          className="flex flex-col items-center text-[#475569] animate-org-wrapper px-4"
+          style={{ fontFamily: "Times New Roman, serif" }}
+        >
+          <p
+            className="text-sm sm:text-base md:text-lg tracking-[0.12em] sm:tracking-[0.18em] animate-org-line-1 text-center font-medium"
+            style={{ marginBottom: 'clamp(0.5rem, 1vw, 1rem)' }}
           >
-            {char}
-          </span>
-        ))}
-      </h1>
+            ORGANISED BY RESEARCH &amp; DEVELOPMENT CELL
+          </p>
 
-      {/* DATE */}
-      <p
-        className="relative z-20 mt-4 sm:mt-6 md:mt-12 text-sm sm:text-base md:text-lg lg:text-xl tracking-[0.15em] sm:tracking-[0.25em] text-[#0c4a6e] animate-fade-in-long text-center font-medium"
-        style={{ animationDelay: "2s" }}
-      >
-        JANUARY&nbsp;23–24,&nbsp;2026
-      </p>
-
-      {/* DIVIDER */}
-      <div
-        className="relative z-20 w-36 sm:w-44 md:w-52 h-[2px] bg-[#0ea5e9] mt-3 sm:mt-5 md:mt-8 opacity-60"
-        style={{ animationDelay: "2.4s" }}
-      />
-
-      {/* ORGANISER INFO */}
-      <div
-        className="relative z-20 mt-5 sm:mt-6 md:mt-10 flex flex-col items-center text-[#475569] animate-org-wrapper px-4"
-        style={{ fontFamily: "Times New Roman, serif" }}
-      >
-        <p
-          className="text-sm sm:text-base md:text-lg tracking-[0.12em] sm:tracking-[0.18em] animate-org-line-1 text-center mb-2 sm:mb-2 md:mb-4 font-medium"
-        >
-          ORGANISED BY RESEARCH &amp; DEVELOPMENT CELL
-        </p>
-
-        <p
-          className="text-sm sm:text-base md:text-lg tracking-[0.12em] sm:tracking-[0.18em] animate-org-line-2 text-center font-medium"
-        >
-          DEPARTMENTS OF IT &amp; CSE
-        </p>
+          <p
+            className="text-sm sm:text-base md:text-lg tracking-[0.12em] sm:tracking-[0.18em] animate-org-line-2 text-center font-medium"
+          >
+            DEPARTMENTS OF IT &amp; CSE
+          </p>
+        </div>
       </div>
 
       {/* STYLES */}

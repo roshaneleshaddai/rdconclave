@@ -11,10 +11,10 @@ const EventRegistration = () => {
   };
 
   useEffect(() => {
-    setIsMobile(window.innerWidth <= 768);
-    const handleResize = () => setIsMobile(window.innerWidth <= 768);
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
+    const checkMobile = () => setIsMobile(window.innerWidth <= 768);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
   useEffect(() => {
@@ -35,7 +35,6 @@ const EventRegistration = () => {
 
     calculateTimeLeft();
     const timer = setInterval(calculateTimeLeft, 1000);
-
     return () => clearInterval(timer);
   }, []);
 
@@ -44,8 +43,8 @@ const EventRegistration = () => {
       <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
         <div style={{
           position: 'relative',
-          width: '105px',
-          height: '105px',
+          width: isMobile ? '75px' : '105px',
+          height: isMobile ? '75px' : '105px',
           marginBottom: '12px'
         }}>
           <div style={{
@@ -61,7 +60,7 @@ const EventRegistration = () => {
             boxShadow: '0 4px 12px rgba(0, 33, 71, 0.08)'
           }}>
             <span style={{
-              fontSize: '48px',
+              fontSize: isMobile ? '32px' : '48px',
               fontWeight: '700',
               color: '#002147',
               fontFamily: 'SUSE, sans-serif'
@@ -71,7 +70,7 @@ const EventRegistration = () => {
           </div>
         </div>
         <div style={{
-          fontSize: '13px',
+          fontSize: isMobile ? '11px' : '13px',
           fontWeight: '600',
           letterSpacing: '0.8px',
           color: '#6B7280',
@@ -95,23 +94,24 @@ const EventRegistration = () => {
           background: '#ffffff',
           border: '2px solid ' + (isHovered ? '#002147' : '#e2e8f0'),
           borderRadius: '16px',
-          padding: '26px 24px',
+          padding: isMobile ? '20px 16px' : '26px 24px',
           boxShadow: isHovered ? '0 12px 32px rgba(0, 33, 71, 0.12)' : '0 3px 10px rgba(0, 33, 71, 0.06)',
           transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
-          minHeight: '125px',
+          minHeight: isMobile ? 'auto' : '125px',
           transform: isHovered ? 'translateY(-4px)' : 'translateY(0)'
         }}
       >
         <div style={{
           display: 'flex',
           alignItems: 'flex-start',
-          gap: '18px',
-          height: '100%'
+          gap: isMobile ? '12px' : '18px',
+          height: '100%',
+          flexDirection: isMobile ? 'row' : 'row'
         }}>
           <div style={{
             flexShrink: 0,
-            width: '52px',
-            height: '52px',
+            width: isMobile ? '44px' : '52px',
+            height: isMobile ? '44px' : '52px',
             borderRadius: '12px',
             background: isHovered 
               ? 'rgba(0, 33, 71, 0.15)'
@@ -122,7 +122,7 @@ const EventRegistration = () => {
             transition: 'all 0.3s ease',
             transform: isHovered ? 'scale(1.08) rotate(5deg)' : 'scale(1) rotate(0deg)'
           }}>
-            <Icon style={{ width: '24px', height: '24px', color: '#002147' }} strokeWidth={2} />
+            <Icon style={{ width: isMobile ? '20px' : '24px', height: isMobile ? '20px' : '24px', color: '#002147' }} strokeWidth={2} />
           </div>
           <div style={{
             flex: 1,
@@ -131,7 +131,7 @@ const EventRegistration = () => {
             justifyContent: 'center'
           }}>
             <h3 style={{
-              fontSize: '17px',
+              fontSize: isMobile ? '15px' : '17px',
               fontWeight: '700',
               color: '#002147',
               marginBottom: '6px',
@@ -141,7 +141,7 @@ const EventRegistration = () => {
               {title}
             </h3>
             <p style={{
-              fontSize: '14.5px',
+              fontSize: isMobile ? '13px' : '14.5px',
               color: '#6B7280',
               lineHeight: '1.5',
               fontWeight: '500',
@@ -177,6 +177,12 @@ const EventRegistration = () => {
         background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.6), transparent);
         animation: shine 2s infinite;
       }
+
+      @media (max-width: 768px) {
+        .register-button {
+          width: 100%;
+        }
+      }
     `;
     document.head.appendChild(style);
     return () => document.head.removeChild(style);
@@ -186,7 +192,7 @@ const EventRegistration = () => {
     <div style={{
       minHeight: '100vh',
       background: '#ffffff',
-      padding: '50px 20px',
+      padding: isMobile ? '30px 16px' : '50px 20px',
       fontFamily: 'SUSE, sans-serif'
     }}>
       <div style={{
@@ -195,14 +201,15 @@ const EventRegistration = () => {
       }}>
         <div style={{
           textAlign: 'center',
-          marginBottom: '40px'
+          marginBottom: isMobile ? '30px' : '40px'
         }}>
           <h1 style={{
-            fontSize: '42px',
+            fontSize: isMobile ? '28px' : '42px',
             fontWeight: '700',
             color: '#002147',
             letterSpacing: '-0.5px',
-            fontFamily: 'SUSE, sans-serif'
+            fontFamily: 'SUSE, sans-serif',
+            lineHeight: '1.2'
           }}>
             Event Starts In
           </h1>
@@ -211,8 +218,8 @@ const EventRegistration = () => {
         <div style={{
           display: 'flex',
           justifyContent: 'center',
-          gap: '16px',
-          marginBottom: '45px',
+          gap: isMobile ? '8px' : '16px',
+          marginBottom: isMobile ? '35px' : '45px',
           flexWrap: 'wrap'
         }}>
           <CountdownUnit value={timeLeft.days} label="Days" />
@@ -224,16 +231,18 @@ const EventRegistration = () => {
         <div style={{
           display: 'flex',
           justifyContent: 'center',
-          marginBottom: '50px'
+          marginBottom: isMobile ? '40px' : '50px',
+          padding: isMobile ? '0 10px' : '0'
         }}>
-          <div style={{ position: 'relative' }}>
+          <div style={{ position: 'relative', width: isMobile ? '100%' : 'auto' }}>
             <button 
               onClick={handleRegisterClick}
-              className="register-button-shine"
+              className="register-button-shine register-button"
               style={{
                 position: 'relative',
-                padding: '18px 56px',
-                fontSize: '20px',
+                padding: isMobile ? '16px 32px' : '18px 56px',
+                width: isMobile ? '100%' : 'auto',
+                fontSize: isMobile ? '16px' : '20px',
                 fontWeight: '700',
                 color: '#ffffff',
                 background: 'linear-gradient(135deg, #7c3aed 0%, #5b21b6 50%, #6b21a8 100%)',
@@ -246,20 +255,28 @@ const EventRegistration = () => {
                 fontFamily: '"Times New Roman", Times, serif'
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.transform = 'translateY(-3px) scale(1.02)';
-                e.currentTarget.style.boxShadow = '0 14px 35px rgba(124, 58, 237, 0.45), 0 6px 18px rgba(124, 58, 237, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.3)';
+                if (!isMobile) {
+                  e.currentTarget.style.transform = 'translateY(-3px) scale(1.02)';
+                  e.currentTarget.style.boxShadow = '0 14px 35px rgba(124, 58, 237, 0.45), 0 6px 18px rgba(124, 58, 237, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.3)';
+                }
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.transform = 'translateY(0) scale(1)';
-                e.currentTarget.style.boxShadow = '0 8px 24px rgba(124, 58, 237, 0.35), 0 4px 12px rgba(124, 58, 237, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.2)';
+                if (!isMobile) {
+                  e.currentTarget.style.transform = 'translateY(0) scale(1)';
+                  e.currentTarget.style.boxShadow = '0 8px 24px rgba(124, 58, 237, 0.35), 0 4px 12px rgba(124, 58, 237, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.2)';
+                }
               }}
               onMouseDown={(e) => {
-                e.currentTarget.style.transform = 'translateY(-1px) scale(1.01)';
-                e.currentTarget.style.boxShadow = '0 6px 18px rgba(124, 58, 237, 0.4), 0 3px 10px rgba(124, 58, 237, 0.3)';
+                if (!isMobile) {
+                  e.currentTarget.style.transform = 'translateY(-1px) scale(1.01)';
+                  e.currentTarget.style.boxShadow = '0 6px 18px rgba(124, 58, 237, 0.4), 0 3px 10px rgba(124, 58, 237, 0.3)';
+                }
               }}
               onMouseUp={(e) => {
-                e.currentTarget.style.transform = 'translateY(-3px) scale(1.02)';
-                e.currentTarget.style.boxShadow = '0 14px 35px rgba(124, 58, 237, 0.45), 0 6px 18px rgba(124, 58, 237, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.3)';
+                if (!isMobile) {
+                  e.currentTarget.style.transform = 'translateY(-3px) scale(1.02)';
+                  e.currentTarget.style.boxShadow = '0 14px 35px rgba(124, 58, 237, 0.45), 0 6px 18px rgba(124, 58, 237, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.3)';
+                }
               }}
             >
               <span style={{
@@ -276,7 +293,7 @@ const EventRegistration = () => {
         <div style={{
           display: 'grid',
           gridTemplateColumns: isMobile ? '1fr' : 'repeat(2, 1fr)',
-          gap: '18px',
+          gap: isMobile ? '14px' : '18px',
           maxWidth: '950px',
           margin: '0 auto'
         }}>
