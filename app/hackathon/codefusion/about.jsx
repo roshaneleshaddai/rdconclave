@@ -1,6 +1,6 @@
 'use client';
 import { useState, useEffect } from 'react';
-import { Users, DollarSign, Coffee, MapPin } from 'lucide-react';
+import { Users, Coffee, MapPin, IndianRupee } from 'lucide-react';
 
 const EventRegistration = () => {
   const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
@@ -44,19 +44,19 @@ const EventRegistration = () => {
             position: 'relative',
             width: '100%',
             height: '100%',
-            background: '#ffffff',
-            border: '2px solid #e2e8f0',
+            background: 'rgba(0, 33, 71, 0.05)',
+            border: '2px solid #002147',
             borderRadius: '14px',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            boxShadow: '0 4px 12px rgba(26, 43, 74, 0.08)'
+            boxShadow: '0 4px 12px rgba(0, 33, 71, 0.08)'
           }}>
             <span style={{
               fontSize: '48px',
               fontWeight: '700',
-              color: '#1a2b4a',
-              fontFamily: '"Times New Roman", Times, serif'
+              color: '#002147',
+              fontFamily: 'SUSE, sans-serif'
             }}>
               {String(value).padStart(2, '0')}
             </span>
@@ -66,9 +66,9 @@ const EventRegistration = () => {
           fontSize: '13px',
           fontWeight: '600',
           letterSpacing: '0.8px',
-          color: '#64748b',
+          color: '#6B7280',
           textTransform: 'capitalize',
-          fontFamily: '"Times New Roman", Times, serif'
+          fontFamily: 'SUSE, sans-serif'
         }}>
           {label}
         </div>
@@ -85,10 +85,10 @@ const EventRegistration = () => {
         onMouseLeave={() => setIsHovered(false)}
         style={{
           background: '#ffffff',
-          border: '2px solid ' + (isHovered ? '#cbd5e1' : '#e2e8f0'),
+          border: '2px solid ' + (isHovered ? '#002147' : '#e2e8f0'),
           borderRadius: '16px',
           padding: '26px 24px',
-          boxShadow: isHovered ? '0 12px 32px rgba(26, 43, 74, 0.12)' : '0 3px 10px rgba(26, 43, 74, 0.06)',
+          boxShadow: isHovered ? '0 12px 32px rgba(0, 33, 71, 0.12)' : '0 3px 10px rgba(0, 33, 71, 0.06)',
           transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
           minHeight: '125px',
           transform: isHovered ? 'translateY(-4px)' : 'translateY(0)'
@@ -106,15 +106,15 @@ const EventRegistration = () => {
             height: '52px',
             borderRadius: '12px',
             background: isHovered 
-              ? 'linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%)'
-              : 'linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%)',
+              ? 'rgba(0, 33, 71, 0.15)'
+              : 'rgba(0, 33, 71, 0.05)',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
             transition: 'all 0.3s ease',
             transform: isHovered ? 'scale(1.08) rotate(5deg)' : 'scale(1) rotate(0deg)'
           }}>
-            <Icon style={{ width: '24px', height: '24px', color: '#1a2b4a' }} strokeWidth={2} />
+            <Icon style={{ width: '24px', height: '24px', color: '#002147' }} strokeWidth={2} />
           </div>
           <div style={{
             flex: 1,
@@ -125,19 +125,19 @@ const EventRegistration = () => {
             <h3 style={{
               fontSize: '17px',
               fontWeight: '700',
-              color: '#1a2b4a',
+              color: '#002147',
               marginBottom: '6px',
               lineHeight: '1.3',
-              fontFamily: '"Times New Roman", Times, serif'
+              fontFamily: 'SUSE, sans-serif'
             }}>
               {title}
             </h3>
             <p style={{
               fontSize: '14.5px',
-              color: '#64748b',
+              color: '#6B7280',
               lineHeight: '1.5',
               fontWeight: '500',
-              fontFamily: '"Times New Roman", Times, serif'
+              fontFamily: 'SUSE, sans-serif'
             }}>
               {description}
             </p>
@@ -147,12 +147,39 @@ const EventRegistration = () => {
     );
   };
 
+  useEffect(() => {
+    const style = document.createElement('style');
+    style.textContent = `
+      @keyframes shine {
+        0% {
+          left: -100%;
+        }
+        100% {
+          left: 100%;
+        }
+      }
+      
+      .register-button-shine::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.6), transparent);
+        animation: shine 2s infinite;
+      }
+    `;
+    document.head.appendChild(style);
+    return () => document.head.removeChild(style);
+  }, []);
+
   return (
     <div style={{
       minHeight: '100vh',
       background: '#ffffff',
       padding: '50px 20px',
-      fontFamily: '"Times New Roman", Times, serif'
+      fontFamily: 'SUSE, sans-serif'
     }}>
       <div style={{
         maxWidth: '1100px',
@@ -165,9 +192,9 @@ const EventRegistration = () => {
           <h1 style={{
             fontSize: '42px',
             fontWeight: '700',
-            color: '#1a2b4a',
+            color: '#002147',
             letterSpacing: '-0.5px',
-            fontFamily: '"Times New Roman", Times, serif'
+            fontFamily: 'SUSE, sans-serif'
           }}>
             Event Starts In
           </h1>
@@ -194,6 +221,7 @@ const EventRegistration = () => {
           <div style={{ position: 'relative' }}>
             <button 
               onClick={handleRegisterClick}
+              className="register-button-shine"
               style={{
                 position: 'relative',
                 padding: '18px 56px',
@@ -250,7 +278,7 @@ const EventRegistration = () => {
             description="3–4 Members per Team"
           />
           <InfoCard 
-            icon={DollarSign}
+            icon={IndianRupee}
             title="Registration Fee"
             description="₹500 per Team"
           />

@@ -23,7 +23,7 @@ const HackathonTimeline = () => {
       width: '100%',
       background: '#ffffff',
       padding: '48px 16px',
-      fontFamily: 'serif',
+      fontFamily: 'SUSE, sans-serif',
       overflow: 'hidden'
     }}>
       {/* Section Header */}
@@ -35,24 +35,26 @@ const HackathonTimeline = () => {
       }}>
         <h2 style={{
           fontSize: '40px',
-          fontWeight: 'bold',
-          color: '#0B3C5D',
-          marginBottom: '12px'
+          fontWeight: '700',
+          color: '#002147',
+          marginBottom: '12px',
+          fontFamily: 'SUSE, sans-serif'
         }}>
           Event Schedule
         </h2>
         <div style={{
           width: '96px',
           height: '4px',
-          background: '#0B3C5D',
+          background: '#002147',
           margin: '0 auto 16px'
         }}></div>
         <p style={{
-          color: '#4A6FA5',
+          color: '#6B7280',
           letterSpacing: '0.2em',
           textTransform: 'uppercase',
           fontSize: '10px',
-          fontWeight: '600'
+          fontWeight: '600',
+          fontFamily: 'SUSE, sans-serif'
         }}>
           Academic Research & Development Conclave
         </p>
@@ -74,12 +76,12 @@ const HackathonTimeline = () => {
             left: 0,
             width: '100%',
             height: '2px',
-            background: 'rgba(11, 60, 93, 0.1)',
+            background: 'rgba(0, 33, 71, 0.1)',
             transform: 'translateY(-50%)'
           }}>
             <div style={{
               height: '100%',
-              background: '#0B3C5D',
+              background: '#002147',
               animation: 'lineFlow 1.5s ease-in-out forwards'
             }} />
           </div>
@@ -109,18 +111,19 @@ const HackathonTimeline = () => {
                     width: '64px',
                     height: '64px',
                     borderRadius: '50%',
-                    border: '2px solid #0B3C5D',
+                    border: '2px solid #002147',
                     background: '#ffffff',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    color: '#0B3C5D',
+                    color: '#002147',
                     fontWeight: 'bold',
                     fontSize: '10px',
-                    boxShadow: '0 1px 2px rgba(0, 0, 0, 0.05)',
+                    boxShadow: '0 1px 2px rgba(0, 33, 71, 0.05)',
                     zIndex: 30,
                     whiteSpace: 'nowrap',
-                    padding: '0 8px'
+                    padding: '0 8px',
+                    fontFamily: 'SUSE, sans-serif'
                   }}>
                     {item.date}
                   </div>
@@ -133,10 +136,10 @@ const HackathonTimeline = () => {
                       position: 'absolute',
                       width: '192px',
                       padding: '16px',
-                      background: isHovered ? '#0B3C5D' : '#ffffff',
-                      border: '1.5px solid #0B3C5D',
+                      background: isHovered ? '#002147' : '#ffffff',
+                      border: '1.5px solid #002147',
                       borderRadius: '8px',
-                      boxShadow: '0 1px 2px rgba(0, 0, 0, 0.05)',
+                      boxShadow: '0 1px 2px rgba(0, 33, 71, 0.05)',
                       top: isTop ? '-140px' : 'auto',
                       bottom: isTop ? 'auto' : '-140px',
                       animation: `${isTop ? 'fadeInDown' : 'fadeInUp'} 0.5s ease-out forwards`,
@@ -160,10 +163,10 @@ const HackathonTimeline = () => {
                       borderLeft: '8px solid transparent',
                       borderRight: '8px solid transparent',
                       ...(isTop ? {
-                        borderTop: `8px solid ${isHovered ? '#0B3C5D' : '#0B3C5D'}`,
+                        borderTop: `8px solid ${isHovered ? '#002147' : '#002147'}`,
                         bottom: '-8px'
                       } : {
-                        borderBottom: `8px solid ${isHovered ? '#0B3C5D' : '#0B3C5D'}`,
+                        borderBottom: `8px solid ${isHovered ? '#002147' : '#002147'}`,
                         top: '-8px'
                       })
                     }} />
@@ -173,31 +176,33 @@ const HackathonTimeline = () => {
                       alignItems: 'center',
                       gap: '8px',
                       marginBottom: '8px',
-                      borderBottom: `1px solid ${isHovered ? '#ffffff' : 'rgba(11, 60, 93, 0.1)'}`,
+                      borderBottom: `1px solid ${isHovered ? '#ffffff' : 'rgba(0, 33, 71, 0.1)'}`,
                       paddingBottom: '8px'
                     }}>
                       <Icon 
                         size={18} 
                         style={{ 
-                          color: isHovered ? '#ffffff' : '#0B3C5D', 
+                          color: isHovered ? '#ffffff' : '#002147', 
                           flexShrink: 0 
                         }} 
                         strokeWidth={2} 
                       />
                       <h3 style={{
-                        color: isHovered ? '#ffffff' : '#0B3C5D',
-                        fontWeight: 'bold',
+                        color: isHovered ? '#ffffff' : '#002147',
+                        fontWeight: '700',
                         fontSize: '14px',
                         textTransform: 'uppercase',
-                        lineHeight: '1.2'
+                        lineHeight: '1.2',
+                        fontFamily: 'SUSE, sans-serif'
                       }}>
                         {item.title}
                       </h3>
                     </div>
                     <p style={{
-                      color: isHovered ? '#ffffff' : '#4A6FA5',
+                      color: isHovered ? '#ffffff' : '#6B7280',
                       fontSize: '14px',
-                      lineHeight: '1.4'
+                      lineHeight: '1.4',
+                      fontFamily: 'SUSE, sans-serif'
                     }}>
                       {item.desc}
                     </p>
@@ -222,7 +227,7 @@ const HackathonTimeline = () => {
             top: 0,
             height: '100%',
             width: '2px',
-            background: 'rgba(11, 60, 93, 0.2)'
+            background: 'rgba(0, 33, 71, 0.2)'
           }} />
 
           {TimelineData.map((item, index) => {
@@ -240,34 +245,37 @@ const HackathonTimeline = () => {
                   width: '48px',
                   height: '48px',
                   borderRadius: '50%',
-                  border: '2px solid #0B3C5D',
+                  border: '2px solid #002147',
                   background: '#ffffff',
                   zIndex: 10,
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  color: '#0B3C5D',
-                  fontWeight: 'bold',
+                  color: '#002147',
+                  fontWeight: '700',
                   fontSize: '9px',
                   whiteSpace: 'nowrap',
-                  padding: '0 4px'
+                  padding: '0 4px',
+                  fontFamily: 'SUSE, sans-serif'
                 }}>
                   {item.date}
                 </div>
                 {/* Content Box */}
                 <div style={{
                   background: '#ffffff',
-                  border: '1px solid #e5e7eb',
+                  border: '1px solid rgba(0, 33, 71, 0.1)',
                   padding: '20px',
                   borderRadius: '12px',
-                  boxShadow: '0 1px 2px rgba(0, 0, 0, 0.05)',
+                  boxShadow: '0 1px 2px rgba(0, 33, 71, 0.05)',
                   transition: 'all 0.3s'
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.borderColor = '#0B3C5D';
+                  e.currentTarget.style.borderColor = '#002147';
+                  e.currentTarget.style.boxShadow = '0 4px 12px rgba(0, 33, 71, 0.12)';
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.borderColor = '#e5e7eb';
+                  e.currentTarget.style.borderColor = 'rgba(0, 33, 71, 0.1)';
+                  e.currentTarget.style.boxShadow = '0 1px 2px rgba(0, 33, 71, 0.05)';
                 }}>
                   <div style={{
                     display: 'flex',
@@ -275,20 +283,22 @@ const HackathonTimeline = () => {
                     justifyContent: 'flex-end',
                     marginBottom: '8px'
                   }}>
-                    <Icon size={18} style={{ color: '#0B3C5D' }} strokeWidth={1.5} />
+                    <Icon size={18} style={{ color: '#002147' }} strokeWidth={1.5} />
                   </div>
                   <h3 style={{
-                    color: '#0B3C5D',
-                    fontWeight: 'bold',
+                    color: '#002147',
+                    fontWeight: '700',
                     fontSize: '18px',
-                    marginBottom: '4px'
+                    marginBottom: '4px',
+                    fontFamily: 'SUSE, sans-serif'
                   }}>
                     {item.title}
                   </h3>
                   <p style={{
-                    color: '#4A6FA5',
+                    color: '#6B7280',
                     fontSize: '14px',
-                    lineHeight: '1.5'
+                    lineHeight: '1.5',
+                    fontFamily: 'SUSE, sans-serif'
                   }}>
                     {item.desc}
                   </p>
