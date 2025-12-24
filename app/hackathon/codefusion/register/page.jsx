@@ -1,36 +1,47 @@
 'use client';
 import { useState, useEffect } from 'react';
-import { ArrowLeft, Users, GraduationCap, Send, CheckCircle, AlertCircle, X } from 'lucide-react';
-
+import { ArrowLeft, Users, GraduationCap, Send, CheckCircle, AlertCircle } from 'lucide-react';
+import Image from 'next/image';
 // Coin Flip Loading Component
 const CoinFlip = () => {
-  // Import images - adjust the path based on your folder structure
-  const rdLogo = './rdlogo.webp';
-  const goldenLogo = './golden.png';
-
   return (
     <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50">
       <div className="bg-white rounded-2xl p-8 shadow-2xl flex flex-col items-center">
         <div style={{ perspective: '1200px', width: '150px', height: '150px' }}>
           <div className="coin">
+            
+            {/* FRONT */}
             <div className="coin-face front">
-              <img 
-                src={rdLogo} 
-                alt="RD Logo" 
-                className="w-full h-full object-cover rounded-full"
+              <Image
+                src="/rdlogo.webp"
+                alt="RD Logo"
+                width={150}
+                height={150}
+                className="rounded-full object-cover"
+                priority
               />
             </div>
+
+            {/* BACK */}
             <div className="coin-face back">
-              <img 
-                src={goldenLogo} 
-                alt="Golden Logo" 
-                className="w-full h-full object-cover rounded-full"
+              <Image
+                src="/golden.png"
+                alt="Golden Logo"
+                width={150}
+                height={150}
+                className="rounded-full object-cover"
+                priority
               />
             </div>
+
           </div>
         </div>
-        <p className="mt-6 text-lg font-semibold text-[#002147]">Submitting Registration...</p>
+
+        <p className="mt-6 text-lg font-semibold text-[#002147]">
+          Submitting Registration...
+        </p>
       </div>
+
       <style jsx>{`
         .coin {
           width: 100%;
@@ -41,12 +52,8 @@ const CoinFlip = () => {
         }
 
         @keyframes spinY {
-          0% {
-            transform: rotateY(0deg);
-          }
-          100% {
-            transform: rotateY(360deg);
-          }
+          0% { transform: rotateY(0deg); }
+          100% { transform: rotateY(360deg); }
         }
 
         .coin-face {
@@ -66,6 +73,7 @@ const CoinFlip = () => {
     </div>
   );
 };
+
 
 // Success Modal Component
 const SuccessModal = ({ registrationId, onClose }) => {
@@ -176,7 +184,6 @@ const ErrorModal = ({ message, onClose }) => {
 };
 
 const RegistrationForm = () => {
-  const [isSubmitted, setIsSubmitted] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [registrationId, setRegistrationId] = useState('');
   const [isMobile, setIsMobile] = useState(false);
