@@ -1,9 +1,10 @@
 'use client';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { ArrowLeft, Users, GraduationCap, Send, CheckCircle } from 'lucide-react';
 
 const RegistrationForm = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
   const [formData, setFormData] = useState({
     teamName: '',
     teamSize: '3',
@@ -24,6 +25,17 @@ const RegistrationForm = () => {
     member4Email: '',
     member4Phone: ''
   });
+
+  // Handle responsive layout
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -69,62 +81,23 @@ const RegistrationForm = () => {
   };
 
   return (
-    <div style={{
-      minHeight: '100vh',
-      background: '#ffffff',
-      padding: '226px 16px 48px 16px',
-      fontFamily: 'SUSE, sans-serif'
-    }}>
+    <div className="min-h-screen bg-white px-4 pt-56 pb-12 font-[SUSE,sans-serif]">
       {/* Header with Back Button */}
-      <div style={{
-        maxWidth: '896px',
-        margin: '0 auto 32px'
-      }}>
+      <div className="max-w-4xl mx-auto mb-8">
         <button
           onClick={handleBackClick}
-          style={{
-            display: 'flex',
-            alignItems: 'center',
-            gap: '8px',
-            color: '#002147',
-            background: 'none',
-            border: 'none',
-            cursor: 'pointer',
-            marginBottom: '24px',
-            fontFamily: 'SUSE, sans-serif',
-            fontWeight: '600',
-            fontSize: '16px',
-            transition: 'color 0.3s'
-          }}
-          onMouseEnter={(e) => e.currentTarget.style.color = '#7c3aed'}
-          onMouseLeave={(e) => e.currentTarget.style.color = '#002147'}
+          className="flex items-center gap-2 text-[#002147] mb-6 font-semibold text-base hover:text-[#7c3aed] transition-colors"
         >
           <ArrowLeft size={20} />
           <span>Back to Home</span>
         </button>
 
-        <div style={{ textAlign: 'center' }}>
-          <h1 style={{
-            fontFamily: 'SUSE, sans-serif',
-            fontSize: '40px',
-            fontWeight: '700',
-            color: '#002147',
-            marginBottom: '12px'
-          }}>
+        <div className="text-center">
+          <h1 className="text-4xl font-bold text-[#002147] mb-3">
             Team Registration
           </h1>
-          <div style={{
-            width: '96px',
-            height: '4px',
-            background: '#002147',
-            margin: '0 auto 16px'
-          }}></div>
-          <p style={{
-            fontFamily: 'SUSE, sans-serif',
-            fontSize: '18px',
-            color: '#6B7280',
-            fontStyle: 'italic'
-          }}>
+          <div className="w-24 h-1 bg-[#002147] mx-auto mb-4"></div>
+          <p className="text-lg text-gray-500 italic">
             Academic Research & Development Conclave • CodeFusion 2025
           </p>
         </div>
@@ -132,33 +105,13 @@ const RegistrationForm = () => {
 
       {/* Success Message */}
       {isSubmitted && (
-        <div style={{
-          maxWidth: '896px',
-          margin: '0 auto 32px',
-          background: '#f0fdf4',
-          border: '2px solid #22c55e',
-          borderRadius: '12px',
-          padding: '24px',
-          display: 'flex',
-          alignItems: 'center',
-          gap: '16px',
-          animation: 'fadeIn 0.5s ease-out'
-        }}>
-          <CheckCircle size={32} style={{ color: '#22c55e', flexShrink: 0 }} />
+        <div className="max-w-4xl mx-auto mb-8 bg-green-50 border-2 border-green-500 rounded-xl p-6 flex items-center gap-4 animate-fadeIn">
+          <CheckCircle size={32} className="text-green-500 flex-shrink-0" />
           <div>
-            <h3 style={{
-              fontFamily: 'SUSE, sans-serif',
-              fontSize: '20px',
-              fontWeight: '700',
-              color: '#166534',
-              marginBottom: '4px'
-            }}>
+            <h3 className="text-xl font-bold text-green-800 mb-1">
               Registration Successful!
             </h3>
-            <p style={{
-              fontFamily: 'SUSE, sans-serif',
-              color: '#15803d'
-            }}>
+            <p className="text-green-700">
               Your team has been registered. Check your email for confirmation details.
             </p>
           </div>
@@ -166,58 +119,23 @@ const RegistrationForm = () => {
       )}
 
       {/* Registration Form */}
-      <div style={{ maxWidth: '896px', margin: '0 auto' }}>
-        <div style={{
-          background: '#ffffff',
-          border: '2px solid rgba(0, 33, 71, 0.1)',
-          borderRadius: '16px',
-          boxShadow: '0 10px 15px -3px rgba(0, 33, 71, 0.1)',
-          padding: '48px'
-        }}>
+      <div className="max-w-4xl mx-auto">
+        <div className="bg-white border-2 border-[#002147]/10 rounded-2xl shadow-lg p-8 md:p-12">
           
           {/* Team Details Section */}
-          <div style={{ marginBottom: '40px' }}>
-            <div style={{
-              display: 'flex',
-              alignItems: 'center',
-              gap: '12px',
-              marginBottom: '24px'
-            }}>
-              <div style={{
-                width: '40px',
-                height: '40px',
-                borderRadius: '50%',
-                background: '#002147',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center'
-              }}>
-                <Users size={20} style={{ color: '#ffffff' }} />
+          <div className="mb-10">
+            <div className="flex items-center gap-3 mb-6">
+              <div className="w-10 h-10 rounded-full bg-[#002147] flex items-center justify-center">
+                <Users size={20} className="text-white" />
               </div>
-              <h2 style={{
-                fontFamily: 'SUSE, sans-serif',
-                fontSize: '24px',
-                fontWeight: '700',
-                color: '#002147'
-              }}>
+              <h2 className="text-2xl font-bold text-[#002147]">
                 Team Information
               </h2>
             </div>
 
-            <div style={{
-              display: 'grid',
-              gridTemplateColumns: window.innerWidth >= 768 ? 'repeat(2, 1fr)' : '1fr',
-              gap: '24px'
-            }}>
-              <div style={{ gridColumn: window.innerWidth >= 768 ? 'span 2' : 'span 1' }}>
-                <label style={{
-                  fontFamily: 'SUSE, sans-serif',
-                  display: 'block',
-                  fontSize: '16px',
-                  fontWeight: '700',
-                  color: '#002147',
-                  marginBottom: '8px'
-                }}>
+            <div className={`grid ${isMobile ? 'grid-cols-1' : 'grid-cols-2'} gap-6`}>
+              <div className={isMobile ? '' : 'col-span-2'}>
+                <label className="block text-base font-bold text-[#002147] mb-2">
                   Team Name *
                 </label>
                 <input
@@ -225,62 +143,20 @@ const RegistrationForm = () => {
                   name="teamName"
                   value={formData.teamName}
                   onChange={handleInputChange}
-                  style={{
-                    fontFamily: 'SUSE, sans-serif',
-                    width: '100%',
-                    height: '48px',
-                    padding: '0 16px',
-                    border: '2px solid rgba(0, 33, 71, 0.2)',
-                    borderRadius: '8px',
-                    outline: 'none',
-                    transition: 'all 0.3s'
-                  }}
+                  className="w-full h-12 px-4 border-2 border-[#002147]/20 rounded-lg outline-none transition-all focus:border-[#002147] focus:shadow-[0_0_0_3px_rgba(0,33,71,0.1)]"
                   placeholder="Enter your team name"
-                  onFocus={(e) => {
-                    e.target.style.borderColor = '#002147';
-                    e.target.style.boxShadow = '0 0 0 3px rgba(0, 33, 71, 0.1)';
-                  }}
-                  onBlur={(e) => {
-                    e.target.style.borderColor = 'rgba(0, 33, 71, 0.2)';
-                    e.target.style.boxShadow = 'none';
-                  }}
                 />
               </div>
 
               <div>
-                <label style={{
-                  fontFamily: 'SUSE, sans-serif',
-                  display: 'block',
-                  fontSize: '16px',
-                  fontWeight: '700',
-                  color: '#002147',
-                  marginBottom: '8px'
-                }}>
+                <label className="block text-base font-bold text-[#002147] mb-2">
                   Team Size *
                 </label>
                 <select
                   name="teamSize"
                   value={formData.teamSize}
                   onChange={handleInputChange}
-                  style={{
-                    fontFamily: 'SUSE, sans-serif',
-                    width: '100%',
-                    height: '48px',
-                    padding: '0 16px',
-                    border: '2px solid rgba(0, 33, 71, 0.2)',
-                    borderRadius: '8px',
-                    outline: 'none',
-                    transition: 'all 0.3s',
-                    cursor: 'pointer'
-                  }}
-                  onFocus={(e) => {
-                    e.target.style.borderColor = '#002147';
-                    e.target.style.boxShadow = '0 0 0 3px rgba(0, 33, 71, 0.1)';
-                  }}
-                  onBlur={(e) => {
-                    e.target.style.borderColor = 'rgba(0, 33, 71, 0.2)';
-                    e.target.style.boxShadow = 'none';
-                  }}
+                  className="w-full h-12 px-4 border-2 border-[#002147]/20 rounded-lg outline-none transition-all focus:border-[#002147] focus:shadow-[0_0_0_3px_rgba(0,33,71,0.1)] cursor-pointer"
                 >
                   <option value="3">3 Members</option>
                   <option value="4">4 Members</option>
@@ -288,39 +164,14 @@ const RegistrationForm = () => {
               </div>
 
               <div>
-                <label style={{
-                  fontFamily: 'SUSE, sans-serif',
-                  display: 'block',
-                  fontSize: '16px',
-                  fontWeight: '700',
-                  color: '#002147',
-                  marginBottom: '8px'
-                }}>
+                <label className="block text-base font-bold text-[#002147] mb-2">
                   Problem Statement *
                 </label>
                 <select
                   name="problemStatement"
                   value={formData.problemStatement}
                   onChange={handleInputChange}
-                  style={{
-                    fontFamily: 'SUSE, sans-serif',
-                    width: '100%',
-                    height: '48px',
-                    padding: '0 16px',
-                    border: '2px solid rgba(0, 33, 71, 0.2)',
-                    borderRadius: '8px',
-                    outline: 'none',
-                    transition: 'all 0.3s',
-                    cursor: 'pointer'
-                  }}
-                  onFocus={(e) => {
-                    e.target.style.borderColor = '#002147';
-                    e.target.style.boxShadow = '0 0 0 3px rgba(0, 33, 71, 0.1)';
-                  }}
-                  onBlur={(e) => {
-                    e.target.style.borderColor = 'rgba(0, 33, 71, 0.2)';
-                    e.target.style.boxShadow = 'none';
-                  }}
+                  className="w-full h-12 px-4 border-2 border-[#002147]/20 rounded-lg outline-none transition-all focus:border-[#002147] focus:shadow-[0_0_0_3px_rgba(0,33,71,0.1)] cursor-pointer"
                 >
                   <option value="">Select Problem Statement</option>
                   <option value="ai-ml">AI & Machine Learning</option>
@@ -335,39 +186,17 @@ const RegistrationForm = () => {
           </div>
 
           {/* Team Leader Section */}
-          <div style={{ marginBottom: '40px' }}>
-            <div style={{
-              display: 'flex',
-              alignItems: 'center',
-              gap: '12px',
-              marginBottom: '24px'
-            }}>
-              <div style={{
-                width: '40px',
-                height: '40px',
-                borderRadius: '50%',
-                background: '#002147',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center'
-              }}>
-                <GraduationCap size={20} style={{ color: '#ffffff' }} />
+          <div className="mb-10">
+            <div className="flex items-center gap-3 mb-6">
+              <div className="w-10 h-10 rounded-full bg-[#002147] flex items-center justify-center">
+                <GraduationCap size={20} className="text-white" />
               </div>
-              <h2 style={{
-                fontFamily: 'SUSE, sans-serif',
-                fontSize: '24px',
-                fontWeight: '700',
-                color: '#002147'
-              }}>
+              <h2 className="text-2xl font-bold text-[#002147]">
                 Team Leader Details
               </h2>
             </div>
 
-            <div style={{
-              display: 'grid',
-              gridTemplateColumns: window.innerWidth >= 768 ? 'repeat(2, 1fr)' : '1fr',
-              gap: '24px'
-            }}>
+            <div className={`grid ${isMobile ? 'grid-cols-1' : 'grid-cols-2'} gap-6`}>
               {[
                 { name: 'leaderName', label: 'Full Name', type: 'text', placeholder: 'Enter full name' },
                 { name: 'leaderEmail', label: 'Email Address', type: 'email', placeholder: 'student@university.edu' },
@@ -376,14 +205,7 @@ const RegistrationForm = () => {
                 { name: 'leaderDepartment', label: 'Department', type: 'text', placeholder: 'e.g., Computer Science' }
               ].map((field) => (
                 <div key={field.name}>
-                  <label style={{
-                    fontFamily: 'SUSE, sans-serif',
-                    display: 'block',
-                    fontSize: '16px',
-                    fontWeight: '700',
-                    color: '#002147',
-                    marginBottom: '8px'
-                  }}>
+                  <label className="block text-base font-bold text-[#002147] mb-2">
                     {field.label} *
                   </label>
                   <input
@@ -391,63 +213,21 @@ const RegistrationForm = () => {
                     name={field.name}
                     value={formData[field.name]}
                     onChange={handleInputChange}
-                    style={{
-                      fontFamily: 'SUSE, sans-serif',
-                      width: '100%',
-                      height: '48px',
-                      padding: '0 16px',
-                      border: '2px solid rgba(0, 33, 71, 0.2)',
-                      borderRadius: '8px',
-                      outline: 'none',
-                      transition: 'all 0.3s'
-                    }}
+                    className="w-full h-12 px-4 border-2 border-[#002147]/20 rounded-lg outline-none transition-all focus:border-[#002147] focus:shadow-[0_0_0_3px_rgba(0,33,71,0.1)]"
                     placeholder={field.placeholder}
-                    onFocus={(e) => {
-                      e.target.style.borderColor = '#002147';
-                      e.target.style.boxShadow = '0 0 0 3px rgba(0, 33, 71, 0.1)';
-                    }}
-                    onBlur={(e) => {
-                      e.target.style.borderColor = 'rgba(0, 33, 71, 0.2)';
-                      e.target.style.boxShadow = 'none';
-                    }}
                   />
                 </div>
               ))}
 
               <div>
-                <label style={{
-                  fontFamily: 'SUSE, sans-serif',
-                  display: 'block',
-                  fontSize: '16px',
-                  fontWeight: '700',
-                  color: '#002147',
-                  marginBottom: '8px'
-                }}>
+                <label className="block text-base font-bold text-[#002147] mb-2">
                   Year of Study *
                 </label>
                 <select
                   name="leaderYear"
                   value={formData.leaderYear}
                   onChange={handleInputChange}
-                  style={{
-                    fontFamily: 'SUSE, sans-serif',
-                    width: '100%',
-                    height: '48px',
-                    padding: '0 16px',
-                    border: '2px solid rgba(0, 33, 71, 0.2)',
-                    borderRadius: '8px',
-                    outline: 'none',
-                    transition: 'all 0.3s',
-                    cursor: 'pointer'
-                  }}
-                  onFocus={(e) => {
-                    e.target.style.borderColor = '#002147';
-                    e.target.style.boxShadow = '0 0 0 3px rgba(0, 33, 71, 0.1)';
-                  }}
-                  onBlur={(e) => {
-                    e.target.style.borderColor = 'rgba(0, 33, 71, 0.2)';
-                    e.target.style.boxShadow = 'none';
-                  }}
+                  className="w-full h-12 px-4 border-2 border-[#002147]/20 rounded-lg outline-none transition-all focus:border-[#002147] focus:shadow-[0_0_0_3px_rgba(0,33,71,0.1)] cursor-pointer"
                 >
                   <option value="">Select Year</option>
                   <option value="1">1st Year</option>
@@ -460,89 +240,46 @@ const RegistrationForm = () => {
           </div>
 
           {/* Team Members Section */}
-          <div style={{ marginBottom: '40px' }}>
-            <div style={{
-              display: 'flex',
-              alignItems: 'center',
-              gap: '12px',
-              marginBottom: '24px'
-            }}>
-              <div style={{
-                width: '40px',
-                height: '40px',
-                borderRadius: '50%',
-                background: '#002147',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center'
-              }}>
-                <Users size={20} style={{ color: '#ffffff' }} />
+          <div className="mb-10">
+            <div className="flex items-center gap-3 mb-6">
+              <div className="w-10 h-10 rounded-full bg-[#002147] flex items-center justify-center">
+                <Users size={20} className="text-white" />
               </div>
-              <h2 style={{
-                fontFamily: 'SUSE, sans-serif',
-                fontSize: '24px',
-                fontWeight: '700',
-                color: '#002147'
-              }}>
+              <h2 className="text-2xl font-bold text-[#002147]">
                 Team Members
               </h2>
             </div>
 
-            {/* Member 2 */}
             <MemberSection
               memberNum="2"
               formData={formData}
               handleInputChange={handleInputChange}
+              isMobile={isMobile}
             />
 
-            {/* Member 3 */}
             <MemberSection
               memberNum="3"
               formData={formData}
               handleInputChange={handleInputChange}
+              isMobile={isMobile}
             />
 
-            {/* Member 4 (Optional) */}
             {formData.teamSize === '4' && (
               <MemberSection
                 memberNum="4"
                 formData={formData}
                 handleInputChange={handleInputChange}
+                isMobile={isMobile}
                 optional={true}
               />
             )}
           </div>
 
           {/* Submit Button */}
-          <div style={{ display: 'flex', justifyContent: 'center' }}>
+          <div className="flex justify-center">
             <button
               onClick={handleSubmit}
-              style={{
-                fontFamily: 'SUSE, sans-serif',
-                padding: '16px 48px',
-                fontSize: '18px',
-                fontWeight: '700',
-                color: '#ffffff',
-                background: 'linear-gradient(to right, #7c3aed, #6b21a8)',
-                border: 'none',
-                borderRadius: '12px',
-                cursor: 'pointer',
-                boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1)',
-                display: 'flex',
-                alignItems: 'center',
-                gap: '12px',
-                transition: 'all 0.3s'
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.background = 'linear-gradient(to right, #6b21a8, #5b21b6)';
-                e.currentTarget.style.transform = 'scale(1.05)';
-                e.currentTarget.style.boxShadow = '0 20px 25px -5px rgba(0, 0, 0, 0.1)';
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.background = 'linear-gradient(to right, #7c3aed, #6b21a8)';
-                e.currentTarget.style.transform = 'scale(1)';
-                e.currentTarget.style.boxShadow = '0 10px 15px -3px rgba(0, 0, 0, 0.1)';
-              }}
+              className="px-12 py-4 text-lg font-bold text-white bg-gradient-to-r from-[#7c3aed] to-[#6b21a8] rounded-xl shadow-lg flex items-center gap-3 transition-all hover:from-[#6b21a8] hover:to-[#5b21b6] hover:scale-105 hover:shadow-xl"
             >
               <span>Submit Registration</span>
               <Send size={20} />
@@ -556,13 +293,15 @@ const RegistrationForm = () => {
           from { opacity: 0; transform: translateY(-10px); }
           to { opacity: 1; transform: translateY(0); }
         }
+        .animate-fadeIn {
+          animation: fadeIn 0.5s ease-out;
+        }
       `}</style>
     </div>
   );
 };
 
-// Helper component for member sections
-const MemberSection = ({ memberNum, formData, handleInputChange, optional = false }) => {
+const MemberSection = ({ memberNum, formData, handleInputChange, isMobile, optional = false }) => {
   const fields = [
     { name: `member${memberNum}Name`, placeholder: 'Full Name' },
     { name: `member${memberNum}Email`, placeholder: 'Email Address', type: 'email' },
@@ -570,27 +309,11 @@ const MemberSection = ({ memberNum, formData, handleInputChange, optional = fals
   ];
 
   return (
-    <div style={{
-      marginBottom: '24px',
-      padding: '24px',
-      background: 'rgba(0, 33, 71, 0.03)',
-      borderRadius: '12px',
-      border: '2px solid rgba(0, 33, 71, 0.1)'
-    }}>
-      <h3 style={{
-        fontFamily: 'SUSE, sans-serif',
-        fontSize: '18px',
-        fontWeight: '700',
-        color: '#002147',
-        marginBottom: '16px'
-      }}>
+    <div className="mb-6 p-6 bg-[#002147]/[0.03] rounded-xl border-2 border-[#002147]/10">
+      <h3 className="text-lg font-bold text-[#002147] mb-4">
         Member {memberNum} {optional ? '(Optional)' : '*'}
       </h3>
-      <div style={{
-        display: 'grid',
-        gridTemplateColumns: window.innerWidth >= 768 ? 'repeat(3, 1fr)' : '1fr',
-        gap: '16px'
-      }}>
+      <div className={`grid ${isMobile ? 'grid-cols-1' : 'grid-cols-3'} gap-4`}>
         {fields.map((field) => (
           <input
             key={field.name}
@@ -598,25 +321,8 @@ const MemberSection = ({ memberNum, formData, handleInputChange, optional = fals
             name={field.name}
             value={formData[field.name]}
             onChange={handleInputChange}
-            style={{
-              fontFamily: 'SUSE, sans-serif',
-              height: '48px',
-              padding: '0 16px',
-              border: '2px solid rgba(0, 33, 71, 0.2)',
-              borderRadius: '8px',
-              outline: 'none',
-              transition: 'all 0.3s',
-              background: '#ffffff'
-            }}
+            className="h-12 px-4 border-2 border-[#002147]/20 rounded-lg outline-none transition-all bg-white focus:border-[#002147] focus:shadow-[0_0_0_3px_rgba(0,33,71,0.1)]"
             placeholder={field.placeholder}
-            onFocus={(e) => {
-              e.target.style.borderColor = '#002147';
-              e.target.style.boxShadow = '0 0 0 3px rgba(0, 33, 71, 0.1)';
-            }}
-            onBlur={(e) => {
-              e.target.style.borderColor = 'rgba(0, 33, 71, 0.2)';
-              e.target.style.boxShadow = 'none';
-            }}
           />
         ))}
       </div>

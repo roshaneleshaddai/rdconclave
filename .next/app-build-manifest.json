@@ -1,9 +1,10 @@
 {
   "pages": {
-    "/hackathon/codefusion/register/page": [
+    "/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/hackathon/codefusion/register/page.js"
+      "static/css/app/page.css",
+      "static/chunks/app/page.js"
     ],
     "/layout": [
       "static/chunks/webpack.js",
@@ -11,10 +12,20 @@
       "static/css/app/layout.css",
       "static/chunks/app/layout.js"
     ],
+    "/hackathon/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/hackathon/page.js"
+    ],
     "/hackathon/codefusion/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/hackathon/codefusion/page.js"
+    ],
+    "/hackathon/codefusion/register/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/hackathon/codefusion/register/page.js"
     ]
   }
 }
