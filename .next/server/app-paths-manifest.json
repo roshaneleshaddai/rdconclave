@@ -1,5 +1,12 @@
 {
+<<<<<<< HEAD
   "/_not-found/page": "app/_not-found/page.js",
   "/hackathon/codefusion/page": "app/hackathon/codefusion/page.js",
   "/icon.png/route": "app/icon.png/route.js"
+=======
+  "/page": "app/page.js",
+  "/hackathon/codefusion/page": "app/hackathon/codefusion/page.js",
+  "/hackathon/page": "app/hackathon/page.js",
+  "/hackathon/codefusion/register/page": "app/hackathon/codefusion/register/page.js"
+>>>>>>> b50fc70ae709c9fda8a563a3dbe8079b3743d5eb
 }
