@@ -12,30 +12,25 @@
       "static/css/app/layout.css",
       "static/chunks/app/layout.js"
     ],
-    "/journalpublications/page": [
+    "/hackathon/codefusion/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/journalpublications/page.js"
+      "static/chunks/app/hackathon/codefusion/page.js"
     ],
-    "/schedule/page": [
+    "/hackathon/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/schedule/page.js"
-    ],
-    "/speakers/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/speakers/page.js"
+      "static/chunks/app/hackathon/page.js"
     ],
     "/meet/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/meet/page.js"
     ],
-    "/hackathon/page": [
+    "/hackathon/codefusion/register/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/hackathon/page.js"
+      "static/chunks/app/hackathon/codefusion/register/page.js"
     ]
   }
 }

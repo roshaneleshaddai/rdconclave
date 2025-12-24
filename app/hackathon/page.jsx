@@ -217,17 +217,12 @@ export default function Hackathon() {
         <p className="text-center">Registration Deadline:<span className="text-[#002147]"> 5th January 2026</span></p>
     <p className="text-center">Final Round Notification:<span className="text-[#002147]"> 8th January 2026</span></p>
     <p className="text-center">Final Round:<span className="text-[#002147]"> January 23rd 2026, 11:00 AM - January 24th 2026, 11:00 AM</span></p>
-    <button
-      className="p-2 m-2 bg-white text-lg border-2 border-[#002147]/40 hover:border-[#002147] rounded-full"
-      onClick={() => {
-      window.scrollTo({
-        top: document.getElementById('registration-section').offsetTop - 40,
-        behavior: 'smooth'
-      });
-      }}
-    >
-      Register now
-    </button>
+   <Link href="/hackathon/codefusion">
+  <button className="p-2 m-2 bg-white text-lg border-2 border-[#002147]/40 hover:border-[#002147] rounded-full">
+    Register now
+  </button>
+</Link>
+
       </div>  
       </div>
 
