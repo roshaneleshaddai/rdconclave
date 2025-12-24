@@ -1,10 +1,11 @@
 'use client';
 import { useState, useEffect } from 'react';
-import { ArrowLeft, Users, GraduationCap, Send, CheckCircle } from 'lucide-react';
+import { ArrowLeft, Users, GraduationCap, Send, CheckCircle, AlertCircle } from 'lucide-react';
 
 const RegistrationForm = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+  const [errors, setErrors] = useState({});
   const [formData, setFormData] = useState({
     teamName: '',
     teamSize: '3',
@@ -37,41 +38,106 @@ const RegistrationForm = () => {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
+  const validateForm = () => {
+    const newErrors = {};
+
+    // Team Details Validation
+    if (!formData.teamName.trim()) newErrors.teamName = 'Team name is required';
+    if (!formData.teamSize) newErrors.teamSize = 'Team size is required';
+    if (!formData.problemStatement) newErrors.problemStatement = 'Problem statement is required';
+
+    // Leader Details Validation
+    if (!formData.leaderName.trim()) newErrors.leaderName = 'Leader name is required';
+    if (!formData.leaderEmail.trim()) {
+      newErrors.leaderEmail = 'Leader email is required';
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.leaderEmail)) {
+      newErrors.leaderEmail = 'Enter a valid email address';
+    }
+    if (!formData.leaderPhone.trim()) newErrors.leaderPhone = 'Leader phone is required';
+    if (!formData.leaderCollege.trim()) newErrors.leaderCollege = 'College/Institution is required';
+    if (!formData.leaderDepartment.trim()) newErrors.leaderDepartment = 'Department is required';
+    if (!formData.leaderYear) newErrors.leaderYear = 'Year of study is required';
+
+    // Member 2 Validation (Always Required)
+    if (!formData.member2Name.trim()) newErrors.member2Name = 'Member 2 name is required';
+    if (!formData.member2Email.trim()) {
+      newErrors.member2Email = 'Member 2 email is required';
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.member2Email)) {
+      newErrors.member2Email = 'Enter a valid email address';
+    }
+    if (!formData.member2Phone.trim()) newErrors.member2Phone = 'Member 2 phone is required';
+
+    // Member 3 Validation (Always Required)
+    if (!formData.member3Name.trim()) newErrors.member3Name = 'Member 3 name is required';
+    if (!formData.member3Email.trim()) {
+      newErrors.member3Email = 'Member 3 email is required';
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.member3Email)) {
+      newErrors.member3Email = 'Enter a valid email address';
+    }
+    if (!formData.member3Phone.trim()) newErrors.member3Phone = 'Member 3 phone is required';
+
+    // Member 4 Validation (Only if team size is 4)
+    if (formData.teamSize === '4') {
+      if (!formData.member4Name.trim()) newErrors.member4Name = 'Member 4 name is required';
+      if (!formData.member4Email.trim()) {
+        newErrors.member4Email = 'Member 4 email is required';
+      } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.member4Email)) {
+        newErrors.member4Email = 'Enter a valid email address';
+      }
+      if (!formData.member4Phone.trim()) newErrors.member4Phone = 'Member 4 phone is required';
+    }
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData(prev => ({
       ...prev,
       [name]: value
     }));
+    // Clear error for this field when user starts typing
+    if (errors[name]) {
+      setErrors(prev => ({
+        ...prev,
+        [name]: ''
+      }));
+    }
   };
 
   const handleSubmit = () => {
-    console.log('Form submitted:', formData);
-    setIsSubmitted(true);
-    
-    setTimeout(() => {
-      setIsSubmitted(false);
-      setFormData({
-        teamName: '',
-        teamSize: '3',
-        problemStatement: '',
-        leaderName: '',
-        leaderEmail: '',
-        leaderPhone: '',
-        leaderCollege: '',
-        leaderDepartment: '',
-        leaderYear: '',
-        member2Name: '',
-        member2Email: '',
-        member2Phone: '',
-        member3Name: '',
-        member3Email: '',
-        member3Phone: '',
-        member4Name: '',
-        member4Email: '',
-        member4Phone: ''
-      });
-    }, 3000);
+    if (validateForm()) {
+      console.log('Form submitted:', formData);
+      setIsSubmitted(true);
+      
+      setTimeout(() => {
+        setIsSubmitted(false);
+        setFormData({
+          teamName: '',
+          teamSize: '3',
+          problemStatement: '',
+          leaderName: '',
+          leaderEmail: '',
+          leaderPhone: '',
+          leaderCollege: '',
+          leaderDepartment: '',
+          leaderYear: '',
+          member2Name: '',
+          member2Email: '',
+          member2Phone: '',
+          member3Name: '',
+          member3Email: '',
+          member3Phone: '',
+          member4Name: '',
+          member4Email: '',
+          member4Phone: ''
+        });
+        setErrors({});
+      }, 3000);
+    } else {
+      console.log('Form has errors');
+    }
   };
 
   const handleBackClick = () => {
@@ -81,7 +147,7 @@ const RegistrationForm = () => {
   };
 
   return (
-    <div className="min-h-screen bg-white px-4 pt-56 pb-12 font-[SUSE,sans-serif]">
+    <div className="min-h-screen bg-white px-4 pt-40 md:pt-56 pb-12 font-[SUSE,sans-serif]">
       {/* Header with Back Button */}
       <div className="max-w-4xl mx-auto mb-8">
         <button
@@ -118,6 +184,21 @@ const RegistrationForm = () => {
         </div>
       )}
 
+      {/* Error Summary */}
+      {Object.keys(errors).length > 0 && !isSubmitted && (
+        <div className="max-w-4xl mx-auto mb-8 bg-red-50 border-2 border-red-500 rounded-xl p-6 flex items-start gap-4 animate-fadeIn">
+          <AlertCircle size={32} className="text-red-500 flex-shrink-0 mt-1" />
+          <div>
+            <h3 className="text-lg font-bold text-red-800 mb-2">
+              Please fill all required fields
+            </h3>
+            <p className="text-red-700 text-sm">
+              {Object.keys(errors).length} field(s) need attention. Scroll down and fill in the marked fields.
+            </p>
+          </div>
+        </div>
+      )}
+
       {/* Registration Form */}
       <div className="max-w-4xl mx-auto">
         <div className="bg-white border-2 border-[#002147]/10 rounded-2xl shadow-lg p-8 md:p-12">
@@ -143,9 +224,14 @@ const RegistrationForm = () => {
                   name="teamName"
                   value={formData.teamName}
                   onChange={handleInputChange}
-                  className="w-full h-12 px-4 border-2 border-[#002147]/20 rounded-lg outline-none transition-all focus:border-[#002147] focus:shadow-[0_0_0_3px_rgba(0,33,71,0.1)]"
+                  className={`w-full h-12 px-4 border-2 rounded-lg outline-none transition-all ${
+                    errors.teamName 
+                      ? 'border-red-500 focus:shadow-[0_0_0_3px_rgba(239,68,68,0.1)]' 
+                      : 'border-[#002147]/20 focus:border-[#002147] focus:shadow-[0_0_0_3px_rgba(0,33,71,0.1)]'
+                  }`}
                   placeholder="Enter your team name"
                 />
+                {errors.teamName && <p className="text-red-500 text-sm mt-1">{errors.teamName}</p>}
               </div>
 
               <div>
@@ -156,11 +242,16 @@ const RegistrationForm = () => {
                   name="teamSize"
                   value={formData.teamSize}
                   onChange={handleInputChange}
-                  className="w-full h-12 px-4 border-2 border-[#002147]/20 rounded-lg outline-none transition-all focus:border-[#002147] focus:shadow-[0_0_0_3px_rgba(0,33,71,0.1)] cursor-pointer"
+                  className={`w-full h-12 px-4 border-2 rounded-lg outline-none transition-all cursor-pointer ${
+                    errors.teamSize 
+                      ? 'border-red-500 focus:shadow-[0_0_0_3px_rgba(239,68,68,0.1)]' 
+                      : 'border-[#002147]/20 focus:border-[#002147] focus:shadow-[0_0_0_3px_rgba(0,33,71,0.1)]'
+                  }`}
                 >
                   <option value="3">3 Members</option>
                   <option value="4">4 Members</option>
                 </select>
+                {errors.teamSize && <p className="text-red-500 text-sm mt-1">{errors.teamSize}</p>}
               </div>
 
               <div>
@@ -171,7 +262,11 @@ const RegistrationForm = () => {
                   name="problemStatement"
                   value={formData.problemStatement}
                   onChange={handleInputChange}
-                  className="w-full h-12 px-4 border-2 border-[#002147]/20 rounded-lg outline-none transition-all focus:border-[#002147] focus:shadow-[0_0_0_3px_rgba(0,33,71,0.1)] cursor-pointer"
+                  className={`w-full h-12 px-4 border-2 rounded-lg outline-none transition-all cursor-pointer ${
+                    errors.problemStatement 
+                      ? 'border-red-500 focus:shadow-[0_0_0_3px_rgba(239,68,68,0.1)]' 
+                      : 'border-[#002147]/20 focus:border-[#002147] focus:shadow-[0_0_0_3px_rgba(0,33,71,0.1)]'
+                  }`}
                 >
                   <option value="">Select Problem Statement</option>
                   <option value="ai-ml">AI & Machine Learning</option>
@@ -181,6 +276,7 @@ const RegistrationForm = () => {
                   <option value="education">Education Tech</option>
                   <option value="sustainability">Sustainability</option>
                 </select>
+                {errors.problemStatement && <p className="text-red-500 text-sm mt-1">{errors.problemStatement}</p>}
               </div>
             </div>
           </div>
@@ -213,9 +309,14 @@ const RegistrationForm = () => {
                     name={field.name}
                     value={formData[field.name]}
                     onChange={handleInputChange}
-                    className="w-full h-12 px-4 border-2 border-[#002147]/20 rounded-lg outline-none transition-all focus:border-[#002147] focus:shadow-[0_0_0_3px_rgba(0,33,71,0.1)]"
+                    className={`w-full h-12 px-4 border-2 rounded-lg outline-none transition-all ${
+                      errors[field.name] 
+                        ? 'border-red-500 focus:shadow-[0_0_0_3px_rgba(239,68,68,0.1)]' 
+                        : 'border-[#002147]/20 focus:border-[#002147] focus:shadow-[0_0_0_3px_rgba(0,33,71,0.1)]'
+                    }`}
                     placeholder={field.placeholder}
                   />
+                  {errors[field.name] && <p className="text-red-500 text-sm mt-1">{errors[field.name]}</p>}
                 </div>
               ))}
 
@@ -227,7 +328,11 @@ const RegistrationForm = () => {
                   name="leaderYear"
                   value={formData.leaderYear}
                   onChange={handleInputChange}
-                  className="w-full h-12 px-4 border-2 border-[#002147]/20 rounded-lg outline-none transition-all focus:border-[#002147] focus:shadow-[0_0_0_3px_rgba(0,33,71,0.1)] cursor-pointer"
+                  className={`w-full h-12 px-4 border-2 rounded-lg outline-none transition-all cursor-pointer ${
+                    errors.leaderYear 
+                      ? 'border-red-500 focus:shadow-[0_0_0_3px_rgba(239,68,68,0.1)]' 
+                      : 'border-[#002147]/20 focus:border-[#002147] focus:shadow-[0_0_0_3px_rgba(0,33,71,0.1)]'
+                  }`}
                 >
                   <option value="">Select Year</option>
                   <option value="1">1st Year</option>
@@ -235,6 +340,7 @@ const RegistrationForm = () => {
                   <option value="3">3rd Year</option>
                   <option value="4">4th Year</option>
                 </select>
+                {errors.leaderYear && <p className="text-red-500 text-sm mt-1">{errors.leaderYear}</p>}
               </div>
             </div>
           </div>
@@ -255,6 +361,8 @@ const RegistrationForm = () => {
               formData={formData}
               handleInputChange={handleInputChange}
               isMobile={isMobile}
+              errors={errors}
+              optional={false}
             />
 
             <MemberSection
@@ -262,6 +370,8 @@ const RegistrationForm = () => {
               formData={formData}
               handleInputChange={handleInputChange}
               isMobile={isMobile}
+              errors={errors}
+              optional={false}
             />
 
             {formData.teamSize === '4' && (
@@ -270,7 +380,8 @@ const RegistrationForm = () => {
                 formData={formData}
                 handleInputChange={handleInputChange}
                 isMobile={isMobile}
-                optional={true}
+                errors={errors}
+                optional={false}
               />
             )}
           </div>
@@ -301,7 +412,7 @@ const RegistrationForm = () => {
   );
 };
 
-const MemberSection = ({ memberNum, formData, handleInputChange, isMobile, optional = false }) => {
+const MemberSection = ({ memberNum, formData, handleInputChange, isMobile, errors, optional }) => {
   const fields = [
     { name: `member${memberNum}Name`, placeholder: 'Full Name' },
     { name: `member${memberNum}Email`, placeholder: 'Email Address', type: 'email' },
@@ -315,15 +426,21 @@ const MemberSection = ({ memberNum, formData, handleInputChange, isMobile, optio
       </h3>
       <div className={`grid ${isMobile ? 'grid-cols-1' : 'grid-cols-3'} gap-4`}>
         {fields.map((field) => (
-          <input
-            key={field.name}
-            type={field.type || 'text'}
-            name={field.name}
-            value={formData[field.name]}
-            onChange={handleInputChange}
-            className="h-12 px-4 border-2 border-[#002147]/20 rounded-lg outline-none transition-all bg-white focus:border-[#002147] focus:shadow-[0_0_0_3px_rgba(0,33,71,0.1)]"
-            placeholder={field.placeholder}
-          />
+          <div key={field.name}>
+            <input
+              type={field.type || 'text'}
+              name={field.name}
+              value={formData[field.name]}
+              onChange={handleInputChange}
+              className={`w-full h-12 px-4 border-2 rounded-lg outline-none transition-all bg-white ${
+                errors[field.name] 
+                  ? 'border-red-500 focus:shadow-[0_0_0_3px_rgba(239,68,68,0.1)]' 
+                  : 'border-[#002147]/20 focus:border-[#002147] focus:shadow-[0_0_0_3px_rgba(0,33,71,0.1)]'
+              }`}
+              placeholder={field.placeholder}
+            />
+            {errors[field.name] && <p className="text-red-500 text-sm mt-1">{errors[field.name]}</p>}
+          </div>
         ))}
       </div>
     </div>

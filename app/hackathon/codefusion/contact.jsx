@@ -111,7 +111,7 @@ const AcademicContactWithCoordinators = () => {
                           className="text-sm md:text-base text-[#6B7280] hover:text-[#002147] transition-colors break-all"
                           style={{ fontFamily: 'SUSE, sans-serif' }}
                         >
-                          contact@university.edu
+                         research.conclave@siddhartha.edu.in
                         </a>
                       </div>
                     </div>
@@ -151,7 +151,7 @@ const AcademicContactWithCoordinators = () => {
                       <div className="flex-1 min-w-0">
                         <h3 className="text-sm font-bold text-[#002147] mb-1" style={{ fontFamily: 'SUSE, sans-serif' }}>Instagram</h3>
                         <a
-                          href="https://www.instagram.com/rdconclave_2026"
+                          href="https://www.instagram.com/research_conclave?igsh=djZhMmsydThidGZj"
                           target="_blank"
                           rel="noopener noreferrer"
                           className="text-sm md:text-base text-[#6B7280] hover:text-[#002147] transition-colors"
