@@ -4,10 +4,18 @@ import { Users, Coffee, MapPin, IndianRupee } from 'lucide-react';
 
 const EventRegistration = () => {
   const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+  const [isMobile, setIsMobile] = useState(false);
 
   const handleRegisterClick = () => {
     window.location.href = '/hackathon/codefusion/register';
   };
+
+  useEffect(() => {
+    setIsMobile(window.innerWidth <= 768);
+    const handleResize = () => setIsMobile(window.innerWidth <= 768);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   useEffect(() => {
     const calculateTimeLeft = () => {
@@ -267,7 +275,7 @@ const EventRegistration = () => {
 
         <div style={{
           display: 'grid',
-          gridTemplateColumns: window.innerWidth <= 768 ? '1fr' : 'repeat(2, 1fr)',
+          gridTemplateColumns: isMobile ? '1fr' : 'repeat(2, 1fr)',
           gap: '18px',
           maxWidth: '950px',
           margin: '0 auto'

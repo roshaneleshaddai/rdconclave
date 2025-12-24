@@ -96,8 +96,8 @@ const CodeFusionHero = () => {
 
       {/* DATE */}
       <p
-        className="relative z-20 mt-20 text-base md:text-lg tracking-[0.25em] text-[#0c4a6e] animate-fade-in-long"
-        style={{ animationDelay: "2s" }}
+        className="relative z-20 mt-20 text-base md:text-lg tracking-[0.25em] animate-fade-in-long"
+        style={{ animationDelay: "2s", fontFamily: 'SUSE, sans-serif', color: '#002147' }}
       >
         JANUARY&nbsp;23–24,&nbsp;2026
       </p>
@@ -110,8 +110,8 @@ const CodeFusionHero = () => {
 
       {/* ORGANISER INFO */}
       <div
-        className="relative z-20 mt-[1cm] flex flex-col items-center text-[#475569] animate-org-wrapper"
-        style={{ fontFamily: "Times New Roman, serif" }}
+        className="relative z-20 mt-[1cm] flex flex-col items-center animate-org-wrapper"
+        style={{ fontFamily: "SUSE, sans-serif", color: '#002147' }}
       >
         <p
           className="text-sm md:text-base tracking-[0.18em] animate-org-line-1"

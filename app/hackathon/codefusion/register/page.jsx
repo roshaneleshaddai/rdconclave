@@ -3,7 +3,6 @@ import { useState } from 'react';
 import { ArrowLeft, Users, GraduationCap, Send, CheckCircle } from 'lucide-react';
 
 const RegistrationForm = () => {
-  const serifStyle = { fontFamily: '"Times New Roman", Times, serif' };
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [formData, setFormData] = useState({
     teamName: '',
@@ -73,8 +72,8 @@ const RegistrationForm = () => {
     <div style={{
       minHeight: '100vh',
       background: '#ffffff',
-      padding: '48px 16px',
-      fontFamily: '"Times New Roman", Times, serif'
+      padding: '226px 16px 48px 16px',
+      fontFamily: 'SUSE, sans-serif'
     }}>
       {/* Header with Back Button */}
       <div style={{
@@ -87,18 +86,18 @@ const RegistrationForm = () => {
             display: 'flex',
             alignItems: 'center',
             gap: '8px',
-            color: '#1a2b4a',
+            color: '#002147',
             background: 'none',
             border: 'none',
             cursor: 'pointer',
             marginBottom: '24px',
-            fontFamily: '"Times New Roman", Times, serif',
+            fontFamily: 'SUSE, sans-serif',
             fontWeight: '600',
             fontSize: '16px',
             transition: 'color 0.3s'
           }}
           onMouseEnter={(e) => e.currentTarget.style.color = '#7c3aed'}
-          onMouseLeave={(e) => e.currentTarget.style.color = '#1a2b4a'}
+          onMouseLeave={(e) => e.currentTarget.style.color = '#002147'}
         >
           <ArrowLeft size={20} />
           <span>Back to Home</span>
@@ -106,10 +105,10 @@ const RegistrationForm = () => {
 
         <div style={{ textAlign: 'center' }}>
           <h1 style={{
-            ...serifStyle,
+            fontFamily: 'SUSE, sans-serif',
             fontSize: '40px',
-            fontWeight: 'bold',
-            color: '#1a2b4a',
+            fontWeight: '700',
+            color: '#002147',
             marginBottom: '12px'
           }}>
             Team Registration
@@ -117,13 +116,13 @@ const RegistrationForm = () => {
           <div style={{
             width: '96px',
             height: '4px',
-            background: '#7c3aed',
+            background: '#002147',
             margin: '0 auto 16px'
           }}></div>
           <p style={{
-            ...serifStyle,
+            fontFamily: 'SUSE, sans-serif',
             fontSize: '18px',
-            color: '#64748b',
+            color: '#6B7280',
             fontStyle: 'italic'
           }}>
             Academic Research & Development Conclave • CodeFusion 2025
@@ -148,16 +147,16 @@ const RegistrationForm = () => {
           <CheckCircle size={32} style={{ color: '#22c55e', flexShrink: 0 }} />
           <div>
             <h3 style={{
-              ...serifStyle,
+              fontFamily: 'SUSE, sans-serif',
               fontSize: '20px',
-              fontWeight: 'bold',
+              fontWeight: '700',
               color: '#166534',
               marginBottom: '4px'
             }}>
               Registration Successful!
             </h3>
             <p style={{
-              ...serifStyle,
+              fontFamily: 'SUSE, sans-serif',
               color: '#15803d'
             }}>
               Your team has been registered. Check your email for confirmation details.
@@ -170,9 +169,9 @@ const RegistrationForm = () => {
       <div style={{ maxWidth: '896px', margin: '0 auto' }}>
         <div style={{
           background: '#ffffff',
-          border: '2px solid #e2e8f0',
+          border: '2px solid rgba(0, 33, 71, 0.1)',
           borderRadius: '16px',
-          boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1)',
+          boxShadow: '0 10px 15px -3px rgba(0, 33, 71, 0.1)',
           padding: '48px'
         }}>
           
@@ -188,7 +187,7 @@ const RegistrationForm = () => {
                 width: '40px',
                 height: '40px',
                 borderRadius: '50%',
-                background: '#7c3aed',
+                background: '#002147',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center'
@@ -196,10 +195,10 @@ const RegistrationForm = () => {
                 <Users size={20} style={{ color: '#ffffff' }} />
               </div>
               <h2 style={{
-                ...serifStyle,
+                fontFamily: 'SUSE, sans-serif',
                 fontSize: '24px',
-                fontWeight: 'bold',
-                color: '#1a2b4a'
+                fontWeight: '700',
+                color: '#002147'
               }}>
                 Team Information
               </h2>
@@ -212,11 +211,11 @@ const RegistrationForm = () => {
             }}>
               <div style={{ gridColumn: window.innerWidth >= 768 ? 'span 2' : 'span 1' }}>
                 <label style={{
-                  ...serifStyle,
+                  fontFamily: 'SUSE, sans-serif',
                   display: 'block',
                   fontSize: '16px',
-                  fontWeight: 'bold',
-                  color: '#1a2b4a',
+                  fontWeight: '700',
+                  color: '#002147',
                   marginBottom: '8px'
                 }}>
                   Team Name *
@@ -227,22 +226,22 @@ const RegistrationForm = () => {
                   value={formData.teamName}
                   onChange={handleInputChange}
                   style={{
-                    ...serifStyle,
+                    fontFamily: 'SUSE, sans-serif',
                     width: '100%',
                     height: '48px',
                     padding: '0 16px',
-                    border: '2px solid #e2e8f0',
+                    border: '2px solid rgba(0, 33, 71, 0.2)',
                     borderRadius: '8px',
                     outline: 'none',
                     transition: 'all 0.3s'
                   }}
                   placeholder="Enter your team name"
                   onFocus={(e) => {
-                    e.target.style.borderColor = '#7c3aed';
-                    e.target.style.boxShadow = '0 0 0 3px rgba(124, 58, 237, 0.1)';
+                    e.target.style.borderColor = '#002147';
+                    e.target.style.boxShadow = '0 0 0 3px rgba(0, 33, 71, 0.1)';
                   }}
                   onBlur={(e) => {
-                    e.target.style.borderColor = '#e2e8f0';
+                    e.target.style.borderColor = 'rgba(0, 33, 71, 0.2)';
                     e.target.style.boxShadow = 'none';
                   }}
                 />
@@ -250,11 +249,11 @@ const RegistrationForm = () => {
 
               <div>
                 <label style={{
-                  ...serifStyle,
+                  fontFamily: 'SUSE, sans-serif',
                   display: 'block',
                   fontSize: '16px',
-                  fontWeight: 'bold',
-                  color: '#1a2b4a',
+                  fontWeight: '700',
+                  color: '#002147',
                   marginBottom: '8px'
                 }}>
                   Team Size *
@@ -264,22 +263,22 @@ const RegistrationForm = () => {
                   value={formData.teamSize}
                   onChange={handleInputChange}
                   style={{
-                    ...serifStyle,
+                    fontFamily: 'SUSE, sans-serif',
                     width: '100%',
                     height: '48px',
                     padding: '0 16px',
-                    border: '2px solid #e2e8f0',
+                    border: '2px solid rgba(0, 33, 71, 0.2)',
                     borderRadius: '8px',
                     outline: 'none',
                     transition: 'all 0.3s',
                     cursor: 'pointer'
                   }}
                   onFocus={(e) => {
-                    e.target.style.borderColor = '#7c3aed';
-                    e.target.style.boxShadow = '0 0 0 3px rgba(124, 58, 237, 0.1)';
+                    e.target.style.borderColor = '#002147';
+                    e.target.style.boxShadow = '0 0 0 3px rgba(0, 33, 71, 0.1)';
                   }}
                   onBlur={(e) => {
-                    e.target.style.borderColor = '#e2e8f0';
+                    e.target.style.borderColor = 'rgba(0, 33, 71, 0.2)';
                     e.target.style.boxShadow = 'none';
                   }}
                 >
@@ -290,11 +289,11 @@ const RegistrationForm = () => {
 
               <div>
                 <label style={{
-                  ...serifStyle,
+                  fontFamily: 'SUSE, sans-serif',
                   display: 'block',
                   fontSize: '16px',
-                  fontWeight: 'bold',
-                  color: '#1a2b4a',
+                  fontWeight: '700',
+                  color: '#002147',
                   marginBottom: '8px'
                 }}>
                   Problem Statement *
@@ -304,22 +303,22 @@ const RegistrationForm = () => {
                   value={formData.problemStatement}
                   onChange={handleInputChange}
                   style={{
-                    ...serifStyle,
+                    fontFamily: 'SUSE, sans-serif',
                     width: '100%',
                     height: '48px',
                     padding: '0 16px',
-                    border: '2px solid #e2e8f0',
+                    border: '2px solid rgba(0, 33, 71, 0.2)',
                     borderRadius: '8px',
                     outline: 'none',
                     transition: 'all 0.3s',
                     cursor: 'pointer'
                   }}
                   onFocus={(e) => {
-                    e.target.style.borderColor = '#7c3aed';
-                    e.target.style.boxShadow = '0 0 0 3px rgba(124, 58, 237, 0.1)';
+                    e.target.style.borderColor = '#002147';
+                    e.target.style.boxShadow = '0 0 0 3px rgba(0, 33, 71, 0.1)';
                   }}
                   onBlur={(e) => {
-                    e.target.style.borderColor = '#e2e8f0';
+                    e.target.style.borderColor = 'rgba(0, 33, 71, 0.2)';
                     e.target.style.boxShadow = 'none';
                   }}
                 >
@@ -347,7 +346,7 @@ const RegistrationForm = () => {
                 width: '40px',
                 height: '40px',
                 borderRadius: '50%',
-                background: '#1a2b4a',
+                background: '#002147',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center'
@@ -355,10 +354,10 @@ const RegistrationForm = () => {
                 <GraduationCap size={20} style={{ color: '#ffffff' }} />
               </div>
               <h2 style={{
-                ...serifStyle,
+                fontFamily: 'SUSE, sans-serif',
                 fontSize: '24px',
-                fontWeight: 'bold',
-                color: '#1a2b4a'
+                fontWeight: '700',
+                color: '#002147'
               }}>
                 Team Leader Details
               </h2>
@@ -378,11 +377,11 @@ const RegistrationForm = () => {
               ].map((field) => (
                 <div key={field.name}>
                   <label style={{
-                    ...serifStyle,
+                    fontFamily: 'SUSE, sans-serif',
                     display: 'block',
                     fontSize: '16px',
-                    fontWeight: 'bold',
-                    color: '#1a2b4a',
+                    fontWeight: '700',
+                    color: '#002147',
                     marginBottom: '8px'
                   }}>
                     {field.label} *
@@ -393,22 +392,22 @@ const RegistrationForm = () => {
                     value={formData[field.name]}
                     onChange={handleInputChange}
                     style={{
-                      ...serifStyle,
+                      fontFamily: 'SUSE, sans-serif',
                       width: '100%',
                       height: '48px',
                       padding: '0 16px',
-                      border: '2px solid #e2e8f0',
+                      border: '2px solid rgba(0, 33, 71, 0.2)',
                       borderRadius: '8px',
                       outline: 'none',
                       transition: 'all 0.3s'
                     }}
                     placeholder={field.placeholder}
                     onFocus={(e) => {
-                      e.target.style.borderColor = '#7c3aed';
-                      e.target.style.boxShadow = '0 0 0 3px rgba(124, 58, 237, 0.1)';
+                      e.target.style.borderColor = '#002147';
+                      e.target.style.boxShadow = '0 0 0 3px rgba(0, 33, 71, 0.1)';
                     }}
                     onBlur={(e) => {
-                      e.target.style.borderColor = '#e2e8f0';
+                      e.target.style.borderColor = 'rgba(0, 33, 71, 0.2)';
                       e.target.style.boxShadow = 'none';
                     }}
                   />
@@ -417,11 +416,11 @@ const RegistrationForm = () => {
 
               <div>
                 <label style={{
-                  ...serifStyle,
+                  fontFamily: 'SUSE, sans-serif',
                   display: 'block',
                   fontSize: '16px',
-                  fontWeight: 'bold',
-                  color: '#1a2b4a',
+                  fontWeight: '700',
+                  color: '#002147',
                   marginBottom: '8px'
                 }}>
                   Year of Study *
@@ -431,22 +430,22 @@ const RegistrationForm = () => {
                   value={formData.leaderYear}
                   onChange={handleInputChange}
                   style={{
-                    ...serifStyle,
+                    fontFamily: 'SUSE, sans-serif',
                     width: '100%',
                     height: '48px',
                     padding: '0 16px',
-                    border: '2px solid #e2e8f0',
+                    border: '2px solid rgba(0, 33, 71, 0.2)',
                     borderRadius: '8px',
                     outline: 'none',
                     transition: 'all 0.3s',
                     cursor: 'pointer'
                   }}
                   onFocus={(e) => {
-                    e.target.style.borderColor = '#7c3aed';
-                    e.target.style.boxShadow = '0 0 0 3px rgba(124, 58, 237, 0.1)';
+                    e.target.style.borderColor = '#002147';
+                    e.target.style.boxShadow = '0 0 0 3px rgba(0, 33, 71, 0.1)';
                   }}
                   onBlur={(e) => {
-                    e.target.style.borderColor = '#e2e8f0';
+                    e.target.style.borderColor = 'rgba(0, 33, 71, 0.2)';
                     e.target.style.boxShadow = 'none';
                   }}
                 >
@@ -472,7 +471,7 @@ const RegistrationForm = () => {
                 width: '40px',
                 height: '40px',
                 borderRadius: '50%',
-                background: '#7c3aed',
+                background: '#002147',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center'
@@ -480,10 +479,10 @@ const RegistrationForm = () => {
                 <Users size={20} style={{ color: '#ffffff' }} />
               </div>
               <h2 style={{
-                ...serifStyle,
+                fontFamily: 'SUSE, sans-serif',
                 fontSize: '24px',
-                fontWeight: 'bold',
-                color: '#1a2b4a'
+                fontWeight: '700',
+                color: '#002147'
               }}>
                 Team Members
               </h2>
@@ -494,7 +493,6 @@ const RegistrationForm = () => {
               memberNum="2"
               formData={formData}
               handleInputChange={handleInputChange}
-              serifStyle={serifStyle}
             />
 
             {/* Member 3 */}
@@ -502,7 +500,6 @@ const RegistrationForm = () => {
               memberNum="3"
               formData={formData}
               handleInputChange={handleInputChange}
-              serifStyle={serifStyle}
             />
 
             {/* Member 4 (Optional) */}
@@ -511,7 +508,6 @@ const RegistrationForm = () => {
                 memberNum="4"
                 formData={formData}
                 handleInputChange={handleInputChange}
-                serifStyle={serifStyle}
                 optional={true}
               />
             )}
@@ -522,10 +518,10 @@ const RegistrationForm = () => {
             <button
               onClick={handleSubmit}
               style={{
-                ...serifStyle,
+                fontFamily: 'SUSE, sans-serif',
                 padding: '16px 48px',
                 fontSize: '18px',
-                fontWeight: 'bold',
+                fontWeight: '700',
                 color: '#ffffff',
                 background: 'linear-gradient(to right, #7c3aed, #6b21a8)',
                 border: 'none',
@@ -566,7 +562,7 @@ const RegistrationForm = () => {
 };
 
 // Helper component for member sections
-const MemberSection = ({ memberNum, formData, handleInputChange, serifStyle, optional = false }) => {
+const MemberSection = ({ memberNum, formData, handleInputChange, optional = false }) => {
   const fields = [
     { name: `member${memberNum}Name`, placeholder: 'Full Name' },
     { name: `member${memberNum}Email`, placeholder: 'Email Address', type: 'email' },
@@ -577,15 +573,15 @@ const MemberSection = ({ memberNum, formData, handleInputChange, serifStyle, opt
     <div style={{
       marginBottom: '24px',
       padding: '24px',
-      background: '#f8fafc',
+      background: 'rgba(0, 33, 71, 0.03)',
       borderRadius: '12px',
-      border: '2px solid #e2e8f0'
+      border: '2px solid rgba(0, 33, 71, 0.1)'
     }}>
       <h3 style={{
-        ...serifStyle,
+        fontFamily: 'SUSE, sans-serif',
         fontSize: '18px',
-        fontWeight: 'bold',
-        color: '#1a2b4a',
+        fontWeight: '700',
+        color: '#002147',
         marginBottom: '16px'
       }}>
         Member {memberNum} {optional ? '(Optional)' : '*'}
@@ -603,10 +599,10 @@ const MemberSection = ({ memberNum, formData, handleInputChange, serifStyle, opt
             value={formData[field.name]}
             onChange={handleInputChange}
             style={{
-              ...serifStyle,
+              fontFamily: 'SUSE, sans-serif',
               height: '48px',
               padding: '0 16px',
-              border: '2px solid #e2e8f0',
+              border: '2px solid rgba(0, 33, 71, 0.2)',
               borderRadius: '8px',
               outline: 'none',
               transition: 'all 0.3s',
@@ -614,11 +610,11 @@ const MemberSection = ({ memberNum, formData, handleInputChange, serifStyle, opt
             }}
             placeholder={field.placeholder}
             onFocus={(e) => {
-              e.target.style.borderColor = '#7c3aed';
-              e.target.style.boxShadow = '0 0 0 3px rgba(124, 58, 237, 0.1)';
+              e.target.style.borderColor = '#002147';
+              e.target.style.boxShadow = '0 0 0 3px rgba(0, 33, 71, 0.1)';
             }}
             onBlur={(e) => {
-              e.target.style.borderColor = '#e2e8f0';
+              e.target.style.borderColor = 'rgba(0, 33, 71, 0.2)';
               e.target.style.boxShadow = 'none';
             }}
           />

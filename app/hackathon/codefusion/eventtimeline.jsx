@@ -1,5 +1,5 @@
 'use client';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { 
   ClipboardCheck, CalendarX, Filter, 
   Megaphone, CreditCard, Hourglass, Rocket 
@@ -17,6 +17,14 @@ const TimelineData = [
 
 const HackathonTimeline = () => {
   const [hoveredIndex, setHoveredIndex] = useState(null);
+  const [isDesktop, setIsDesktop] = useState(false);
+
+  useEffect(() => {
+    setIsDesktop(window.innerWidth >= 1024);
+    const handleResize = () => setIsDesktop(window.innerWidth >= 1024);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   return (
     <div style={{
@@ -67,7 +75,7 @@ const HackathonTimeline = () => {
       }}>
         {/* Desktop/Large Tablet Horizontal Layout */}
         <div style={{
-          display: window.innerWidth >= 1024 ? 'block' : 'none'
+          display: isDesktop ? 'block' : 'none'
         }}>
           {/* Central Axis */}
           <div style={{
@@ -215,7 +223,7 @@ const HackathonTimeline = () => {
 
         {/* Mobile & Tablet Vertical Layout */}
         <div style={{
-          display: window.innerWidth < 1024 ? 'flex' : 'none',
+          display: isDesktop ? 'none' : 'flex',
           flexDirection: 'column',
           gap: '32px',
           position: 'relative'
