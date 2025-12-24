@@ -78,7 +78,7 @@ const CodeFusionHero = () => {
   const title = "CODEFUSION";
 
   return (
-    <section className="relative w-full min-h-[85vh] sm:min-h-[75vh] md:h-[70vh] bg-white overflow-hidden flex flex-col items-center justify-center font-serif px-4 sm:px-6 md:px-8 py-8 sm:py-12 md:py-0">
+    <section className="relative w-full min-h-screen bg-white overflow-hidden flex flex-col items-center justify-center font-serif px-4 sm:px-6 md:px-8 py-6 sm:py-8 md:py-0">
 
       {/* BACKGROUND PARTICLES */}
       <canvas
@@ -87,7 +87,7 @@ const CodeFusionHero = () => {
       />
 
       {/* TITLE */}
-      <h1 className="relative z-10 flex flex-wrap justify-center dark-blue-title text-4xl xs:text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-black leading-none text-center">
+      <h1 className="relative z-10 flex flex-wrap justify-center dark-blue-title text-5xl xs:text-6xl sm:text-7xl md:text-8xl lg:text-9xl xl:text-[10rem] font-black leading-none text-center mb-1">
         {title.split("").map((char, i) => (
           <span
             key={i}
@@ -101,7 +101,7 @@ const CodeFusionHero = () => {
 
       {/* DATE */}
       <p
-        className="relative z-20 mt-6 sm:mt-10 md:mt-20 text-xs sm:text-sm md:text-base lg:text-lg tracking-[0.15em] sm:tracking-[0.25em] text-[#0c4a6e] animate-fade-in-long text-center"
+        className="relative z-20 mt-4 sm:mt-6 md:mt-12 text-sm sm:text-base md:text-lg lg:text-xl tracking-[0.15em] sm:tracking-[0.25em] text-[#0c4a6e] animate-fade-in-long text-center font-medium"
         style={{ animationDelay: "2s" }}
       >
         JANUARY&nbsp;23–24,&nbsp;2026
@@ -109,23 +109,23 @@ const CodeFusionHero = () => {
 
       {/* DIVIDER */}
       <div
-        className="relative z-20 w-32 sm:w-40 md:w-48 h-[2px] bg-[#0ea5e9] mt-4 sm:mt-6 md:mt-10 opacity-60"
+        className="relative z-20 w-36 sm:w-44 md:w-52 h-[2px] bg-[#0ea5e9] mt-3 sm:mt-5 md:mt-8 opacity-60"
         style={{ animationDelay: "2.4s" }}
       />
 
       {/* ORGANISER INFO */}
       <div
-        className="relative z-20 mt-6 sm:mt-8 md:mt-12 flex flex-col items-center text-[#475569] animate-org-wrapper px-4"
+        className="relative z-20 mt-5 sm:mt-6 md:mt-10 flex flex-col items-center text-[#475569] animate-org-wrapper px-4"
         style={{ fontFamily: "Times New Roman, serif" }}
       >
         <p
-          className="text-xs sm:text-sm md:text-base tracking-[0.12em] sm:tracking-[0.18em] animate-org-line-1 text-center mb-2 sm:mb-3 md:mb-5"
+          className="text-sm sm:text-base md:text-lg tracking-[0.12em] sm:tracking-[0.18em] animate-org-line-1 text-center mb-2 sm:mb-2 md:mb-4 font-medium"
         >
           ORGANISED BY RESEARCH &amp; DEVELOPMENT CELL
         </p>
 
         <p
-          className="text-xs sm:text-sm md:text-base tracking-[0.12em] sm:tracking-[0.18em] animate-org-line-2 text-center"
+          className="text-sm sm:text-base md:text-lg tracking-[0.12em] sm:tracking-[0.18em] animate-org-line-2 text-center font-medium"
         >
           DEPARTMENTS OF IT &amp; CSE
         </p>
