@@ -128,7 +128,7 @@ const AcademicContactWithCoordinators = () => {
                       <div className="flex-1 min-w-0">
                         <h3 className="text-sm font-bold text-[#002147] mb-1" style={{ fontFamily: 'SUSE, sans-serif' }}>WhatsApp</h3>
                         <a
-                          href="https://chat.whatsapp.com/JgbMinWTnaRG30yGSJP5f0"
+                          href="https://chat.whatsapp.com/DKmbsq2lYmQ2UgZVorHxOG"
                           target="_blank"
                           rel="noopener noreferrer"
                           className="text-sm md:text-base text-[#6B7280] hover:text-[#002147] transition-colors"
