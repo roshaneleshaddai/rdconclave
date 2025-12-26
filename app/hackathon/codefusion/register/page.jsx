@@ -321,40 +321,27 @@ const RegistrationForm = () => {
     setApiError('');
 
     try {
-      const members = [
-        {
-          name: formData.member2Name,
-          email: formData.member2Email,
-          phone: formData.member2Phone
-        },
-        {
-          name: formData.member3Name,
-          email: formData.member3Email,
-          phone: formData.member3Phone
-        }
-      ];
-
-      if (formData.teamSize === '4') {
-        members.push({
-          name: formData.member4Name,
-          email: formData.member4Email,
-          phone: formData.member4Phone
-        });
-      }
-
       const payload = {
         teamName: formData.teamName,
-        teamSize: parseInt(formData.teamSize),
+        teamSize: formData.teamSize,
         problemStatement: formData.problemStatement,
-        leader: {
-          name: formData.leaderName,
-          email: formData.leaderEmail,
-          phone: formData.leaderPhone,
-          college: formData.leaderCollege,
-          department: formData.leaderDepartment,
-          year: parseInt(formData.leaderYear)
-        },
-        members: members
+        leaderName: formData.leaderName,
+        leaderEmail: formData.leaderEmail,
+        leaderPhone: formData.leaderPhone,
+        leaderCollege: formData.leaderCollege,
+        leaderDepartment: formData.leaderDepartment,
+        leaderYear: formData.leaderYear,
+        member2Name: formData.member2Name,
+        member2Email: formData.member2Email,
+        member2Phone: formData.member2Phone,
+        member3Name: formData.member3Name,
+        member3Email: formData.member3Email,
+        member3Phone: formData.member3Phone,
+        ...(formData.teamSize === '4' && {
+          member4Name: formData.member4Name,
+          member4Email: formData.member4Email,
+          member4Phone: formData.member4Phone
+        })
       };
 
       const response = await fetch('https://rd-backend-m7gd.onrender.com/api/teams/register', {
