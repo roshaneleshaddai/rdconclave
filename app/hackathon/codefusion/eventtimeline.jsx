@@ -4,16 +4,51 @@ import {
   ClipboardCheck, CalendarX, Filter, 
   Megaphone, CreditCard, Hourglass, Rocket 
 } from 'lucide-react';
-
 const TimelineData = [
-  { date: "DEC 25", title: "Registration Opens", icon: ClipboardCheck, desc: "Portal live for team details and problem statements." },
-  { date: "JAN 08", title: "Registration Closes", icon: CalendarX, desc: "Final deadline; no late entries allowed." },
-  { date: "JAN 09", title: "Shortlisting Round", icon: Filter, desc: "Technical evaluation by expert panels." },
-  { date: "JAN 10", title: "Results Announcement", icon: Megaphone, desc: "Teams cleared for participation announced." },
-  { date: "JAN 10", title: "Payment Window", icon: CreditCard, desc: "Fee submission enabled for shortlisted candidates." },
-  { date: "JAN 13", title: "Payment Deadline", icon: Hourglass, desc: "Final cutoff to secure participation slots." },
-  { date: "JAN 23–24", title: "Hackathon Kickoff", icon: Rocket, desc: "24-hour innovation sprint and technical demos." },
+  {
+    date: "DEC 28",
+    title: "Registration Opens",
+    icon: ClipboardCheck,
+    desc: "Portal goes live for team registration and domain selection."
+  },
+  {
+    date: "JAN 08",
+    title: "Registration Closes",
+    icon: CalendarX,
+    desc: "Final deadline for submissions; no late entries accepted."
+  },
+  {
+    date: "JAN 11",
+    title: "Shortlisting Round",
+    icon: Filter,
+    desc: "Teams evaluated by expert panels based on submitted details."
+  },
+  {
+    date: "JAN 14",
+    title: "Results Announcement",
+    icon: Megaphone,
+    desc: "Shortlisted teams announced for the next phase."
+  },
+  {
+    date: "JAN 14",
+    title: "Payment Window Opens",
+    icon: CreditCard,
+    desc: "Registration fee payment enabled for shortlisted teams."
+  },
+  {
+    date: "JAN 18",
+    title: "Payment Deadline",
+    icon: Hourglass,
+    desc: "Final cutoff to confirm participation in the hackathon."
+  },
+  {
+    date: "JAN 23–24",
+    title: "Hackathon Kickoff",
+    icon: Rocket,
+    desc: "Hackathon begins; problem statements are released and the 24-hour innovation sprint starts."
+  },
 ];
+
 
 const HackathonTimeline = () => {
   const [hoveredIndex, setHoveredIndex] = useState(null);

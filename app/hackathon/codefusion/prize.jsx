@@ -156,7 +156,7 @@ export default function PrizesComponent() {
           <div className="professional-gradient-border rounded-2xl p-8 sm:p-12 text-center">
             <div className="mx-auto max-w-4xl">
               <blockquote className="text-lg sm:text-xl italic leading-relaxed text-gray-700">
-                "The only way to do great work is to love what you do."
+                "Creativity is just connecting things — stay hungry, stay foolish."
               </blockquote>
               <p className="mt-4 text-[#002147] font-semibold text-lg">— Steve Jobs</p>
             </div>

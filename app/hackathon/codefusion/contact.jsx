@@ -99,26 +99,33 @@ const AcademicContactWithCoordinators = () => {
                 
                 <div className="pt-4 space-y-4">
                   {/* Email Box */}
-                  <div className="bg-white border-[1.5px] border-[rgba(0,33,71,0.3)] rounded-[8px] p-4 hover:border-[rgba(0,33,71,0.6)] hover:shadow-md hover:shadow-[rgba(0,33,71,0.1)] transition-all duration-300">
+                  <a
+                    href="mailto:research.conclave@siddhartha.edu.in"
+                    className="bg-white border-[1.5px] border-[rgba(0,33,71,0.3)] rounded-[8px] p-4 hover:border-[rgba(0,33,71,0.6)] hover:shadow-md hover:shadow-[rgba(0,33,71,0.1)] transition-all duration-300 block"
+                  >
                     <div className="flex items-center gap-4">
                       <div className="w-12 h-12 rounded-full border border-[rgba(0,33,71,0.4)] flex items-center justify-center flex-shrink-0">
                         <Mail size={20} className="text-[#002147]" />
                       </div>
                       <div className="flex-1 min-w-0">
                         <h3 className="text-sm font-bold text-[#002147] mb-1" style={{ fontFamily: 'SUSE, sans-serif' }}>Email</h3>
-                        <a
-                          href="mailto:contact@university.edu"
+                        <p
                           className="text-sm md:text-base text-[#6B7280] hover:text-[#002147] transition-colors break-all"
                           style={{ fontFamily: 'SUSE, sans-serif' }}
                         >
-                         research.conclave@siddhartha.edu.in
-                        </a>
+                          research.conclave@siddhartha.edu.in
+                        </p>
                       </div>
                     </div>
-                  </div>
+                  </a>
 
                   {/* WhatsApp Box */}
-                  <div className="bg-white border-[1.5px] border-[rgba(0,33,71,0.3)] rounded-[8px] p-4 hover:border-[rgba(0,33,71,0.6)] hover:shadow-md hover:shadow-[rgba(0,33,71,0.1)] transition-all duration-300">
+                  <a
+                    href="https://chat.whatsapp.com/DKmbsq2lYmQ2UgZVorHxOG"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-white border-[1.5px] border-[rgba(0,33,71,0.3)] rounded-[8px] p-4 hover:border-[rgba(0,33,71,0.6)] hover:shadow-md hover:shadow-[rgba(0,33,71,0.1)] transition-all duration-300 block"
+                  >
                     <div className="flex items-center gap-4">
                       <div className="w-12 h-12 rounded-full border border-[rgba(0,33,71,0.4)] flex items-center justify-center flex-shrink-0">
                         <svg className="w-5 h-5 text-[#002147]" fill="currentColor" viewBox="0 0 24 24">
@@ -127,21 +134,23 @@ const AcademicContactWithCoordinators = () => {
                       </div>
                       <div className="flex-1 min-w-0">
                         <h3 className="text-sm font-bold text-[#002147] mb-1" style={{ fontFamily: 'SUSE, sans-serif' }}>WhatsApp</h3>
-                        <a
-                          href="https://chat.whatsapp.com/DKmbsq2lYmQ2UgZVorHxOG"
-                          target="_blank"
-                          rel="noopener noreferrer"
+                        <p
                           className="text-sm md:text-base text-[#6B7280] hover:text-[#002147] transition-colors"
                           style={{ fontFamily: 'SUSE, sans-serif' }}
                         >
                           Join Group Chat
-                        </a>
+                        </p>
                       </div>
                     </div>
-                  </div>
+                  </a>
 
                   {/* Instagram Box */}
-                  <div className="bg-white border-[1.5px] border-[rgba(0,33,71,0.3)] rounded-[8px] p-4 hover:border-[rgba(0,33,71,0.6)] hover:shadow-md hover:shadow-[rgba(0,33,71,0.1)] transition-all duration-300">
+                  <a
+                    href="https://www.instagram.com/research_conclave?igsh=djZhMmsydThidGZj"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-white border-[1.5px] border-[rgba(0,33,71,0.3)] rounded-[8px] p-4 hover:border-[rgba(0,33,71,0.6)] hover:shadow-md hover:shadow-[rgba(0,33,71,0.1)] transition-all duration-300 block"
+                  >
                     <div className="flex items-center gap-4">
                       <div className="w-12 h-12 rounded-full border border-[rgba(0,33,71,0.4)] flex items-center justify-center flex-shrink-0">
                         <svg className="w-5 h-5 text-[#002147]" fill="currentColor" viewBox="0 0 24 24">
@@ -150,18 +159,15 @@ const AcademicContactWithCoordinators = () => {
                       </div>
                       <div className="flex-1 min-w-0">
                         <h3 className="text-sm font-bold text-[#002147] mb-1" style={{ fontFamily: 'SUSE, sans-serif' }}>Instagram</h3>
-                        <a
-                          href="https://www.instagram.com/research_conclave?igsh=djZhMmsydThidGZj"
-                          target="_blank"
-                          rel="noopener noreferrer"
+                        <p
                           className="text-sm md:text-base text-[#6B7280] hover:text-[#002147] transition-colors"
                           style={{ fontFamily: 'SUSE, sans-serif' }}
                         >
                           @rdconclave_2026
-                        </a>
+                        </p>
                       </div>
                     </div>
-                  </div>
+                  </a>
                 </div>
               </div>
             </div>
