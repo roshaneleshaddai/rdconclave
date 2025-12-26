@@ -189,6 +189,7 @@ const RegistrationForm = () => {
     leaderEmail: '',
     leaderPhone: '',
     leaderCollege: '',
+    leaderCollegeOther: '',
     leaderDepartment: '',
     leaderYear: '',
     member2Name: '',
@@ -201,6 +202,28 @@ const RegistrationForm = () => {
     member4Email: '',
     member4Phone: ''
   });
+
+  const collegeOptions = [
+    'KL University – Vaddeswaram',
+    'SRM University AP – Amaravati region',
+    'VIT-AP University – Amaravati region',
+    'Velagapudi Ramakrishna Siddhartha Engineering College – Vijayawada',
+    'Prasad V Potluri Siddhartha Institute of Technology (PVPSIT) – Vijayawada',
+    'Gudlavalleru Engineering College – Gudlavalleru',
+    'Dhanekula Institute of Engineering & Technology – Vijayawada',
+    'Andhra Loyola College – Vijayawada',
+    'KBN College – Vijayawada',
+    'NRI Institute of Technology, Agiripalli',
+    'Jawaharlal Nehru Technological University Kakinada (JNTUK) – Kakinada',
+    'Sri Vishnu Engineering College for Women – Bhimavaram',
+    'Sir C. R. Reddy College of Engineering – Eluru',
+    'Gayatri Vidya Parishad College of Engineering – Visakhapatnam',
+    'lakireddy Bali Reddy College of Engineering (LBRCE)',
+    'PACE Institute of Technology, Ongole',
+    'RVR & JC College of Engineering – Guntur',
+    'Vignan\'s Foundation for Science, Technology & Research – Guntur',
+    'Vasireddy Venkatadri Institute of Technology (VVIT) – Guntur'
+  ];
 
   useEffect(() => {
     const handleResize = () => {
@@ -226,7 +249,10 @@ const RegistrationForm = () => {
       newErrors.leaderEmail = 'Enter a valid email address';
     }
     if (!formData.leaderPhone.trim()) newErrors.leaderPhone = 'Leader phone is required';
-    if (!formData.leaderCollege.trim()) newErrors.leaderCollege = 'College/Institution is required';
+    if (!formData.leaderCollege || formData.leaderCollege === '') newErrors.leaderCollege = 'College/Institution is required';
+    if (formData.leaderCollege === 'Others' && !formData.leaderCollegeOther.trim()) {
+      newErrors.leaderCollegeOther = 'Please enter your college name';
+    }
     if (!formData.leaderDepartment.trim()) newErrors.leaderDepartment = 'Department is required';
     if (!formData.leaderYear) newErrors.leaderYear = 'Year of study is required';
 
@@ -283,6 +309,7 @@ const RegistrationForm = () => {
       leaderEmail: '',
       leaderPhone: '',
       leaderCollege: '',
+      leaderCollegeOther: '',
       leaderDepartment: '',
       leaderYear: '',
       member2Name: '',
@@ -321,6 +348,8 @@ const RegistrationForm = () => {
     setApiError('');
 
     try {
+      const collegeValue = formData.leaderCollege === 'Others' ? formData.leaderCollegeOther : formData.leaderCollege;
+
       const payload = {
         teamName: formData.teamName,
         teamSize: formData.teamSize,
@@ -328,7 +357,7 @@ const RegistrationForm = () => {
         leaderName: formData.leaderName,
         leaderEmail: formData.leaderEmail,
         leaderPhone: formData.leaderPhone,
-        leaderCollege: formData.leaderCollege,
+        leaderCollege: collegeValue,
         leaderDepartment: formData.leaderDepartment,
         leaderYear: formData.leaderYear,
         member2Name: formData.member2Name,
@@ -521,7 +550,6 @@ const RegistrationForm = () => {
                 { name: 'leaderName', label: 'Full Name', type: 'text', placeholder: 'Enter full name' },
                 { name: 'leaderEmail', label: 'Email Address', type: 'email', placeholder: 'student@university.edu' },
                 { name: 'leaderPhone', label: 'Phone Number', type: 'tel', placeholder: '+91 98765 43210' },
-                { name: 'leaderCollege', label: 'College/Institution', type: 'text', placeholder: 'Enter institution name' },
                 { name: 'leaderDepartment', label: 'Department', type: 'text', placeholder: 'e.g., Computer Science' }
               ].map((field) => (
                 <div key={field.name}>
@@ -543,6 +571,50 @@ const RegistrationForm = () => {
                   {errors[field.name] && <p className="text-red-500 text-sm mt-1">{errors[field.name]}</p>}
                 </div>
               ))}
+
+              <div className={isMobile ? '' : 'col-span-2'}>
+                <label className="block text-base font-bold text-[#002147] mb-2">
+                  College/Institution *
+                </label>
+                <select
+                  name="leaderCollege"
+                  value={formData.leaderCollege}
+                  onChange={handleInputChange}
+                  className={`w-full h-12 px-4 border-2 rounded-lg outline-none transition-all cursor-pointer ${
+                    errors.leaderCollege 
+                      ? 'border-red-500 focus:shadow-[0_0_0_3px_rgba(239,68,68,0.1)]' 
+                      : 'border-[#002147]/20 focus:border-[#002147] focus:shadow-[0_0_0_3px_rgba(0,33,71,0.1)]'
+                  }`}
+                >
+                  <option value="">Select College/Institution</option>
+                  {collegeOptions.map((college) => (
+                    <option key={college} value={college}>{college}</option>
+                  ))}
+                  <option value="Others">Others</option>
+                </select>
+                {errors.leaderCollege && <p className="text-red-500 text-sm mt-1">{errors.leaderCollege}</p>}
+              </div>
+
+              {formData.leaderCollege === 'Others' && (
+                <div className={isMobile ? '' : 'col-span-2'}>
+                  <label className="block text-base font-bold text-[#002147] mb-2">
+                    Enter Your College/Institution Name *
+                  </label>
+                  <input
+                    type="text"
+                    name="leaderCollegeOther"
+                    value={formData.leaderCollegeOther}
+                    onChange={handleInputChange}
+                    className={`w-full h-12 px-4 border-2 rounded-lg outline-none transition-all ${
+                      errors.leaderCollegeOther 
+                        ? 'border-red-500 focus:shadow-[0_0_0_3px_rgba(239,68,68,0.1)]' 
+                        : 'border-[#002147]/20 focus:border-[#002147] focus:shadow-[0_0_0_3px_rgba(0,33,71,0.1)]'
+                    }`}
+                    placeholder="Enter your college/institution name"
+                  />
+                  {errors.leaderCollegeOther && <p className="text-red-500 text-sm mt-1">{errors.leaderCollegeOther}</p>}
+                </div>
+              )}
 
               <div>
                 <label className="block text-base font-bold text-[#002147] mb-2">
@@ -587,6 +659,8 @@ const RegistrationForm = () => {
               errors={errors}
               optional={false}
             />
+
+           
 
             <MemberSection
               memberNum="3"

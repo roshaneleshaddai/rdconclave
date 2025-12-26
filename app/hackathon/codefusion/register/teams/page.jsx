@@ -56,74 +56,21 @@ export default function AdminLoginPage() {
   // Redirecting Screen
   if (isRedirecting) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-[#002147] to-[#003366] flex flex-col items-center justify-center p-4">
-        <style>{`
-          @keyframes slideUp {
-            0% { opacity: 0; transform: translateY(30px); }
-            100% { opacity: 1; transform: translateY(0); }
-          }
-          @keyframes pulseScale {
-            0%, 100% { transform: scale(1); opacity: 1; }
-            50% { transform: scale(1.1); opacity: 0.8; }
-          }
-          @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
-          }
-          @keyframes fadeInDown {
-            0% { opacity: 0; transform: translateY(-20px); }
-            100% { opacity: 1; transform: translateY(0); }
-          }
-          .float-icon { animation: float 3s ease-in-out infinite; }
-          .pulse-scale { animation: pulseScale 2s ease-in-out infinite; }
-          .fade-in-down { animation: fadeInDown 0.8s ease-out; }
-        `}
-        </style>
-
-        <div className="flex flex-col items-center gap-8">
-          <div className="float-icon">
-            <div className="pulse-scale">
-              <div className="bg-white/20 p-6 rounded-full border-2 border-white/30">
-                <svg className="w-16 h-16 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-              </div>
+      <div className="min-h-screen bg-white/80 backdrop-blur-sm flex items-center justify-center p-4 fixed inset-0 z-50">
+        <div className="bg-white rounded-2xl shadow-2xl border-2 border-[#002147] p-8 max-w-sm w-full text-center">
+          <div className="mb-6 flex justify-center">
+            <div className="animate-spin">
+              <svg className="w-16 h-16 text-[#002147]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
             </div>
           </div>
 
-          <div className="text-center fade-in-down">
-            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-3">
-              Authentication Successful
-            </h2>
-            <p className="text-white/80 text-sm sm:text-base mb-8">
-              Redirecting to your dashboard...
-            </p>
-
-            <div className="flex gap-2 justify-center mb-6">
-              {[0, 1, 2].map((i) => (
-                <div
-                  key={i}
-                  className="h-2 w-2 rounded-full bg-white/60"
-                  style={{
-                    animation: `pulse 1.5s ease-in-out ${i * 0.2}s infinite`,
-                  }}
-                />
-              ))}
-            </div>
-
-            <div className="w-48 h-1 bg-white/20 rounded-full overflow-hidden">
-              <div
-                className="h-full bg-white rounded-full"
-                style={{
-                  animation: "slideUp 1.5s ease-in-out infinite",
-                  width: "40%",
-                }}
-              />
-            </div>
-          </div>
-
-          <p className="text-white/60 text-xs sm:text-sm mt-8">
-            Please wait while we prepare your dashboard...
+          <h2 className="text-2xl sm:text-3xl font-bold text-[#002147] mb-2">
+            Authentication Successful
+          </h2>
+          <p className="text-gray-600 text-sm sm:text-base">
+            Redirecting to dashboard...
           </p>
         </div>
       </div>
@@ -144,32 +91,34 @@ export default function AdminLoginPage() {
 
   // Login Screen
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#00214705] to-[#00214710] flex items-center justify-center p-4 font-SUSE" style={{ fontFamily: "SUSE, sans-serif" }}>
+    <div className="min-h-screen bg-white flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8 pt-40 sm:pt-48 lg:pt-64 pb-12 font-SUSE" style={{ fontFamily: "SUSE, sans-serif" }}>
       <div className="w-full max-w-md">
-        <div className="bg-white rounded-xl shadow-xl border-2 border-[#002147] overflow-hidden">
+        <div className="bg-white rounded-2xl shadow-2xl border-2 border-[#002147] overflow-hidden">
           
-          <div className="bg-gradient-to-r from-[#002147] to-[#003366] text-white p-8 text-center">
+          {/* Header */}
+          <div className="bg-gradient-to-r from-[#002147] to-[#003366] text-white p-6 sm:p-8 text-center">
             <div className="mb-4 flex justify-center">
               <div className="bg-white/20 p-3 rounded-full">
                 <Lock className="w-8 h-8" />
               </div>
             </div>
-            <h1 className="text-3xl font-bold mb-2">
+            <h1 className="text-2xl sm:text-3xl font-bold mb-2">
               CodeFusion Dashboard
             </h1>
-            <p className="text-gray-200 text-sm">
+            <p className="text-gray-200 text-xs sm:text-sm">
               Admin Access Portal
             </p>
           </div>
 
-          <div className="p-8">
+          {/* Form */}
+          <div className="p-6 sm:p-8">
             <div className="space-y-5">
+              {/* Admin Name */}
               <div>
                 <label 
                   htmlFor="adminName" 
-                  className="block text-sm font-semibold text-gray-700 mb-2 flex items-center gap-2"
+                  className="block text-sm font-semibold text-gray-700 mb-2"
                 >
-                  <User className="w-4 h-4 text-[#002147]" />
                   Admin Name
                 </label>
                 <input
@@ -177,19 +126,19 @@ export default function AdminLoginPage() {
                   type="text"
                   value={adminName}
                   onChange={(e) => setAdminName(e.target.value)}
-                  className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-[#002147] focus:border-[#002147] outline-none transition text-sm bg-gray-50 hover:bg-white"
+                  className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-[#002147] focus:border-[#002147] outline-none transition text-sm bg-white"
                   placeholder="Enter admin name"
                   disabled={isLoading}
                   autoComplete="off"
                 />
               </div>
 
+              {/* Admin Password */}
               <div>
                 <label 
                   htmlFor="adminPassword" 
-                  className="block text-sm font-semibold text-gray-700 mb-2 flex items-center gap-2"
+                  className="block text-sm font-semibold text-gray-700 mb-2"
                 >
-                  <Lock className="w-4 h-4 text-[#002147]" />
                   Admin Password
                 </label>
                 <input
@@ -197,24 +146,26 @@ export default function AdminLoginPage() {
                   type="password"
                   value={adminPassword}
                   onChange={(e) => setAdminPassword(e.target.value)}
-                  className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-[#002147] focus:border-[#002147] outline-none transition text-sm bg-gray-50 hover:bg-white"
+                  className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-[#002147] focus:border-[#002147] outline-none transition text-sm bg-white"
                   placeholder="Enter password"
                   disabled={isLoading}
                   autoComplete="off"
                 />
               </div>
 
+              {/* Error Message */}
               {error && (
-                <div className="bg-red-50 border-2 border-red-200 text-red-700 px-4 py-3 rounded-lg text-sm flex items-start gap-3">
+                <div className="bg-red-50 border-2 border-red-200 text-red-700 px-4 py-3 rounded-lg text-sm flex items-start gap-2">
                   <AlertCircle className="w-5 h-5 flex-shrink-0 mt-0.5" />
                   <span>{error}</span>
                 </div>
               )}
 
+              {/* Submit Button */}
               <button
                 onClick={handleLogin}
                 disabled={isLoading}
-                className="w-full bg-[#002147] hover:bg-[#003366] text-white font-semibold py-3 rounded-lg transition duration-200 disabled:bg-gray-400 disabled:cursor-not-allowed text-base mt-6"
+                className="w-full bg-[#002147] hover:bg-[#003366] text-white font-semibold py-3 rounded-lg transition duration-200 disabled:bg-gray-400 disabled:cursor-not-allowed text-base mt-8"
               >
                 {isLoading ? (
                   <div className="flex items-center justify-center gap-2">
@@ -226,30 +177,6 @@ export default function AdminLoginPage() {
                 )}
               </button>
             </div>
-
-            <div className="relative my-6">
-              <div className="absolute inset-0 flex items-center">
-                <div className="w-full border-t border-gray-300" />
-              </div>
-              <div className="relative flex justify-center text-sm">
-                <span className="px-2 bg-white text-gray-600">Secure Access</span>
-              </div>
-            </div>
-
-            <div className="bg-[#00214705] border border-[#002147] rounded-lg p-4 text-xs text-gray-700 space-y-2">
-              <p className="flex items-start gap-2">
-                <span className="text-[#002147] font-bold">•</span>
-                <span><span className="font-semibold">Demo Credentials:</span> Username: admin | Password: codefusion2025</span>
-              </p>
-              <p className="flex items-start gap-2">
-                <span className="text-[#002147] font-bold">•</span>
-                <span>🔒 Frontend authentication for authorized access only</span>
-              </p>
-            </div>
-          </div>
-
-          <div className="bg-gray-50 px-8 py-4 text-center text-xs text-gray-600 border-t border-gray-200">
-            <p>CodeFusion Registration Dashboard © 2025</p>
           </div>
         </div>
       </div>

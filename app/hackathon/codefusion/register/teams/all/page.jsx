@@ -21,7 +21,7 @@ export default function TeamsListPage() {
   const [sortConfig, setSortConfig] = useState({ key: "createdAt", direction: "desc" });
   
   // Statistics
-  const [stats, setStats] = useState({ total: 0, college2: 0, college3: 0, college4: 0 });
+  const [stats, setStats] = useState({ total: 0, college3: 0, college4: 0, totalColleges: 0 });
 
   useEffect(() => {
     const checkAuthentication = () => {
@@ -90,15 +90,21 @@ export default function TeamsListPage() {
   };
 
   const calculateStats = (teamsData) => {
-    const college2Count = teamsData.filter(t => t.teamSize >= 2).length;
     const college3Count = teamsData.filter(t => t.teamSize >= 3).length;
     const college4Count = teamsData.filter(t => t.teamSize >= 4).length;
+    const collegeSet = new Set();
+    
+    teamsData.forEach(team => {
+      if (team.leader?.college) {
+        collegeSet.add(team.leader.college);
+      }
+    });
     
     setStats({
       total: teamsData.length,
-      college2: college2Count,
       college3: college3Count,
-      college4: college4Count
+      college4: college4Count,
+      totalColleges: collegeSet.size
     });
   };
 
@@ -183,7 +189,9 @@ export default function TeamsListPage() {
       </header>
 
       {/* Main Content */}
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 sm:pt-40 lg:pt-48 pb-12">
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-[220px] sm:mt-[240px] lg:mt-[220px] pb-12">
+
+
         
         {/* Live Status */}
         <div className="mb-12 flex items-center gap-3">
@@ -203,6 +211,14 @@ export default function TeamsListPage() {
             </p>
           </div>
 
+          {/* Total Colleges */}
+          <div className="bg-white rounded-lg border-2 border-[#002147] p-8 hover:shadow-lg transition">
+            <p className="text-xs uppercase tracking-wider text-gray-600 font-semibold">Total Colleges</p>
+            <p className="text-4xl sm:text-5xl font-bold text-[#002147] mt-3">
+              {isLoading ? "..." : stats.totalColleges}
+            </p>
+          </div>
+
           {/* 3+ Members Teams */}
           <div className="bg-white rounded-lg border-2 border-[#002147] p-8 hover:shadow-lg transition">
             <p className="text-xs uppercase tracking-wider text-gray-600 font-semibold">3+ Members</p>
@@ -216,14 +232,6 @@ export default function TeamsListPage() {
             <p className="text-xs uppercase tracking-wider text-gray-600 font-semibold">4+ Members</p>
             <p className="text-4xl sm:text-5xl font-bold text-[#002147] mt-3">
               {isLoading ? "..." : stats.college4}
-            </p>
-          </div>
-
-          {/* 2+ Members Teams */}
-          <div className="bg-white rounded-lg border-2 border-[#002147] p-8 hover:shadow-lg transition">
-            <p className="text-xs uppercase tracking-wider text-gray-600 font-semibold">2+ Members</p>
-            <p className="text-4xl sm:text-5xl font-bold text-[#002147] mt-3">
-              {isLoading ? "..." : stats.college2}
             </p>
           </div>
         </div>

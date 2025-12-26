@@ -1,8 +1,7 @@
 {
-  "/_not-found/page": "app/_not-found/page.js",
-  "/hackathon/codefusion/register/teams/page": "app/hackathon/codefusion/register/teams/page.js",
   "/hackathon/codefusion/register/teams/all/page": "app/hackathon/codefusion/register/teams/all/page.js",
-  "/hackathon/codefusion/page": "app/hackathon/codefusion/page.js",
   "/hackathon/page": "app/hackathon/page.js",
-  "/page": "app/page.js"
+  "/hackathon/codefusion/page": "app/hackathon/codefusion/page.js",
+  "/hackathon/codefusion/register/teams/page": "app/hackathon/codefusion/register/teams/page.js",
+  "/hackathon/codefusion/register/page": "app/hackathon/codefusion/register/page.js"
 }
