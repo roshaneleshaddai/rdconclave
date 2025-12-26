@@ -1,7 +1,7 @@
 'use client';
 import { useState, useEffect } from 'react';
-import { ArrowLeft, Users, GraduationCap, Send, CheckCircle, AlertCircle } from 'lucide-react';
-import Image from 'next/image';
+import { ArrowLeft, Users, GraduationCap, Send, CheckCircle, AlertCircle, Info } from 'lucide-react';
+
 // Coin Flip Loading Component
 const CoinFlip = () => {
   return (
@@ -9,31 +9,23 @@ const CoinFlip = () => {
       <div className="bg-white rounded-2xl p-8 shadow-2xl flex flex-col items-center">
         <div style={{ perspective: '1200px', width: '150px', height: '150px' }}>
           <div className="coin">
-            
             {/* FRONT */}
             <div className="coin-face front">
-              <Image
+              <img
                 src="/rdlogo.webp"
                 alt="RD Logo"
-                width={150}
-                height={150}
-                className="rounded-full object-cover"
-                priority
+                className="w-full h-full rounded-full object-cover"
               />
             </div>
 
             {/* BACK */}
             <div className="coin-face back">
-              <Image
+              <img
                 src="/golden.png"
                 alt="Golden Logo"
-                width={150}
-                height={150}
-                className="rounded-full object-cover"
-                priority
+                className="w-full h-full rounded-full object-cover"
               />
             </div>
-
           </div>
         </div>
 
@@ -74,42 +66,40 @@ const CoinFlip = () => {
   );
 };
 
-
 // Success Modal Component
 const SuccessModal = ({ registrationId, onClose }) => {
   return (
     <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 p-4">
       <div className="bg-white rounded-2xl shadow-2xl max-w-md w-full animate-scaleIn">
         <div className="p-8 text-center">
-          <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-            <CheckCircle size={48} className="text-green-500" />
+          <div className="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+            <CheckCircle size={48} className="text-[#002147]" />
           </div>
           
           <h2 className="text-3xl font-bold text-[#002147] mb-3">
-            Registration Successful!
+            Registration Successful
           </h2>
           
-          <div className="bg-green-50 border-2 border-green-500 rounded-xl p-4 mb-4">
-            <p className="text-sm text-green-700 mb-2 font-semibold">Your Registration ID:</p>
-            <p className="text-4xl font-bold text-green-600 tracking-wider">
+          <p className="text-gray-600 mb-6 text-base">
+            Your team has been successfully registered for CodeFusion 2025.
+          </p>
+          
+          <div className="bg-[#002147] rounded-xl p-6 mb-6">
+            <p className="text-xs text-blue-100 mb-2 font-semibold tracking-widest uppercase">Registration ID</p>
+            <p className="text-3xl font-bold text-white tracking-wider">
               {registrationId}
             </p>
           </div>
           
-          <p className="text-gray-600 mb-6">
-            Your team has been successfully registered for CodeFusion 2025. 
-            Please save your registration ID for future reference.
-          </p>
-          
-          <p className="text-sm text-gray-500 mb-6">
-            A confirmation email has been sent to your registered email address with all the details.
+          <p className="text-sm text-gray-500 mb-6 leading-relaxed">
+            Please save your registration ID for future reference. A confirmation email has been sent to your registered email address with all the details.
           </p>
           
           <button
             onClick={onClose}
-            className="w-full px-8 py-4 text-lg font-bold text-white bg-gradient-to-r from-[#7c3aed] to-[#6b21a8] rounded-xl shadow-lg transition-all hover:from-[#6b21a8] hover:to-[#5b21b6] hover:scale-105 hover:shadow-xl"
+            className="w-full px-8 py-4 text-lg font-bold text-white bg-[#002147] rounded-xl shadow-lg transition-all hover:bg-[#001a35] hover:scale-105 hover:shadow-xl"
           >
-            Close
+            Continue
           </button>
         </div>
       </div>
@@ -139,26 +129,26 @@ const ErrorModal = ({ message, onClose }) => {
       <div className="bg-white rounded-2xl shadow-2xl max-w-md w-full animate-scaleIn">
         <div className="p-8 text-center">
           <div className="w-20 h-20 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
-            <AlertCircle size={48} className="text-red-500" />
+            <AlertCircle size={48} className="text-red-600" />
           </div>
           
           <h2 className="text-3xl font-bold text-[#002147] mb-3">
             Registration Failed
           </h2>
           
-          <div className="bg-red-50 border-2 border-red-500 rounded-xl p-4 mb-6">
-            <p className="text-red-700">
+          <div className="bg-red-50 border-2 border-red-300 rounded-xl p-4 mb-6">
+            <p className="text-red-700 text-sm leading-relaxed">
               {message}
             </p>
           </div>
           
-          <p className="text-gray-600 mb-6">
-            Please check your information and try again. If the problem persists, contact support.
+          <p className="text-gray-600 mb-6 text-base">
+            Please verify your information and try again. If the issue persists, contact our support team.
           </p>
           
           <button
             onClick={onClose}
-            className="w-full px-8 py-4 text-lg font-bold text-white bg-gradient-to-r from-red-500 to-red-600 rounded-xl shadow-lg transition-all hover:from-red-600 hover:to-red-700 hover:scale-105 hover:shadow-xl"
+            className="w-full px-8 py-4 text-lg font-bold text-white bg-[#002147] rounded-xl shadow-lg transition-all hover:bg-[#001a35] hover:scale-105 hover:shadow-xl"
           >
             Try Again
           </button>
@@ -507,14 +497,24 @@ const RegistrationForm = () => {
                   }`}
                 >
                   <option value="">Select Problem Statement</option>
-                  <option value="ai-ml">AI & Machine Learning</option>
-                  <option value="blockchain">Blockchain Technology</option>
-                  <option value="iot">Internet of Things</option>
-                  <option value="healthcare">Healthcare Innovation</option>
-                  <option value="education">Education Tech</option>
-                  <option value="sustainability">Sustainability</option>
+                  <option value="AI Agents &systems">AI-Powered Agents & Autonomous Systems</option>
+                  <option value="web Dev">Next-Gen Full-Stack Web Development</option>
+                  <option value="Web 3.0">WEB 3.0 decentralised applications</option>
+                  <option value="Remote sensing">Remote Sensing & Geographic Information System</option>
+                  <option value="cybersecurity">Cyber Security and Privacy</option>
+                  <option value="sustainability">Sustainability and Green Tech</option>
+                  <option value="Open Innovation">Open Innovation</option>
                 </select>
                 {errors.problemStatement && <p className="text-red-500 text-sm mt-1">{errors.problemStatement}</p>}
+                
+                {formData.problemStatement === 'Open Innovation' && (
+                  <div className="bg-blue-50 border-2 border-blue-900 rounded-lg p-3 flex items-start gap-2 animate-fadeIn mt-2 w-max">
+                    <Info size={18} className="text-blue-900 flex-shrink-0 mt-0.5" />
+                    <p className="text-xs text-blue-900 font-semibold">
+                      Limited slots available for this track.
+                    </p>
+                  </div>
+                )}
               </div>
             </div>
           </div>
