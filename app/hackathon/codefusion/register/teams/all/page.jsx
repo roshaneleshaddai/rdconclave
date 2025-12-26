@@ -2,46 +2,48 @@
 
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
+import { ChevronDown, Search, Download, Filter } from "lucide-react";
 
 export default function TeamsListPage() {
   const router = useRouter();
   
-  // State management
   const [teams, setTeams] = useState([]);
   const [totalCount, setTotalCount] = useState(0);
   const [isLoading, setIsLoading] = useState(true);
   const [isAuthChecking, setIsAuthChecking] = useState(true);
   const [error, setError] = useState("");
   const [adminName, setAdminName] = useState("");
+  
+  // Filter states
+  const [searchQuery, setSearchQuery] = useState("");
+  const [selectedCollege, setSelectedCollege] = useState("all");
+  const [colleges, setColleges] = useState([]);
+  const [sortConfig, setSortConfig] = useState({ key: "createdAt", direction: "desc" });
+  
+  // Statistics
+  const [stats, setStats] = useState({ total: 0, college2: 0, college3: 0, college4: 0 });
 
-  // AUTH GUARD: Check authentication on mount and page refresh
   useEffect(() => {
     const checkAuthentication = () => {
       const isAuthenticated = localStorage.getItem("isAdminAuthenticated");
       const storedAdminName = localStorage.getItem("adminName");
       
       if (isAuthenticated !== "true") {
-        // Not authenticated, redirect to login page
         router.push("/hackathon/codefusion/register/teams");
         return false;
       }
       
-      // Authenticated, set admin name for display
       setAdminName(storedAdminName || "Admin");
       setIsAuthChecking(false);
       return true;
     };
 
-    // Perform auth check
     const isAuth = checkAuthentication();
-    
-    // Only fetch teams if authenticated
     if (isAuth) {
       fetchTeams();
     }
   }, [router]);
 
-  // Fetch teams data from API
   const fetchTeams = async () => {
     setIsLoading(true);
     setError("");
@@ -58,11 +60,23 @@ export default function TeamsListPage() {
       const data = await response.json();
 
       if (data.success) {
-        setTeams(data.teams || []);
+        const teamsData = data.teams || [];
+        setTeams(teamsData);
         setTotalCount(data.count || 0);
-        // Logging after state update - these will show old values due to async nature
-        // To see new values, use useEffect or log data.teams directly
-        console.log("Fetched teams:", data.teams);
+        
+        // Extract unique colleges
+        const collegeSet = new Set();
+        teamsData.forEach(team => {
+          if (team.leader?.college) {
+            collegeSet.add(team.leader.college);
+          }
+        });
+        setColleges(Array.from(collegeSet).sort());
+        
+        // Calculate statistics
+        calculateStats(teamsData);
+        
+        console.log("Fetched teams:", teamsData);
         console.log("Total count:", data.count);
       } else {
         throw new Error("Failed to fetch teams data");
@@ -75,37 +89,83 @@ export default function TeamsListPage() {
     }
   };
 
-  // Handle logout
+  const calculateStats = (teamsData) => {
+    const college2Count = teamsData.filter(t => t.teamSize >= 2).length;
+    const college3Count = teamsData.filter(t => t.teamSize >= 3).length;
+    const college4Count = teamsData.filter(t => t.teamSize >= 4).length;
+    
+    setStats({
+      total: teamsData.length,
+      college2: college2Count,
+      college3: college3Count,
+      college4: college4Count
+    });
+  };
+
   const handleLogout = () => {
-    // Clear all authentication data from localStorage
     localStorage.removeItem("isAdminAuthenticated");
     localStorage.removeItem("adminName");
     localStorage.removeItem("loginTimestamp");
-    
-    // Redirect to login page
     router.push("/hackathon/codefusion/register/teams");
   };
 
-  // Show loading state while checking authentication
+  // Filter and sort teams
+  const filteredTeams = teams.filter(team => {
+    const matchesSearch = 
+      team.teamName.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      team.registrationId.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      team.leader?.name.toLowerCase().includes(searchQuery.toLowerCase());
+    
+    const matchesCollege = selectedCollege === "all" || team.leader?.college === selectedCollege;
+    
+    return matchesSearch && matchesCollege;
+  });
+
+  const sortedTeams = [...filteredTeams].sort((a, b) => {
+    const aVal = a[sortConfig.key];
+    const bVal = b[sortConfig.key];
+    
+    if (sortConfig.key === "createdAt") {
+      return sortConfig.direction === "asc" 
+        ? new Date(aVal) - new Date(bVal)
+        : new Date(bVal) - new Date(aVal);
+    }
+    
+    if (typeof aVal === "string") {
+      return sortConfig.direction === "asc"
+        ? aVal.localeCompare(bVal)
+        : bVal.localeCompare(aVal);
+    }
+    
+    return sortConfig.direction === "asc" ? aVal - bVal : bVal - aVal;
+  });
+
+  const handleSort = (key) => {
+    setSortConfig(prev => ({
+      key,
+      direction: prev.key === key && prev.direction === "asc" ? "desc" : "asc"
+    }));
+  };
+
   if (isAuthChecking) {
     return (
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+      <div className="min-h-screen bg-white flex items-center justify-center">
         <div className="text-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-indigo-600 mx-auto mb-4"></div>
-          <p className="text-gray-600">Verifying authentication...</p>
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#002147] mx-auto mb-4"></div>
+          <p className="text-gray-600 font-SUSE">Verifying authentication...</p>
         </div>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-white font-SUSE" style={{ fontFamily: "SUSE, sans-serif" }}>
       {/* Header */}
-      <header className="bg-white shadow-sm border-b">
+      <header className="bg-white border-b border-[#002147] sticky top-0 z-40">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <div className="flex justify-between items-center">
             <div>
-              <h1 className="text-2xl font-bold text-gray-900">
+              <h1 className="text-3xl sm:text-4xl font-bold text-[#002147]">
                 CodeFusion Dashboard
               </h1>
               <p className="text-sm text-gray-600 mt-1">
@@ -114,7 +174,7 @@ export default function TeamsListPage() {
             </div>
             <button
               onClick={handleLogout}
-              className="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-lg transition duration-200 text-sm font-medium"
+              className="bg-[#002147] hover:bg-blue-900 text-white px-4 py-2 rounded-lg transition duration-200 text-sm font-medium"
             >
               Logout
             </button>
@@ -123,28 +183,109 @@ export default function TeamsListPage() {
       </header>
 
       {/* Main Content */}
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        {/* Stats Card */}
-        <div className="bg-white rounded-lg shadow-md p-6 mb-8">
-          <div className="flex items-center justify-between">
-            <div>
-              <p className="text-sm font-medium text-gray-600">Total Registrations</p>
-              <p className="text-4xl font-bold text-indigo-600 mt-2">
-                {isLoading ? "..." : totalCount}
-              </p>
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 sm:pt-40 lg:pt-48 pb-12">
+        
+        {/* Live Status */}
+        <div className="mb-12 flex items-center gap-3">
+          <div className="flex items-center gap-2">
+            <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
+            <span className="text-sm font-semibold text-gray-700">Live Status</span>
+          </div>
+        </div>
+
+        {/* Statistics Grid - Reordered */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+          {/* Total Teams */}
+          <div className="bg-white rounded-lg border-2 border-[#002147] p-8 hover:shadow-lg transition">
+            <p className="text-xs uppercase tracking-wider text-gray-600 font-semibold">Total Teams</p>
+            <p className="text-4xl sm:text-5xl font-bold text-[#002147] mt-3">
+              {isLoading ? "..." : stats.total}
+            </p>
+          </div>
+
+          {/* 3+ Members Teams */}
+          <div className="bg-white rounded-lg border-2 border-[#002147] p-8 hover:shadow-lg transition">
+            <p className="text-xs uppercase tracking-wider text-gray-600 font-semibold">3+ Members</p>
+            <p className="text-4xl sm:text-5xl font-bold text-[#002147] mt-3">
+              {isLoading ? "..." : stats.college3}
+            </p>
+          </div>
+
+          {/* 4+ Members Teams */}
+          <div className="bg-white rounded-lg border-2 border-[#002147] p-8 hover:shadow-lg transition">
+            <p className="text-xs uppercase tracking-wider text-gray-600 font-semibold">4+ Members</p>
+            <p className="text-4xl sm:text-5xl font-bold text-[#002147] mt-3">
+              {isLoading ? "..." : stats.college4}
+            </p>
+          </div>
+
+          {/* 2+ Members Teams */}
+          <div className="bg-white rounded-lg border-2 border-[#002147] p-8 hover:shadow-lg transition">
+            <p className="text-xs uppercase tracking-wider text-gray-600 font-semibold">2+ Members</p>
+            <p className="text-4xl sm:text-5xl font-bold text-[#002147] mt-3">
+              {isLoading ? "..." : stats.college2}
+            </p>
+          </div>
+        </div>
+
+        {/* Colleges Stats */}
+        {!isLoading && colleges.length > 0 && (
+          <div className="bg-[#00214710] rounded-lg p-6 mb-8 border border-[#002147]">
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+              {colleges.map(college => {
+                const count = teams.filter(t => t.leader?.college === college).length;
+                return (
+                  <div key={college} className="text-center">
+                    <p className="text-xs text-gray-600 truncate">{college}</p>
+                    <p className="text-2xl font-bold text-[#002147]">{count}</p>
+                  </div>
+                );
+              })}
             </div>
-            <div className="bg-indigo-100 p-4 rounded-full">
-              <svg className="w-8 h-8 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-              </svg>
+          </div>
+        )}
+
+        {/* Filters Section */}
+        <div className="bg-white rounded-lg border border-gray-200 p-6 mb-8">
+          <div className="flex flex-col sm:flex-row gap-4">
+            {/* Search */}
+            <div className="flex-1 relative">
+              <Search className="absolute left-3 top-3 text-gray-400 w-5 h-5" />
+              <input
+                type="text"
+                placeholder="Search by team name, ID, or leader..."
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#002147] text-sm"
+              />
             </div>
+
+            {/* College Filter */}
+            <select
+              value={selectedCollege}
+              onChange={(e) => setSelectedCollege(e.target.value)}
+              className="px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#002147] bg-white text-sm cursor-pointer"
+            >
+              <option value="all">All Colleges</option>
+              {colleges.map(college => (
+                <option key={college} value={college}>{college}</option>
+              ))}
+            </select>
+
+            {/* Refresh Button */}
+            <button
+              onClick={fetchTeams}
+              className="px-4 py-2 bg-[#002147] text-white rounded-lg hover:bg-blue-900 transition text-sm font-medium"
+            >
+              Refresh
+            </button>
           </div>
         </div>
 
         {/* Loading State */}
         {isLoading && (
           <div className="text-center py-12">
-            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-indigo-600 mx-auto mb-4"></div>
+            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#002147] mx-auto mb-4"></div>
             <p className="text-gray-600">Loading teams data...</p>
           </div>
         )}
@@ -152,11 +293,11 @@ export default function TeamsListPage() {
         {/* Error State */}
         {error && !isLoading && (
           <div className="bg-red-50 border border-red-200 rounded-lg p-6 text-center">
-            <p className="text-red-700 font-medium mb-2">Error loading teams</p>
+            <p className="text-red-700 font-semibold mb-2">Error loading teams</p>
             <p className="text-red-600 text-sm mb-4">{error}</p>
             <button
               onClick={fetchTeams}
-              className="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-lg transition duration-200 text-sm"
+              className="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-lg transition text-sm"
             >
               Retry
             </button>
@@ -165,167 +306,93 @@ export default function TeamsListPage() {
 
         {/* Empty State */}
         {!isLoading && !error && teams.length === 0 && (
-          <div className="bg-white rounded-lg shadow-md p-12 text-center">
-            <p className="text-gray-600 text-lg">No teams registered yet</p>
+          <div className="bg-white rounded-lg border border-gray-200 p-12 text-center">
+            <p className="text-gray-600 text-lg font-semibold">No teams have registered yet</p>
           </div>
         )}
 
-        {/* Teams List */}
-        {!isLoading && !error && teams.length > 0 && (
-          <div className="space-y-6">
-            {teams.map((team, index) => (
-              <div
-                key={team._id}
-                className="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-200"
-              >
-                {/* Team Header */}
-                <div className="bg-gradient-to-r from-indigo-500 to-purple-600 text-white px-6 py-4 rounded-t-lg">
-                  <div className="flex justify-between items-start">
-                    <div>
-                      <h2 className="text-xl font-bold mb-1">{team.teamName}</h2>
-                      <p className="text-indigo-100 text-sm">
-                        Registration ID: {team.registrationId}
-                      </p>
-                    </div>
-                    <div className="bg-white/20 px-3 py-1 rounded-full text-sm font-medium">
-                      Team #{index + 1}
-                    </div>
-                  </div>
-                </div>
+        {/* No Filters Match State */}
+        {!isLoading && !error && teams.length > 0 && sortedTeams.length === 0 && (
+          <div className="bg-white rounded-lg border border-gray-200 p-12 text-center">
+            <p className="text-gray-600 text-lg">No teams match your filters</p>
+          </div>
+        )}
 
-                {/* Team Details */}
-                <div className="px-6 py-4">
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
-                    <div className="bg-gray-50 p-3 rounded-lg">
-                      <p className="text-xs text-gray-600 mb-1">Team Size</p>
-                      <p className="text-lg font-semibold text-gray-900">
-                        {team.teamSize} Members
-                      </p>
+        {/* Teams Table */}
+        {!isLoading && !error && sortedTeams.length > 0 && (
+          <div className="overflow-x-auto border border-gray-200 rounded-lg">
+            <table className="w-full text-sm">
+              <thead>
+                <tr className="bg-[#002147] text-white border-b">
+                  <th className="px-4 py-3 text-left font-semibold cursor-pointer hover:bg-blue-900" onClick={() => handleSort("teamName")}>
+                    <div className="flex items-center gap-2">
+                      Team Name
+                      {sortConfig.key === "teamName" && (
+                        <ChevronDown className={`w-4 h-4 transition ${sortConfig.direction === "desc" ? "rotate-180" : ""}`} />
+                      )}
                     </div>
-                    <div className="bg-gray-50 p-3 rounded-lg">
-                      <p className="text-xs text-gray-600 mb-1">Problem Statement</p>
-                      <p className="text-lg font-semibold text-gray-900">
-                        {team.problemStatement}
-                      </p>
+                  </th>
+                  <th className="px-4 py-3 text-left font-semibold cursor-pointer hover:bg-blue-900" onClick={() => handleSort("registrationId")}>
+                    <div className="flex items-center gap-2">
+                      Registration ID
+                      {sortConfig.key === "registrationId" && (
+                        <ChevronDown className={`w-4 h-4 transition ${sortConfig.direction === "desc" ? "rotate-180" : ""}`} />
+                      )}
                     </div>
-                    <div className="bg-gray-50 p-3 rounded-lg">
-                      <p className="text-xs text-gray-600 mb-1">Registered On</p>
-                      <p className="text-lg font-semibold text-gray-900">
-                        {new Date(team.createdAt).toLocaleDateString()}
-                      </p>
+                  </th>
+                  <th className="px-4 py-3 text-left font-semibold cursor-pointer hover:bg-blue-900" onClick={() => handleSort("teamSize")}>
+                    <div className="flex items-center gap-2">
+                      Team Size
+                      {sortConfig.key === "teamSize" && (
+                        <ChevronDown className={`w-4 h-4 transition ${sortConfig.direction === "desc" ? "rotate-180" : ""}`} />
+                      )}
                     </div>
-                  </div>
+                  </th>
+                  <th className="px-4 py-3 text-left font-semibold">Leader Name</th>
+                  <th className="px-4 py-3 text-left font-semibold">Leader Email</th>
+                  <th className="px-4 py-3 text-left font-semibold">College</th>
+                  <th className="px-4 py-3 text-left font-semibold">Department</th>
+                  <th className="px-4 py-3 text-left font-semibold cursor-pointer hover:bg-blue-900" onClick={() => handleSort("createdAt")}>
+                    <div className="flex items-center gap-2">
+                      Registered On
+                      {sortConfig.key === "createdAt" && (
+                        <ChevronDown className={`w-4 h-4 transition ${sortConfig.direction === "desc" ? "rotate-180" : ""}`} />
+                      )}
+                    </div>
+                  </th>
+                  <th className="px-4 py-3 text-left font-semibold">Problem Statement</th>
+                </tr>
+              </thead>
+              <tbody>
+                {sortedTeams.map((team, index) => (
+                  <tr 
+                    key={team._id} 
+                    className={`border-b hover:bg-[#00214710] transition ${index % 2 === 0 ? "bg-white" : "bg-gray-50"}`}
+                  >
+                    <td className="px-4 py-3 font-semibold text-gray-900">{team.teamName}</td>
+                    <td className="px-4 py-3 text-gray-700">{team.registrationId}</td>
+                    <td className="px-4 py-3 text-gray-700">
+                      <span className="bg-[#00214710] text-[#002147] px-2 py-1 rounded font-semibold">
+                        {team.teamSize}
+                      </span>
+                    </td>
+                    <td className="px-4 py-3 text-gray-700">{team.leader?.name || "—"}</td>
+                    <td className="px-4 py-3 text-gray-700 text-xs">{team.leader?.email || "—"}</td>
+                    <td className="px-4 py-3 text-gray-700">{team.leader?.college || "—"}</td>
+                    <td className="px-4 py-3 text-gray-700">{team.leader?.department || "—"}</td>
+                    <td className="px-4 py-3 text-gray-700 text-xs">{new Date(team.createdAt).toLocaleDateString()}</td>
+                    <td className="px-4 py-3 text-gray-700 max-w-xs truncate">{team.problemStatement}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        )}
 
-                  {/* Leader Details - Only show if leader data exists */}
-                  {team.leader && (
-                    <div className="mb-6">
-                      <h3 className="text-lg font-semibold text-gray-900 mb-3 flex items-center">
-                        <span className="bg-indigo-100 text-indigo-800 px-2 py-1 rounded text-xs font-bold mr-2">
-                          LEADER
-                        </span>
-                        Team Leader
-                      </h3>
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 bg-indigo-50 p-4 rounded-lg">
-                        <div>
-                          <p className="text-xs text-gray-600">Name</p>
-                          <p className="font-medium text-gray-900">{team.leader.name}</p>
-                        </div>
-                        <div>
-                          <p className="text-xs text-gray-600">Email</p>
-                          <p className="font-medium text-gray-900">{team.leader.email}</p>
-                        </div>
-                        <div>
-                          <p className="text-xs text-gray-600">Phone</p>
-                          <p className="font-medium text-gray-900">{team.leader.phone}</p>
-                        </div>
-                        <div>
-                          <p className="text-xs text-gray-600">College</p>
-                          <p className="font-medium text-gray-900">{team.leader.college}</p>
-                        </div>
-                        <div>
-                          <p className="text-xs text-gray-600">Department</p>
-                          <p className="font-medium text-gray-900">{team.leader.department}</p>
-                        </div>
-                        <div>
-                          <p className="text-xs text-gray-600">Year</p>
-                          <p className="font-medium text-gray-900">Year {team.leader.year}</p>
-                        </div>
-                      </div>
-                    </div>
-                  )}
-
-                  {/* Show message if leader data is missing */}
-                  {!team.leader && (
-                    <div className="mb-6 bg-yellow-50 border border-yellow-200 rounded-lg p-4">
-                      <p className="text-yellow-800 text-sm">
-                        ⚠️ Leader information is incomplete for this team
-                      </p>
-                    </div>
-                  )}
-
-                  {/* Team Members */}
-                  {team.members && (team.members.member2 || team.members.member3) && (
-                    <div>
-                      <h3 className="text-lg font-semibold text-gray-900 mb-3 flex items-center">
-                        <span className="bg-purple-100 text-purple-800 px-2 py-1 rounded text-xs font-bold mr-2">
-                          MEMBERS
-                        </span>
-                        Team Members
-                      </h3>
-                      <div className="space-y-4">
-                        {/* Member 2 */}
-                        {team.members.member2 && (
-                          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 bg-purple-50 p-4 rounded-lg">
-                            <div>
-                              <p className="text-xs text-gray-600">Name</p>
-                              <p className="font-medium text-gray-900">
-                                {team.members.member2.name}
-                              </p>
-                            </div>
-                            <div>
-                              <p className="text-xs text-gray-600">Email</p>
-                              <p className="font-medium text-gray-900">
-                                {team.members.member2.email}
-                              </p>
-                            </div>
-                            <div>
-                              <p className="text-xs text-gray-600">Phone</p>
-                              <p className="font-medium text-gray-900">
-                                {team.members.member2.phone}
-                              </p>
-                            </div>
-                          </div>
-                        )}
-
-                        {/* Member 3 */}
-                        {team.members.member3 && (
-                          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 bg-purple-50 p-4 rounded-lg">
-                            <div>
-                              <p className="text-xs text-gray-600">Name</p>
-                              <p className="font-medium text-gray-900">
-                                {team.members.member3.name}
-                              </p>
-                            </div>
-                            <div>
-                              <p className="text-xs text-gray-600">Email</p>
-                              <p className="font-medium text-gray-900">
-                                {team.members.member3.email}
-                              </p>
-                            </div>
-                            <div>
-                              <p className="text-xs text-gray-600">Phone</p>
-                              <p className="font-medium text-gray-900">
-                                {team.members.member3.phone}
-                              </p>
-                            </div>
-                          </div>
-                        )}
-                      </div>
-                    </div>
-                  )}
-                </div>
-              </div>
-            ))}
+        {/* Footer Info */}
+        {!isLoading && !error && sortedTeams.length > 0 && (
+          <div className="mt-6 text-sm text-gray-600 text-center">
+            Showing {sortedTeams.length} of {teams.length} teams
           </div>
         )}
       </main>
