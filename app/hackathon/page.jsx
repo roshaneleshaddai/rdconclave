@@ -303,10 +303,10 @@ export default function Hackathon() {
             </div>
             <div className="flex-1 flex flex-col items-center justify-center font-bold">
               <p className="text-center">
-                Registration Deadline:<span className="text-[#002147]"> 5th January 2026</span>
+                Registration Deadline:<span className="text-[#002147]"> 8th January 2026</span>
               </p>
               <p className="text-center">
-                Final Round Notification:<span className="text-[#002147]"> 8th January 2026</span>
+                Final Round Notification:<span className="text-[#002147]"> 11th January 2026</span>
               </p>
               <p className="text-center">
                 Final Round:<span className="text-[#002147]"> January 23rd 2026, 11:00 AM - January 24th 2026, 11:00 AM</span>
