@@ -6,7 +6,12 @@ import Link from 'next/link';
 export default function Hackathon() {
   const [isLeftInView, setIsLeftInView] = useState(false);
   const [isRightInView, setIsRightInView] = useState(false);
-  const [timeLeft, setTimeLeft] = useState({});
+  const [timeLeft, setTimeLeft] = useState({
+    days: 0,
+    hours: 0,
+    minutes: 0,
+    seconds: 0,
+  });
   const sectionLeftRef = useRef(null);
   const sectionRightRef = useRef(null);
   const [name, setName] = useState("");
@@ -31,7 +36,7 @@ export default function Hackathon() {
     { label: "PFMS Unique code", value: "VRSEC" },
   ];
 
-  const targetDate = new Date("2026-01-23T11:00:00").getTime();
+  const targetDate = new Date("2026-01-23T00:00:00").getTime();
 
   useEffect(() => {
     const calculateTimeLeft = () => {
@@ -60,6 +65,7 @@ export default function Hackathon() {
       }
     };
 
+    calculateTimeLeft();
     const interval = setInterval(calculateTimeLeft, 1000);
 
     const observerOptions = {
@@ -167,6 +173,126 @@ export default function Hackathon() {
         <div className="bg-[#002147]/10 bg-opacity-20 p-8 lg:mt-0 mt-52 rounded-lg mx-6 transition-opacity duration-1000">
           <h1 className="text-4xl font-bold text-center text-[#002147]">inSAHEthon</h1>
         </div>
+
+        {/* Countdown Timer Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+          viewport={{ once: true }}
+          className="bg-gradient-to-br from-white via-blue-50 to-[#002147]/20 rounded-lg p-8 md:p-12 mt-10 mx-5 md:mx-10 shadow-lg"
+        >
+          <h2 className="text-2xl md:text-4xl text-[#002147] font-bold text-center mb-2">
+            Event Countdown
+          </h2>
+          <p className="text-center text-gray-600 mb-8 text-sm md:text-base">
+            January 23rd, 2026
+          </p>
+
+          <div className="flex justify-center items-center gap-2 md:gap-4 lg:gap-6">
+            {/* Days */}
+            <motion.div
+              initial={{ scale: 0.8, opacity: 0 }}
+              whileInView={{ scale: 1, opacity: 1 }}
+              transition={{ duration: 0.5, delay: 0 }}
+              className="flex flex-col items-center"
+            >
+              <div className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 flex items-center justify-center rounded-full bg-gradient-to-br from-[#002147] to-[#004080] shadow-lg hover:shadow-xl transition-shadow"
+              >
+                <span className="text-2xl sm:text-3xl md:text-4xl font-bold text-white">
+                  {timeLeft.days}
+                </span>
+              </div>
+              <p className="text-[#002147] font-semibold text-xs sm:text-sm md:text-base mt-3">
+                DAYS
+              </p>
+            </motion.div>
+
+            {/* Divider */}
+            <motion.div
+              initial={{ scale: 0.5, opacity: 0 }}
+              whileInView={{ scale: 1, opacity: 1 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="text-2xl md:text-4xl text-[#002147] font-bold"
+            >
+              :
+            </motion.div>
+
+            {/* Hours */}
+            <motion.div
+              initial={{ scale: 0.8, opacity: 0 }}
+              whileInView={{ scale: 1, opacity: 1 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="flex flex-col items-center"
+            >
+              <div className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 flex items-center justify-center rounded-full bg-gradient-to-br from-[#002147] to-[#004080] shadow-lg hover:shadow-xl transition-shadow"
+              >
+                <span className="text-2xl sm:text-3xl md:text-4xl font-bold text-white">
+                  {timeLeft.hours}
+                </span>
+              </div>
+              <p className="text-[#002147] font-semibold text-xs sm:text-sm md:text-base mt-3">
+                HOURS
+              </p>
+            </motion.div>
+
+            {/* Divider */}
+            <motion.div
+              initial={{ scale: 0.5, opacity: 0 }}
+              whileInView={{ scale: 1, opacity: 1 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              className="text-2xl md:text-4xl text-[#002147] font-bold"
+            >
+              :
+            </motion.div>
+
+            {/* Minutes */}
+            <motion.div
+              initial={{ scale: 0.8, opacity: 0 }}
+              whileInView={{ scale: 1, opacity: 1 }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+              className="flex flex-col items-center"
+            >
+              <div className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 flex items-center justify-center rounded-full bg-gradient-to-br from-[#002147] to-[#004080] shadow-lg hover:shadow-xl transition-shadow"
+              >
+                <span className="text-2xl sm:text-3xl md:text-4xl font-bold text-white">
+                  {timeLeft.minutes}
+                </span>
+              </div>
+              <p className="text-[#002147] font-semibold text-xs sm:text-sm md:text-base mt-3">
+                MINUTES
+              </p>
+            </motion.div>
+
+            {/* Divider */}
+            <motion.div
+              initial={{ scale: 0.5, opacity: 0 }}
+              whileInView={{ scale: 1, opacity: 1 }}
+              transition={{ duration: 0.5, delay: 0.5 }}
+              className="text-2xl md:text-4xl text-[#002147] font-bold"
+            >
+              :
+            </motion.div>
+
+            {/* Seconds */}
+            <motion.div
+              initial={{ scale: 0.8, opacity: 0 }}
+              whileInView={{ scale: 1, opacity: 1 }}
+              transition={{ duration: 0.5, delay: 0.6 }}
+              className="flex flex-col items-center"
+            >
+              <div className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 flex items-center justify-center rounded-full bg-gradient-to-br from-[#002147] to-[#004080] shadow-lg hover:shadow-xl transition-shadow"
+              >
+                <span className="text-2xl sm:text-3xl md:text-4xl font-bold text-white">
+                  {timeLeft.seconds}
+                </span>
+              </div>
+              <p className="text-[#002147] font-semibold text-xs sm:text-sm md:text-base mt-3">
+                SECONDS
+              </p>
+            </motion.div>
+          </div>
+        </motion.div>
 
         <div className="flex flex-col items-center lg:flex-row lg:justify-center min-h-full p-4 justify-around">
           <div className="my-5 bg-[#002147]/10 bg-opacity-20 p-6 rounded-lg mx-8 cursor-pointer hover:shadow-xl hover:bg-[#FFD700]/10 flex flex-col items-center justify-center h-[24rem] lg:w-[23rem] w-[22rem]">
