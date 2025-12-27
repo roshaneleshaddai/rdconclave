@@ -373,7 +373,7 @@ const RegistrationForm = () => {
         })
       };
 
-      const response = await fetch('https://rd-backend-m7gd.onrender.com/api/teams/register', {
+      const response = await fetch('https://rd-backend-m7gd.onrender.com/api/faketeams/fake/register', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
