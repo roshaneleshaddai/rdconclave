@@ -136,7 +136,7 @@ const CodeFusionHero = () => {
           <p
             className="text-sm sm:text-base md:text-lg tracking-[0.12em] sm:tracking-[0.18em] animate-org-line-2 text-center font-medium"
           >
-            DEPARTMENTS OF IT &amp; CSE
+            DEPARTMENTS OF CSE &amp; IT
           </p>
         </div>
       </div>
