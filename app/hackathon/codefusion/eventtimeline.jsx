@@ -6,7 +6,7 @@ import {
 } from 'lucide-react';
 
 const TimelineData = [
-  { date: "DEC 28", title: "Registration Opens", icon: ClipboardCheck, desc: "Portal live for team details and Domain Selection." },
+  { date: "DEC 29", title: "Registration Opens", icon: ClipboardCheck, desc: "Portal live for team details and Domain Selection." },
   { date: "JAN 08", title: "Registration Closes", icon: CalendarX, desc: "Final deadline; no late entries allowed." },
   { date: "JAN 11", title: "Shortlisting Round", icon: Filter, desc: "Technical evaluation by expert panels." },
   { date: "JAN 14", title: "Results Announcement", icon: Megaphone, desc: "Teams cleared for participation announced." },
