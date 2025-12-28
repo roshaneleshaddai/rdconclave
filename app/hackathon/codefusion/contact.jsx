@@ -146,7 +146,7 @@ const AcademicContactWithCoordinators = () => {
 
                   {/* Instagram Box */}
                   <a
-                    href="https://www.instagram.com/research_conclave?igsh=djZhMmsydThidGZj"
+                    href="https://www.instagram.com/codefusion_rdconclave26/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="bg-white border-[1.5px] border-[rgba(0,33,71,0.3)] rounded-[8px] p-4 hover:border-[rgba(0,33,71,0.6)] hover:shadow-md hover:shadow-[rgba(0,33,71,0.1)] transition-all duration-300 block"
