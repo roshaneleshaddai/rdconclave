@@ -101,8 +101,8 @@ const HackathonTimeline = () => {
             alignItems: 'center',
             position: 'relative',
             minHeight: '600px',
-            paddingTop: '200px',
-            paddingBottom: '200px',
+            paddingTop: '80px',
+            paddingBottom: '80px',
             gap: '20px'
           }}>
             {TimelineData.map((item, index) => {
