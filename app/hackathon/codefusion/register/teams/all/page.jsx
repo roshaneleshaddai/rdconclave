@@ -122,101 +122,100 @@ export default function TeamsListPage() {
           }
           body {
             font-family: 'Arial', sans-serif;
-            background-color: #f5f5f5;
+            background-color: white;
+            padding: 20px;
           }
           .container {
             width: 100%;
             max-width: 800px;
             margin: 0 auto;
             background-color: white;
-            padding: 40px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
           }
           .header {
             text-align: center;
-            margin-bottom: 40px;
-            border-bottom: 3px solid #002147;
-            padding-bottom: 20px;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #002147;
+            padding-bottom: 15px;
           }
           .header h1 {
             color: #002147;
-            font-size: 36px;
+            font-size: 28px;
             font-weight: bold;
-            margin-bottom: 5px;
+            margin-bottom: 3px;
           }
           .header p {
             color: #666;
-            font-size: 14px;
-            margin-top: 10px;
+            font-size: 11px;
+            margin-top: 5px;
           }
           .stats-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
-            margin-bottom: 40px;
+            gap: 15px;
+            margin-bottom: 30px;
           }
           .stat-card {
             background-color: #f9f9f9;
-            border: 2px solid #002147;
-            border-radius: 8px;
-            padding: 20px;
-            text-align: center;
-          }
-          .stat-label {
-            color: #666;
-            font-size: 12px;
-            text-transform: uppercase;
-            font-weight: bold;
-            margin-bottom: 10px;
-            letter-spacing: 1px;
-          }
-          .stat-value {
-            color: #002147;
-            font-size: 42px;
-            font-weight: bold;
-          }
-          .colleges-section {
-            margin-top: 40px;
-          }
-          .colleges-title {
-            color: #002147;
-            font-size: 18px;
-            font-weight: bold;
-            margin-bottom: 20px;
-            border-bottom: 2px solid #002147;
-            padding-bottom: 10px;
-          }
-          .colleges-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 15px;
-          }
-          .college-item {
-            background-color: #00214710;
-            border: 1px solid #002147;
+            border: 1.5px solid #002147;
             border-radius: 6px;
             padding: 15px;
             text-align: center;
           }
+          .stat-label {
+            color: #666;
+            font-size: 10px;
+            text-transform: uppercase;
+            font-weight: bold;
+            margin-bottom: 8px;
+            letter-spacing: 0.5px;
+          }
+          .stat-value {
+            color: #002147;
+            font-size: 32px;
+            font-weight: bold;
+          }
+          .colleges-section {
+            margin-top: 30px;
+          }
+          .colleges-title {
+            color: #002147;
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            border-bottom: 1.5px solid #002147;
+            padding-bottom: 8px;
+          }
+          .colleges-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+          }
+          .college-item {
+            background-color: #00214710;
+            border: 1px solid #002147;
+            border-radius: 5px;
+            padding: 12px;
+            text-align: center;
+          }
           .college-name {
             color: #333;
-            font-size: 12px;
-            margin-bottom: 8px;
+            font-size: 9px;
+            margin-bottom: 6px;
             font-weight: 600;
             word-break: break-word;
           }
           .college-count {
             color: #002147;
-            font-size: 24px;
+            font-size: 18px;
             font-weight: bold;
           }
           .footer {
-            margin-top: 30px;
+            margin-top: 25px;
             text-align: center;
             color: #999;
-            font-size: 12px;
+            font-size: 10px;
             border-top: 1px solid #ddd;
-            padding-top: 15px;
+            padding-top: 12px;
           }
         </style>
       </head>
@@ -266,25 +265,31 @@ export default function TeamsListPage() {
             <p>Generated on ${new Date().toLocaleString()}</p>
           </div>
         </div>
+        <script>
+          window.onload = function() {
+            window.print();
+          };
+        </script>
       </body>
       </html>
     `;
 
-    // Create blob and trigger download
+    // Create blob and download as PDF
     const blob = new Blob([htmlContent], { type: "text/html;charset=utf-8;" });
     const link = document.createElement("a");
     const url = URL.createObjectURL(blob);
     
     link.setAttribute("href", url);
-    link.setAttribute("download", `CodeFusion_Statistics_${new Date().toISOString().split('T')[0]}.html`);
+    link.setAttribute("download", `CodeFusion_Statistics_${new Date().toISOString().split('T')[0]}.pdf`);
     link.style.visibility = "hidden";
     
     document.body.appendChild(link);
     
-    // Use browser's print-to-PDF feature
+    // Open in new tab to print as PDF
+    const printWindow = window.open(url, "_blank");
     setTimeout(() => {
-      window.open(url, "_blank");
-    }, 100);
+      printWindow.print();
+    }, 250);
     
     document.body.removeChild(link);
   };
