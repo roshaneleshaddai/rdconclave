@@ -90,70 +90,69 @@ const Header = () => {
     >
       <source src="/images/bg.mp4" type="video/mp4" />
     </video> */}
-      <div className="flex items-center justify-evenly md:p-2 md:mx-10 max-w-8xl">
+      <div className="flex items-center justify-between md:justify-evenly md:p-2 md:mx-10 max-w-8xl px-2">
+        {/* Hamburger Menu Icon - Mobile Only (Left Side) */}
+        <div className="md:hidden flex items-center">
+          {isOpen ? (
+            <FaTimes onClick={toggleMenu} className="text-2xl cursor-pointer z-50 text-[#002147]" /> 
+          ) : (
+            <FaBars onClick={toggleMenu} className="text-2xl cursor-pointer text-[#002147]"/>
+          )}
+        </div>
+
         {/* Logo Section */}
-        <div className="flex items-center justify-evenly space-x-0 md:space-x-4 mx-2">
+        <div className="flex items-center justify-center md:justify-evenly space-x-0 md:space-x-4 mx-auto md:mx-0">
               <Image
             // src="/images/vrseclogo.png"
             src="/images/sahelogo.png"
             alt="VRSEC Logo"
-            width={isScrolled ? 70 : 90}
-            height={isScrolled ? 70 : 90}
-            className={`lg:block hidden object-scale-down transition-all duration-300 lg:w-120 lg:h-90`}
+            width={isScrolled ? 60 : 70}
+            height={isScrolled ? 60 : 70}
+            className={`hidden lg:block object-scale-down transition-all duration-300`}
             loading="lazy"
           />
           <Image
             // src="/images/vrseclogo.png"
             src="/images/sahelogo.png"
             alt="VRSEC Logo"
-            width={isScrolled ? 110 : 120}
-            height={isScrolled ? 110 : 120}
-            className={`lg:hidden block object-scale-down transition-all duration-300 w-24 h-32 `}
+            width={isScrolled ? 70 : 80}
+            height={isScrolled ? 70 : 80}
+            className={`lg:hidden block object-scale-down transition-all duration-300`}
             loading="lazy"
           />
-          {/* <Image
-              // src="/images/ITlogo.jpeg"
-              src="/images/it_logoo.jpg"
-              // src="/images/it_logo.jfif"
-              alt="Information Technology"
-              width={isScrolled ? 140 : 160}
-              height={isScrolled ? 140 : 160}
-              className={`hidden lg:block  object-scale-down transition-all duration-300 w-24 h-32 `}
-            /> */}
-            
 
         </div>
 
-        <div className="">
-          <div className={`md:block md:text-center transition-all duration-300 ease-in-out ${isScrolled ? 'text-base md:text-lg' : 'text-lg md:text-xl'}`}>
+        <div className="flex-1 md:flex-none">
+          <div className={`md:block md:text-center transition-all duration-300 ease-in-out text-center md:text-center ${isScrolled ? 'text-xs md:text-base' : 'text-sm md:text-lg'}`}>
 
-            <h2 className={`font-bold text-black text-5xl ${isScrolled ? 'hidden' : ''}`}>
+            <h2 className={`font-bold text-black ${isScrolled ? 'text-2xl' : 'text-2xl md:text-4xl'} ${isScrolled ? 'hidden' : ''}`}>
             SIDDHARTHA
             </h2>
-            <div className={`border-b-2 border-[#002147] mx-auto ${isScrolled ? 'hidden' : ''}`} style={{width: '100%'}}></div>
+            <div className={`border-b-2 border-[#002147] mx-auto ${isScrolled ? 'hidden' : ''}`} style={{width: '80%'}}></div>
 
-            <h2 className={`font-bold text-black ${isScrolled ? 'hidden' : ''}`}>
+            <h2 className={`font-bold text-black text-xs md:text-sm ${isScrolled ? 'hidden' : ''}`}>
             ACADEMY OF HIGHER EDUCATION
             </h2>
-            <h2 className={`font-bold text-black  ${isScrolled ? '' : 'hidden'}`}>
+            <h2 className={`font-bold text-black text-xs md:text-sm ${isScrolled ? '' : 'hidden'}`}>
             SIDDHARTHA ACADEMY OF HIGHER EDUCATION
             </h2>
 
             <h2
-                className={`font-normal text-black ${
-                  isScrolled ? 'lg:text-sm text-xs' : 'lg:text-xs text-base'
+                className={`font-normal text-black text-xs md:text-sm ${
+                  isScrolled ? 'text-xs' : 'text-xs md:text-xs'
                 }`}
               >
                 An Institution Deemed to be <span className="font-semibold">University</span>
                 <br />
-                <span className="text-black lg:text-xs text-xs">(Under Section 3 of UGC Act, 1956)</span>
+                <span className="text-black text-xs">( Under Section 3 of UGC Act, 1956)</span>
                 <br/>
-                <span className="lg:text-xs text-xs"><span className="text-black">Kanuru, Vijayawada - 520 007, AP. www.vrsiddhartha.ac.in</span></span>
+                <span className="text-xs"><span className="text-black">Kanuru, Vijayawada - 520 007</span></span>
               </h2>
             </div>
           </div>
         <div>
-        <div className={`hidden md:flex items-center transition-all duration-300 ${isScrolled ? 'space-x-2' : 'space-x-4'}`}>
+        <div className={`hidden md:flex items-center transition-all duration-300 ${isScrolled ? 'space-x-2' : 'space-x-3'}`}>
         <div className="hidden md:block">
             {/* <Image
               src="/images/ITlogo.jpeg"
@@ -177,8 +176,8 @@ const Header = () => {
             <Image
               src="/images/s.jpeg"
               alt="springer"
-              width={isScrolled ? 90 : 100} 
-              height={isScrolled ? 90 : 100}
+              width={isScrolled ? 70 : 80} 
+              height={isScrolled ? 70 : 80}
               className="rounded-full"
             />
           </div>
@@ -186,95 +185,89 @@ const Header = () => {
           <Image
               src="/images/rclogo1.png"
               alt="Research conclave"
-              width={isScrolled ? 90 : 100} 
-              height={isScrolled ? 90 : 100}
+              width={isScrolled ? 70 : 80} 
+              height={isScrolled ? 70 : 80}
               className="rounded-full"
               
             />
           </div>
         </div>
         </div>
-
-        {/* Hamburger Menu Icon - Mobile Only */}
-        <div className="md:hidden flex items-center">
-          {isOpen ? (
-            <FaTimes onClick={toggleMenu} className="text-2xl cursor-pointer z-50 text-[#002147]" /> 
-          ) : (
-            <FaBars onClick={toggleMenu} className="text-2xl cursor-pointer text-[#002147]"/>
-          )}
-        </div>
       </div>
       
-      {/* Mobile Sidebar Navigation */}
+      {/* Mobile Sidebar Navigation (Left Side) */}
       <div
-        className={`fixed left-0 top-16 w-72 h-[calc(100vh-4rem)] bg-[#002147] text-white transition-transform duration-300 z-40 overflow-y-auto shadow-lg ${
+        className={`fixed left-0 top-0 w-64 h-screen bg-[#002147] text-white transition-transform duration-300 z-40 overflow-y-auto ${
           isOpen ? 'translate-x-0' : '-translate-x-full'
         }`}
       >
-        {/* Sidebar Header */}
-        <div className="bg-[#001a34] px-6 py-4 border-b-2 border-[#FFD700]">
-          <h3 className="text-lg font-bold text-[#FFD700]">Menu</h3>
+        {/* Close Button in Sidebar */}
+        <div className="flex justify-end p-4 border-b border-[#FFD700]">
+          <FaTimes 
+            onClick={toggleMenu} 
+            className="text-2xl cursor-pointer text-[#FFD700]" 
+          />
         </div>
 
         {/* Sidebar Navigation Links */}
         <nav className="flex flex-col">
           <Link
             href="/#home"
-            className="px-6 py-3 hover:bg-[#FFD700] hover:text-[#002147] border-b border-gray-600 transition-all duration-200 font-semibold text-sm"
+            className="px-6 py-4 hover:bg-[#FFD700]/20 hover:text-[#FFD700] border-b border-gray-700 transition-all duration-200 font-semibold"
             onClick={toggleMenu}
           >
-            🏠 Home
+            Home
           </Link>
           <Link
             href="/#about"
-            className="px-6 py-3 hover:bg-[#FFD700] hover:text-[#002147] border-b border-gray-600 transition-all duration-200 font-semibold text-sm"
+            className="px-6 py-4 hover:bg-[#FFD700]/20 hover:text-[#FFD700] border-b border-gray-700 transition-all duration-200 font-semibold"
             onClick={toggleMenu}
           >
-            ℹ️ About
+            About
           </Link>
           <Link
             href="/meet"
-            className="px-6 py-3 hover:bg-[#FFD700] hover:text-[#002147] border-b border-gray-600 transition-all duration-200 font-semibold text-sm"
+            className="px-6 py-4 hover:bg-[#FFD700]/20 hover:text-[#FFD700] border-b border-gray-700 transition-all duration-200 font-semibold"
             onClick={toggleMenu}
           >
-            👥 Industry-Academia Meet
+            Industry-Academia Meet
           </Link>
           <Link
             href="/hackathon"
-            className="px-6 py-3 hover:bg-[#FFD700] hover:text-[#002147] border-b border-gray-600 transition-all duration-200 font-semibold text-sm"
+            className="px-6 py-4 hover:bg-[#FFD700]/20 hover:text-[#FFD700] border-b border-gray-700 transition-all duration-200 font-semibold"
             onClick={toggleMenu}
           >
-            🚀 inSAHEthon
+            inSAHEthon
           </Link>
           <Link
             href="/journalpublications"
-            className="px-6 py-3 hover:bg-[#FFD700] hover:text-[#002147] border-b border-gray-600 transition-all duration-200 font-semibold text-sm"
+            className="px-6 py-4 hover:bg-[#FFD700]/20 hover:text-[#FFD700] border-b border-gray-700 transition-all duration-200 font-semibold"
             onClick={toggleMenu}
           >
-            📰 Journal Publication
+            Journal Publication
           </Link>
           <Link
             href="/speakers"
-            className="px-6 py-3 hover:bg-[#FFD700] hover:text-[#002147] border-b border-gray-600 transition-all duration-200 font-semibold text-sm"
+            className="px-6 py-4 hover:bg-[#FFD700]/20 hover:text-[#FFD700] border-b border-gray-700 transition-all duration-200 font-semibold"
             onClick={toggleMenu}
           >
-            🎤 Speakers
+            Speakers
           </Link>
           <Link
             href="/schedule"
-            className="px-6 py-3 hover:bg-[#FFD700] hover:text-[#002147] border-b border-gray-600 transition-all duration-200 font-semibold text-sm"
+            className="px-6 py-4 hover:bg-[#FFD700]/20 hover:text-[#FFD700] border-b border-gray-700 transition-all duration-200 font-semibold"
             onClick={toggleMenu}
           >
-            📅 Schedule
+            Schedule
           </Link>
 
           {/* Download Dropdown in Sidebar */}
-          <div className="px-6 py-4 border-b-2 border-[#FFD700] bg-[#001a34]">
-            <label className="block text-xs font-bold text-[#FFD700] mb-3 uppercase tracking-wider">
-              📥 Download Templates
+          <div className="px-6 py-4 border-b border-gray-700">
+            <label className="block text-sm font-semibold text-[#FFD700] mb-2">
+              Download Templates
             </label>
             <select
-              className="w-full bg-white text-[#002147] rounded-md p-2.5 font-semibold focus:ring-2 focus:ring-[#FFD700] text-sm"
+              className="w-full bg-white text-black rounded p-2 font-semibold focus:ring-2 focus:ring-[#FFD700]"
               defaultValue=""
               onChange={(e) => {
                 if (e.target.value !== "") {
@@ -296,10 +289,10 @@ const Header = () => {
 
           <Link
             href="/contact_us"
-            className="px-6 py-3 hover:bg-[#FFD700] hover:text-[#002147] transition-all duration-200 font-semibold text-sm"
+            className="px-6 py-4 hover:bg-[#FFD700]/20 hover:text-[#FFD700] transition-all duration-200 font-semibold"
             onClick={toggleMenu}
           >
-            📞 Contact us
+            Contact us
           </Link>
         </nav>
       </div>
