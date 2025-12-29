@@ -94,9 +94,9 @@ const Header = () => {
         {/* Hamburger Menu Icon - Mobile Only (Left Side) */}
         <div className="md:hidden flex items-center">
           {isOpen ? (
-            <FaTimes onClick={toggleMenu} className="text-2xl cursor-pointer z-50 text-[#002147]" /> 
+            <FaTimes onClick={toggleMenu} className="text-2xl cursor-pointer z-50 text-white bg-[#1a3a5c] p-2 rounded" /> 
           ) : (
-            <FaBars onClick={toggleMenu} className="text-2xl cursor-pointer text-[#002147]"/>
+            <FaBars onClick={toggleMenu} className="text-2xl cursor-pointer text-white bg-[#1a3a5c] p-2 rounded"/>
           )}
         </div>
 
