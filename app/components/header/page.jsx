@@ -192,103 +192,128 @@ const Header = () => {
               
             />
           </div>
-          {/* Hamburger Menu Icon */}
-          <div className="md:hidden">
-            <FaBars onClick={toggleMenu} className="text-2xl cursor-pointer" />
-          </div>
+        </div>
+        </div>
 
-          {/* Full Logo for Desktop */}
-          {/* <div className="hidden md:block">
-            <Image
-              src="/images/vikshitbharat.png"
-              alt="Azadi ka Amrit Mahostav"
-              width={isScrolled ? 90 : 100} 
-              height={isScrolled ? 90 : 100}
-              className="rounded-full"
-            />
-          </div> */}
-        </div>
-        </div>
-          <div className="md:hidden">
+        {/* Hamburger Menu Icon - Mobile Only */}
+        <div className="md:hidden flex items-center">
           {isOpen ? (
-            <FaTimes onClick={toggleMenu} className="text-xl cursor-pointer z-50 absolute right-6 top-8" /> 
+            <FaTimes onClick={toggleMenu} className="text-2xl cursor-pointer z-50 text-[#002147]" /> 
           ) : (
-            <FaBars onClick={toggleMenu} className="text-xl cursor-pointer absolute right-6 top-8"/>
+            <FaBars onClick={toggleMenu} className="text-2xl cursor-pointer text-[#002147]"/>
           )}
         </div>
       </div>
       
-
-      {/* Mobile Navigation Menu */}
-      <nav
-        className={`fixed left-0 top-0 w-full h-full bg-[#002147] text-white text-xl flex flex-col justify-center items-center transition-transform duration-300 ${isOpen ? 'translate-x-0' : '-translate-x-full'}`}
+      {/* Mobile Sidebar Navigation */}
+      <div
+        className={`fixed left-0 top-0 w-64 h-screen bg-[#002147] text-white transition-transform duration-300 z-40 overflow-y-auto ${
+          isOpen ? 'translate-x-0' : '-translate-x-full'
+        }`}
       >
-        <ul className="space-y-6 text-center ">
-        <li><Link
-        href="/#home"
-        className="" onClick={toggleMenu}>
-      Home
-      </Link>
-      </li>
-      <li><Link
-      href="/#about"
-      className="" onClick={toggleMenu}>
-        About
-        </Link></li>
+        {/* Close Button in Sidebar */}
+        <div className="flex justify-end p-4 border-b border-[#FFD700]">
+          <FaTimes 
+            onClick={toggleMenu} 
+            className="text-2xl cursor-pointer text-[#FFD700]" 
+          />
+        </div>
 
-        <li><Link
-          href="/meet"
-          className="" onClick={toggleMenu}>
-          Industry-Academia Meet
-        </Link></li>
-        <li><Link
-          href="/hackathon"
-          className="" onClick={toggleMenu}>
-          inSAHEthon
-        </Link></li>
-        <li><Link
-          href="/journalpublications"
-          className="" onClick={toggleMenu}>
-          Journal Publication
-        </Link></li>
-        <li><Link
-          href="/speakers"
-          className="" onClick={toggleMenu}>
-          Speakers
-        </Link></li>
-        <li><Link
-          href="/schedule"
-          className="" onClick={toggleMenu}>
-          Schedule
-        </Link></li>
-        <li>
-          <select
-            className="text-black w-3/4 rounded p-2 bg-white shadow-md focus:ring-2 focus:ring-blue-500 text-lg"
-            defaultValue=""
-            onChange={(e) => {
-              toggleMenu();
-              downloadFile(e.target.value);
-              e.target.value = "";
-            }}
+        {/* Sidebar Navigation Links */}
+        <nav className="flex flex-col">
+          <Link
+            href="/#home"
+            className="px-6 py-4 hover:bg-[#FFD700]/20 hover:text-[#FFD700] border-b border-gray-700 transition-all duration-200 font-semibold"
+            onClick={toggleMenu}
           >
-            <option value="" disabled>
-              Download
-            </option>
-            {fileNames.map((fileName, index) => (
-              <option key={index} value={index} className="text-sm">
-                {fileName}
-              </option>
-            ))}
-          </select>
-        </li>
+            Home
+          </Link>
+          <Link
+            href="/#about"
+            className="px-6 py-4 hover:bg-[#FFD700]/20 hover:text-[#FFD700] border-b border-gray-700 transition-all duration-200 font-semibold"
+            onClick={toggleMenu}
+          >
+            About
+          </Link>
+          <Link
+            href="/meet"
+            className="px-6 py-4 hover:bg-[#FFD700]/20 hover:text-[#FFD700] border-b border-gray-700 transition-all duration-200 font-semibold"
+            onClick={toggleMenu}
+          >
+            Industry-Academia Meet
+          </Link>
+          <Link
+            href="/hackathon"
+            className="px-6 py-4 hover:bg-[#FFD700]/20 hover:text-[#FFD700] border-b border-gray-700 transition-all duration-200 font-semibold"
+            onClick={toggleMenu}
+          >
+            inSAHEthon
+          </Link>
+          <Link
+            href="/journalpublications"
+            className="px-6 py-4 hover:bg-[#FFD700]/20 hover:text-[#FFD700] border-b border-gray-700 transition-all duration-200 font-semibold"
+            onClick={toggleMenu}
+          >
+            Journal Publication
+          </Link>
+          <Link
+            href="/speakers"
+            className="px-6 py-4 hover:bg-[#FFD700]/20 hover:text-[#FFD700] border-b border-gray-700 transition-all duration-200 font-semibold"
+            onClick={toggleMenu}
+          >
+            Speakers
+          </Link>
+          <Link
+            href="/schedule"
+            className="px-6 py-4 hover:bg-[#FFD700]/20 hover:text-[#FFD700] border-b border-gray-700 transition-all duration-200 font-semibold"
+            onClick={toggleMenu}
+          >
+            Schedule
+          </Link>
 
-              <li><Link
-          href="/contact_us"
-          className="" onClick={toggleMenu}>
-          Contact us
-        </Link></li>
-        </ul>
-      </nav>
+          {/* Download Dropdown in Sidebar */}
+          <div className="px-6 py-4 border-b border-gray-700">
+            <label className="block text-sm font-semibold text-[#FFD700] mb-2">
+              Download Templates
+            </label>
+            <select
+              className="w-full bg-white text-black rounded p-2 font-semibold focus:ring-2 focus:ring-[#FFD700]"
+              defaultValue=""
+              onChange={(e) => {
+                if (e.target.value !== "") {
+                  downloadFile(e.target.value);
+                }
+                e.target.value = "";
+              }}
+            >
+              <option value="" disabled>
+                Select a template
+              </option>
+              {fileNames.map((fileName, index) => (
+                <option key={index} value={index} className="text-sm">
+                  {fileName}
+                </option>
+              ))}
+            </select>
+          </div>
+
+          <Link
+            href="/contact_us"
+            className="px-6 py-4 hover:bg-[#FFD700]/20 hover:text-[#FFD700] transition-all duration-200 font-semibold"
+            onClick={toggleMenu}
+          >
+            Contact us
+          </Link>
+        </nav>
+      </div>
+
+      {/* Overlay for Mobile Sidebar */}
+      {isOpen && (
+        <div
+          className="fixed inset-0 bg-black/50 z-30 md:hidden"
+          onClick={toggleMenu}
+        />
+      )}
 
       {/* Desktop Navigation Menu */}
       <nav className="hidden md:flex items-center justify-center ">
