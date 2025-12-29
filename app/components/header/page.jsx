@@ -78,32 +78,24 @@ const Header = () => {
 
   return (
   <div className="relative w-full h-full">
-    <header className={`fixed w-full top-0 z-50 h-30 transition-all duration-300 ease-in-out  bg-[#F5F5F5] ${isScrolled ? 'py-1 md:py-1' : 'py-1 md:py-1'}`}>
+    <header className={`fixed w-full top-0 z-50 h-30 transition-all duration-300 ease-in-out bg-[#F5F5F5] ${isScrolled ? 'py-1 md:py-1' : 'py-1 md:py-1'}`}>
       <div className="w-full bg-[#002147] text-[#FFD700] text-center py-1 font-bold text-sm md:text-base">
         Golden Jubilee Year of Siddhartha Academy of General & Technical Education, Vijayawada
       </div>
-    {/* <video
       
-      loop
-      muted
-      className="absolute inset-0 w-full h-full object-cover z-[-1]"
-    >
-      <source src="/images/bg.mp4" type="video/mp4" />
-    </video> */}
-      <div className="flex items-center justify-between md:justify-evenly md:p-2 md:mx-10 max-w-8xl px-2">
+      <div className="flex items-center justify-between md:justify-evenly md:p-2 md:mx-10 max-w-8xl px-2 sm:px-3 md:px-4 lg:px-6">
         {/* Hamburger Menu Icon - Mobile Only (Left Side) */}
         <div className="md:hidden flex items-center">
           {isOpen ? (
-            <FaTimes onClick={toggleMenu} className="text-3xl cursor-pointer z-50 text-white bg-[#1a3a5c] p-2 rounded" /> 
+            <FaTimes onClick={toggleMenu} className="text-xl sm:text-2xl cursor-pointer z-50 text-white bg-[#1a3a5c] p-2 rounded" /> 
           ) : (
-            <FaBars onClick={toggleMenu} className="text-3xl cursor-pointer text-white bg-[#1a3a5c] p-2 rounded"/>
+            <FaBars onClick={toggleMenu} className="text-xl sm:text-2xl cursor-pointer text-white bg-[#1a3a5c] p-2 rounded"/>
           )}
         </div>
 
         {/* Logo Section */}
         <div className="flex items-center justify-center md:justify-evenly space-x-0 md:space-x-4 mx-auto md:mx-0">
-              <Image
-            // src="/images/vrseclogo.png"
+          <Image
             src="/images/sahelogo.png"
             alt="VRSEC Logo"
             width={isScrolled ? 60 : 70}
@@ -112,26 +104,24 @@ const Header = () => {
             loading="lazy"
           />
           <Image
-            // src="/images/vrseclogo.png"
             src="/images/sahelogo.png"
             alt="VRSEC Logo"
-            width={isScrolled ? 70 : 80}
-            height={isScrolled ? 70 : 80}
+            width={55}
+            height={55}
             className={`lg:hidden block object-scale-down transition-all duration-300`}
             loading="lazy"
           />
-
         </div>
 
         <div className="flex-1 md:flex-none">
           <div className={`md:block md:text-center transition-all duration-300 ease-in-out text-center md:text-center ${isScrolled ? 'text-xs md:text-base' : 'text-sm md:text-lg'}`}>
 
-            <h2 className={`font-bold text-black ${isScrolled ? 'text-2xl' : 'text-2xl md:text-4xl'} ${isScrolled ? 'hidden' : ''}`}>
+            <h2 className={`font-bold text-black ${isScrolled ? 'text-2xl' : 'text-lg sm:text-xl md:text-4xl'} ${isScrolled ? 'hidden' : ''}`}>
             SIDDHARTHA
             </h2>
             <div className={`border-b-2 border-[#002147] mx-auto ${isScrolled ? 'hidden' : ''}`} style={{width: '80%'}}></div>
 
-            <h2 className={`font-bold text-black text-xs md:text-sm ${isScrolled ? 'hidden' : ''}`}>
+            <h2 className={`font-bold text-black text-xs sm:text-sm md:text-sm ${isScrolled ? 'hidden' : ''}`}>
             ACADEMY OF HIGHER EDUCATION
             </h2>
             <h2 className={`font-bold text-black text-xs md:text-sm ${isScrolled ? '' : 'hidden'}`}>
@@ -153,25 +143,6 @@ const Header = () => {
           </div>
         <div>
         <div className={`hidden md:flex items-center transition-all duration-300 ${isScrolled ? 'space-x-2' : 'space-x-3'}`}>
-        <div className="hidden md:block">
-            {/* <Image
-              src="/images/ITlogo.jpeg"
-              alt="Information Technology"
-              width={isScrolled ? 90 : 100} 
-              height={isScrolled ? 90 : 100}
-              className="rounded-full"
-            /> */}
-    
-          </div>
-          {/* <div className="hidden md:block">
-            <Image
-              src="https://www.stthomaskannur.ac.in/stm2/img/static/ieee.png"
-              alt="ieee"
-              width={isScrolled ? 90 : 100} 
-              height={isScrolled ? 90 : 100}
-              className="rounded-full bg-white"
-            />
-          </div> */}
           <div className="hidden md:block">
             <Image
               src="/images/s.jpeg"
@@ -181,14 +152,13 @@ const Header = () => {
               className="rounded-full"
             />
           </div>
-          <div className="hidden  md:block">
-          <Image
+          <div className="hidden md:block">
+            <Image
               src="/images/rclogo1.png"
               alt="Research conclave"
               width={isScrolled ? 70 : 80} 
               height={isScrolled ? 70 : 80}
               className="rounded-full"
-              
             />
           </div>
         </div>
