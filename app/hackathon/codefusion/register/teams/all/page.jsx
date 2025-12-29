@@ -90,8 +90,8 @@ export default function TeamsListPage() {
   };
 
   const calculateStats = (teamsData) => {
-    const college3Count = teamsData.filter(t => t.teamSize >= 3).length;
-    const college4Count = teamsData.filter(t => t.teamSize >= 4).length;
+    const college3Count = teamsData.filter(t => t.teamSize == 3).length;
+    const college4Count = teamsData.filter(t => t.teamSize == 4).length;
     const collegeSet = new Set();
     
     teamsData.forEach(team => {
