@@ -6,9 +6,9 @@ const EventRegistration = () => {
   const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
   const [isMobile, setIsMobile] = useState(false);
 
-  // const handleRegisterClick = () => {
-  //   window.location.href = '/hackathon/codefusion/register';
-  // };
+  const handleRegisterClick = () => {
+    window.location.href = '/hackathon/codefusion/register';
+  };
 
   useEffect(() => {
     const checkMobile = () => setIsMobile(window.innerWidth <= 768);
@@ -228,43 +228,7 @@ const EventRegistration = () => {
           <CountdownUnit value={timeLeft.seconds} label="Seconds" />
         </div>
 
-        {/* REGISTER BUTTON DISABLED - WILL BE ACTIVATED LATER */}
-        <div style={{
-          display: 'flex',
-          justifyContent: 'center',
-          marginBottom: isMobile ? '40px' : '50px',
-          padding: isMobile ? '0 10px' : '0'
-        }}>
-          <div style={{
-            textAlign: 'center',
-            padding: isMobile ? '20px 16px' : '30px 40px',
-            background: 'rgba(0, 33, 71, 0.08)',
-            borderRadius: '16px',
-            border: '2px solid rgba(0, 33, 71, 0.15)'
-          }}>
-            <p style={{
-              fontSize: isMobile ? '18px' : '24px',
-              fontWeight: '700',
-              color: '#002147',
-              margin: '0',
-              fontFamily: 'SUSE, sans-serif',
-              letterSpacing: '-0.5px'
-            }}>
-              Registrations Opening Soon!
-            </p>
-            <p style={{
-              fontSize: isMobile ? '14px' : '16px',
-              color: '#6B7280',
-              margin: '8px 0 0 0',
-              fontFamily: 'SUSE, sans-serif',
-              fontWeight: '500'
-            }}>
-              Stay tuned for the official registration link
-            </p>
-          </div>
-        </div>
-
-        {/* ORIGINAL REGISTER BUTTON - UNCOMMENT TO ACTIVATE
+        {/* REGISTER BUTTON - ACTIVATED */}
         <div style={{
           display: 'flex',
           justifyContent: 'center',
@@ -324,6 +288,42 @@ const EventRegistration = () => {
                 Register Now
               </span>
             </button>
+          </div>
+        </div>
+
+        {/* DISABLED REGISTRATION MESSAGE - NOW IN COMMENTS
+        <div style={{
+          display: 'flex',
+          justifyContent: 'center',
+          marginBottom: isMobile ? '40px' : '50px',
+          padding: isMobile ? '0 10px' : '0'
+        }}>
+          <div style={{
+            textAlign: 'center',
+            padding: isMobile ? '20px 16px' : '30px 40px',
+            background: 'rgba(0, 33, 71, 0.08)',
+            borderRadius: '16px',
+            border: '2px solid rgba(0, 33, 71, 0.15)'
+          }}>
+            <p style={{
+              fontSize: isMobile ? '18px' : '24px',
+              fontWeight: '700',
+              color: '#002147',
+              margin: '0',
+              fontFamily: 'SUSE, sans-serif',
+              letterSpacing: '-0.5px'
+            }}>
+              Registrations Opening Soon!
+            </p>
+            <p style={{
+              fontSize: isMobile ? '14px' : '16px',
+              color: '#6B7280',
+              margin: '8px 0 0 0',
+              fontFamily: 'SUSE, sans-serif',
+              fontWeight: '500'
+            }}>
+              Stay tuned for the official registration link
+            </p>
           </div>
         </div>
         */}

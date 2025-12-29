@@ -1,6 +1,6 @@
 'use client';
 import { useState, useEffect } from 'react';
-import { ArrowLeft, Users, GraduationCap, Send, CheckCircle, AlertCircle, Info } from 'lucide-react';
+import { ArrowLeft, Users, GraduationCap, Send, CheckCircle, AlertCircle, Info, Mail, MailOpen } from 'lucide-react';
 
 // Coin Flip Loading Component
 const CoinFlip = () => {
@@ -66,7 +66,6 @@ const CoinFlip = () => {
   );
 };
 
-// Success Modal Component
 const SuccessModal = ({ registrationId, onClose }) => {
   return (
     <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 p-4">
@@ -75,26 +74,44 @@ const SuccessModal = ({ registrationId, onClose }) => {
           <div className="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
             <CheckCircle size={48} className="text-[#002147]" />
           </div>
-          
+
           <h2 className="text-3xl font-bold text-[#002147] mb-3">
             Registration Successful
           </h2>
-          
-          <p className="text-gray-600 mb-6 text-base">
-            Your team has been successfully registered for CodeFusion 2025.
+
+          <div className="bg-green-50 border-2 border-green-500 rounded-xl p-4 mb-6 flex items-start gap-3">
+            <Mail size={24} className="text-green-600 flex-shrink-0 mt-0.5" />
+            <div className="text-left">
+              <p className="text-green-800 font-bold text-sm mb-1">
+                Check Your Email!
+              </p>
+              <p className="text-green-700 text-xs leading-relaxed">
+                A confirmation email has been sent to your registered email address.
+                <span className="block mt-1 font-bold text-red-600">
+                  ⚠️ Please also check your SPAM folder.
+                </span>
+              </p>
+            </div>
+          </div>
+
+          <p className="text-gray-600 mb-6 font-semibold text-lg">
+            🎉 Your team has been successfully registered for CodeFusion 2025!
           </p>
-          
+
           <div className="bg-[#002147] rounded-xl p-6 mb-6">
-            <p className="text-xs text-blue-100 mb-2 font-semibold tracking-widest uppercase">Registration ID</p>
+            <p className="text-xs text-blue-100 mb-2 font-semibold tracking-widest uppercase">
+              Registration ID
+            </p>
             <p className="text-3xl font-bold text-white tracking-wider">
               {registrationId}
             </p>
           </div>
-          
+
           <p className="text-sm text-gray-500 mb-6 leading-relaxed">
-            Please save your registration ID for future reference. A confirmation email has been sent to your registered email address with all the details.
+            Please save your registration ID for future reference. You will need it
+            for event check-in and communication.
           </p>
-          
+
           <button
             onClick={onClose}
             className="w-full px-8 py-4 text-lg font-bold text-white bg-[#002147] rounded-xl shadow-lg transition-all hover:bg-[#001a35] hover:scale-105 hover:shadow-xl"
@@ -103,6 +120,7 @@ const SuccessModal = ({ registrationId, onClose }) => {
           </button>
         </div>
       </div>
+
       <style jsx>{`
         @keyframes scaleIn {
           from {
@@ -121,6 +139,8 @@ const SuccessModal = ({ registrationId, onClose }) => {
     </div>
   );
 };
+
+
 
 // Error Modal Component
 const ErrorModal = ({ message, onClose }) => {
