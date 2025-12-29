@@ -207,77 +207,74 @@ const Header = () => {
       
       {/* Mobile Sidebar Navigation */}
       <div
-        className={`fixed left-0 top-0 w-64 h-screen bg-[#002147] text-white transition-transform duration-300 z-40 overflow-y-auto ${
+        className={`fixed left-0 top-16 w-72 h-[calc(100vh-4rem)] bg-[#002147] text-white transition-transform duration-300 z-40 overflow-y-auto shadow-lg ${
           isOpen ? 'translate-x-0' : '-translate-x-full'
         }`}
       >
-        {/* Close Button in Sidebar */}
-        <div className="flex justify-end p-4 border-b border-[#FFD700]">
-          <FaTimes 
-            onClick={toggleMenu} 
-            className="text-2xl cursor-pointer text-[#FFD700]" 
-          />
+        {/* Sidebar Header */}
+        <div className="bg-[#001a34] px-6 py-4 border-b-2 border-[#FFD700]">
+          <h3 className="text-lg font-bold text-[#FFD700]">Menu</h3>
         </div>
 
         {/* Sidebar Navigation Links */}
         <nav className="flex flex-col">
           <Link
             href="/#home"
-            className="px-6 py-4 hover:bg-[#FFD700]/20 hover:text-[#FFD700] border-b border-gray-700 transition-all duration-200 font-semibold"
+            className="px-6 py-3 hover:bg-[#FFD700] hover:text-[#002147] border-b border-gray-600 transition-all duration-200 font-semibold text-sm"
             onClick={toggleMenu}
           >
-            Home
+            🏠 Home
           </Link>
           <Link
             href="/#about"
-            className="px-6 py-4 hover:bg-[#FFD700]/20 hover:text-[#FFD700] border-b border-gray-700 transition-all duration-200 font-semibold"
+            className="px-6 py-3 hover:bg-[#FFD700] hover:text-[#002147] border-b border-gray-600 transition-all duration-200 font-semibold text-sm"
             onClick={toggleMenu}
           >
-            About
+            ℹ️ About
           </Link>
           <Link
             href="/meet"
-            className="px-6 py-4 hover:bg-[#FFD700]/20 hover:text-[#FFD700] border-b border-gray-700 transition-all duration-200 font-semibold"
+            className="px-6 py-3 hover:bg-[#FFD700] hover:text-[#002147] border-b border-gray-600 transition-all duration-200 font-semibold text-sm"
             onClick={toggleMenu}
           >
-            Industry-Academia Meet
+            👥 Industry-Academia Meet
           </Link>
           <Link
             href="/hackathon"
-            className="px-6 py-4 hover:bg-[#FFD700]/20 hover:text-[#FFD700] border-b border-gray-700 transition-all duration-200 font-semibold"
+            className="px-6 py-3 hover:bg-[#FFD700] hover:text-[#002147] border-b border-gray-600 transition-all duration-200 font-semibold text-sm"
             onClick={toggleMenu}
           >
-            inSAHEthon
+            🚀 inSAHEthon
           </Link>
           <Link
             href="/journalpublications"
-            className="px-6 py-4 hover:bg-[#FFD700]/20 hover:text-[#FFD700] border-b border-gray-700 transition-all duration-200 font-semibold"
+            className="px-6 py-3 hover:bg-[#FFD700] hover:text-[#002147] border-b border-gray-600 transition-all duration-200 font-semibold text-sm"
             onClick={toggleMenu}
           >
-            Journal Publication
+            📰 Journal Publication
           </Link>
           <Link
             href="/speakers"
-            className="px-6 py-4 hover:bg-[#FFD700]/20 hover:text-[#FFD700] border-b border-gray-700 transition-all duration-200 font-semibold"
+            className="px-6 py-3 hover:bg-[#FFD700] hover:text-[#002147] border-b border-gray-600 transition-all duration-200 font-semibold text-sm"
             onClick={toggleMenu}
           >
-            Speakers
+            🎤 Speakers
           </Link>
           <Link
             href="/schedule"
-            className="px-6 py-4 hover:bg-[#FFD700]/20 hover:text-[#FFD700] border-b border-gray-700 transition-all duration-200 font-semibold"
+            className="px-6 py-3 hover:bg-[#FFD700] hover:text-[#002147] border-b border-gray-600 transition-all duration-200 font-semibold text-sm"
             onClick={toggleMenu}
           >
-            Schedule
+            📅 Schedule
           </Link>
 
           {/* Download Dropdown in Sidebar */}
-          <div className="px-6 py-4 border-b border-gray-700">
-            <label className="block text-sm font-semibold text-[#FFD700] mb-2">
-              Download Templates
+          <div className="px-6 py-4 border-b-2 border-[#FFD700] bg-[#001a34]">
+            <label className="block text-xs font-bold text-[#FFD700] mb-3 uppercase tracking-wider">
+              📥 Download Templates
             </label>
             <select
-              className="w-full bg-white text-black rounded p-2 font-semibold focus:ring-2 focus:ring-[#FFD700]"
+              className="w-full bg-white text-[#002147] rounded-md p-2.5 font-semibold focus:ring-2 focus:ring-[#FFD700] text-sm"
               defaultValue=""
               onChange={(e) => {
                 if (e.target.value !== "") {
@@ -299,10 +296,10 @@ const Header = () => {
 
           <Link
             href="/contact_us"
-            className="px-6 py-4 hover:bg-[#FFD700]/20 hover:text-[#FFD700] transition-all duration-200 font-semibold"
+            className="px-6 py-3 hover:bg-[#FFD700] hover:text-[#002147] transition-all duration-200 font-semibold text-sm"
             onClick={toggleMenu}
           >
-            Contact us
+            📞 Contact us
           </Link>
         </nav>
       </div>
