@@ -108,6 +108,67 @@ export default function TeamsListPage() {
     });
   };
 
+  const downloadStatisticsAsExcel = () => {
+    // Create CSV content
+    let csvContent = "CODEFUSION DASHBOARD STATISTICS\n";
+    csvContent += new Date().toLocaleDateString() + "\n\n";
+    
+    // Summary Statistics
+    csvContent += "SUMMARY STATISTICS\n";
+    csvContent += "Metric,Value\n";
+    csvContent += `Total Teams,${stats.total}\n`;
+    csvContent += `Total Colleges,${stats.totalColleges}\n`;
+    csvContent += `Teams with 3+ Members,${stats.college3}\n`;
+    csvContent += `Teams with 4+ Members,${stats.college4}\n\n`;
+    
+    // College-wise breakdown
+    csvContent += "COLLEGE-WISE BREAKDOWN\n";
+    csvContent += "College,Number of Teams\n";
+    colleges.forEach(college => {
+      const count = teams.filter(t => t.leader?.college === college).length;
+      csvContent += `${college},${count}\n`;
+    });
+
+    // Create blob and download
+    const blob = new Blob([csvContent], { type: "text/csv;charset=utf-8;" });
+    const link = document.createElement("a");
+    const url = URL.createObjectURL(blob);
+    
+    link.setAttribute("href", url);
+    link.setAttribute("download", `CodeFusion_Statistics_${new Date().toISOString().split('T')[0]}.csv`);
+    link.style.visibility = "hidden";
+    
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
+  const downloadTeamsAsExcel = () => {
+    // Create CSV content
+    let csvContent = "CODEFUSION TEAMS DETAILS\n";
+    csvContent += new Date().toLocaleDateString() + "\n\n";
+    
+    csvContent += "Team Name,Registration ID,Team Size,Leader Name,Leader Email,College,Department,Registered On,Problem Statement\n";
+    
+    sortedTeams.forEach(team => {
+      const registeredDate = new Date(team.createdAt).toLocaleDateString();
+      csvContent += `"${team.teamName}","${team.registrationId}",${team.teamSize},"${team.leader?.name || "—"}","${team.leader?.email || "—"}","${team.leader?.college || "—"}","${team.leader?.department || "—"}","${registeredDate}","${team.problemStatement}"\n`;
+    });
+
+    // Create blob and download
+    const blob = new Blob([csvContent], { type: "text/csv;charset=utf-8;" });
+    const link = document.createElement("a");
+    const url = URL.createObjectURL(blob);
+    
+    link.setAttribute("href", url);
+    link.setAttribute("download", `CodeFusion_Teams_${new Date().toISOString().split('T')[0]}.csv`);
+    link.style.visibility = "hidden";
+    
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   const handleLogout = () => {
     localStorage.removeItem("isAdminAuthenticated");
     localStorage.removeItem("adminName");
@@ -191,8 +252,6 @@ export default function TeamsListPage() {
       {/* Main Content */}
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-[220px] sm:mt-[240px] lg:mt-[220px] pb-12">
 
-
-        
         {/* Live Status */}
         <div className="mb-12 flex items-center gap-3">
           <div className="flex items-center gap-2">
@@ -201,38 +260,52 @@ export default function TeamsListPage() {
           </div>
         </div>
 
-        {/* Statistics Grid - Reordered */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-          {/* Total Teams */}
-          <div className="bg-white rounded-lg border-2 border-[#002147] p-8 hover:shadow-lg transition">
-            <p className="text-xs uppercase tracking-wider text-gray-600 font-semibold">Total Teams</p>
-            <p className="text-4xl sm:text-5xl font-bold text-[#002147] mt-3">
-              {isLoading ? "..." : stats.total}
-            </p>
+        {/* Statistics Grid with Download Button */}
+        <div>
+          <div className="flex justify-between items-center mb-6">
+            <h2 className="text-lg font-bold text-[#002147]">Quick Statistics</h2>
+            <button
+              onClick={downloadStatisticsAsExcel}
+              disabled={isLoading}
+              className="flex items-center gap-2 bg-green-600 hover:bg-green-700 disabled:bg-gray-400 text-white px-4 py-2 rounded-lg transition duration-200 text-sm font-medium"
+            >
+              <Download className="w-4 h-4" />
+              Download Stats
+            </button>
           </div>
 
-          {/* Total Colleges */}
-          <div className="bg-white rounded-lg border-2 border-[#002147] p-8 hover:shadow-lg transition">
-            <p className="text-xs uppercase tracking-wider text-gray-600 font-semibold">Total Colleges</p>
-            <p className="text-4xl sm:text-5xl font-bold text-[#002147] mt-3">
-              {isLoading ? "..." : stats.totalColleges}
-            </p>
-          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+            {/* Total Teams */}
+            <div className="bg-white rounded-lg border-2 border-[#002147] p-8 hover:shadow-lg transition">
+              <p className="text-xs uppercase tracking-wider text-gray-600 font-semibold">Total Teams</p>
+              <p className="text-4xl sm:text-5xl font-bold text-[#002147] mt-3">
+                {isLoading ? "..." : stats.total}
+              </p>
+            </div>
 
-          {/* 3+ Members Teams */}
-          <div className="bg-white rounded-lg border-2 border-[#002147] p-8 hover:shadow-lg transition">
-            <p className="text-xs uppercase tracking-wider text-gray-600 font-semibold">3+ Members</p>
-            <p className="text-4xl sm:text-5xl font-bold text-[#002147] mt-3">
-              {isLoading ? "..." : stats.college3}
-            </p>
-          </div>
+            {/* Total Colleges */}
+            <div className="bg-white rounded-lg border-2 border-[#002147] p-8 hover:shadow-lg transition">
+              <p className="text-xs uppercase tracking-wider text-gray-600 font-semibold">Total Colleges</p>
+              <p className="text-4xl sm:text-5xl font-bold text-[#002147] mt-3">
+                {isLoading ? "..." : stats.totalColleges}
+              </p>
+            </div>
 
-          {/* 4+ Members Teams */}
-          <div className="bg-white rounded-lg border-2 border-[#002147] p-8 hover:shadow-lg transition">
-            <p className="text-xs uppercase tracking-wider text-gray-600 font-semibold">4+ Members</p>
-            <p className="text-4xl sm:text-5xl font-bold text-[#002147] mt-3">
-              {isLoading ? "..." : stats.college4}
-            </p>
+            {/* 3+ Members Teams */}
+            <div className="bg-white rounded-lg border-2 border-[#002147] p-8 hover:shadow-lg transition">
+              <p className="text-xs uppercase tracking-wider text-gray-600 font-semibold">3+ Members</p>
+              <p className="text-4xl sm:text-5xl font-bold text-[#002147] mt-3">
+                {isLoading ? "..." : stats.college3}
+              </p>
+            </div>
+
+            {/* 4+ Members Teams */}
+            <div className="bg-white rounded-lg border-2 border-[#002147] p-8 hover:shadow-lg transition">
+              <p className="text-xs uppercase tracking-wider text-gray-600 font-semibold">4+ Members</p>
+              <p className="text-4xl sm:text-5xl font-bold text-[#002147] mt-3">
+                {isLoading ? "..." : stats.college4}
+              </p>
+            </div>
           </div>
         </div>
 
@@ -328,72 +401,85 @@ export default function TeamsListPage() {
 
         {/* Teams Table */}
         {!isLoading && !error && sortedTeams.length > 0 && (
-          <div className="overflow-x-auto border border-gray-200 rounded-lg">
-            <table className="w-full text-sm">
-              <thead>
-                <tr className="bg-[#002147] text-white border-b">
-                  <th className="px-4 py-3 text-left font-semibold cursor-pointer hover:bg-blue-900" onClick={() => handleSort("teamName")}>
-                    <div className="flex items-center gap-2">
-                      Team Name
-                      {sortConfig.key === "teamName" && (
-                        <ChevronDown className={`w-4 h-4 transition ${sortConfig.direction === "desc" ? "rotate-180" : ""}`} />
-                      )}
-                    </div>
-                  </th>
-                  <th className="px-4 py-3 text-left font-semibold cursor-pointer hover:bg-blue-900" onClick={() => handleSort("registrationId")}>
-                    <div className="flex items-center gap-2">
-                      Registration ID
-                      {sortConfig.key === "registrationId" && (
-                        <ChevronDown className={`w-4 h-4 transition ${sortConfig.direction === "desc" ? "rotate-180" : ""}`} />
-                      )}
-                    </div>
-                  </th>
-                  <th className="px-4 py-3 text-left font-semibold cursor-pointer hover:bg-blue-900" onClick={() => handleSort("teamSize")}>
-                    <div className="flex items-center gap-2">
-                      Team Size
-                      {sortConfig.key === "teamSize" && (
-                        <ChevronDown className={`w-4 h-4 transition ${sortConfig.direction === "desc" ? "rotate-180" : ""}`} />
-                      )}
-                    </div>
-                  </th>
-                  <th className="px-4 py-3 text-left font-semibold">Leader Name</th>
-                  <th className="px-4 py-3 text-left font-semibold">Leader Email</th>
-                  <th className="px-4 py-3 text-left font-semibold">College</th>
-                  <th className="px-4 py-3 text-left font-semibold">Department</th>
-                  <th className="px-4 py-3 text-left font-semibold cursor-pointer hover:bg-blue-900" onClick={() => handleSort("createdAt")}>
-                    <div className="flex items-center gap-2">
-                      Registered On
-                      {sortConfig.key === "createdAt" && (
-                        <ChevronDown className={`w-4 h-4 transition ${sortConfig.direction === "desc" ? "rotate-180" : ""}`} />
-                      )}
-                    </div>
-                  </th>
-                  <th className="px-4 py-3 text-left font-semibold">Problem Statement</th>
-                </tr>
-              </thead>
-              <tbody>
-                {sortedTeams.map((team, index) => (
-                  <tr 
-                    key={team._id} 
-                    className={`border-b hover:bg-[#00214710] transition ${index % 2 === 0 ? "bg-white" : "bg-gray-50"}`}
-                  >
-                    <td className="px-4 py-3 font-semibold text-gray-900">{team.teamName}</td>
-                    <td className="px-4 py-3 text-gray-700">{team.registrationId}</td>
-                    <td className="px-4 py-3 text-gray-700">
-                      <span className="bg-[#00214710] text-[#002147] px-2 py-1 rounded font-semibold">
-                        {team.teamSize}
-                      </span>
-                    </td>
-                    <td className="px-4 py-3 text-gray-700">{team.leader?.name || "—"}</td>
-                    <td className="px-4 py-3 text-gray-700 text-xs">{team.leader?.email || "—"}</td>
-                    <td className="px-4 py-3 text-gray-700">{team.leader?.college || "—"}</td>
-                    <td className="px-4 py-3 text-gray-700">{team.leader?.department || "—"}</td>
-                    <td className="px-4 py-3 text-gray-700 text-xs">{new Date(team.createdAt).toLocaleDateString()}</td>
-                    <td className="px-4 py-3 text-gray-700 max-w-xs truncate">{team.problemStatement}</td>
+          <div>
+            <div className="flex justify-between items-center mb-6">
+              <h2 className="text-lg font-bold text-[#002147]">Teams Details</h2>
+              <button
+                onClick={downloadTeamsAsExcel}
+                className="flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg transition duration-200 text-sm font-medium"
+              >
+                <Download className="w-4 h-4" />
+                Download Teams
+              </button>
+            </div>
+
+            <div className="overflow-x-auto border border-gray-200 rounded-lg">
+              <table className="w-full text-sm">
+                <thead>
+                  <tr className="bg-[#002147] text-white border-b">
+                    <th className="px-4 py-3 text-left font-semibold cursor-pointer hover:bg-blue-900" onClick={() => handleSort("teamName")}>
+                      <div className="flex items-center gap-2">
+                        Team Name
+                        {sortConfig.key === "teamName" && (
+                          <ChevronDown className={`w-4 h-4 transition ${sortConfig.direction === "desc" ? "rotate-180" : ""}`} />
+                        )}
+                      </div>
+                    </th>
+                    <th className="px-4 py-3 text-left font-semibold cursor-pointer hover:bg-blue-900" onClick={() => handleSort("registrationId")}>
+                      <div className="flex items-center gap-2">
+                        Registration ID
+                        {sortConfig.key === "registrationId" && (
+                          <ChevronDown className={`w-4 h-4 transition ${sortConfig.direction === "desc" ? "rotate-180" : ""}`} />
+                        )}
+                      </div>
+                    </th>
+                    <th className="px-4 py-3 text-left font-semibold cursor-pointer hover:bg-blue-900" onClick={() => handleSort("teamSize")}>
+                      <div className="flex items-center gap-2">
+                        Team Size
+                        {sortConfig.key === "teamSize" && (
+                          <ChevronDown className={`w-4 h-4 transition ${sortConfig.direction === "desc" ? "rotate-180" : ""}`} />
+                        )}
+                      </div>
+                    </th>
+                    <th className="px-4 py-3 text-left font-semibold">Leader Name</th>
+                    <th className="px-4 py-3 text-left font-semibold">Leader Email</th>
+                    <th className="px-4 py-3 text-left font-semibold">College</th>
+                    <th className="px-4 py-3 text-left font-semibold">Department</th>
+                    <th className="px-4 py-3 text-left font-semibold cursor-pointer hover:bg-blue-900" onClick={() => handleSort("createdAt")}>
+                      <div className="flex items-center gap-2">
+                        Registered On
+                        {sortConfig.key === "createdAt" && (
+                          <ChevronDown className={`w-4 h-4 transition ${sortConfig.direction === "desc" ? "rotate-180" : ""}`} />
+                        )}
+                      </div>
+                    </th>
+                    <th className="px-4 py-3 text-left font-semibold">Problem Statement</th>
                   </tr>
-                ))}
-              </tbody>
-            </table>
+                </thead>
+                <tbody>
+                  {sortedTeams.map((team, index) => (
+                    <tr 
+                      key={team._id} 
+                      className={`border-b hover:bg-[#00214710] transition ${index % 2 === 0 ? "bg-white" : "bg-gray-50"}`}
+                    >
+                      <td className="px-4 py-3 font-semibold text-gray-900">{team.teamName}</td>
+                      <td className="px-4 py-3 text-gray-700">{team.registrationId}</td>
+                      <td className="px-4 py-3 text-gray-700">
+                        <span className="bg-[#00214710] text-[#002147] px-2 py-1 rounded font-semibold">
+                          {team.teamSize}
+                        </span>
+                      </td>
+                      <td className="px-4 py-3 text-gray-700">{team.leader?.name || "—"}</td>
+                      <td className="px-4 py-3 text-gray-700 text-xs">{team.leader?.email || "—"}</td>
+                      <td className="px-4 py-3 text-gray-700">{team.leader?.college || "—"}</td>
+                      <td className="px-4 py-3 text-gray-700">{team.leader?.department || "—"}</td>
+                      <td className="px-4 py-3 text-gray-700 text-xs">{new Date(team.createdAt).toLocaleDateString()}</td>
+                      <td className="px-4 py-3 text-gray-700 max-w-xs truncate">{team.problemStatement}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
           </div>
         )}
 
