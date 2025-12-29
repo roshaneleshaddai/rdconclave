@@ -197,6 +197,13 @@ const Header = () => {
           isOpen ? 'translate-x-0' : '-translate-x-full'
         }`}
       >
+        {/* Close Button in Sidebar */}
+        <div className="flex justify-end px-5 sm:px-6 py-3 sm:py-4 border-b border-[#FFD700] sticky top-0 bg-[#002147]">
+          <FaTimes 
+            onClick={toggleMenu} 
+            className="text-3xl cursor-pointer text-[#FFD700]" 
+          />
+        </div>
 
         {/* Sidebar Navigation Links */}
         <nav className="flex flex-col">
