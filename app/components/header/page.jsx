@@ -93,11 +93,7 @@ const Header = () => {
       <div className="flex items-center justify-between md:justify-evenly md:p-2 md:mx-10 max-w-8xl px-2">
         {/* Hamburger Menu Icon - Mobile Only (Left Side) */}
         <div className="md:hidden flex items-center">
-          {isOpen ? (
-            <FaTimes onClick={toggleMenu} className="text-3xl cursor-pointer z-50 text-white bg-[#1a3a5c] p-2 rounded" /> 
-          ) : (
-            <FaBars onClick={toggleMenu} className="text-3xl cursor-pointer text-white bg-[#1a3a5c] p-2 rounded"/>
-          )}
+          <FaBars onClick={toggleMenu} className="text-3xl cursor-pointer text-white bg-[#1a3a5c] p-2 rounded"/>
         </div>
 
         {/* Logo Section */}
