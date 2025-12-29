@@ -43,9 +43,9 @@ const EventRegistration = () => {
       <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
         <div style={{
           position: 'relative',
-          width: isMobile ? '75px' : '105px',
-          height: isMobile ? '75px' : '105px',
-          marginBottom: '12px'
+          width: isMobile ? '65px' : '105px',
+          height: isMobile ? '65px' : '105px',
+          marginBottom: isMobile ? '8px' : '12px'
         }}>
           <div style={{
             position: 'relative',
@@ -53,14 +53,14 @@ const EventRegistration = () => {
             height: '100%',
             background: 'rgba(0, 33, 71, 0.05)',
             border: '2px solid #002147',
-            borderRadius: '14px',
+            borderRadius: '12px',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
             boxShadow: '0 4px 12px rgba(0, 33, 71, 0.08)'
           }}>
             <span style={{
-              fontSize: isMobile ? '32px' : '48px',
+              fontSize: isMobile ? '28px' : '48px',
               fontWeight: '700',
               color: '#002147',
               fontFamily: 'SUSE, sans-serif'
@@ -70,9 +70,9 @@ const EventRegistration = () => {
           </div>
         </div>
         <div style={{
-          fontSize: isMobile ? '11px' : '13px',
+          fontSize: isMobile ? '10px' : '13px',
           fontWeight: '600',
-          letterSpacing: '0.8px',
+          letterSpacing: '0.6px',
           color: '#6B7280',
           textTransform: 'capitalize',
           fontFamily: 'SUSE, sans-serif'
@@ -201,15 +201,16 @@ const EventRegistration = () => {
       }}>
         <div style={{
           textAlign: 'center',
-          marginBottom: isMobile ? '30px' : '40px'
+          marginBottom: isMobile ? '24px' : '40px'
         }}>
           <h1 style={{
-            fontSize: isMobile ? '28px' : '42px',
+            fontSize: isMobile ? '24px' : '42px',
             fontWeight: '700',
             color: '#002147',
             letterSpacing: '-0.5px',
             fontFamily: 'SUSE, sans-serif',
-            lineHeight: '1.2'
+            lineHeight: '1.2',
+            margin: '0'
           }}>
             Event Starts In
           </h1>
@@ -218,8 +219,8 @@ const EventRegistration = () => {
         <div style={{
           display: 'flex',
           justifyContent: 'center',
-          gap: isMobile ? '8px' : '16px',
-          marginBottom: isMobile ? '35px' : '45px',
+          gap: isMobile ? '6px' : '16px',
+          marginBottom: isMobile ? '32px' : '45px',
           flexWrap: 'wrap'
         }}>
           <CountdownUnit value={timeLeft.days} label="Days" />
