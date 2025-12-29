@@ -197,10 +197,11 @@ const Header = () => {
       
       {/* Mobile Sidebar Navigation (Left Side) */}
       <div
-        className={`fixed left-0 top-0 w-72 sm:w-80 h-screen bg-[#002147] text-white transition-transform duration-300 z-40 overflow-y-auto pt-16 sm:pt-20 ${
+        className={`fixed left-0 top-0 w-96 sm:w-full sm:max-w-md h-screen bg-[#002147] text-white transition-transform duration-300 z-40 overflow-y-auto pt-16 sm:pt-20 ${
           isOpen ? 'translate-x-0' : '-translate-x-full'
         }`}
       >
+      
         {/* Close Button in Sidebar */}
         <div className="flex justify-end px-5 sm:px-6 py-3 sm:py-4 border-b border-[#FFD700] sticky top-0 bg-[#002147]">
           <FaTimes 
@@ -208,7 +209,7 @@ const Header = () => {
             className="text-2xl sm:text-3xl cursor-pointer text-[#FFD700]" 
           />
         </div>
-
+        
         {/* Sidebar Navigation Links */}
         <nav className="flex flex-col">
           <Link
