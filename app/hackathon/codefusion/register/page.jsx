@@ -79,20 +79,7 @@ const SuccessModal = ({ registrationId, onClose }) => {
             Registration Successful
           </h2>
 
-          <div className="bg-green-50 border-2 border-green-500 rounded-xl p-4 mb-6 flex items-start gap-3">
-            <Mail size={24} className="text-green-600 flex-shrink-0 mt-0.5" />
-            <div className="text-left">
-              <p className="text-green-800 font-bold text-sm mb-1">
-                Check Your Email!
-              </p>
-              <p className="text-green-700 text-xs leading-relaxed">
-                A confirmation email has been sent to your registered email address.
-                <span className="block mt-1 font-bold text-red-600">
-                  ⚠️ Please also check your SPAM folder.
-                </span>
-              </p>
-            </div>
-          </div>
+         
 
           <p className="text-gray-600 mb-6 font-semibold text-lg">
             🎉 Your team has been successfully registered for CodeFusion 2025!
@@ -105,6 +92,20 @@ const SuccessModal = ({ registrationId, onClose }) => {
             <p className="text-3xl font-bold text-white tracking-wider">
               {registrationId}
             </p>
+          </div>
+           <div className="bg-green-50 border-2 border-green-500 rounded-xl p-4 mb-6 flex items-start gap-3">
+            <Mail size={24} className="text-green-600 flex-shrink-0 mt-0.5" />
+            <div className="text-left">
+              <p className="text-green-800 font-bold text-sm mb-1">
+                Check Your Email!
+              </p>
+              <p className="text-green-700 text-xs leading-relaxed">
+                A confirmation email has been sent to your registered email address.
+                <span className="block mt-1 font-bold text-red-600">
+                  ⚠️ Please also check your SPAM folder.
+                </span>
+              </p>
+            </div>
           </div>
 
           <p className="text-sm text-gray-500 mb-6 leading-relaxed">
