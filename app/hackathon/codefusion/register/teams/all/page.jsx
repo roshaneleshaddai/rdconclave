@@ -1,495 +1,397 @@
-"use client";
+'use client';  // Ensure this is at the very top of the file
 
-import { useState, useEffect } from "react";
-import { useRouter } from "next/navigation";
-import { ChevronDown, Search, Download, Filter } from "lucide-react";
+import React, { useState, useEffect } from "react";
+import { FaBars, FaTimes } from "react-icons/fa"; // Import close icon
+import { useRouter } from 'next/navigation';
+import Link from 'next/link';
+import Image from 'next/image';
 
-export default function TeamsListPage() {
+const Header = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false); // State to track scrolling
   const router = useRouter();
-  
-  const [teams, setTeams] = useState([]);
-  const [totalCount, setTotalCount] = useState(0);
-  const [isLoading, setIsLoading] = useState(true);
-  const [isAuthChecking, setIsAuthChecking] = useState(true);
-  const [error, setError] = useState("");
-  const [adminName, setAdminName] = useState("");
-  
-  // Filter states
-  const [searchQuery, setSearchQuery] = useState("");
-  const [selectedCollege, setSelectedCollege] = useState("all");
-  const [colleges, setColleges] = useState([]);
-  const [sortConfig, setSortConfig] = useState({ key: "createdAt", direction: "desc" });
-  
-  // Statistics
-  const [stats, setStats] = useState({ total: 0, college3: 0, college4: 0, totalColleges: 0 });
 
+  // Toggle the mobile menu
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
+
+  // Function to navigate to the home page and scroll to a specific section
+  const scrollToSection = (section) => {
+    if (router.pathname !== '/') {
+      router.push(`/#${section}`);
+    } else {
+      document.getElementById(section)?.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+
+  const files = [
+    "/Authors_ORCID_Information.doc",
+    "/PES_Copyright_Agreement_Form.doc",
+    "/PES_template.docx",
+    "IEEE conference-template-a4.docx",
+    "Springer-Template.doc",  
+    "Netherlands Press Template-Nanotechnology Perceptions.docx",
+    "Journal of Infrastructure, Policy and Development--JIPD-template.docx",
+  ];
+
+  const fileNames = [
+    "Authors ORCID Information",
+    "PES Copyright Agreement Form",
+    "PES TEmplate",
+    "IEEE conference-template",
+    "Springer-Template",  
+    "Netherlands Press Template-Nanotechnology Perceptions",
+    "Journal of Infrastructure, Policy and Development--JIPD-template",
+  ];
+
+  const downloadFile = (index) => {
+    if (index === '') return; 
+    const link = document.createElement('a');
+    link.href = files[index];
+    link.setAttribute('download', fileNames[index]); 
+    document.body.appendChild(link);
+    link.click(); 
+    document.body.removeChild(link); 
+  };
+
+
+
+  // Add event listener to detect scroll
   useEffect(() => {
-    const checkAuthentication = () => {
-      const isAuthenticated = localStorage.getItem("isAdminAuthenticated");
-      const storedAdminName = localStorage.getItem("adminName");
-      
-      if (isAuthenticated !== "true") {
-        router.push("/hackathon/codefusion/register/teams");
-        return false;
+    const handleScroll = () => {
+      if (window.scrollY > 100) {
+        setIsScrolled(true);  // When scrolled past 100px, set to true
+      } else {
+        setIsScrolled(false); // Otherwise, set to false
       }
-      
-      setAdminName(storedAdminName || "Admin");
-      setIsAuthChecking(false);
-      return true;
     };
 
-    const isAuth = checkAuthentication();
-    if (isAuth) {
-      fetchTeams();
-    }
-  }, [router]);
+    window.addEventListener("scroll", handleScroll);
 
-  const fetchTeams = async () => {
-    setIsLoading(true);
-    setError("");
-
-    try {
-      const response = await fetch(
-        "https://rd-backend-m7gd.onrender.com/api/teams/all"
-      );
-
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
-
-      const data = await response.json();
-
-      if (data.success) {
-        const teamsData = data.teams || [];
-        setTeams(teamsData);
-        setTotalCount(data.count || 0);
-        
-        // Extract unique colleges
-        const collegeSet = new Set();
-        teamsData.forEach(team => {
-          if (team.leader?.college) {
-            collegeSet.add(team.leader.college);
-          }
-        });
-        setColleges(Array.from(collegeSet).sort());
-        
-        // Calculate statistics
-        calculateStats(teamsData);
-        
-        console.log("Fetched teams:", teamsData);
-        console.log("Total count:", data.count);
-      } else {
-        throw new Error("Failed to fetch teams data");
-      }
-    } catch (err) {
-      setError(err.message || "Failed to load teams. Please try again.");
-      console.error("Error fetching teams:", err);
-    } finally {
-      setIsLoading(false);
-    }
-  };
-
-  const calculateStats = (teamsData) => {
-    const college3Count = teamsData.filter(t => t.teamSize >= 3).length;
-    const college4Count = teamsData.filter(t => t.teamSize >= 4).length;
-    const collegeSet = new Set();
-    
-    teamsData.forEach(team => {
-      if (team.leader?.college) {
-        collegeSet.add(team.leader.college);
-      }
-    });
-    
-    setStats({
-      total: teamsData.length,
-      college3: college3Count,
-      college4: college4Count,
-      totalColleges: collegeSet.size
-    });
-  };
-
-  const downloadStatisticsAsExcel = () => {
-    // Create CSV content
-    let csvContent = "CODEFUSION DASHBOARD STATISTICS\n";
-    csvContent += new Date().toLocaleDateString() + "\n\n";
-    
-    // Summary Statistics
-    csvContent += "SUMMARY STATISTICS\n";
-    csvContent += "Metric,Value\n";
-    csvContent += `Total Teams,${stats.total}\n`;
-    csvContent += `Total Colleges,${stats.totalColleges}\n`;
-    csvContent += `Teams with 3+ Members,${stats.college3}\n`;
-    csvContent += `Teams with 4+ Members,${stats.college4}\n\n`;
-    
-    // College-wise breakdown
-    csvContent += "COLLEGE-WISE BREAKDOWN\n";
-    csvContent += "College,Number of Teams\n";
-    colleges.forEach(college => {
-      const count = teams.filter(t => t.leader?.college === college).length;
-      csvContent += `${college},${count}\n`;
-    });
-
-    // Create blob and download
-    const blob = new Blob([csvContent], { type: "text/csv;charset=utf-8;" });
-    const link = document.createElement("a");
-    const url = URL.createObjectURL(blob);
-    
-    link.setAttribute("href", url);
-    link.setAttribute("download", `CodeFusion_Statistics_${new Date().toISOString().split('T')[0]}.csv`);
-    link.style.visibility = "hidden";
-    
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  };
-
-  const downloadTeamsAsExcel = () => {
-    // Create CSV content
-    let csvContent = "CODEFUSION TEAMS DETAILS\n";
-    csvContent += new Date().toLocaleDateString() + "\n\n";
-    
-    csvContent += "Team Name,Registration ID,Team Size,Leader Name,Leader Email,College,Department,Registered On,Problem Statement\n";
-    
-    sortedTeams.forEach(team => {
-      const registeredDate = new Date(team.createdAt).toLocaleDateString();
-      csvContent += `"${team.teamName}","${team.registrationId}",${team.teamSize},"${team.leader?.name || "—"}","${team.leader?.email || "—"}","${team.leader?.college || "—"}","${team.leader?.department || "—"}","${registeredDate}","${team.problemStatement}"\n`;
-    });
-
-    // Create blob and download
-    const blob = new Blob([csvContent], { type: "text/csv;charset=utf-8;" });
-    const link = document.createElement("a");
-    const url = URL.createObjectURL(blob);
-    
-    link.setAttribute("href", url);
-    link.setAttribute("download", `CodeFusion_Teams_${new Date().toISOString().split('T')[0]}.csv`);
-    link.style.visibility = "hidden";
-    
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  };
-
-  const handleLogout = () => {
-    localStorage.removeItem("isAdminAuthenticated");
-    localStorage.removeItem("adminName");
-    localStorage.removeItem("loginTimestamp");
-    router.push("/hackathon/codefusion/register/teams");
-  };
-
-  // Filter and sort teams
-  const filteredTeams = teams.filter(team => {
-    const matchesSearch = 
-      team.teamName.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      team.registrationId.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      team.leader?.name.toLowerCase().includes(searchQuery.toLowerCase());
-    
-    const matchesCollege = selectedCollege === "all" || team.leader?.college === selectedCollege;
-    
-    return matchesSearch && matchesCollege;
-  });
-
-  const sortedTeams = [...filteredTeams].sort((a, b) => {
-    const aVal = a[sortConfig.key];
-    const bVal = b[sortConfig.key];
-    
-    if (sortConfig.key === "createdAt") {
-      return sortConfig.direction === "asc" 
-        ? new Date(aVal) - new Date(bVal)
-        : new Date(bVal) - new Date(aVal);
-    }
-    
-    if (typeof aVal === "string") {
-      return sortConfig.direction === "asc"
-        ? aVal.localeCompare(bVal)
-        : bVal.localeCompare(aVal);
-    }
-    
-    return sortConfig.direction === "asc" ? aVal - bVal : bVal - aVal;
-  });
-
-  const handleSort = (key) => {
-    setSortConfig(prev => ({
-      key,
-      direction: prev.key === key && prev.direction === "asc" ? "desc" : "asc"
-    }));
-  };
-
-  if (isAuthChecking) {
-    return (
-      <div className="min-h-screen bg-white flex items-center justify-center">
-        <div className="text-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#002147] mx-auto mb-4"></div>
-          <p className="text-gray-600 font-SUSE">Verifying authentication...</p>
-        </div>
-      </div>
-    );
-  }
+    // Cleanup on unmount
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
-    <div className="min-h-screen bg-white font-SUSE" style={{ fontFamily: "SUSE, sans-serif" }}>
-      {/* Header */}
-      <header className="bg-white border-b border-[#002147] sticky top-0 z-40">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-          <div className="flex justify-between items-center">
-            <div>
-              <h1 className="text-3xl sm:text-4xl font-bold text-[#002147]">
-                CodeFusion Dashboard
-              </h1>
-              <p className="text-sm text-gray-600 mt-1">
-                Welcome, <span className="font-semibold">{adminName}</span>
-              </p>
+  <div className="relative w-full h-full">
+    <header className={`fixed w-full top-0 z-50 h-30 transition-all duration-300 ease-in-out  bg-[#F5F5F5] ${isScrolled ? 'py-1 md:py-1' : 'py-1 md:py-1'}`}>
+      <div className="w-full bg-[#002147] text-[#FFD700] text-center py-1 font-bold text-sm md:text-base">
+        Golden Jubilee Year of Siddhartha Academy of General & Technical Education, Vijayawada
+      </div>
+    {/* <video
+      
+      loop
+      muted
+      className="absolute inset-0 w-full h-full object-cover z-[-1]"
+    >
+      <source src="/images/bg.mp4" type="video/mp4" />
+    </video> */}
+      <div className="flex items-center justify-evenly md:p-2 md:mx-10 max-w-8xl">
+        {/* Logo Section */}
+        <div className="flex items-center justify-evenly space-x-0 md:space-x-4 mx-2">
+              <Image
+            // src="/images/vrseclogo.png"
+            src="/images/sahelogo.png"
+            alt="VRSEC Logo"
+            width={isScrolled ? 70 : 90}
+            height={isScrolled ? 70 : 90}
+            className={`lg:block hidden object-scale-down transition-all duration-300 lg:w-120 lg:h-90`}
+            loading="lazy"
+          />
+          <Image
+            // src="/images/vrseclogo.png"
+            src="/images/sahelogo.png"
+            alt="VRSEC Logo"
+            width={isScrolled ? 110 : 120}
+            height={isScrolled ? 110 : 120}
+            className={`lg:hidden block object-scale-down transition-all duration-300 w-24 h-32 `}
+            loading="lazy"
+          />
+          {/* <Image
+              // src="/images/ITlogo.jpeg"
+              src="/images/it_logoo.jpg"
+              // src="/images/it_logo.jfif"
+              alt="Information Technology"
+              width={isScrolled ? 140 : 160}
+              height={isScrolled ? 140 : 160}
+              className={`hidden lg:block  object-scale-down transition-all duration-300 w-24 h-32 `}
+            /> */}
+            
+
+        </div>
+
+        <div className="">
+          <div className={`md:block md:text-center transition-all duration-300 ease-in-out ${isScrolled ? 'text-base md:text-lg' : 'text-lg md:text-xl'}`}>
+
+            <h2 className={`font-bold text-black text-5xl ${isScrolled ? 'hidden' : ''}`}>
+            SIDDHARTHA
+            </h2>
+            <div className={`border-b-2 border-[#002147] mx-auto ${isScrolled ? 'hidden' : ''}`} style={{width: '100%'}}></div>
+
+            <h2 className={`font-bold text-black ${isScrolled ? 'hidden' : ''}`}>
+            ACADEMY OF HIGHER EDUCATION
+            </h2>
+            <h2 className={`font-bold text-black  ${isScrolled ? '' : 'hidden'}`}>
+            SIDDHARTHA ACADEMY OF HIGHER EDUCATION
+            </h2>
+
+            <h2
+                className={`font-normal text-black ${
+                  isScrolled ? 'lg:text-sm text-xs' : 'lg:text-xs text-base'
+                }`}
+              >
+                An Institution Deemed to be <span className="font-semibold">University</span>
+                <br />
+                <span className="text-black lg:text-xs text-xs">(Under Section 3 of UGC Act, 1956)</span>
+                <br/>
+                <span className="lg:text-xs text-xs"><span className="text-black">Kanuru, Vijayawada - 520 007, AP. www.vrsiddhartha.ac.in</span></span>
+              </h2>
             </div>
-            <button
-              onClick={handleLogout}
-              className="bg-[#002147] hover:bg-blue-900 text-white px-4 py-2 rounded-lg transition duration-200 text-sm font-medium"
-            >
-              Logout
-            </button>
           </div>
-        </div>
-      </header>
-
-      {/* Main Content */}
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-[220px] sm:mt-[240px] lg:mt-[220px] pb-12">
-
-        {/* Live Status */}
-        <div className="mb-12 flex items-center gap-3">
-          <div className="flex items-center gap-2">
-            <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
-            <span className="text-sm font-semibold text-gray-700">Live Status</span>
-          </div>
-        </div>
-
-        {/* Statistics Grid with Download Button */}
         <div>
-          <div className="flex justify-between items-center mb-6">
-            <h2 className="text-lg font-bold text-[#002147]">Quick Statistics</h2>
-            <button
-              onClick={downloadStatisticsAsExcel}
-              disabled={isLoading}
-              className="flex items-center gap-2 bg-green-600 hover:bg-green-700 disabled:bg-gray-400 text-white px-4 py-2 rounded-lg transition duration-200 text-sm font-medium"
-            >
-              <Download className="w-4 h-4" />
-              Download Stats
-            </button>
+        <div className={`hidden md:flex items-center transition-all duration-300 ${isScrolled ? 'space-x-2' : 'space-x-4'}`}>
+        <div className="hidden md:block">
+            {/* <Image
+              src="/images/ITlogo.jpeg"
+              alt="Information Technology"
+              width={isScrolled ? 90 : 100} 
+              height={isScrolled ? 90 : 100}
+              className="rounded-full"
+            /> */}
+    
           </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-            {/* Total Teams */}
-            <div className="bg-white rounded-lg border-2 border-[#002147] p-8 hover:shadow-lg transition">
-              <p className="text-xs uppercase tracking-wider text-gray-600 font-semibold">Total Teams</p>
-              <p className="text-4xl sm:text-5xl font-bold text-[#002147] mt-3">
-                {isLoading ? "..." : stats.total}
-              </p>
-            </div>
-
-            {/* Total Colleges */}
-            <div className="bg-white rounded-lg border-2 border-[#002147] p-8 hover:shadow-lg transition">
-              <p className="text-xs uppercase tracking-wider text-gray-600 font-semibold">Total Colleges</p>
-              <p className="text-4xl sm:text-5xl font-bold text-[#002147] mt-3">
-                {isLoading ? "..." : stats.totalColleges}
-              </p>
-            </div>
-
-            {/* 3+ Members Teams */}
-            <div className="bg-white rounded-lg border-2 border-[#002147] p-8 hover:shadow-lg transition">
-              <p className="text-xs uppercase tracking-wider text-gray-600 font-semibold">3+ Members</p>
-              <p className="text-4xl sm:text-5xl font-bold text-[#002147] mt-3">
-                {isLoading ? "..." : stats.college3}
-              </p>
-            </div>
-
-            {/* 4+ Members Teams */}
-            <div className="bg-white rounded-lg border-2 border-[#002147] p-8 hover:shadow-lg transition">
-              <p className="text-xs uppercase tracking-wider text-gray-600 font-semibold">4+ Members</p>
-              <p className="text-4xl sm:text-5xl font-bold text-[#002147] mt-3">
-                {isLoading ? "..." : stats.college4}
-              </p>
-            </div>
+          {/* <div className="hidden md:block">
+            <Image
+              src="https://www.stthomaskannur.ac.in/stm2/img/static/ieee.png"
+              alt="ieee"
+              width={isScrolled ? 90 : 100} 
+              height={isScrolled ? 90 : 100}
+              className="rounded-full bg-white"
+            />
+          </div> */}
+          <div className="hidden md:block">
+            <Image
+              src="/images/s.jpeg"
+              alt="springer"
+              width={isScrolled ? 90 : 100} 
+              height={isScrolled ? 90 : 100}
+              className="rounded-full"
+            />
+          </div>
+          <div className="hidden  md:block">
+          <Image
+              src="/images/rclogo1.png"
+              alt="Research conclave"
+              width={isScrolled ? 90 : 100} 
+              height={isScrolled ? 90 : 100}
+              className="rounded-full"
+              
+            />
           </div>
         </div>
+        </div>
 
-        {/* Colleges Stats */}
-        {!isLoading && colleges.length > 0 && (
-          <div className="bg-[#00214710] rounded-lg p-6 mb-8 border border-[#002147]">
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
-              {colleges.map(college => {
-                const count = teams.filter(t => t.leader?.college === college).length;
-                return (
-                  <div key={college} className="text-center">
-                    <p className="text-xs text-gray-600 truncate">{college}</p>
-                    <p className="text-2xl font-bold text-[#002147]">{count}</p>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-        )}
+        {/* Hamburger Menu Icon - Mobile Only */}
+        <div className="md:hidden flex items-center">
+          {isOpen ? (
+            <FaTimes onClick={toggleMenu} className="text-2xl cursor-pointer z-50 text-[#002147]" /> 
+          ) : (
+            <FaBars onClick={toggleMenu} className="text-2xl cursor-pointer text-[#002147]"/>
+          )}
+        </div>
+      </div>
+      
+      {/* Mobile Sidebar Navigation */}
+      <div
+        className={`fixed left-0 top-16 w-72 h-[calc(100vh-4rem)] bg-[#002147] text-white transition-transform duration-300 z-40 overflow-y-auto shadow-lg ${
+          isOpen ? 'translate-x-0' : '-translate-x-full'
+        }`}
+      >
+        {/* Sidebar Header */}
+        <div className="bg-[#001a34] px-6 py-4 border-b-2 border-[#FFD700]">
+          <h3 className="text-lg font-bold text-[#FFD700]">Menu</h3>
+        </div>
 
-        {/* Filters Section */}
-        <div className="bg-white rounded-lg border border-gray-200 p-6 mb-8">
-          <div className="flex flex-col sm:flex-row gap-4">
-            {/* Search */}
-            <div className="flex-1 relative">
-              <Search className="absolute left-3 top-3 text-gray-400 w-5 h-5" />
-              <input
-                type="text"
-                placeholder="Search by team name, ID, or leader..."
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#002147] text-sm"
-              />
-            </div>
+        {/* Sidebar Navigation Links */}
+        <nav className="flex flex-col">
+          <Link
+            href="/#home"
+            className="px-6 py-3 hover:bg-[#FFD700] hover:text-[#002147] border-b border-gray-600 transition-all duration-200 font-semibold text-sm"
+            onClick={toggleMenu}
+          >
+            🏠 Home
+          </Link>
+          <Link
+            href="/#about"
+            className="px-6 py-3 hover:bg-[#FFD700] hover:text-[#002147] border-b border-gray-600 transition-all duration-200 font-semibold text-sm"
+            onClick={toggleMenu}
+          >
+            ℹ️ About
+          </Link>
+          <Link
+            href="/meet"
+            className="px-6 py-3 hover:bg-[#FFD700] hover:text-[#002147] border-b border-gray-600 transition-all duration-200 font-semibold text-sm"
+            onClick={toggleMenu}
+          >
+            👥 Industry-Academia Meet
+          </Link>
+          <Link
+            href="/hackathon"
+            className="px-6 py-3 hover:bg-[#FFD700] hover:text-[#002147] border-b border-gray-600 transition-all duration-200 font-semibold text-sm"
+            onClick={toggleMenu}
+          >
+            🚀 inSAHEthon
+          </Link>
+          <Link
+            href="/journalpublications"
+            className="px-6 py-3 hover:bg-[#FFD700] hover:text-[#002147] border-b border-gray-600 transition-all duration-200 font-semibold text-sm"
+            onClick={toggleMenu}
+          >
+            📰 Journal Publication
+          </Link>
+          <Link
+            href="/speakers"
+            className="px-6 py-3 hover:bg-[#FFD700] hover:text-[#002147] border-b border-gray-600 transition-all duration-200 font-semibold text-sm"
+            onClick={toggleMenu}
+          >
+            🎤 Speakers
+          </Link>
+          <Link
+            href="/schedule"
+            className="px-6 py-3 hover:bg-[#FFD700] hover:text-[#002147] border-b border-gray-600 transition-all duration-200 font-semibold text-sm"
+            onClick={toggleMenu}
+          >
+            📅 Schedule
+          </Link>
 
-            {/* College Filter */}
+          {/* Download Dropdown in Sidebar */}
+          <div className="px-6 py-4 border-b-2 border-[#FFD700] bg-[#001a34]">
+            <label className="block text-xs font-bold text-[#FFD700] mb-3 uppercase tracking-wider">
+              📥 Download Templates
+            </label>
             <select
-              value={selectedCollege}
-              onChange={(e) => setSelectedCollege(e.target.value)}
-              className="px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#002147] bg-white text-sm cursor-pointer"
+              className="w-full bg-white text-[#002147] rounded-md p-2.5 font-semibold focus:ring-2 focus:ring-[#FFD700] text-sm"
+              defaultValue=""
+              onChange={(e) => {
+                if (e.target.value !== "") {
+                  downloadFile(e.target.value);
+                }
+                e.target.value = "";
+              }}
             >
-              <option value="all">All Colleges</option>
-              {colleges.map(college => (
-                <option key={college} value={college}>{college}</option>
+              <option value="" disabled>
+                Select a template
+              </option>
+              {fileNames.map((fileName, index) => (
+                <option key={index} value={index} className="text-sm">
+                  {fileName}
+                </option>
               ))}
             </select>
-
-            {/* Refresh Button */}
-            <button
-              onClick={fetchTeams}
-              className="px-4 py-2 bg-[#002147] text-white rounded-lg hover:bg-blue-900 transition text-sm font-medium"
-            >
-              Refresh
-            </button>
           </div>
-        </div>
 
-        {/* Loading State */}
-        {isLoading && (
-          <div className="text-center py-12">
-            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#002147] mx-auto mb-4"></div>
-            <p className="text-gray-600">Loading teams data...</p>
-          </div>
-        )}
+          <Link
+            href="/contact_us"
+            className="px-6 py-3 hover:bg-[#FFD700] hover:text-[#002147] transition-all duration-200 font-semibold text-sm"
+            onClick={toggleMenu}
+          >
+            📞 Contact us
+          </Link>
+        </nav>
+      </div>
 
-        {/* Error State */}
-        {error && !isLoading && (
-          <div className="bg-red-50 border border-red-200 rounded-lg p-6 text-center">
-            <p className="text-red-700 font-semibold mb-2">Error loading teams</p>
-            <p className="text-red-600 text-sm mb-4">{error}</p>
-            <button
-              onClick={fetchTeams}
-              className="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-lg transition text-sm"
-            >
-              Retry
-            </button>
-          </div>
-        )}
+      {/* Overlay for Mobile Sidebar */}
+      {isOpen && (
+        <div
+          className="fixed inset-0 bg-black/50 z-30 md:hidden"
+          onClick={toggleMenu}
+        />
+      )}
 
-        {/* Empty State */}
-        {!isLoading && !error && teams.length === 0 && (
-          <div className="bg-white rounded-lg border border-gray-200 p-12 text-center">
-            <p className="text-gray-600 text-lg font-semibold">No teams have registered yet</p>
-          </div>
-        )}
+      {/* Desktop Navigation Menu */}
+      <nav className="hidden md:flex items-center justify-center ">
+      <Link
+        href="/#home"
+        className={`cursor-pointer m-0.5 bg-[#002147]  border-[#1A1A1A] text-white font-semibold transition-all duration-300 ease-in-out ${isScrolled ? 'text-sm py-1 px-4' : 'text-base py-1 px-2'} hover:bg-[#FFD700]/20  hover:text-black hover:shadow-lg`}
+        >
+      Home
+      </Link>
+      <Link
+      href="/#about"
+      className={`cursor-pointer m-0.5 bg-[#002147]  border-[#1A1A1A] text-white font-semibold transition-all duration-300 ease-in-out ${isScrolled ? 'text-sm py-1 px-4' : 'text-base py-1 px-2'} hover:bg-[#FFD700]/20  hover:text-black hover:shadow-lg`}
+        >
+        About
+        </Link>
 
-        {/* No Filters Match State */}
-        {!isLoading && !error && teams.length > 0 && sortedTeams.length === 0 && (
-          <div className="bg-white rounded-lg border border-gray-200 p-12 text-center">
-            <p className="text-gray-600 text-lg">No teams match your filters</p>
-          </div>
-        )}
+        <Link
+          href="/meet"
+          className={`cursor-pointer m-0.5 bg-[#002147] text-white border-[#1A1A1A] text-[#213555] font-semibold transition-all duration-300 ease-in-out ${isScrolled ? 'text-sm py-1 px-4' : 'text-base py-1 px-2'} hover:bg-[#FFD700]/20  hover:text-black hover:shadow-lg`}
+        >
+          Industry-Academia Meet
+        </Link>
+        <Link
+          href="/hackathon"
+          className={`cursor-pointer m-0.5 bg-[#002147] text-white border-[#1A1A1A] text-[#213555] font-semibold transition-all duration-300 ease-in-out ${isScrolled ? 'text-sm py-1 px-4' : 'text-base py-1 px-2'} hover:bg-[#FFD700]/20  hover:text-black hover:shadow-lg`}
+        >
+          inSAHEthon
+        </Link>
+        <Link
+          href="/journalpublications"
+          className={`cursor-pointer m-0.5 bg-[#002147] text-white  border-[#1A1A1A] text-[#213555] font-semibold transition-all duration-300 ease-in-out ${isScrolled ? 'text-sm py-1 px-4' : 'text-base py-1 px-2'} hover:bg-[#FFD700]/20  hover:text-black hover:shadow-lg`}
+        >
+          Journal Publication
+        </Link>
+       
+        <Link
+          href="/speakers"
+          className={`cursor-pointer m-0.5 bg-[#002147] text-white border-[#1A1A1A] text-[#213555] font-semibold transition-all duration-300 ease-in-out ${isScrolled ? 'text-sm py-1 px-4' : 'text-base py-1 px-2'} hover:bg-[#FFD700]/20  hover:text-black hover:shadow-lg`}
+        >
+          Speakers
+        </Link>
+        <Link
+          href="/schedule"
+          className={`cursor-pointer m-0.5 bg-[#002147] text-white border-[#1A1A1A] text-[#213555] font-semibold transition-all duration-300 ease-in-out ${isScrolled ? 'text-sm py-1 px-4' : 'text-base py-1 px-2'} hover:bg-[#FFD700]/20  hover:text-black hover:shadow-lg`}
+        >
+          Schedule
+        </Link>
+        <select
+        className={`cursor-pointer m-0.5 bg-[#002147] text-white border-[#1A1A1A] text-[#213555] font-semibold transition-all duration-300 ease-in-out ${
+          isScrolled ? 'text-sm py-1 px-4 w-28' : 'text-base py-1 px-2 w-28'
+        } hover:bg-[#FFD700]/20 hover:text-black hover:shadow-lg truncate`}
+        value=""
+        onChange={(e) => {
+          downloadFile(e.target.value);
+          e.target.value = ""; // Reset the select to "Download"
+        }}
+      >
+        <option value="" disabled>
+          Download
+        </option>
+        {fileNames.map((fileName, index) => (
+          <option
+            key={index}
+            value={index}
+            className="hover:bg-[#FFD700]/20 w-36 text-ellipsis overflow-hidden whitespace-nowrap"
+          >
+            {fileName}
+          </option>
+        ))}
+      </select>
+      <Link
+          href="/contact_us"
+          className={`cursor-pointer m-0.5 bg-[#002147] text-white  border-[#1A1A1A] text-[#213555] font-semibold transition-all duration-300 ease-in-out ${isScrolled ? 'text-sm py-1 px-4' : 'text-base py-1 px-2'} hover:bg-[#FFD700]/20  hover:text-black hover:shadow-lg`}
+        >
+         Contact us
+        </Link>
 
-        {/* Teams Table */}
-        {!isLoading && !error && sortedTeams.length > 0 && (
-          <div>
-            <div className="flex justify-between items-center mb-6">
-              <h2 className="text-lg font-bold text-[#002147]">Teams Details</h2>
-              <button
-                onClick={downloadTeamsAsExcel}
-                className="flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg transition duration-200 text-sm font-medium"
-              >
-                <Download className="w-4 h-4" />
-                Download Teams
-              </button>
-            </div>
-
-            <div className="overflow-x-auto border border-gray-200 rounded-lg">
-              <table className="w-full text-sm">
-                <thead>
-                  <tr className="bg-[#002147] text-white border-b">
-                    <th className="px-4 py-3 text-left font-semibold cursor-pointer hover:bg-blue-900" onClick={() => handleSort("teamName")}>
-                      <div className="flex items-center gap-2">
-                        Team Name
-                        {sortConfig.key === "teamName" && (
-                          <ChevronDown className={`w-4 h-4 transition ${sortConfig.direction === "desc" ? "rotate-180" : ""}`} />
-                        )}
-                      </div>
-                    </th>
-                    <th className="px-4 py-3 text-left font-semibold cursor-pointer hover:bg-blue-900" onClick={() => handleSort("registrationId")}>
-                      <div className="flex items-center gap-2">
-                        Registration ID
-                        {sortConfig.key === "registrationId" && (
-                          <ChevronDown className={`w-4 h-4 transition ${sortConfig.direction === "desc" ? "rotate-180" : ""}`} />
-                        )}
-                      </div>
-                    </th>
-                    <th className="px-4 py-3 text-left font-semibold cursor-pointer hover:bg-blue-900" onClick={() => handleSort("teamSize")}>
-                      <div className="flex items-center gap-2">
-                        Team Size
-                        {sortConfig.key === "teamSize" && (
-                          <ChevronDown className={`w-4 h-4 transition ${sortConfig.direction === "desc" ? "rotate-180" : ""}`} />
-                        )}
-                      </div>
-                    </th>
-                    <th className="px-4 py-3 text-left font-semibold">Leader Name</th>
-                    <th className="px-4 py-3 text-left font-semibold">Leader Email</th>
-                    <th className="px-4 py-3 text-left font-semibold">College</th>
-                    <th className="px-4 py-3 text-left font-semibold">Department</th>
-                    <th className="px-4 py-3 text-left font-semibold cursor-pointer hover:bg-blue-900" onClick={() => handleSort("createdAt")}>
-                      <div className="flex items-center gap-2">
-                        Registered On
-                        {sortConfig.key === "createdAt" && (
-                          <ChevronDown className={`w-4 h-4 transition ${sortConfig.direction === "desc" ? "rotate-180" : ""}`} />
-                        )}
-                      </div>
-                    </th>
-                    <th className="px-4 py-3 text-left font-semibold">Problem Statement</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {sortedTeams.map((team, index) => (
-                    <tr 
-                      key={team._id} 
-                      className={`border-b hover:bg-[#00214710] transition ${index % 2 === 0 ? "bg-white" : "bg-gray-50"}`}
-                    >
-                      <td className="px-4 py-3 font-semibold text-gray-900">{team.teamName}</td>
-                      <td className="px-4 py-3 text-gray-700">{team.registrationId}</td>
-                      <td className="px-4 py-3 text-gray-700">
-                        <span className="bg-[#00214710] text-[#002147] px-2 py-1 rounded font-semibold">
-                          {team.teamSize}
-                        </span>
-                      </td>
-                      <td className="px-4 py-3 text-gray-700">{team.leader?.name || "—"}</td>
-                      <td className="px-4 py-3 text-gray-700 text-xs">{team.leader?.email || "—"}</td>
-                      <td className="px-4 py-3 text-gray-700">{team.leader?.college || "—"}</td>
-                      <td className="px-4 py-3 text-gray-700">{team.leader?.department || "—"}</td>
-                      <td className="px-4 py-3 text-gray-700 text-xs">{new Date(team.createdAt).toLocaleDateString()}</td>
-                      <td className="px-4 py-3 text-gray-700 max-w-xs truncate">{team.problemStatement}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          </div>
-        )}
-
-        {/* Footer Info */}
-        {!isLoading && !error && sortedTeams.length > 0 && (
-          <div className="mt-6 text-sm text-gray-600 text-center">
-            Showing {sortedTeams.length} of {teams.length} teams
-          </div>
-        )}
-      </main>
-    </div>
+      </nav>
+    </header>
+      </div>
   );
-}
+};
+
+export default Header;
