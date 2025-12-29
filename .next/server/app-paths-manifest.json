@@ -1,5 +1,4 @@
 {
-  "/hackathon/codefusion/register/teams/page": "app/hackathon/codefusion/register/teams/page.js",
-  "/hackathon/codefusion/register/teams/all/page": "app/hackathon/codefusion/register/teams/all/page.js",
+  "/page": "app/page.js",
   "/icon.png/route": "app/icon.png/route.js"
 }
