@@ -30,7 +30,7 @@ const HackathonTimeline = () => {
     <div style={{
       width: '100%',
       background: '#ffffff',
-      padding: '48px 16px',
+      padding: isDesktop ? '48px 16px' : '32px 16px',
       fontFamily: 'SUSE, sans-serif',
       overflow: 'hidden'
     }}>
@@ -39,10 +39,10 @@ const HackathonTimeline = () => {
         maxWidth: '896px',
         margin: '0 auto',
         textAlign: 'center',
-        marginBottom: '96px'
+        marginBottom: isDesktop ? '96px' : '48px'
       }}>
         <h2 style={{
-          fontSize: '40px',
+          fontSize: isDesktop ? '40px' : '28px',
           fontWeight: '700',
           color: '#002147',
           marginBottom: '12px',
@@ -51,7 +51,7 @@ const HackathonTimeline = () => {
           Event Schedule
         </h2>
         <div style={{
-          width: '96px',
+          width: isDesktop ? '96px' : '80px',
           height: '4px',
           background: '#002147',
           margin: '0 auto 16px'
@@ -60,9 +60,10 @@ const HackathonTimeline = () => {
           color: '#6B7280',
           letterSpacing: '0.2em',
           textTransform: 'uppercase',
-          fontSize: '10px',
+          fontSize: isDesktop ? '10px' : '9px',
           fontWeight: '600',
-          fontFamily: 'SUSE, sans-serif'
+          fontFamily: 'SUSE, sans-serif',
+          lineHeight: '1.4'
         }}>
           Academic Research & Development Conclave
         </p>
@@ -235,14 +236,15 @@ const HackathonTimeline = () => {
         <div style={{
           display: isDesktop ? 'none' : 'flex',
           flexDirection: 'column',
-          gap: '32px',
+          gap: '28px',
           position: 'relative',
-          paddingLeft: '40px'
+          paddingLeft: '50px',
+          paddingRight: '12px'
         }}>
           {/* Vertical Line */}
           <div style={{
             position: 'absolute',
-            left: '19px',
+            left: '20px',
             top: 0,
             height: '100%',
             width: '2px',
@@ -259,10 +261,10 @@ const HackathonTimeline = () => {
                 {/* Date Node */}
                 <div style={{
                   position: 'absolute',
-                  left: '-60px',
-                  top: '0px',
-                  width: '56px',
-                  height: '56px',
+                  left: '-64px',
+                  top: '2px',
+                  width: '48px',
+                  height: '48px',
                   borderRadius: '50%',
                   border: '3px solid #002147',
                   background: '#ffffff',
@@ -272,12 +274,13 @@ const HackathonTimeline = () => {
                   justifyContent: 'center',
                   color: '#002147',
                   fontWeight: '700',
-                  fontSize: '10px',
+                  fontSize: '8px',
                   whiteSpace: 'nowrap',
-                  padding: '0 4px',
+                  padding: '0 3px',
                   fontFamily: 'SUSE, sans-serif',
                   textAlign: 'center',
-                  boxShadow: '0 2px 8px rgba(0, 33, 71, 0.1)'
+                  boxShadow: '0 2px 8px rgba(0, 33, 71, 0.1)',
+                  lineHeight: '1.1'
                 }}>
                   {item.date}
                 </div>
@@ -285,10 +288,11 @@ const HackathonTimeline = () => {
                 <div style={{
                   background: '#ffffff',
                   border: '2px solid rgba(0, 33, 71, 0.15)',
-                  padding: '20px',
-                  borderRadius: '12px',
+                  padding: '16px',
+                  borderRadius: '10px',
                   boxShadow: '0 2px 8px rgba(0, 33, 71, 0.08)',
-                  transition: 'all 0.3s'
+                  transition: 'all 0.3s',
+                  marginLeft: '0'
                 }}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.borderColor = '#002147';
@@ -302,24 +306,26 @@ const HackathonTimeline = () => {
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'flex-end',
-                    marginBottom: '10px'
+                    marginBottom: '8px'
                   }}>
-                    <Icon size={20} style={{ color: '#002147' }} strokeWidth={2} />
+                    <Icon size={18} style={{ color: '#002147', flexShrink: 0 }} strokeWidth={2} />
                   </div>
                   <h3 style={{
                     color: '#002147',
                     fontWeight: '700',
-                    fontSize: '16px',
-                    marginBottom: '8px',
-                    fontFamily: 'SUSE, sans-serif'
+                    fontSize: '13px',
+                    marginBottom: '6px',
+                    fontFamily: 'SUSE, sans-serif',
+                    lineHeight: '1.3'
                   }}>
                     {item.title}
                   </h3>
                   <p style={{
                     color: '#6B7280',
-                    fontSize: '14px',
-                    lineHeight: '1.5',
-                    fontFamily: 'SUSE, sans-serif'
+                    fontSize: '12px',
+                    lineHeight: '1.4',
+                    fontFamily: 'SUSE, sans-serif',
+                    margin: '0'
                   }}>
                     {item.desc}
                   </p>
