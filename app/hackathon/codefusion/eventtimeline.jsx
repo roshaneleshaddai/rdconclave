@@ -238,7 +238,7 @@ const HackathonTimeline = () => {
           flexDirection: 'column',
           gap: '28px',
           position: 'relative',
-          paddingLeft: '50px',
+          paddingLeft: '65px',
           paddingRight: '12px'
         }}>
           {/* Vertical Line */}
