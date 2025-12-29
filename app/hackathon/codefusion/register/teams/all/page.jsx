@@ -108,38 +108,184 @@ export default function TeamsListPage() {
     });
   };
 
-  const downloadStatisticsAsExcel = () => {
-    // Create CSV content
-    let csvContent = "CODEFUSION DASHBOARD STATISTICS\n";
-    csvContent += new Date().toLocaleDateString() + "\n\n";
-    
-    // Summary Statistics
-    csvContent += "SUMMARY STATISTICS\n";
-    csvContent += "Metric,Value\n";
-    csvContent += `Total Teams,${stats.total}\n`;
-    csvContent += `Total Colleges,${stats.totalColleges}\n`;
-    csvContent += `Teams with 3 Members,${stats.college3}\n`;
-    csvContent += `Teams with 4 Members,${stats.college4}\n\n`;
-    
-    // College-wise breakdown
-    csvContent += "COLLEGE-WISE BREAKDOWN\n";
-    csvContent += "College,Number of Teams\n";
-    colleges.forEach(college => {
-      const count = teams.filter(t => t.leader?.college === college).length;
-      csvContent += `${college},${count}\n`;
-    });
+  const downloadStatisticsAsPDF = () => {
+    // Create HTML content for PDF
+    let htmlContent = `
+      <!DOCTYPE html>
+      <html>
+      <head>
+        <style>
+          * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+          }
+          body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f5f5f5;
+          }
+          .container {
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 40px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+          }
+          .header {
+            text-align: center;
+            margin-bottom: 40px;
+            border-bottom: 3px solid #002147;
+            padding-bottom: 20px;
+          }
+          .header h1 {
+            color: #002147;
+            font-size: 36px;
+            font-weight: bold;
+            margin-bottom: 5px;
+          }
+          .header p {
+            color: #666;
+            font-size: 14px;
+            margin-top: 10px;
+          }
+          .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin-bottom: 40px;
+          }
+          .stat-card {
+            background-color: #f9f9f9;
+            border: 2px solid #002147;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+          }
+          .stat-label {
+            color: #666;
+            font-size: 12px;
+            text-transform: uppercase;
+            font-weight: bold;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+          }
+          .stat-value {
+            color: #002147;
+            font-size: 42px;
+            font-weight: bold;
+          }
+          .colleges-section {
+            margin-top: 40px;
+          }
+          .colleges-title {
+            color: #002147;
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #002147;
+            padding-bottom: 10px;
+          }
+          .colleges-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+          }
+          .college-item {
+            background-color: #00214710;
+            border: 1px solid #002147;
+            border-radius: 6px;
+            padding: 15px;
+            text-align: center;
+          }
+          .college-name {
+            color: #333;
+            font-size: 12px;
+            margin-bottom: 8px;
+            font-weight: 600;
+            word-break: break-word;
+          }
+          .college-count {
+            color: #002147;
+            font-size: 24px;
+            font-weight: bold;
+          }
+          .footer {
+            margin-top: 30px;
+            text-align: center;
+            color: #999;
+            font-size: 12px;
+            border-top: 1px solid #ddd;
+            padding-top: 15px;
+          }
+        </style>
+      </head>
+      <body>
+        <div class="container">
+          <div class="header">
+            <h1>CodeFusion 2026</h1>
+            <p>Dashboard Statistics Report</p>
+            <p>${new Date().toLocaleDateString()}</p>
+          </div>
 
-    // Create blob and download
-    const blob = new Blob([csvContent], { type: "text/csv;charset=utf-8;" });
+          <div class="stats-grid">
+            <div class="stat-card">
+              <div class="stat-label">Total Teams</div>
+              <div class="stat-value">${stats.total}</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-label">Total Colleges</div>
+              <div class="stat-value">${stats.totalColleges}</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-label">3 Members Teams</div>
+              <div class="stat-value">${stats.college3}</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-label">4 Members Teams</div>
+              <div class="stat-value">${stats.college4}</div>
+            </div>
+          </div>
+
+          <div class="colleges-section">
+            <div class="colleges-title">Colleges Distribution</div>
+            <div class="colleges-grid">
+              ${colleges.map(college => {
+                const count = teams.filter(t => t.leader?.college === college).length;
+                return `
+                  <div class="college-item">
+                    <div class="college-name">${college}</div>
+                    <div class="college-count">${count}</div>
+                  </div>
+                `;
+              }).join('')}
+            </div>
+          </div>
+
+          <div class="footer">
+            <p>Generated on ${new Date().toLocaleString()}</p>
+          </div>
+        </div>
+      </body>
+      </html>
+    `;
+
+    // Create blob and trigger download
+    const blob = new Blob([htmlContent], { type: "text/html;charset=utf-8;" });
     const link = document.createElement("a");
     const url = URL.createObjectURL(blob);
     
     link.setAttribute("href", url);
-    link.setAttribute("download", `CodeFusion_Statistics_${new Date().toISOString().split('T')[0]}.csv`);
+    link.setAttribute("download", `CodeFusion_Statistics_${new Date().toISOString().split('T')[0]}.html`);
     link.style.visibility = "hidden";
     
     document.body.appendChild(link);
-    link.click();
+    
+    // Use browser's print-to-PDF feature
+    setTimeout(() => {
+      window.open(url, "_blank");
+    }, 100);
+    
     document.body.removeChild(link);
   };
 
@@ -265,7 +411,7 @@ export default function TeamsListPage() {
           <div className="flex justify-between items-center mb-6">
             <h2 className="text-lg font-bold text-[#002147]">Quick Statistics</h2>
             <button
-              onClick={downloadStatisticsAsExcel}
+              onClick={downloadStatisticsAsPDF}
               disabled={isLoading}
               className="flex items-center gap-2 bg-green-600 hover:bg-green-700 disabled:bg-gray-400 text-white px-4 py-2 rounded-lg transition duration-200 text-sm font-medium"
             >
