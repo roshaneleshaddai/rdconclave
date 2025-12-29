@@ -64,26 +64,26 @@ const Header = () => {
 
   return (
     <div className="relative w-full">
-      {/* Golden Jubilee Banner */}
-      <div className="w-full bg-[#002147] text-[#FFD700] text-center py-1.5 sm:py-2 font-bold text-xs sm:text-sm md:text-base leading-tight sm:leading-normal">
+      {/* Golden Jubilee Banner - Fixed Above Header */}
+      <div className="fixed top-0 left-0 right-0 w-full bg-[#002147] text-[#FFD700] text-center py-1.5 sm:py-2 font-bold text-xs sm:text-sm md:text-base leading-tight sm:leading-normal z-50">
         Golden Jubilee Year of Siddhartha Academy of General & Technical Education, Vijayawada
       </div>
 
       {/* Main Header */}
-      <header className={`fixed w-full top-12 sm:top-14 md:top-16 z-50 transition-all duration-300 ease-in-out bg-[#F5F5F5] ${isScrolled ? 'py-1 md:py-1' : 'py-2 md:py-3'}`}>
-        <div className="flex items-center justify-between w-full px-2 sm:px-3 md:px-4 lg:px-6">
+      <header className={`fixed w-full top-10 sm:top-12 md:top-14 z-50 transition-all duration-300 ease-in-out bg-[#F5F5F5] ${isScrolled ? 'py-1 md:py-1' : 'py-2 md:py-3'}`}>
+        <div className="flex items-center justify-between w-full px-2 sm:px-3 md:px-4 lg:px-6 gap-2 sm:gap-3">
           
-          {/* Mobile Hamburger Menu */}
-          <div className="md:hidden flex items-center">
+          {/* Mobile Hamburger Menu - Inside Blue Box */}
+          <div className="md:hidden flex items-center bg-[#1a3a5c] rounded p-1.5 sm:p-2 flex-shrink-0">
             {isOpen ? (
               <FaTimes 
                 onClick={toggleMenu} 
-                className="text-xl sm:text-2xl cursor-pointer z-50 text-white bg-[#1a3a5c] p-1.5 sm:p-2 rounded" 
+                className="text-xl sm:text-2xl cursor-pointer text-white" 
               /> 
             ) : (
               <FaBars 
                 onClick={toggleMenu} 
-                className="text-xl sm:text-2xl cursor-pointer text-white bg-[#1a3a5c] p-1.5 sm:p-2 rounded"
+                className="text-xl sm:text-2xl cursor-pointer text-white"
               />
             )}
           </div>
@@ -159,79 +159,79 @@ const Header = () => {
         </div>
       </header>
 
-      {/* Mobile Sidebar Navigation - Narrow Width */}
+      {/* Mobile Sidebar Navigation - Wider with Blue Background */}
       <div
-        className={`fixed left-0 top-0 w-48 sm:w-56 h-screen bg-[#002147] text-white transition-transform duration-300 z-40 overflow-y-auto pt-28 sm:pt-32 md:pt-36 ${
+        className={`fixed left-0 top-0 w-72 sm:w-80 h-screen bg-[#002147] text-white transition-transform duration-300 z-40 overflow-y-auto pt-24 sm:pt-28 md:pt-32 ${
           isOpen ? 'translate-x-0' : '-translate-x-full'
         }`}
       >
-        {/* Close Button */}
-        <div className="flex justify-end p-3 sm:p-4 border-b border-[#FFD700] absolute top-0 left-0 right-0">
+        {/* Close Button - Only One */}
+        <div className="flex justify-end px-5 sm:px-6 py-3 sm:py-4 border-b border-[#FFD700] sticky top-0 bg-[#002147]">
           <FaTimes 
             onClick={toggleMenu} 
-            className="text-xl sm:text-2xl cursor-pointer text-[#FFD700]" 
+            className="text-2xl sm:text-3xl cursor-pointer text-[#FFD700]" 
           />
         </div>
 
         {/* Sidebar Navigation Links */}
-        <nav className="flex flex-col pt-4 sm:pt-6">
+        <nav className="flex flex-col">
           <Link
             href="/#home"
-            className="px-4 sm:px-5 py-3 sm:py-4 hover:bg-[#FFD700]/20 hover:text-[#FFD700] border-b border-gray-700 transition-all duration-200 font-semibold text-sm sm:text-base"
+            className="px-5 sm:px-6 py-4 sm:py-5 hover:bg-[#FFD700]/20 hover:text-[#FFD700] border-b border-gray-700 transition-all duration-200 font-semibold text-sm sm:text-base leading-normal"
             onClick={toggleMenu}
           >
             Home
           </Link>
           <Link
             href="/#about"
-            className="px-4 sm:px-5 py-3 sm:py-4 hover:bg-[#FFD700]/20 hover:text-[#FFD700] border-b border-gray-700 transition-all duration-200 font-semibold text-sm sm:text-base"
+            className="px-5 sm:px-6 py-4 sm:py-5 hover:bg-[#FFD700]/20 hover:text-[#FFD700] border-b border-gray-700 transition-all duration-200 font-semibold text-sm sm:text-base leading-normal"
             onClick={toggleMenu}
           >
             About
           </Link>
           <Link
             href="/meet"
-            className="px-4 sm:px-5 py-3 sm:py-4 hover:bg-[#FFD700]/20 hover:text-[#FFD700] border-b border-gray-700 transition-all duration-200 font-semibold text-sm sm:text-base"
+            className="px-5 sm:px-6 py-4 sm:py-5 hover:bg-[#FFD700]/20 hover:text-[#FFD700] border-b border-gray-700 transition-all duration-200 font-semibold text-sm sm:text-base leading-normal"
             onClick={toggleMenu}
           >
             Industry-Academia Meet
           </Link>
           <Link
             href="/hackathon"
-            className="px-4 sm:px-5 py-3 sm:py-4 hover:bg-[#FFD700]/20 hover:text-[#FFD700] border-b border-gray-700 transition-all duration-200 font-semibold text-sm sm:text-base"
+            className="px-5 sm:px-6 py-4 sm:py-5 hover:bg-[#FFD700]/20 hover:text-[#FFD700] border-b border-gray-700 transition-all duration-200 font-semibold text-sm sm:text-base leading-normal"
             onClick={toggleMenu}
           >
             inSAHEthon
           </Link>
           <Link
             href="/journalpublications"
-            className="px-4 sm:px-5 py-3 sm:py-4 hover:bg-[#FFD700]/20 hover:text-[#FFD700] border-b border-gray-700 transition-all duration-200 font-semibold text-sm sm:text-base"
+            className="px-5 sm:px-6 py-4 sm:py-5 hover:bg-[#FFD700]/20 hover:text-[#FFD700] border-b border-gray-700 transition-all duration-200 font-semibold text-sm sm:text-base leading-normal"
             onClick={toggleMenu}
           >
             Journal Publication
           </Link>
           <Link
             href="/speakers"
-            className="px-4 sm:px-5 py-3 sm:py-4 hover:bg-[#FFD700]/20 hover:text-[#FFD700] border-b border-gray-700 transition-all duration-200 font-semibold text-sm sm:text-base"
+            className="px-5 sm:px-6 py-4 sm:py-5 hover:bg-[#FFD700]/20 hover:text-[#FFD700] border-b border-gray-700 transition-all duration-200 font-semibold text-sm sm:text-base leading-normal"
             onClick={toggleMenu}
           >
             Speakers
           </Link>
           <Link
             href="/schedule"
-            className="px-4 sm:px-5 py-3 sm:py-4 hover:bg-[#FFD700]/20 hover:text-[#FFD700] border-b border-gray-700 transition-all duration-200 font-semibold text-sm sm:text-base"
+            className="px-5 sm:px-6 py-4 sm:py-5 hover:bg-[#FFD700]/20 hover:text-[#FFD700] border-b border-gray-700 transition-all duration-200 font-semibold text-sm sm:text-base leading-normal"
             onClick={toggleMenu}
           >
             Schedule
           </Link>
 
           {/* Download Dropdown */}
-          <div className="px-4 sm:px-5 py-3 sm:py-4 border-b border-gray-700">
-            <label className="block text-xs sm:text-sm font-semibold text-[#FFD700] mb-2">
-              Download
+          <div className="px-5 sm:px-6 py-4 sm:py-5 border-b border-gray-700">
+            <label className="block text-xs sm:text-sm font-semibold text-[#FFD700] mb-3">
+              Download Templates
             </label>
             <select
-              className="w-full bg-white text-black rounded p-2 text-xs sm:text-sm font-semibold focus:ring-2 focus:ring-[#FFD700]"
+              className="w-full bg-white text-black rounded p-2.5 text-xs sm:text-sm font-semibold focus:ring-2 focus:ring-[#FFD700] focus:outline-none"
               defaultValue=""
               onChange={(e) => {
                 if (e.target.value !== "") {
@@ -253,7 +253,7 @@ const Header = () => {
 
           <Link
             href="/contact_us"
-            className="px-4 sm:px-5 py-3 sm:py-4 hover:bg-[#FFD700]/20 hover:text-[#FFD700] transition-all duration-200 font-semibold text-sm sm:text-base"
+            className="px-5 sm:px-6 py-4 sm:py-5 hover:bg-[#FFD700]/20 hover:text-[#FFD700] transition-all duration-200 font-semibold text-sm sm:text-base leading-normal"
             onClick={toggleMenu}
           >
             Contact us
