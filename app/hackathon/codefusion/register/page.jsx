@@ -229,6 +229,7 @@ const RegistrationForm = () => {
     'SRM University AP – Amaravati region',
     'VIT-AP University – Amaravati region',
     'Velagapudi Ramakrishna Siddhartha Engineering College – Vijayawada',
+    'Siddhartha Academy of Higher Education – Vijayawada',
     'Prasad V Potluri Siddhartha Institute of Technology (PVPSIT) – Vijayawada',
     'Gudlavalleru Engineering College – Gudlavalleru',
     'Dhanekula Institute of Engineering & Technology – Vijayawada',
