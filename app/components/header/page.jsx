@@ -319,10 +319,10 @@ const Header = () => {
         </Link>
         <Link
           href="/journalpublications"
-          className={`cursor-pointer m-0.5 bg-[#002147] text-white  border-[#1A1A1A] text-[#213555] font-semibold transition-all duration-300 ease-in-out ${isScrolled ? 'text-sm py-1 px-4' : 'text-base py-1 px-2'} hover:bg-[#FFD700]/20  hover:text-black hover:shadow-lg`}
-        >
-          Journal Publication
-        </Link>
+            className={`cursor-pointer m-0.5 bg-[#002147] text-white  border-[#1A1A1A] text-[#213555] font-semibold transition-all duration-300 ease-in-out ${isScrolled ? 'text-sm py-1 px-4' : 'text-base py-1 px-2'} hover:bg-[#FFD700]/20  hover:text-black hover:shadow-lg`}
+          >
+            Conference Themes
+          </Link>
        
         <Link
           href="/speakers"
