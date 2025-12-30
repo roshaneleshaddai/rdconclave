@@ -26,34 +26,17 @@ const Header = () => {
   };
 
 
-  const files = [
-    "/Authors_ORCID_Information.doc",
-    "/PES_Copyright_Agreement_Form.doc",
-    "/PES_template.docx",
-    "IEEE conference-template-a4.docx",
-    "Springer-Template.doc",  
-    "Netherlands Press Template-Nanotechnology Perceptions.docx",
-    "Journal of Infrastructure, Policy and Development--JIPD-template.docx",
-  ];
+  // Only Springer-Template zip file
+  const springerFileName = "Springer-Template";
+  const springerZipPath = "/Springer-Template.zip";
 
-  const fileNames = [
-    "Authors ORCID Information",
-    "PES Copyright Agreement Form",
-    "PES TEmplate",
-    "IEEE conference-template",
-    "Springer-Template",  
-    "Netherlands Press Template-Nanotechnology Perceptions",
-    "Journal of Infrastructure, Policy and Development--JIPD-template",
-  ];
-
-  const downloadFile = (index) => {
-    if (index === '') return; 
+  const downloadSpringerZip = () => {
     const link = document.createElement('a');
-    link.href = files[index];
-    link.setAttribute('download', fileNames[index]); 
+    link.href = springerZipPath;
+    link.setAttribute('download', springerFileName + ".zip");
     document.body.appendChild(link);
-    link.click(); 
-    document.body.removeChild(link); 
+    link.click();
+    document.body.removeChild(link);
   };
 
 
@@ -224,70 +207,19 @@ const Header = () => {
         className={`fixed left-0 top-0 w-full h-full bg-[#002147] text-white text-xl flex flex-col justify-center items-center transition-transform duration-300 ${isOpen ? 'translate-x-0' : '-translate-x-full'}`}
       >
         <ul className="space-y-6 text-center ">
-        <li><Link
-        href="/#home"
-        className="" onClick={toggleMenu}>
-      Home
-      </Link>
-      </li>
-      <li><Link
-      href="/#about"
-      className="" onClick={toggleMenu}>
-        About
-        </Link></li>
-
-        <li><Link
-          href="/meet"
-          className="" onClick={toggleMenu}>
-          Industry-Academia Meet
-        </Link></li>
-        <li><Link
-          href="/hackathon"
-          className="" onClick={toggleMenu}>
-          inSAHEthon
-        </Link></li>
-        <li><Link
-          href="/journalpublications"
-          className="" onClick={toggleMenu}>
-          Conference Themes
-        </Link></li>
-        <li><Link
-          href="/speakers"
-          className="" onClick={toggleMenu}>
-          Speakers
-        </Link></li>
-        <li><Link
-          href="/schedule"
-          className="" onClick={toggleMenu}>
-          Schedule
-        </Link></li>
-        <li>
-          <select
-            className="text-black w-3/4 rounded p-2 bg-white shadow-md focus:ring-2 focus:ring-blue-500 text-lg"
-            defaultValue=""
-            onChange={(e) => {
-              toggleMenu();
-              downloadFile(e.target.value);
-              e.target.value = "";
-            }}
-          >
-            <option value="" disabled>
-              Download
-            </option>
-            {fileNames.map((fileName, index) => (
-              <option key={index} value={index} className="text-sm">
-                {fileName}
-              </option>
-            ))}
-          </select>
-        </li>
-
-              <li><Link
-          href="/contact_us"
-          className="" onClick={toggleMenu}>
-          Contact us
-        </Link></li>
-        </ul>
+          {/* ...existing code... */}
+          <li>
+            <button
+              className="text-black w-3/4 rounded p-2 bg-white shadow-md focus:ring-2 focus:ring-blue-500 text-lg"
+              onClick={() => {
+                toggleMenu();
+                downloadSpringerZip();
+              }}
+            >
+              Download Springer-Template
+            </button>
+          </li>
+          {/* ...existing code... */}
       </nav>
 
       {/* Desktop Navigation Menu */}
@@ -336,29 +268,14 @@ const Header = () => {
         >
           Schedule
         </Link>
-        <select
-        className={`cursor-pointer m-0.5 bg-[#002147] text-white border-[#1A1A1A] text-[#213555] font-semibold transition-all duration-300 ease-in-out ${
-          isScrolled ? 'text-sm py-1 px-4 w-28' : 'text-base py-1 px-2 w-28'
-        } hover:bg-[#FFD700]/20 hover:text-black hover:shadow-lg truncate`}
-        value=""
-        onChange={(e) => {
-          downloadFile(e.target.value);
-          e.target.value = ""; // Reset the select to "Download"
-        }}
-      >
-        <option value="" disabled>
-          Download
-        </option>
-        {fileNames.map((fileName, index) => (
-          <option
-            key={index}
-            value={index}
-            className="hover:bg-[#FFD700]/20 w-36 text-ellipsis overflow-hidden whitespace-nowrap"
-          >
-            {fileName}
-          </option>
-        ))}
-      </select>
+        <button
+          className={`cursor-pointer m-0.5 bg-[#002147] text-white border-[#1A1A1A] text-[#213555] font-semibold transition-all duration-300 ease-in-out ${
+            isScrolled ? 'text-sm py-1 px-4 w-28' : 'text-base py-1 px-2 w-28'
+          } hover:bg-[#FFD700]/20 hover:text-black hover:shadow-lg truncate`}
+          onClick={downloadSpringerZip}
+        >
+          Download Springer-Template
+        </button>
       <Link
           href="/contact_us"
           className={`cursor-pointer m-0.5 bg-[#002147] text-white  border-[#1A1A1A] text-[#213555] font-semibold transition-all duration-300 ease-in-out ${isScrolled ? 'text-sm py-1 px-4' : 'text-base py-1 px-2'} hover:bg-[#FFD700]/20  hover:text-black hover:shadow-lg`}
