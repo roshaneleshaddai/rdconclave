@@ -220,6 +220,7 @@ const Header = () => {
             </button>
           </li>
           {/* ...existing code... */}
+        </ul>
       </nav>
 
       {/* Desktop Navigation Menu */}
