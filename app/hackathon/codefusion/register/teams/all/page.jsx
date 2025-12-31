@@ -23,6 +23,11 @@ export default function TeamsListPage() {
   // Statistics
   const [stats, setStats] = useState({ total: 0, college3: 0, college4: 0, totalColleges: 0 });
 
+  // Normalize college names: trim and lowercase for consistent comparison
+  const normalizeCollege = (collegeName) => {
+    return collegeName?.trim().toLowerCase() || "";
+  };
+
   useEffect(() => {
     const checkAuthentication = () => {
       const isAuthenticated = localStorage.getItem("isAdminAuthenticated");
@@ -64,14 +69,21 @@ export default function TeamsListPage() {
         setTeams(teamsData);
         setTotalCount(data.count || 0);
         
-        // Extract unique colleges
-        const collegeSet = new Set();
+        // Extract unique colleges with normalized names
+        const collegeMap = new Map();
         teamsData.forEach(team => {
-          if (team.leader?.college) {
-            collegeSet.add(team.leader.college);
+          const collegeName = team.leader?.college;
+          if (collegeName) {
+            const normalized = normalizeCollege(collegeName);
+            // Store the original casing of the first occurrence
+            if (!collegeMap.has(normalized)) {
+              collegeMap.set(normalized, collegeName);
+            }
           }
         });
-        setColleges(Array.from(collegeSet).sort());
+        
+        const uniqueColleges = Array.from(collegeMap.values()).sort();
+        setColleges(uniqueColleges);
         
         // Calculate statistics
         calculateStats(teamsData);
@@ -92,11 +104,11 @@ export default function TeamsListPage() {
   const calculateStats = (teamsData) => {
     const college3Count = teamsData.filter(t => t.teamSize == 3).length;
     const college4Count = teamsData.filter(t => t.teamSize == 4).length;
-    const collegeSet = new Set();
     
+    const collegeSet = new Set();
     teamsData.forEach(team => {
       if (team.leader?.college) {
-        collegeSet.add(team.leader.college);
+        collegeSet.add(normalizeCollege(team.leader.college));
       }
     });
     
@@ -250,7 +262,7 @@ export default function TeamsListPage() {
             <div class="colleges-title">Colleges Distribution</div>
             <div class="colleges-grid">
               ${colleges.map(college => {
-                const count = teams.filter(t => t.leader?.college === college).length;
+                const count = teams.filter(t => normalizeCollege(t.leader?.college) === normalizeCollege(college)).length;
                 return `
                   <div class="college-item">
                     <div class="college-name">${college}</div>
@@ -312,7 +324,7 @@ export default function TeamsListPage() {
     const url = URL.createObjectURL(blob);
     
     link.setAttribute("href", url);
-    link.setAttribute("download", `CodeFusion_Teams_${new Date().toISOString().split('T')[0]}.csv`);
+    link.setAttribute("download", `CodeFusion_Teams_${new Date().toISOString().split('T')[0]}.csv`;
     link.style.visibility = "hidden";
     
     document.body.appendChild(link);
@@ -334,7 +346,8 @@ export default function TeamsListPage() {
       team.registrationId.toLowerCase().includes(searchQuery.toLowerCase()) ||
       team.leader?.name.toLowerCase().includes(searchQuery.toLowerCase());
     
-    const matchesCollege = selectedCollege === "all" || team.leader?.college === selectedCollege;
+    const matchesCollege = selectedCollege === "all" || 
+      normalizeCollege(team.leader?.college) === normalizeCollege(selectedCollege);
     
     return matchesSearch && matchesCollege;
   });
@@ -465,7 +478,7 @@ export default function TeamsListPage() {
           <div className="bg-[#00214710] rounded-lg p-6 mb-8 border border-[#002147]">
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
               {colleges.map(college => {
-                const count = teams.filter(t => t.leader?.college === college).length;
+                const count = teams.filter(t => normalizeCollege(t.leader?.college) === normalizeCollege(college)).length;
                 return (
                   <div key={college} className="text-center">
                     <p className="text-xs text-gray-600 truncate">{college}</p>
