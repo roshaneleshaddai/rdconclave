@@ -2101,10 +2101,6 @@ html, body {
   .sm\:p-8{
     padding: 2rem;
   }
-  .sm\:px-3{
-    padding-left: 0.75rem;
-    padding-right: 0.75rem;
-  }
   .sm\:px-6{
     padding-left: 1.5rem;
     padding-right: 1.5rem;
@@ -2129,10 +2125,6 @@ html, body {
   }
   .sm\:pt-48{
     padding-top: 12rem;
-  }
-  .sm\:text-2xl{
-    font-size: 1.5rem;
-    line-height: 2rem;
   }
   .sm\:text-3xl{
     font-size: 1.875rem;
@@ -2273,10 +2265,6 @@ html, body {
     padding-left: 3rem;
     padding-right: 3rem;
   }
-  .md\:px-4{
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
   .md\:px-8{
     padding-left: 2rem;
     padding-right: 2rem;
@@ -2402,10 +2390,6 @@ html, body {
   }
   .lg\:p-12{
     padding: 3rem;
-  }
-  .lg\:px-6{
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
   }
   .lg\:px-8{
     padding-left: 2rem;

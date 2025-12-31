@@ -244,7 +244,9 @@ const RegistrationForm = () => {
     'PACE Institute of Technology, Ongole',
     'RVR & JC College of Engineering – Guntur',
     'Vignan\'s Foundation for Science, Technology & Research – Guntur',
-    'Vasireddy Venkatadri Institute of Technology (VVIT) – Guntur'
+    'Vasireddy Venkatadri Institute of Technology (VVIT) – Guntur',
+    'Bapatla Engineering College – Bapatla',
+    'DVR & DR HS MIC COLLEGE OF TECHNOLOGY ',
   ];
 
   useEffect(() => {
