@@ -335,7 +335,8 @@ export default function Hackathon() {
               <p className="text-center">
                 Final Round:<span className="text-[#002147]"> January 23rd 2026, 11:00 AM - January 24th 2026, 11:00 AM</span>
               </p>
-              <button className="p-2 m-2 bg-white text-lg border-2 border-[#002147]/40 hover:border-[#002147] rounded-full">
+              <button className="p-2 m-2 bg-white text-lg border-2 border-[#002147]/40 hover:border-[#002147] rounded-full"  onClick={() => window.open('https://forms.gle/u7seFhfkMi5m7AhPA', '_blank')}>
+                
                 Register Now
               </button>
             </div>

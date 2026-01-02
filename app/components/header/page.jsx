@@ -9,6 +9,7 @@ import Image from 'next/image';
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false); // State to track scrolling
+  const [showDownloads, setShowDownloads] = useState(false);
   const router = useRouter();
 
   // Toggle the mobile menu
@@ -207,19 +208,68 @@ const Header = () => {
         className={`fixed left-0 top-0 w-full h-full bg-[#002147] text-white text-xl flex flex-col justify-center items-center transition-transform duration-300 ${isOpen ? 'translate-x-0' : '-translate-x-full'}`}
       >
         <ul className="space-y-6 text-center ">
-          {/* ...existing code... */}
           <li>
-            <button
-              className="text-black w-3/4 rounded p-2 bg-white shadow-md focus:ring-2 focus:ring-blue-500 text-lg"
-              onClick={() => {
-                toggleMenu();
-                downloadSpringerZip();
-              }}
-            >
-              Download Springer-Template
-            </button>
+            <Link href="/#home" onClick={toggleMenu} className="hover:text-[#FFD700]">
+              Home
+            </Link>
           </li>
-          {/* ...existing code... */}
+          <li>
+            <Link href="/#about" onClick={toggleMenu} className="hover:text-[#FFD700]">
+              About
+            </Link>
+          </li>
+          <li>
+            <Link href="/meet" onClick={toggleMenu} className="hover:text-[#FFD700]">
+              Industry-Academia Meet
+            </Link>
+          </li>
+          <li>
+            <Link href="/hackathon" onClick={toggleMenu} className="hover:text-[#FFD700]">
+              inSAHEthon
+            </Link>
+          </li>
+          <li>
+            <Link href="/journalpublications" onClick={toggleMenu} className="hover:text-[#FFD700]">
+              Conference Themes
+            </Link>
+          </li>
+          <li>
+            <Link href="/speakers" onClick={toggleMenu} className="hover:text-[#FFD700]">
+              Speakers
+            </Link>
+          </li>
+          <li>
+            <Link href="/schedule" onClick={toggleMenu} className="hover:text-[#FFD700]">
+              Schedule
+            </Link>
+          </li>
+          <li className="relative w-3/4">
+            <button
+              className="text-black w-full rounded p-2 bg-white shadow-md focus:ring-2 focus:ring-blue-500 text-lg"
+              onClick={() => setShowDownloads(!showDownloads)}
+            >
+              Downloads
+            </button>
+            {showDownloads && (
+              <div className="mt-2 w-full rounded-md shadow-lg bg-white text-black">
+                <div className="py-1">
+                  <a
+                    href="/Springer-Template.zip"
+                    download="Springer-Template.zip"
+                    onClick={() => { setShowDownloads(false); toggleMenu(); }}
+                    className="block px-4 py-2 text-sm hover:bg-gray-100"
+                  >
+                    Springer-Template.zip
+                  </a>
+                </div>
+              </div>
+            )}
+          </li>
+          <li>
+            <Link href="/contact_us" onClick={toggleMenu} className="hover:text-[#FFD700]">
+              Contact us
+            </Link>
+          </li>
         </ul>
       </nav>
 
@@ -269,14 +319,30 @@ const Header = () => {
         >
           Schedule
         </Link>
-        <button
-          className={`cursor-pointer m-0.5 bg-[#002147] text-white border-[#1A1A1A] text-[#213555] font-semibold transition-all duration-300 ease-in-out ${
-            isScrolled ? 'text-sm py-1 px-4 w-28' : 'text-base py-1 px-2 w-28'
-          } hover:bg-[#FFD700]/20 hover:text-black hover:shadow-lg truncate`}
-          onClick={downloadSpringerZip}
-        >
-          Download Springer-Template
-        </button>
+        <div className="relative">
+          <button
+            className={`cursor-pointer m-0.5 bg-[#002147] text-white border-[#1A1A1A] text-[#213555] font-semibold transition-all duration-300 ease-in-out ${
+              isScrolled ? 'text-sm py-1 px-4' : 'text-base py-1 px-2'
+            } hover:bg-[#FFD700]/20 hover:text-black hover:shadow-lg`}
+            onClick={() => setShowDownloads(!showDownloads)}
+          >
+            Downloads
+          </button>
+          {showDownloads && (
+            <div className="absolute top-full left-0 mt-1 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-50">
+              <div className="py-1">
+                <a
+                  href="/Springer-Template.zip"
+                  download="Springer-Template.zip"
+                  onClick={() => setShowDownloads(false)}
+                  className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                >
+                  Springer-Template.zip
+                </a>
+              </div>
+            </div>
+          )}
+        </div>
       <Link
           href="/contact_us"
           className={`cursor-pointer m-0.5 bg-[#002147] text-white  border-[#1A1A1A] text-[#213555] font-semibold transition-all duration-300 ease-in-out ${isScrolled ? 'text-sm py-1 px-4' : 'text-base py-1 px-2'} hover:bg-[#FFD700]/20  hover:text-black hover:shadow-lg`}

@@ -575,7 +575,8 @@ const CoordinatorsSection = () => {
       <ClickableCircles />
       {/* <ImageCarousel /> */}
       <div className="w-full text-center mt-8">
-        <h2 className="text-3xl font-bold text-[#002147]">Glimpses of innovation</h2>
+        <p className="text-lg font-bold mt-4 px-4 py-3 bg-red-100 border-2 border-red-500 text-red-700 rounded-lg max-w-2xl mx-auto">No Accommodation for Spot Registration (100 rupees extra for spot registration)</p>
+        <h2 className="text-3xl font-bold text-[#002147] mt-8">Glimpses of innovation</h2>
       </div>
       <HorizontalImageScroller images={researchimages}/>
       <About/>
