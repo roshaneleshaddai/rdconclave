@@ -424,6 +424,83 @@ export default function TeamsListPage() {
           </div>
         </div>
 
+        {/* Milestone Celebrations */}
+        <div className="mb-12">
+          <div className="space-y-3">
+            {/* 50 Teams Milestone */}
+            {stats.total >= 50 && (
+              <div className="bg-gradient-to-r from-blue-50 to-blue-100 border-l-4 border-blue-500 p-4 rounded-lg shadow-sm">
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-3">
+                    <span className="text-2xl">🎉</span>
+                    <div>
+                      <p className="font-bold text-blue-900">Milestone Reached: 50 Teams!</p>
+                      <p className="text-sm text-blue-700">Congratulations on reaching 50 registrations</p>
+                    </div>
+                  </div>
+                  <div className="text-right">
+                    <p className="text-xs text-blue-600 font-semibold">ACHIEVED</p>
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {/* 100 Teams Milestone */}
+            {stats.total >= 100 && (
+              <div className="bg-gradient-to-r from-purple-50 to-purple-100 border-l-4 border-purple-500 p-4 rounded-lg shadow-sm">
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-3">
+                    <span className="text-2xl">✨</span>
+                    <div>
+                      <p className="font-bold text-purple-900">Milestone Reached: 100 Teams!</p>
+                      <p className="text-sm text-purple-700">Amazing progress - 100 teams registered!</p>
+                    </div>
+                  </div>
+                  <div className="text-right">
+                    <p className="text-xs text-purple-600 font-semibold">ACHIEVED</p>
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {/* 150 Teams Milestone */}
+            {stats.total >= 150 && (
+              <div className="bg-gradient-to-r from-amber-50 to-amber-100 border-l-4 border-amber-500 p-4 rounded-lg shadow-sm">
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-3">
+                    <span className="text-2xl">🌟</span>
+                    <div>
+                      <p className="font-bold text-amber-900">Milestone Reached: 150 Teams!</p>
+                      <p className="text-sm text-amber-700">Exceptional! 150 teams are now competing</p>
+                    </div>
+                  </div>
+                  <div className="text-right">
+                    <p className="text-xs text-amber-600 font-semibold">ACHIEVED</p>
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {/* 200 Teams Milestone */}
+            {stats.total >= 200 && (
+              <div className="bg-gradient-to-r from-green-50 to-green-100 border-l-4 border-green-500 p-4 rounded-lg shadow-sm">
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-3">
+                    <span className="text-2xl">🏆</span>
+                    <div>
+                      <p className="font-bold text-green-900">Milestone Reached: 200 Teams!</p>
+                      <p className="text-sm text-green-700">Outstanding! Your event has reached 200 registrations</p>
+                    </div>
+                  </div>
+                  <div className="text-right">
+                    <p className="text-xs text-green-600 font-semibold">ACHIEVED</p>
+                  </div>
+                </div>
+              </div>
+            )}
+          </div>
+        </div>
+
         {/* Statistics Grid with Download Button */}
         <div>
           <div className="flex justify-between items-center mb-6">

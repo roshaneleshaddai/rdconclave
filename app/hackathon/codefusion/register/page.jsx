@@ -247,6 +247,11 @@ const RegistrationForm = () => {
     'Vasireddy Venkatadri Institute of Technology (VVIT) – Guntur',
     'Bapatla Engineering College – Bapatla',
     'DVR & DR HS MIC COLLEGE OF TECHNOLOGY ',
+    'KL University – Vaddeswaram',
+    'Vignan nirula institute of technology and science for women',
+    'Vignan LARA Institute of Technology & Science',
+    'Kakatiya institute of technology and science warangal',
+    'VKR VNB & AGK COLLEGE OF ENGINEERING',
   ];
 
   useEffect(() => {
