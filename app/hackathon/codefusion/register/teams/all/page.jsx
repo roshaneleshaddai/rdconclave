@@ -131,10 +131,12 @@ export default function TeamsListPage() {
 
     const college3Count = teamsData.filter(t => t.teamSize == 3).length;
     const college4Count = teamsData.filter(t => t.teamSize == 4).length;
+    const totalTeams = teamsData.length;
+    const apCount = totalTeams - 3;
     
     setStats({
-      total: teamsData.length,
-      ap: 66,
+      total: totalTeams,
+      ap: apCount,
       tn: 1,
       tg: 2,
       college3: college3Count,
