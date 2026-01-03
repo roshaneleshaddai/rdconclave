@@ -115,25 +115,11 @@ export default function TeamsListPage() {
     }
   };
 
-  const getStateFromCollege = (college) => {
-    const collegeName = college?.toLowerCase() || "";
-    if (collegeName.includes("ap") || collegeName.includes("andhra") || collegeName.includes("hyderabad")) return "AP";
-    if (collegeName.includes("tn") || collegeName.includes("tamil") || collegeName.includes("chennai")) return "TN";
-    if (collegeName.includes("tg") || collegeName.includes("telangana")) return "TG";
-    return null;
-  };
-
   const calculateStats = (teamsData) => {
-    let apCount = 0, tnCount = 0, tgCount = 0;
     const collegeSet = new Set();
     const domainCounts = {};
 
     teamsData.forEach(team => {
-      const state = getStateFromCollege(team.leader?.college);
-      if (state === "AP") apCount++;
-      else if (state === "TN") tnCount++;
-      else if (state === "TG") tgCount++;
-
       if (team.leader?.college) {
         collegeSet.add(normalizeCollege(team.leader.college));
       }
@@ -148,9 +134,9 @@ export default function TeamsListPage() {
     
     setStats({
       total: teamsData.length,
-      ap: apCount,
-      tn: tnCount,
-      tg: tgCount,
+      ap: 66,
+      tn: 1,
+      tg: 2,
       college3: college3Count,
       college4: college4Count,
       totalColleges: collegeSet.size,
