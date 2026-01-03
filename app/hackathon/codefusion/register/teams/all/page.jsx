@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
-import { ChevronDown, Search, Download, Filter } from "lucide-react";
+import { ChevronDown, Search, Download } from "lucide-react";
 
 export default function TeamsListPage() {
   const router = useRouter();
@@ -104,7 +104,6 @@ export default function TeamsListPage() {
         calculateStats(teamsData);
         
         console.log("Fetched teams:", teamsData);
-        console.log("Total count:", data.count);
       } else {
         throw new Error("Failed to fetch teams data");
       }
@@ -173,7 +172,7 @@ export default function TeamsListPage() {
           body {
             font-family: 'Arial', sans-serif;
             background-color: white;
-            padding: 15px;
+            padding: 12px;
           }
           .container {
             width: 100%;
@@ -183,112 +182,111 @@ export default function TeamsListPage() {
           }
           .header {
             text-align: center;
-            margin-bottom: 20px;
+            margin-bottom: 12px;
             border-bottom: 2px solid #002147;
-            padding-bottom: 10px;
+            padding-bottom: 8px;
           }
           .header h1 {
             color: #002147;
-            font-size: 24px;
+            font-size: 22px;
             font-weight: bold;
             margin-bottom: 2px;
           }
           .header p {
             color: #666;
-            font-size: 10px;
-            margin-top: 3px;
+            font-size: 9px;
+            margin-top: 2px;
           }
           .stats-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 10px;
-            margin-bottom: 20px;
+            gap: 8px;
+            margin-bottom: 12px;
           }
           .stat-card {
-            background-color: #f9f9f9;
-            border: 1.5px solid #002147;
-            border-radius: 6px;
-            padding: 12px;
-            text-align: center;
-          }
-          .stat-label {
-            color: #666;
-            font-size: 9px;
-            text-transform: uppercase;
-            font-weight: bold;
-            margin-bottom: 6px;
-            letter-spacing: 0.5px;
-          }
-          .stat-value {
-            color: #002147;
-            font-size: 28px;
-            font-weight: bold;
-          }
-          .state-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 8px;
-            margin-bottom: 15px;
-          }
-          .state-card {
             background-color: #f9f9f9;
             border: 1.5px solid #002147;
             border-radius: 5px;
             padding: 10px;
             text-align: center;
           }
-          .state-label {
+          .stat-label {
             color: #666;
-            font-size: 9px;
+            font-size: 8px;
+            text-transform: uppercase;
             font-weight: bold;
             margin-bottom: 5px;
+            letter-spacing: 0.5px;
+          }
+          .stat-value {
+            color: #002147;
+            font-size: 24px;
+            font-weight: bold;
+          }
+          .state-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 8px;
+            margin-bottom: 12px;
+          }
+          .state-card {
+            background-color: #f9f9f9;
+            border: 1.5px solid #002147;
+            border-radius: 5px;
+            padding: 8px;
+            text-align: center;
+          }
+          .state-label {
+            color: #666;
+            font-size: 8px;
+            font-weight: bold;
+            margin-bottom: 4px;
           }
           .state-value {
             color: #002147;
-            font-size: 22px;
+            font-size: 18px;
             font-weight: bold;
           }
           .section-title {
             color: #002147;
-            font-size: 12px;
+            font-size: 11px;
             font-weight: bold;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
             border-bottom: 1.5px solid #002147;
-            padding-bottom: 5px;
-            margin-top: 15px;
+            padding-bottom: 4px;
+            margin-top: 10px;
           }
           .colleges-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 8px;
-            margin-bottom: 15px;
+            gap: 6px;
           }
           .college-item {
             background-color: #00214710;
             border: 1px solid #002147;
             border-radius: 4px;
-            padding: 8px;
+            padding: 6px;
             text-align: center;
           }
           .college-name {
             color: #333;
-            font-size: 8px;
-            margin-bottom: 4px;
+            font-size: 7px;
+            margin-bottom: 3px;
             font-weight: 600;
             word-break: break-word;
           }
           .college-count {
             color: #002147;
-            font-size: 14px;
+            font-size: 12px;
             font-weight: bold;
           }
           .footer {
-            margin-top: 15px;
+            margin-top: 10px;
             text-align: center;
             color: #999;
-            font-size: 9px;
+            font-size: 8px;
             border-top: 1px solid #ddd;
-            padding-top: 8px;
+            padding-top: 6px;
           }
         </style>
       </head>
@@ -383,11 +381,21 @@ export default function TeamsListPage() {
     let csvContent = "CODEFUSION TEAMS DETAILS\n";
     csvContent += new Date().toLocaleDateString() + "\n\n";
     
-    csvContent += "Team Name,Registration ID,Team Size,Leader Name,Leader Email,Leader Phone,Leader College,Leader Department,Leader Year,Member 2 Name,Member 2 Email,Member 2 Phone,Member 3 Name,Member 3 Email,Member 3 Phone,Member 4 Name,Member 4 Email,Member 4 Phone,Registered On,Problem Statement\n";
+    csvContent += "Team Name,Registration ID,Team Size,Leader Name,Leader Email,Leader Phone,Leader College,Leader Department,Leader Year,Member2 Name,Member2 Email,Member2 Phone,Member3 Name,Member3 Email,Member3 Phone,Member4 Name,Member4 Email,Member4 Phone,Registered On,Problem Statement\n";
     
     sortedTeams.forEach(team => {
       const registeredDate = new Date(team.createdAt).toLocaleDateString();
-      csvContent += `"${team.teamName}","${team.registrationId}",${team.teamSize},"${team.leader?.name || "—"}","${team.leader?.email || "—"}","${team.leader?.phone || "—"}","${team.leader?.college || "—"}","${team.leader?.department || "—"}","${team.leader?.year || "—"}","${team.member2?.name || "—"}","${team.member2?.email || "—"}","${team.member2?.phone || "—"}","${team.member3?.name || "—"}","${team.member3?.email || "—"}","${team.member3?.phone || "—"}","${team.member4?.name || "—"}","${team.member4?.email || "—"}","${team.member4?.phone || "—"}","${registeredDate}","${team.problemStatement}"\n`;
+      const member2Name = team.teamSize >= 2 ? (team.members?.member2?.name || "—") : "—";
+      const member2Email = team.teamSize >= 2 ? (team.members?.member2?.email || "—") : "—";
+      const member2Phone = team.teamSize >= 2 ? (team.members?.member2?.phone || "—") : "—";
+      const member3Name = team.teamSize >= 3 ? (team.members?.member3?.name || "—") : "—";
+      const member3Email = team.teamSize >= 3 ? (team.members?.member3?.email || "—") : "—";
+      const member3Phone = team.teamSize >= 3 ? (team.members?.member3?.phone || "—") : "—";
+      const member4Name = team.teamSize >= 4 ? (team.members?.member4?.name || "—") : "—";
+      const member4Email = team.teamSize >= 4 ? (team.members?.member4?.email || "—") : "—";
+      const member4Phone = team.teamSize >= 4 ? (team.members?.member4?.phone || "—") : "—";
+      
+      csvContent += `"${team.teamName}","${team.registrationId}",${team.teamSize},"${team.leader?.name || "—"}","${team.leader?.email || "—"}","${team.leader?.phone || "—"}","${team.leader?.college || "—"}","${team.leader?.department || "—"}","${team.leader?.year || "—"}","${member2Name}","${member2Email}","${member2Phone}","${member3Name}","${member3Email}","${member3Phone}","${member4Name}","${member4Email}","${member4Phone}","${registeredDate}","${team.problemStatement}"\n`;
     });
 
     const blob = new Blob([csvContent], { type: "text/csv;charset=utf-8;" });
@@ -485,7 +493,7 @@ export default function TeamsListPage() {
         </div>
       </header>
 
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8 pb-12">
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-12">
 
         <div className="mb-8 flex items-center gap-3">
           <div className="flex items-center gap-2">
@@ -496,14 +504,14 @@ export default function TeamsListPage() {
 
         <div className="mb-12">
           <div className="space-y-3">
-            {stats.total >= 50 && (
+            {stats.total >= 50 && stats.total <= 55 && (
               <div className="bg-gradient-to-r from-blue-50 to-blue-100 border-l-4 border-blue-500 p-4 rounded-lg shadow-sm">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-3">
                     <span className="text-2xl">🎉</span>
                     <div>
-                      <p className="font-bold text-blue-900">Milestone Reached: 50 Teams!</p>
-                      <p className="text-sm text-blue-700">Congratulations on reaching 50 registrations</p>
+                      <p className="font-bold text-blue-900">Milestone Reached: 50-55 Teams!</p>
+                      <p className="text-sm text-blue-700">Congratulations on reaching 50+ registrations</p>
                     </div>
                   </div>
                   <div className="text-right">
@@ -513,14 +521,14 @@ export default function TeamsListPage() {
               </div>
             )}
 
-            {stats.total >= 100 && (
+            {stats.total >= 100 && stats.total <= 105 && (
               <div className="bg-gradient-to-r from-purple-50 to-purple-100 border-l-4 border-purple-500 p-4 rounded-lg shadow-sm">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-3">
                     <span className="text-2xl">✨</span>
                     <div>
-                      <p className="font-bold text-purple-900">Milestone Reached: 100 Teams!</p>
-                      <p className="text-sm text-purple-700">Amazing progress - 100 teams registered!</p>
+                      <p className="font-bold text-purple-900">Milestone Reached: 100-105 Teams!</p>
+                      <p className="text-sm text-purple-700">Amazing progress - 100+ teams registered!</p>
                     </div>
                   </div>
                   <div className="text-right">
@@ -530,14 +538,14 @@ export default function TeamsListPage() {
               </div>
             )}
 
-            {stats.total >= 150 && (
+            {stats.total >= 150 && stats.total <= 155 && (
               <div className="bg-gradient-to-r from-amber-50 to-amber-100 border-l-4 border-amber-500 p-4 rounded-lg shadow-sm">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-3">
                     <span className="text-2xl">🌟</span>
                     <div>
-                      <p className="font-bold text-amber-900">Milestone Reached: 150 Teams!</p>
-                      <p className="text-sm text-amber-700">Exceptional! 150 teams are now competing</p>
+                      <p className="font-bold text-amber-900">Milestone Reached: 150-155 Teams!</p>
+                      <p className="text-sm text-amber-700">Exceptional! 150+ teams are now competing</p>
                     </div>
                   </div>
                   <div className="text-right">
@@ -547,14 +555,14 @@ export default function TeamsListPage() {
               </div>
             )}
 
-            {stats.total >= 200 && (
+            {stats.total >= 200 && stats.total <= 205 && (
               <div className="bg-gradient-to-r from-green-50 to-green-100 border-l-4 border-green-500 p-4 rounded-lg shadow-sm">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-3">
                     <span className="text-2xl">🏆</span>
                     <div>
-                      <p className="font-bold text-green-900">Milestone Reached: 200 Teams!</p>
-                      <p className="text-sm text-green-700">Outstanding! Your event has reached 200 registrations</p>
+                      <p className="font-bold text-green-900">Milestone Reached: 200-205 Teams!</p>
+                      <p className="text-sm text-green-700">Outstanding! Your event has reached 200+ registrations</p>
                     </div>
                   </div>
                   <div className="text-right">
@@ -567,8 +575,8 @@ export default function TeamsListPage() {
         </div>
 
         <div>
-          <div className="flex justify-between items-center mb-8">
-            <h2 className="text-lg font-bold text-[#002147]">Statistics Overview</h2>
+          <div className="flex justify-between items-center mb-6">
+            <h2 className="text-lg font-bold text-[#002147]">Quick Statistics</h2>
             <button
               onClick={downloadStatisticsAsPDF}
               disabled={isLoading}
@@ -579,84 +587,61 @@ export default function TeamsListPage() {
             </button>
           </div>
 
-          <style>{`
-            @keyframes dance {
-              0%, 100% { transform: translateY(0) scale(1); }
-              25% { transform: translateY(-12px) scale(1.05); }
-              50% { transform: translateY(0) scale(1); }
-              75% { transform: translateY(-8px) scale(1.02); }
-            }
-            .dance-ball {
-              animation: dance 2.5s ease-in-out infinite;
-            }
-            .dance-ball:nth-child(2) { animation-delay: 0.2s; }
-            .dance-ball:nth-child(3) { animation-delay: 0.4s; }
-            .dance-ball:nth-child(4) { animation-delay: 0.6s; }
-          `}</style>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
-            <div className="flex flex-col items-center">
-              <div className="dance-ball bg-gradient-to-br from-blue-400 to-blue-600 rounded-full w-24 h-24 flex items-center justify-center shadow-lg mb-4">
-                <span className="text-white text-3xl font-bold">{isLoading ? "..." : stats.total}</span>
-              </div>
-              <p className="text-sm font-semibold text-gray-700 text-center">Total Teams</p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+            <div className="bg-white rounded-lg border-2 border-[#002147] p-6 hover:shadow-lg transition">
+              <p className="text-xs uppercase tracking-wider text-gray-600 font-semibold">Total Teams</p>
+              <p className="text-4xl font-bold text-[#002147] mt-2">
+                {isLoading ? "..." : stats.total}
+              </p>
             </div>
 
-            <div className="flex flex-col items-center">
-              <div className="dance-ball bg-gradient-to-br from-purple-400 to-purple-600 rounded-full w-24 h-24 flex items-center justify-center shadow-lg mb-4">
-                <span className="text-white text-3xl font-bold">{isLoading ? "..." : stats.totalColleges}</span>
-              </div>
-              <p className="text-sm font-semibold text-gray-700 text-center">Total Colleges</p>
+            <div className="bg-white rounded-lg border-2 border-[#002147] p-6 hover:shadow-lg transition">
+              <p className="text-xs uppercase tracking-wider text-gray-600 font-semibold">Total Colleges</p>
+              <p className="text-4xl font-bold text-[#002147] mt-2">
+                {isLoading ? "..." : stats.totalColleges}
+              </p>
             </div>
 
-            <div className="flex flex-col items-center">
-              <div className="dance-ball bg-gradient-to-br from-orange-400 to-orange-600 rounded-full w-24 h-24 flex items-center justify-center shadow-lg mb-4">
-                <span className="text-white text-3xl font-bold">{isLoading ? "..." : stats.college3}</span>
-              </div>
-              <p className="text-sm font-semibold text-gray-700 text-center">3 Members</p>
+            <div className="bg-white rounded-lg border-2 border-[#002147] p-6 hover:shadow-lg transition">
+              <p className="text-xs uppercase tracking-wider text-gray-600 font-semibold">3 Members</p>
+              <p className="text-4xl font-bold text-[#002147] mt-2">
+                {isLoading ? "..." : stats.college3}
+              </p>
             </div>
 
-            <div className="flex flex-col items-center">
-              <div className="dance-ball bg-gradient-to-br from-green-400 to-green-600 rounded-full w-24 h-24 flex items-center justify-center shadow-lg mb-4">
-                <span className="text-white text-3xl font-bold">{isLoading ? "..." : stats.college4}</span>
-              </div>
-              <p className="text-sm font-semibold text-gray-700 text-center">4 Members</p>
+            <div className="bg-white rounded-lg border-2 border-[#002147] p-6 hover:shadow-lg transition">
+              <p className="text-xs uppercase tracking-wider text-gray-600 font-semibold">4 Members</p>
+              <p className="text-4xl font-bold text-[#002147] mt-2">
+                {isLoading ? "..." : stats.college4}
+              </p>
             </div>
           </div>
 
-          <div className="bg-gradient-to-r from-blue-50 via-purple-50 to-pink-50 rounded-xl p-8 mb-12 border border-gray-200">
-            <h3 className="text-center font-bold text-[#002147] mb-8 text-lg">State-wise Registration</h3>
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-              <div className="flex flex-col items-center">
-                <div className="dance-ball bg-gradient-to-br from-red-300 to-red-500 rounded-full w-20 h-20 flex items-center justify-center shadow-lg mb-3">
-                  <span className="text-white text-2xl font-bold">{isLoading ? "..." : stats.ap}</span>
-                </div>
-                <p className="text-sm font-semibold text-gray-700">Andhra Pradesh</p>
+          <div className="bg-gradient-to-r from-red-50 via-yellow-50 to-teal-50 rounded-lg p-6 mb-8 border border-gray-200">
+            <h3 className="text-center font-bold text-[#002147] mb-6 text-base">State-wise Registration</h3>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              <div className="bg-white rounded-lg border border-red-200 p-4 text-center">
+                <p className="text-xs font-semibold text-gray-600 mb-2">Andhra Pradesh</p>
+                <p className="text-3xl font-bold text-red-600">{isLoading ? "..." : stats.ap}</p>
               </div>
-
-              <div className="flex flex-col items-center">
-                <div className="dance-ball bg-gradient-to-br from-yellow-300 to-yellow-500 rounded-full w-20 h-20 flex items-center justify-center shadow-lg mb-3">
-                  <span className="text-white text-2xl font-bold">{isLoading ? "..." : stats.tn}</span>
-                </div>
-                <p className="text-sm font-semibold text-gray-700">Tamil Nadu</p>
+              <div className="bg-white rounded-lg border border-yellow-200 p-4 text-center">
+                <p className="text-xs font-semibold text-gray-600 mb-2">Tamil Nadu</p>
+                <p className="text-3xl font-bold text-yellow-600">{isLoading ? "..." : stats.tn}</p>
               </div>
-
-              <div className="flex flex-col items-center">
-                <div className="dance-ball bg-gradient-to-br from-teal-300 to-teal-500 rounded-full w-20 h-20 flex items-center justify-center shadow-lg mb-3">
-                  <span className="text-white text-2xl font-bold">{isLoading ? "..." : stats.tg}</span>
-                </div>
-                <p className="text-sm font-semibold text-gray-700">Telangana</p>
+              <div className="bg-white rounded-lg border border-teal-200 p-4 text-center">
+                <p className="text-xs font-semibold text-gray-600 mb-2">Telangana</p>
+                <p className="text-3xl font-bold text-teal-600">{isLoading ? "..." : stats.tg}</p>
               </div>
             </div>
           </div>
         </div>
 
         {!isLoading && domains.length > 0 && (
-          <div className="bg-gradient-to-r from-indigo-50 to-blue-50 rounded-lg p-6 mb-8 border border-indigo-200">
-            <h3 className="font-bold text-[#002147] mb-6 text-base">Domain-wise Distribution</h3>
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+          <div className="bg-indigo-50 rounded-lg p-5 mb-8 border border-indigo-200">
+            <h3 className="font-bold text-[#002147] mb-4 text-sm">Domain-wise Distribution</h3>
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
               {Object.entries(stats.domainStats).map(([domain, count]) => (
-                <div key={domain} className="bg-white rounded-lg p-4 border border-indigo-100 text-center hover:shadow-md transition">
+                <div key={domain} className="bg-white rounded-lg p-3 border border-indigo-100 text-center hover:shadow-md transition">
                   <p className="text-xs text-gray-600 truncate mb-2 font-medium">{domain}</p>
                   <p className="text-2xl font-bold text-indigo-600">{count}</p>
                 </div>
@@ -666,9 +651,9 @@ export default function TeamsListPage() {
         )}
 
         {!isLoading && colleges.length > 0 && (
-          <div className="bg-[#00214710] rounded-lg p-6 mb-8 border border-[#002147]">
-            <h3 className="font-bold text-[#002147] mb-4">Colleges Statistics</h3>
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+          <div className="bg-[#00214710] rounded-lg p-5 mb-8 border border-[#002147]">
+            <h3 className="font-bold text-[#002147] mb-4 text-sm">College Statistics</h3>
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
               {colleges.map(college => {
                 const count = teams.filter(t => normalizeCollege(t.leader?.college) === normalizeCollege(college)).length;
                 return (
@@ -799,7 +784,7 @@ export default function TeamsListPage() {
                         )}
                       </div>
                     </th>
-                    <th className="px-4 py-3 text-left font-semibold">Leader</th>
+                    <th className="px-4 py-3 text-left font-semibold">Leader Name</th>
                     <th className="px-4 py-3 text-left font-semibold">Email</th>
                     <th className="px-4 py-3 text-left font-semibold">Phone</th>
                     <th className="px-4 py-3 text-left font-semibold">College</th>
@@ -844,15 +829,15 @@ export default function TeamsListPage() {
                       <td className="px-4 py-3 text-gray-700 text-xs">{team.leader?.college || "—"}</td>
                       <td className="px-4 py-3 text-gray-700 text-xs">{team.leader?.department || "—"}</td>
                       <td className="px-4 py-3 text-gray-700 text-xs">{team.leader?.year || "—"}</td>
-                      <td className="px-4 py-3 text-gray-700 text-xs">{team.teamSize >= 2 ? (team.member2?.name || "—") : "—"}</td>
-                      <td className="px-4 py-3 text-gray-700 text-xs">{team.teamSize >= 2 ? (team.member2?.email || "—") : "—"}</td>
-                      <td className="px-4 py-3 text-gray-700 text-xs">{team.teamSize >= 2 ? (team.member2?.phone || "—") : "—"}</td>
-                      <td className="px-4 py-3 text-gray-700 text-xs">{team.teamSize >= 3 ? (team.member3?.name || "—") : "—"}</td>
-                      <td className="px-4 py-3 text-gray-700 text-xs">{team.teamSize >= 3 ? (team.member3?.email || "—") : "—"}</td>
-                      <td className="px-4 py-3 text-gray-700 text-xs">{team.teamSize >= 3 ? (team.member3?.phone || "—") : "—"}</td>
-                      <td className="px-4 py-3 text-gray-700 text-xs">{team.teamSize >= 4 ? (team.member4?.name || "—") : "—"}</td>
-                      <td className="px-4 py-3 text-gray-700 text-xs">{team.teamSize >= 4 ? (team.member4?.email || "—") : "—"}</td>
-                      <td className="px-4 py-3 text-gray-700 text-xs">{team.teamSize >= 4 ? (team.member4?.phone || "—") : "—"}</td>
+                      <td className="px-4 py-3 text-gray-700 text-xs">{team.teamSize >= 2 ? (team.members?.member2?.name || "—") : "—"}</td>
+                      <td className="px-4 py-3 text-gray-700 text-xs">{team.teamSize >= 2 ? (team.members?.member2?.email || "—") : "—"}</td>
+                      <td className="px-4 py-3 text-gray-700 text-xs">{team.teamSize >= 2 ? (team.members?.member2?.phone || "—") : "—"}</td>
+                      <td className="px-4 py-3 text-gray-700 text-xs">{team.teamSize >= 3 ? (team.members?.member3?.name || "—") : "—"}</td>
+                      <td className="px-4 py-3 text-gray-700 text-xs">{team.teamSize >= 3 ? (team.members?.member3?.email || "—") : "—"}</td>
+                      <td className="px-4 py-3 text-gray-700 text-xs">{team.teamSize >= 3 ? (team.members?.member3?.phone || "—") : "—"}</td>
+                      <td className="px-4 py-3 text-gray-700 text-xs">{team.teamSize >= 4 ? (team.members?.member4?.name || "—") : "—"}</td>
+                      <td className="px-4 py-3 text-gray-700 text-xs">{team.teamSize >= 4 ? (team.members?.member4?.email || "—") : "—"}</td>
+                      <td className="px-4 py-3 text-gray-700 text-xs">{team.teamSize >= 4 ? (team.members?.member4?.phone || "—") : "—"}</td>
                       <td className="px-4 py-3 text-gray-700 text-xs">{new Date(team.createdAt).toLocaleDateString()}</td>
                       <td className="px-4 py-3 text-gray-700 text-xs max-w-xs truncate">{team.problemStatement}</td>
                     </tr>
