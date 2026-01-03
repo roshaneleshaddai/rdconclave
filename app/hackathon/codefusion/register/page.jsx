@@ -252,6 +252,8 @@ const RegistrationForm = () => {
     'Vignan LARA Institute of Technology & Science',
     'Kakatiya institute of technology and science warangal',
     'VKR VNB & AGK COLLEGE OF ENGINEERING',
+    'Visvesvaraya College of Engineering and Technology',
+    'Jawaharlal Nehru Technological University Narasaraopet',
   ];
 
   useEffect(() => {
