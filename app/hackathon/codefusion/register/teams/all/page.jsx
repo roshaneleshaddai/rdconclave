@@ -495,11 +495,17 @@ export default function TeamsListPage() {
 
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-12">
 
-        <div className="mb-8 flex items-center gap-3">
+        <div className="mb-8 flex items-center justify-between">
           <div className="flex items-center gap-2">
             <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
             <span className="text-sm font-semibold text-gray-700">Live Status</span>
           </div>
+          <button
+            onClick={fetchTeams}
+            className="px-4 py-2 bg-[#002147] text-white rounded-lg hover:bg-blue-900 transition text-sm font-medium"
+          >
+            Refresh
+          </button>
         </div>
 
         <div className="mb-12">
@@ -701,13 +707,6 @@ export default function TeamsListPage() {
                 <option key={domain} value={domain}>{domain}</option>
               ))}
             </select>
-
-            <button
-              onClick={fetchTeams}
-              className="px-4 py-2 bg-[#002147] text-white rounded-lg hover:bg-blue-900 transition text-sm font-medium"
-            >
-              Refresh
-            </button>
           </div>
         </div>
 
