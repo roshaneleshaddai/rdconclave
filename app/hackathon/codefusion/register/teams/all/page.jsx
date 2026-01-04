@@ -334,6 +334,18 @@ export default function TeamsListPage() {
             }).join('')}
           </div>
 
+          <div class="section-title">Domain-wise Distribution</div>
+          <div class="colleges-grid">
+            ${Object.entries(stats.domainStats).map(([domain, count]) => {
+              return `
+                <div class="college-item">
+                  <div class="college-name">${domain}</div>
+                  <div class="college-count">${count}</div>
+                </div>
+              `;
+            }).join('')}
+          </div>
+
           <div class="footer">
             <p>Generated on ${new Date().toLocaleString()}</p>
           </div>
