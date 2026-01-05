@@ -6,7 +6,9 @@ import { ChevronDown, Search, Download } from "lucide-react";
 
 export default function TeamsListPage() {
   const router = useRouter();
-  
+  const [showCelebration, setShowCelebration] = useState(false);
+const [celebrationNumber, setCelebrationNumber] = useState(null);
+
   const [teams, setTeams] = useState([]);
   const [totalCount, setTotalCount] = useState(0);
   const [isLoading, setIsLoading] = useState(true);
@@ -116,35 +118,50 @@ export default function TeamsListPage() {
   };
 
   const calculateStats = (teamsData) => {
-    const collegeSet = new Set();
-    const domainCounts = {};
+  const collegeSet = new Set();
+  const domainCounts = {};
 
-    teamsData.forEach(team => {
-      if (team.leader?.college) {
-        collegeSet.add(normalizeCollege(team.leader.college));
-      }
+  teamsData.forEach(team => {
+    if (team.leader?.college) {
+      collegeSet.add(normalizeCollege(team.leader.college));
+    }
 
-      if (team.problemStatement) {
-        domainCounts[team.problemStatement] = (domainCounts[team.problemStatement] || 0) + 1;
-      }
-    });
+    if (team.problemStatement) {
+      domainCounts[team.problemStatement] =
+        (domainCounts[team.problemStatement] || 0) + 1;
+    }
+  });
 
-    const college3Count = teamsData.filter(t => t.teamSize == 3).length;
-    const college4Count = teamsData.filter(t => t.teamSize == 4).length;
-    const totalTeams = teamsData.length;
-    const apCount = totalTeams - 4;
-    
-    setStats({
-      total: totalTeams,
-      ap: apCount,
-      tn: 2,
-      tg: 2,
-      college3: college3Count,
-      college4: college4Count,
-      totalColleges: collegeSet.size,
-      domainStats: domainCounts
-    });
-  };
+  const totalTeams = teamsData.length;
+
+  setStats({
+    total: totalTeams,
+    ap: totalTeams - 4,
+    tn: 2,
+    tg: 2,
+    college3: teamsData.filter(t => t.teamSize == 3).length,
+    college4: teamsData.filter(t => t.teamSize == 4).length,
+    totalColleges: collegeSet.size,
+    domainStats: domainCounts
+  });
+
+  // 🎉 CELEBRATION CHECK
+  let milestone = null;
+
+  if (totalTeams >= 100 && totalTeams <= 105) milestone = 100;
+  else if (totalTeams >= 150 && totalTeams <= 155) milestone = 150;
+  else if (totalTeams >= 200 && totalTeams <= 205) milestone = 200;
+
+  if (milestone) {
+    setCelebrationNumber(milestone);
+    setShowCelebration(true);
+
+    setTimeout(() => {
+      setShowCelebration(false);
+    }, 1000);
+  }
+};
+
 
   const downloadStatisticsAsPDF = () => {
     let htmlContent = `
@@ -276,6 +293,36 @@ export default function TeamsListPage() {
             border-top: 1px solid #ddd;
             padding-top: 6px;
           }
+            @keyframes confettiFall {
+  0% {
+    transform: translateY(-10vh) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(110vh) rotate(720deg);
+    opacity: 0;
+  }
+}
+
+.animate-confetti {
+  animation: confettiFall 1s linear forwards;
+}
+
+@keyframes scaleIn {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.animate-scaleIn {
+  animation: scaleIn 0.4s ease-out forwards;
+}
+
         </style>
       </head>
       <body>
@@ -357,6 +404,7 @@ export default function TeamsListPage() {
         </script>
       </body>
       </html>
+
     `;
 
     const blob = new Blob([htmlContent], { type: "text/html;charset=utf-8;" });
@@ -472,6 +520,78 @@ export default function TeamsListPage() {
 
   return (
     <div className="min-h-screen bg-white font-SUSE" style={{ fontFamily: "SUSE, sans-serif" }}>
+     {showCelebration && (
+  <div
+    style={{
+      position: "fixed",
+      inset: 0,
+      zIndex: 9999,
+      background: "rgba(255,255,255,0.92)",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      overflow: "hidden"
+    }}
+  >
+    {/* 🎉 CONFETTI */}
+    {[...Array(60)].map((_, i) => (
+      <div
+        key={i}
+        style={{
+          position: "absolute",
+          top: "-20px",
+          left: `${Math.random() * 100}%`,
+          width: "10px",
+          height: "16px",
+          backgroundColor: [
+            "#ff0080",
+            "#00c6ff",
+            "#ffd700",
+            "#7cff00",
+            "#ff6a00"
+          ][i % 5],
+          opacity: 0.9,
+          transform: `rotate(${Math.random() * 360}deg)`,
+          animation: `confettiFall 1s linear forwards`,
+          animationDelay: `${Math.random() * 0.3}s`
+        }}
+      />
+    ))}
+
+    {/* 🎯 CENTER NUMBER */}
+    <div
+      style={{
+        position: "relative",
+        textAlign: "center",
+        animation: "scaleIn 0.4s ease-out forwards"
+      }}
+    >
+      <div
+        style={{
+          fontSize: "140px",
+          fontWeight: "900",
+          background: "linear-gradient(90deg,#00c6ff,#8e2de2,#ff0080)",
+          WebkitBackgroundClip: "text",
+          WebkitTextFillColor: "transparent",
+          textShadow: "0 0 40px rgba(0,0,0,0.25)"
+        }}
+      >
+        {celebrationNumber}
+      </div>
+      <div
+        style={{
+          fontSize: "20px",
+          fontWeight: "700",
+          letterSpacing: "4px",
+          color: "#444"
+        }}
+      >
+        TEAMS REGISTERED
+      </div>
+    </div>
+  </div>
+)}
+
       <header className="bg-white border-b border-[#002147] sticky top-0 z-40">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <div className="flex justify-between items-center">
@@ -533,7 +653,7 @@ export default function TeamsListPage() {
                   <div className="flex items-center gap-3">
                     <span className="text-2xl">✨</span>
                     <div>
-                      <p className="font-bold text-purple-900">Milestone Reached: 100-105 Teams!</p>
+                      <p className="font-bold text-purple-900">Milestone Reached!</p>
                       <p className="text-sm text-purple-700">Amazing progress - 100+ teams registered!</p>
                     </div>
                   </div>
@@ -550,7 +670,7 @@ export default function TeamsListPage() {
                   <div className="flex items-center gap-3">
                     <span className="text-2xl">🌟</span>
                     <div>
-                      <p className="font-bold text-amber-900">Milestone Reached: 150-155 Teams!</p>
+                      <p className="font-bold text-amber-900">Milestone Reached!</p>
                       <p className="text-sm text-amber-700">Exceptional! 150+ teams are now competing</p>
                     </div>
                   </div>
