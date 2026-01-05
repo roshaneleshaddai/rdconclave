@@ -451,7 +451,6 @@ const DownloadSchedule = () => {
           <div className="lg:text-xl text-base flex-1 flex flex-col items-center justify-center font-bold lg:mx-5 m-2">
             <p className="text-center">Submission Deadline:<span className="text-red-500"> January 5th, 2026</span></p>
             <p className="text-center">Acceptance Notification:<span className="text-red-500 "> January 10th, 2026</span></p>
-            <p className="text-center">Event Registration Deadline:<span className="text-red-500 "> January 15th, 2026</span></p>
           </div>
 
           <a
