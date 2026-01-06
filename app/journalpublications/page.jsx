@@ -282,7 +282,7 @@ const DownloadSchedule = () => {
         <div
           className="bg-[#002147]/10 bg-opacity-20 p-8 lg:mt-0 mt-52 rounded-lg mx-6 transition-opacity duration-1000 "
         >
-          <h1 className="text-4xl  font-bold text-center text-[#002147]">Conference Themes</h1>
+          <h1 className="text-4xl  font-bold text-center text-[#002147]">Journal Publication</h1>
           {/* <p className="text-lg text-black p-2">
             journal Publications at our college highlights the research contributions of our esteemed academic staff, showcasing their latest papers, publications, and projects. This platform fosters collaboration with peers, industry professionals, and other institutions. Through engaging poster sessions, oral presentations, and panel discussions, our journal present their groundbreaking work, encouraging rich discussions and constructive feedback. This initiative reflects our commitment to academic excellence and paves the way for future collaborative research endeavors.
           </p> */}
@@ -449,8 +449,7 @@ const DownloadSchedule = () => {
           <h1 className='text-3xl text-center font-bold px-5'>Important dates</h1>
           <hr className="h-1 my-2 bg-[#002147] lg:w-1/4 w-1/2" />
           <div className="lg:text-xl text-base flex-1 flex flex-col items-center justify-center font-bold lg:mx-5 m-2">
-            <p className="text-center">Submission Deadline:<span className="text-red-500"> January 5th, 2026</span></p>
-            <p className="text-center">Acceptance Notification:<span className="text-red-500 "> January 10th, 2026</span></p>
+            <p className="text-center">Submission Deadline:<span className="text-red-500"> January 10th, 2026</span></p>
           </div>
 
           <a
