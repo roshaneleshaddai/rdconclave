@@ -149,7 +149,7 @@ export default function TeamsListPage() {
     let milestone = null;
 
     if (totalTeams >= 100 && totalTeams <= 105) milestone = 100;
-    else if (totalTeams >= 130 && totalTeams <= 155) milestone = 150;
+    else if (totalTeams >= 150 && totalTeams <= 155) milestone = 150;
     else if (totalTeams >= 200 && totalTeams <= 205) milestone = 200;
 
     if (milestone) {
@@ -613,7 +613,7 @@ export default function TeamsListPage() {
         </div>
       </header>
 
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-60 pb-12">
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-12">
 
         <div className="mb-8 flex items-center justify-between">
           <div className="flex items-center gap-2">
