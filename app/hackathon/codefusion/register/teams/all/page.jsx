@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
-import { ChevronDown, Search, Download, Trophy, Target, TrendingUp, Star } from "lucide-react";
+import { ChevronDown, Search, Download, Trophy, Star, TrendingUp } from "lucide-react";
 
 export default function TeamsListPage() {
   const router = useRouter();
@@ -149,7 +149,7 @@ export default function TeamsListPage() {
     let milestone = null;
 
     if (totalTeams >= 100 && totalTeams <= 105) milestone = 100;
-    else if (totalTeams >= 150 && totalTeams <= 155) milestone = 150;
+    else if (totalTeams >= 130 && totalTeams <= 155) milestone = 150;
     else if (totalTeams >= 200 && totalTeams <= 205) milestone = 200;
 
     if (milestone) {
@@ -158,7 +158,7 @@ export default function TeamsListPage() {
 
       setTimeout(() => {
         setShowCelebration(false);
-      }, 3000); // Extended slightly to 3s for impact
+      }, 1000);
     }
   };
 
@@ -613,7 +613,7 @@ export default function TeamsListPage() {
         </div>
       </header>
 
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-12">
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-12">
 
         <div className="mb-8 flex items-center justify-between">
           <div className="flex items-center gap-2">
@@ -628,52 +628,36 @@ export default function TeamsListPage() {
           </button>
         </div>
 
-        {/* 🚀 HIGHLY PROFESSIONAL PERSISTENT MILESTONE BANNER (150-200) */}
+        {/* 🚀 ELITE MILESTONE BANNER (150-200) */}
         {stats.total >= 150 && stats.total < 200 && (
           <div className="mb-10 animate-scaleIn">
             <div className="relative overflow-hidden bg-gradient-to-r from-[#002147] via-[#003d82] to-[#002147] rounded-2xl p-1 shadow-2xl">
-              {/* Inner Glassmorphism Layer */}
               <div className="relative bg-white/5 backdrop-blur-md rounded-xl p-6 md:p-8 flex flex-col md:flex-row items-center justify-between gap-6 border border-white/10">
-                
-                {/* Visual Graphics - Left */}
                 <div className="flex items-center gap-6">
                   <div className="p-4 bg-white/10 rounded-2xl border border-white/20">
                     <Trophy className="w-10 h-10 text-yellow-400 drop-shadow-[0_0_10px_rgba(250,204,21,0.5)]" />
                   </div>
                   <div>
-                    <h2 className="text-2xl md:text-3xl font-black text-white tracking-tight">
-                      ELITE STAGE REACHED
-                    </h2>
+                    <h2 className="text-2xl md:text-3xl font-black text-white tracking-tight">ELITE STAGE REACHED</h2>
                     <div className="flex items-center gap-2 mt-1">
                       <Star className="w-4 h-4 text-yellow-400 fill-yellow-400" />
-                      <p className="text-blue-100 font-medium text-sm md:text-base uppercase tracking-widest">
-                        {stats.total} Teams Strong and Counting
-                      </p>
+                      <p className="text-blue-100 font-medium text-sm md:text-base uppercase tracking-widest">{stats.total} Teams Registered</p>
                     </div>
                   </div>
                 </div>
-
-                {/* Progress Visual - Center */}
                 <div className="flex-1 max-w-xs w-full px-4">
                   <div className="flex justify-between text-xs font-bold text-blue-200 mb-2 uppercase tracking-tighter">
                     <span>Target: 200</span>
                     <span>{Math.round((stats.total / 200) * 100)}%</span>
                   </div>
                   <div className="h-3 w-full bg-white/10 rounded-full overflow-hidden border border-white/5">
-                    <div 
-                      className="h-full bg-gradient-to-r from-yellow-400 to-orange-500 transition-all duration-1000 ease-out"
-                      style={{ width: `${(stats.total / 200) * 100}%` }}
-                    ></div>
+                    <div className="h-full bg-gradient-to-r from-yellow-400 to-orange-500 transition-all duration-1000 ease-out" style={{ width: `${(stats.total / 200) * 100}%` }}></div>
                   </div>
                 </div>
-
-                {/* Professional Badge - Right */}
                 <div className="bg-white/10 px-6 py-3 rounded-xl border border-white/10 text-center">
                   <p className="text-[10px] text-blue-200 font-bold uppercase tracking-[0.2em]">Next Major Goal</p>
                   <p className="text-xl font-black text-white">200 TEAMS</p>
                 </div>
-
-                {/* Floating Decoration */}
                 <div className="absolute top-[-20px] right-[-20px] opacity-10">
                    <TrendingUp className="w-32 h-32 text-white" />
                 </div>
@@ -701,7 +685,6 @@ export default function TeamsListPage() {
               </div>
             )}
 
-            {/* Standard notification for 100 (Kept as per your original code) */}
             {stats.total >= 100 && stats.total <= 105 && (
               <div className="bg-gradient-to-r from-purple-50 to-purple-100 border-l-4 border-purple-500 p-4 rounded-lg shadow-sm">
                 <div className="flex items-center justify-between">
@@ -719,7 +702,23 @@ export default function TeamsListPage() {
               </div>
             )}
 
-            {/* The 200 Goal Message */}
+            {stats.total >= 150 && stats.total <= 155 && (
+              <div className="bg-gradient-to-r from-amber-50 to-amber-100 border-l-4 border-amber-500 p-4 rounded-lg shadow-sm">
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-3">
+                    <span className="text-2xl">🌟</span>
+                    <div>
+                      <p className="font-bold text-amber-900">Milestone Reached!</p>
+                      <p className="text-sm text-amber-700">Exceptional! 150+ teams are now competing</p>
+                    </div>
+                  </div>
+                  <div className="text-right">
+                    <p className="text-xs text-amber-600 font-semibold">ACHIEVED</p>
+                  </div>
+                </div>
+              </div>
+            )}
+
             {stats.total >= 200 && stats.total <= 205 && (
               <div className="bg-gradient-to-r from-green-50 to-green-100 border-l-4 border-green-500 p-4 rounded-lg shadow-sm">
                 <div className="flex items-center justify-between">
