@@ -1,5 +1,3 @@
 {
-  "/hackathon/page": "app/hackathon/page.js",
-  "/hackathon/codefusion/page": "app/hackathon/codefusion/page.js",
-  "/hackathon/codefusion/register/page": "app/hackathon/codefusion/register/page.js"
+  "/hackathon/codefusion/payment/page": "app/hackathon/codefusion/payment/page.js"
 }
