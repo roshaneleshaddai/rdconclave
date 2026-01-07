@@ -613,7 +613,7 @@ export default function TeamsListPage() {
         </div>
       </header>
 
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-12">
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-48 pb-12">
 
         <div className="mb-8 flex items-center justify-between">
           <div className="flex items-center gap-2">
