@@ -136,8 +136,8 @@ export default function TeamsListPage() {
 
     setStats({
       total: totalTeams,
-      ap: totalTeams - 4,
-      tn: 2,
+      ap: totalTeams - 5,
+      tn: 3,
       tg: 2,
       college3: teamsData.filter(t => t.teamSize == 3).length,
       college4: teamsData.filter(t => t.teamSize == 4).length,
