@@ -7,11 +7,11 @@ import {
 
 const TimelineData = [
   { date: "DEC 29", title: "Registration Opens", icon: ClipboardCheck, desc: "Portal live for team details and Domain Selection." },
-  { date: "JAN 08", title: "Registration Closes", icon: CalendarX, desc: "Final deadline; no late entries allowed." },
-  { date: "JAN 11", title: "Shortlisting Round", icon: Filter, desc: "Technical evaluation by expert panels." },
-  { date: "JAN 14", title: "Results Announcement", icon: Megaphone, desc: "Teams cleared for participation announced." },
-  { date: "JAN 14", title: "Payment Window", icon: CreditCard, desc: "Fee submission enabled for shortlisted candidates." },
-  { date: "JAN 18", title: "Payment Deadline", icon: Hourglass, desc: "Final cutoff to secure participation slots." },
+  { date: "JAN 09 12:00 PM", title: "Registration Closes", icon: CalendarX, desc: "Final deadline; no late entries allowed." },
+  { date: "JAN 09 7:00 PM", title: "Shortlisting Round", icon: Filter, desc: "Technical evaluation by expert panels." },
+  { date: "JAN 09 10:00 PM", title: "Results Announcement", icon: Megaphone, desc: "Teams cleared for participation announced." },
+  { date: "JAN 09 10:00 PM", title: "Payment Window", icon: CreditCard, desc: "Fee submission enabled for shortlisted candidates." },
+  { date: "JAN 16", title: "Payment Deadline", icon: Hourglass, desc: "Final cutoff to secure participation slots." },
   { date: "JAN 23–24", title: "Hackathon Kickoff", icon: Rocket, desc: "24-hour Kickoff & problem statements are released." },
 ];
 
