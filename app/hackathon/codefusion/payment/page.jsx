@@ -404,7 +404,7 @@ const CodeFusionPaymentForm = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white px-4 pt-24 sm:pt-32 md:pt-40 pb-8 font-sans">
+    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white px-4 pt-52 sm:pt-60 md:pt-72 pb-8 font-sans">
       {isLoading && <CoinFlip />}
       {isVerifying && <VerificationLoadingModal />}
       {showSuccessModal && <SuccessModal registrationId={registrationId} onClose={handleSuccessClose} />}
