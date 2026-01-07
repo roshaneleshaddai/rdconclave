@@ -239,6 +239,7 @@ const RegistrationForm = () => {
     'Jawaharlal Nehru Technological University Kakinada (JNTUK) – Kakinada',
     'Sri Vishnu Engineering College for Women – Bhimavaram',
     'Sir C. R. Reddy College of Engineering – Eluru',
+    'Sri vasavi institute of engineering and technology',
     'Gayatri Vidya Parishad College of Engineering – Visakhapatnam',
     'lakireddy Bali Reddy College of Engineering (LBRCE)',
     'PACE Institute of Technology, Ongole',
