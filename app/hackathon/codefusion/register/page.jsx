@@ -256,6 +256,7 @@ const RegistrationForm = () => {
     'Visvesvaraya College of Engineering and Technology',
     'Jawaharlal Nehru Technological University Narasaraopet',
     'P.B. Siddhartha College of Arts & Science Vijayawada, AP',
+    
   ];
 
   useEffect(() => {
