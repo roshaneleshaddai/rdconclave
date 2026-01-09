@@ -323,7 +323,7 @@ const EventRegistration = () => {
               fontFamily: 'SUSE, sans-serif',
               fontWeight: '500'
             }}>
-              We truly appreciate everyone who showed interest.
+              We truly appreciate everyone who showed interest.<br></br>
     🌱 “Great opportunities return—this is just a pause, not the end.”
             </p>
           </div>
