@@ -1,6 +1,6 @@
 export default function QuestionCard({ question, onAnswer, selected }) {
   return (
-    <div>
+        <div>
       <h2 className="text-xl font-semibold">{question.question}</h2>
 
       <div className="mt-4 space-y-3">

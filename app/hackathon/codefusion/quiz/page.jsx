@@ -1,6 +1,17 @@
 "use client";
 import { useState, useEffect } from 'react';
 
+// Academic Color Palette
+const COLORS = {
+  primary: '#002147',
+  primaryLight: '#003366',
+  success: '#10b981',
+  error: '#ef4444',
+  warning: '#f97316',
+  gray: '#f3f4f6',
+  grayText: '#6b7280',
+};
+
 // API Functions
 const BASE_URL = "https://rd-backend-m7gd.onrender.com/api";
 
@@ -44,8 +55,8 @@ const submitQuiz = async (payload) => {
 const CoinFlip = ({ message = "Loading..." }) => {
   return (
     <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50">
-      <div className="bg-white rounded-2xl p-8 shadow-2xl flex flex-col items-center">
-        <div style={{ perspective: '1200px', width: '150px', height: '150px' }}>
+      <div className="bg-white rounded-2xl p-6 sm:p-8 shadow-2xl flex flex-col items-center">
+        <div style={{ perspective: '1200px', width: '120px', height: '120px' }} className="sm:w-[150px] sm:h-[150px]">
           <div className="coin">
             <div className="coin-face front">
               <img
@@ -63,7 +74,7 @@ const CoinFlip = ({ message = "Loading..." }) => {
             </div>
           </div>
         </div>
-        <p className="mt-6 text-lg font-semibold text-gray-800">{message}</p>
+        <p className="mt-4 sm:mt-6 text-base sm:text-lg font-semibold" style={{ color: COLORS.primary }}>{message}</p>
       </div>
 
       <style jsx>{`
@@ -99,73 +110,77 @@ const CoinFlip = ({ message = "Loading..." }) => {
 };
 
 // Question Card Component
-const QuestionCard = ({ question, onAnswer, selected, currentIndex, totalQuestions, timeLeft }) => {
+const QuestionCard = ({ question, onAnswer, selected, currentIndex, totalQuestions, timeLeft, answeredQuestions }) => {
   const timePercentage = (timeLeft / 30) * 100;
   const isLowTime = timeLeft <= 10;
 
   return (
-    <div className="bg-white rounded-xl shadow-lg p-8 border border-gray-200">
+    <div className="bg-white rounded-lg sm:rounded-xl shadow-lg p-5 sm:p-8 border-2" style={{ borderColor: COLORS.primary + '20' }}>
       {/* Timer Bar */}
-      <div className="mb-6">
+      <div className="mb-5 sm:mb-6">
         <div className="flex items-center justify-between mb-2">
-          <span className="text-sm font-medium text-gray-600">Time Remaining</span>
-          <span className={`text-lg font-bold ${isLowTime ? 'text-red-600 animate-pulse' : 'text-indigo-600'}`}>
+          <span className="text-xs sm:text-sm font-medium" style={{ color: COLORS.grayText }}>Time Remaining</span>
+          <span 
+            className={`text-lg sm:text-xl font-bold ${isLowTime ? 'animate-pulse' : ''}`}
+            style={{ color: isLowTime ? COLORS.error : COLORS.primary }}
+          >
             {timeLeft}s
           </span>
         </div>
         <div className="w-full bg-gray-200 rounded-full h-2 overflow-hidden">
           <div
-            className={`h-full transition-all duration-1000 ${
-              isLowTime ? 'bg-red-500' : 'bg-indigo-600'
-            }`}
-            style={{ width: `${timePercentage}%` }}
+            className="h-full transition-all duration-1000"
+            style={{ 
+              width: `${timePercentage}%`,
+              backgroundColor: isLowTime ? COLORS.error : COLORS.primary
+            }}
           />
         </div>
       </div>
 
-      <div className="flex items-center justify-between mb-6">
-        <span className="text-sm font-medium text-indigo-600 bg-indigo-50 px-3 py-1 rounded-full">
-          Question {currentIndex + 1} of {totalQuestions}
-        </span>
-        <div className="flex gap-1">
+      {/* Question Progress Dots */}
+      <div className="mb-5 sm:mb-6">
+        <div className="flex gap-1.5 sm:gap-2 flex-wrap">
           {Array.from({ length: totalQuestions }).map((_, idx) => (
             <div
               key={idx}
-              className={`h-2 w-2 rounded-full ${
-                idx === currentIndex
-                  ? 'bg-indigo-600'
-                  : idx < currentIndex
-                  ? 'bg-green-500'
-                  : 'bg-gray-300'
-              }`}
+              className="h-2.5 w-2.5 sm:h-3 sm:w-3 rounded-full transition-all border border-gray-300"
+              style={{
+                backgroundColor: answeredQuestions.includes(idx) ? COLORS.primary : 'transparent',
+                borderColor: idx === currentIndex ? COLORS.primary : '#d1d5db',
+                borderWidth: idx === currentIndex ? '2px' : '1px',
+              }}
+              title={`Question ${idx + 1}`}
             />
           ))}
         </div>
       </div>
 
-      <h2 className="text-2xl font-bold text-gray-800 mb-6">{question.question}</h2>
+      {/* Question Text */}
+      <h2 className="text-lg sm:text-2xl font-bold mb-5 sm:mb-6" style={{ color: COLORS.primary }}>{question.question}</h2>
 
-      <div className="space-y-3">
+      {/* Options */}
+      <div className="space-y-2 sm:space-y-3">
         {question.options.map((opt, idx) => (
           <button
             key={idx}
             onClick={() => onAnswer(idx)}
-            className={`w-full text-left border-2 p-4 rounded-lg transition-all duration-200 ${
-              selected === idx
-                ? 'bg-indigo-50 border-indigo-500 shadow-md'
-                : 'border-gray-200 hover:border-indigo-300 hover:bg-gray-50'
-            }`}
+            className="w-full text-left border-2 p-3 sm:p-4 rounded-lg transition-all duration-200 text-sm sm:text-base"
+            style={{
+              borderColor: selected === idx ? COLORS.primary : '#e5e7eb',
+              backgroundColor: selected === idx ? COLORS.primary + '10' : '#ffffff',
+            }}
           >
             <div className="flex items-center">
               <div
-                className={`w-6 h-6 rounded-full border-2 flex items-center justify-center mr-3 ${
-                  selected === idx
-                    ? 'border-indigo-500 bg-indigo-500'
-                    : 'border-gray-300'
-                }`}
+                className="w-5 h-5 sm:w-6 sm:h-6 rounded-full border-2 flex items-center justify-center mr-2 sm:mr-3 transition-all flex-shrink-0"
+                style={{
+                  borderColor: selected === idx ? COLORS.primary : '#d1d5db',
+                  backgroundColor: selected === idx ? COLORS.primary : 'transparent',
+                }}
               >
                 {selected === idx && (
-                  <div className="w-3 h-3 bg-white rounded-full" />
+                  <div className="w-2 h-2 sm:w-3 sm:h-3 bg-white rounded-full" />
                 )}
               </div>
               <span className="text-gray-700 font-medium">{opt}</span>
@@ -180,17 +195,17 @@ const QuestionCard = ({ question, onAnswer, selected, currentIndex, totalQuestio
 // Quiz Result Component
 const QuizResult = () => {
   return (
-    <div className="max-w-2xl mx-auto pt-32 text-center px-4">
-      <div className="bg-white rounded-xl shadow-lg p-12 border border-gray-200">
-        <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
-          <svg className="w-12 h-12 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <div className="flex items-center justify-center min-h-screen px-4" style={{ backgroundColor: COLORS.gray }}>
+      <div className="bg-white rounded-lg sm:rounded-xl shadow-lg p-8 sm:p-12 border-2 max-w-sm w-full" style={{ borderColor: COLORS.primary + '20' }}>
+        <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full flex items-center justify-center mx-auto mb-6" style={{ backgroundColor: COLORS.success + '20' }}>
+          <svg className="w-8 h-8 sm:w-12 sm:h-12" style={{ color: COLORS.success }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
           </svg>
         </div>
-        <h1 className="text-3xl font-bold text-gray-800 mb-4">
-          Quiz Submitted Successfully! 🎉
+        <h1 className="text-2xl sm:text-3xl font-bold mb-3 sm:mb-4 text-center" style={{ color: COLORS.primary }}>
+          Quiz Submitted! 🎉
         </h1>
-        <p className="text-gray-600 text-lg">
+        <p className="text-center text-sm sm:text-base" style={{ color: COLORS.grayText }}>
           Your answers have been recorded. Thank you for participating!
         </p>
       </div>
@@ -198,7 +213,7 @@ const QuizResult = () => {
   );
 };
 
-// Quiz Screen Component
+// Quiz Screen Component with Fullscreen
 const QuizScreen = ({ registrationId, onSubmit }) => {
   const [questions, setQuestions] = useState([]);
   const [index, setIndex] = useState(0);
@@ -208,6 +223,7 @@ const QuizScreen = ({ registrationId, onSubmit }) => {
   const [error, setError] = useState("");
   const [timeLeft, setTimeLeft] = useState(30);
   const [quizSubmitted, setQuizSubmitted] = useState(false);
+  const [answeredQuestions, setAnsweredQuestions] = useState([]);
 
   useEffect(() => {
     const loadQuestions = async () => {
@@ -221,6 +237,7 @@ const QuizScreen = ({ registrationId, onSubmit }) => {
         } else {
           throw new Error("Invalid questions format");
         }
+        enterFullscreen();
       } catch (err) {
         setError(err.message);
       } finally {
@@ -230,16 +247,64 @@ const QuizScreen = ({ registrationId, onSubmit }) => {
     loadQuestions();
   }, []);
 
+  const enterFullscreen = async () => {
+    try {
+      const elem = document.documentElement;
+      if (elem.requestFullscreen) {
+        await elem.requestFullscreen();
+      } else if (elem.webkitRequestFullscreen) {
+        await elem.webkitRequestFullscreen();
+      }
+    } catch (err) {
+      console.log("Fullscreen request denied");
+    }
+  };
+
+  // Prevent fullscreen exit
+  useEffect(() => {
+    const handleFullscreenChange = () => {
+      if (!document.fullscreenElement && !quizSubmitted && !submitting && questions.length > 0) {
+        enterFullscreen();
+      }
+    };
+
+    document.addEventListener('fullscreenchange', handleFullscreenChange);
+    document.addEventListener('webkitfullscreenchange', handleFullscreenChange);
+
+    return () => {
+      document.removeEventListener('fullscreenchange', handleFullscreenChange);
+      document.removeEventListener('webkitfullscreenchange', handleFullscreenChange);
+    };
+  }, [quizSubmitted, submitting, questions.length]);
+
+  // Disable right-click and keyboard shortcuts
+  useEffect(() => {
+    const handleContextMenu = (e) => e.preventDefault();
+    const handleKeyDown = (e) => {
+      if (e.key === 'F11' || (e.ctrlKey && e.shiftKey && e.key === 'I') || 
+          (e.ctrlKey && e.key === 's') || e.key === 'Escape') {
+        e.preventDefault();
+      }
+    };
+
+    document.addEventListener('contextmenu', handleContextMenu);
+    document.addEventListener('keydown', handleKeyDown);
+
+    return () => {
+      document.removeEventListener('contextmenu', handleContextMenu);
+      document.removeEventListener('keydown', handleKeyDown);
+    };
+  }, []);
+
   // Timer effect
   useEffect(() => {
     if (loading || submitting || quizSubmitted || !questions.length) return;
 
-    setTimeLeft(30); // Reset timer when question changes
+    setTimeLeft(30);
 
     const timer = setInterval(() => {
       setTimeLeft((prev) => {
         if (prev <= 1) {
-          // Time's up - move to next question or submit
           if (index < questions.length - 1) {
             setIndex(i => i + 1);
           } else {
@@ -260,7 +325,6 @@ const QuizScreen = ({ registrationId, onSubmit }) => {
     setQuizSubmitted(true);
     setSubmitting(true);
 
-    // Fill unanswered questions with -1 (no answer)
     const allResponses = questions.map((q) => {
       const existing = responses.find(r => r.questionId === q.questionId);
       return existing || { questionId: q.questionId, selectedOption: -1 };
@@ -278,17 +342,21 @@ const QuizScreen = ({ registrationId, onSubmit }) => {
   };
 
   const handleAnswer = (option) => {
-    if (quizSubmitted) return; // Prevent changes after submission
+    if (quizSubmitted) return;
     
     const q = questions[index];
     const updated = responses.filter(r => r.questionId !== q.questionId);
     setResponses([...updated, { questionId: q.questionId, selectedOption: option }]);
+    
+    // Add to answered questions if not already there
+    if (!answeredQuestions.includes(index)) {
+      setAnsweredQuestions([...answeredQuestions, index]);
+    }
   };
 
   const handleSubmit = async () => {
     if (quizSubmitted) return;
     
-    // Fill unanswered questions with -1 (no answer)
     const allResponses = questions.map((q) => {
       const existing = responses.find(r => r.questionId === q.questionId);
       return existing || { questionId: q.questionId, selectedOption: -1 };
@@ -316,12 +384,13 @@ const QuizScreen = ({ registrationId, onSubmit }) => {
 
   if (error) {
     return (
-      <div className="max-w-2xl mx-auto pt-32 px-4">
-        <div className="bg-red-50 border border-red-200 rounded-xl p-6">
-          <p className="text-red-600 font-medium">{error}</p>
+      <div className="flex items-center justify-center min-h-screen px-4" style={{ backgroundColor: COLORS.gray }}>
+        <div className="bg-red-50 border-2 border-red-200 rounded-lg sm:rounded-xl p-5 sm:p-6 max-w-sm w-full">
+          <p className="text-red-600 font-medium text-sm sm:text-base">{error}</p>
           <button
             onClick={() => window.location.reload()}
-            className="mt-4 bg-red-600 text-white px-6 py-2 rounded-lg hover:bg-red-700"
+            className="mt-4 px-5 sm:px-6 py-2 rounded-lg text-white font-medium hover:opacity-90 transition-all text-sm sm:text-base"
+            style={{ backgroundColor: COLORS.error }}
           >
             Try Again
           </button>
@@ -332,8 +401,8 @@ const QuizScreen = ({ registrationId, onSubmit }) => {
 
   if (!questions.length) {
     return (
-      <div className="max-w-2xl mx-auto pt-32 text-center px-4">
-        <p className="text-gray-600">No questions available.</p>
+      <div className="flex items-center justify-center min-h-screen px-4" style={{ backgroundColor: COLORS.gray }}>
+        <p className="text-sm sm:text-base" style={{ color: COLORS.grayText }}>No questions available.</p>
       </div>
     );
   }
@@ -341,58 +410,74 @@ const QuizScreen = ({ registrationId, onSubmit }) => {
   const progress = ((index + 1) / questions.length) * 100;
 
   return (
-    <div className="max-w-3xl mx-auto px-4 py-8 pt-32">
-      <div className="mb-8">
-        <div className="w-full bg-gray-200 rounded-full h-3 overflow-hidden">
-          <div
-            className="bg-indigo-600 h-full transition-all duration-300"
-            style={{ width: `${progress}%` }}
-          />
+    <div className="min-h-screen px-3 sm:px-4 py-4 sm:py-8" style={{ backgroundColor: COLORS.gray }}>
+      <div className="max-w-2xl sm:max-w-3xl mx-auto">
+        {/* Progress Bar */}
+        <div className="mb-5 sm:mb-8">
+          <div className="w-full bg-gray-300 rounded-full h-2 sm:h-3 overflow-hidden">
+            <div
+              className="h-full transition-all duration-300"
+              style={{ 
+                width: `${progress}%`,
+                backgroundColor: COLORS.primary
+              }}
+            />
+          </div>
         </div>
-      </div>
 
-      <QuestionCard
-        question={questions[index]}
-        selected={currentResponse?.selectedOption}
-        onAnswer={handleAnswer}
-        currentIndex={index}
-        totalQuestions={questions.length}
-        timeLeft={timeLeft}
-      />
+        <QuestionCard
+          question={questions[index]}
+          selected={currentResponse?.selectedOption}
+          onAnswer={handleAnswer}
+          currentIndex={index}
+          totalQuestions={questions.length}
+          timeLeft={timeLeft}
+          answeredQuestions={answeredQuestions}
+        />
 
-      <div className="flex justify-between mt-8 gap-4">
-        <button
-          disabled={index === 0 || quizSubmitted}
-          onClick={() => setIndex(i => i - 1)}
-          className="px-6 py-3 border-2 border-gray-300 rounded-lg font-medium text-gray-700 hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed transition-all"
-        >
-          Previous
-        </button>
-
-        {index === questions.length - 1 ? (
+        <div className="flex justify-between mt-5 sm:mt-8 gap-3 sm:gap-4">
           <button
-            onClick={handleSubmit}
-            disabled={quizSubmitted}
-            className="px-8 py-3 bg-green-600 text-white rounded-lg font-medium hover:bg-green-700 transition-all shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed"
+            disabled={index === 0 || quizSubmitted}
+            onClick={() => setIndex(i => i - 1)}
+            className="px-4 sm:px-6 py-2 sm:py-3 border-2 rounded-lg font-medium transition-all disabled:opacity-50 disabled:cursor-not-allowed text-sm sm:text-base"
+            style={{
+              borderColor: COLORS.primary,
+              color: COLORS.primary,
+              backgroundColor: 'white',
+            }}
+            onMouseEnter={(e) => e.target.style.backgroundColor = COLORS.primary + '10'}
+            onMouseLeave={(e) => e.target.style.backgroundColor = 'white'}
           >
-            Submit Quiz
+            Previous
           </button>
-        ) : (
-          <button
-            onClick={() => setIndex(i => i + 1)}
-            disabled={quizSubmitted}
-            className="px-6 py-3 bg-indigo-600 text-white rounded-lg font-medium hover:bg-indigo-700 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
-          >
-            Next
-          </button>
+
+          {index === questions.length - 1 ? (
+            <button
+              onClick={handleSubmit}
+              disabled={quizSubmitted}
+              className="px-6 sm:px-8 py-2 sm:py-3 rounded-lg font-medium text-white transition-all shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed text-sm sm:text-base"
+              style={{ backgroundColor: COLORS.success }}
+            >
+              Submit
+            </button>
+          ) : (
+            <button
+              onClick={() => setIndex(i => i + 1)}
+              disabled={quizSubmitted}
+              className="px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-medium text-white transition-all disabled:opacity-50 disabled:cursor-not-allowed text-sm sm:text-base"
+              style={{ backgroundColor: COLORS.primary }}
+            >
+              Next
+            </button>
+          )}
+        </div>
+
+        {error && (
+          <div className="mt-4 p-3 sm:p-4 bg-red-50 border border-red-200 rounded-lg">
+            <p className="text-red-600 text-xs sm:text-sm">{error}</p>
+          </div>
         )}
       </div>
-
-      {error && (
-        <div className="mt-4 p-4 bg-red-50 border border-red-200 rounded-lg">
-          <p className="text-red-600 text-sm">{error}</p>
-        </div>
-      )}
     </div>
   );
 };
@@ -418,42 +503,53 @@ const QuizStart = ({ onVerified }) => {
       setError(res.message || "Verification failed");
       return;
     }
+    // Dispatch event to hide header/footer
+    window.dispatchEvent(new Event('quiz-started'));
     onVerified(regId);
   };
 
   if (loading) return <CoinFlip message="Verifying Registration..." />;
 
   return (
-    <div className="min-h-screen flex items-center justify-center px-4 pt-20">
-      <div className="max-w-md w-full bg-white rounded-2xl shadow-2xl p-8 border border-gray-200">
-        <div className="text-center mb-8">
-          <h1 className="text-3xl font-bold text-gray-800 mb-2">Quiz Verification</h1>
-          <p className="text-gray-600">Enter your registration ID to begin</p>
+    <div className="min-h-screen flex items-center justify-center px-4 pt-10 sm:pt-20" style={{ backgroundColor: COLORS.gray }}>
+      <div className="max-w-sm w-full bg-white rounded-lg sm:rounded-2xl shadow-2xl p-6 sm:p-8 border-2" style={{ borderColor: COLORS.primary + '20' }}>
+        <div className="text-center mb-6 sm:mb-8">
+          <h1 className="text-2xl sm:text-3xl font-bold mb-2" style={{ color: COLORS.primary }}>Quiz Verification</h1>
+          <p className="text-xs sm:text-sm" style={{ color: COLORS.grayText }}>Enter your registration ID to begin</p>
         </div>
 
-        <div className="space-y-4">
+        <div className="space-y-3 sm:space-y-4">
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
+            <label className="block text-xs sm:text-sm font-medium mb-2" style={{ color: COLORS.primary }}>
               Registration ID
             </label>
             <input
               value={regId}
               onChange={(e) => setRegId(e.target.value.toUpperCase())}
               onKeyPress={(e) => e.key === 'Enter' && handleVerify()}
-              className="w-full border-2 border-gray-300 p-3 rounded-lg focus:border-indigo-500 focus:outline-none transition-colors"
+              className="w-full border-2 p-2.5 sm:p-3 rounded-lg focus:outline-none transition-colors text-sm sm:text-base"
+              style={{
+                borderColor: COLORS.primary + '30',
+                backgroundColor: 'white',
+              }}
+              onFocus={(e) => e.target.style.borderColor = COLORS.primary}
+              onBlur={(e) => e.target.style.borderColor = COLORS.primary + '30'}
               placeholder="e.g., RD01"
             />
           </div>
 
           {error && (
             <div className="p-3 bg-red-50 border border-red-200 rounded-lg">
-              <p className="text-red-600 text-sm">{error}</p>
+              <p className="text-red-600 text-xs sm:text-sm">{error}</p>
             </div>
           )}
 
           <button
             onClick={handleVerify}
-            className="w-full bg-indigo-600 text-white py-3 rounded-lg font-medium hover:bg-indigo-700 transition-colors shadow-lg hover:shadow-xl"
+            className="w-full text-white py-2.5 sm:py-3 rounded-lg font-medium transition-all shadow-lg hover:shadow-xl text-sm sm:text-base"
+            style={{ backgroundColor: COLORS.primary }}
+            onMouseEnter={(e) => e.target.style.backgroundColor = COLORS.primaryLight}
+            onMouseLeave={(e) => e.target.style.backgroundColor = COLORS.primary}
           >
             Start Quiz
           </button>
@@ -475,10 +571,12 @@ export default function QuizApp() {
 
   const handleSubmit = () => {
     setStage("result");
+    // Dispatch event to show header/footer again
+    window.dispatchEvent(new Event('quiz-ended'));
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
+    <div>
       {stage === "start" && <QuizStart onVerified={handleVerified} />}
       {stage === "quiz" && (
         <QuizScreen registrationId={registrationId} onSubmit={handleSubmit} />

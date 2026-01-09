@@ -17,8 +17,8 @@ export default function QuizStart({ onVerified }) {
     <div className="max-w-md mx-auto mt-40">
       <h1 className="text-3xl font-bold mb-4">Quiz Verification</h1>
 
-      <input
-        value={regId}
+            <input
+              value={regId}
         onChange={(e) => setRegId(e.target.value)}
         className="w-full border p-3 rounded"
         placeholder="Enter Registration ID (RD01)"
@@ -26,12 +26,12 @@ export default function QuizStart({ onVerified }) {
 
       {error && <p className="text-red-500 mt-2">{error}</p>}
 
-      <button
-        onClick={handleVerify}
+          <button
+            onClick={handleVerify}
         className="mt-4 w-full bg-indigo-600 text-white py-3 rounded"
-      >
+          >
         Start Quiz
-      </button>
+          </button>
     </div>
   );
 }
