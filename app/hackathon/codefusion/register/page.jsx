@@ -1,4 +1,4 @@
-// 'use client';
+'use client';
 // import { useState, useEffect } from 'react';
 // import { ArrowLeft, Users, GraduationCap, Send, CheckCircle, AlertCircle, Info, Mail, MailOpen } from 'lucide-react';
 
