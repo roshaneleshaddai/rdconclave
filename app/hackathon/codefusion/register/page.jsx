@@ -782,7 +782,7 @@
 import { useState, useEffect } from 'react';
 import { ArrowLeft } from 'lucide-react';
 
-const RegistrationClosed = () => {
+const RegistrationForm = () => {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
@@ -837,4 +837,4 @@ const RegistrationClosed = () => {
   );
 };
 
-export default RegistrationClosed;
+export default  RegistrationForm;
