@@ -1,4 +1,4 @@
-// 'use client';
+'use client';
 // import { useState, useEffect } from 'react';
 // import { ArrowLeft, Users, GraduationCap, Send, CheckCircle, AlertCircle, Info, Mail, MailOpen } from 'lucide-react';
 
@@ -818,7 +818,7 @@ const RegistrationForm = () => {
           </h1>
           <div className="w-24 h-1 bg-[#002147] mx-auto mb-4"></div>
           <p className="text-lg text-gray-500 italic">
-            Academic Research & Development Conclave • CodeFusion 2025
+            Academic Research & Development Conclave • CodeFusion 2026
           </p>
         </div>
       </div>
