@@ -1036,6 +1036,11 @@ video {
 .cursor-pointer{
   cursor: pointer;
 }
+.select-none{
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
 .resize{
   resize: both;
 }
@@ -2733,6 +2738,9 @@ html, body {
   .sm\:h-3{
     height: 0.75rem;
   }
+  .sm\:h-4{
+    height: 1rem;
+  }
   .sm\:h-6{
     height: 1.5rem;
   }
@@ -2750,6 +2758,9 @@ html, body {
   }
   .sm\:w-3{
     width: 0.75rem;
+  }
+  .sm\:w-4{
+    width: 1rem;
   }
   .sm\:w-44{
     width: 11rem;

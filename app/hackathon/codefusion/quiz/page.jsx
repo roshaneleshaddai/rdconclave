@@ -175,17 +175,42 @@ const WarningPopup = ({ message, onOkClick, isVisible }) => {
 };
 
 // Question Card Component
+// Question Card Component
 const QuestionCard = ({ question, onAnswer, selected, currentIndex, totalQuestions, timeLeft, answeredQuestions }) => {
   const timePercentage = (timeLeft / 30) * 100;
   const isLowTime = timeLeft <= 10;
+  const isMultiple = question.isMultiple || false;
+  const selectedArray = Array.isArray(selected) ? selected : (selected !== undefined && selected !== -1 ? [selected] : []);
+
+  const handleOptionClick = (idx) => {
+    if (isMultiple) {
+      // Multiple choice: toggle selection
+      const newSelected = selectedArray.includes(idx)
+        ? selectedArray.filter(i => i !== idx)
+        : [...selectedArray, idx];
+      onAnswer(newSelected);
+    } else {
+      // Single choice: replace selection
+      onAnswer(idx);
+    }
+  };
+
+  const isSelected = (idx) => {
+    return isMultiple ? selectedArray.includes(idx) : selected === idx;
+  };
 
   return (
     <div className="bg-white rounded-lg sm:rounded-xl shadow-lg p-5 sm:p-8 border-2" style={{ borderColor: COLORS.primary + '20' }}>
       {/* Question Number */}
-      <div className="mb-4 sm:mb-5">
+      <div className="mb-4 sm:mb-5 flex items-center gap-3">
         <span className="text-xs sm:text-sm font-semibold px-3 py-1 rounded-full" style={{ backgroundColor: COLORS.primary + '20', color: COLORS.primary }}>
           Question {currentIndex + 1} of {totalQuestions}
         </span>
+        {isMultiple && (
+          <span className="text-xs sm:text-sm font-semibold px-3 py-1 rounded-full" style={{ backgroundColor: COLORS.warning + '20', color: COLORS.warning }}>
+            Multiple Answers
+          </span>
+        )}
       </div>
 
       {/* Timer Bar */}
@@ -229,40 +254,55 @@ const QuestionCard = ({ question, onAnswer, selected, currentIndex, totalQuestio
       </div>
 
       {/* Question Text */}
-      <h2 className="text-lg sm:text-2xl font-bold mb-5 sm:mb-6 select-none" style={{ color: COLORS.primary }} onCopy={(e) => e.preventDefault()} onDrag={(e) => e.preventDefault()}>{question.question}</h2>
+      <h2 className="text-lg sm:text-2xl font-bold mb-3 sm:mb-4 select-none" style={{ color: COLORS.primary }} onCopy={(e) => e.preventDefault()} onDrag={(e) => e.preventDefault()}>{question.question}</h2>
+      
+      {isMultiple && (
+        <p className="text-xs sm:text-sm mb-4 sm:mb-5 select-none" style={{ color: COLORS.grayText }}>
+          Select all that apply
+        </p>
+      )}
 
       {/* Options */}
       <div className="space-y-2 sm:space-y-3 select-none">
-        {question.options.map((opt, idx) => (
-          <button
-            key={idx}
-            onClick={() => onAnswer(idx)}
-            className="w-full text-left border-2 p-3 sm:p-4 rounded-lg transition-all duration-200 text-sm sm:text-base select-none"
-            style={{
-              borderColor: selected === idx ? COLORS.primary : '#e5e7eb',
-              backgroundColor: selected === idx ? COLORS.primary + '10' : '#ffffff',
-              userSelect: 'none',
-              WebkitUserSelect: 'none',
-            }}
-            onCopy={(e) => e.preventDefault()}
-            onDrag={(e) => e.preventDefault()}
-          >
-            <div className="flex items-center pointer-events-none">
-              <div
-                className="w-5 h-5 sm:w-6 sm:h-6 rounded-full border-2 flex items-center justify-center mr-2 sm:mr-3 transition-all flex-shrink-0"
-                style={{
-                  borderColor: selected === idx ? COLORS.primary : '#d1d5db',
-                  backgroundColor: selected === idx ? COLORS.primary : 'transparent',
-                }}
-              >
-                {selected === idx && (
-                  <div className="w-2 h-2 sm:w-3 sm:h-3 bg-white rounded-full" />
-                )}
+        {question.options.map((opt, idx) => {
+          const optionSelected = isSelected(idx);
+          return (
+            <button
+              key={idx}
+              onClick={() => handleOptionClick(idx)}
+              className="w-full text-left border-2 p-3 sm:p-4 rounded-lg transition-all duration-200 text-sm sm:text-base select-none"
+              style={{
+                borderColor: optionSelected ? COLORS.primary : '#e5e7eb',
+                backgroundColor: optionSelected ? COLORS.primary + '10' : '#ffffff',
+                userSelect: 'none',
+                WebkitUserSelect: 'none',
+              }}
+              onCopy={(e) => e.preventDefault()}
+              onDrag={(e) => e.preventDefault()}
+            >
+              <div className="flex items-center pointer-events-none">
+                <div
+                  className={`w-5 h-5 sm:w-6 sm:h-6 border-2 flex items-center justify-center mr-2 sm:mr-3 transition-all flex-shrink-0 ${isMultiple ? 'rounded' : 'rounded-full'}`}
+                  style={{
+                    borderColor: optionSelected ? COLORS.primary : '#d1d5db',
+                    backgroundColor: optionSelected ? COLORS.primary : 'transparent',
+                  }}
+                >
+                  {optionSelected && (
+                    isMultiple ? (
+                      <svg className="w-3 h-3 sm:w-4 sm:h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                      </svg>
+                    ) : (
+                      <div className="w-2 h-2 sm:w-3 sm:h-3 bg-white rounded-full" />
+                    )
+                  )}
+                </div>
+                <span className="text-gray-700 font-medium select-none" style={{ userSelect: 'none', WebkitUserSelect: 'none' }}>{opt}</span>
               </div>
-              <span className="text-gray-700 font-medium select-none" style={{ userSelect: 'none', WebkitUserSelect: 'none' }}>{opt}</span>
-            </div>
-          </button>
-        ))}
+            </button>
+          );
+        })}
       </div>
     </div>
   );
