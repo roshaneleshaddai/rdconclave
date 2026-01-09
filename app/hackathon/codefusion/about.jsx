@@ -229,7 +229,7 @@ const EventRegistration = () => {
           <CountdownUnit value={timeLeft.seconds} label="Seconds" />
         </div>
 
-        {/* REGISTER BUTTON - ACTIVATED */}
+        {/* REGISTER BUTTON - ACTIVATED 
         <div style={{
           display: 'flex',
           justifyContent: 'center',
@@ -290,9 +290,9 @@ const EventRegistration = () => {
               </span>
             </button>
           </div>
-        </div>
+        </div>*/}
 
-        {/* DISABLED REGISTRATION MESSAGE - NOW IN COMMENTS
+      
         <div style={{
           display: 'flex',
           justifyContent: 'center',
@@ -314,7 +314,7 @@ const EventRegistration = () => {
               fontFamily: 'SUSE, sans-serif',
               letterSpacing: '-0.5px'
             }}>
-              Registrations Opening Soon!
+              Registrations Closed!
             </p>
             <p style={{
               fontSize: isMobile ? '14px' : '16px',
@@ -323,11 +323,12 @@ const EventRegistration = () => {
               fontFamily: 'SUSE, sans-serif',
               fontWeight: '500'
             }}>
-              Stay tuned for the official registration link
+              We truly appreciate everyone who showed interest.<br></br>
+    🌱 “Great opportunities return—this is just a pause, not the end.”
             </p>
           </div>
         </div>
-        */}
+        
 
         <div style={{
           display: 'grid',
