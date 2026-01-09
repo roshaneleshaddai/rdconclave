@@ -108,6 +108,74 @@ const CoinFlip = ({ message = "Loading..." }) => {
     </div>
   );
 };
+const WarningPopup = ({ message, onOkClick, isVisible }) => {
+  if (!isVisible) return null;
+
+  return (
+    <div
+      className="fixed inset-0 bg-black/70 backdrop-blur-sm flex items-center justify-center z-[9999999]"
+      onContextMenu={(e) => e.preventDefault()}
+    >
+      <div
+        className="bg-white rounded-2xl shadow-2xl p-8 max-w-md w-full mx-4 text-center border-4"
+        style={{ borderColor: COLORS.error }}
+      >
+        <div
+          className="w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6"
+          style={{ backgroundColor: COLORS.error + "20" }}
+        >
+          <svg
+            className="w-12 h-12"
+            style={{ color: COLORS.error }}
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M12 9v2m0 4v2"
+            />
+          </svg>
+        </div>
+
+        <h2 className="text-2xl font-bold mb-4" style={{ color: COLORS.primary }}>
+          ⚠️ WARNING
+        </h2>
+
+        <p
+          className="text-base mb-8 leading-relaxed whitespace-pre-line"
+          style={{ color: COLORS.grayText }}
+        >
+          {message}
+        </p>
+
+        <button
+          onClick={onOkClick}
+          className="w-full py-3 px-6 rounded-lg font-bold text-white text-lg transition-all shadow-lg hover:shadow-xl"
+          style={{ backgroundColor: COLORS.primary }}
+          onMouseEnter={(e) =>
+            (e.target.style.backgroundColor = COLORS.primaryLight)
+          }
+          onMouseLeave={(e) =>
+            (e.target.style.backgroundColor = COLORS.primary)
+          }
+        >
+          OK – Return to Quiz
+        </button>
+      </div>
+
+      <style jsx>{`
+        div {
+          user-select: none;
+          -webkit-user-select: none;
+        }
+      `}</style>
+    </div>
+  );
+};
+
 
 // Question Card Component
 const QuestionCard = ({ question, onAnswer, selected, currentIndex, totalQuestions, timeLeft, answeredQuestions }) => {
@@ -116,6 +184,13 @@ const QuestionCard = ({ question, onAnswer, selected, currentIndex, totalQuestio
 
   return (
     <div className="bg-white rounded-lg sm:rounded-xl shadow-lg p-5 sm:p-8 border-2" style={{ borderColor: COLORS.primary + '20' }}>
+      {/* Question Number */}
+      <div className="mb-4 sm:mb-5">
+        <span className="text-xs sm:text-sm font-semibold px-3 py-1 rounded-full" style={{ backgroundColor: COLORS.primary + '20', color: COLORS.primary }}>
+          Question {currentIndex + 1} of {totalQuestions}
+        </span>
+      </div>
+
       {/* Timer Bar */}
       <div className="mb-5 sm:mb-6">
         <div className="flex items-center justify-between mb-2">
@@ -157,7 +232,7 @@ const QuestionCard = ({ question, onAnswer, selected, currentIndex, totalQuestio
       </div>
 
       {/* Question Text */}
-      <h2 className="text-lg sm:text-2xl font-bold mb-5 sm:mb-6" style={{ color: COLORS.primary }}>{question.question}</h2>
+      <h2 className="text-lg sm:text-2xl font-bold mb-5 sm:mb-6" style={{ color: COLORS.primary }} onCopy={(e) => e.preventDefault()}>{question.question}</h2>
 
       {/* Options */}
       <div className="space-y-2 sm:space-y-3">
@@ -165,13 +240,14 @@ const QuestionCard = ({ question, onAnswer, selected, currentIndex, totalQuestio
           <button
             key={idx}
             onClick={() => onAnswer(idx)}
-            className="w-full text-left border-2 p-3 sm:p-4 rounded-lg transition-all duration-200 text-sm sm:text-base"
+            className="w-full text-left border-2 p-3 sm:p-4 rounded-lg transition-all duration-200 text-sm sm:text-base select-none"
             style={{
               borderColor: selected === idx ? COLORS.primary : '#e5e7eb',
               backgroundColor: selected === idx ? COLORS.primary + '10' : '#ffffff',
             }}
+            onCopy={(e) => e.preventDefault()}
           >
-            <div className="flex items-center">
+            <div className="flex items-center pointer-events-none">
               <div
                 className="w-5 h-5 sm:w-6 sm:h-6 rounded-full border-2 flex items-center justify-center mr-2 sm:mr-3 transition-all flex-shrink-0"
                 style={{
@@ -213,7 +289,7 @@ const QuizResult = () => {
   );
 };
 
-// Quiz Screen Component with Fullscreen
+// Quiz Screen Component with Enhanced Fullscreen Security
 const QuizScreen = ({ registrationId, onSubmit }) => {
   const [questions, setQuestions] = useState([]);
   const [index, setIndex] = useState(0);
@@ -224,6 +300,8 @@ const QuizScreen = ({ registrationId, onSubmit }) => {
   const [timeLeft, setTimeLeft] = useState(30);
   const [quizSubmitted, setQuizSubmitted] = useState(false);
   const [answeredQuestions, setAnsweredQuestions] = useState([]);
+  const [showWarning, setShowWarning] = useState(false);
+  const [warningMessage, setWarningMessage] = useState("");
 
   useEffect(() => {
     const loadQuestions = async () => {
@@ -260,41 +338,111 @@ const QuizScreen = ({ registrationId, onSubmit }) => {
     }
   };
 
-  // Prevent fullscreen exit
+  // Prevent fullscreen exit - enforce fullscreen mode with custom warning popup
   useEffect(() => {
     const handleFullscreenChange = () => {
-      if (!document.fullscreenElement && !quizSubmitted && !submitting && questions.length > 0) {
-        enterFullscreen();
+      const isFs = document.fullscreenElement || document.webkitFullscreenElement;
+
+      if (!isFs && !quizSubmitted && questions.length > 0) {
+        setWarningMessage('You have exited fullscreen mode.\n\nThis is not allowed during the quiz.\n\nClick OK to return to fullscreen and continue.');
+        setShowWarning(true);
       }
     };
 
     document.addEventListener('fullscreenchange', handleFullscreenChange);
     document.addEventListener('webkitfullscreenchange', handleFullscreenChange);
+    document.addEventListener('mozfullscreenchange', handleFullscreenChange);
+    document.addEventListener('MSFullscreenChange', handleFullscreenChange);
 
     return () => {
       document.removeEventListener('fullscreenchange', handleFullscreenChange);
       document.removeEventListener('webkitfullscreenchange', handleFullscreenChange);
+      document.removeEventListener('mozfullscreenchange', handleFullscreenChange);
+      document.removeEventListener('MSFullscreenChange', handleFullscreenChange);
     };
-  }, [quizSubmitted, submitting, questions.length]);
+  }, [quizSubmitted, questions.length]);
 
-  // Disable right-click and keyboard shortcuts
+  // Detect mouse moving to top (fullscreen exit attempt)
   useEffect(() => {
-    const handleContextMenu = (e) => e.preventDefault();
-    const handleKeyDown = (e) => {
-      if (e.key === 'F11' || (e.ctrlKey && e.shiftKey && e.key === 'I') || 
-          (e.ctrlKey && e.key === 's') || e.key === 'Escape') {
-        e.preventDefault();
+    const handleMouseMove = (e) => {
+      if (e.clientY <= 5 && !quizSubmitted) {
+        enterFullscreen();
       }
     };
 
-    document.addEventListener('contextmenu', handleContextMenu);
-    document.addEventListener('keydown', handleKeyDown);
+    document.addEventListener('mousemove', handleMouseMove);
+
+    return () => {
+      document.removeEventListener('mousemove', handleMouseMove);
+    };
+  }, [quizSubmitted]);
+
+  // Detect tab switch / app switch (visibility change) with custom warning
+  useEffect(() => {
+    const handleVisibilityChange = () => {
+      if (document.hidden && !quizSubmitted && questions.length > 0) {
+        setWarningMessage('You cannot switch tabs during the quiz.\n\nClick OK to return to the quiz.');
+        setShowWarning(true);
+        window.focus();
+      }
+    };
+
+    document.addEventListener('visibilitychange', handleVisibilityChange);
+
+    return () => {
+      document.removeEventListener('visibilitychange', handleVisibilityChange);
+    };
+  }, [quizSubmitted, questions.length]);
+
+  // Disable right-click, copy, cut, paste during quiz only
+  useEffect(() => {
+    if (!questions.length || loading) return;
+
+    const handleContextMenu = (e) => {
+      e.preventDefault();
+      return false;
+    };
+
+    const handleCopy = (e) => {
+      e.preventDefault();
+      return false;
+    };
+
+    const handleCut = (e) => {
+      e.preventDefault();
+      return false;
+    };
+
+    const handlePaste = (e) => {
+      e.preventDefault();
+      return false;
+    };
+
+    const handleKeyDown = (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      return false;
+    };
+
+    document.addEventListener('contextmenu', handleContextMenu, { passive: false });
+    document.addEventListener('copy', handleCopy, { passive: false });
+    document.addEventListener('cut', handleCut, { passive: false });
+    document.addEventListener('paste', handlePaste, { passive: false });
+    document.addEventListener('keydown', handleKeyDown, { passive: false });
+
+    document.body.style.touchAction = 'none';
+    document.body.style.overscrollBehavior = 'none';
 
     return () => {
       document.removeEventListener('contextmenu', handleContextMenu);
+      document.removeEventListener('copy', handleCopy);
+      document.removeEventListener('cut', handleCut);
+      document.removeEventListener('paste', handlePaste);
       document.removeEventListener('keydown', handleKeyDown);
+      document.body.style.touchAction = 'auto';
+      document.body.style.overscrollBehavior = 'auto';
     };
-  }, []);
+  }, [questions.length, loading]);
 
   // Timer effect
   useEffect(() => {
@@ -334,7 +482,12 @@ const QuizScreen = ({ registrationId, onSubmit }) => {
     setSubmitting(false);
     
     if (res.success) {
-      onSubmit(res);
+      setTimeout(() => {
+        if (document.fullscreenElement || document.webkitFullscreenElement) {
+          document.exitFullscreen().catch(() => {});
+        }
+        onSubmit(res);
+      }, 500);
     } else {
       setError(res.message || "Submission failed. Please try again.");
       setQuizSubmitted(false);
@@ -348,7 +501,6 @@ const QuizScreen = ({ registrationId, onSubmit }) => {
     const updated = responses.filter(r => r.questionId !== q.questionId);
     setResponses([...updated, { questionId: q.questionId, selectedOption: option }]);
     
-    // Add to answered questions if not already there
     if (!answeredQuestions.includes(index)) {
       setAnsweredQuestions([...answeredQuestions, index]);
     }
@@ -368,11 +520,23 @@ const QuizScreen = ({ registrationId, onSubmit }) => {
     setSubmitting(false);
     
     if (res.success) {
-      onSubmit(res);
+      setTimeout(() => {
+        if (document.fullscreenElement || document.webkitFullscreenElement) {
+          document.exitFullscreen().catch(() => {});
+        }
+        onSubmit(res);
+      }, 500);
     } else {
       setError(res.message || "Submission failed. Please try again.");
       setQuizSubmitted(false);
     }
+  };
+
+  const handleWarningOk = () => {
+    setShowWarning(false);
+    setTimeout(() => {
+      enterFullscreen();
+    }, 100);
   };
 
   const currentResponse = responses.find(r => 
@@ -410,75 +574,97 @@ const QuizScreen = ({ registrationId, onSubmit }) => {
   const progress = ((index + 1) / questions.length) * 100;
 
   return (
-    <div className="min-h-screen px-3 sm:px-4 py-4 sm:py-8" style={{ backgroundColor: COLORS.gray }}>
-      <div className="max-w-2xl sm:max-w-3xl mx-auto">
-        {/* Progress Bar */}
-        <div className="mb-5 sm:mb-8">
-          <div className="w-full bg-gray-300 rounded-full h-2 sm:h-3 overflow-hidden">
-            <div
-              className="h-full transition-all duration-300"
-              style={{ 
-                width: `${progress}%`,
-                backgroundColor: COLORS.primary
-              }}
-            />
+    <>
+      <WarningPopup 
+        message={warningMessage} 
+        onOkClick={handleWarningOk}
+        isVisible={showWarning}
+      />
+      <div className="min-h-screen px-3 sm:px-4 py-4 sm:py-8 select-none" style={{ backgroundColor: COLORS.gray }} onCopy={(e) => e.preventDefault()}>
+        <div className="max-w-2xl sm:max-w-3xl mx-auto">
+          {/* Progress Bar */}
+          <div className="mb-5 sm:mb-8">
+            <div className="w-full bg-gray-300 rounded-full h-2 sm:h-3 overflow-hidden">
+              <div
+                className="h-full transition-all duration-300"
+                style={{ 
+                  width: `${progress}%`,
+                  backgroundColor: COLORS.primary
+                }}
+              />
+            </div>
           </div>
-        </div>
 
-        <QuestionCard
-          question={questions[index]}
-          selected={currentResponse?.selectedOption}
-          onAnswer={handleAnswer}
-          currentIndex={index}
-          totalQuestions={questions.length}
-          timeLeft={timeLeft}
-          answeredQuestions={answeredQuestions}
-        />
+          <QuestionCard
+            question={questions[index]}
+            selected={currentResponse?.selectedOption}
+            onAnswer={handleAnswer}
+            currentIndex={index}
+            totalQuestions={questions.length}
+            timeLeft={timeLeft}
+            answeredQuestions={answeredQuestions}
+          />
 
-        <div className="flex justify-between mt-5 sm:mt-8 gap-3 sm:gap-4">
-          <button
-            disabled={index === 0 || quizSubmitted}
-            onClick={() => setIndex(i => i - 1)}
-            className="px-4 sm:px-6 py-2 sm:py-3 border-2 rounded-lg font-medium transition-all disabled:opacity-50 disabled:cursor-not-allowed text-sm sm:text-base"
-            style={{
-              borderColor: COLORS.primary,
-              color: COLORS.primary,
-              backgroundColor: 'white',
-            }}
-            onMouseEnter={(e) => e.target.style.backgroundColor = COLORS.primary + '10'}
-            onMouseLeave={(e) => e.target.style.backgroundColor = 'white'}
-          >
-            Previous
-          </button>
-
-          {index === questions.length - 1 ? (
+          <div className="flex justify-between mt-5 sm:mt-8 gap-3 sm:gap-4">
             <button
-              onClick={handleSubmit}
-              disabled={quizSubmitted}
-              className="px-6 sm:px-8 py-2 sm:py-3 rounded-lg font-medium text-white transition-all shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed text-sm sm:text-base"
-              style={{ backgroundColor: COLORS.success }}
+              disabled={index === 0 || quizSubmitted}
+              onClick={() => setIndex(i => i - 1)}
+              className="px-4 sm:px-6 py-2 sm:py-3 border-2 rounded-lg font-medium transition-all disabled:opacity-50 disabled:cursor-not-allowed text-sm sm:text-base select-none"
+              style={{
+                borderColor: COLORS.primary,
+                color: COLORS.primary,
+                backgroundColor: 'white',
+              }}
+              onMouseEnter={(e) => e.target.style.backgroundColor = COLORS.primary + '10'}
+              onMouseLeave={(e) => e.target.style.backgroundColor = 'white'}
             >
-              Submit
+              Previous
             </button>
-          ) : (
-            <button
-              onClick={() => setIndex(i => i + 1)}
-              disabled={quizSubmitted}
-              className="px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-medium text-white transition-all disabled:opacity-50 disabled:cursor-not-allowed text-sm sm:text-base"
-              style={{ backgroundColor: COLORS.primary }}
-            >
-              Next
-            </button>
+
+            {index === questions.length - 1 ? (
+              <button
+                onClick={handleSubmit}
+                disabled={quizSubmitted}
+                className="px-6 sm:px-8 py-2 sm:py-3 rounded-lg font-medium text-white transition-all shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed text-sm sm:text-base select-none"
+                style={{ backgroundColor: COLORS.success }}
+              >
+                Submit
+              </button>
+            ) : (
+              <button
+                onClick={() => setIndex(i => i + 1)}
+                disabled={quizSubmitted}
+                className="px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-medium text-white transition-all disabled:opacity-50 disabled:cursor-not-allowed text-sm sm:text-base select-none"
+                style={{ backgroundColor: COLORS.primary }}
+              >
+                Next
+              </button>
+            )}
+          </div>
+
+          {error && (
+            <div className="mt-4 p-3 sm:p-4 bg-red-50 border border-red-200 rounded-lg">
+              <p className="text-red-600 text-xs sm:text-sm">{error}</p>
+            </div>
           )}
         </div>
-
-        {error && (
-          <div className="mt-4 p-3 sm:p-4 bg-red-50 border border-red-200 rounded-lg">
-            <p className="text-red-600 text-xs sm:text-sm">{error}</p>
-          </div>
-        )}
       </div>
-    </div>
+
+      {/* Invisible shield to block fullscreen exit bar interaction */}
+      <style jsx global>{`
+        /* Block top fullscreen exit hover zone */
+        body::before {
+          content: "";
+          position: fixed;
+          top: 0;
+          left: 0;
+          height: 40px;
+          width: 100%;
+          z-index: 999999;
+          pointer-events: all;
+        }
+      `}</style>
+    </>
   );
 };
 
@@ -503,7 +689,6 @@ const QuizStart = ({ onVerified }) => {
       setError(res.message || "Verification failed");
       return;
     }
-    // Dispatch event to hide header/footer
     window.dispatchEvent(new Event('quiz-started'));
     onVerified(regId);
   };
@@ -571,7 +756,6 @@ export default function QuizApp() {
 
   const handleSubmit = () => {
     setStage("result");
-    // Dispatch event to show header/footer again
     window.dispatchEvent(new Event('quiz-ended'));
   };
 
