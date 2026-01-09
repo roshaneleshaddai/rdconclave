@@ -13,7 +13,7 @@ const COLORS = {
 };
 
 // API Functions
-const BASE_URL = "https://rd-backend-m7gd.onrender.com/api";
+const BASE_URL = "https://rd-backend-7cuu.onrender.com/api";
 
 const verifyRegistration = async (registrationId) => {
   try {
