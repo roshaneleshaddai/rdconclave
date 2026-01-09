@@ -229,7 +229,7 @@ const QuestionCard = ({ question, onAnswer, selected, currentIndex, totalQuestio
       </div>
 
       {/* Question Text */}
-      <h2 className="text-lg sm:text-2xl font-bold mb-5 sm:mb-6" style={{ color: COLORS.primary }}>{question.question}</h2>
+      <h2 className="text-lg sm:text-2xl font-bold mb-5 sm:mb-6" style={{ color: COLORS.primary }}>{question?.question}</h2>
 
       {/* Options */}
       <div className="space-y-2 sm:space-y-3">
