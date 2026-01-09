@@ -12,6 +12,11 @@
       "static/css/app/layout.css",
       "static/chunks/app/layout.js"
     ],
+    "/hackathon/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/hackathon/page.js"
+    ],
     "/hackathon/codefusion/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
@@ -21,6 +26,16 @@
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/hackathon/codefusion/quiz/page.js"
+    ],
+    "/meet/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/meet/page.js"
+    ],
+    "/journalpublications/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/journalpublications/page.js"
     ]
   }
 }
