@@ -1,14 +1,4 @@
 {
-  "/hackathon/codefusion/page": "app/hackathon/codefusion/page.js",
-<<<<<<< HEAD
-  "/hackathon/codefusion/register/page": "app/hackathon/codefusion/register/page.js",
-  "/hackathon/page": "app/hackathon/page.js",
-  "/hackathon/codefusion/quiz/admin/leaderboard/page": "app/hackathon/codefusion/quiz/admin/leaderboard/page.js",
-  "/hackathon/codefusion/register/teams/all/page": "app/hackathon/codefusion/register/teams/all/page.js"
-=======
-  "/journalpublications/page": "app/journalpublications/page.js",
   "/hackathon/codefusion/quiz/page": "app/hackathon/codefusion/quiz/page.js",
-  "/hackathon/page": "app/hackathon/page.js",
-  "/icon.png/route": "app/icon.png/route.js"
->>>>>>> 73bda96148a86ae71f9cdd68d504eacc672a7056
+  "/hackathon/codefusion/quiz/admin/leaderboard/page": "app/hackathon/codefusion/quiz/admin/leaderboard/page.js"
 }

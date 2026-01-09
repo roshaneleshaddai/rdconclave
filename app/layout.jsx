@@ -1,14 +1,11 @@
-
 //import { useEffect, useState } from "react";
 //import StartPage from "./components/startpage/page";
+"use client";
+
+import { useEffect, useState } from "react";
 import Footer from './components/footer/page';
 import Header from './components/header/page';
 import './globals.css';
-
-export const metadata = {
- title: "Research Conclave@SAHE",
- description: "A new Millennium",
- };
 
 export default function RootLayout({ children }) {
   const [isQuizActive, setIsQuizActive] = useState(false);

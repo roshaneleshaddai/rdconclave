@@ -1,55 +1,20 @@
 {
   "pages": {
-    "/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/app/page.css",
-      "static/chunks/app/page.js"
-    ],
     "/layout": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/css/app/layout.css",
       "static/chunks/app/layout.js"
     ],
-    "/hackathon/page": [
+    "/hackathon/codefusion/quiz/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/hackathon/page.js"
-    ],
-    "/hackathon/codefusion/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/hackathon/codefusion/page.js"
-    ],
-    "/hackathon/codefusion/register/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-<<<<<<< HEAD
-      "static/chunks/app/hackathon/codefusion/register/page.js"
-    ],
-    "/hackathon/codefusion/register/teams/all/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/hackathon/codefusion/register/teams/all/page.js"
+      "static/chunks/app/hackathon/codefusion/quiz/page.js"
     ],
     "/hackathon/codefusion/quiz/admin/leaderboard/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/hackathon/codefusion/quiz/admin/leaderboard/page.js"
-=======
-      "static/chunks/app/hackathon/codefusion/quiz/page.js"
-    ],
-    "/meet/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/meet/page.js"
-    ],
-    "/journalpublications/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/journalpublications/page.js"
->>>>>>> 73bda96148a86ae71f9cdd68d504eacc672a7056
     ]
   }
 }
