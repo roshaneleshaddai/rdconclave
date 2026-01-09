@@ -229,19 +229,23 @@ const QuestionCard = ({ question, onAnswer, selected, currentIndex, totalQuestio
       </div>
 
       {/* Question Text */}
-      <h2 className="text-lg sm:text-2xl font-bold mb-5 sm:mb-6" style={{ color: COLORS.primary }}>{question?.question}</h2>
+      <h2 className="text-lg sm:text-2xl font-bold mb-5 sm:mb-6 select-none" style={{ color: COLORS.primary }} onCopy={(e) => e.preventDefault()} onDrag={(e) => e.preventDefault()}>{question.question}</h2>
 
       {/* Options */}
-      <div className="space-y-2 sm:space-y-3">
+      <div className="space-y-2 sm:space-y-3 select-none">
         {question.options.map((opt, idx) => (
           <button
             key={idx}
             onClick={() => onAnswer(idx)}
-            className="w-full text-left border-2 p-3 sm:p-4 rounded-lg transition-all duration-200 text-sm sm:text-base"
+            className="w-full text-left border-2 p-3 sm:p-4 rounded-lg transition-all duration-200 text-sm sm:text-base select-none"
             style={{
               borderColor: selected === idx ? COLORS.primary : '#e5e7eb',
               backgroundColor: selected === idx ? COLORS.primary + '10' : '#ffffff',
+              userSelect: 'none',
+              WebkitUserSelect: 'none',
             }}
+            onCopy={(e) => e.preventDefault()}
+            onDrag={(e) => e.preventDefault()}
           >
             <div className="flex items-center pointer-events-none">
               <div
@@ -255,7 +259,7 @@ const QuestionCard = ({ question, onAnswer, selected, currentIndex, totalQuestio
                   <div className="w-2 h-2 sm:w-3 sm:h-3 bg-white rounded-full" />
                 )}
               </div>
-              <span className="text-gray-700 font-medium">{opt}</span>
+              <span className="text-gray-700 font-medium select-none" style={{ userSelect: 'none', WebkitUserSelect: 'none' }}>{opt}</span>
             </div>
           </button>
         ))}
@@ -588,16 +592,30 @@ const QuizScreen = ({ registrationId, onSubmit }) => {
       return false;
     };
 
+    const handleSelectStart = (e) => {
+      e.preventDefault();
+      return false;
+    };
+
+    const handleDragStart = (e) => {
+      e.preventDefault();
+      return false;
+    };
+
     document.addEventListener('contextmenu', handleContextMenu, { passive: false });
     document.addEventListener('copy', handleCopy, { passive: false });
     document.addEventListener('cut', handleCut, { passive: false });
     document.addEventListener('paste', handlePaste, { passive: false });
+    document.addEventListener('selectstart', handleSelectStart, { passive: false });
+    document.addEventListener('dragstart', handleDragStart, { passive: false });
 
     return () => {
       document.removeEventListener('contextmenu', handleContextMenu);
       document.removeEventListener('copy', handleCopy);
       document.removeEventListener('cut', handleCut);
       document.removeEventListener('paste', handlePaste);
+      document.removeEventListener('selectstart', handleSelectStart);
+      document.removeEventListener('dragstart', handleDragStart);
     };
   }, [questions.length, loading]);
 
@@ -761,22 +779,7 @@ const QuizScreen = ({ registrationId, onSubmit }) => {
             answeredQuestions={answeredQuestions}
           />
 
-          <div className="flex justify-between mt-5 sm:mt-8 gap-3 sm:gap-4">
-            <button
-              disabled={index === 0 || quizSubmitted}
-              onClick={() => setIndex(i => i - 1)}
-              className="px-4 sm:px-6 py-2 sm:py-3 border-2 rounded-lg font-medium transition-all disabled:opacity-50 disabled:cursor-not-allowed text-sm sm:text-base"
-              style={{
-                borderColor: COLORS.primary,
-                color: COLORS.primary,
-                backgroundColor: 'white',
-              }}
-              onMouseEnter={(e) => !e.target.disabled && (e.target.style.backgroundColor = COLORS.primary + '10')}
-              onMouseLeave={(e) => e.target.style.backgroundColor = 'white'}
-            >
-              ← Previous
-            </button>
-
+          <div className="flex justify-end mt-5 sm:mt-8 gap-3 sm:gap-4">
             {index === questions.length - 1 ? (
               <button
                 onClick={handleSubmit}
@@ -821,6 +824,13 @@ const QuizScreen = ({ registrationId, onSubmit }) => {
       </div>
 
       <style jsx global>{`
+        body {
+          user-select: none;
+          -webkit-user-select: none;
+          -moz-user-select: none;
+          -ms-user-select: none;
+        }
+
         body::before {
           content: "";
           position: fixed;
@@ -830,6 +840,24 @@ const QuizScreen = ({ registrationId, onSubmit }) => {
           width: 100%;
           z-index: 999999;
           pointer-events: all;
+        }
+
+        * {
+          user-select: none;
+          -webkit-user-select: none;
+          -moz-user-select: none;
+          -ms-user-select: none;
+        }
+
+        button {
+          user-select: none;
+          -webkit-user-select: none;
+        }
+
+        p, h1, h2, h3, h4, h5, h6, span, div {
+          user-select: none;
+          -webkit-user-select: none;
+          -moz-user-select: none;
         }
       `}</style>
     </>

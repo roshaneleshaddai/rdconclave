@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {
   "/page": "app/page.js",
   "/hackathon/codefusion/quiz/page": "app/hackathon/codefusion/quiz/page.js",
@@ -6,3 +7,6 @@
   "/hackathon/codefusion/quiz/admin/leaderboard/page": "app/hackathon/codefusion/quiz/admin/leaderboard/page.js",
   "/icon.png/route": "app/icon.png/route.js"
 }
+=======
+{}
+>>>>>>> b2e0a20a0a851786baf7a66d486f8abc62acd0e4
