@@ -52,27 +52,32 @@ const submitQuiz = async (payload) => {
 };
 
 // Loading Animation Component
-const CoinFlip = ({ message = "Loading..." }) => {
-  return (
-    <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50">
-      <div className="bg-white rounded-2xl p-6 sm:p-8 shadow-2xl flex flex-col items-center">
-        <div style={{ perspective: '1200px', width: '120px', height: '120px' }} className="sm:w-[150px] sm:h-[150px]">
-          <div className="coin">
-            <div className="coin-face front">
-              <div className="w-full h-full rounded-full flex items-center justify-center bg-gradient-to-br from-blue-900 to-blue-700">
-                <span className="text-2xl font-bold text-white">RD</span>
-              </div>
-            </div>
-            <div className="coin-face back">
-              <div className="w-full h-full rounded-full flex items-center justify-center bg-gradient-to-br from-yellow-400 to-yellow-600">
-                <span className="text-2xl font-bold text-white">✓</span>
-              </div>
-            </div>
-          </div>
-        </div>
-        <p className="mt-4 sm:mt-6 text-base sm:text-lg font-semibold" style={{ color: COLORS.primary }}>{message}</p>
-      </div>
+const CoinFlip = () => {
+   return (
+     <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50">
+       <div className="bg-white rounded-2xl p-8 shadow-2xl flex flex-col items-center">
+        <div style={{ perspective: '1200px', width: '150px', height: '150px' }}>
+        <div className="coin">
+          {/* FRONT */}
+       <div className="coin-face front">
+              <img
+                src="/rdlogo.webp"
+               alt="RD Logo"
+                 className="w-full h-full rounded-full object-cover"
+               />
+             </div>
 
+             {/* BACK */}
+             <div className="coin-face back">
+               <img
+                 src="/golden.png"
+                 alt="Golden Logo"
+                 className="w-full h-full rounded-full object-cover"
+               />
+             </div>
+           </div>
+         </div>
+       </div>
       <style jsx>{`
         .coin {
           width: 100%;
