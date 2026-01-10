@@ -17,10 +17,15 @@
       "static/chunks/main-app.js",
       "static/chunks/app/hackathon/page.js"
     ],
-    "/hackathon/codefusion/quiz/page": [
+    "/hackathon/codefusion/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/hackathon/codefusion/quiz/page.js"
+      "static/chunks/app/hackathon/codefusion/page.js"
+    ],
+    "/hackathon/codefusion/payment/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/hackathon/codefusion/payment/page.js"
     ]
   }
 }
