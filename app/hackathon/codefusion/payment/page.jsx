@@ -180,6 +180,7 @@ const CodeFusionPaymentForm = () => {
      'Gudlavalleru Engineering College – Gudlavalleru',
      'Dhanekula Institute of Engineering & Technology – Vijayawada',
      'Andhra Loyola College – Vijayawada',
+     'Aditya Engineering College',
      'KBN College – Vijayawada',
     'NRI Institute of Technology, Agiripalli',
      'Jawaharlal Nehru Technological University Kakinada (JNTUK) – Kakinada',
@@ -202,6 +203,7 @@ const CodeFusionPaymentForm = () => {
    'Visvesvaraya College of Engineering and Technology',
      'Jawaharlal Nehru Technological University Narasaraopet',
      'P.B. Siddhartha College of Arts & Science Vijayawada, AP',
+     'Swarnandhra College of Engineering and Technology',
      'Others'
   ];
 

@@ -722,14 +722,11 @@ video {
 .mt-6{
   margin-top: 1.5rem;
 }
-.mt-8{
-  margin-top: 2rem;
-}
-.mt-64{
-  margin-top: 16rem;
-}
 .mt-60{
   margin-top: 15rem;
+}
+.mt-8{
+  margin-top: 2rem;
 }
 .block{
   display: block;
