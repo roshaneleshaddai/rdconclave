@@ -14,7 +14,7 @@ import {
   ChevronRight,
 } from "lucide-react";
 
-const API_BASE = "https://rd-backend-m7gd.onrender.com/api/payment";
+const API_BASE = "https://rd-backend-7cuu.onrender.com/api/payment";
 
 const CoinFlip = () => (
   <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 px-4">
