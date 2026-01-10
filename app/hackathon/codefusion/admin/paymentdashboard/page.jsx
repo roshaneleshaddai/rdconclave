@@ -84,6 +84,7 @@ export default function PaymentsDashboard() {
 
     setStats({
       total,
+      pending,
       verified,
       rejected,
       totalAmount
