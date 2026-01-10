@@ -22,7 +22,7 @@ export default function PaymentsDashboard() {
   // Statistics
   const [stats, setStats] = useState({
     total: 0,
-    pending: 0,
+    pending: 2,
     verified: 0,
     rejected: 0,
     totalAmount: 0
