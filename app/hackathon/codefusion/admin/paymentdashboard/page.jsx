@@ -50,21 +50,11 @@ export default function PaymentsDashboard() {
         setPayments(paymentsData);
         setTotalCount(data.count || 0);
         
-        // Fetch teams data to get domains
-        const teamsResponse = await fetch("https://rd-backend-m7gd.onrender.com/api/teams/all");
-        let teamsData = [];
-        if (teamsResponse.ok) {
-          const teamsDataRaw = await teamsResponse.json();
-          if (teamsDataRaw.success) {
-            teamsData = teamsDataRaw.teams || [];
-          }
-        }
-
-        // Extract unique domains from teams data only
+        // Extract unique domains
         const domainSet = new Set();
-        teamsData.forEach(team => {
-          if (team.problemStatement && team.problemStatement !== "undefined") {
-            domainSet.add(team.problemStatement);
+        paymentsData.forEach(payment => {
+          if (payment.problemStatement) {
+            domainSet.add(payment.problemStatement);
           }
         });
         setDomains(Array.from(domainSet).sort());
