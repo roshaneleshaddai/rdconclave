@@ -47,19 +47,44 @@ export default function PaymentsDashboard() {
 
       if (data.success) {
         const paymentsData = data.payments || [];
-        setPayments(paymentsData);
+        
+        // Fetch teams data to get domains for payment registrations
+        const teamsResponse = await fetch("https://rd-backend-m7gd.onrender.com/api/teams/all");
+        let teamsData = [];
+        if (teamsResponse.ok) {
+          const teamsDataRaw = await teamsResponse.json();
+          if (teamsDataRaw.success) {
+            teamsData = teamsDataRaw.teams || [];
+          }
+        }
+
+        // Create a map of registrationId to problemStatement
+        const domainMap = {};
+        teamsData.forEach(team => {
+          if (team.registrationId && team.problemStatement) {
+            domainMap[team.registrationId] = team.problemStatement;
+          }
+        });
+
+        // Enhance payments data with domain from teams data
+        const enhancedPaymentsData = paymentsData.map(payment => ({
+          ...payment,
+          problemStatement: payment.problemStatement || domainMap[payment.registrationId] || "Unknown"
+        }));
+
+        setPayments(enhancedPaymentsData);
         setTotalCount(data.count || 0);
         
-        // Extract unique domains
+        // Extract unique domains from enhanced data
         const domainSet = new Set();
-        paymentsData.forEach(payment => {
+        enhancedPaymentsData.forEach(payment => {
           if (payment.problemStatement) {
             domainSet.add(payment.problemStatement);
           }
         });
         setDomains(Array.from(domainSet).sort());
         
-        calculateStats(paymentsData);
+        calculateStats(enhancedPaymentsData);
       } else {
         throw new Error("Failed to fetch payments data");
       }
@@ -84,7 +109,6 @@ export default function PaymentsDashboard() {
 
     setStats({
       total,
-      pending,
       verified,
       rejected,
       totalAmount
