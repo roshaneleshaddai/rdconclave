@@ -84,7 +84,6 @@ export default function PaymentsDashboard() {
 
     setStats({
       total,
-      pending,
       verified,
       rejected,
       totalAmount
@@ -198,7 +197,7 @@ export default function PaymentsDashboard() {
             <img
               src={selectedImage}
               alt="Payment Proof"
-              className="w-full h-auto rounded-xl shadow-2xl border-4 border-white"
+              className="max-w-md max-h-96 object-contain rounded-xl shadow-2xl border-4 border-white"
               onClick={(e) => e.stopPropagation()}
             />
             <a
@@ -215,25 +214,27 @@ export default function PaymentsDashboard() {
         </div>
       )}
 
-      <div className="max-w-7xl mx-auto">
-        {/* Header */}
-        <header className="mb-8">
-          <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
-            <div>
-              <h1 className="text-4xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
-                Payment Submissions
-              </h1>
-              <p className="text-gray-600 mt-2 text-sm">CodeFusion 2026 - Payment Verification Dashboard</p>
-            </div>
-            <button
-              onClick={fetchPayments}
-              className="px-5 py-2.5 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-lg hover:from-blue-700 hover:to-indigo-700 transition-all shadow-md hover:shadow-lg font-medium"
-            >
-              Refresh Data
-            </button>
+      <div className="max-w-7xl mx-auto mb-6">
+        <div className="flex justify-between items-start">
+          <div className="mt-6">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-blue-600 mb-2">
+              Payment Submissions
+            </h1>
+            <div className="w-20 h-0.5 bg-blue-600 mb-3"></div>
+            <p className="text-xs sm:text-sm text-gray-600">
+              CodeFusion 2026 • Payment Verification Dashboard
+            </p>
           </div>
-        </header>
+          <button
+            onClick={fetchPayments}
+            className="px-5 py-2.5 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-all shadow-md hover:shadow-lg font-medium whitespace-nowrap mt-6"
+          >
+            Refresh Data
+          </button>
+        </div>
+      </div>
 
+      <div className="max-w-7xl mx-auto">
         {/* Statistics Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 mb-8">
           <div className="bg-white rounded-xl border border-blue-100 p-6 hover:shadow-lg transition-all hover:-translate-y-1 duration-200">
@@ -386,94 +387,85 @@ export default function PaymentsDashboard() {
           </div>
         )}
 
-        {/* Payments Grid */}
+        {/* Payments Table */}
         {!isLoading && !error && sortedPayments.length > 0 && (
           <div>
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-              {sortedPayments.map((payment) => (
-                <div key={payment.finalTeamId} className="bg-white rounded-xl border border-gray-200 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden hover:-translate-y-1">
-                  {/* Card Header */}
-                  <div className="bg-gradient-to-r from-blue-50 to-indigo-50 p-5 border-b border-gray-200">
-                    <div className="flex justify-between items-start gap-3">
-                      <div className="flex-1 min-w-0">
-                        <h3 className="text-lg font-bold text-gray-900 truncate">{payment.teamName}</h3>
-                        <div className="flex flex-wrap gap-2 mt-2.5">
-                          <span className="inline-flex items-center bg-white px-2.5 py-1 rounded-md text-xs font-medium text-gray-700 border border-gray-200">
-                            ID: {payment.registrationId}
-                          </span>
-                          <span className="inline-flex items-center bg-white px-2.5 py-1 rounded-md text-xs font-medium text-gray-700 border border-gray-200">
-                            Final: {payment.finalTeamId}
-                          </span>
-                          <span className="inline-flex items-center gap-1 bg-blue-600 text-white px-2.5 py-1 rounded-md text-xs font-bold">
-                            <Users className="w-3 h-3" />
+            <div className="flex justify-between items-center mb-6">
+              <h2 className="text-lg font-bold text-gray-900">Payment Details</h2>
+            </div>
+            
+            <div className="overflow-x-auto border border-gray-200 rounded-lg">
+              <table className="w-full text-sm">
+                <thead>
+                  <tr className="bg-gray-800 text-white border-b">
+                    <th className="px-4 py-3 text-left font-semibold cursor-pointer hover:bg-gray-700" onClick={() => handleSort("teamName")}>
+                      <div className="flex items-center gap-2">
+                        Team Name
+                        {sortConfig.key === "teamName" && (
+                          <ChevronDown className={`w-4 h-4 transition ${sortConfig.direction === "desc" ? "rotate-180" : ""}`} />
+                        )}
+                      </div>
+                    </th>
+                    <th className="px-4 py-3 text-left font-semibold">Registration ID</th>
+                    <th className="px-4 py-3 text-left font-semibold">Final Team ID</th>
+                    <th className="px-4 py-3 text-left font-semibold">Team Size</th>
+                    <th className="px-4 py-3 text-left font-semibold">Problem Statement</th>
+                    <th className="px-4 py-3 text-left font-semibold">Participant</th>
+                    <th className="px-4 py-3 text-left font-semibold">Transaction ID</th>
+                    <th className="px-4 py-3 text-left font-semibold">Payment Proof</th>
+                    <th className="px-4 py-3 text-left font-semibold">Status</th>
+                    <th className="px-4 py-3 text-left font-semibold cursor-pointer hover:bg-gray-700" onClick={() => handleSort("submittedAt")}>
+                      <div className="flex items-center gap-2">
+                        Submitted On
+                        {sortConfig.key === "submittedAt" && (
+                          <ChevronDown className={`w-4 h-4 transition ${sortConfig.direction === "desc" ? "rotate-180" : ""}`} />
+                        )}
+                      </div>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {sortedPayments.map((payment, paymentIdx) => 
+                    payment.participants.map((participant, participantIdx) => (
+                      <tr 
+                        key={`${paymentIdx}-${participantIdx}`}
+                        className={`border-b hover:bg-gray-50 transition ${(paymentIdx + participantIdx) % 2 === 0 ? "bg-white" : "bg-gray-50"}`}
+                      >
+                        <td className="px-4 py-3 font-semibold text-gray-900">{participantIdx === 0 && payment.teamName}</td>
+                        <td className="px-4 py-3 text-gray-700 text-xs">{participantIdx === 0 && payment.registrationId}</td>
+                        <td className="px-4 py-3 text-gray-700 text-xs">{participantIdx === 0 && payment.finalTeamId}</td>
+                        <td className="px-4 py-3 text-gray-700">{participantIdx === 0 && (
+                          <span className="bg-blue-100 text-blue-900 px-2 py-1 rounded font-semibold text-xs">
                             {payment.teamSize}
                           </span>
-                        </div>
-                      </div>
-                      {getStatusBadge(payment.status)}
-                    </div>
-                  </div>
-
-                  {/* Card Body */}
-                  <div className="p-5">
-                    {/* Problem Statement */}
-                    <div className="mb-5 pb-5 border-b border-gray-100">
-                      <p className="text-xs text-gray-500 uppercase tracking-wider font-bold mb-1.5">Problem Statement</p>
-                      <p className="text-sm text-gray-800 font-medium leading-relaxed">{payment.problemStatement}</p>
-                    </div>
-
-                    {/* Participants */}
-                    <div>
-                      <p className="text-xs text-gray-500 uppercase tracking-wider font-bold mb-3">
-                        Payment Proofs ({payment.participants.length})
-                      </p>
-                      <div className="space-y-3">
-                        {payment.participants.map((participant, idx) => (
-                          <div key={idx} className="bg-gradient-to-br from-gray-50 to-slate-50 rounded-lg p-4 border border-gray-200 hover:border-blue-300 transition-colors">
-                            <div className="mb-3">
-                              <p className="font-semibold text-gray-900 text-sm">{participant.name}</p>
-                              <p className="text-xs text-gray-600 mt-1 font-mono bg-white px-2 py-1 rounded inline-block border border-gray-200">
-                                {participant.transactionId}
-                              </p>
-                            </div>
-                            
-                            {/* Payment Proof Image */}
-                            {participant.paymentProofUrl && (
-                              <div className="relative group">
-                                <img
-                                  src={participant.paymentProofUrl}
-                                  alt={`Payment proof for ${participant.name}`}
-                                  className="w-full h-52 object-cover rounded-lg border-2 border-gray-300 cursor-pointer hover:border-blue-500 transition-all shadow-sm hover:shadow-md"
-                                  onClick={() => setSelectedImage(participant.paymentProofUrl)}
-                                />
-                                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 rounded-lg transition-all pointer-events-none"></div>
-                                <p className="text-xs text-gray-500 mt-2 text-center font-medium">Click to enlarge</p>
-                              </div>
-                            )}
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Card Footer */}
-                  <div className="bg-gray-50 px-5 py-3 border-t border-gray-200">
-                    <div className="flex items-center gap-2 text-xs text-gray-500">
-                      <Clock className="w-3.5 h-3.5" />
-                      <span>
-                        Submitted on {new Date(payment.submittedAt).toLocaleDateString('en-US', { 
-                          month: 'short', 
-                          day: 'numeric', 
-                          year: 'numeric' 
-                        })} at {new Date(payment.submittedAt).toLocaleTimeString('en-US', { 
-                          hour: '2-digit', 
-                          minute: '2-digit' 
-                        })}
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              ))}
+                        )}</td>
+                        <td className="px-4 py-3 text-gray-700 text-xs max-w-xs truncate">{participantIdx === 0 && payment.problemStatement}</td>
+                        <td className="px-4 py-3 text-gray-700 text-xs">{participant.name}</td>
+                        <td className="px-4 py-3 text-gray-700 text-xs font-mono">{participant.transactionId}</td>
+                        <td className="px-4 py-3">
+                          {participant.paymentProofUrl ? (
+                            <button
+                              onClick={() => setSelectedImage(participant.paymentProofUrl)}
+                              className="relative w-12 h-12 rounded overflow-hidden border border-gray-300 hover:border-blue-500 transition-all cursor-pointer group bg-gray-100"
+                            >
+                              <img
+                                src={participant.paymentProofUrl}
+                                alt="Payment proof"
+                                className="w-full h-full object-cover group-hover:scale-105 transition-transform"
+                              />
+                              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-all"></div>
+                            </button>
+                          ) : (
+                            <span className="text-gray-400 text-xs">No proof</span>
+                          )}
+                        </td>
+                        <td className="px-4 py-3">{participantIdx === 0 && getStatusBadge(payment.status)}</td>
+                        <td className="px-4 py-3 text-gray-700 text-xs">{participantIdx === 0 && new Date(payment.submittedAt).toLocaleDateString()}</td>
+                      </tr>
+                    ))
+                  )}
+                </tbody>
+              </table>
             </div>
 
             {/* Results Count */}
