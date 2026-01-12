@@ -204,6 +204,7 @@ const CodeFusionPaymentForm = () => {
      'Jawaharlal Nehru Technological University Narasaraopet',
      'P.B. Siddhartha College of Arts & Science Vijayawada, AP',
      'Swarnandhra College of Engineering and Technology',
+     'RGUKT Ongole',
      'Others'
   ];
 
