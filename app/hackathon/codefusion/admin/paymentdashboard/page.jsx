@@ -22,7 +22,7 @@ export default function PaymentsDashboard() {
   // Statistics
   const [stats, setStats] = useState({
     total: 0,
-    pending: 2,
+    pending: 0,
     verified: 0,
     rejected: 0,
     totalAmount: 0
@@ -73,9 +73,9 @@ export default function PaymentsDashboard() {
 
   const calculateStats = (paymentsData) => {
     const total = paymentsData.length;
-    const pending = paymentsData.filter(p => p.status === "pending").length;
-    const verified = paymentsData.filter(p => p.status === "verified").length;
-    const rejected = paymentsData.filter(p => p.status === "rejected").length;
+    const pending = paymentsData.filter(p => p.status === "PENDING").length;
+    const verified = paymentsData.filter(p => p.status === "VERIFIED").length;
+    const rejected = paymentsData.filter(p => p.status === "REJECTED").length;
     
     // Calculate total amount (assuming 100 per participant)
     const totalAmount = paymentsData.reduce((sum, payment) => {
@@ -84,6 +84,7 @@ export default function PaymentsDashboard() {
 
     setStats({
       total,
+      pending,
       verified,
       rejected,
       totalAmount
@@ -411,9 +412,9 @@ export default function PaymentsDashboard() {
                     <th className="px-4 py-3 text-left font-semibold">Team Size</th>
                     <th className="px-4 py-3 text-left font-semibold">Problem Statement</th>
                     <th className="px-4 py-3 text-left font-semibold">Participant</th>
+                    <th className="px-4 py-3 text-left font-semibold">Participant Id</th>
                     <th className="px-4 py-3 text-left font-semibold">Transaction ID</th>
                     <th className="px-4 py-3 text-left font-semibold">Payment Proof</th>
-                    <th className="px-4 py-3 text-left font-semibold">Status</th>
                     <th className="px-4 py-3 text-left font-semibold cursor-pointer hover:bg-gray-700" onClick={() => handleSort("submittedAt")}>
                       <div className="flex items-center gap-2">
                         Submitted On
@@ -441,6 +442,7 @@ export default function PaymentsDashboard() {
                         )}</td>
                         <td className="px-4 py-3 text-gray-700 text-xs max-w-xs truncate">{participantIdx === 0 && payment.problemStatement}</td>
                         <td className="px-4 py-3 text-gray-700 text-xs">{participant.name}</td>
+                        <td className="px-4 py-3 text-gray-700 text-xs">{participant.participantId}</td>
                         <td className="px-4 py-3 text-gray-700 text-xs font-mono">{participant.transactionId}</td>
                         <td className="px-4 py-3">
                           {participant.paymentProofUrl ? (
@@ -459,7 +461,6 @@ export default function PaymentsDashboard() {
                             <span className="text-gray-400 text-xs">No proof</span>
                           )}
                         </td>
-                        <td className="px-4 py-3">{participantIdx === 0 && getStatusBadge(payment.status)}</td>
                         <td className="px-4 py-3 text-gray-700 text-xs">{participantIdx === 0 && new Date(payment.submittedAt).toLocaleDateString()}</td>
                       </tr>
                     ))

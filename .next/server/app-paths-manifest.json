@@ -1,5 +1,4 @@
 {
-  "/hackathon/codefusion/admin/paymentdashboard/page": "app/hackathon/codefusion/admin/paymentdashboard/page.js",
-  "/hackathon/codefusion/page": "app/hackathon/codefusion/page.js",
-  "/icon.png/route": "app/icon.png/route.js"
+  "/page": "app/page.js",
+  "/hackathon/codefusion/admin/paymentdashboard/page": "app/hackathon/codefusion/admin/paymentdashboard/page.js"
 }
