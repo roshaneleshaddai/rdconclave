@@ -278,16 +278,6 @@ const DownloadSchedule = () => {
           />
         </div> */}
 
-        {/* journal Publication Section with Fade-In Animation */}
-        <div
-          className="bg-[#002147]/10 bg-opacity-20 p-8 lg:mt-0 mt-52 rounded-lg mx-6 transition-opacity duration-1000 "
-        >
-          <h1 className="text-4xl  font-bold text-center text-[#002147]">Journal Publication</h1>
-          {/* <p className="text-lg text-black p-2">
-            journal Publications at our college highlights the research contributions of our esteemed academic staff, showcasing their latest papers, publications, and projects. This platform fosters collaboration with peers, industry professionals, and other institutions. Through engaging poster sessions, oral presentations, and panel discussions, our journal present their groundbreaking work, encouraging rich discussions and constructive feedback. This initiative reflects our commitment to academic excellence and paves the way for future collaborative research endeavors.
-          </p> */}
-        </div>
-            
           {/* Important dates moved below themes */}
 
         {/* <div className='flex lg:flex-row flex-col justify-evenly items-center'>
