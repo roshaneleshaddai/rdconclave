@@ -449,7 +449,10 @@ const DownloadSchedule = () => {
           <h1 className='text-3xl text-center font-bold px-5'>Important dates</h1>
           <hr className="h-1 my-2 bg-[#002147] lg:w-1/4 w-1/2" />
           <div className="lg:text-xl text-base flex-1 flex flex-col items-center justify-center font-bold lg:mx-5 m-2">
-            <p className="text-center">Submission Deadline:<span className="text-red-500"> January 12th, 2026</span></p>
+            <p className="text-center">Submission Deadline:<span className="text-red-500"> January 12, 2026</span></p>
+            <p className="text-center mt-2">Acceptance Notification:<span className="text-red-500"> January 15, 2026</span></p>
+            <p className="text-center mt-2">Registration Deadline:<span className="text-red-500"> January 17, 2026</span></p>
+            <p className="text-center mt-2">Camera-Ready Paper Submission:<span className="text-red-500"> January 19, 2026</span></p>
           </div>
 
           <a
