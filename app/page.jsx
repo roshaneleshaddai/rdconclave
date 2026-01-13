@@ -488,7 +488,7 @@ const CoordinatorsSection = () => {
       name: 'Dr. A. Sree Ram',
       title: '',
       role: 'Professor & Head, MBA',
-      imgSrc: '',
+      imgSrc: '/images/Dr.-A.-Sree-ram.jpg',
     },
   ];
 
