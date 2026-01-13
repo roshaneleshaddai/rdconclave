@@ -136,7 +136,6 @@ function HorizontalImageScroller({ images }) {
           <h1 className="text-3xl font-extrabold mt-4 text-[#00D700] drop-shadow-[0_0_10px_white]">January 23rd - 24th, 2026</h1>
           <h2 className="text-2xl font-bold mt-2 text-[#00D700] drop-shadow-[0_0_10px_white]">1 Lakh worth Cash Prizes</h2>
           <p className="text-md mt-1 text-gray-700">Accommodation, Food and Swags</p>
-          <p className="text-lg font-bold mt-2 text-black">Registrations Open</p>
           <p className="text-md font-semibold mt-1 text-black">Mode: Offline (In-Person Only)</p>
           <p className="text-lg font-semibold mt-1 text-black">Venue: V. R. Siddhartha School of Engineering</p>
         </div>
