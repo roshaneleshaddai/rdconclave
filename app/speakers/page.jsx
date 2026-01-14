@@ -38,7 +38,7 @@ const GuestsList = () => {
       name: 'Dr. Roshan Srivastav',
       position: 'Project Director',
       company: 'IIT Tirupati Navavishkar I-Hub Foundation',
-      src: '/images/roshan-srivastav.jpeg',
+      src: '/images/roshan.jpeg',
     },
     {
       name: 'Mr. Siddhartha Abburi',
