@@ -136,7 +136,6 @@ function HorizontalImageScroller({ images }) {
           <h1 className="text-3xl font-extrabold mt-4 text-[#00D700] drop-shadow-[0_0_10px_white]">January 23rd - 24th, 2026</h1>
           <h2 className="text-2xl font-bold mt-2 text-[#00D700] drop-shadow-[0_0_10px_white]">1 Lakh worth Cash Prizes</h2>
           <p className="text-md mt-1 text-gray-700">Accommodation, Food and Swags</p>
-          <p className="text-lg font-bold mt-2 text-black">Registrations Open</p>
           <p className="text-md font-semibold mt-1 text-black">Mode: Offline (In-Person Only)</p>
           <p className="text-lg font-semibold mt-1 text-black">Venue: V. R. Siddhartha School of Engineering</p>
         </div>
@@ -203,8 +202,10 @@ function HorizontalImageScroller({ images }) {
       </h1>
     </div>
     <div className="flex-1 flex flex-col items-center justify-center font-bold text-sm mt-2">
-      <p className="text-center">Submission Deadline:<br/><span className="text-[#002147] text-base">January 12th, 2026</span></p>
-      <p className="text-center mt-2">Registration Fee:<br/><span className="text-[#002147] text-base">₹12,000</span></p>
+      <p className="text-center">Submission Deadline:<br/><span className="text-[#002147] text-base">January 12, 2026</span></p>
+      <p className="text-center mt-2">Acceptance Notification:<br/><span className="text-[#002147] text-base">January 15, 2026</span></p>
+      <p className="text-center mt-2">Registration Deadline:<br/><span className="text-[#002147] text-base">January 17, 2026</span></p>
+      <p className="text-center mt-2">Camera-Ready Paper Submission:<br/><span className="text-[#002147] text-base">January 19, 2026</span></p>
       <p className="text-center mt-2 text-gray-500">Springer</p>
       <button className="p-2 m-2 bg-[#002147] text-white text-lg rounded-full hover:bg-[#003366]">
         Know more..
@@ -487,7 +488,7 @@ const CoordinatorsSection = () => {
       name: 'Dr. A. Sree Ram',
       title: '',
       role: 'Professor & Head, MBA',
-      imgSrc: '',
+      imgSrc: '/images/Dr.-A.-Sree-ram.jpg',
     },
   ];
 
