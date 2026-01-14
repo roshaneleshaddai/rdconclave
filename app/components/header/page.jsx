@@ -235,7 +235,7 @@ const Header = () => {
           </li>
           <li>
             <Link href="/speakers" onClick={toggleMenu} className="hover:text-[#FFD700]">
-              Speakers
+              Guests
             </Link>
           </li>
           <li>
@@ -311,7 +311,7 @@ const Header = () => {
           href="/speakers"
           className={`cursor-pointer m-0.5 bg-[#002147] text-white border-[#1A1A1A] text-[#213555] font-semibold transition-all duration-300 ease-in-out ${isScrolled ? 'text-sm py-1 px-4' : 'text-base py-1 px-2'} hover:bg-[#FFD700]/20  hover:text-black hover:shadow-lg`}
         >
-          Speakers
+          Guests
         </Link>
         <Link
           href="/schedule"
