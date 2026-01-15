@@ -38,7 +38,7 @@ const GuestsList = () => {
       name: 'Dr. Roshan Srivastav',
       position: 'Project Director',
       company: 'IIT Tirupati Navavishkar I-Hub Foundation',
-      src: '/images/roshan.jpeg',
+      src: '/images/roshan-srivastav.jpeg',
     },
     {
       name: 'Mr. Siddhartha Abburi',
@@ -133,7 +133,7 @@ const GuestsList = () => {
                       src={guest.src}
                       alt={guest.name}
                       fill
-                      className="object-cover"
+                      className="object-cover object-top"
                       onError={(e) => {
                         e.currentTarget.src = 'https://via.placeholder.com/160?text=Guest+Image';
                       }}
