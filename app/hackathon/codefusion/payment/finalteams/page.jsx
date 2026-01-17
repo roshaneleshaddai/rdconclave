@@ -132,7 +132,7 @@ collegeMap.set(
   };
 
   const calculateStats = (teamsData) => {
-    const collegeCountMap = { };
+    const collegeCountMap = {[normalizeCollege("Swarnandhra College of Engineering and Technology")]: 1};
     const domainCounts = {};
 
     let totalParticipants = 0;
