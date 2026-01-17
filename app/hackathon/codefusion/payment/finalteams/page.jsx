@@ -1,16 +1,18 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { ChevronDown, Search, Download, Trophy, Star, TrendingUp } from "lucide-react";
+import { useRouter } from "next/navigation";
+import { ChevronDown, Search, Download, TrendingUp } from "lucide-react";
 
 export default function FinalTeamsListPage() {
-  const [showCelebration, setShowCelebration] = useState(false);
-  const [celebrationNumber, setCelebrationNumber] = useState(null);
-
+  const router = useRouter();
+  
   const [teams, setTeams] = useState([]);
   const [totalCount, setTotalCount] = useState(0);
   const [isLoading, setIsLoading] = useState(true);
+  const [isAuthChecking, setIsAuthChecking] = useState(true);
   const [error, setError] = useState("");
+  const [adminName, setAdminName] = useState("");
   
   // Filter states
   const [searchQuery, setSearchQuery] = useState("");
@@ -22,7 +24,11 @@ export default function FinalTeamsListPage() {
   
   // Statistics
   const [stats, setStats] = useState({ 
-    total: 0, 
+    total: 0,
+    totalParticipants: 0,
+    ap: 0, 
+    tn: 0, 
+    tg: 0,
     college3: 0, 
     college4: 0, 
     totalColleges: 0,
@@ -34,8 +40,25 @@ export default function FinalTeamsListPage() {
   };
 
   useEffect(() => {
-    fetchTeams();
-  }, []);
+    const checkAuthentication = () => {
+      const isAuthenticated = localStorage.getItem("isAdminAuthenticated");
+      const storedAdminName = localStorage.getItem("adminName");
+      
+      if (isAuthenticated !== "true") {
+        router.push("/hackathon/codefusion/register/teams");
+        return false;
+      }
+      
+      setAdminName(storedAdminName || "Admin");
+      setIsAuthChecking(false);
+      return true;
+    };
+
+    const isAuth = checkAuthentication();
+    if (isAuth) {
+      fetchTeams();
+    }
+  }, [router]);
 
   const fetchTeams = async () => {
     setIsLoading(true);
@@ -53,12 +76,13 @@ export default function FinalTeamsListPage() {
       const data = await response.json();
 
       if (data.success) {
-        const teamsData = data.finalTeams || [];
-        setTeams(teamsData);
-        setTotalCount(data.total || 0);
+        const finalTeamsData = data.teams || [];
+        
+        setTeams(finalTeamsData);
+        setTotalCount(finalTeamsData.length);
         
         const collegeMap = new Map();
-        teamsData.forEach(team => {
+        finalTeamsData.forEach(team => {
           const collegeName = team.leader?.college;
           if (collegeName) {
             const normalized = normalizeCollege(collegeName);
@@ -72,16 +96,16 @@ export default function FinalTeamsListPage() {
         setColleges(uniqueColleges);
 
         const domainSet = new Set();
-        teamsData.forEach(team => {
+        finalTeamsData.forEach(team => {
           if (team.problemStatement) {
             domainSet.add(team.problemStatement);
           }
         });
         setDomains(Array.from(domainSet).sort());
         
-        calculateStats(teamsData);
+        calculateStats(finalTeamsData);
         
-        console.log("Fetched final teams:", teamsData);
+        console.log("Fetched final teams:", finalTeamsData);
       } else {
         throw new Error("Failed to fetch teams data");
       }
@@ -109,30 +133,41 @@ export default function FinalTeamsListPage() {
     });
 
     const totalTeams = teamsData.length;
+    
+    // Calculate total participants
+    const totalParticipants = teamsData.reduce((sum, team) => {
+      return sum + (team.teamSize || 0);
+    }, 0);
+
+    const ap = teamsData.filter(t => {
+      const college = t.leader?.college?.toLowerCase() || "";
+      return college.includes("andhra") || college.includes("ap");
+    }).length;
+    
+    const tn = teamsData.filter(t => {
+      const college = t.leader?.college?.toLowerCase() || "";
+      return college.includes("tamil") || college.includes("tn");
+    }).length;
+    
+    const tg = teamsData.filter(t => {
+      const college = t.leader?.college?.toLowerCase() || "";
+      return college.includes("telangana") || college.includes("tg") || college.includes("hyderabad");
+    }).length;
+
+    const college3 = teamsData.filter(t => t.teamSize == 3).length;
+    const college4 = teamsData.filter(t => t.teamSize == 4).length;
 
     setStats({
       total: totalTeams,
-      college3: teamsData.filter(t => t.teamSize == 3).length,
-      college4: teamsData.filter(t => t.teamSize == 4).length,
+      totalParticipants: totalParticipants,
+      ap: ap,
+      tn: tn,
+      tg: tg,
+      college3: college3,
+      college4: college4,
       totalColleges: collegeSet.size,
       domainStats: domainCounts
     });
-
-    // 🎉 CELEBRATION CHECK
-    let milestone = null;
-
-    if (totalTeams >= 50 && totalTeams <= 55) milestone = 50;
-    else if (totalTeams >= 100 && totalTeams <= 105) milestone = 100;
-    else if (totalTeams >= 150 && totalTeams <= 155) milestone = 150;
-
-    if (milestone) {
-      setCelebrationNumber(milestone);
-      setShowCelebration(true);
-
-      setTimeout(() => {
-        setShowCelebration(false);
-      }, 1000);
-    }
   };
 
   const downloadStatisticsAsPDF = () => {
@@ -200,6 +235,30 @@ export default function FinalTeamsListPage() {
             font-size: 24px;
             font-weight: bold;
           }
+          .state-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 8px;
+            margin-bottom: 12px;
+          }
+          .state-card {
+            background-color: #f9f9f9;
+            border: 1.5px solid #002147;
+            border-radius: 5px;
+            padding: 8px;
+            text-align: center;
+          }
+          .state-label {
+            color: #666;
+            font-size: 8px;
+            font-weight: bold;
+            margin-bottom: 4px;
+          }
+          .state-value {
+            color: #002147;
+            font-size: 18px;
+            font-weight: bold;
+          }
           .section-title {
             color: #002147;
             font-size: 11px;
@@ -246,7 +305,7 @@ export default function FinalTeamsListPage() {
       <body>
         <div class="container">
           <div class="header">
-            <h1>CodeFusion 2026 - Final Teams</h1>
+            <h1>CodeFusion 2026 - Final Teams Report</h1>
             <p>Dashboard Statistics Report</p>
             <p>${new Date().toLocaleDateString()}</p>
           </div>
@@ -257,9 +316,21 @@ export default function FinalTeamsListPage() {
               <div class="stat-value">${stats.total}</div>
             </div>
             <div class="stat-card">
+              <div class="stat-label">Total Participants</div>
+              <div class="stat-value">${stats.totalParticipants}</div>
+            </div>
+            <div class="stat-card">
               <div class="stat-label">Total Colleges</div>
               <div class="stat-value">${stats.totalColleges}</div>
             </div>
+            <div class="stat-card">
+              <div class="stat-label">Team Size Avg</div>
+              <div class="stat-value">${(stats.totalParticipants / stats.total).toFixed(1)}</div>
+            </div>
+          </div>
+
+          <div class="section-title">Team Composition</div>
+          <div className="stats-grid">
             <div class="stat-card">
               <div class="stat-label">3 Members Teams</div>
               <div class="stat-value">${stats.college3}</div>
@@ -267,6 +338,22 @@ export default function FinalTeamsListPage() {
             <div class="stat-card">
               <div class="stat-label">4 Members Teams</div>
               <div class="stat-value">${stats.college4}</div>
+            </div>
+          </div>
+
+          <div class="section-title">State-wise Distribution</div>
+          <div class="state-grid">
+            <div class="state-card">
+              <div class="state-label">Andhra Pradesh</div>
+              <div class="state-value">${stats.ap}</div>
+            </div>
+            <div class="state-card">
+              <div class="state-label">Tamil Nadu</div>
+              <div class="state-value">${stats.tn}</div>
+            </div>
+            <div class="state-card">
+              <div class="state-label">Telangana</div>
+              <div class="state-value">${stats.tg}</div>
             </div>
           </div>
 
@@ -313,7 +400,7 @@ export default function FinalTeamsListPage() {
     const url = URL.createObjectURL(blob);
     
     link.setAttribute("href", url);
-    link.setAttribute("download", `CodeFusion_Final_Teams_Statistics_${new Date().toISOString().split('T')[0]}.pdf`);
+    link.setAttribute("download", `CodeFusion_Final_Statistics_${new Date().toISOString().split('T')[0]}.pdf`);
     link.style.visibility = "hidden";
     
     document.body.appendChild(link);
@@ -330,16 +417,21 @@ export default function FinalTeamsListPage() {
     let csvContent = "CODEFUSION FINAL TEAMS DETAILS\n";
     csvContent += new Date().toLocaleDateString() + "\n\n";
     
-    csvContent += "Final Team ID,Registration ID,Team Name,Team Size,Leader Name,Leader Email,Leader Phone,Leader College,Member2 Name,Member2 Email,Member2 Phone,Member3 Name,Member3 Email,Member3 Phone,Member4 Name,Member4 Email,Member4 Phone,Registered On,Problem Statement\n";
+    csvContent += "Team Name,Registration ID,Team Size,Leader Name,Leader Email,Leader Phone,Leader College,Leader Department,Leader Year,Member2 Name,Member2 Email,Member2 Phone,Member3 Name,Member3 Email,Member3 Phone,Member4 Name,Member4 Email,Member4 Phone,Registered On,Problem Statement\n";
     
     sortedTeams.forEach(team => {
       const registeredDate = new Date(team.createdAt).toLocaleDateString();
-      const members = team.members || [];
-      const member2 = members[0] || {};
-      const member3 = members[1] || {};
-      const member4 = members[2] || {};
+      const member2Name = team.teamSize >= 2 ? (team.members?.member2?.name || "—") : "—";
+      const member2Email = team.teamSize >= 2 ? (team.members?.member2?.email || "—") : "—";
+      const member2Phone = team.teamSize >= 2 ? (team.members?.member2?.phone || "—") : "—";
+      const member3Name = team.teamSize >= 3 ? (team.members?.member3?.name || "—") : "—";
+      const member3Email = team.teamSize >= 3 ? (team.members?.member3?.email || "—") : "—";
+      const member3Phone = team.teamSize >= 3 ? (team.members?.member3?.phone || "—") : "—";
+      const member4Name = team.teamSize >= 4 ? (team.members?.member4?.name || "—") : "—";
+      const member4Email = team.teamSize >= 4 ? (team.members?.member4?.email || "—") : "—";
+      const member4Phone = team.teamSize >= 4 ? (team.members?.member4?.phone || "—") : "—";
       
-      csvContent += `"${team.finalTeamId || "—"}","${team.registrationId || "—"}","${team.teamName}",${team.teamSize},"${team.leader?.name || "—"}","${team.leader?.email || "—"}","${team.leader?.phone || "—"}","${team.leader?.college || "—"}","${member2.name || "—"}","${member2.email || "—"}","${member2.phone || "—"}","${member3.name || "—"}","${member3.email || "—"}","${member3.phone || "—"}","${member4.name || "—"}","${member4.email || "—"}","${member4.phone || "—"}","${registeredDate}","${team.problemStatement || "—"}"\n`;
+      csvContent += `"${team.teamName}","${team.registrationId}",${team.teamSize},"${team.leader?.name || "—"}","${team.leader?.email || "—"}","${team.leader?.phone || "—"}","${team.leader?.college || "—"}","${team.leader?.department || "—"}","${team.leader?.year || "—"}","${member2Name}","${member2Email}","${member2Phone}","${member3Name}","${member3Email}","${member3Phone}","${member4Name}","${member4Email}","${member4Phone}","${registeredDate}","${team.problemStatement}"\n`;
     });
 
     const blob = new Blob([csvContent], { type: "text/csv;charset=utf-8;" });
@@ -355,12 +447,18 @@ export default function FinalTeamsListPage() {
     document.body.removeChild(link);
   };
 
+  const handleLogout = () => {
+    localStorage.removeItem("isAdminAuthenticated");
+    localStorage.removeItem("adminName");
+    localStorage.removeItem("loginTimestamp");
+    router.push("/hackathon/codefusion/register/teams");
+  };
+
   const filteredTeams = teams.filter(team => {
     const matchesSearch = 
-      team.teamName?.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      team.registrationId?.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      team.finalTeamId?.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      team.leader?.name?.toLowerCase().includes(searchQuery.toLowerCase());
+      team.teamName.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      team.registrationId.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      team.leader?.name.toLowerCase().includes(searchQuery.toLowerCase());
     
     const matchesCollege = selectedCollege === "all" || 
       normalizeCollege(team.leader?.college) === normalizeCollege(selectedCollege);
@@ -397,135 +495,49 @@ export default function FinalTeamsListPage() {
     }));
   };
 
-  return (
-    <div className="min-h-screen bg-white font-sans">
-      {showCelebration && (
-        <div className="fixed inset-0 z-[9999] bg-white/90 flex items-center justify-center overflow-hidden">
-          {[...Array(60)].map((_, i) => (
-            <div
-              key={i}
-              className="absolute top-[-20px] w-2.5 h-4 opacity-90"
-              style={{
-                left: `${Math.random() * 100}%`,
-                backgroundColor: ["#ff0080", "#00c6ff", "#ffd700", "#7cff00", "#ff6a00"][i % 5],
-                transform: `rotate(${Math.random() * 360}deg)`,
-                animation: `confettiFall 1s linear forwards ${Math.random() * 0.3}s`
-              }}
-            />
-          ))}
-          <div className="relative text-center" style={{ animation: "scaleIn 0.4s ease-out forwards" }}>
-            <div className="text-[140px] font-black bg-gradient-to-r from-[#00c6ff] via-[#8e2de2] to-[#ff0080] bg-clip-text text-transparent">
-              {celebrationNumber}
-            </div>
-            <div className="text-xl font-bold tracking-[4px] text-gray-700">
-              FINAL TEAMS REGISTERED
-            </div>
-          </div>
+  if (isAuthChecking) {
+    return (
+      <div className="min-h-screen bg-white flex items-center justify-center">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#002147] mx-auto mb-4"></div>
+          <p className="text-gray-600 font-SUSE">Verifying authentication...</p>
         </div>
-      )}
+      </div>
+    );
+  }
 
+  return (
+    <div className="min-h-screen bg-white font-SUSE" style={{ fontFamily: "SUSE, sans-serif" }}>
       <header className="bg-white border-b border-[#002147] sticky top-0 z-40">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <div className="flex justify-between items-center">
             <div>
               <h1 className="text-3xl sm:text-4xl font-bold text-[#002147]">
-                Final Teams Dashboard
+                CodeFusion Final Teams Dashboard
               </h1>
               <p className="text-sm text-gray-600 mt-1">
-                CodeFusion 2026 - Selected Teams
+                Welcome, <span className="font-semibold">{adminName}</span>
               </p>
             </div>
+            <button
+              onClick={handleLogout}
+              className="bg-[#002147] hover:bg-blue-900 text-white px-4 py-2 rounded-lg transition duration-200 text-sm font-medium"
+            >
+              Logout
+            </button>
           </div>
         </div>
       </header>
 
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-12">
-        <div className="mb-8 flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
-            <span className="text-sm font-semibold text-gray-700">Live Status</span>
-          </div>
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-12">
+
+        <div className="mb-8 flex items-center justify-end">
           <button
             onClick={fetchTeams}
             className="px-4 py-2 bg-[#002147] text-white rounded-lg hover:bg-blue-900 transition text-sm font-medium"
           >
             Refresh
           </button>
-        </div>
-
-        {stats.total >= 75 && stats.total < 100 && (
-          <div className="mb-10" style={{ animation: "scaleIn 0.4s ease-out forwards" }}>
-            <div className="relative overflow-hidden bg-gradient-to-r from-[#002147] via-[#003d82] to-[#002147] rounded-2xl p-1 shadow-2xl">
-              <div className="relative bg-white/5 backdrop-blur-md rounded-xl p-6 md:p-8 flex flex-col md:flex-row items-center justify-between gap-6 border border-white/10">
-                <div className="flex items-center gap-6">
-                  <div className="p-4 bg-white/10 rounded-2xl border border-white/20">
-                    <Trophy className="w-10 h-10 text-yellow-400" style={{ filter: "drop-shadow(0 0 10px rgba(250,204,21,0.5))" }} />
-                  </div>
-                  <div>
-                    <h2 className="text-2xl md:text-3xl font-black text-white tracking-tight">ELITE STAGE REACHED</h2>
-                    <div className="flex items-center gap-2 mt-1">
-                      <Star className="w-4 h-4 text-yellow-400 fill-yellow-400" />
-                      <p className="text-blue-100 font-medium text-sm md:text-base uppercase tracking-widest">{stats.total} Final Teams</p>
-                    </div>
-                  </div>
-                </div>
-                <div className="flex-1 max-w-xs w-full px-4">
-                  <div className="flex justify-between text-xs font-bold text-blue-200 mb-2 uppercase tracking-tighter">
-                    <span>Target: 100</span>
-                    <span>{Math.round((stats.total / 100) * 100)}%</span>
-                  </div>
-                  <div className="h-3 w-full bg-white/10 rounded-full overflow-hidden border border-white/5">
-                    <div className="h-full bg-gradient-to-r from-yellow-400 to-orange-500 transition-all duration-1000 ease-out" style={{ width: `${(stats.total / 100) * 100}%` }}></div>
-                  </div>
-                </div>
-                <div className="bg-white/10 px-6 py-3 rounded-xl border border-white/10 text-center">
-                  <p className="text-[10px] text-blue-200 font-bold uppercase tracking-[0.2em]">Next Major Goal</p>
-                  <p className="text-xl font-black text-white">100 TEAMS</p>
-                </div>
-                <div className="absolute top-[-20px] right-[-20px] opacity-10">
-                  <TrendingUp className="w-32 h-32 text-white" />
-                </div>
-              </div>
-            </div>
-          </div>
-        )}
-
-        <div className="mb-12">
-          <div className="space-y-3">
-            {stats.total >= 50 && stats.total <= 55 && (
-              <div className="bg-gradient-to-r from-blue-50 to-blue-100 border-l-4 border-blue-500 p-4 rounded-lg shadow-sm">
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-3">
-                    <span className="text-2xl">🎉</span>
-                    <div>
-                      <p className="font-bold text-blue-900">Milestone Reached: 50+ Final Teams!</p>
-                      <p className="text-sm text-blue-700">Congratulations on selecting 50+ teams</p>
-                    </div>
-                  </div>
-                  <div className="text-right">
-                    <p className="text-xs text-blue-600 font-semibold">ACHIEVED</p>
-                  </div>
-                </div>
-              </div>
-            )}
-
-            {stats.total >= 100 && stats.total <= 105 && (
-              <div className="bg-gradient-to-r from-purple-50 to-purple-100 border-l-4 border-purple-500 p-4 rounded-lg shadow-sm">
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-3">
-                    <span className="text-2xl">✨</span>
-                    <div>
-                      <p className="font-bold text-purple-900">Milestone Reached: 100+ Final Teams!</p>
-                      <p className="text-sm text-purple-700">Amazing progress - 100+ teams selected!</p>
-                    </div>
-                  </div>
-                  <div className="text-right">
-                    <p className="text-xs text-purple-600 font-semibold">ACHIEVED</p>
-                  </div>
-                </div>
-              </div>
-            )}
-          </div>
         </div>
 
         <div>
@@ -541,11 +553,18 @@ export default function FinalTeamsListPage() {
             </button>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 mb-8">
             <div className="bg-white rounded-lg border-2 border-[#002147] p-6 hover:shadow-lg transition">
               <p className="text-xs uppercase tracking-wider text-gray-600 font-semibold">Total Final Teams</p>
               <p className="text-4xl font-bold text-[#002147] mt-2">
                 {isLoading ? "..." : stats.total}
+              </p>
+            </div>
+
+            <div className="bg-white rounded-lg border-2 border-green-600 p-6 hover:shadow-lg transition">
+              <p className="text-xs uppercase tracking-wider text-gray-600 font-semibold">Total Participants</p>
+              <p className="text-4xl font-bold text-green-600 mt-2">
+                {isLoading ? "..." : stats.totalParticipants}
               </p>
             </div>
 
@@ -568,6 +587,24 @@ export default function FinalTeamsListPage() {
               <p className="text-4xl font-bold text-[#002147] mt-2">
                 {isLoading ? "..." : stats.college4}
               </p>
+            </div>
+          </div>
+
+          <div className="bg-gradient-to-r from-red-50 via-yellow-50 to-teal-50 rounded-lg p-6 mb-8 border border-gray-200">
+            <h3 className="text-center font-bold text-[#002147] mb-6 text-base">State-wise Registration</h3>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              <div className="bg-white rounded-lg border border-red-200 p-4 text-center">
+                <p className="text-xs font-semibold text-gray-600 mb-2">Andhra Pradesh</p>
+                <p className="text-3xl font-bold text-red-600">{isLoading ? "..." : stats.ap}</p>
+              </div>
+              <div className="bg-white rounded-lg border border-yellow-200 p-4 text-center">
+                <p className="text-xs font-semibold text-gray-600 mb-2">Tamil Nadu</p>
+                <p className="text-3xl font-bold text-yellow-600">{isLoading ? "..." : stats.tn}</p>
+              </div>
+              <div className="bg-white rounded-lg border border-teal-200 p-4 text-center">
+                <p className="text-xs font-semibold text-gray-600 mb-2">Telangana</p>
+                <p className="text-3xl font-bold text-teal-600">{isLoading ? "..." : stats.tg}</p>
+              </div>
             </div>
           </div>
         </div>
@@ -662,7 +699,7 @@ export default function FinalTeamsListPage() {
 
         {!isLoading && !error && teams.length === 0 && (
           <div className="bg-white rounded-lg border border-gray-200 p-12 text-center">
-            <p className="text-gray-600 text-lg font-semibold">No final teams have been selected yet</p>
+            <p className="text-gray-600 text-lg font-semibold">No final teams have registered yet</p>
           </div>
         )}
 
@@ -689,14 +726,6 @@ export default function FinalTeamsListPage() {
               <table className="w-full text-sm">
                 <thead>
                   <tr className="bg-[#002147] text-white border-b">
-                    <th className="px-4 py-3 text-left font-semibold cursor-pointer hover:bg-blue-900" onClick={() => handleSort("finalTeamId")}>
-                      <div className="flex items-center gap-2">
-                        Final Team ID
-                        {sortConfig.key === "finalTeamId" && (
-                          <ChevronDown className={`w-4 h-4 transition ${sortConfig.direction === "desc" ? "rotate-180" : ""}`} />
-                        )}
-                      </div>
-                    </th>
                     <th className="px-4 py-3 text-left font-semibold cursor-pointer hover:bg-blue-900" onClick={() => handleSort("teamName")}>
                       <div className="flex items-center gap-2">
                         Team Name
@@ -725,6 +754,8 @@ export default function FinalTeamsListPage() {
                     <th className="px-4 py-3 text-left font-semibold">Email</th>
                     <th className="px-4 py-3 text-left font-semibold">Phone</th>
                     <th className="px-4 py-3 text-left font-semibold">College</th>
+                    <th className="px-4 py-3 text-left font-semibold">Dept</th>
+                    <th className="px-4 py-3 text-left font-semibold">Year</th>
                     <th className="px-4 py-3 text-left font-semibold">M2 Name</th>
                     <th className="px-4 py-3 text-left font-semibold">M2 Email</th>
                     <th className="px-4 py-3 text-left font-semibold">M2 Phone</th>
@@ -746,43 +777,37 @@ export default function FinalTeamsListPage() {
                   </tr>
                 </thead>
                 <tbody>
-                  {sortedTeams.map((team, index) => {
-                    const members = team.members || [];
-                    const member2 = members[0] || {};
-                    const member3 = members[1] || {};
-                    const member4 = members[2] || {};
-                    
-                    return (
-                      <tr 
-                        key={team._id || team.finalTeamId} 
-                        className={`border-b hover:bg-[#00214710] transition ${index % 2 === 0 ? "bg-white" : "bg-gray-50"}`}
-                      >
-                        <td className="px-4 py-3 font-semibold text-gray-900 text-xs">{team.finalTeamId || "—"}</td>
-                        <td className="px-4 py-3 font-semibold text-gray-900 truncate">{team.teamName || "—"}</td>
-                        <td className="px-4 py-3 text-gray-700 text-xs">{team.registrationId || "—"}</td>
-                        <td className="px-4 py-3 text-gray-700">
-                          <span className="bg-[#00214710] text-[#002147] px-2 py-1 rounded font-semibold">
-                            {team.teamSize}
-                          </span>
-                        </td>
-                        <td className="px-4 py-3 text-gray-700 text-xs">{team.leader?.name || "—"}</td>
-                        <td className="px-4 py-3 text-gray-700 text-xs">{team.leader?.email || "—"}</td>
-                        <td className="px-4 py-3 text-gray-700 text-xs">{team.leader?.phone || "—"}</td>
-                        <td className="px-4 py-3 text-gray-700 text-xs">{team.leader?.college || "—"}</td>
-                        <td className="px-4 py-3 text-gray-700 text-xs">{team.teamSize >= 2 ? (member2.name || "—") : "—"}</td>
-                        <td className="px-4 py-3 text-gray-700 text-xs">{team.teamSize >= 2 ? (member2.email || "—") : "—"}</td>
-                        <td className="px-4 py-3 text-gray-700 text-xs">{team.teamSize >= 2 ? (member2.phone || "—") : "—"}</td>
-                        <td className="px-4 py-3 text-gray-700 text-xs">{team.teamSize >= 3 ? (member3.name || "—") : "—"}</td>
-                        <td className="px-4 py-3 text-gray-700 text-xs">{team.teamSize >= 3 ? (member3.email || "—") : "—"}</td>
-                        <td className="px-4 py-3 text-gray-700 text-xs">{team.teamSize >= 3 ? (member3.phone || "—") : "—"}</td>
-                        <td className="px-4 py-3 text-gray-700 text-xs">{team.teamSize >= 4 ? (member4.name || "—") : "—"}</td>
-                        <td className="px-4 py-3 text-gray-700 text-xs">{team.teamSize >= 4 ? (member4.email || "—") : "—"}</td>
-                        <td className="px-4 py-3 text-gray-700 text-xs">{team.teamSize >= 4 ? (member4.phone || "—") : "—"}</td>
-                        <td className="px-4 py-3 text-gray-700 text-xs">{new Date(team.createdAt).toLocaleDateString()}</td>
-                        <td className="px-4 py-3 text-gray-700 text-xs max-w-xs truncate">{team.problemStatement || "—"}</td>
-                      </tr>
-                    );
-                  })}
+                  {sortedTeams.map((team, index) => (
+                    <tr 
+                      key={team._id} 
+                      className={`border-b hover:bg-[#00214710] transition ${index % 2 === 0 ? "bg-white" : "bg-gray-50"}`}
+                    >
+                      <td className="px-4 py-3 font-semibold text-gray-900 truncate">{team.teamName}</td>
+                      <td className="px-4 py-3 text-gray-700 text-xs">{team.registrationId}</td>
+                      <td className="px-4 py-3 text-gray-700">
+                        <span className="bg-[#00214710] text-[#002147] px-2 py-1 rounded font-semibold">
+                          {team.teamSize}
+                        </span>
+                      </td>
+                      <td className="px-4 py-3 text-gray-700 text-xs">{team.leader?.name || "—"}</td>
+                      <td className="px-4 py-3 text-gray-700 text-xs">{team.leader?.email || "—"}</td>
+                      <td className="px-4 py-3 text-gray-700 text-xs">{team.leader?.phone || "—"}</td>
+                      <td className="px-4 py-3 text-gray-700 text-xs">{team.leader?.college || "—"}</td>
+                      <td className="px-4 py-3 text-gray-700 text-xs">{team.leader?.department || "—"}</td>
+                      <td className="px-4 py-3 text-gray-700 text-xs">{team.leader?.year || "—"}</td>
+                      <td className="px-4 py-3 text-gray-700 text-xs">{team.teamSize >= 2 ? (team.members?.member2?.name || "—") : "—"}</td>
+                      <td className="px-4 py-3 text-gray-700 text-xs">{team.teamSize >= 2 ? (team.members?.member2?.email || "—") : "—"}</td>
+                      <td className="px-4 py-3 text-gray-700 text-xs">{team.teamSize >= 2 ? (team.members?.member2?.phone || "—") : "—"}</td>
+                      <td className="px-4 py-3 text-gray-700 text-xs">{team.teamSize >= 3 ? (team.members?.member3?.name || "—") : "—"}</td>
+                      <td className="px-4 py-3 text-gray-700 text-xs">{team.teamSize >= 3 ? (team.members?.member3?.email || "—") : "—"}</td>
+                      <td className="px-4 py-3 text-gray-700 text-xs">{team.teamSize >= 3 ? (team.members?.member3?.phone || "—") : "—"}</td>
+                      <td className="px-4 py-3 text-gray-700 text-xs">{team.teamSize >= 4 ? (team.members?.member4?.name || "—") : "—"}</td>
+                      <td className="px-4 py-3 text-gray-700 text-xs">{team.teamSize >= 4 ? (team.members?.member4?.email || "—") : "—"}</td>
+                      <td className="px-4 py-3 text-gray-700 text-xs">{team.teamSize >= 4 ? (team.members?.member4?.phone || "—") : "—"}</td>
+                      <td className="px-4 py-3 text-gray-700 text-xs">{new Date(team.createdAt).toLocaleDateString()}</td>
+                      <td className="px-4 py-3 text-gray-700 text-xs max-w-xs truncate">{team.problemStatement}</td>
+                    </tr>
+                  ))}
                 </tbody>
               </table>
             </div>
@@ -791,34 +816,10 @@ export default function FinalTeamsListPage() {
 
         {!isLoading && !error && sortedTeams.length > 0 && (
           <div className="mt-6 text-sm text-gray-600 text-center">
-            Showing {sortedTeams.length} of {teams.length} final teams
+            Showing {sortedTeams.length} of {teams.length} final teams ({stats.totalParticipants} total participants)
           </div>
         )}
       </main>
-
-      <style jsx>{`
-        @keyframes confettiFall {
-          0% {
-            transform: translateY(-10vh) rotate(0deg);
-            opacity: 1;
-          }
-          100% {
-            transform: translateY(110vh) rotate(720deg);
-            opacity: 0;
-          }
-        }
-
-        @keyframes scaleIn {
-          0% {
-            transform: scale(0.5);
-            opacity: 0;
-          }
-          100% {
-            transform: scale(1);
-            opacity: 1;
-          }
-        }
-      `}</style>
     </div>
   );
 }
