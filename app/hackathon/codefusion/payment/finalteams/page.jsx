@@ -76,7 +76,7 @@ export default function FinalTeamsListPage() {
       const data = await response.json();
 
       if (data.success) {
-        const finalTeamsData = data.teams || [];
+        const finalTeamsData = data.finalTeams || [];
         
         setTeams(finalTeamsData);
         setTotalCount(finalTeamsData.length);
