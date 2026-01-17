@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
-import { ChevronDown, Search, Download, TrendingUp } from "lucide-react";
+import { ChevronDown, Search, Download } from "lucide-react";
 
 export default function FinalTeamsListPage() {
   const router = useRouter();
@@ -26,12 +26,12 @@ export default function FinalTeamsListPage() {
   const [stats, setStats] = useState({ 
     total: 0,
     totalParticipants: 0,
-    ap: 0, 
-    tn: 0, 
+    ap: 0,
+    tn: 0,
     tg: 0,
-    college3: 0, 
-    college4: 0, 
     totalColleges: 0,
+    college3: 0, 
+    college4: 0,
     domainStats: {} 
   });
 
@@ -121,6 +121,8 @@ export default function FinalTeamsListPage() {
     const collegeSet = new Set();
     const domainCounts = {};
 
+    let totalParticipants = 0;
+
     teamsData.forEach(team => {
       if (team.leader?.college) {
         collegeSet.add(normalizeCollege(team.leader.college));
@@ -130,14 +132,13 @@ export default function FinalTeamsListPage() {
         domainCounts[team.problemStatement] =
           (domainCounts[team.problemStatement] || 0) + 1;
       }
+
+      totalParticipants += team.teamSize || 0;
     });
 
     const totalTeams = teamsData.length;
-    
-    // Calculate total participants
-    const totalParticipants = teamsData.reduce((sum, team) => {
-      return sum + (team.teamSize || 0);
-    }, 0);
+    const college3 = teamsData.filter(t => t.teamSize == 3).length;
+    const college4 = teamsData.filter(t => t.teamSize == 4).length;
 
     const ap = teamsData.filter(t => {
       const college = t.leader?.college?.toLowerCase() || "";
@@ -153,9 +154,6 @@ export default function FinalTeamsListPage() {
       const college = t.leader?.college?.toLowerCase() || "";
       return college.includes("telangana") || college.includes("tg") || college.includes("hyderabad");
     }).length;
-
-    const college3 = teamsData.filter(t => t.teamSize == 3).length;
-    const college4 = teamsData.filter(t => t.teamSize == 4).length;
 
     setStats({
       total: totalTeams,
@@ -235,30 +233,6 @@ export default function FinalTeamsListPage() {
             font-size: 24px;
             font-weight: bold;
           }
-          .state-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 8px;
-            margin-bottom: 12px;
-          }
-          .state-card {
-            background-color: #f9f9f9;
-            border: 1.5px solid #002147;
-            border-radius: 5px;
-            padding: 8px;
-            text-align: center;
-          }
-          .state-label {
-            color: #666;
-            font-size: 8px;
-            font-weight: bold;
-            margin-bottom: 4px;
-          }
-          .state-value {
-            color: #002147;
-            font-size: 18px;
-            font-weight: bold;
-          }
           .section-title {
             color: #002147;
             font-size: 11px;
@@ -324,13 +298,13 @@ export default function FinalTeamsListPage() {
               <div class="stat-value">${stats.totalColleges}</div>
             </div>
             <div class="stat-card">
-              <div class="stat-label">Team Size Avg</div>
-              <div class="stat-value">${(stats.totalParticipants / stats.total).toFixed(1)}</div>
+              <div class="stat-label">3 Members Teams</div>
+              <div class="stat-value">${stats.college3}</div>
             </div>
           </div>
 
           <div class="section-title">Team Composition</div>
-          <div className="stats-grid">
+          <div class="stats-grid">
             <div class="stat-card">
               <div class="stat-label">3 Members Teams</div>
               <div class="stat-value">${stats.college3}</div>
@@ -338,22 +312,6 @@ export default function FinalTeamsListPage() {
             <div class="stat-card">
               <div class="stat-label">4 Members Teams</div>
               <div class="stat-value">${stats.college4}</div>
-            </div>
-          </div>
-
-          <div class="section-title">State-wise Distribution</div>
-          <div class="state-grid">
-            <div class="state-card">
-              <div class="state-label">Andhra Pradesh</div>
-              <div class="state-value">${stats.ap}</div>
-            </div>
-            <div class="state-card">
-              <div class="state-label">Tamil Nadu</div>
-              <div class="state-value">${stats.tn}</div>
-            </div>
-            <div class="state-card">
-              <div class="state-label">Telangana</div>
-              <div class="state-value">${stats.tg}</div>
             </div>
           </div>
 
@@ -417,21 +375,32 @@ export default function FinalTeamsListPage() {
     let csvContent = "CODEFUSION FINAL TEAMS DETAILS\n";
     csvContent += new Date().toLocaleDateString() + "\n\n";
     
-    csvContent += "Team Name,Registration ID,Team Size,Leader Name,Leader Email,Leader Phone,Leader College,Leader Department,Leader Year,Member2 Name,Member2 Email,Member2 Phone,Member3 Name,Member3 Email,Member3 Phone,Member4 Name,Member4 Email,Member4 Phone,Registered On,Problem Statement\n";
+    csvContent += "Final Team ID,Team Name,Registration ID,Team Size,Leader ParticipantID,Leader Name,Leader Email,Leader Phone,Leader College,Member1 ParticipantID,Member1 Name,Member1 Email,Member1 Phone,Member1 College,Member2 ParticipantID,Member2 Name,Member2 Email,Member2 Phone,Member2 College,Member3 ParticipantID,Member3 Name,Member3 Email,Member3 Phone,Member3 College,Problem Statement,Registered On\n";
     
     sortedTeams.forEach(team => {
       const registeredDate = new Date(team.createdAt).toLocaleDateString();
-      const member2Name = team.teamSize >= 2 ? (team.members?.member2?.name || "—") : "—";
-      const member2Email = team.teamSize >= 2 ? (team.members?.member2?.email || "—") : "—";
-      const member2Phone = team.teamSize >= 2 ? (team.members?.member2?.phone || "—") : "—";
-      const member3Name = team.teamSize >= 3 ? (team.members?.member3?.name || "—") : "—";
-      const member3Email = team.teamSize >= 3 ? (team.members?.member3?.email || "—") : "—";
-      const member3Phone = team.teamSize >= 3 ? (team.members?.member3?.phone || "—") : "—";
-      const member4Name = team.teamSize >= 4 ? (team.members?.member4?.name || "—") : "—";
-      const member4Email = team.teamSize >= 4 ? (team.members?.member4?.email || "—") : "—";
-      const member4Phone = team.teamSize >= 4 ? (team.members?.member4?.phone || "—") : "—";
       
-      csvContent += `"${team.teamName}","${team.registrationId}",${team.teamSize},"${team.leader?.name || "—"}","${team.leader?.email || "—"}","${team.leader?.phone || "—"}","${team.leader?.college || "—"}","${team.leader?.department || "—"}","${team.leader?.year || "—"}","${member2Name}","${member2Email}","${member2Phone}","${member3Name}","${member3Email}","${member3Phone}","${member4Name}","${member4Email}","${member4Phone}","${registeredDate}","${team.problemStatement}"\n`;
+      let row = `"${team.finalTeamId}","${team.teamName}","${team.registrationId}",${team.teamSize},`;
+      
+      // Leader
+      row += `"${team.leader?.participantId || "—"}","${team.leader?.name || "—"}","${team.leader?.email || "—"}","${team.leader?.phone || "—"}","${team.leader?.college || "—"}",`;
+      
+      // Members
+      if (team.members && team.members.length > 0) {
+        for (let i = 0; i < 3; i++) {
+          const member = team.members[i];
+          if (member) {
+            row += `"${member.participantId || "—"}","${member.name || "—"}","${member.email || "—"}","${member.phone || "—"}","${member.college || "—"}",`;
+          } else {
+            row += `"—","—","—","—","—",`;
+          }
+        }
+      } else {
+        row += `"—","—","—","—","—","—","—","—","—","—","—","—","—","—","—",`;
+      }
+      
+      row += `"${team.problemStatement}","${registeredDate}"\n`;
+      csvContent += row;
     });
 
     const blob = new Blob([csvContent], { type: "text/csv;charset=utf-8;" });
@@ -607,21 +576,6 @@ export default function FinalTeamsListPage() {
               </div>
             </div>
           </div>
-        </div>
-
-        {!isLoading && domains.length > 0 && (
-          <div className="bg-indigo-50 rounded-lg p-5 mb-8 border border-indigo-200">
-            <h3 className="font-bold text-[#002147] mb-4 text-sm">Domain-wise Distribution</h3>
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
-              {Object.entries(stats.domainStats).map(([domain, count]) => (
-                <div key={domain} className="bg-white rounded-lg p-3 border border-indigo-100 text-center hover:shadow-md transition">
-                  <p className="text-xs text-gray-600 truncate mb-2 font-medium">{domain}</p>
-                  <p className="text-2xl font-bold text-indigo-600">{count}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        )}
 
         {!isLoading && colleges.length > 0 && (
           <div className="bg-[#00214710] rounded-lg p-5 mb-8 border border-[#002147]">
@@ -636,6 +590,20 @@ export default function FinalTeamsListPage() {
                   </div>
                 );
               })}
+            </div>
+          </div>
+        )}
+
+        {!isLoading && domains.length > 0 && (
+          <div className="bg-indigo-50 rounded-lg p-5 mb-8 border border-indigo-200">
+            <h3 className="font-bold text-[#002147] mb-4 text-sm">Domain-wise Distribution</h3>
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
+              {Object.entries(stats.domainStats).map(([domain, count]) => (
+                <div key={domain} className="bg-white rounded-lg p-3 border border-indigo-100 text-center hover:shadow-md transition">
+                  <p className="text-xs text-gray-600 truncate mb-2 font-medium">{domain}</p>
+                  <p className="text-2xl font-bold text-indigo-600">{count}</p>
+                </div>
+              ))}
             </div>
           </div>
         )}
@@ -726,6 +694,14 @@ export default function FinalTeamsListPage() {
               <table className="w-full text-sm">
                 <thead>
                   <tr className="bg-[#002147] text-white border-b">
+                    <th className="px-4 py-3 text-left font-semibold cursor-pointer hover:bg-blue-900" onClick={() => handleSort("finalTeamId")}>
+                      <div className="flex items-center gap-2">
+                        Team ID
+                        {sortConfig.key === "finalTeamId" && (
+                          <ChevronDown className={`w-4 h-4 transition ${sortConfig.direction === "desc" ? "rotate-180" : ""}`} />
+                        )}
+                      </div>
+                    </th>
                     <th className="px-4 py-3 text-left font-semibold cursor-pointer hover:bg-blue-900" onClick={() => handleSort("teamName")}>
                       <div className="flex items-center gap-2">
                         Team Name
@@ -750,21 +726,26 @@ export default function FinalTeamsListPage() {
                         )}
                       </div>
                     </th>
+                    <th className="px-4 py-3 text-left font-semibold">Leader ParticipantID</th>
                     <th className="px-4 py-3 text-left font-semibold">Leader Name</th>
-                    <th className="px-4 py-3 text-left font-semibold">Email</th>
-                    <th className="px-4 py-3 text-left font-semibold">Phone</th>
-                    <th className="px-4 py-3 text-left font-semibold">College</th>
-                    <th className="px-4 py-3 text-left font-semibold">Dept</th>
-                    <th className="px-4 py-3 text-left font-semibold">Year</th>
+                    <th className="px-4 py-3 text-left font-semibold">Leader Email</th>
+                    <th className="px-4 py-3 text-left font-semibold">Leader Phone</th>
+                    <th className="px-4 py-3 text-left font-semibold">Leader College</th>
+                    <th className="px-4 py-3 text-left font-semibold">M1 PID</th>
+                    <th className="px-4 py-3 text-left font-semibold">M1 Name</th>
+                    <th className="px-4 py-3 text-left font-semibold">M1 Email</th>
+                    <th className="px-4 py-3 text-left font-semibold">M1 Phone</th>
+                    <th className="px-4 py-3 text-left font-semibold">M1 College</th>
+                    <th className="px-4 py-3 text-left font-semibold">M2 PID</th>
                     <th className="px-4 py-3 text-left font-semibold">M2 Name</th>
                     <th className="px-4 py-3 text-left font-semibold">M2 Email</th>
                     <th className="px-4 py-3 text-left font-semibold">M2 Phone</th>
+                    <th className="px-4 py-3 text-left font-semibold">M2 College</th>
+                    <th className="px-4 py-3 text-left font-semibold">M3 PID</th>
                     <th className="px-4 py-3 text-left font-semibold">M3 Name</th>
                     <th className="px-4 py-3 text-left font-semibold">M3 Email</th>
                     <th className="px-4 py-3 text-left font-semibold">M3 Phone</th>
-                    <th className="px-4 py-3 text-left font-semibold">M4 Name</th>
-                    <th className="px-4 py-3 text-left font-semibold">M4 Email</th>
-                    <th className="px-4 py-3 text-left font-semibold">M4 Phone</th>
+                    <th className="px-4 py-3 text-left font-semibold">M3 College</th>
                     <th className="px-4 py-3 text-left font-semibold cursor-pointer hover:bg-blue-900" onClick={() => handleSort("createdAt")}>
                       <div className="flex items-center gap-2">
                         Registered On
@@ -779,9 +760,10 @@ export default function FinalTeamsListPage() {
                 <tbody>
                   {sortedTeams.map((team, index) => (
                     <tr 
-                      key={team._id} 
+                      key={team.finalTeamId} 
                       className={`border-b hover:bg-[#00214710] transition ${index % 2 === 0 ? "bg-white" : "bg-gray-50"}`}
                     >
+                      <td className="px-4 py-3 font-semibold text-gray-900">{team.finalTeamId}</td>
                       <td className="px-4 py-3 font-semibold text-gray-900 truncate">{team.teamName}</td>
                       <td className="px-4 py-3 text-gray-700 text-xs">{team.registrationId}</td>
                       <td className="px-4 py-3 text-gray-700">
@@ -789,21 +771,26 @@ export default function FinalTeamsListPage() {
                           {team.teamSize}
                         </span>
                       </td>
+                      <td className="px-4 py-3 text-gray-700 text-xs">{team.leader?.participantId || "—"}</td>
                       <td className="px-4 py-3 text-gray-700 text-xs">{team.leader?.name || "—"}</td>
                       <td className="px-4 py-3 text-gray-700 text-xs">{team.leader?.email || "—"}</td>
                       <td className="px-4 py-3 text-gray-700 text-xs">{team.leader?.phone || "—"}</td>
                       <td className="px-4 py-3 text-gray-700 text-xs">{team.leader?.college || "—"}</td>
-                      <td className="px-4 py-3 text-gray-700 text-xs">{team.leader?.department || "—"}</td>
-                      <td className="px-4 py-3 text-gray-700 text-xs">{team.leader?.year || "—"}</td>
-                      <td className="px-4 py-3 text-gray-700 text-xs">{team.teamSize >= 2 ? (team.members?.member2?.name || "—") : "—"}</td>
-                      <td className="px-4 py-3 text-gray-700 text-xs">{team.teamSize >= 2 ? (team.members?.member2?.email || "—") : "—"}</td>
-                      <td className="px-4 py-3 text-gray-700 text-xs">{team.teamSize >= 2 ? (team.members?.member2?.phone || "—") : "—"}</td>
-                      <td className="px-4 py-3 text-gray-700 text-xs">{team.teamSize >= 3 ? (team.members?.member3?.name || "—") : "—"}</td>
-                      <td className="px-4 py-3 text-gray-700 text-xs">{team.teamSize >= 3 ? (team.members?.member3?.email || "—") : "—"}</td>
-                      <td className="px-4 py-3 text-gray-700 text-xs">{team.teamSize >= 3 ? (team.members?.member3?.phone || "—") : "—"}</td>
-                      <td className="px-4 py-3 text-gray-700 text-xs">{team.teamSize >= 4 ? (team.members?.member4?.name || "—") : "—"}</td>
-                      <td className="px-4 py-3 text-gray-700 text-xs">{team.teamSize >= 4 ? (team.members?.member4?.email || "—") : "—"}</td>
-                      <td className="px-4 py-3 text-gray-700 text-xs">{team.teamSize >= 4 ? (team.members?.member4?.phone || "—") : "—"}</td>
+                      <td className="px-4 py-3 text-gray-700 text-xs">{team.members?.[0]?.participantId || "—"}</td>
+                      <td className="px-4 py-3 text-gray-700 text-xs">{team.members?.[0]?.name || "—"}</td>
+                      <td className="px-4 py-3 text-gray-700 text-xs">{team.members?.[0]?.email || "—"}</td>
+                      <td className="px-4 py-3 text-gray-700 text-xs">{team.members?.[0]?.phone || "—"}</td>
+                      <td className="px-4 py-3 text-gray-700 text-xs">{team.members?.[0]?.college || "—"}</td>
+                      <td className="px-4 py-3 text-gray-700 text-xs">{team.members?.[1]?.participantId || "—"}</td>
+                      <td className="px-4 py-3 text-gray-700 text-xs">{team.members?.[1]?.name || "—"}</td>
+                      <td className="px-4 py-3 text-gray-700 text-xs">{team.members?.[1]?.email || "—"}</td>
+                      <td className="px-4 py-3 text-gray-700 text-xs">{team.members?.[1]?.phone || "—"}</td>
+                      <td className="px-4 py-3 text-gray-700 text-xs">{team.members?.[1]?.college || "—"}</td>
+                      <td className="px-4 py-3 text-gray-700 text-xs">{team.members?.[2]?.participantId || "—"}</td>
+                      <td className="px-4 py-3 text-gray-700 text-xs">{team.members?.[2]?.name || "—"}</td>
+                      <td className="px-4 py-3 text-gray-700 text-xs">{team.members?.[2]?.email || "—"}</td>
+                      <td className="px-4 py-3 text-gray-700 text-xs">{team.members?.[2]?.phone || "—"}</td>
+                      <td className="px-4 py-3 text-gray-700 text-xs">{team.members?.[2]?.college || "—"}</td>
                       <td className="px-4 py-3 text-gray-700 text-xs">{new Date(team.createdAt).toLocaleDateString()}</td>
                       <td className="px-4 py-3 text-gray-700 text-xs max-w-xs truncate">{team.problemStatement}</td>
                     </tr>
