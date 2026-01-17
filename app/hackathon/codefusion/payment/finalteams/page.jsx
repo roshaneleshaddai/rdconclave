@@ -28,15 +28,12 @@ export default function FinalTeamsListPage() {
     totalParticipants: 0,
     totalBoys: 0,
     totalGirls: 0,
-    ap: 0,
-    tn: 0,
-    tg: 0,
-    apColleges: 0,
-    tnColleges: 0,
-    tgColleges: 0,
     apTeams: 0,
     tnTeams: 0,
     tgTeams: 0,
+    apColleges: 0,
+    tnColleges: 0,
+    tgColleges: 0,
     totalColleges: 0,
     college3: 0, 
     college4: 0,
@@ -276,43 +273,76 @@ export default function FinalTeamsListPage() {
             padding: 0;
             box-sizing: border-box;
           }
+          html, body {
+            height: 100%;
+            width: 100%;
+          }
           body {
-            font-family: 'Arial', sans-serif;
+            font-family: Arial, sans-serif;
             background-color: white;
-            padding: 12px;
+            color: #333;
+          }
+          .page {
+            width: 100%;
+            background-color: white;
+            page-break-after: always;
+            padding: 30px;
+            margin: 0;
+            min-height: 100vh;
+          }
+          .page:last-child {
+            page-break-after: avoid;
           }
           .container {
             width: 100%;
-            max-width: 800px;
             margin: 0 auto;
-            background-color: white;
           }
           .header {
             text-align: center;
-            margin-bottom: 12px;
-            border-bottom: 2px solid #002147;
-            padding-bottom: 8px;
+            margin-bottom: 25px;
+            border-bottom: 3px solid #002147;
+            padding-bottom: 12px;
           }
           .header h1 {
             color: #002147;
             font-size: 22px;
             font-weight: bold;
-            margin-bottom: 2px;
+            margin-bottom: 5px;
           }
           .header p {
             color: #666;
-            font-size: 9px;
-            margin-top: 2px;
+            font-size: 11px;
+            margin: 3px 0;
           }
-          .stats-grid {
+          .section-title {
+            color: #002147;
+            font-size: 12px;
+            font-weight: bold;
+            margin: 20px 0 12px 0;
+            padding-bottom: 6px;
+            border-bottom: 2px solid #002147;
+          }
+          .stats-grid-5 {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 8px;
+            margin-bottom: 15px;
+          }
+          .stats-grid-2 {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 8px;
-            margin-bottom: 12px;
+            margin-bottom: 15px;
+          }
+          .stats-grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 8px;
+            margin-bottom: 15px;
           }
           .stat-card {
-            background-color: #f9f9f9;
-            border: 1.5px solid #002147;
+            background-color: #f5f5f5;
+            border: 2px solid #002147;
             border-radius: 5px;
             padding: 10px;
             text-align: center;
@@ -322,33 +352,25 @@ export default function FinalTeamsListPage() {
             font-size: 8px;
             text-transform: uppercase;
             font-weight: bold;
-            margin-bottom: 5px;
-            letter-spacing: 0.5px;
+            margin-bottom: 6px;
+            letter-spacing: 0.3px;
           }
           .stat-value {
             color: #002147;
-            font-size: 24px;
+            font-size: 26px;
             font-weight: bold;
-          }
-          .section-title {
-            color: #002147;
-            font-size: 11px;
-            font-weight: bold;
-            margin-bottom: 8px;
-            border-bottom: 1.5px solid #002147;
-            padding-bottom: 4px;
-            margin-top: 10px;
+            line-height: 1;
           }
           .colleges-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 6px;
+            gap: 8px;
           }
           .college-item {
-            background-color: #00214710;
+            background-color: #f5f5f5;
             border: 1px solid #002147;
             border-radius: 4px;
-            padding: 6px;
+            padding: 8px;
             text-align: center;
           }
           .college-name {
@@ -360,90 +382,142 @@ export default function FinalTeamsListPage() {
           }
           .college-count {
             color: #002147;
-            font-size: 12px;
+            font-size: 14px;
             font-weight: bold;
           }
           .footer {
-            margin-top: 10px;
+            margin-top: 20px;
             text-align: center;
             color: #999;
             font-size: 8px;
             border-top: 1px solid #ddd;
-            padding-top: 6px;
+            padding-top: 8px;
           }
         </style>
       </head>
       <body>
-        <div class="container">
-          <div class="header">
-            <h1>CodeFusion 2026 - Final Teams Report</h1>
-            <p>Dashboard Statistics Report</p>
-            <p>${new Date().toLocaleDateString()}</p>
-          </div>
+        <!-- PAGE 1 -->
+        <div class="page">
+          <div class="container">
+            <div class="header">
+              <h1>CodeFusion 2026 - Final Teams Report</h1>
+              <p>Dashboard Statistics - Page 1</p>
+              <p>${new Date().toLocaleDateString()}</p>
+            </div>
 
-          <div class="stats-grid">
-            <div class="stat-card">
-              <div class="stat-label">Total Final Teams</div>
-              <div class="stat-value">${stats.total}</div>
+            <div class="section-title">Quick Statistics - Row 1</div>
+            <div class="stats-grid-5">
+              <div class="stat-card">
+                <div class="stat-label">Total Teams</div>
+                <div class="stat-value">${stats.total}</div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-label">Total Participants</div>
+                <div class="stat-value">${stats.totalParticipants}</div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-label">Different Colleges</div>
+                <div class="stat-value">${stats.totalColleges}</div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-label">3 Members Teams</div>
+                <div class="stat-value">${stats.college3}</div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-label">4 Members Teams</div>
+                <div class="stat-value">${stats.college4}</div>
+              </div>
             </div>
-            <div class="stat-card">
-              <div class="stat-label">Total Participants</div>
-              <div class="stat-value">${stats.totalParticipants}</div>
-            </div>
-            <div class="stat-card">
-              <div class="stat-label">Total Colleges</div>
-              <div class="stat-value">${stats.totalColleges}</div>
-            </div>
-            <div class="stat-card">
-              <div class="stat-label">3 Members Teams</div>
-              <div class="stat-value">${stats.college3}</div>
-            </div>
-          </div>
 
-          <div class="section-title">Team Composition</div>
-          <div class="stats-grid">
-            <div class="stat-card">
-              <div class="stat-label">3 Members Teams</div>
-              <div class="stat-value">${stats.college3}</div>
+            <div class="section-title">Quick Statistics - Row 2</div>
+            <div class="stats-grid-2">
+              <div class="stat-card">
+                <div class="stat-label">Total Boys</div>
+                <div class="stat-value">${stats.totalBoys}</div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-label">Total Girls</div>
+                <div class="stat-value">${stats.totalGirls}</div>
+              </div>
             </div>
-            <div class="stat-card">
-              <div class="stat-label">4 Members Teams</div>
-              <div class="stat-value">${stats.college4}</div>
+
+            <div class="section-title">State-wise Colleges</div>
+            <div class="stats-grid-3">
+              <div class="stat-card">
+                <div class="stat-label">AP Colleges</div>
+                <div class="stat-value">${stats.apColleges}</div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-label">TN Colleges</div>
+                <div class="stat-value">${stats.tnColleges}</div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-label">TG Colleges</div>
+                <div class="stat-value">${stats.tgColleges}</div>
+              </div>
             </div>
-          </div>
 
-          <div class="section-title">Colleges Distribution (Team Leader Count)</div>
-          <div class="colleges-grid">
-            ${colleges.map(college => {
-              const count = teams.filter(t => normalizeCollege(t.leader?.college) === normalizeCollege(college)).length;
-              return `
-                <div class="college-item">
-                  <div class="college-name">${college}</div>
-                  <div class="college-count">${count}</div>
-                </div>
-              `;
-            }).join('')}
-          </div>
-
-          <div class="section-title">Domain-wise Distribution</div>
-          <div class="colleges-grid">
-            ${Object.entries(stats.domainStats).map(([domain, count]) => {
-              return `
-                <div class="college-item">
-                  <div class="college-name">${domain}</div>
-                  <div class="college-count">${count}</div>
-                </div>
-              `;
-            }).join('')}
-          </div>
-
-          <div class="footer">
-            <p>Generated on ${new Date().toLocaleString()}</p>
+            <div class="section-title">State-wise Teams Registration</div>
+            <div class="stats-grid-3">
+              <div class="stat-card">
+                <div class="stat-label">AP Teams</div>
+                <div class="stat-value">${stats.apTeams}</div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-label">TN Teams</div>
+                <div class="stat-value">${stats.tnTeams}</div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-label">TG Teams</div>
+                <div class="stat-value">${stats.tgTeams}</div>
+              </div>
+            </div>
           </div>
         </div>
+
+        <!-- PAGE 2 -->
+        <div class="page page-break">
+          <div class="container">
+            <div class="header">
+              <h1>CodeFusion 2026 - Final Teams Report</h1>
+              <p>Colleges & Domains Distribution - Page 2</p>
+              <p>${new Date().toLocaleDateString()}</p>
+            </div>
+
+            <div class="section-title">Colleges Distribution (Team Leader Count)</div>
+            <div class="colleges-grid">
+              ${colleges.map(college => {
+                const count = teams.filter(t => normalizeCollege(t.leader?.college) === normalizeCollege(college)).length;
+                return `
+                  <div class="college-item">
+                    <div class="college-name">${college}</div>
+                    <div class="college-count">${count}</div>
+                  </div>
+                `;
+              }).join('')}
+            </div>
+
+            <div class="section-title">Domain-wise Distribution</div>
+            <div class="colleges-grid">
+              ${Object.entries(stats.domainStats).map(([domain, count]) => {
+                return `
+                  <div class="college-item">
+                    <div class="college-name">${domain}</div>
+                    <div class="college-count">${count}</div>
+                  </div>
+                `;
+              }).join('')}
+            </div>
+
+            <div class="footer">
+              <p>Generated on ${new Date().toLocaleString()}</p>
+            </div>
+          </div>
+        </div>
+
         <script>
           window.onload = function() {
-            window.print();
+            setTimeout(() => { window.print(); }, 500);
           };
         </script>
       </body>
@@ -465,7 +539,7 @@ export default function FinalTeamsListPage() {
       if (printWindow) {
         printWindow.print();
       }
-    }, 250);
+    }, 500);
     
     document.body.removeChild(link);
   };
@@ -481,10 +555,8 @@ export default function FinalTeamsListPage() {
       
       let row = `"${team.finalTeamId}","${team.teamName}","${team.registrationId}",${team.teamSize},`;
       
-      // Leader
       row += `"${team.leader?.participantId || "—"}","${team.leader?.name || "—"}","${team.leader?.email || "—"}","${team.leader?.phone || "—"}","${team.leader?.college || "—"}",`;
       
-      // Members
       if (team.members && team.members.length > 0) {
         for (let i = 0; i < 3; i++) {
           const member = team.members[i];
@@ -574,7 +646,6 @@ export default function FinalTeamsListPage() {
           </button>
         </div>
 
-       
           <div className="flex justify-between items-center mb-6">
             <h2 className="text-lg font-bold text-[#002147]">Quick Statistics</h2>
             <button
@@ -646,24 +717,6 @@ export default function FinalTeamsListPage() {
               <div className="bg-white rounded-lg border border-red-200 p-4 text-center">
                 <p className="text-xs font-semibold text-gray-600 mb-2">Andhra Pradesh</p>
                 <p className="text-3xl font-bold text-red-600">{isLoading ? "..." : stats.apColleges}</p>
-              </div>
-              <div className="bg-white rounded-lg border border-yellow-200 p-4 text-center">
-                <p className="text-xs font-semibold text-gray-600 mb-2">Tamil Nadu</p>
-                <p className="text-3xl font-bold text-yellow-600">{isLoading ? "..." : stats.tnColleges}</p>
-              </div>
-              <div className="bg-white rounded-lg border border-teal-200 p-4 text-center">
-                <p className="text-xs font-semibold text-gray-600 mb-2">Telangana</p>
-                <p className="text-3xl font-bold text-teal-600">{isLoading ? "..." : stats.tgColleges}</p>
-              </div>
-            </div>
-          </div>
-
-          <div className="bg-gradient-to-r from-red-50 via-yellow-50 to-teal-50 rounded-lg p-6 mb-8 border border-gray-200">
-            <h3 className="text-center font-bold text-[#002147] mb-6 text-base">State-wise Teams Registration</h3>
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-              <div className="bg-white rounded-lg border border-red-200 p-4 text-center">
-                <p className="text-xs font-semibold text-gray-600 mb-2">Andhra Pradesh</p>
-                <p className="text-3xl font-bold text-red-600">{isLoading ? "..." : stats.apTeams}</p>
               </div>
               <div className="bg-white rounded-lg border border-yellow-200 p-4 text-center">
                 <p className="text-xs font-semibold text-gray-600 mb-2">Tamil Nadu</p>
