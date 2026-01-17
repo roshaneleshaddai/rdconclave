@@ -498,7 +498,7 @@ export default function FinalTeamsListPage() {
           </button>
         </div>
 
-        <div className="mb-12">
+        <div className="mb-20">
           <div className="space-y-3">
             {stats.total >= 50 && stats.total <= 55 && (
               <div className="bg-gradient-to-r from-blue-50 to-blue-100 border-l-4 border-blue-500 p-4 rounded-lg shadow-sm">
