@@ -26,7 +26,11 @@ export default function FinalTeamsListPage() {
     college3: 0, 
     college4: 0, 
     totalColleges: 0,
-    domainStats: {} 
+    domainStats: {},
+    ap: 0,
+    tn: 0,
+    tg: 0,
+    totalParticipants: 0
   });
 
   const normalizeCollege = (collegeName) => {
@@ -112,10 +116,14 @@ export default function FinalTeamsListPage() {
 
     setStats({
       total: totalTeams,
+      ap: teamsData.filter(t => normalizeCollege(t.leader?.college).includes('andhra') || t.leader?.college?.toLowerCase().includes('ap')).length,
+      tn: teamsData.filter(t => normalizeCollege(t.leader?.college).includes('tamil') || t.leader?.college?.toLowerCase().includes('tn')).length,
+      tg: teamsData.filter(t => normalizeCollege(t.leader?.college).includes('telangana') || t.leader?.college?.toLowerCase().includes('tg') || t.leader?.college?.toLowerCase().includes('hyderabad')).length,
       college3: teamsData.filter(t => t.teamSize == 3).length,
       college4: teamsData.filter(t => t.teamSize == 4).length,
       totalColleges: collegeSet.size,
-      domainStats: domainCounts
+      domainStats: domainCounts,
+      totalParticipants: teamsData.reduce((sum, team) => sum + (team.teamSize || 0), 0)
     });
 
     // 🎉 CELEBRATION CHECK
@@ -176,19 +184,39 @@ export default function FinalTeamsListPage() {
           }
           .stats-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: repeat(3, 1fr);
             gap: 8px;
             margin-bottom: 12px;
+            margin-top: 12px;
           }
           .stat-card {
-            background-color: #f9f9f9;
-            border: 1.5px solid #002147;
             border-radius: 5px;
             padding: 10px;
             text-align: center;
+            border: 1.5px solid;
+          }
+          .stat-card.blue {
+            background: linear-gradient(to bottom right, #dbeafe, #bfdbfe);
+            border-color: #60a5fa;
+          }
+          .stat-card.purple {
+            background: linear-gradient(to bottom right, #f3e8ff, #e9d5ff);
+            border-color: #c084fc;
+          }
+          .stat-card.orange {
+            background: linear-gradient(to bottom right, #ffedd5, #fed7aa);
+            border-color: #fb923c;
+          }
+          .stat-card.blue2 {
+            background: linear-gradient(to bottom right, #dbeafe, #bfdbfe);
+            border-color: #60a5fa;
+          }
+          .stat-card.green {
+            background: linear-gradient(to bottom right, #dcfce7, #bbf7d0);
+            border-color: #4ade80;
           }
           .stat-label {
-            color: #666;
+            color: #333;
             font-size: 8px;
             text-transform: uppercase;
             font-weight: bold;
@@ -196,9 +224,19 @@ export default function FinalTeamsListPage() {
             letter-spacing: 0.5px;
           }
           .stat-value {
-            color: #002147;
             font-size: 24px;
             font-weight: bold;
+          }
+          .stat-card.blue .stat-value { color: #2563eb; }
+          .stat-card.purple .stat-value { color: #9333ea; }
+          .stat-card.orange .stat-value { color: #ea580c; }
+          .stat-card.blue2 .stat-value { color: #2563eb; }
+          .stat-card.green .stat-value { color: #16a34a; }
+          .stats-grid-2 {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 8px;
+            margin-bottom: 12px;
           }
           .section-title {
             color: #002147;
@@ -252,19 +290,26 @@ export default function FinalTeamsListPage() {
           </div>
 
           <div class="stats-grid">
-            <div class="stat-card">
+            <div class="stat-card blue">
               <div class="stat-label">Total Final Teams</div>
               <div class="stat-value">${stats.total}</div>
             </div>
-            <div class="stat-card">
+            <div class="stat-card purple">
+              <div class="stat-label">Total Participants</div>
+              <div class="stat-value">${stats.totalParticipants}</div>
+            </div>
+            <div class="stat-card orange">
               <div class="stat-label">Total Colleges</div>
               <div class="stat-value">${stats.totalColleges}</div>
             </div>
-            <div class="stat-card">
+          </div>
+
+          <div class="stats-grid-2">
+            <div class="stat-card blue2">
               <div class="stat-label">3 Members Teams</div>
               <div class="stat-value">${stats.college3}</div>
             </div>
-            <div class="stat-card">
+            <div class="stat-card green">
               <div class="stat-label">4 Members Teams</div>
               <div class="stat-value">${stats.college4}</div>
             </div>
@@ -453,43 +498,6 @@ export default function FinalTeamsListPage() {
           </button>
         </div>
 
-        {stats.total >= 75 && stats.total < 100 && (
-          <div className="mb-10" style={{ animation: "scaleIn 0.4s ease-out forwards" }}>
-            <div className="relative overflow-hidden bg-gradient-to-r from-[#002147] via-[#003d82] to-[#002147] rounded-2xl p-1 shadow-2xl">
-              <div className="relative bg-white/5 backdrop-blur-md rounded-xl p-6 md:p-8 flex flex-col md:flex-row items-center justify-between gap-6 border border-white/10">
-                <div className="flex items-center gap-6">
-                  <div className="p-4 bg-white/10 rounded-2xl border border-white/20">
-                    <Trophy className="w-10 h-10 text-yellow-400" style={{ filter: "drop-shadow(0 0 10px rgba(250,204,21,0.5))" }} />
-                  </div>
-                  <div>
-                    <h2 className="text-2xl md:text-3xl font-black text-white tracking-tight">ELITE STAGE REACHED</h2>
-                    <div className="flex items-center gap-2 mt-1">
-                      <Star className="w-4 h-4 text-yellow-400 fill-yellow-400" />
-                      <p className="text-blue-100 font-medium text-sm md:text-base uppercase tracking-widest">{stats.total} Final Teams</p>
-                    </div>
-                  </div>
-                </div>
-                <div className="flex-1 max-w-xs w-full px-4">
-                  <div className="flex justify-between text-xs font-bold text-blue-200 mb-2 uppercase tracking-tighter">
-                    <span>Target: 100</span>
-                    <span>{Math.round((stats.total / 100) * 100)}%</span>
-                  </div>
-                  <div className="h-3 w-full bg-white/10 rounded-full overflow-hidden border border-white/5">
-                    <div className="h-full bg-gradient-to-r from-yellow-400 to-orange-500 transition-all duration-1000 ease-out" style={{ width: `${(stats.total / 100) * 100}%` }}></div>
-                  </div>
-                </div>
-                <div className="bg-white/10 px-6 py-3 rounded-xl border border-white/10 text-center">
-                  <p className="text-[10px] text-blue-200 font-bold uppercase tracking-[0.2em]">Next Major Goal</p>
-                  <p className="text-xl font-black text-white">100 TEAMS</p>
-                </div>
-                <div className="absolute top-[-20px] right-[-20px] opacity-10">
-                  <TrendingUp className="w-32 h-32 text-white" />
-                </div>
-              </div>
-            </div>
-          </div>
-        )}
-
         <div className="mb-12">
           <div className="space-y-3">
             {stats.total >= 50 && stats.total <= 55 && (
@@ -541,35 +549,46 @@ export default function FinalTeamsListPage() {
             </button>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
-            <div className="bg-white rounded-lg border-2 border-[#002147] p-6 hover:shadow-lg transition">
-              <p className="text-xs uppercase tracking-wider text-gray-600 font-semibold">Total Final Teams</p>
-              <p className="text-4xl font-bold text-[#002147] mt-2">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
+            <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-lg border-2 border-blue-300 p-6 hover:shadow-lg transition">
+              <p className="text-xs uppercase tracking-wider text-blue-700 font-semibold">Total Final Teams</p>
+              <p className="text-4xl font-bold text-blue-600 mt-2">
                 {isLoading ? "..." : stats.total}
               </p>
             </div>
 
-            <div className="bg-white rounded-lg border-2 border-[#002147] p-6 hover:shadow-lg transition">
-              <p className="text-xs uppercase tracking-wider text-gray-600 font-semibold">Total Colleges</p>
-              <p className="text-4xl font-bold text-[#002147] mt-2">
-                {isLoading ? "..." : stats.totalColleges}
+            <div className="bg-gradient-to-br from-purple-50 to-purple-100 rounded-lg border-2 border-purple-300 p-6 hover:shadow-lg transition">
+              <p className="text-xs uppercase tracking-wider text-purple-700 font-semibold">Total Participants</p>
+              <p className="text-4xl font-bold text-purple-600 mt-2">
+                {isLoading ? "..." : stats.totalParticipants}
               </p>
             </div>
 
-            <div className="bg-white rounded-lg border-2 border-[#002147] p-6 hover:shadow-lg transition">
-              <p className="text-xs uppercase tracking-wider text-gray-600 font-semibold">3 Members</p>
-              <p className="text-4xl font-bold text-[#002147] mt-2">
+            <div className="bg-gradient-to-br from-orange-50 to-orange-100 rounded-lg border-2 border-orange-300 p-6 hover:shadow-lg transition">
+              <p className="text-xs uppercase tracking-wider text-orange-700 font-semibold">Total Colleges</p>
+              <p className="text-4xl font-bold text-orange-600 mt-2">
+                {isLoading ? "..." : stats.totalColleges}
+              </p>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+            <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-lg border-2 border-blue-300 p-6 hover:shadow-lg transition">
+              <p className="text-xs uppercase tracking-wider text-blue-700 font-semibold">3 Members Teams</p>
+              <p className="text-4xl font-bold text-blue-600 mt-2">
                 {isLoading ? "..." : stats.college3}
               </p>
             </div>
 
-            <div className="bg-white rounded-lg border-2 border-[#002147] p-6 hover:shadow-lg transition">
-              <p className="text-xs uppercase tracking-wider text-gray-600 font-semibold">4 Members</p>
-              <p className="text-4xl font-bold text-[#002147] mt-2">
+            <div className="bg-gradient-to-br from-green-50 to-green-100 rounded-lg border-2 border-green-300 p-6 hover:shadow-lg transition">
+              <p className="text-xs uppercase tracking-wider text-green-700 font-semibold">4 Members Teams</p>
+              <p className="text-4xl font-bold text-green-600 mt-2">
                 {isLoading ? "..." : stats.college4}
               </p>
             </div>
           </div>
+
+
         </div>
 
         {!isLoading && domains.length > 0 && (
@@ -602,6 +621,24 @@ export default function FinalTeamsListPage() {
             </div>
           </div>
         )}
+
+        <div className="bg-gradient-to-r from-red-50 via-yellow-50 to-teal-50 rounded-lg p-6 mb-8 border border-gray-200">
+          <h3 className="text-center font-bold text-[#002147] mb-6 text-base">State-wise Registration</h3>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <div className="bg-white rounded-lg border border-red-200 p-4 text-center hover:shadow-md transition">
+              <p className="text-xs font-semibold text-gray-600 mb-2">Andhra Pradesh</p>
+              <p className="text-3xl font-bold text-red-600">{isLoading ? "..." : stats.ap}</p>
+            </div>
+            <div className="bg-white rounded-lg border border-yellow-200 p-4 text-center hover:shadow-md transition">
+              <p className="text-xs font-semibold text-gray-600 mb-2">Tamil Nadu</p>
+              <p className="text-3xl font-bold text-yellow-600">{isLoading ? "..." : stats.tn}</p>
+            </div>
+            <div className="bg-white rounded-lg border border-teal-200 p-4 text-center hover:shadow-md transition">
+              <p className="text-xs font-semibold text-gray-600 mb-2">Telangana</p>
+              <p className="text-3xl font-bold text-teal-600">{isLoading ? "..." : stats.tg}</p>
+            </div>
+          </div>
+        </div>
 
         <div className="bg-white rounded-lg border border-gray-200 p-6 mb-8">
           <div className="flex flex-col sm:flex-row gap-4">
