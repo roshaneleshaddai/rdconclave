@@ -531,25 +531,28 @@ body {
 </body>
 </html>
 `;
-link.setAttribute("href", url);
-link.setAttribute(
-  "download",
-  `CodeFusion_Final_Statistics_${new Date().toISOString().split('T')[0]}.pdf`
-);
-link.style.visibility = "hidden";
+const blob = new Blob([htmlContent], { type: "text/html;charset=utf-8;" });
+  const link = document.createElement("a");
+  const url = URL.createObjectURL(blob);
 
-document.body.appendChild(link);
+  link.setAttribute("href", url);
+  link.setAttribute(
+    "download",
+    `CodeFusion_Final_Statistics_${new Date().toISOString().split("T")[0]}.pdf`
+  );
+  link.style.visibility = "hidden";
 
-const printWindow = window.open(url, "_blank");
-setTimeout(() => {
-  if (printWindow) {
-    printWindow.print();
-  }
-}, 500);
+  document.body.appendChild(link);
 
-document.body.removeChild(link);
+  const printWindow = window.open(url, "_blank");
+  setTimeout(() => {
+    if (printWindow) {
+      printWindow.print();
+    }
+  }, 500);
+
+  document.body.removeChild(link);
 };
-
 
   const downloadTeamsAsExcel = () => {
     let csvContent = "CODEFUSION FINAL TEAMS DETAILS\n";
