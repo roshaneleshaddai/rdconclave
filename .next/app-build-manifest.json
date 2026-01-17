@@ -21,6 +21,16 @@
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/hackathon/codefusion/admin/paymentdashboard/page.js"
+    ],
+    "/hackathon/codefusion/payment/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/hackathon/codefusion/payment/page.js"
+    ],
+    "/hackathon/codefusion/payment/finalteams/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/hackathon/codefusion/payment/finalteams/page.js"
     ]
   }
 }
