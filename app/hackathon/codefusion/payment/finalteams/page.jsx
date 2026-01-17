@@ -393,7 +393,7 @@ body {
     <p>${new Date().toLocaleDateString()}</p>
   </div>
 
-  <div class="p1-section-title">Quick Statistics - Row 1</div>
+  <div class="p1-section-title">Quick Statistics </div>
   <div class="p1-stats-grid-5">
     <div class="p1-stat-card"><div class="p1-stat-label">Total Teams</div><div class="p1-stat-value">${stats.total}</div></div>
     <div class="p1-stat-card"><div class="p1-stat-label">Total Participants</div><div class="p1-stat-value">${stats.totalParticipants}</div></div>
@@ -402,7 +402,7 @@ body {
     <div class="p1-stat-card"><div class="p1-stat-label">4 Members Teams</div><div class="p1-stat-value">${stats.college4}</div></div>
   </div>
 
-  <div class="p1-section-title">Quick Statistics - Row 2</div>
+  <div class="p1-section-title"></div>
   <div class="p1-stats-grid-2">
     <div class="p1-stat-card"><div class="p1-stat-label">Total Boys</div><div class="p1-stat-value">${stats.totalBoys}</div></div>
     <div class="p1-stat-card"><div class="p1-stat-label">Total Girls</div><div class="p1-stat-value">${stats.totalGirls}</div></div>
@@ -436,7 +436,7 @@ body {
     <p>${new Date().toLocaleDateString()}</p>
   </div>
 
-  <div class="section-title">Colleges Distribution (Team Leader Count)</div>
+  <div class="section-title">Colleges Distribution </div>
   <div class="colleges-grid">
     ${colleges.map(college => {
       const count = teams.filter(t => normalizeCollege(t.leader?.college) === normalizeCollege(college)).length;
