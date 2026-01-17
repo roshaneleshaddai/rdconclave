@@ -446,15 +446,18 @@ body {
 
   <div class="section-title">Colleges Distribution </div>
   <div class="colleges-grid">
-    ${colleges.map(college => {
-      const count = teams.filter(t => normalizeCollege(t.leader?.college) === normalizeCollege(college)).length;
-      return `
-        <div class="college-item">
-          <div class="college-name">${college}</div>
-          <div class="college-count">${count}</div>
-        </div>
-      `;
-    }).join("")}
+    ${${colleges.map(college => {
+  const normalized = normalizeCollege(college);
+  const count = stats.collegeCountMap[normalized] || 0;
+
+  return `
+    <div class="college-item">
+      <div class="college-name">${college}</div>
+      <div class="college-count">${count}</div>
+    </div>
+  `;
+}).join("")}
+}
   </div>
 
   <div class="section-title">Domain-wise Distribution</div>
