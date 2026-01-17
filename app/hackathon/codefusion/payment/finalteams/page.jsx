@@ -574,7 +574,7 @@ export default function FinalTeamsListPage() {
           </button>
         </div>
 
-   
+    
           <div className="flex justify-between items-center mb-6">
             <h2 className="text-lg font-bold text-[#002147]">Quick Statistics</h2>
             <button
@@ -602,6 +602,29 @@ export default function FinalTeamsListPage() {
               </p>
             </div>
 
+            <div className="bg-white rounded-lg border-2 border-[#002147] p-6 hover:shadow-lg transition">
+              <p className="text-xs uppercase tracking-wider text-gray-600 font-semibold">Different Colleges</p>
+              <p className="text-4xl font-bold text-[#002147] mt-2">
+                {isLoading ? "..." : stats.totalColleges}
+              </p>
+            </div>
+
+            <div className="bg-white rounded-lg border-2 border-[#002147] p-6 hover:shadow-lg transition">
+              <p className="text-xs uppercase tracking-wider text-gray-600 font-semibold">3 Members Teams</p>
+              <p className="text-4xl font-bold text-[#002147] mt-2">
+                {isLoading ? "..." : stats.college3}
+              </p>
+            </div>
+
+            <div className="bg-white rounded-lg border-2 border-[#002147] p-6 hover:shadow-lg transition">
+              <p className="text-xs uppercase tracking-wider text-gray-600 font-semibold">4 Members Teams</p>
+              <p className="text-4xl font-bold text-[#002147] mt-2">
+                {isLoading ? "..." : stats.college4}
+              </p>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
             <div className="bg-white rounded-lg border-2 border-blue-600 p-6 hover:shadow-lg transition">
               <p className="text-xs uppercase tracking-wider text-gray-600 font-semibold">Total Boys</p>
               <p className="text-4xl font-bold text-blue-600 mt-2">
@@ -613,29 +636,6 @@ export default function FinalTeamsListPage() {
               <p className="text-xs uppercase tracking-wider text-gray-600 font-semibold">Total Girls</p>
               <p className="text-4xl font-bold text-pink-600 mt-2">
                 {isLoading ? "..." : stats.totalGirls}
-              </p>
-            </div>
-
-            <div className="bg-white rounded-lg border-2 border-[#002147] p-6 hover:shadow-lg transition">
-              <p className="text-xs uppercase tracking-wider text-gray-600 font-semibold">Total Colleges</p>
-              <p className="text-4xl font-bold text-[#002147] mt-2">
-                {isLoading ? "..." : stats.totalColleges}
-              </p>
-            </div>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 mb-8">
-            <div className="bg-white rounded-lg border-2 border-[#002147] p-6 hover:shadow-lg transition">
-              <p className="text-xs uppercase tracking-wider text-gray-600 font-semibold">3 Members</p>
-              <p className="text-4xl font-bold text-[#002147] mt-2">
-                {isLoading ? "..." : stats.college3}
-              </p>
-            </div>
-
-            <div className="bg-white rounded-lg border-2 border-[#002147] p-6 hover:shadow-lg transition">
-              <p className="text-xs uppercase tracking-wider text-gray-600 font-semibold">4 Members</p>
-              <p className="text-4xl font-bold text-[#002147] mt-2">
-                {isLoading ? "..." : stats.college4}
               </p>
             </div>
           </div>
