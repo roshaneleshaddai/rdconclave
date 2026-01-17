@@ -283,115 +283,141 @@ export default function FinalTeamsListPage() {
             color: #333;
           }
           .page {
-            width: 100%;
+            width: 8.5in;
+            height: 11in;
             background-color: white;
             page-break-after: always;
-            padding: 30px;
-            margin: 0;
-            min-height: 100vh;
+            padding: 0.5in;
+            margin: 0 auto;
+            box-sizing: border-box;
           }
           .page:last-child {
             page-break-after: avoid;
           }
           .container {
             width: 100%;
-            margin: 0 auto;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
           }
           .header {
             text-align: center;
-            margin-bottom: 25px;
+            margin-bottom: 0.3in;
             border-bottom: 3px solid #002147;
-            padding-bottom: 12px;
+            padding-bottom: 0.1in;
           }
           .header h1 {
             color: #002147;
-            font-size: 22px;
+            font-size: 18px;
             font-weight: bold;
-            margin-bottom: 5px;
+            margin-bottom: 3px;
           }
           .header p {
             color: #666;
-            font-size: 11px;
-            margin: 3px 0;
+            font-size: 10px;
+            margin: 2px 0;
+          }
+          .content {
+            flex: 1;
+            overflow: hidden;
           }
           .section-title {
             color: #002147;
-            font-size: 12px;
+            font-size: 11px;
             font-weight: bold;
-            margin: 20px 0 12px 0;
-            padding-bottom: 6px;
+            margin: 0.15in 0 0.1in 0;
+            padding-bottom: 4px;
             border-bottom: 2px solid #002147;
+            text-align: left;
           }
           .stats-grid-5 {
             display: grid;
             grid-template-columns: repeat(5, 1fr);
-            gap: 8px;
-            margin-bottom: 15px;
+            gap: 6px;
+            margin-bottom: 0.12in;
           }
           .stats-grid-2 {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 8px;
-            margin-bottom: 15px;
+            gap: 6px;
+            margin-bottom: 0.12in;
           }
           .stats-grid-3 {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 8px;
-            margin-bottom: 15px;
+            gap: 6px;
+            margin-bottom: 0.12in;
           }
           .stat-card {
             background-color: #f5f5f5;
-            border: 2px solid #002147;
-            border-radius: 5px;
-            padding: 10px;
+            border: 1.5px solid #002147;
+            border-radius: 3px;
+            padding: 8px 6px;
             text-align: center;
           }
           .stat-label {
             color: #666;
-            font-size: 8px;
+            font-size: 7px;
             text-transform: uppercase;
             font-weight: bold;
-            margin-bottom: 6px;
-            letter-spacing: 0.3px;
+            margin-bottom: 4px;
+            letter-spacing: 0.2px;
+            line-height: 1;
           }
           .stat-value {
             color: #002147;
-            font-size: 26px;
+            font-size: 22px;
             font-weight: bold;
-            line-height: 1;
+            line-height: 1.2;
           }
           .colleges-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 8px;
+            gap: 6px;
           }
           .college-item {
             background-color: #f5f5f5;
             border: 1px solid #002147;
-            border-radius: 4px;
-            padding: 8px;
+            border-radius: 3px;
+            padding: 6px;
             text-align: center;
           }
           .college-name {
             color: #333;
             font-size: 7px;
-            margin-bottom: 3px;
+            margin-bottom: 2px;
             font-weight: 600;
             word-break: break-word;
+            line-height: 1.1;
           }
           .college-count {
             color: #002147;
-            font-size: 14px;
+            font-size: 13px;
             font-weight: bold;
           }
           .footer {
-            margin-top: 20px;
+            margin-top: 0.1in;
             text-align: center;
             color: #999;
             font-size: 8px;
             border-top: 1px solid #ddd;
-            padding-top: 8px;
+            padding-top: 4px;
+          }
+          @media print {
+            body, html {
+              width: 100%;
+              height: 100%;
+              margin: 0;
+              padding: 0;
+            }
+            .page {
+              width: 100%;
+              height: 100%;
+              margin: 0;
+              padding: 0.5in;
+              page-break-after: always;
+              box-shadow: none;
+            }
           }
         </style>
       </head>
@@ -646,6 +672,7 @@ export default function FinalTeamsListPage() {
           </button>
         </div>
 
+  
           <div className="flex justify-between items-center mb-6">
             <h2 className="text-lg font-bold text-[#002147]">Quick Statistics</h2>
             <button
