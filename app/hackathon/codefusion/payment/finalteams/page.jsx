@@ -472,20 +472,8 @@ export default function FinalTeamsListPage() {
         </div>
       </header>
 
-      <main className="max-w-7xl mx-auto px-6 py-8">
+      <main className="max-w-7xl mx-auto px-6 pt-[15cm] pb-8">
         
-        {!isLoading && stats.total >= 50 && (
-          <div className="mb-8 bg-gradient-to-r from-blue-50 to-cyan-50 border-l-4 border-blue-500 rounded-r-lg p-4">
-            <div className="flex items-center gap-3">
-              <span className="text-2xl">🎉</span>
-              <div>
-                <p className="font-bold text-gray-900">Milestone Achieved!</p>
-                <p className="text-sm text-gray-700">{stats.total} teams have been successfully registered</p>
-              </div>
-            </div>
-          </div>
-        )}
-
         <div className="mb-8">
           <div className="flex justify-between items-center mb-6">
             <h2 className="text-2xl font-bold text-gray-900 flex items-center gap-2">
@@ -681,64 +669,80 @@ export default function FinalTeamsListPage() {
             </div>
 
             <div className="overflow-x-auto border border-gray-200 rounded-xl bg-white">
-              <table className="w-full text-sm">
+              <table className="w-full text-xs">
                 <thead>
-                  <tr className="bg-gray-900 text-white border-b">
-                    <th className="px-4 py-3 text-left font-semibold cursor-pointer hover:bg-gray-800" onClick={() => handleSort("finalTeamId")}>
-                      <div className="flex items-center gap-2">
-                        Team ID
-                        {sortConfig.key === "finalTeamId" && (
-                          <ChevronDown className={`w-4 h-4 transition ${sortConfig.direction === "desc" ? "rotate-180" : ""}`} />
-                        )}
+                  <tr className="bg-gray-900 text-white border-b sticky top-0">
+                    <th className="px-3 py-3 text-left font-semibold cursor-pointer hover:bg-gray-800" onClick={() => handleSort("finalTeamId")}>
+                      <div className="flex items-center gap-1">
+                        Team ID {sortConfig.key === "finalTeamId" && <ChevronDown className={`w-3 h-3 transition ${sortConfig.direction === "desc" ? "rotate-180" : ""}`} />}
                       </div>
                     </th>
-                    <th className="px-4 py-3 text-left font-semibold cursor-pointer hover:bg-gray-800" onClick={() => handleSort("teamName")}>
-                      <div className="flex items-center gap-2">
-                        Team Name
-                        {sortConfig.key === "teamName" && (
-                          <ChevronDown className={`w-4 h-4 transition ${sortConfig.direction === "desc" ? "rotate-180" : ""}`} />
-                        )}
+                    <th className="px-3 py-3 text-left font-semibold cursor-pointer hover:bg-gray-800" onClick={() => handleSort("teamName")}>
+                      <div className="flex items-center gap-1">
+                        Team Name {sortConfig.key === "teamName" && <ChevronDown className={`w-3 h-3 transition ${sortConfig.direction === "desc" ? "rotate-180" : ""}`} />}
                       </div>
                     </th>
-                    <th className="px-4 py-3 text-left font-semibold">Reg ID</th>
-                    <th className="px-4 py-3 text-left font-semibold">Team Size</th>
-                    <th className="px-4 py-3 text-left font-semibold">Leader</th>
-                    <th className="px-4 py-3 text-left font-semibold">Email</th>
-                    <th className="px-4 py-3 text-left font-semibold">Phone</th>
-                    <th className="px-4 py-3 text-left font-semibold">College</th>
-                    <th className="px-4 py-3 text-left font-semibold cursor-pointer hover:bg-gray-800" onClick={() => handleSort("createdAt")}>
-                      <div className="flex items-center gap-2">
-                        Registered
-                        {sortConfig.key === "createdAt" && (
-                          <ChevronDown className={`w-4 h-4 transition ${sortConfig.direction === "desc" ? "rotate-180" : ""}`} />
-                        )}
+                    <th className="px-3 py-3 text-left font-semibold">Reg ID</th>
+                    <th className="px-3 py-3 text-left font-semibold">Size</th>
+                    <th className="px-3 py-3 text-left font-semibold">Leader Name</th>
+                    <th className="px-3 py-3 text-left font-semibold">Leader Email</th>
+                    <th className="px-3 py-3 text-left font-semibold">Leader Phone</th>
+                    <th className="px-3 py-3 text-left font-semibold">College</th>
+                    <th className="px-3 py-3 text-left font-semibold">M2 Name</th>
+                    <th className="px-3 py-3 text-left font-semibold">M2 Email</th>
+                    <th className="px-3 py-3 text-left font-semibold">M2 Phone</th>
+                    <th className="px-3 py-3 text-left font-semibold">M3 Name</th>
+                    <th className="px-3 py-3 text-left font-semibold">M3 Email</th>
+                    <th className="px-3 py-3 text-left font-semibold">M3 Phone</th>
+                    <th className="px-3 py-3 text-left font-semibold">M4 Name</th>
+                    <th className="px-3 py-3 text-left font-semibold">M4 Email</th>
+                    <th className="px-3 py-3 text-left font-semibold">M4 Phone</th>
+                    <th className="px-3 py-3 text-left font-semibold cursor-pointer hover:bg-gray-800" onClick={() => handleSort("createdAt")}>
+                      <div className="flex items-center gap-1">
+                        Registered {sortConfig.key === "createdAt" && <ChevronDown className={`w-3 h-3 transition ${sortConfig.direction === "desc" ? "rotate-180" : ""}`} />}
                       </div>
                     </th>
-                    <th className="px-4 py-3 text-left font-semibold">Domain</th>
+                    <th className="px-3 py-3 text-left font-semibold">Domain</th>
                   </tr>
                 </thead>
                 <tbody>
-                  {sortedTeams.map((team, index) => (
-                    <tr 
-                      key={team._id || team.finalTeamId} 
-                      className={`border-b hover:bg-blue-50 transition ${index % 2 === 0 ? "bg-white" : "bg-gray-50"}`}
-                    >
-                      <td className="px-4 py-3 font-semibold text-gray-900">{team.finalTeamId || "—"}</td>
-                      <td className="px-4 py-3 font-semibold text-gray-900 truncate">{team.teamName || "—"}</td>
-                      <td className="px-4 py-3 text-gray-700">{team.registrationId || "—"}</td>
-                      <td className="px-4 py-3">
-                        <span className="inline-flex items-center px-2.5 py-0.5 rounded-lg bg-blue-100 text-blue-800 font-semibold text-xs">
-                          {team.teamSize}
-                        </span>
-                      </td>
-                      <td className="px-4 py-3 text-gray-700 font-medium">{team.leader?.name || "—"}</td>
-                      <td className="px-4 py-3 text-gray-700 text-xs">{team.leader?.email || "—"}</td>
-                      <td className="px-4 py-3 text-gray-700">{team.leader?.phone || "—"}</td>
-                      <td className="px-4 py-3 text-gray-700">{team.leader?.college || "—"}</td>
-                      <td className="px-4 py-3 text-gray-700">{new Date(team.createdAt).toLocaleDateString()}</td>
-                      <td className="px-4 py-3 text-gray-700 truncate text-xs">{team.problemStatement || "—"}</td>
-                    </tr>
-                  ))}
+                  {sortedTeams.map((team, index) => {
+                    const members = team.members || [];
+                    const member2 = members[0] || {};
+                    const member3 = members[1] || {};
+                    const member4 = members[2] || {};
+                    
+                    return (
+                      <tr 
+                        key={team._id || team.finalTeamId} 
+                        className={`border-b hover:bg-blue-50 transition ${index % 2 === 0 ? "bg-white" : "bg-gray-50"}`}
+                      >
+                        <td className="px-3 py-2.5 font-semibold text-gray-900">{team.finalTeamId || "—"}</td>
+                        <td className="px-3 py-2.5 font-semibold text-gray-900 truncate">{team.teamName || "—"}</td>
+                        <td className="px-3 py-2.5 text-gray-700">{team.registrationId || "—"}</td>
+                        <td className="px-3 py-2.5">
+                          <span className="inline-flex items-center px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-semibold">
+                            {team.teamSize}
+                          </span>
+                        </td>
+                        <td className="px-3 py-2.5 text-gray-700 font-medium">{team.leader?.name || "—"}</td>
+                        <td className="px-3 py-2.5 text-gray-700">{team.leader?.email || "—"}</td>
+                        <td className="px-3 py-2.5 text-gray-700">{team.leader?.phone || "—"}</td>
+                        <td className="px-3 py-2.5 text-gray-700">{team.leader?.college || "—"}</td>
+                        <td className="px-3 py-2.5 text-gray-700">{team.teamSize >= 2 ? (member2.name || "—") : "—"}</td>
+                        <td className="px-3 py-2.5 text-gray-700">{team.teamSize >= 2 ? (member2.email || "—") : "—"}</td>
+                        <td className="px-3 py-2.5 text-gray-700">{team.teamSize >= 2 ? (member2.phone || "—") : "—"}</td>
+                        <td className="px-3 py-2.5 text-gray-700">{team.teamSize >= 3 ? (member3.name || "—") : "—"}</td>
+                        <td className="px-3 py-2.5 text-gray-700">{team.teamSize >= 3 ? (member3.email || "—") : "—"}</td>
+                        <td className="px-3 py-2.5 text-gray-700">{team.teamSize >= 3 ? (member3.phone || "—") : "—"}</td>
+                        <td className="px-3 py-2.5 text-gray-700">{team.teamSize >= 4 ? (member4.name || "—") : "—"}</td>
+                        <td className="px-3 py-2.5 text-gray-700">{team.teamSize >= 4 ? (member4.email || "—") : "—"}</td>
+                        <td className="px-3 py-2.5 text-gray-700">{team.teamSize >= 4 ? (member4.phone || "—") : "—"}</td>
+                        <td className="px-3 py-2.5 text-gray-700 whitespace-nowrap">{new Date(team.createdAt).toLocaleDateString()}</td>
+                        <td className="px-3 py-2.5 text-gray-700">{team.problemStatement || "—"}</td>
+                      </tr>
+                    );
+                  })}
                 </tbody>
               </table>
             </div>
