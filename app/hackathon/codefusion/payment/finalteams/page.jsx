@@ -470,13 +470,13 @@ export default function FinalTeamsListPage() {
       )}
 
       <header className="bg-white border-b border-[#002147]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
           <div className="flex justify-between items-center">
             <div>
-              <h1 className="text-3xl sm:text-4xl font-bold text-[#002147]">
+              <h1 className="text-2xl font-bold text-[#002147]">
                 Final Teams Dashboard
               </h1>
-              <p className="text-sm text-gray-600 mt-1">
+              <p className="text-xs text-gray-600 mt-0.5">
                 CodeFusion 2026 - Selected Teams
               </p>
             </div>
@@ -484,30 +484,30 @@ export default function FinalTeamsListPage() {
         </div>
       </header>
 
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-12">
-        <div className="mb-6 flex items-center justify-between">
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-8">
+        <div className="mb-4 flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
-            <span className="text-sm font-semibold text-gray-700">Live Status</span>
+            <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+            <span className="text-xs font-semibold text-gray-700">Live Status</span>
           </div>
           <button
             onClick={fetchTeams}
-            className="px-4 py-2 bg-[#002147] text-white rounded-lg hover:bg-blue-900 transition text-sm font-medium"
+            className="px-3 py-1.5 bg-[#002147] text-white rounded text-xs font-medium"
           >
             Refresh
           </button>
         </div>
 
-        <div className="mb-8">
-          <div className="space-y-3">
+        <div className="mb-6">
+          <div className="space-y-2">
             {stats.total >= 50 && stats.total <= 55 && (
-              <div className="bg-gradient-to-r from-blue-50 to-blue-100 border-l-4 border-blue-500 p-4 rounded-lg shadow-sm">
+              <div className="bg-gradient-to-r from-blue-50 to-blue-100 border-l-4 border-blue-500 p-3 rounded shadow-sm">
                 <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-3">
-                    <span className="text-2xl">🎉</span>
+                  <div className="flex items-center gap-2">
+                    <span className="text-lg">🎉</span>
                     <div>
-                      <p className="font-bold text-blue-900">Milestone Reached: 50+ Final Teams!</p>
-                      <p className="text-sm text-blue-700">Congratulations on selecting 50+ teams</p>
+                      <p className="font-bold text-blue-900 text-sm">Milestone Reached: 50+ Final Teams!</p>
+                      <p className="text-xs text-blue-700">Congratulations on selecting 50+ teams</p>
                     </div>
                   </div>
                   <div className="text-right">
@@ -518,13 +518,13 @@ export default function FinalTeamsListPage() {
             )}
 
             {stats.total >= 100 && stats.total <= 105 && (
-              <div className="bg-gradient-to-r from-purple-50 to-purple-100 border-l-4 border-purple-500 p-4 rounded-lg shadow-sm">
+              <div className="bg-gradient-to-r from-purple-50 to-purple-100 border-l-4 border-purple-500 p-3 rounded shadow-sm">
                 <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-3">
-                    <span className="text-2xl">✨</span>
+                  <div className="flex items-center gap-2">
+                    <span className="text-lg">✨</span>
                     <div>
-                      <p className="font-bold text-purple-900">Milestone Reached: 100+ Final Teams!</p>
-                      <p className="text-sm text-purple-700">Amazing progress - 100+ teams selected!</p>
+                      <p className="font-bold text-purple-900 text-sm">Milestone Reached: 100+ Final Teams!</p>
+                      <p className="text-xs text-purple-700">Amazing progress - 100+ teams selected!</p>
                     </div>
                   </div>
                   <div className="text-right">
@@ -592,13 +592,13 @@ export default function FinalTeamsListPage() {
         </div>
 
         {!isLoading && domains.length > 0 && (
-          <div className="bg-indigo-50 rounded-lg p-5 mb-8 border border-indigo-200">
-            <h3 className="font-bold text-[#002147] mb-4 text-sm">Domain-wise Distribution</h3>
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
+          <div className="bg-indigo-50 rounded p-3 mb-6 border border-indigo-200">
+            <h3 className="font-bold text-[#002147] mb-3 text-xs">Domain-wise Distribution</h3>
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2">
               {Object.entries(stats.domainStats).map(([domain, count]) => (
-                <div key={domain} className="bg-white rounded-lg p-3 border border-indigo-100 text-center hover:shadow-md transition">
-                  <p className="text-xs text-gray-600 truncate mb-2 font-medium">{domain}</p>
-                  <p className="text-2xl font-bold text-indigo-600">{count}</p>
+                <div key={domain} className="bg-white rounded p-2 border border-indigo-100 text-center hover:shadow transition">
+                  <p className="text-xs text-gray-600 truncate mb-1 font-medium">{domain}</p>
+                  <p className="text-lg font-bold text-indigo-600">{count}</p>
                 </div>
               ))}
             </div>
@@ -606,15 +606,15 @@ export default function FinalTeamsListPage() {
         )}
 
         {!isLoading && colleges.length > 0 && (
-          <div className="bg-[#00214710] rounded-lg p-5 mb-8 border border-[#002147]">
-            <h3 className="font-bold text-[#002147] mb-4 text-sm">College Statistics</h3>
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
+          <div className="bg-[#00214710] rounded p-3 mb-6 border border-[#002147]">
+            <h3 className="font-bold text-[#002147] mb-3 text-xs">College Statistics</h3>
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2">
               {colleges.map(college => {
                 const count = teams.filter(t => normalizeCollege(t.leader?.college) === normalizeCollege(college)).length;
                 return (
-                  <div key={college} className="text-center bg-white p-3 rounded-lg border border-[#002147] border-opacity-20">
-                    <p className="text-xs text-gray-600 truncate mb-2">{college}</p>
-                    <p className="text-2xl font-bold text-[#002147]">{count}</p>
+                  <div key={college} className="text-center bg-white p-2 rounded border border-[#002147] border-opacity-20">
+                    <p className="text-xs text-gray-600 truncate mb-1">{college}</p>
+                    <p className="text-lg font-bold text-[#002147]">{count}</p>
                   </div>
                 );
               })}
@@ -622,41 +622,41 @@ export default function FinalTeamsListPage() {
           </div>
         )}
 
-        <div className="bg-gradient-to-r from-red-50 via-yellow-50 to-teal-50 rounded-lg p-6 mb-8 border border-gray-200">
-          <h3 className="text-center font-bold text-[#002147] mb-6 text-base">State-wise Registration</h3>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-            <div className="bg-white rounded-lg border border-red-200 p-4 text-center hover:shadow-md transition">
-              <p className="text-xs font-semibold text-gray-600 mb-2">Andhra Pradesh</p>
-              <p className="text-3xl font-bold text-red-600">{isLoading ? "..." : stats.ap}</p>
+        <div className="rounded p-3 mb-6 border border-gray-200 max-w-2xl">
+          <h3 className="font-bold text-[#002147] mb-2 text-xs">State-wise Registration</h3>
+          <div className="grid grid-cols-3 gap-2">
+            <div className="bg-gradient-to-br from-red-50 to-red-100 rounded border border-red-200 p-2 text-center hover:shadow transition">
+              <p className="text-xs font-semibold text-red-700">Andhra Pradesh</p>
+              <p className="text-xl font-bold text-red-600">{isLoading ? "..." : stats.ap}</p>
             </div>
-            <div className="bg-white rounded-lg border border-yellow-200 p-4 text-center hover:shadow-md transition">
-              <p className="text-xs font-semibold text-gray-600 mb-2">Tamil Nadu</p>
-              <p className="text-3xl font-bold text-yellow-600">{isLoading ? "..." : stats.tn}</p>
+            <div className="bg-gradient-to-br from-yellow-50 to-yellow-100 rounded border border-yellow-200 p-2 text-center hover:shadow transition">
+              <p className="text-xs font-semibold text-yellow-700">Tamil Nadu</p>
+              <p className="text-xl font-bold text-yellow-600">{isLoading ? "..." : stats.tn}</p>
             </div>
-            <div className="bg-white rounded-lg border border-teal-200 p-4 text-center hover:shadow-md transition">
-              <p className="text-xs font-semibold text-gray-600 mb-2">Telangana</p>
-              <p className="text-3xl font-bold text-teal-600">{isLoading ? "..." : stats.tg}</p>
+            <div className="bg-gradient-to-br from-teal-50 to-teal-100 rounded border border-teal-200 p-2 text-center hover:shadow transition">
+              <p className="text-xs font-semibold text-teal-700">Telangana</p>
+              <p className="text-xl font-bold text-teal-600">{isLoading ? "..." : stats.tg}</p>
             </div>
           </div>
         </div>
 
-        <div className="bg-white rounded-lg border border-gray-200 p-6 mb-8">
-          <div className="flex flex-col sm:flex-row gap-4">
+        <div className="bg-white rounded border border-gray-200 p-4 mb-6">
+          <div className="flex flex-col sm:flex-row gap-2">
             <div className="flex-1 relative">
-              <Search className="absolute left-3 top-3 text-gray-400 w-5 h-5" />
+              <Search className="absolute left-2.5 top-2.5 text-gray-400 w-4 h-4" />
               <input
                 type="text"
                 placeholder="Search by team name, ID, or leader..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#002147] text-sm"
+                className="w-full pl-8 pr-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-[#002147] text-xs"
               />
             </div>
 
             <select
               value={selectedCollege}
               onChange={(e) => setSelectedCollege(e.target.value)}
-              className="px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#002147] bg-white text-sm cursor-pointer"
+              className="px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-[#002147] bg-white text-xs cursor-pointer"
             >
               <option value="all">All Colleges</option>
               {colleges.map(college => (
@@ -667,7 +667,7 @@ export default function FinalTeamsListPage() {
             <select
               value={selectedDomain}
               onChange={(e) => setSelectedDomain(e.target.value)}
-              className="px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#002147] bg-white text-sm cursor-pointer"
+              className="px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-[#002147] bg-white text-xs cursor-pointer"
             >
               <option value="all">All Domains</option>
               {domains.map(domain => (
@@ -711,75 +711,75 @@ export default function FinalTeamsListPage() {
 
         {!isLoading && !error && sortedTeams.length > 0 && (
           <div>
-            <div className="flex justify-between items-center mb-6">
-              <h2 className="text-lg font-bold text-[#002147]">Final Teams Details</h2>
+            <div className="flex justify-between items-center mb-4">
+              <h2 className="text-sm font-bold text-[#002147]">Final Teams Details</h2>
               <button
                 onClick={downloadTeamsAsExcel}
-                className="flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg transition duration-200 text-sm font-medium"
+                className="flex items-center gap-1 bg-green-600 hover:bg-green-700 text-white px-3 py-1.5 rounded text-xs font-medium"
               >
-                <Download className="w-4 h-4" />
+                <Download className="w-3 h-3" />
                 Download Teams
               </button>
             </div>
 
-            <div className="overflow-x-auto border border-gray-200 rounded-lg">
-              <table className="w-full text-sm">
+            <div className="overflow-x-auto border border-gray-200 rounded">
+              <table className="w-full text-xs">
                 <thead>
                   <tr className="bg-[#002147] text-white border-b">
-                    <th className="px-4 py-3 text-left font-semibold cursor-pointer hover:bg-blue-900" onClick={() => handleSort("finalTeamId")}>
-                      <div className="flex items-center gap-2">
+                    <th className="px-2 py-2 text-left font-semibold cursor-pointer hover:bg-blue-900" onClick={() => handleSort("finalTeamId")}>
+                      <div className="flex items-center gap-1">
                         Final Team ID
                         {sortConfig.key === "finalTeamId" && (
-                          <ChevronDown className={`w-4 h-4 transition ${sortConfig.direction === "desc" ? "rotate-180" : ""}`} />
+                          <ChevronDown className={`w-3 h-3 transition ${sortConfig.direction === "desc" ? "rotate-180" : ""}`} />
                         )}
                       </div>
                     </th>
-                    <th className="px-4 py-3 text-left font-semibold cursor-pointer hover:bg-blue-900" onClick={() => handleSort("teamName")}>
-                      <div className="flex items-center gap-2">
+                    <th className="px-2 py-2 text-left font-semibold cursor-pointer hover:bg-blue-900" onClick={() => handleSort("teamName")}>
+                      <div className="flex items-center gap-1">
                         Team Name
                         {sortConfig.key === "teamName" && (
-                          <ChevronDown className={`w-4 h-4 transition ${sortConfig.direction === "desc" ? "rotate-180" : ""}`} />
+                          <ChevronDown className={`w-3 h-3 transition ${sortConfig.direction === "desc" ? "rotate-180" : ""}`} />
                         )}
                       </div>
                     </th>
-                    <th className="px-4 py-3 text-left font-semibold cursor-pointer hover:bg-blue-900" onClick={() => handleSort("registrationId")}>
-                      <div className="flex items-center gap-2">
+                    <th className="px-2 py-2 text-left font-semibold cursor-pointer hover:bg-blue-900" onClick={() => handleSort("registrationId")}>
+                      <div className="flex items-center gap-1">
                         Reg ID
                         {sortConfig.key === "registrationId" && (
-                          <ChevronDown className={`w-4 h-4 transition ${sortConfig.direction === "desc" ? "rotate-180" : ""}`} />
+                          <ChevronDown className={`w-3 h-3 transition ${sortConfig.direction === "desc" ? "rotate-180" : ""}`} />
                         )}
                       </div>
                     </th>
-                    <th className="px-4 py-3 text-left font-semibold cursor-pointer hover:bg-blue-900" onClick={() => handleSort("teamSize")}>
-                      <div className="flex items-center gap-2">
+                    <th className="px-2 py-2 text-left font-semibold cursor-pointer hover:bg-blue-900" onClick={() => handleSort("teamSize")}>
+                      <div className="flex items-center gap-1">
                         Size
                         {sortConfig.key === "teamSize" && (
-                          <ChevronDown className={`w-4 h-4 transition ${sortConfig.direction === "desc" ? "rotate-180" : ""}`} />
+                          <ChevronDown className={`w-3 h-3 transition ${sortConfig.direction === "desc" ? "rotate-180" : ""}`} />
                         )}
                       </div>
                     </th>
-                    <th className="px-4 py-3 text-left font-semibold">Leader Name</th>
-                    <th className="px-4 py-3 text-left font-semibold">Email</th>
-                    <th className="px-4 py-3 text-left font-semibold">Phone</th>
-                    <th className="px-4 py-3 text-left font-semibold">College</th>
-                    <th className="px-4 py-3 text-left font-semibold">M2 Name</th>
-                    <th className="px-4 py-3 text-left font-semibold">M2 Email</th>
-                    <th className="px-4 py-3 text-left font-semibold">M2 Phone</th>
-                    <th className="px-4 py-3 text-left font-semibold">M3 Name</th>
-                    <th className="px-4 py-3 text-left font-semibold">M3 Email</th>
-                    <th className="px-4 py-3 text-left font-semibold">M3 Phone</th>
-                    <th className="px-4 py-3 text-left font-semibold">M4 Name</th>
-                    <th className="px-4 py-3 text-left font-semibold">M4 Email</th>
-                    <th className="px-4 py-3 text-left font-semibold">M4 Phone</th>
-                    <th className="px-4 py-3 text-left font-semibold cursor-pointer hover:bg-blue-900" onClick={() => handleSort("createdAt")}>
-                      <div className="flex items-center gap-2">
+                    <th className="px-2 py-2 text-left font-semibold">Leader Name</th>
+                    <th className="px-2 py-2 text-left font-semibold">Email</th>
+                    <th className="px-2 py-2 text-left font-semibold">Phone</th>
+                    <th className="px-2 py-2 text-left font-semibold">College</th>
+                    <th className="px-2 py-2 text-left font-semibold">M2 Name</th>
+                    <th className="px-2 py-2 text-left font-semibold">M2 Email</th>
+                    <th className="px-2 py-2 text-left font-semibold">M2 Phone</th>
+                    <th className="px-2 py-2 text-left font-semibold">M3 Name</th>
+                    <th className="px-2 py-2 text-left font-semibold">M3 Email</th>
+                    <th className="px-2 py-2 text-left font-semibold">M3 Phone</th>
+                    <th className="px-2 py-2 text-left font-semibold">M4 Name</th>
+                    <th className="px-2 py-2 text-left font-semibold">M4 Email</th>
+                    <th className="px-2 py-2 text-left font-semibold">M4 Phone</th>
+                    <th className="px-2 py-2 text-left font-semibold cursor-pointer hover:bg-blue-900" onClick={() => handleSort("createdAt")}>
+                      <div className="flex items-center gap-1">
                         Registered On
                         {sortConfig.key === "createdAt" && (
-                          <ChevronDown className={`w-4 h-4 transition ${sortConfig.direction === "desc" ? "rotate-180" : ""}`} />
+                          <ChevronDown className={`w-3 h-3 transition ${sortConfig.direction === "desc" ? "rotate-180" : ""}`} />
                         )}
                       </div>
                     </th>
-                    <th className="px-4 py-3 text-left font-semibold">Domain</th>
+                    <th className="px-2 py-2 text-left font-semibold">Domain</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -794,29 +794,29 @@ export default function FinalTeamsListPage() {
                         key={team._id || team.finalTeamId} 
                         className={`border-b hover:bg-[#00214710] transition ${index % 2 === 0 ? "bg-white" : "bg-gray-50"}`}
                       >
-                        <td className="px-4 py-3 font-semibold text-gray-900 text-xs">{team.finalTeamId || "—"}</td>
-                        <td className="px-4 py-3 font-semibold text-gray-900 truncate">{team.teamName || "—"}</td>
-                        <td className="px-4 py-3 text-gray-700 text-xs">{team.registrationId || "—"}</td>
-                        <td className="px-4 py-3 text-gray-700">
-                          <span className="bg-[#00214710] text-[#002147] px-2 py-1 rounded font-semibold">
+                        <td className="px-2 py-2 font-semibold text-gray-900">{team.finalTeamId || "—"}</td>
+                        <td className="px-2 py-2 font-semibold text-gray-900 truncate">{team.teamName || "—"}</td>
+                        <td className="px-2 py-2 text-gray-700">{team.registrationId || "—"}</td>
+                        <td className="px-2 py-2 text-gray-700">
+                          <span className="bg-[#00214710] text-[#002147] px-1.5 py-0.5 rounded font-semibold text-xs">
                             {team.teamSize}
                           </span>
                         </td>
-                        <td className="px-4 py-3 text-gray-700 text-xs">{team.leader?.name || "—"}</td>
-                        <td className="px-4 py-3 text-gray-700 text-xs">{team.leader?.email || "—"}</td>
-                        <td className="px-4 py-3 text-gray-700 text-xs">{team.leader?.phone || "—"}</td>
-                        <td className="px-4 py-3 text-gray-700 text-xs">{team.leader?.college || "—"}</td>
-                        <td className="px-4 py-3 text-gray-700 text-xs">{team.teamSize >= 2 ? (member2.name || "—") : "—"}</td>
-                        <td className="px-4 py-3 text-gray-700 text-xs">{team.teamSize >= 2 ? (member2.email || "—") : "—"}</td>
-                        <td className="px-4 py-3 text-gray-700 text-xs">{team.teamSize >= 2 ? (member2.phone || "—") : "—"}</td>
-                        <td className="px-4 py-3 text-gray-700 text-xs">{team.teamSize >= 3 ? (member3.name || "—") : "—"}</td>
-                        <td className="px-4 py-3 text-gray-700 text-xs">{team.teamSize >= 3 ? (member3.email || "—") : "—"}</td>
-                        <td className="px-4 py-3 text-gray-700 text-xs">{team.teamSize >= 3 ? (member3.phone || "—") : "—"}</td>
-                        <td className="px-4 py-3 text-gray-700 text-xs">{team.teamSize >= 4 ? (member4.name || "—") : "—"}</td>
-                        <td className="px-4 py-3 text-gray-700 text-xs">{team.teamSize >= 4 ? (member4.email || "—") : "—"}</td>
-                        <td className="px-4 py-3 text-gray-700 text-xs">{team.teamSize >= 4 ? (member4.phone || "—") : "—"}</td>
-                        <td className="px-4 py-3 text-gray-700 text-xs">{new Date(team.createdAt).toLocaleDateString()}</td>
-                        <td className="px-4 py-3 text-gray-700 text-xs max-w-xs truncate">{team.problemStatement || "—"}</td>
+                        <td className="px-2 py-2 text-gray-700">{team.leader?.name || "—"}</td>
+                        <td className="px-2 py-2 text-gray-700">{team.leader?.email || "—"}</td>
+                        <td className="px-2 py-2 text-gray-700">{team.leader?.phone || "—"}</td>
+                        <td className="px-2 py-2 text-gray-700">{team.leader?.college || "—"}</td>
+                        <td className="px-2 py-2 text-gray-700">{team.teamSize >= 2 ? (member2.name || "—") : "—"}</td>
+                        <td className="px-2 py-2 text-gray-700">{team.teamSize >= 2 ? (member2.email || "—") : "—"}</td>
+                        <td className="px-2 py-2 text-gray-700">{team.teamSize >= 2 ? (member2.phone || "—") : "—"}</td>
+                        <td className="px-2 py-2 text-gray-700">{team.teamSize >= 3 ? (member3.name || "—") : "—"}</td>
+                        <td className="px-2 py-2 text-gray-700">{team.teamSize >= 3 ? (member3.email || "—") : "—"}</td>
+                        <td className="px-2 py-2 text-gray-700">{team.teamSize >= 3 ? (member3.phone || "—") : "—"}</td>
+                        <td className="px-2 py-2 text-gray-700">{team.teamSize >= 4 ? (member4.name || "—") : "—"}</td>
+                        <td className="px-2 py-2 text-gray-700">{team.teamSize >= 4 ? (member4.email || "—") : "—"}</td>
+                        <td className="px-2 py-2 text-gray-700">{team.teamSize >= 4 ? (member4.phone || "—") : "—"}</td>
+                        <td className="px-2 py-2 text-gray-700">{new Date(team.createdAt).toLocaleDateString()}</td>
+                        <td className="px-2 py-2 text-gray-700 max-w-xs truncate">{team.problemStatement || "—"}</td>
                       </tr>
                     );
                   })}
@@ -827,7 +827,7 @@ export default function FinalTeamsListPage() {
         )}
 
         {!isLoading && !error && sortedTeams.length > 0 && (
-          <div className="mt-6 text-sm text-gray-600 text-center">
+          <div className="mt-4 text-xs text-gray-600 text-center">
             Showing {sortedTeams.length} of {teams.length} final teams
           </div>
         )}
