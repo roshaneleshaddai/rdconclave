@@ -137,8 +137,8 @@ export default function FinalTeamsListPage() {
     });
 
     const totalTeams = teamsData.length;
-    const college3 = teamsData.filter(t => t.teamSize == 3).length;
-    const college4 = teamsData.filter(t => t.teamSize == 4).length;
+    const college3 = teamsData.filter(t => t.teamSize === 3).length;
+    const college4 = teamsData.filter(t => t.teamSize === 4).length;
 
     const ap = teamsData.filter(t => {
       const college = t.leader?.college?.toLowerCase() || "";
@@ -167,6 +167,40 @@ export default function FinalTeamsListPage() {
       domainStats: domainCounts
     });
   };
+
+  const filteredTeams = teams.filter(team => {
+    const matchesSearch = 
+      team.teamName.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      team.registrationId.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      team.leader?.name.toLowerCase().includes(searchQuery.toLowerCase());
+    
+    const matchesCollege = selectedCollege === "all" || 
+      normalizeCollege(team.leader?.college) === normalizeCollege(selectedCollege);
+    
+    const matchesDomain = selectedDomain === "all" || 
+      team.problemStatement === selectedDomain;
+    
+    return matchesSearch && matchesCollege && matchesDomain;
+  });
+
+  const sortedTeams = [...filteredTeams].sort((a, b) => {
+    const aVal = a[sortConfig.key];
+    const bVal = b[sortConfig.key];
+    
+    if (sortConfig.key === "createdAt") {
+      return sortConfig.direction === "asc" 
+        ? new Date(aVal) - new Date(bVal)
+        : new Date(bVal) - new Date(aVal);
+    }
+    
+    if (typeof aVal === "string") {
+      return sortConfig.direction === "asc"
+        ? aVal.localeCompare(bVal)
+        : bVal.localeCompare(aVal);
+    }
+    
+    return sortConfig.direction === "asc" ? aVal - bVal : bVal - aVal;
+  });
 
   const downloadStatisticsAsPDF = () => {
     let htmlContent = `
@@ -365,7 +399,9 @@ export default function FinalTeamsListPage() {
     
     const printWindow = window.open(url, "_blank");
     setTimeout(() => {
-      printWindow.print();
+      if (printWindow) {
+        printWindow.print();
+      }
     }, 250);
     
     document.body.removeChild(link);
@@ -423,40 +459,6 @@ export default function FinalTeamsListPage() {
     router.push("/hackathon/codefusion/register/teams");
   };
 
-  const filteredTeams = teams.filter(team => {
-    const matchesSearch = 
-      team.teamName.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      team.registrationId.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      team.leader?.name.toLowerCase().includes(searchQuery.toLowerCase());
-    
-    const matchesCollege = selectedCollege === "all" || 
-      normalizeCollege(team.leader?.college) === normalizeCollege(selectedCollege);
-    
-    const matchesDomain = selectedDomain === "all" || 
-      team.problemStatement === selectedDomain;
-    
-    return matchesSearch && matchesCollege && matchesDomain;
-  });
-
-  const sortedTeams = [...filteredTeams].sort((a, b) => {
-    const aVal = a[sortConfig.key];
-    const bVal = b[sortConfig.key];
-    
-    if (sortConfig.key === "createdAt") {
-      return sortConfig.direction === "asc" 
-        ? new Date(aVal) - new Date(bVal)
-        : new Date(bVal) - new Date(aVal);
-    }
-    
-    if (typeof aVal === "string") {
-      return sortConfig.direction === "asc"
-        ? aVal.localeCompare(bVal)
-        : bVal.localeCompare(aVal);
-    }
-    
-    return sortConfig.direction === "asc" ? aVal - bVal : bVal - aVal;
-  });
-
   const handleSort = (key) => {
     setSortConfig(prev => ({
       key,
@@ -509,7 +511,7 @@ export default function FinalTeamsListPage() {
           </button>
         </div>
 
-        <div>
+        
           <div className="flex justify-between items-center mb-6">
             <h2 className="text-lg font-bold text-[#002147]">Quick Statistics</h2>
             <button
