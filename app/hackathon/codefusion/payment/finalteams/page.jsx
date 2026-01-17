@@ -574,7 +574,7 @@ export default function FinalTeamsListPage() {
           </button>
         </div>
 
-     
+       
           <div className="flex justify-between items-center mb-6">
             <h2 className="text-lg font-bold text-[#002147]">Quick Statistics</h2>
             <button
