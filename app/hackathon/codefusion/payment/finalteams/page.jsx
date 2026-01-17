@@ -32,6 +32,7 @@ export default function FinalTeamsListPage() {
     totalColleges: 0,
     college3: 0, 
     college4: 0,
+    collegeCountMap: {},
     domainStats: {} 
   });
 
@@ -119,14 +120,22 @@ export default function FinalTeamsListPage() {
 
   const calculateStats = (teamsData) => {
     const collegeSet = new Set();
+    const collegeCountMap = {};
     const domainCounts = {};
 
     let totalParticipants = 0;
 
     teamsData.forEach(team => {
-      if (team.leader?.college) {
-        collegeSet.add(normalizeCollege(team.leader.college));
-      }
+      // Collect all colleges from team (leader + all members)
+      const allMembers = [team.leader, ...(team.members || [])].filter(Boolean);
+      
+      allMembers.forEach(member => {
+        if (member?.college) {
+          const normalized = normalizeCollege(member.college);
+          collegeSet.add(normalized);
+          collegeCountMap[normalized] = (collegeCountMap[normalized] || 0) + 1;
+        }
+      });
 
       if (team.problemStatement) {
         domainCounts[team.problemStatement] =
@@ -141,18 +150,27 @@ export default function FinalTeamsListPage() {
     const college4 = teamsData.filter(t => t.teamSize === 4).length;
 
     const ap = teamsData.filter(t => {
-      const college = t.leader?.college?.toLowerCase() || "";
-      return college.includes("andhra") || college.includes("ap");
+      const allMembers = [t.leader, ...(t.members || [])].filter(Boolean);
+      return allMembers.some(member => {
+        const college = member?.college?.toLowerCase() || "";
+        return college.includes("andhra") || college.includes("ap");
+      });
     }).length;
     
     const tn = teamsData.filter(t => {
-      const college = t.leader?.college?.toLowerCase() || "";
-      return college.includes("tamil") || college.includes("tn");
+      const allMembers = [t.leader, ...(t.members || [])].filter(Boolean);
+      return allMembers.some(member => {
+        const college = member?.college?.toLowerCase() || "";
+        return college.includes("tamil") || college.includes("tn");
+      });
     }).length;
     
     const tg = teamsData.filter(t => {
-      const college = t.leader?.college?.toLowerCase() || "";
-      return college.includes("telangana") || college.includes("tg") || college.includes("hyderabad");
+      const allMembers = [t.leader, ...(t.members || [])].filter(Boolean);
+      return allMembers.some(member => {
+        const college = member?.college?.toLowerCase() || "";
+        return college.includes("telangana") || college.includes("tg") || college.includes("hyderabad");
+      });
     }).length;
 
     setStats({
@@ -164,6 +182,7 @@ export default function FinalTeamsListPage() {
       college3: college3,
       college4: college4,
       totalColleges: collegeSet.size,
+      collegeCountMap: collegeCountMap,
       domainStats: domainCounts
     });
   };
@@ -349,10 +368,10 @@ export default function FinalTeamsListPage() {
             </div>
           </div>
 
-          <div class="section-title">Colleges Distribution</div>
+          <div class="section-title">Colleges Distribution (All Team Members)</div>
           <div class="colleges-grid">
             ${colleges.map(college => {
-              const count = teams.filter(t => normalizeCollege(t.leader?.college) === normalizeCollege(college)).length;
+              const count = stats.collegeCountMap?.[normalizeCollege(college)] || 0;
               return `
                 <div class="college-item">
                   <div class="college-name">${college}</div>
@@ -511,7 +530,7 @@ export default function FinalTeamsListPage() {
           </button>
         </div>
 
-        
+      
           <div className="flex justify-between items-center mb-6">
             <h2 className="text-lg font-bold text-[#002147]">Quick Statistics</h2>
             <button
@@ -581,10 +600,10 @@ export default function FinalTeamsListPage() {
 
         {!isLoading && colleges.length > 0 && (
           <div className="bg-[#00214710] rounded-lg p-5 mb-8 border border-[#002147]">
-            <h3 className="font-bold text-[#002147] mb-4 text-sm">College Statistics</h3>
+            <h3 className="font-bold text-[#002147] mb-4 text-sm">College Statistics (Count from all team members)</h3>
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
               {colleges.map(college => {
-                const count = teams.filter(t => normalizeCollege(t.leader?.college) === normalizeCollege(college)).length;
+                const count = stats.collegeCountMap?.[normalizeCollege(college)] || 0;
                 return (
                   <div key={college} className="text-center bg-white p-3 rounded-lg border border-[#002147] border-opacity-20">
                     <p className="text-xs text-gray-600 truncate mb-2">{college}</p>
