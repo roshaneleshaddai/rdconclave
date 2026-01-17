@@ -443,7 +443,7 @@ export default function FinalTeamsListPage() {
   };
 
   return (
-    <div className="min-h-screen bg-white font-sans pt-64">
+    <div className="min-h-screen bg-white font-sans pt-48">
       {showCelebration && (
         <div className="fixed inset-0 z-[9999] bg-white/90 flex items-center justify-center overflow-hidden">
           {[...Array(60)].map((_, i) => (
