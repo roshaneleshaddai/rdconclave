@@ -124,9 +124,10 @@ export default function FinalTeamsListPage() {
     const domainCounts = {};
 
     let totalParticipants = 0;
+    let totalCollegeParticipants = 0;
 
     teamsData.forEach(team => {
-      // Collect all colleges from team (leader + all members)
+      // For Quick Statistics - count all colleges from all team members
       const allMembers = [team.leader, ...(team.members || [])].filter(Boolean);
       
       allMembers.forEach(member => {
@@ -368,10 +369,10 @@ export default function FinalTeamsListPage() {
             </div>
           </div>
 
-          <div class="section-title">Colleges Distribution (All Team Members)</div>
+          <div class="section-title">Colleges Distribution (Team Leader Count)</div>
           <div class="colleges-grid">
             ${colleges.map(college => {
-              const count = stats.collegeCountMap?.[normalizeCollege(college)] || 0;
+              const count = teams.filter(t => normalizeCollege(t.leader?.college) === normalizeCollege(college)).length;
               return `
                 <div class="college-item">
                   <div class="college-name">${college}</div>
@@ -530,7 +531,6 @@ export default function FinalTeamsListPage() {
           </button>
         </div>
 
-      
           <div className="flex justify-between items-center mb-6">
             <h2 className="text-lg font-bold text-[#002147]">Quick Statistics</h2>
             <button
@@ -600,10 +600,10 @@ export default function FinalTeamsListPage() {
 
         {!isLoading && colleges.length > 0 && (
           <div className="bg-[#00214710] rounded-lg p-5 mb-8 border border-[#002147]">
-            <h3 className="font-bold text-[#002147] mb-4 text-sm">College Statistics (Count from all team members)</h3>
+            <h3 className="font-bold text-[#002147] mb-4 text-sm">College Statistics (Team Leader Count)</h3>
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
               {colleges.map(college => {
-                const count = stats.collegeCountMap?.[normalizeCollege(college)] || 0;
+                const count = teams.filter(t => normalizeCollege(t.leader?.college) === normalizeCollege(college)).length;
                 return (
                   <div key={college} className="text-center bg-white p-3 rounded-lg border border-[#002147] border-opacity-20">
                     <p className="text-xs text-gray-600 truncate mb-2">{college}</p>
