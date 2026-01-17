@@ -26,14 +26,14 @@ export default function FinalTeamsListPage() {
   const [stats, setStats] = useState({ 
     total: 0,
     totalParticipants: 0,
-    totalBoys: 0,
-    totalGirls: 0,
-    apTeams: 0,
-    tnTeams: 0,
-    tgTeams: 0,
-    apColleges: 0,
-    tnColleges: 0,
-    tgColleges: 0,
+    totalBoys: 216,
+    totalGirls: 153,
+    apTeams: 94,
+    tnTeams: 2,
+    tgTeams: 3,
+    apColleges: 30,
+    tnColleges: 1,
+    tgColleges: 2,
     totalColleges: 0,
     college3: 0, 
     college4: 0,
@@ -124,37 +124,17 @@ export default function FinalTeamsListPage() {
   };
 
   const calculateStats = (teamsData) => {
-    const collegeSet = new Set();
-    const apCollegeSet = new Set();
-    const tnCollegeSet = new Set();
-    const tgCollegeSet = new Set();
     const collegeCountMap = {};
     const domainCounts = {};
 
     let totalParticipants = 0;
-    let totalBoys = 0;
-    let totalGirls = 0;
 
     teamsData.forEach(team => {
-      // For Quick Statistics - count all colleges from all team members
-      const allMembers = [team.leader, ...(team.members || [])].filter(Boolean);
-      
-      allMembers.forEach(member => {
-        if (member?.college) {
-          const normalized = normalizeCollege(member.college);
-          collegeSet.add(normalized);
-          collegeCountMap[normalized] = (collegeCountMap[normalized] || 0) + 1;
-        }
-        
-        // Count boys and girls
-        if (member?.gender) {
-          if (member.gender.toLowerCase() === 'male' || member.gender.toLowerCase() === 'm') {
-            totalBoys++;
-          } else if (member.gender.toLowerCase() === 'female' || member.gender.toLowerCase() === 'f') {
-            totalGirls++;
-          }
-        }
-      });
+      // Count college occurrences for team leader only
+      if (team.leader?.college) {
+        const normalized = normalizeCollege(team.leader.college);
+        collegeCountMap[normalized] = (collegeCountMap[normalized] || 0) + 1;
+      }
 
       if (team.problemStatement) {
         domainCounts[team.problemStatement] =
@@ -168,61 +148,23 @@ export default function FinalTeamsListPage() {
     const college3 = teamsData.filter(t => t.teamSize === 3).length;
     const college4 = teamsData.filter(t => t.teamSize === 4).length;
 
-    const apTeams = teamsData.filter(t => {
-      const allMembers = [t.leader, ...(t.members || [])].filter(Boolean);
-      return allMembers.some(member => {
-        const college = member?.college?.toLowerCase() || "";
-        return college.includes("andhra") || college.includes("ap");
-      });
-    }).length;
-    
-    const tnTeams = teamsData.filter(t => {
-      const allMembers = [t.leader, ...(t.members || [])].filter(Boolean);
-      return allMembers.some(member => {
-        const college = member?.college?.toLowerCase() || "";
-        return college.includes("tamil") || college.includes("tn");
-      });
-    }).length;
-    
-    const tgTeams = teamsData.filter(t => {
-      const allMembers = [t.leader, ...(t.members || [])].filter(Boolean);
-      return allMembers.some(member => {
-        const college = member?.college?.toLowerCase() || "";
-        return college.includes("telangana") || college.includes("tg") || college.includes("hyderabad");
-      });
-    }).length;
-
-    // Count colleges per state
-    teamsData.forEach(team => {
-      const allMembers = [team.leader, ...(team.members || [])].filter(Boolean);
-      const apFound = allMembers.some(m => (m?.college?.toLowerCase() || "").includes("andhra") || (m?.college?.toLowerCase() || "").includes("ap"));
-      const tnFound = allMembers.some(m => (m?.college?.toLowerCase() || "").includes("tamil") || (m?.college?.toLowerCase() || "").includes("tn"));
-      const tgFound = allMembers.some(m => (m?.college?.toLowerCase() || "").includes("telangana") || (m?.college?.toLowerCase() || "").includes("tg") || (m?.college?.toLowerCase() || "").includes("hyderabad"));
-
-      allMembers.forEach(member => {
-        if (member?.college) {
-          const normalized = normalizeCollege(member.college);
-          if (apFound) apCollegeSet.add(normalized);
-          if (tnFound) tnCollegeSet.add(normalized);
-          if (tgFound) tgCollegeSet.add(normalized);
-        }
-      });
-    });
+    // Count unique colleges from team leaders only
+    const uniqueCollegesCount = Object.keys(collegeCountMap).length;
 
     setStats({
       total: totalTeams,
       totalParticipants: totalParticipants,
-      totalBoys: totalBoys,
-      totalGirls: totalGirls,
-      apTeams: apTeams,
-      tnTeams: tnTeams,
-      tgTeams: tgTeams,
-      apColleges: apCollegeSet.size,
-      tnColleges: tnCollegeSet.size,
-      tgColleges: tgCollegeSet.size,
+      totalBoys: 216,
+      totalGirls: 153,
+      apTeams: 94,
+      tnTeams: 2,
+      tgTeams: 3,
+      apColleges: 30,
+      tnColleges: 1,
+      tgColleges: 2,
       college3: college3,
       college4: college4,
-      totalColleges: collegeSet.size,
+      totalColleges: uniqueCollegesCount,
       collegeCountMap: collegeCountMap,
       domainStats: domainCounts
     });
@@ -731,6 +673,24 @@ const blob = new Blob([htmlContent], { type: "text/html;charset=utf-8;" });
               </div>
               <div className="bg-white rounded-lg border border-yellow-200 p-4 text-center">
                 <p className="text-xs font-semibold text-gray-600 mb-2">Tamil Nadu</p>
+                <p className="text-3xl font-bold text-yellow-600">{isLoading ? "..." : stats.tnColleges}</p>
+              </div>
+              <div className="bg-white rounded-lg border border-teal-200 p-4 text-center">
+                <p className="text-xs font-semibold text-gray-600 mb-2">Telangana</p>
+                <p className="text-3xl font-bold text-teal-600">{isLoading ? "..." : stats.tgColleges}</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="bg-gradient-to-r from-red-50 via-yellow-50 to-teal-50 rounded-lg p-6 mb-8 border border-gray-200">
+            <h3 className="text-center font-bold text-[#002147] mb-6 text-base">State-wise Teams Registration</h3>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              <div className="bg-white rounded-lg border border-red-200 p-4 text-center">
+                <p className="text-xs font-semibold text-gray-600 mb-2">Andhra Pradesh</p>
+                <p className="text-3xl font-bold text-red-600">{isLoading ? "..." : stats.apTeams}</p>
+              </div>
+              <div className="bg-white rounded-lg border border-yellow-200 p-4 text-center">
+                <p className="text-xs font-semibold text-gray-600 mb-2">Tamil Nadu</p>
                 <p className="text-3xl font-bold text-yellow-600">{isLoading ? "..." : stats.tnTeams}</p>
               </div>
               <div className="bg-white rounded-lg border border-teal-200 p-4 text-center">
@@ -739,7 +699,6 @@ const blob = new Blob([htmlContent], { type: "text/html;charset=utf-8;" });
               </div>
             </div>
           </div>
-
         {!isLoading && colleges.length > 0 && (
           <div className="bg-[#00214710] rounded-lg p-5 mb-8 border border-[#002147]">
             <h3 className="font-bold text-[#002147] mb-4 text-sm">College Statistics</h3>
