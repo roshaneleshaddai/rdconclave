@@ -86,6 +86,12 @@ export default function FinalTeamsListPage() {
         
         setTeams(finalTeamsData);
         setTotalCount(finalTeamsData.length);
+
+        const swarnandhraName = "Swarnandhra College of Engineering and Technology";
+collegeMap.set(
+  normalizeCollege(swarnandhraName),
+  swarnandhraName
+);
         
         const collegeMap = new Map();
         finalTeamsData.forEach(team => {
