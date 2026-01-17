@@ -262,313 +262,294 @@ export default function FinalTeamsListPage() {
     return sortConfig.direction === "asc" ? aVal - bVal : bVal - aVal;
   });
 
-  const downloadStatisticsAsPDF = () => {
-    let htmlContent = `
-      <!DOCTYPE html>
-      <html>
-      <head>
-        <style>
-          * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-          }
-          html, body {
-            height: 100%;
-            width: 100%;
-          }
-          body {
-            font-family: Arial, sans-serif;
-            background-color: white;
-            color: #333;
-          }
-          .page {
-            width: 8.5in;
-            height: 11in;
-            background-color: white;
-            page-break-after: always;
-            padding: 0.5in;
-            margin: 0 auto;
-            box-sizing: border-box;
-          }
-          .page:last-child {
-            page-break-after: avoid;
-          }
-          .container {
-            width: 100%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-          }
-          .header {
-            text-align: center;
-            margin-bottom: 0.3in;
-            border-bottom: 3px solid #002147;
-            padding-bottom: 0.1in;
-          }
-          .header h1 {
-            color: #002147;
-            font-size: 18px;
-            font-weight: bold;
-            margin-bottom: 3px;
-          }
-          .header p {
-            color: #666;
-            font-size: 10px;
-            margin: 2px 0;
-          }
-          .content {
-            flex: 1;
-            overflow: hidden;
-          }
-          .section-title {
-            color: #002147;
-            font-size: 11px;
-            font-weight: bold;
-            margin: 0.15in 0 0.1in 0;
-            padding-bottom: 4px;
-            border-bottom: 2px solid #002147;
-            text-align: left;
-          }
-          .stats-grid-5 {
-            display: grid;
-            grid-template-columns: repeat(5, 1fr);
-            gap: 6px;
-            margin-bottom: 0.12in;
-          }
-          .stats-grid-2 {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 6px;
-            margin-bottom: 0.12in;
-          }
-          .stats-grid-3 {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 6px;
-            margin-bottom: 0.12in;
-          }
-          .stat-card {
-            background-color: #f5f5f5;
-            border: 1.5px solid #002147;
-            border-radius: 3px;
-            padding: 8px 6px;
-            text-align: center;
-          }
-          .stat-label {
-            color: #666;
-            font-size: 7px;
-            text-transform: uppercase;
-            font-weight: bold;
-            margin-bottom: 4px;
-            letter-spacing: 0.2px;
-            line-height: 1;
-          }
-          .stat-value {
-            color: #002147;
-            font-size: 22px;
-            font-weight: bold;
-            line-height: 1.2;
-          }
-          .colleges-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 6px;
-          }
-          .college-item {
-            background-color: #f5f5f5;
-            border: 1px solid #002147;
-            border-radius: 3px;
-            padding: 6px;
-            text-align: center;
-          }
-          .college-name {
-            color: #333;
-            font-size: 7px;
-            margin-bottom: 2px;
-            font-weight: 600;
-            word-break: break-word;
-            line-height: 1.1;
-          }
-          .college-count {
-            color: #002147;
-            font-size: 13px;
-            font-weight: bold;
-          }
-          .footer {
-            margin-top: 0.1in;
-            text-align: center;
-            color: #999;
-            font-size: 8px;
-            border-top: 1px solid #ddd;
-            padding-top: 4px;
-          }
-          @media print {
-            body, html {
-              width: 100%;
-              height: 100%;
-              margin: 0;
-              padding: 0;
-            }
-            .page {
-              width: 100%;
-              height: 100%;
-              margin: 0;
-              padding: 0.5in;
-              page-break-after: always;
-              box-shadow: none;
-            }
-          }
-        </style>
-      </head>
-      <body>
-        <!-- PAGE 1 -->
-        <div class="page">
-          <div class="container">
-            <div class="header">
-              <h1>CodeFusion 2026 - Final Teams Report</h1>
-              <p>Dashboard Statistics - Page 1</p>
-              <p>${new Date().toLocaleDateString()}</p>
-            </div>
+const downloadStatisticsAsPDF = () => {
+  let htmlContent = `
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-            <div class="section-title">Quick Statistics - Row 1</div>
-            <div class="stats-grid-5">
-              <div class="stat-card">
-                <div class="stat-label">Total Teams</div>
-                <div class="stat-value">${stats.total}</div>
-              </div>
-              <div class="stat-card">
-                <div class="stat-label">Total Participants</div>
-                <div class="stat-value">${stats.totalParticipants}</div>
-              </div>
-              <div class="stat-card">
-                <div class="stat-label">Different Colleges</div>
-                <div class="stat-value">${stats.totalColleges}</div>
-              </div>
-              <div class="stat-card">
-                <div class="stat-label">3 Members Teams</div>
-                <div class="stat-value">${stats.college3}</div>
-              </div>
-              <div class="stat-card">
-                <div class="stat-label">4 Members Teams</div>
-                <div class="stat-value">${stats.college4}</div>
-              </div>
-            </div>
+body {
+  font-family: Arial, sans-serif;
+  background: white;
+  color: #333;
+}
 
-            <div class="section-title">Quick Statistics - Row 2</div>
-            <div class="stats-grid-2">
-              <div class="stat-card">
-                <div class="stat-label">Total Boys</div>
-                <div class="stat-value">${stats.totalBoys}</div>
-              </div>
-              <div class="stat-card">
-                <div class="stat-label">Total Girls</div>
-                <div class="stat-value">${stats.totalGirls}</div>
-              </div>
-            </div>
+.page {
+  width: 8.5in;
+  height: 11in;
+  padding: 0.6in;
+  page-break-after: always;
+}
 
-            <div class="section-title">State-wise Colleges</div>
-            <div class="stats-grid-3">
-              <div class="stat-card">
-                <div class="stat-label">AP Colleges</div>
-                <div class="stat-value">${stats.apColleges}</div>
-              </div>
-              <div class="stat-card">
-                <div class="stat-label">TN Colleges</div>
-                <div class="stat-value">${stats.tnColleges}</div>
-              </div>
-              <div class="stat-card">
-                <div class="stat-label">TG Colleges</div>
-                <div class="stat-value">${stats.tgColleges}</div>
-              </div>
-            </div>
+.page:last-child {
+  page-break-after: avoid;
+}
 
-            <div class="section-title">State-wise Teams Registration</div>
-            <div class="stats-grid-3">
-              <div class="stat-card">
-                <div class="stat-label">AP Teams</div>
-                <div class="stat-value">${stats.apTeams}</div>
-              </div>
-              <div class="stat-card">
-                <div class="stat-label">TN Teams</div>
-                <div class="stat-value">${stats.tnTeams}</div>
-              </div>
-              <div class="stat-card">
-                <div class="stat-label">TG Teams</div>
-                <div class="stat-value">${stats.tgTeams}</div>
-              </div>
-            </div>
-          </div>
+/* ===================== PAGE 1 ONLY ===================== */
+
+.p1-header {
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.p1-header h1 {
+  font-size: 22px;
+  color: #002147;
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
+.p1-header p {
+  font-size: 11px;
+  color: #6b7280;
+}
+
+.p1-section-title {
+  font-size: 13px;
+  font-weight: bold;
+  color: #002147;
+  margin: 26px 0 14px;
+}
+
+.p1-stats-grid-5 {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 14px;
+}
+
+.p1-stats-grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+  max-width: 70%;
+}
+
+.p1-stats-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+.p1-stat-card {
+  background: #f8fafc;
+  border-radius: 12px;
+  padding: 16px 10px;
+  text-align: center;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.06);
+}
+
+.p1-stat-label {
+  font-size: 9px;
+  text-transform: uppercase;
+  color: #6b7280;
+  font-weight: bold;
+  margin-bottom: 6px;
+  letter-spacing: 0.3px;
+}
+
+.p1-stat-value {
+  font-size: 26px;
+  font-weight: bold;
+  color: #002147;
+}
+
+.p1-footer {
+  margin-top: 32px;
+  text-align: center;
+  font-size: 9px;
+  color: #9ca3af;
+}
+
+/* ===================== PAGE 2 (UNCHANGED) ===================== */
+
+.header {
+  text-align: center;
+  margin-bottom: 0.3in;
+  border-bottom: 3px solid #002147;
+  padding-bottom: 0.1in;
+}
+
+.header h1 {
+  color: #002147;
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 3px;
+}
+
+.header p {
+  color: #666;
+  font-size: 10px;
+  margin: 2px 0;
+}
+
+.section-title {
+  color: #002147;
+  font-size: 11px;
+  font-weight: bold;
+  margin: 0.15in 0 0.1in 0;
+  padding-bottom: 4px;
+  border-bottom: 2px solid #002147;
+}
+
+.colleges-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+}
+
+.college-item {
+  background-color: #f5f5f5;
+  border: 1px solid #002147;
+  border-radius: 3px;
+  padding: 6px;
+  text-align: center;
+}
+
+.college-name {
+  color: #333;
+  font-size: 7px;
+  margin-bottom: 2px;
+  font-weight: 600;
+  word-break: break-word;
+}
+
+.college-count {
+  color: #002147;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.footer {
+  margin-top: 0.1in;
+  text-align: center;
+  color: #999;
+  font-size: 8px;
+  border-top: 1px solid #ddd;
+  padding-top: 4px;
+}
+
+@media print {
+  body { margin: 0; }
+}
+</style>
+</head>
+
+<body>
+
+<!-- ================= PAGE 1 ================= -->
+<div class="page">
+
+  <div class="p1-header">
+    <h1>CodeFusion 2026 - Final Teams Report</h1>
+    <p>Dashboard Statistics - Page 1</p>
+    <p>${new Date().toLocaleDateString()}</p>
+  </div>
+
+  <div class="p1-section-title">Quick Statistics - Row 1</div>
+  <div class="p1-stats-grid-5">
+    <div class="p1-stat-card"><div class="p1-stat-label">Total Teams</div><div class="p1-stat-value">${stats.total}</div></div>
+    <div class="p1-stat-card"><div class="p1-stat-label">Total Participants</div><div class="p1-stat-value">${stats.totalParticipants}</div></div>
+    <div class="p1-stat-card"><div class="p1-stat-label">Different Colleges</div><div class="p1-stat-value">${stats.totalColleges}</div></div>
+    <div class="p1-stat-card"><div class="p1-stat-label">3 Members Teams</div><div class="p1-stat-value">${stats.college3}</div></div>
+    <div class="p1-stat-card"><div class="p1-stat-label">4 Members Teams</div><div class="p1-stat-value">${stats.college4}</div></div>
+  </div>
+
+  <div class="p1-section-title">Quick Statistics - Row 2</div>
+  <div class="p1-stats-grid-2">
+    <div class="p1-stat-card"><div class="p1-stat-label">Total Boys</div><div class="p1-stat-value">${stats.totalBoys}</div></div>
+    <div class="p1-stat-card"><div class="p1-stat-label">Total Girls</div><div class="p1-stat-value">${stats.totalGirls}</div></div>
+  </div>
+
+  <div class="p1-section-title">State-wise Colleges</div>
+  <div class="p1-stats-grid-3">
+    <div class="p1-stat-card"><div class="p1-stat-label">AP Colleges</div><div class="p1-stat-value">${stats.apColleges}</div></div>
+    <div class="p1-stat-card"><div class="p1-stat-label">TN Colleges</div><div class="p1-stat-value">${stats.tnColleges}</div></div>
+    <div class="p1-stat-card"><div class="p1-stat-label">TG Colleges</div><div class="p1-stat-value">${stats.tgColleges}</div></div>
+  </div>
+
+  <div class="p1-section-title">State-wise Teams Registration</div>
+  <div class="p1-stats-grid-3">
+    <div class="p1-stat-card"><div class="p1-stat-label">AP Teams</div><div class="p1-stat-value">${stats.apTeams}</div></div>
+    <div class="p1-stat-card"><div class="p1-stat-label">TN Teams</div><div class="p1-stat-value">${stats.tnTeams}</div></div>
+    <div class="p1-stat-card"><div class="p1-stat-label">TG Teams</div><div class="p1-stat-value">${stats.tgTeams}</div></div>
+  </div>
+
+  <div class="p1-footer">
+    Generated via CodeFusion Admin Dashboard
+  </div>
+
+</div>
+
+<!-- ================= PAGE 2 (UNTOUCHED) ================= -->
+<div class="page">
+  <div class="header">
+    <h1>CodeFusion 2026 - Final Teams Report</h1>
+    <p>Colleges & Domains Distribution - Page 2</p>
+    <p>${new Date().toLocaleDateString()}</p>
+  </div>
+
+  <div class="section-title">Colleges Distribution (Team Leader Count)</div>
+  <div class="colleges-grid">
+    ${colleges.map(college => {
+      const count = teams.filter(t => normalizeCollege(t.leader?.college) === normalizeCollege(college)).length;
+      return `
+        <div class="college-item">
+          <div class="college-name">${college}</div>
+          <div class="college-count">${count}</div>
         </div>
+      `;
+    }).join("")}
+  </div>
 
-        <!-- PAGE 2 -->
-        <div class="page page-break">
-          <div class="container">
-            <div class="header">
-              <h1>CodeFusion 2026 - Final Teams Report</h1>
-              <p>Colleges & Domains Distribution - Page 2</p>
-              <p>${new Date().toLocaleDateString()}</p>
-            </div>
+  <div class="section-title">Domain-wise Distribution</div>
+  <div class="colleges-grid">
+    ${Object.entries(stats.domainStats).map(([domain, count]) => `
+      <div class="college-item">
+        <div class="college-name">${domain}</div>
+        <div class="college-count">${count}</div>
+      </div>
+    `).join("")}
+  </div>
 
-            <div class="section-title">Colleges Distribution (Team Leader Count)</div>
-            <div class="colleges-grid">
-              ${colleges.map(college => {
-                const count = teams.filter(t => normalizeCollege(t.leader?.college) === normalizeCollege(college)).length;
-                return `
-                  <div class="college-item">
-                    <div class="college-name">${college}</div>
-                    <div class="college-count">${count}</div>
-                  </div>
-                `;
-              }).join('')}
-            </div>
+  <div class="footer">
+    Generated on ${new Date().toLocaleString()}
+  </div>
+</div>
 
-            <div class="section-title">Domain-wise Distribution</div>
-            <div class="colleges-grid">
-              ${Object.entries(stats.domainStats).map(([domain, count]) => {
-                return `
-                  <div class="college-item">
-                    <div class="college-name">${domain}</div>
-                    <div class="college-count">${count}</div>
-                  </div>
-                `;
-              }).join('')}
-            </div>
-
-            <div class="footer">
-              <p>Generated on ${new Date().toLocaleString()}</p>
-            </div>
-          </div>
-        </div>
-
-        <script>
-          window.onload = function() {
-            setTimeout(() => { window.print(); }, 500);
-          };
-        </script>
-      </body>
-      </html>
-    `;
-
-    const blob = new Blob([htmlContent], { type: "text/html;charset=utf-8;" });
-    const link = document.createElement("a");
-    const url = URL.createObjectURL(blob);
-    
-    link.setAttribute("href", url);
-    link.setAttribute("download", `CodeFusion_Final_Statistics_${new Date().toISOString().split('T')[0]}.pdf`);
-    link.style.visibility = "hidden";
-    
-    document.body.appendChild(link);
-    
-    const printWindow = window.open(url, "_blank");
-    setTimeout(() => {
-      if (printWindow) {
-        printWindow.print();
-      }
-    }, 500);
-    
-    document.body.removeChild(link);
+<script>
+  window.onload = function() {
+    setTimeout(() => { window.print(); }, 500);
   };
+</script>
+
+</body>
+</html>
+`;
+link.setAttribute("href", url);
+link.setAttribute(
+  "download",
+  `CodeFusion_Final_Statistics_${new Date().toISOString().split('T')[0]}.pdf`
+);
+link.style.visibility = "hidden";
+
+document.body.appendChild(link);
+
+const printWindow = window.open(url, "_blank");
+setTimeout(() => {
+  if (printWindow) {
+    printWindow.print();
+  }
+}, 500);
+
+document.body.removeChild(link);
+};
+
 
   const downloadTeamsAsExcel = () => {
     let csvContent = "CODEFUSION FINAL TEAMS DETAILS\n";
