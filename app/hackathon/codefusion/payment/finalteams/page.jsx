@@ -624,15 +624,15 @@ export default function FinalTeamsListPage() {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
-            <div className="bg-white rounded-lg border-2 border-blue-600 p-6 hover:shadow-lg transition">
+          <div className="flex gap-4 mb-8">
+            <div className="bg-white rounded-lg border-2 border-blue-600 p-6 hover:shadow-lg transition flex-1 max-w-sm">
               <p className="text-xs uppercase tracking-wider text-gray-600 font-semibold">Total Boys</p>
               <p className="text-4xl font-bold text-blue-600 mt-2">
                 {isLoading ? "..." : stats.totalBoys}
               </p>
             </div>
 
-            <div className="bg-white rounded-lg border-2 border-pink-600 p-6 hover:shadow-lg transition">
+            <div className="bg-white rounded-lg border-2 border-pink-600 p-6 hover:shadow-lg transition flex-1 max-w-sm">
               <p className="text-xs uppercase tracking-wider text-gray-600 font-semibold">Total Girls</p>
               <p className="text-4xl font-bold text-pink-600 mt-2">
                 {isLoading ? "..." : stats.totalGirls}
