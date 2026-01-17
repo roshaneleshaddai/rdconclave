@@ -443,7 +443,7 @@ export default function FinalTeamsListPage() {
   };
 
   return (
-    <div className="min-h-screen bg-white font-sans">
+    <div className="min-h-screen bg-white font-sans pt-32">
       {showCelebration && (
         <div className="fixed inset-0 z-[9999] bg-white/90 flex items-center justify-center overflow-hidden">
           {[...Array(60)].map((_, i) => (
@@ -469,7 +469,7 @@ export default function FinalTeamsListPage() {
         </div>
       )}
 
-      <header className="bg-white border-b border-[#002147] sticky top-0 z-40">
+      <header className="bg-white border-b border-[#002147]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <div className="flex justify-between items-center">
             <div>
@@ -485,7 +485,7 @@ export default function FinalTeamsListPage() {
       </header>
 
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-12">
-        <div className="mb-8 flex items-center justify-between">
+        <div className="mb-6 flex items-center justify-between">
           <div className="flex items-center gap-2">
             <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
             <span className="text-sm font-semibold text-gray-700">Live Status</span>
@@ -498,7 +498,7 @@ export default function FinalTeamsListPage() {
           </button>
         </div>
 
-        <div className="mb-20">
+        <div className="mb-8">
           <div className="space-y-3">
             {stats.total >= 50 && stats.total <= 55 && (
               <div className="bg-gradient-to-r from-blue-50 to-blue-100 border-l-4 border-blue-500 p-4 rounded-lg shadow-sm">
@@ -859,3 +859,4 @@ export default function FinalTeamsListPage() {
     </div>
   );
 }
+      
