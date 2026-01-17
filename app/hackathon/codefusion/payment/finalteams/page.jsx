@@ -125,7 +125,7 @@ export default function FinalTeamsListPage() {
 
   const calculateStats = (teamsData) => {
     const collegeCountMap = { 
-  "Swarnandhra College of Engineering and Technology": 1 
+  [normalizeCollege("Swarnandhra College of Engineering and Technology")]: 1 
 };
     const domainCounts = {};
 
