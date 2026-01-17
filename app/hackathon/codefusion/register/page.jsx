@@ -1,6 +1,6 @@
  'use client';
-// import { useState, useEffect } from 'react';
-// import { ArrowLeft, Users, GraduationCap, Send, CheckCircle, AlertCircle, Info, Mail, MailOpen } from 'lucide-react';
+import { useState, useEffect } from 'react';
+import { ArrowLeft, Users, GraduationCap, Send, CheckCircle, AlertCircle, Info, Mail, MailOpen } from 'lucide-react';
 
 // // Coin Flip Loading Component
 // const CoinFlip = () => {
@@ -779,9 +779,6 @@
 // };
 
 // export default RegistrationForm;
-
-import { useState, useEffect } from 'react';
-import { ArrowLeft } from 'lucide-react';
 
 const RegistrationForm = () => {
   const [isMobile, setIsMobile] = useState(false);
