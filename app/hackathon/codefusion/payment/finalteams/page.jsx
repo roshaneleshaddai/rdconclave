@@ -87,13 +87,15 @@ export default function FinalTeamsListPage() {
         setTeams(finalTeamsData);
         setTotalCount(finalTeamsData.length);
 
+         const collegeMap = new Map();
+        
         const swarnandhraName = "Swarnandhra College of Engineering and Technology";
 collegeMap.set(
   normalizeCollege(swarnandhraName),
   swarnandhraName
 );
         
-        const collegeMap = new Map();
+       
         finalTeamsData.forEach(team => {
           const collegeName = team.leader?.college;
           if (collegeName) {
@@ -130,9 +132,7 @@ collegeMap.set(
   };
 
   const calculateStats = (teamsData) => {
-    const collegeCountMap = { 
-  [normalizeCollege("Swarnandhra College of Engineering and Technology")]: 1 
-};
+    const collegeCountMap = { };
     const domainCounts = {};
 
     let totalParticipants = 0;
