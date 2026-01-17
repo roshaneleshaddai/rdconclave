@@ -739,7 +739,7 @@ document.body.removeChild(link);
 
         {!isLoading && colleges.length > 0 && (
           <div className="bg-[#00214710] rounded-lg p-5 mb-8 border border-[#002147]">
-            <h3 className="font-bold text-[#002147] mb-4 text-sm">College Statistics (Team Leader Count)</h3>
+            <h3 className="font-bold text-[#002147] mb-4 text-sm">College Statistics</h3>
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
               {colleges.map(college => {
                 const count = teams.filter(t => normalizeCollege(t.leader?.college) === normalizeCollege(college)).length;
