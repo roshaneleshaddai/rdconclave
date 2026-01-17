@@ -124,7 +124,9 @@ export default function FinalTeamsListPage() {
   };
 
   const calculateStats = (teamsData) => {
-    const collegeCountMap = {};
+    const collegeCountMap = { 
+  "Swarnandhra College of Engineering and Technology": 1 
+};
     const domainCounts = {};
 
     let totalParticipants = 0;
@@ -154,12 +156,12 @@ export default function FinalTeamsListPage() {
     setStats({
       total: totalTeams,
       totalParticipants: totalParticipants,
-      totalBoys: 216,
+      totalBoys: 219,
       totalGirls: 153,
-      apTeams: 94,
+      apTeams: 95,
       tnTeams: 2,
       tgTeams: 3,
-      apColleges: 30,
+      apColleges: 31,
       tnColleges: 1,
       tgColleges: 2,
       college3: college3,
