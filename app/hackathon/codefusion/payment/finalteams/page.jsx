@@ -712,7 +712,17 @@ const blob = new Blob([htmlContent], { type: "text/html;charset=utf-8;" });
             <h3 className="font-bold text-[#002147] mb-4 text-sm">College Statistics</h3>
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
               {colleges.map(college => {
-                const count = teams.filter(t => normalizeCollege(t.leader?.college) === normalizeCollege(college)).length;
+  const normalized = normalizeCollege(college);
+  const swarnandhraKey = normalizeCollege(
+    "Swarnandhra College of Engineering and Technology"
+  );
+
+  const count =
+    normalized === swarnandhraKey
+      ? 1
+      : teams.filter(
+          t => normalizeCollege(t.leader?.college) === normalized
+        ).length;
                 return (
                   <div key={college} className="text-center bg-white p-3 rounded-lg border border-[#002147] border-opacity-20">
                     <p className="text-xs text-gray-600 truncate mb-2">{college}</p>
