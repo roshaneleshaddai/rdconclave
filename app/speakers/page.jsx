@@ -12,6 +12,7 @@ const GuestsList = () => {
     position: 'Adjunct Professor, IIT Tirupati',
     description: 'Former Scientific Secretary and Director (NRSC & IIRS), Indian Space Research Organization',
     src: '/images/krishna-murthy.jpeg', // Add the image file to public/images
+    linkedin: 'https://www.linkedin.com/in/dr-yvn-krishnamurthy-4713b7317/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app',
   };
 
   // Distinguished Guests
@@ -21,30 +22,138 @@ const GuestsList = () => {
       position: 'Director',
       company: 'National Institute of Technology, Manipur',
       src: '/images/DVLN_Somayajulu.jpg',
+      linkedin: 'https://www.linkedin.com/in/d-somayajulu-8530038b/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app',
+    },
+    {
+      name: 'Dr. Mamilla Ravi Sankar',
+      position: 'Professor & HOD',
+      company: 'Department of Mechanical Engineering, IIT Tirupati',
+      src: '/images/mamilla.png',
+      linkedin: 'https://www.linkedin.com/in/mamilla-ravi-sankar-4b26ab9/',
     },
     {
       name: 'Mr. Rama Krishna Dasari',
       position: 'CEO and Founder',
       company: 'Efftronics Systems Pvt. Ltd.',
       src: '/images/efftronics-ceo.png',
+      linkedin: 'https://www.linkedin.com/in/rama-krishna-dasari-923b2787/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app',
     },
     {
       name: 'Mrs. Padmaja Sriram',
-      position: 'Head Regional Leader Talent Acquisition (APAC)',
-      company: 'AT&T, Hyderabad',
+      position: 'Head - TA - APAC',
+      company: 'AT&T',
       src: '/images/padmaja-sriram.jpeg',
+      linkedin: 'https://www.linkedin.com/in/pams67/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app',
     },
     {
       name: 'Dr. Roshan Srivastav',
       position: 'Project Director',
       company: 'IIT Tirupati Navavishkar I-Hub Foundation',
-      src: '/images/roshan-srivastav.jpeg',
+      src: '/images/roshan.jpeg',
+      linkedin: 'https://www.linkedin.com/in/rksrivastav/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app',
     },
     {
       name: 'Mr. Siddhartha Abburi',
       position: 'Director',
       company: 'Avantel Limited, Hyderabad',
       src: 'https://media.licdn.com/dms/image/v2/C5603AQGRNthkb1Rv3A/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1565795305597?e=2147483647&v=beta&t=J8Zi9Pc8VYuWL-4Bn4QIlaqEbJyzYNTJ3OlibtA_-uM',
+      linkedin: 'https://www.linkedin.com/in/siddhartha-abburi-36267117/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app',
+    },
+    {
+      name: 'K.V.N.D.S Srinivas',
+      position: 'Senior Vice President & Delivery Head for HLS Healthcare, APAC & Europe',
+      company: 'Persistence Systems',
+      src: '/images/kvnds-srinivas.png',
+      linkedin: 'https://www.linkedin.com/in/srinivas-kvnds/',
+    },
+    {
+      name: 'Dr. R. Prabhakaran',
+      position: 'Associate Vice President, LAD',
+      company: 'RANE Industries',
+      src: '/images/prabhakaran.png',
+    },
+    {
+      name: 'Smt Sruthi',
+      position: 'Representative',
+      company: 'Efftronics',
+src: '/images/dummy.jpeg',    },
+    {
+      name: 'Dr. Rama Krishna Vankamamidi',
+      position: 'Capability Manager',
+      company: 'HCL',
+src: '/images/dummy.jpeg',    },
+    {
+      name: 'Sri Nivas Reddy',
+      position: 'Representative',
+      company: 'Tech-M',
+src: '/images/dummy.jpeg',    },
+    {
+      name: 'Sreenivasa Vivekanand Peesapati',
+      position: 'Head, BFSI CBO Transition Practice',
+      company: 'TCS',
+      src: '/images/vivekananda.png',
+    },
+    {
+      name: 'Prathap Kolla',
+      position: 'Senior Product Manager',
+      company: 'Tata Consultancy Services',
+      src: '/images/pratap-kolla.png',
+    },
+    {
+      name: 'Jai Prakash Netha',
+      position: 'Director - Talent Initiatives',
+      company: 'SMART BRIDGE',
+src: '/images/dummy.jpeg',    },
+    {
+      name: 'Nagaveer',
+      position: 'CCC Group Founder & CEO',
+      company: 'CCC',
+      src: '/images/sri-nagaver.png',
+    },
+    {
+      name: 'Dr. Vipul',
+      position: 'Strategic Advisor – AI Talent & Employability',
+      company: 'AP Govt, Calibo Technologies',
+src: '/images/dummy.jpeg',    },
+    {
+      name: 'Vamsi Krishna Reddy Chinta',
+      position: 'Regional Head - Academic & Govt',
+      company: 'LinkedIn',
+src: '/images/dummy.jpeg',    },
+    {
+      name: 'Komali Jakkula',
+      position: 'TA - Manager',
+      company: 'Innoschip',
+src: '/images/dummy.jpeg',    },
+    {
+      name: 'Ravali Gopavarapu',
+      position: 'Representative',
+      company: 'Microsoft',
+src: '/images/dummy.jpeg',    },
+    {
+      name: 'Shri MV Rajashekhar',
+      position: 'Sr. Vice President',
+      company: 'Paras Defence & Space Technologies',
+src: '/images/dummy.jpeg',    },
+    {
+      name: 'Mr. Rajasekharam Naidu P',
+      position: 'Co-Founder, Director Embedded Software & AI',
+      company: 'BITSILICA - Semiconductor Design Services',
+      src: '/images/dummy.jpeg',
+    },
+    {
+      name: 'Dr. Rajiv Kumar',
+      position: 'Scientist "G" and Group Head, Soil Resources and Land Use Monitoring Group',
+      company: 'NRSC, ISRO',
+      src: '/images/rajiv.jpeg',
+      linkedin: 'https://www.linkedin.com/in/rajiv-kumar-5138239b/',
+    },
+    {
+      name: 'Spurthi Dasari',
+      position: 'Executive Manager - HR',
+      company: 'Efftronics Systems Pvt Ltd',
+      src: '/images/spurthi-mam.jpeg',
+      linkedin: 'https://www.linkedin.com/in/spurthi-dasari-3106b6160/',
     },
   ];
   
@@ -98,7 +207,18 @@ const GuestsList = () => {
                   }}
                 />
               </div>
-              <p className="text-2xl text-center text-[#002147] font-bold mb-2">{chiefGuest.name}</p>
+              {chiefGuest.linkedin ? (
+                <a
+                  href={chiefGuest.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-2xl text-center text-[#002147] font-bold mb-2 hover:underline"
+                >
+                  {chiefGuest.name}
+                </a>
+              ) : (
+                <p className="text-2xl text-center text-[#002147] font-bold mb-2">{chiefGuest.name}</p>
+              )}
               <p className="text-md text-center text-[#002147] font-semibold mb-2">{chiefGuest.position}</p>
               <p className="text-sm text-center text-gray-600">{chiefGuest.description}</p>
             </div>
@@ -107,7 +227,7 @@ const GuestsList = () => {
 
         {/* Distinguished Guests Section */}
         <div>
-          <h2 className="text-4xl font-bold text-center text-[#002147] mb-10">Distinguished Guests</h2>
+          <h2 className="text-4xl font-bold text-center text-[#002147] mb-10">Distinguished Guests and Speakers</h2>
           <ul className="list-none flex flex-wrap justify-center items-stretch gap-6">
             {distinguishedGuests.map((guest, index) => (
               <motion.li
@@ -139,7 +259,18 @@ const GuestsList = () => {
                       }}
                     />
                   </div>
-                  <p className="text-lg text-center text-[#002147] font-bold mb-1">{guest.name}</p>
+                  {guest.linkedin ? (
+                    <a
+                      href={guest.linkedin}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-lg text-center text-[#002147] font-bold mb-1 hover:underline"
+                    >
+                      {guest.name}
+                    </a>
+                  ) : (
+                    <p className="text-lg text-center text-[#002147] font-bold mb-1">{guest.name}</p>
+                  )}
                   <p className="text-sm text-center text-[#002147] font-semibold mb-2">{guest.position}</p>
                   <p className="text-xs text-center text-gray-600">{guest.company}</p>
                 </div>
