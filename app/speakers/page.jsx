@@ -177,7 +177,7 @@ const GuestsList = () => {
     {
       name: 'Dr. PREM KONDAVEETI',
       position: 'Project Manager',
-      company: 'Jesvid Cryo Technologies Pvt.Ltd.',
+      company: 'Jesvid Cryo Technologies Pvt.Ltd., Hyderabad',
       src: '/images/prem_sir.jpeg',
       linkedin: 'https://www.linkedin.com/in/drpremkondaveeti-77228a4a/',
     },
