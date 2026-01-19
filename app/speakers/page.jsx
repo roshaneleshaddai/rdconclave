@@ -132,7 +132,7 @@ const GuestsList = () => {
       src: '/images/dummy.jpeg',
     },
     {
-      name: 'Dr. Vipul',
+      name: 'Dr. Vipul Valamjee',
       position: 'Data Scientist',
       company: 'Strategic Advisor-AI Talent&Employability - work with AP Govt,Calibo Technologies, Hyderabad',
       src: '/images/vipul.png',
