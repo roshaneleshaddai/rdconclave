@@ -54,7 +54,7 @@ const GuestsList = () => {
     {
       name: 'Dr. R. Prabhakaran',
       position: 'Associate Vice President, L&D',
-      company: 'RANE Industries',
+      company: 'RANE Industries, Chennai',
       src: '/images/prabhakaran.png',
     },
   ];
@@ -134,7 +134,7 @@ const GuestsList = () => {
     {
       name: 'Dr. Vipul',
       position: 'Data Scientist',
-      company: 'Strategic Advisor-AI Talent&Employability - work with AP Govt,Calibo Technologies',
+      company: 'Strategic Advisor-AI Talent&Employability - work with AP Govt,Calibo Technologies, Hyderabad',
       src: '/images/vipul.png',
     },
     {
@@ -158,7 +158,7 @@ const GuestsList = () => {
     {
       name: 'Mr. Rajasekharam Naidu P',
       position: 'Co-Founder, Director Embedded Software & AI',
-      company: 'BITSILICA - Semiconductor Design Services',
+      company: 'BITSILICA - Semiconductor Design Services, Hyderabad',
       src: '/images/dummy.jpeg',
     },
     {
@@ -170,7 +170,7 @@ const GuestsList = () => {
     {
       name: 'Ms. Spurthi Dasari',
       position: 'Executive Manager - HR',
-      company: 'Efftronics Systems Pvt Ltd',
+      company: 'Efftronics Systems Pvt Ltd., Mangalagiri',
       src: '/images/spurthi-mam.jpeg',
       linkedin: 'https://www.linkedin.com/in/spurthi-dasari-3106b6160/',
     },
