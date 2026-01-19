@@ -25,16 +25,9 @@ const GuestsList = () => {
       linkedin: 'https://www.linkedin.com/in/d-somayajulu-8530038b/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app',
     },
     {
-      name: 'Dr. Mamilla Ravi Sankar',
-      position: 'Professor & HOD',
-      company: 'Department of Mechanical Engineering, IIT Tirupati',
-      src: '/images/mamilla.png',
-      linkedin: 'https://www.linkedin.com/in/mamilla-ravi-sankar-4b26ab9/',
-    },
-    {
       name: 'Mr. Rama Krishna Dasari',
       position: 'CEO and Founder',
-      company: 'Efftronics Systems Pvt. Ltd.',
+      company: 'Efftronics Systems Pvt. Ltd., Mangalagiri',
       src: '/images/efftronics-ceo.png',
       linkedin: 'https://www.linkedin.com/in/rama-krishna-dasari-923b2787/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app',
     },
@@ -44,6 +37,36 @@ const GuestsList = () => {
       company: 'AT&T',
       src: '/images/padmaja-sriram.jpeg',
       linkedin: 'https://www.linkedin.com/in/pams67/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app',
+    },
+    {
+      name: 'Dr. Rajiv Kumar',
+      position: 'Scientist "G" and Group Head, Soil Resources and Land Use Monitoring Group',
+      company: 'NRSC, ISRO',
+      src: '/images/rajiv.jpeg',
+      linkedin: 'https://www.linkedin.com/in/rajiv-kumar-5138239b/',
+    },
+    {
+      name: 'Shri MV Rajashekhar',
+      position: 'Sr. Vice President',
+      company: 'Paras Defence & Space Technologies',
+      src: '/images/dummy.jpeg',
+    },
+    {
+      name: 'Dr. R. Prabhakaran',
+      position: 'Associate Vice President, L&D',
+      company: 'RANE Industries',
+      src: '/images/prabhakaran.png',
+    },
+  ];
+
+  // Invited Speakers
+  const invitedSpeakers = [
+    {
+      name: 'Dr. Mamilla Ravi Sankar',
+      position: 'Professor & HOD',
+      company: 'Department of Mechanical Engineering, IIT Tirupati',
+      src: '/images/mamilla.png',
+      linkedin: 'https://www.linkedin.com/in/mamilla-ravi-sankar-4b26ab9/',
     },
     {
       name: 'Dr. Roshan Srivastav',
@@ -67,12 +90,6 @@ const GuestsList = () => {
       linkedin: 'https://www.linkedin.com/in/srinivas-kvnds/',
     },
     {
-      name: 'Dr. R. Prabhakaran',
-      position: 'Associate Vice President, LAD',
-      company: 'RANE Industries',
-      src: '/images/prabhakaran.png',
-    },
-    {
       name: 'Smt Sruthi',
       position: 'Representative',
       company: 'Efftronics',
@@ -85,7 +102,7 @@ const GuestsList = () => {
       src: '/images/ramakrishna-hcl.png',
     },
     {
-      name: 'Sri Nivas Reddy',
+      name: 'Srinivas Reddy',
       position: 'Representative',
       company: 'Tech-M',
       src: '/images/dummy.jpeg',
@@ -139,12 +156,6 @@ const GuestsList = () => {
       src: '/images/dummy.jpeg',
     },
     {
-      name: 'Shri MV Rajashekhar',
-      position: 'Sr. Vice President',
-      company: 'Paras Defence & Space Technologies',
-      src: '/images/dummy.jpeg',
-    },
-    {
       name: 'Mr. Rajasekharam Naidu P',
       position: 'Co-Founder, Director Embedded Software & AI',
       company: 'BITSILICA - Semiconductor Design Services',
@@ -157,18 +168,18 @@ const GuestsList = () => {
       src: '/images/dummy.jpeg',
     },
     {
-      name: 'Dr. Rajiv Kumar',
-      position: 'Scientist "G" and Group Head, Soil Resources and Land Use Monitoring Group',
-      company: 'NRSC, ISRO',
-      src: '/images/rajiv.jpeg',
-      linkedin: 'https://www.linkedin.com/in/rajiv-kumar-5138239b/',
-    },
-    {
       name: 'Spurthi Dasari',
       position: 'Executive Manager - HR',
       company: 'Efftronics Systems Pvt Ltd',
       src: '/images/spurthi-mam.jpeg',
       linkedin: 'https://www.linkedin.com/in/spurthi-dasari-3106b6160/',
+    },
+    {
+      name: 'Dr. PREM KONDAVEETI',
+      position: 'Project Manager',
+      company: 'Jesvid Cryo Technologies Pvt.Ltd.',
+      src: '/images/prem_sir.jpeg',
+      linkedin: 'https://www.linkedin.com/in/drpremkondaveeti-77228a4a/',
     },
   ];
   
@@ -241,12 +252,66 @@ const GuestsList = () => {
         </div>
 
         {/* Distinguished Guests Section */}
-        <div>
-          <h2 className="text-4xl font-bold text-center text-[#002147] mb-10">Distinguished Guests and Speakers</h2>
+        <div className="mb-16">
+          <h2 className="text-4xl font-bold text-center text-[#002147] mb-10">Distinguished Guests</h2>
           <ul className="list-none flex flex-wrap justify-center items-stretch gap-6">
             {distinguishedGuests.map((guest, index) => (
               <motion.li
-                key={`guest-${index}`}
+                key={`distinguished-guest-${index}`}
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{
+                  duration: 0.5,
+                  delay: index * 0.1,
+                  type: 'spring',
+                  stiffness: 80,
+                }}
+                viewport={{ once: true }}
+                whileHover={{
+                  scale: 1.05,
+                  boxShadow: "0px 10px 25px rgba(0, 33, 71, 0.3)",
+                }}
+                className="flex flex-col justify-start items-center p-5 border-2 border-[#002147] border-opacity-20 rounded-lg shadow-md w-full sm:w-80 bg-white hover:shadow-xl transition-shadow duration-300"
+              >
+                <div className="flex flex-col justify-start items-center h-full w-full">
+                  <div className="relative w-40 h-40 mb-4 rounded-lg overflow-hidden shadow-sm">
+                    <Image
+                      src={guest.src}
+                      alt={guest.name}
+                      fill
+                      className="object-cover object-top"
+                      onError={(e) => {
+                        e.currentTarget.src = 'https://via.placeholder.com/160?text=Guest+Image';
+                      }}
+                    />
+                  </div>
+                  {guest.linkedin ? (
+                    <a
+                      href={guest.linkedin}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-lg text-center text-[#002147] font-bold mb-1 hover:underline"
+                    >
+                      {guest.name}
+                    </a>
+                  ) : (
+                    <p className="text-lg text-center text-[#002147] font-bold mb-1">{guest.name}</p>
+                  )}
+                  <p className="text-sm text-center text-[#002147] font-semibold mb-2">{guest.position}</p>
+                  <p className="text-xs text-center text-gray-600">{guest.company}</p>
+                </div>
+              </motion.li>
+            ))}
+          </ul>
+        </div>
+
+        {/* Invited Speakers Section */}
+        <div>
+          <h2 className="text-4xl font-bold text-center text-[#002147] mb-10 mt-16">Invited Speakers</h2>
+          <ul className="list-none flex flex-wrap justify-center items-stretch gap-6">
+            {invitedSpeakers.map((guest, index) => (
+              <motion.li
+                key={`invited-speaker-${index}`}
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{
