@@ -38,6 +38,13 @@ const GuestsList = () => {
       src: '/images/padmaja-sriram.jpeg',
       linkedin: 'https://www.linkedin.com/in/pams67/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app',
     },
+     {
+      name: 'Mr. K.V.N.D.S Srinivas',
+      position: 'Senior Vice President & Delivery Head for HLS Healthcare, APAC & Europe',
+      company: 'Persistence Systems',
+      src: '/images/kvnds-srinivas.png',
+      linkedin: 'https://www.linkedin.com/in/srinivas-kvnds/',
+    },
     {
       name: 'Dr. Rajiv Kumar',
       position: 'Scientist "G" and Group Head, Soil Resources and Land Use Monitoring Group',
@@ -88,13 +95,7 @@ const GuestsList = () => {
       src: 'https://media.licdn.com/dms/image/v2/C5603AQGRNthkb1Rv3A/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1565795305597?e=2147483647&v=beta&t=J8Zi9Pc8VYuWL-4Bn4QIlaqEbJyzYNTJ3OlibtA_-uM',
       linkedin: 'https://www.linkedin.com/in/siddhartha-abburi-36267117/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app',
     },
-    {
-      name: 'Mr. K.V.N.D.S Srinivas',
-      position: 'Senior Vice President & Delivery Head for HLS Healthcare, APAC & Europe',
-      company: 'Persistence Systems',
-      src: '/images/kvnds-srinivas.png',
-      linkedin: 'https://www.linkedin.com/in/srinivas-kvnds/',
-    },
+   
     {
       name: 'Smt Sruthi',
       position: 'Representative',
@@ -191,8 +192,13 @@ const GuestsList = () => {
       name: 'Dr. B. Pradeepa Kumari',
       position: 'Deputy Executive Engineer',
       company: 'Water Resources Department, Government of Andhra Pradesh',
-      src: '/images/prem_sir.jpeg',
-      linkedin: 'https://www.linkedin.com/in/drpremkondaveeti-77228a4a/',
+      src: '/images/dummy.jpeg',
+    },
+     {
+      name: 'Dr. Vinod Babu Bollikonda',
+      position: 'CEO',
+      company: 'Blue Cloud Softech Solutions Ltd., Hyderabad',
+      src: '/images/dummy.jpeg',
     }
   ];
   

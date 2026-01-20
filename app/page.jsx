@@ -490,6 +490,12 @@ const CoordinatorsSection = () => {
       role: 'Professor & Head, MBA',
       imgSrc: '/images/Dr.-A.-Sree-ram.jpg',
     },
+    {
+      name: 'Mr. K. Srinivas',
+      title: '',
+      role: 'Head, Industry Relations Training & Placements',
+      imgSrc: '/images/srinivas.png',
+    },
   ];
 
   const Coordinators = [

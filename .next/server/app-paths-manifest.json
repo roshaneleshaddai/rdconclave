@@ -1,5 +1,6 @@
 {
-  "/speakers/page": "app/speakers/page.js",
+  "/page": "app/page.js",
   "/meet/page": "app/meet/page.js",
-  "/page": "app/page.js"
+  "/speakers/page": "app/speakers/page.js",
+  "/icon.png/route": "app/icon.png/route.js"
 }
