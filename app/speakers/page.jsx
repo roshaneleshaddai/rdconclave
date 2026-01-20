@@ -46,6 +46,13 @@ const GuestsList = () => {
       linkedin: 'https://www.linkedin.com/in/rajiv-kumar-5138239b/',
     },
     {
+      name: 'Mr. K.V.N.D.S Srinivas',
+      position: 'Senior Vice President & Delivery Head for HLS Healthcare, APAC & Europe',
+      company: 'Persistence Systems',
+      src: '/images/kvnds-srinivas.png',
+      linkedin: 'https://www.linkedin.com/in/srinivas-kvnds/',
+    },
+    {
       name: 'Shri MV Rajashekhar',
       position: 'Sr. Vice President',
       company: 'Paras Defence & Space Technologies, Mumbai',
@@ -82,13 +89,7 @@ const GuestsList = () => {
       src: 'https://media.licdn.com/dms/image/v2/C5603AQGRNthkb1Rv3A/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1565795305597?e=2147483647&v=beta&t=J8Zi9Pc8VYuWL-4Bn4QIlaqEbJyzYNTJ3OlibtA_-uM',
       linkedin: 'https://www.linkedin.com/in/siddhartha-abburi-36267117/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app',
     },
-    {
-      name: 'Mr. K.V.N.D.S Srinivas',
-      position: 'Senior Vice President & Delivery Head for HLS Healthcare, APAC & Europe',
-      company: 'Persistence Systems',
-      src: '/images/kvnds-srinivas.png',
-      linkedin: 'https://www.linkedin.com/in/srinivas-kvnds/',
-    },
+    
     {
       name: 'Smt Sruthi',
       position: 'Representative',
