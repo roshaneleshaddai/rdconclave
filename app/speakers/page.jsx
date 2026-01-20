@@ -21,7 +21,7 @@ const GuestsList = () => {
       name: 'Prof. D. V. L. N. Somayajulu',
       position: 'Director',
       company: 'National Institute of Technology, Manipur',
-      src: '/images/DVLN_Somayajulu.jpg',
+      src: '/images/Dist_Guest 1.jpg',
       linkedin: 'https://www.linkedin.com/in/d-somayajulu-8530038b/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app',
     },
     {
