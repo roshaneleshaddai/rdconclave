@@ -34,16 +34,9 @@ const GuestsList = () => {
     {
       name: 'Mrs. Padmaja Sriram',
       position: 'Head - TA - APAC',
-      company: 'AT&T,Hyderabad',
+      company: 'AT&T, Hyderabad',
       src: '/images/padmaja-sriram.jpeg',
       linkedin: 'https://www.linkedin.com/in/pams67/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app',
-    },
-     {
-      name: 'Mr. K.V.N.D.S Srinivas',
-      position: 'Senior Vice President & Delivery Head for HLS Healthcare, APAC & Europe',
-      company: 'Persistence Systems',
-      src: '/images/kvnds-srinivas.png',
-      linkedin: 'https://www.linkedin.com/in/srinivas-kvnds/',
     },
     {
       name: 'Dr. Rajiv Kumar',
@@ -69,7 +62,13 @@ const GuestsList = () => {
       position: 'Sr. Vice President, Global Head - Engineering Services Group',
       company: 'Tech Mahindra, Bangalore',
       src: '/images/venkat.png',
-    }
+    },{
+      name: 'Mr. K.V.N.D.S Srinivas',
+      position: 'Senior Vice President & Delivery Head for HLS Healthcare, APAC & Europe',
+      company: 'Persistence Systems',
+      src: '/images/kvnds-srinivas.png',
+      linkedin: 'https://www.linkedin.com/in/srinivas-kvnds/',
+    },
   ];
 
   // Invited Speakers
@@ -89,53 +88,46 @@ const GuestsList = () => {
       linkedin: 'https://www.linkedin.com/in/rksrivastav/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app',
     },
     {
-      name: 'Mr. Siddhartha Abburi',
-      position: 'Director',
-      company: 'Avantel Limited, Hyderabad',
-      src: 'https://media.licdn.com/dms/image/v2/C5603AQGRNthkb1Rv3A/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1565795305597?e=2147483647&v=beta&t=J8Zi9Pc8VYuWL-4Bn4QIlaqEbJyzYNTJ3OlibtA_-uM',
-      linkedin: 'https://www.linkedin.com/in/siddhartha-abburi-36267117/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app',
-    },
-   
-    {
-      name: 'Smt Sruthi',
-      position: 'Representative',
-      company: 'Efftronics',
+      name: 'Smt Sruthi Dasari',
+      position: 'Executive Manager - HR ',
+      company: 'Efftronics Systems Pvt Ltd., Vijayawada',
       src: '/images/dummy.jpeg',
     },
     {
       name: 'Dr. Rama Krishna Vankamamidi',
       position: 'Capability Manager',
-      company: 'HCL',
+      company: 'HCL, Vijaywada',
       src: '/images/ramakrishna-hcl.png',
     },
+
     {
       name: 'Mr. Srinivas Reddy',
-      position: 'Representative',
-      company: 'Tech-M',
+      position: 'Head-HR',
+      company: 'TechMahindra, Vijayawada',
       src: '/images/dummy.jpeg',
     },
     {
       name: 'Mr. Sreenivasa Vivekanand Peesapati',
       position: 'Head, BFSI CBO Transition Practice',
-      company: 'TCS',
+      company: 'TCS, Hyderabad',
       src: '/images/vivekananda.png',
     },
     {
       name: 'Mr. Prathap Kolla',
       position: 'Senior Product Manager',
-      company: 'Tata Consultancy Services',
+      company: 'TCS, Hyderabad',
       src: '/images/pratap-kolla.png',
     },
     {
       name: 'Mr. Jai Prakash Netha',
       position: 'Director - Talent Initiatives',
-      company: 'SMART BRIDGE',
+      company: 'SMART BRIDGE, Hyderabad',
       src: '/images/dummy.jpeg',
     },
     {
       name: 'Mr. Srinagaveer Vundavalli',
       position: 'CCC Group Founder & CEO',
-      company: 'CCC',
+      company: 'CCC, Hyderabad',
       src: '/images/dummy.jpeg',
     },
     {
@@ -147,19 +139,19 @@ const GuestsList = () => {
     {
       name: 'Mr. Vamsi Krishna Reddy Chinta',
       position: 'Regional Head - Academic & Govt',
-      company: 'LinkedIn',
+      company: 'LinkedIn, Hyderabad',
       src: '/images/dummy.jpeg',
     },
     {
       name: 'Komali Jakkula',
-      position: 'TA - Manager',
-      company: 'Innoschip',
+      position: 'Manager - TA',
+      company: 'Moschip, Hyderabad',
       src: '/images/komali.png',
     },
     {
-      name: 'Ravali Gopavarapu',
-      position: 'Representative',
-      company: 'Microsoft',
+      name: 'Ms. Ravali Gopavarapu',
+      position: 'Senior Project Manager',
+      company: 'Microsoft, Hyderabad',
       src: '/images/dummy.jpeg',
     },
     {
