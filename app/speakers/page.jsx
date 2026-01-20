@@ -57,6 +57,12 @@ const GuestsList = () => {
       company: 'RANE Industries, Chennai',
       src: '/images/prabhakaran.png',
     },
+    {
+      name: 'Venkat Gajjala',
+      position: 'Sr. Vice President, Global Head - Engineering Services Group',
+      company: 'Tech Mahindra, Bangalore',
+      src: '/images/venkat.png',
+    }
   ];
 
   // Invited Speakers
@@ -181,6 +187,13 @@ const GuestsList = () => {
       src: '/images/prem_sir.jpeg',
       linkedin: 'https://www.linkedin.com/in/drpremkondaveeti-77228a4a/',
     },
+     {
+      name: 'Dr. B. Pradeepa Kumari',
+      position: 'Deputy Executive Engineer',
+      company: 'Water Resources Department, Government of Andhra Pradesh',
+      src: '/images/prem_sir.jpeg',
+      linkedin: 'https://www.linkedin.com/in/drpremkondaveeti-77228a4a/',
+    }
   ];
   
     useEffect(() => {
