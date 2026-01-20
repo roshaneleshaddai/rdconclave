@@ -96,7 +96,7 @@ const GuestsList = () => {
     {
       name: 'Dr. Rama Krishna Vankamamidi',
       position: 'Solution Director ',
-      company: 'HCL, Vijaywada',
+      company: 'HCL, Vijayawada',
       src: '/images/ramakrishna-hcl.png',
     },
 
