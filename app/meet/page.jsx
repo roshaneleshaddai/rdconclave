@@ -8,7 +8,7 @@ const Meet = () => {
   // Array of expected outcomes
   const logos = [
     '/images/industry4.png',
-     'https://upload.wikimedia.org/wikipedia/commons/6/64/TCS_logo-black.png',
+     '/images/industry13.jpeg',
      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS83mygX-6NG7lLPr0N-fzQq4VLzh52wN15yg&s',
     'https://i.pinimg.com/564x/34/a2/b1/34a2b1d02fd71b5a742eb5e34301f70f.jpg',
     'https://media.licdn.com/dms/image/v2/D560BAQH6NnQXsFufHA/company-logo_200_200/company-logo_200_200/0/1665503554245/ctscorporation_logo?e=2147483647&v=beta&t=fAuC1tCHFMqg7l7ahBTPlds9esj_il1mJyRueOVZR64',
@@ -28,9 +28,17 @@ const Meet = () => {
     '/images/sparklogo.png',
     'https://logosandtypes.com/wp-content/uploads/2022/03/Cognizant.png',
     'https://iittnif.com/images/logos/IITT_InIf_svg2-01.png',
-    'https://media.licdn.com/dms/image/v2/C510BAQGV0O35YJWcTg/company-logo_200_200/company-logo_200_200/0/1631324752733?e=1745452800&v=beta&t=fcLPin37c8wDEecS6uclQqVAG-6CMj3T-1w8Q-siog4',
+    '/images/industry22.jpeg',
     'https://logosandtypes.com/wp-content/uploads/2024/07/Verizon.png',
-    'https://media.licdn.com/dms/image/v2/C560BAQH8ScPl3YUWkg/company-logo_200_200/company-logo_200_200/0/1630660575582/roots_multiclean_ltd_logo?e=1745452800&v=beta&t=tZyAXq9LNG9rRom054nZccVRADKpDjIEIrtW2K_p7FQ',
+    '/images/industry21.jpeg',
+    '/images/industry12.jpeg',
+    '/images/industry14.jpeg',
+    '/images/industry15.jpeg',
+    '/images/industry16.jpeg',
+    '/images/industry17.jpeg',
+    '/images/industry18.jpeg',
+    '/images/industry19.jpeg',
+    '/images/industry23.jpeg',
   ];
 
   // Industries Section Component with Fade-In Effect

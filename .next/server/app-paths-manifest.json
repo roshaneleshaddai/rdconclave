@@ -1,6 +1,10 @@
 {
+<<<<<<< HEAD
   "/page": "app/page.js",
   "/meet/page": "app/meet/page.js",
   "/speakers/page": "app/speakers/page.js",
   "/icon.png/route": "app/icon.png/route.js"
+=======
+  "/meet/page": "app/meet/page.js"
+>>>>>>> a476e4c (changes)
 }

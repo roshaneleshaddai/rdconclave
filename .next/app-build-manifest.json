@@ -1,10 +1,9 @@
 {
   "pages": {
-    "/page": [
+    "/speakers/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/css/app/page.css",
-      "static/chunks/app/page.js"
+      "static/chunks/app/speakers/page.js"
     ],
     "/layout": [
       "static/chunks/webpack.js",
@@ -13,14 +12,17 @@
       "static/chunks/app/layout.js"
     ],
     "/meet/page": [
+<<<<<<< HEAD
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/meet/page.js"
     ],
     "/speakers/page": [
+=======
+>>>>>>> a476e4c (changes)
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/speakers/page.js"
+      "static/chunks/app/meet/page.js"
     ]
   }
 }
