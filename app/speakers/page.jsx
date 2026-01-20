@@ -167,13 +167,6 @@ const GuestsList = () => {
       src: '/images/dummy.jpeg',
     },
     {
-      name: 'Ms. Spurthi Dasari',
-      position: 'Executive Manager - HR',
-      company: 'Efftronics Systems Pvt Ltd., Mangalagiri',
-      src: '/images/spurthi-mam.jpeg',
-      linkedin: 'https://www.linkedin.com/in/spurthi-dasari-3106b6160/',
-    },
-    {
       name: 'Dr. PREM KONDAVEETI',
       position: 'Project Manager',
       company: 'Jesvid Cryo Technologies Pvt.Ltd., Hyderabad',
