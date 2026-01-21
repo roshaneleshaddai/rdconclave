@@ -60,7 +60,7 @@ const GuestsList = () => {
     {
       name: 'Venkat Gajjala',
       position: 'Sr. Vice President, Global Head - Engineering Services Group',
-      company: 'Tech Mahindra, Bangalore',
+      company: 'TechMahindra, Bangalore',
       src: '/images/Dist_Guest 7.jpeg',
     },{
       name: 'Shri K.V.N.D.S Srinivas',
