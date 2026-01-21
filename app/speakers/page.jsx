@@ -88,22 +88,21 @@ const GuestsList = () => {
       linkedin: 'https://www.linkedin.com/in/rksrivastav/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app',
     },
     {
-      name: 'Smt Sruthi Dasari',
-      position: 'Executive Manager - HR ',
+      name: 'Smt. Sruthi Dasari',
+      position: 'Executive Manager - HR',
       company: 'Efftronics Systems Pvt Ltd., Vijayawada',
       src: '/images/dummy.jpeg',
     },
     {
       name: 'Dr. Rama Krishna Vankamamidi',
-      position: 'Solution Director ',
+      position: 'Capability Manager',
       company: 'HCL, Vijayawada',
       src: '/images/ramakrishna-hcl.png',
     },
-
     {
       name: 'Mr. Srinivas Reddy',
       position: 'Head-HR',
-      company: 'TechMahindra, Vijayawada',
+      company: 'TechMahindra Vijayawada',
       src: '/images/dummy.jpeg',
     },
     {
@@ -121,7 +120,7 @@ const GuestsList = () => {
     {
       name: 'Mr. Jai Prakash Netha',
       position: 'Director - Talent Initiatives',
-      company: 'SMART BRIDGE, Hyderabad',
+      company: 'SmartBridge, Hyderabad',
       src: '/images/dummy.jpeg',
     },
     {
@@ -131,21 +130,21 @@ const GuestsList = () => {
       src: '/images/dummy.jpeg',
     },
     {
-      name: 'Dr. Vipul Valamjee',
+      name: 'Dr. Vipul',
       position: 'Data Scientist',
-      company: 'Strategic Advisor-AI Talent&Employability - work with AP Govt,Calibo Technologies, Hyderabad',
+      company: 'Strategic Advisor – AI Talent & Employability work with AP Govt. Calibo Technlogies, Hyderabad',
       src: '/images/vipul.png',
     },
     {
       name: 'Mr. Vamsi Krishna Reddy Chinta',
-      position: 'Regional Head - Academic & Govt',
+      position: 'Regional Head - Academics & Govt.',
       company: 'LinkedIn, Hyderabad',
       src: '/images/dummy.jpeg',
     },
     {
-      name: 'Komali Jakkula',
+      name: 'Ms. Komali Jakkula',
       position: 'Manager - TA',
-      company: 'Moschip, Hyderabad',
+      company: 'MosChip, Hyderabad',
       src: '/images/komali.png',
     },
     {
@@ -155,31 +154,19 @@ const GuestsList = () => {
       src: '/images/dummy.jpeg',
     },
     {
-      name: 'Mr. Rajasekharam Naidu P',
+      name: 'Mr. Rajasekharam Naidu P.',
       position: 'Co-Founder, Director Embedded Software & AI',
       company: 'BITSILICA - Semiconductor Design Services, Hyderabad',
       src: '/images/dummy.jpeg',
     },
     {
-      name: 'Mr. Prasad .M',
-      position: 'Representative',
-      company: 'Moschip',
-      src: '/images/dummy.jpeg',
-    },
-    {
-      name: 'Dr. PREM KONDAVEETI',
+      name: 'Dr. Prem Kondaveeti',
       position: 'Project Manager',
-      company: 'Jesvid Cryo Technologies Pvt.Ltd., Hyderabad',
+      company: 'Jesvid Cryo Technologies Pvt. Ltd., Guntur',
       src: '/images/prem_sir.jpeg',
       linkedin: 'https://www.linkedin.com/in/drpremkondaveeti-77228a4a/',
     },
-     {
-      name: 'Dr. B. Pradeepa Kumari',
-      position: 'Deputy Executive Engineer',
-      company: 'Water Resources Department, Government of Andhra Pradesh',
-      src: '/images/dummy.jpeg',
-    },
-     {
+    {
       name: 'Dr. Vinod Babu Bollikonda',
       position: 'CEO',
       company: 'Blue Cloud Softech Solutions Ltd., Hyderabad',
