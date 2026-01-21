@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 import { motion } from 'framer-motion';
 import "./globals.css";
 import { useRouter } from 'next/router';
+export const dynamic = 'force-dynamic';
 
 export default function Home() {
   const images = [
