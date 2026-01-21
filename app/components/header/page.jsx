@@ -238,7 +238,6 @@ const Header = () => {
               Guests
             </Link>
           </li>
-         
           <li className="relative w-3/4">
             <button
               className="text-black w-full rounded p-2 bg-white shadow-md focus:ring-2 focus:ring-blue-500 text-lg"
@@ -308,12 +307,6 @@ const Header = () => {
           className={`cursor-pointer m-0.5 bg-[#002147] text-white border-[#1A1A1A] text-[#213555] font-semibold transition-all duration-300 ease-in-out ${isScrolled ? 'text-sm py-1 px-4' : 'text-base py-1 px-2'} hover:bg-[#FFD700]/20  hover:text-black hover:shadow-lg`}
         >
           Guests
-        </Link>
-        <Link
-          href="/schedule"
-          className={`cursor-pointer m-0.5 bg-[#002147] text-white border-[#1A1A1A] text-[#213555] font-semibold transition-all duration-300 ease-in-out ${isScrolled ? 'text-sm py-1 px-4' : 'text-base py-1 px-2'} hover:bg-[#FFD700]/20  hover:text-black hover:shadow-lg`}
-        >
-          Schedule
         </Link>
         <div className="relative">
           <button
