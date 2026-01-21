@@ -25,7 +25,7 @@ const GuestsList = () => {
       linkedin: 'https://www.linkedin.com/in/d-somayajulu-8530038b/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app',
     },
     {
-      name: 'Mr. Rama Krishna Dasari',
+      name: 'Shri Rama Krishna Dasari',
       position: 'CEO and Founder',
       company: 'Efftronics Systems Pvt. Ltd., Mangalagiri',
       src: '/images/Dist_Guest 2.png',
@@ -63,7 +63,7 @@ const GuestsList = () => {
       company: 'Tech Mahindra, Bangalore',
       src: '/images/Dist_Guest 7.jpeg',
     },{
-      name: 'Mr. K.V.N.D.S Srinivas',
+      name: 'Shri K.V.N.D.S Srinivas',
       position: 'Senior Vice President & Delivery Head for HLS Healthcare, APAC & Europe',
       company: 'Persistence Systems',
       src: '/images/Dist_Guest 8.jpg',
@@ -100,31 +100,31 @@ const GuestsList = () => {
       src: '/images/sp4.png',
     },
     {
-      name: 'Mr. Srinivas Reddy',
+      name: 'Shri Srinivas Reddy',
       position: 'Head-HR',
       company: 'TechMahindra Vijayawada',
       src: '/images/sp5.jpeg',
     },
     {
-      name: 'Mr. Sreenivasa Vivekanand Peesapati',
+      name: 'Shri Sreenivasa Vivekanand Peesapati',
       position: 'Head, BFSI CBO Transition Practice',
       company: 'TCS, Hyderabad',
       src: '/images/sp6.png',
     },
     {
-      name: 'Mr. Prathap Kolla',
+      name: 'Shri Prathap Kolla',
       position: 'Senior Product Manager',
       company: 'TCS, Hyderabad',
       src: '/images/sp7.png',
     },
     {
-      name: 'Mr. Jai Prakash Netha',
+      name: 'Shri Jai Prakash Netha',
       position: 'Director - Talent Initiatives',
       company: 'SmartBridge, Hyderabad',
       src: '/images/sp8.jpg',
     },
     {
-      name: 'Mr. Srinagaveer Vundavalli',
+      name: 'Shri Srinagaveer Vundavalli',
       position: 'CCC Group Founder & CEO',
       company: 'CCC, Hyderabad',
       src: '/images/sp9.png',
@@ -136,7 +136,7 @@ const GuestsList = () => {
       src: '/images/sp10.jpg',
     },
     {
-      name: 'Mr. Vamsi Krishna Reddy Chinta',
+      name: 'Shri Vamsi Krishna Reddy Chinta',
       position: 'Regional Head - Academics & Govt.',
       company: 'LinkedIn, Hyderabad',
       src: '/images/sp11.png',
@@ -154,7 +154,7 @@ const GuestsList = () => {
       src: '/images/sp13.jpg',
     },
     {
-      name: 'Mr. Rajasekharam Naidu P.',
+      name: 'Shri Rajasekharam Naidu P.',
       position: 'Co-Founder, Director Embedded Software & AI',
       company: 'BITSILICA - Semiconductor Design Services, Hyderabad',
       src: '/images/sp14.png',
