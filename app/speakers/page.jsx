@@ -170,7 +170,7 @@ const GuestsList = () => {
       name: 'Dr. Vinod Babu Bollikonda',
       position: 'CEO',
       company: 'Blue Cloud Softech Solutions Ltd., Hyderabad',
-      src: '/images/sp16.jpg',
+      src: '/images/vinod_babu.jpg',
     }
   ];
   
