@@ -60,7 +60,7 @@ const GuestsList = () => {
     {
       name: 'Venkat Gajjala',
       position: 'Sr. Vice President, Global Head - Engineering Services Group',
-      company: 'TechMahindra, Bangalore',
+      company: 'Tech Mahindra, Bangalore',
       src: '/images/Dist_Guest 7.jpeg',
     },{
       name: 'Shri K.V.N.D.S Srinivas',
@@ -102,7 +102,7 @@ const GuestsList = () => {
     {
       name: 'Shri Srinivas Reddy',
       position: 'Head-HR',
-      company: 'TechMahindra Vijayawada',
+      company: 'Tech Mahindra Vijayawada',
       src: '/images/sp5.jpeg',
     },
     {
@@ -130,7 +130,7 @@ const GuestsList = () => {
       src: '/images/sp9.png',
     },
     {
-      name: 'Dr. Vipul',
+      name: 'Dr. Vipul Valamjee',
       position: 'Data Scientist',
       company: 'Strategic Advisor – AI Talent & Employability work with AP Govt. Calibo Technlogies, Hyderabad',
       src: '/images/sp10.jpg',
