@@ -470,13 +470,13 @@ const CoordinatorsSection = () => {
       name: 'Dr. D. Venkata Rao',
       title: 'Dean, Velagapudi Ramakrishna Siddhartha School of Engineering,\nSchool of Management, School of LAW, School of Sciences,\nSchool of Arts & Commerce',
       role: 'Professor & Head, ECE',
-      imgSrc: '/images/ceprof.jpg',
+      imgSrc: '/images/venkata-rao.jpg',
     },
     {
       name: 'Dr. D. Rajeswara Rao',
       title: 'Dean, Industry Relations, Training & Placements',
       role: 'Professor & Head, CSE',
-      imgSrc: '/images/csehod.jpg',
+      imgSrc: '/images/rajeswara-rao.jpg',
     },
     {
       name: 'Dr. M. Suneetha',
@@ -488,15 +488,21 @@ const CoordinatorsSection = () => {
       name: 'Dr. A. Sree Ram',
       title: '',
       role: 'Professor & Head, MBA',
-      imgSrc: '/images/mcahod.jpg',
+      imgSrc: '/images/Dr.-A.-Sree-ram.jpg',
+    },
+    {
+      name: 'Mr. K. Srinivas',
+      title: '',
+      role: 'Head, Industry Relations Training & Placements',
+      imgSrc: '/images/srinivas.png',
     },
   ];
 
   const Coordinators = [
-    { name: 'Dr. G. Surya Narayana', position: 'Associate Professor (ECE)', imgSrc: '/images/co1.png' },
-    { name: 'Dr. K. Raghuveer', position: 'Associate Professor (MBA)', imgSrc: '/images/co2.png' },
-    { name: 'Dr. V. Radhesyam', position: 'Associate Professor (IT)', imgSrc: '/images/co3.jpeg' },
-    { name: 'Dr. Ashutosh Satapathy', position: 'Asst. Professor (Selection Grade) (CSE)', imgSrc: '/images/co4.png' },
+    { name: 'Dr. G. Surya Narayana', position: 'Associate Professor (ECE)', imgSrc: '/images/co1.png',},
+    { name: 'Dr. K. Raghuveer', position: 'Associate Professor (MBA)', imgSrc: '/images/co2.png',},
+    { name: 'Dr. V. Radhesyam', position: 'Associate Professor (IT)', imgSrc: '/images/co3.jpeg', },
+    { name: 'Dr. Ashutosh Satapathy', position: 'Asst. Professor (Selection Grade) (CSE)', imgSrc: '/images/co4.png', },
     ];
 
     
@@ -540,19 +546,9 @@ const CoordinatorsSection = () => {
         <ul className="list-none flex flex-col md:flex-row justify-center items-center text-lg text-gray-800 flex-wrap mt-2">
           {bottomCoordinators.map((coordinator, index) => (
             <li key={index} className="flex flex-col items-center p-2 m-2 rounded-md">
-              {coordinator.imgSrc ? (
-                <Image
-                  src={coordinator.imgSrc}
-                  alt={coordinator.name}
-                  width={150}
-                  height={160}
-                  className="w-[150px] h-[160px] object-cover rounded mb-2"
-                />
-              ) : (
-                <div className="w-[150px] h-[160px] bg-gray-100 flex items-center justify-center text-4xl font-bold text-[#002147] mb-2 rounded shadow-inner">
-                  {coordinator.name.split(' ').pop().charAt(0)}
-                </div>
-              )}
+              <div className="w-[150px] h-[160px] bg-gray-100 flex items-center justify-center text-4xl font-bold text-[#002147] mb-2 rounded shadow-inner">
+                {coordinator.name.split(' ').pop().charAt(0)}
+              </div>
               <p className="text-base text-center text-[#002147] font-bold">{coordinator.name}</p>
               <p className="text-sm text-center text-gray-600">{coordinator.position}</p>
             </li>
