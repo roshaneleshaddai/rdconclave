@@ -12,10 +12,17 @@
       "static/css/app/layout.css",
       "static/chunks/app/layout.js"
     ],
+<<<<<<< HEAD
     "/speakers/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/speakers/page.js"
+=======
+    "/hackathon/codefusion/payment/finalteams/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/hackathon/codefusion/payment/finalteams/page.js"
+>>>>>>> 28251d6 (Resolved merge conflicts)
     ]
   }
 }
