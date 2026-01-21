@@ -77,7 +77,7 @@ const GuestsList = () => {
       name: 'Dr. Mamilla Ravi Sankar',
       position: 'Professor & HOD',
       company: 'Department of Mechanical Engineering, IIT Tirupati',
-      src: '/images/sp1.png',
+      src: '/images/sp1.PNG',
       linkedin: 'https://www.linkedin.com/in/mamilla-ravi-sankar-4b26ab9/',
     },
     {
