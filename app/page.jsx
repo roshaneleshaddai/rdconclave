@@ -546,9 +546,19 @@ const CoordinatorsSection = () => {
         <ul className="list-none flex flex-col md:flex-row justify-center items-center text-lg text-gray-800 flex-wrap mt-2">
           {bottomCoordinators.map((coordinator, index) => (
             <li key={index} className="flex flex-col items-center p-2 m-2 rounded-md">
-              <div className="w-[150px] h-[160px] bg-gray-100 flex items-center justify-center text-4xl font-bold text-[#002147] mb-2 rounded shadow-inner">
-                {coordinator.name.split(' ').pop().charAt(0)}
-              </div>
+              {coordinator.imgSrc ? (
+                <Image
+                  src={coordinator.imgSrc}
+                  alt={coordinator.name}
+                  width={150}
+                  height={160}
+                  className="w-[150px] h-[160px] object-cover rounded mb-2"
+                />
+              ) : (
+                <div className="w-[150px] h-[160px] bg-gray-100 flex items-center justify-center text-4xl font-bold text-[#002147] mb-2 rounded shadow-inner">
+                  {coordinator.name.split(' ').pop().charAt(0)}
+                </div>
+              )}
               <p className="text-base text-center text-[#002147] font-bold">{coordinator.name}</p>
               <p className="text-sm text-center text-gray-600">{coordinator.position}</p>
             </li>
