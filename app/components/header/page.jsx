@@ -238,11 +238,7 @@ const Header = () => {
               Guests
             </Link>
           </li>
-          <li>
-            <Link href="/schedule" onClick={toggleMenu} className="hover:text-[#FFD700]">
-              Schedule
-            </Link>
-          </li>
+         
           <li className="relative w-3/4">
             <button
               className="text-black w-full rounded p-2 bg-white shadow-md focus:ring-2 focus:ring-blue-500 text-lg"
