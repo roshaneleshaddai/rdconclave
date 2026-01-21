@@ -306,6 +306,27 @@ const DownloadSchedule = () => {
           
         </div> */}
         
+        {/* Schedule Downloads (Online/Offline) */}
+        <div className="mx-6 mb-6">
+          <div className="bg-[#002147]/10 shadow-md rounded-lg p-6 flex flex-col md:flex-row items-center justify-between gap-4">
+            <h2 className="text-xl md:text-2xl font-semibold text-[#002147]">Download Presentation Schedules</h2>
+            <div className="flex gap-3">
+              <a
+                href="/RC2026-OFFLINE%20PRESENTATION%20SCHEDULE..pdf"
+                download="RC2026-Offline-Presentation-Schedule.pdf"
+              >
+                <button className="px-4 py-2 bg-[#002147] text-white rounded hover:bg-[#002147]/90">Offline</button>
+              </a>
+              <a
+                href="/RC2026-ONLINE%20PRESENTATION%20SCHEDULE.pdf"
+                download="RC2026-Online-Presentation-Schedule.pdf"
+              >
+                <button className="px-4 py-2 bg-[#002147] text-white rounded hover:bg-[#002147]/90">Online</button>
+              </a>
+            </div>
+          </div>
+        </div>
+
         {/* Themes Table moved above Important Dates */}
         <div className="mx-6 mb-8 bg-white shadow-md rounded-lg p-6">
           <h2 className="text-3xl font-bold text-left text-[#002147] mb-2 border-l-4 border-[#002147] pl-3">Conference Themes</h2>
