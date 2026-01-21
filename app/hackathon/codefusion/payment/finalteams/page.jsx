@@ -38,9 +38,7 @@ export default function FinalTeamsListPage() {
     college3: 0, 
     college4: 0,
     collegeCountMap: {},
-    domainStats: {},
-    cseStudentCount: 0,
-    itStudentCount: 0
+    domainStats: {} 
   });
 
   const normalizeCollege = (collegeName) => {
@@ -176,9 +174,7 @@ collegeMap.set(
       college4: college4,
       totalColleges: uniqueCollegesCount,
       collegeCountMap: collegeCountMap,
-      domainStats: domainCounts,
-      cseStudentCount: cseStudentCount,
-      itStudentCount: itStudentCount
+      domainStats: domainCounts
     });
   };
 
@@ -418,12 +414,6 @@ body {
   <div class="p1-stats-grid-2">
     <div class="p1-stat-card"><div class="p1-stat-label">Total Boys</div><div class="p1-stat-value">${stats.totalBoys}</div></div>
     <div class="p1-stat-card"><div class="p1-stat-label">Total Girls</div><div class="p1-stat-value">${stats.totalGirls}</div></div>
-  </div>
-
-  <div class="p1-section-title">Department-wise Student Count</div>
-  <div class="p1-stats-grid-2">
-    <div class="p1-stat-card"><div class="p1-stat-label">CSE Students (Open Innovation, AI & Agents)</div><div class="p1-stat-value">${stats.cseStudentCount}</div></div>
-    <div class="p1-stat-card"><div class="p1-stat-label">IT Students (Web Dev, Web3.0, Sustainability, Cyber Security)</div><div class="p1-stat-value">${stats.itStudentCount}</div></div>
   </div>
 
   <div class="p1-section-title">State-wise Colleges</div>
@@ -682,22 +672,6 @@ const blob = new Blob([htmlContent], { type: "text/html;charset=utf-8;" });
               <p className="text-4xl font-bold text-pink-600 mt-2">
                 {isLoading ? "..." : stats.totalGirls}
               </p>
-            </div>
-          </div>
-
-          <div className="bg-gradient-to-r from-blue-50 via-purple-50 to-pink-50 rounded-lg p-6 mb-8 border border-gray-200">
-            <h3 className="text-center font-bold text-[#002147] mb-6 text-base">Department-wise Student Count</h3>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div className="bg-white rounded-lg border border-blue-200 p-4 text-center">
-                <p className="text-xs font-semibold text-gray-600 mb-2">CSE Students</p>
-                <p className="text-xs text-gray-500 mb-2">(Open Innovation, AI & Agents)</p>
-                <p className="text-3xl font-bold text-blue-600">{isLoading ? "..." : stats.cseStudentCount}</p>
-              </div>
-              <div className="bg-white rounded-lg border border-purple-200 p-4 text-center">
-                <p className="text-xs font-semibold text-gray-600 mb-2">IT Students</p>
-                <p className="text-xs text-gray-500 mb-2">(Web Dev, Web3.0, Sustainability, Cyber Security)</p>
-                <p className="text-3xl font-bold text-purple-600">{isLoading ? "..." : stats.itStudentCount}</p>
-              </div>
             </div>
           </div>
 
