@@ -499,10 +499,10 @@ const CoordinatorsSection = () => {
   ];
 
   const Coordinators = [
-    { name: 'Dr. G. Surya Narayana', position: 'Associate Professor (ECE)' },
-    { name: 'Dr. K. Raghuveer', position: 'Associate Professor (MBA)' },
-    { name: 'Dr. V. Radhesyam', position: 'Associate Professor (IT)' },
-    { name: 'Dr. Ashutosh Satapathy', position: 'Asst. Professor (Selection Grade) (CSE)' },
+    { name: 'Dr. G. Surya Narayana', position: 'Associate Professor (ECE)', imgSrc: '/images/co1.png',},
+    { name: 'Dr. K. Raghuveer', position: 'Associate Professor (MBA)', imgSrc: '/images/co2.png',},
+    { name: 'Dr. V. Radhesyam', position: 'Associate Professor (IT)', imgSrc: '/images/co3.jpeg', },
+    { name: 'Dr. Ashutosh Satapathy', position: 'Asst. Professor (Selection Grade) (CSE)', imgSrc: '/images/co4.png', },
     ];
 
     
