@@ -102,7 +102,7 @@ const GuestsList = () => {
     {
       name: 'Shri Srinivas Reddy',
       position: 'Head-HR',
-      company: 'Tech Mahindra Vijayawada',
+      company: 'Tech Mahindra, Vijayawada',
       src: '/images/sp5.jpeg',
     },
     {
