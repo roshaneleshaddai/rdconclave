@@ -126,17 +126,17 @@ const Meet = () => {
                 <tbody>
                   <tr className="bg-[#E8EEF7]">
                     <td className="border border-gray-300 px-4 py-3 font-semibold text-[#002147]">Moderator</td>
-                    <td className="border border-gray-300 px-4 py-3">Venkat Gajjala, Sr. Vice President, Global Head, Tech Mahindra</td>
+                    <td className="border border-gray-300 px-4 py-3">Shri Venkat Gajjala, Sr. Vice President, Global Head, Tech Mahindra</td>
                   </tr>
                   <tr className="bg-white">
                     <td className="border border-gray-300 px-4 py-3 font-semibold text-[#002147]">Industrialists</td>
                     <td className="border border-gray-300 px-4 py-3">
                       <ul className="list-disc list-inside space-y-1">
-                        <li>Mr. N. Jai Prakash, Director- Talent Initiatives, Hyderabad</li>
-                        <li>Mr. M.V. Rajashekhar, Sr. Vice President, Paras Defense & Space Technologies, Hyderabad</li>
+                        <li>Shri N. Jai Prakash, Director- Talent Initiatives, Hyderabad</li>
+                        <li>Shri M.V. Rajashekhar, Sr. Vice President, Paras Defense & Space Technologies, Hyderabad</li>
                         <li>Dr. Vipul Valamjee, Strategic Advisor – AI Talent & Employability work with AP Govt, Calibo Technologies, Hyderabad</li>
-                        <li>Mr. Rajiv Kumar, Scientist -G & Group Head, Soil Resources & Land Use Monitoring Group (NRSC), Hyderabad</li>
-                        <li>Mr. K. Prathap, Senior Product Manager, Tata Consultancy Services, Hyderabad</li>
+                        <li>Shri Rajiv Kumar, Scientist -G & Group Head, Soil Resources & Land Use Monitoring Group (NRSC), Hyderabad</li>
+                        <li>Shri K. Prathap, Senior Product Manager, Tata Consultancy Services, Hyderabad</li>
                       </ul>
                     </td>
                   </tr>
@@ -146,7 +146,7 @@ const Meet = () => {
                       <ul className="list-disc list-inside space-y-1">
                         <li>Dr. A. Sree Ram, Professor and Head, School of Management</li>
                         <li>Dr. D. Rajeswara Rao, Professor & HOD, Dean Industry relations, Training & placements</li>
-                        <li>Mr. K. Srinivas, Head, Industry Relations & Placements</li>
+                        <li>Shri K. Srinivas, Head, Industry Relations & Placements</li>
                       </ul>
                     </td>
                   </tr>
@@ -173,11 +173,11 @@ const Meet = () => {
                     <td className="border border-gray-300 px-4 py-3 font-semibold text-[#002147]">Industrialists</td>
                     <td className="border border-gray-300 px-4 py-3">
                       <ul className="list-disc list-inside space-y-1">
-                        <li>Mr. B. Vinod Babu, CEO-Bluecloudsoft Solutions, Hyderabad</li>
-                        <li>Mr. P. Sreenivasa Vivekanand, Head, BFSI CBO Transition Practice, TCS, Hyderabad</li>
-                        <li>Mr. V. Srinagaveer, Founder & CEO-CCC, Hyderabad</li>
+                        <li>Shri B. Vinod Babu, CEO-Bluecloudsoft Solutions, Hyderabad</li>
+                        <li>Shri P. Sreenivasa Vivekanand, Head, BFSI CBO Transition Practice, TCS, Hyderabad</li>
+                        <li>Shri V. Srinagaveer, Founder & CEO-CCC, Hyderabad</li>
                         <li>Ms. D. Spurthi, Executive Manager-Efftronics Systems Pvt. Ltd. Vijayawada</li>
-                        <li>Mr. Ch. Vamsi Krishna Reddy, Regional Head- Academic & Govt, LinkedIn, Hyderabad</li>
+                        <li>Shri Ch. Vamsi Krishna Reddy, Regional Head- Academic & Govt, LinkedIn, Hyderabad</li>
                       </ul>
                     </td>
                   </tr>
@@ -214,11 +214,11 @@ const Meet = () => {
                     <td className="border border-gray-300 px-4 py-3 font-semibold text-[#002147]">Industrialists</td>
                     <td className="border border-gray-300 px-4 py-3">
                       <ul className="list-disc list-inside space-y-1">
-                        <li>Padmaja Sriram, Head - TA –APAC AT&T, Hyderabad</li>
-                        <li>Mr. K.V.N.D.S Srinivas, Senior Vice President & Delivery Head for HLS Healthcare, APAC & Europe, Persistence Systems, Chennai</li>
+                        <li>Mrs. Padmaja Sriram, Head - TA –APAC AT&T, Hyderabad</li>
+                        <li>Shri K.V.N.D.S Srinivas, Senior Vice President & Delivery Head for HLS Healthcare, APAC & Europe, Persistence Systems, Chennai</li>
                         <li>Dr. Prem Kondaveeti, Project Manager Jesvid Cryo Technologies Pvt.Ltd - Vijayawada</li>
-                        <li>Mr. Srinivas Reddy, Tech Mahindra, Vijayawada</li>
-                        <li>Mr. J. Komali, Manager Moschip, Hyderabad</li>
+                        <li>Shri Srinivas Reddy, Tech Mahindra, Vijayawada</li>
+                        <li>Shri J. Komali, Manager Moschip, Hyderabad</li>
                         <li>Dr. B. Pradeepa Kumari, Deputy Executive Engineer, Water Resources Department, Government of Andhra Pradesh</li>
                       </ul>
                     </td>
@@ -258,8 +258,8 @@ const Meet = () => {
                     <td className="border border-gray-300 px-4 py-3">
                       <ul className="list-disc list-inside space-y-1">
                         <li>Ms. G. Ravali, Senior Project Manager-Microsoft, Hyderabad</li>
-                        <li>Mr. Rajasekharam Naidu P, Co-Founder, Director Embedded Software & AI, BITSILICA - Semiconductor Design Services</li>
-                        <li>Mr. V. Rama Krishna, Capability Manager-HCL, Vijayawada</li>
+                        <li>Shri Rajasekharam Naidu P, Co-Founder, Director Embedded Software & AI, BITSILICA - Semiconductor Design Services</li>
+                        <li>Shri V. Rama Krishna, Capability Manager-HCL, Vijayawada</li>
                         <li>Dr. R. Prabhakaran, Associate Vice President- L&D, RANE Industries, Chennai</li>
                       </ul>
                     </td>
