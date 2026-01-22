@@ -79,7 +79,7 @@ const Header = () => {
         <div className="flex items-center justify-start space-x-2 md:space-x-4 mx-0">
               {/* Research Conclave logo - leftmost at screen edge */}
               <Image
-            src="/images/rclogo1.png"
+            src="/images/event_logo.png"
             alt="Research Conclave"
             width={isScrolled ? 70 : 90}
             height={isScrolled ? 70 : 90}
@@ -87,7 +87,7 @@ const Header = () => {
             loading="lazy"
           />
           <Image
-            src="/images/rclogo1.png"
+            src="/images/event_logo.png"
             alt="Research Conclave"
             width={isScrolled ? 110 : 120}
             height={isScrolled ? 110 : 120}
@@ -175,7 +175,7 @@ const Header = () => {
           </div> */}
           <div className="hidden md:block">
             <Image
-              src="/images/golden_jubilee_logo.jpeg"
+              src="/images/golden.jpeg"
               alt="Golden Jubilee"
               width={isScrolled ? 90 : 100} 
               height={isScrolled ? 90 : 100}
