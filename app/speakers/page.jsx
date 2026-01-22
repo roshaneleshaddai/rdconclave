@@ -88,7 +88,7 @@ const GuestsList = () => {
       linkedin: 'https://www.linkedin.com/in/rksrivastav/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app',
     },
     {
-      name: 'Smt. Sruthi Dasari',
+      name: 'Ms. Sruthi Dasari',
       position: 'Executive Manager - HR',
       company: 'Efftronics Systems Pvt Ltd., Vijayawada',
       src: '/images/sp3.jpg',
