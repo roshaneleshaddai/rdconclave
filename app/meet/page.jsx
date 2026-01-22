@@ -259,7 +259,7 @@ const Meet = () => {
                       <ul className="list-disc list-inside space-y-1">
                         <li>Ms. G. Ravali, Senior Project Manager-Microsoft, Hyderabad</li>
                         <li>Shri Rajasekharam Naidu P, Co-Founder, Director Embedded Software & AI, BITSILICA - Semiconductor Design Services</li>
-                        <li>Shri V. Rama Krishna, Capability Manager-HCL, Vijayawada</li>
+                        <li>Shri V. Rama Krishna, Solution Director-HCL, Vijayawada</li>
                         <li>Dr. R. Prabhakaran, Associate Vice President- L&D, RANE Industries, Chennai</li>
                       </ul>
                     </td>
