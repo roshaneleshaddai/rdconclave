@@ -127,20 +127,34 @@ function HorizontalImageScroller({ images }) {
 };
     return (
 <div className="" >
-        <div
-          className="bg-[#002147]/10 p-8 lg:mt-0 mt-52 rounded-lg mx-6 transition-opacity duration-1000 text-center"
-        >
-          <h1 className="text-4xl font-extrabold text-[#002147]">Research Conclave 2026</h1>
-          <h2 className="text-2xl font-bold mt-2 text-[#002147]">Organized by Research & Development Cell</h2>
-          <h3 className="text-xl font-semibold mt-1 text-[#002147]">Departments of CSE, ECE, IT & MBA</h3>
-          <h3 className="text-xl font-semibold mt-1 text-[#002147]">VR SIDDHARTHA SCHOOL OF ENGINEERING</h3>
-          <h1 className="text-3xl font-extrabold mt-4 text-[#00D700] drop-shadow-[0_0_10px_white]">January 23rd - 24th, 2026</h1>
-          <h2 className="text-2xl font-bold mt-2 text-[#00D700] drop-shadow-[0_0_10px_white]">1 Lakh worth Cash Prizes</h2>
-          <p className="text-md mt-1 text-gray-700">Accommodation, Food and Swags</p>
-          <p className="text-md font-semibold mt-1 text-black">Mode: Offline (In-Person Only)</p>
-          <p className="text-lg font-semibold mt-1 text-black">Venue: V. R. Siddhartha School of Engineering</p>
-        </div>
-
+       <div
+    className="bg-[#002147]/10 p-8 lg:mt-0 mt-52 rounded-lg mx-6 transition-opacity duration-1000 text-center"
+  >
+    <h1 className="text-4xl font-extrabold text-[#002147]">Research Conclave 2026</h1>
+    <h2 className="text-2xl font-bold mt-2 text-[#002147]">Organized by Research & Development Cell</h2>
+    <h3 className="text-xl font-semibold mt-1 text-[#002147]">Departments of CSE, ECE, IT & MBA</h3>
+    <h3 className="text-xl font-semibold mt-1 text-[#002147]">VR SIDDHARTHA SCHOOL OF ENGINEERING</h3>
+    <h1 className="text-3xl font-extrabold mt-4 text-[#00D700] drop-shadow-[0_0_10px_white]">January 23rd - 24th, 2026</h1>
+    <h2 className="text-2xl font-bold mt-2 text-[#00D700] drop-shadow-[0_0_10px_white]">1 Lakh worth Cash Prizes</h2>
+    <p className="text-md mt-1 text-gray-700">Accommodation, Food and Swags</p>
+    <p className="text-md font-semibold mt-1 text-black">Mode: Offline (In-Person Only)</p>
+    <p className="text-lg font-semibold mt-1 text-black">Venue: V. R. Siddhartha School of Engineering</p>
+    
+    {/* Schedule Button */}
+    <button
+      onClick={() => {
+        const link = document.createElement('a');
+        link.href = '/program_schedule.pdf';
+        link.download = 'program schedule RC 2026 doc.pdf';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      }}
+      className="mt-6 px-6 py-3 bg-[#002147] text-white text-lg font-bold rounded-lg hover:bg-[#003366] transition-colors duration-300 shadow-md hover:shadow-lg"
+    >
+      📅 View Schedule
+    </button>
+  </div>
 <div className="flex flex-col items-center lg:flex-row lg:justify-center min-h-full p-4 ">
   {/* Track 1: Industry-Academic Meet */}
   <div
