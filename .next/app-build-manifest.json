@@ -12,10 +12,45 @@
       "static/css/app/layout.css",
       "static/chunks/app/layout.js"
     ],
-    "/speakers/page": [
+    "/hackathon/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/speakers/page.js"
+      "static/chunks/app/hackathon/page.js"
+    ],
+    "/hackathon/codefusion/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/hackathon/codefusion/page.js"
+    ],
+    "/hackathon/codefusion/problemstatements/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/hackathon/codefusion/problemstatements/page.js"
+    ],
+    "/hackathon/codefusion/round1/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/hackathon/codefusion/round1/page.js"
+    ],
+    "/hackathon/codefusion/round2/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/hackathon/codefusion/round2/page.js"
+    ],
+    "/hackathon/codefusion/finalround/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/hackathon/codefusion/finalround/page.js"
+    ],
+    "/hackathon/codefusion/admin/paymentdashboard/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/hackathon/codefusion/admin/paymentdashboard/page.js"
+    ],
+    "/hackathon/codefusion/admin/roundsubmissions/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/hackathon/codefusion/admin/roundsubmissions/page.js"
     ]
   }
 }

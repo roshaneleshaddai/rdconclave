@@ -1,4 +1,9 @@
 {
-  "/page": "app/page.js",
-  "/speakers/page": "app/speakers/page.js"
+  "/hackathon/codefusion/problemstatements/page": "app/hackathon/codefusion/problemstatements/page.js",
+  "/hackathon/codefusion/round1/page": "app/hackathon/codefusion/round1/page.js",
+  "/hackathon/codefusion/round2/page": "app/hackathon/codefusion/round2/page.js",
+  "/hackathon/codefusion/finalround/page": "app/hackathon/codefusion/finalround/page.js",
+  "/hackathon/codefusion/admin/paymentdashboard/page": "app/hackathon/codefusion/admin/paymentdashboard/page.js",
+  "/hackathon/codefusion/admin/roundsubmissions/page": "app/hackathon/codefusion/admin/roundsubmissions/page.js",
+  "/icon.png/route": "app/icon.png/route.js"
 }
