@@ -5,7 +5,7 @@ import { FaBars, FaTimes } from "react-icons/fa"; // Import close icon
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
-
+export const dynamic = 'force-dynamic';
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false); // State to track scrolling
