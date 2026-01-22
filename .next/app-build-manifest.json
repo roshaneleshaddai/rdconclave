@@ -12,6 +12,7 @@
       "static/css/app/layout.css",
       "static/chunks/app/layout.js"
     ],
+<<<<<<< HEAD
     "/hackathon/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
@@ -51,6 +52,12 @@
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/hackathon/codefusion/admin/roundsubmissions/page.js"
+=======
+    "/_not-found/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/_not-found/page.js"
+>>>>>>> 243ac4b4d3cc5c45307b1aa6486dc5eba4f341a8
     ]
   }
 }

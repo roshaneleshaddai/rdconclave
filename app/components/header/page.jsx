@@ -5,7 +5,7 @@ import { FaBars, FaTimes } from "react-icons/fa"; // Import close icon
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
-
+export const dynamic = 'force-dynamic';
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false); // State to track scrolling
@@ -74,25 +74,41 @@ const Header = () => {
     >
       <source src="/images/bg.mp4" type="video/mp4" />
     </video> */}
-      <div className="flex items-center justify-evenly md:p-2 md:mx-10 max-w-8xl">
+      <div className="flex items-center justify-between w-full px-3 md:px-8 md:py-2 max-w-8xl">
         {/* Logo Section */}
-        <div className="flex items-center justify-evenly space-x-0 md:space-x-4 mx-2">
+        <div className="flex items-center justify-start space-x-2 md:space-x-4 mx-0">
+              {/* Research Conclave logo - leftmost at screen edge */}
               <Image
-            // src="/images/vrseclogo.png"
-            src="/images/sahelogo.png"
-            alt="VRSEC Logo"
+            src="/images/event_logo.png"
+            alt="Research Conclave"
             width={isScrolled ? 70 : 90}
             height={isScrolled ? 70 : 90}
             className={`lg:block hidden object-scale-down transition-all duration-300 lg:w-120 lg:h-90`}
             loading="lazy"
           />
           <Image
-            // src="/images/vrseclogo.png"
-            src="/images/sahelogo.png"
-            alt="VRSEC Logo"
+            src="/images/event_logo.png"
+            alt="Research Conclave"
             width={isScrolled ? 110 : 120}
             height={isScrolled ? 110 : 120}
             className={`lg:hidden block object-scale-down transition-all duration-300 w-24 h-32 `}
+            loading="lazy"
+          />
+          {/* College logo - sits to the right of Conclave */}
+          <Image
+            src="/images/sahelogo.png"
+            alt="College Logo"
+            width={isScrolled ? 70 : 90}
+            height={isScrolled ? 70 : 90}
+            className={`lg:block hidden object-scale-down transition-all duration-300 lg:w-120 lg:h-90 ml-6 md:ml-10`}
+            loading="lazy"
+          />
+          <Image
+            src="/images/sahelogo.png"
+            alt="College Logo"
+            width={isScrolled ? 110 : 120}
+            height={isScrolled ? 110 : 120}
+            className={`lg:hidden block object-scale-down transition-all duration-300 w-24 h-32 ml-6 md:ml-10`}
             loading="lazy"
           />
           {/* <Image
@@ -137,7 +153,7 @@ const Header = () => {
             </div>
           </div>
         <div>
-        <div className={`hidden md:flex items-center transition-all duration-300 ${isScrolled ? 'space-x-2' : 'space-x-4'}`}>
+        <div className={`hidden md:flex items-center transition-all duration-300 ${isScrolled ? 'space-x-2' : 'space-x-4'} mr-4 md:mr-10`}>
         <div className="hidden md:block">
             {/* <Image
               src="/images/ITlogo.jpeg"
@@ -159,21 +175,20 @@ const Header = () => {
           </div> */}
           <div className="hidden md:block">
             <Image
-              src="/images/s.jpeg"
-              alt="springer"
+              src="/images/golden.jpeg"
+              alt="Golden Jubilee"
               width={isScrolled ? 90 : 100} 
               height={isScrolled ? 90 : 100}
-              className="rounded-full"
+              className="rounded-full bg-white"
             />
           </div>
-          <div className="hidden  md:block">
-          <Image
-              src="/images/rclogo1.png"
-              alt="Research conclave"
+          <div className="hidden md:block">
+            <Image
+              src="/images/s.jpeg"
+              alt="Springer"
               width={isScrolled ? 90 : 100} 
               height={isScrolled ? 90 : 100}
-              className="rounded-full"
-              
+              className="rounded-full bg-white"
             />
           </div>
           {/* Hamburger Menu Icon */}
@@ -236,11 +251,6 @@ const Header = () => {
           <li>
             <Link href="/speakers" onClick={toggleMenu} className="hover:text-[#FFD700]">
               Guests
-            </Link>
-          </li>
-          <li>
-            <Link href="/schedule" onClick={toggleMenu} className="hover:text-[#FFD700]">
-              Schedule
             </Link>
           </li>
           <li className="relative w-3/4">
@@ -312,12 +322,6 @@ const Header = () => {
           className={`cursor-pointer m-0.5 bg-[#002147] text-white border-[#1A1A1A] text-[#213555] font-semibold transition-all duration-300 ease-in-out ${isScrolled ? 'text-sm py-1 px-4' : 'text-base py-1 px-2'} hover:bg-[#FFD700]/20  hover:text-black hover:shadow-lg`}
         >
           Guests
-        </Link>
-        <Link
-          href="/schedule"
-          className={`cursor-pointer m-0.5 bg-[#002147] text-white border-[#1A1A1A] text-[#213555] font-semibold transition-all duration-300 ease-in-out ${isScrolled ? 'text-sm py-1 px-4' : 'text-base py-1 px-2'} hover:bg-[#FFD700]/20  hover:text-black hover:shadow-lg`}
-        >
-          Schedule
         </Link>
         <div className="relative">
           <button
